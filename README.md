@@ -3,6 +3,15 @@
 Ứng dụng Windows offline tạo voice từ TXT/SRT. Mốc mã nguồn hiện tại: **4.1.1 — Render Fix**.
 Tên hiển thị là BÉO Voice Studio; executable, cache và định danh cập nhật vẫn dùng `V15VoiceStudio` để tương thích.
 
+## Tải ứng dụng và các bản cũ
+
+- [Bản 4.1.1 hiện tại: ZIP, kết quả kiểm thử và bàn giao](https://github.com/caoducanh2741991-dot/beo/releases/tag/v4.1.1).
+- [Toàn bộ 55 gói cũ và thành phần offline](https://github.com/caoducanh2741991-dot/beo/releases/tag/archive-all-versions).
+- [Bản sao toàn bộ lịch sử Git](https://github.com/caoducanh2741991-dot/beo/releases/tag/archive-import).
+- [Kết quả đối chiếu tệp đã tải lên](archive/upload-verification.json): 57 tệp trong kho lưu trữ và 4 tệp bản hiện tại đều khớp SHA-256.
+
+Kho ở chế độ riêng tư. Đăng nhập tài khoản được cấp quyền để xem hoặc tải.
+
 ## Nội dung
 
 - `source/`: mã C# WinForms, worker Python, script build/đóng gói, fixture, kiểm thử và giấy phép phụ thuộc.
@@ -15,7 +24,7 @@ Tên hiển thị là BÉO Voice Studio; executable, cache và định danh cậ
 
 Lịch sử Git được **nhập từ các gói cũ**, không phải lịch sử commit phát triển ban đầu.
 Các phiên bản có mã nguồn trọn vẹn trong gói được gắn tag tương ứng; xem [danh mục](archive/README.md).
-Các ZIP, bộ cài, bản vá, checkpoint và gói model chia nhỏ được giữ nguyên để tải lên GitHub Releases.
+Các ZIP, bộ cài, bản vá, checkpoint và gói model chia nhỏ đã được tải lên GitHub Releases, giữ nguyên byte và kiểm tra SHA-256 do GitHub ghi nhận.
 
 ## Build trên Windows
 
