@@ -1,20 +1,22 @@
-Tests TOTAL: 13 passed. Output: /tmp/v15_tests_a8df02ad98eb43d4986fcd7c64e660c8
+Tests TOTAL: 13 passed. Output: /tmp/v15_tests_3c0afe56b85c470b9f8dc67067a54416
 BatchTests TOTAL BATCH: 12 passed.
 FeatureTests TOTAL 20 passed
 BreathStreamingTests TOTAL BREATH STREAMING 8 passed.
 PunctuationTests TOTAL PUNCTUATION 20 passed.
 Update141Tests TOTAL 1.4.1 17 passed.
 NativeGpuTests TOTAL NATIVE GPU 14 passed.
+SubtitleTests TOTAL SUBTITLES 17 passed.
 UpdaterTests TOTAL UPDATER 21 passed.
 OnnxUpdaterTests TOTAL ONNX UPDATER 6 passed.
 AnchoredTests TOTAL ANCHORED 65 passed.
-SubtitleTests TOTAL SUBTITLES 17 passed.
 test_gpu_policy.py PASS
 test_worker_probe.py PASS
-Ui1411Tests TOTAL UI 2.0.1 47 passed.
+Ui1411Tests TOTAL UI 2.0.2 47 passed.
 AnchoredUiTests TOTAL ANCHORED UI 28 passed.
 SubtitleUiTests TOTAL SUBTITLE UI 18 passed.
 SubtitleQualityUiTests TOTAL QUALITY UI 13 passed.
 SubtitleRefineUiTests TOTAL REFINE UI 7 passed.
 SubtitleSpeechUiTests TOTAL SPEECH UI 14 passed.
+VoiceReportTests TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo fb6cf8962e354a63994943f5d928ea79
+VoiceReportUiTests TOTAL REPORT UI 15 passed.
 VALIDATION COMPLETE (Mono/Linux; physical Windows GPU not tested)

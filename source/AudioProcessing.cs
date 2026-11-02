@@ -21,13 +21,13 @@ public static class Tempo {
   }return Wave.Read(output).TrimEdges();
  }
  public static Wave Fit(Wave source,Cue cue,RenderOptions options,string root,string work,Func<bool> cancel){
-  Validate(options);double available=Math.Max(.04,cue.Duration-.025),minimum=Minimum(options),maximum=Maximum(options);double selected=options.BaseSpeed;Wave result=source;bool fast=source.Duration>available;
+  Validate(options);double available=Math.Max(.04,cue.Duration-.025),minimum=Minimum(options),maximum=Maximum(options);double selected=options.BaseSpeed;Wave result=source;bool fast=source.Duration>available;if(options.RunReport!=null)options.RunReport.Attempt(options.BaseSpeed,source.Duration,available,"Đầu vào trước đổi tốc độ (đã chỉnh khoảng nghỉ nếu có)");
   if(fast)selected=Math.Min(maximum,Math.Max(options.BaseSpeed,options.BaseSpeed*source.Duration/available*1.01));
   else if(options.SlowShort&&source.Duration/available<.9)selected=Math.Max(minimum,Math.Min(options.BaseSpeed,options.BaseSpeed*source.Duration/available*1.01));
-  if(Math.Abs(selected-options.BaseSpeed)>.001)result=Change(source,selected/options.BaseSpeed,root,work,cancel);
+  if(Math.Abs(selected-options.BaseSpeed)>.001){result=Change(source,selected/options.BaseSpeed,root,work,cancel);if(options.RunReport!=null)options.RunReport.Attempt(selected,result.Duration,available,"Đã đo sau atempo");}
   // Retry only from the original waveform; never compound stretch artifacts.
   for(int retry=0;result.Duration>available&&selected<maximum-.00001&&retry<3;retry++){
-   selected=Math.Min(maximum,Math.Max(selected+.01,selected*result.Duration/available*1.01));result=Change(source,selected/options.BaseSpeed,root,work,cancel);
+   selected=Math.Min(maximum,Math.Max(selected+.01,selected*result.Duration/available*1.01));result=Change(source,selected/options.BaseSpeed,root,work,cancel);if(options.RunReport!=null)options.RunReport.Attempt(selected,result.Duration,available,"Thử lại từ audio gốc");
   }
   cue.Speed=selected;cue.Actual=result.Duration;return result;
  }

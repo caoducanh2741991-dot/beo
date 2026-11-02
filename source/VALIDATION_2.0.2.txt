@@ -1,0 +1,15 @@
+V15 Voice Studio 2.0.2 — validation
+
+Reporting-only update: automatic TXT sidecars for SRT/TXT export and per-file queue export, including validation/import/render errors and cancellation. Report paths persist with the queue. Unique names preserve previous attempts. Read-only/full source locations fall back to the application report directory without blocking valid audio export.
+
+30 VoiceReportTests assertions passed using deterministic speech fixtures and real FFmpeg. Covered source/voice metadata, measured durations, speed attempts and percentage relative to a non-1.00 base, immutable source bytes, failed fit without WAV publication, engine errors, cancellation and unvisited units, missing-model preflight, exact stage output sample count, cross-cue sentence mapping, no fabricated stage-unit final timestamps, pending stage units after error, identical WAV bytes with reporting enabled/disabled, cache identification, pause compression, previous-report preservation, report-write fallback, invalid timeline, TXT actual gaps/no unwritten trailing gap, legacy cue joining, interrupted progress journal, mixed success/failure batch and preservation of a failed report through queue rollback.
+
+15 VoiceReportUiTests assertions passed: both report buttons, immutable metadata snapshot, actual single export failure path, voice notes/source content, pre-render validation failure, source preservation, independent reports for queued valid/import-failed files, verbatim unparseable script, queue continuation, TXT unknown timeline, table path, queue XML reload and unlocked controls after failure.
+
+Final regression run passed: core 13, batch 12, features 20, streaming breath 8, punctuation 20, existing update behavior 17, native GPU routing 14, subtitles 17, updater 21, ONNX updater 6, anchored timeline 65; Python GPU policy/probe checks; main UI 47, anchored UI 28, subtitle UI 18, quality UI 13, refine UI 7, speech UI 14. See source/validation-2.0.2 logs.
+
+21 model/GPU/Vietnamese installer configuration and implementation assets are byte-identical to 2.0.1. This includes the Python speech worker, GPU policy, native GPU/external speech adapters, Vietnamese installers and lock files. The 2.0.1 resumed-install/copy-only cache fixes are retained. No model, runtime, catalog, voice reference or generated audio is distributed in this core update ZIP.
+
+Release checks are implemented in Release202Tests.py: CRC and every payload hash, exact version, installed/new updater with ZIP and folder inputs, preservation of existing models/runtime/voice/settings/queue/input/output/report fixtures, rollback journal cleanup, rejection of downgrade and .NET Framework API scan. Run after package_release.py; final release results accompany the produced ZIP.
+
+Environment: Linux/Mono, Windows x64 binaries compiled against official .NET Framework 4.5 reference assemblies; deterministic fake TTS audio with real FFmpeg for fitting. GUI under Xvfb. These tests do not measure actual model voice quality, hardware speed or physical Windows/RTX 2070 CUDA behavior. Grouped-stage reports intentionally leave unmeasured final sentence timings unknown.
