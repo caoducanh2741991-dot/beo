@@ -1,0 +1,6 @@
+V15 VOICE STUDIO 2.0.8 VALIDATION
+Removed CreatorCore, CreatorControls, CreatorVideo and their 3 test classes from source/build inputs. MainForm no longer constructs creator tab or player and has no creator busy callback. Media drop follows existing subtitle extraction routing.
+UI validates seven remaining pages, title/assembly 2.0.8.0 and absence of Creator*/ReviewTransport/ReviewMediaHost types from actual EXE. Startup, native handle recreation, settings/queue/voice clone controls, locking/unlocking and minimum-window layouts tested.
+Full existing validation suite completed: see validation-summary208.txt and individual test logs. Engines use fake TTS fixtures / real FFmpeg where relevant; GPU policy probes use simulated runners. No physical Windows/RTX 2070 test.
+Version increment only in updater; core update behavior unchanged. Release ZIP CRC, payload hashes, installed/new updater from 2.0.7 using ZIP and extracted folder, preservation of 20 data/settings/script/audio paths, and downgrade rejection: see release208.log.
+Updater preserves old creator cache/list files rather than deleting user data. The removed feature is not compiled in the new application; old source files left by an existing installation are not used by updated build scripts.

@@ -9,7 +9,7 @@ using V15Voice;
 
 public static class Ui1411Tests {
  static int count, code;
- static readonly string[] Names={"Tạo voice","Hàng đợi nhiều file","Thư viện giọng","Công cụ & thiết lập","Sao chép giọng","MP4 / MP3 → SRT","Video · duyệt & sửa","Hướng dẫn"};
+ static readonly string[] Names={"Tạo voice","Hàng đợi nhiều file","Thư viện giọng","Công cụ & thiết lập","Sao chép giọng","MP4 / MP3 → SRT","Hướng dẫn"};
  static object Field(object o,string name){return o.GetType().GetField(name,BindingFlags.Instance|BindingFlags.NonPublic).GetValue(o);}
  static object Call(object o,string name,params object[] args){return o.GetType().GetMethod(name,BindingFlags.Instance|BindingFlags.NonPublic).Invoke(o,args);}
  static void Check(bool value,string name){if(!value)throw new Exception("FAIL "+name);Console.WriteLine("PASS "+name);count++;}
@@ -18,16 +18,17 @@ public static class Ui1411Tests {
  static void Capture(Form f,string name){f.Refresh();Application.DoEvents();using(var bitmap=new Bitmap(f.Width,f.Height)){using(var g=Graphics.FromImage(bitmap))g.CopyFromScreen(f.Location,Point.Empty,f.Size);bitmap.Save(Path.Combine(Path.GetTempPath(),name+".png"));}}
  [STAThread]public static void Main(){
   Application.EnableVisualStyles();var f=new MainForm();var tabs=(TabControl)Field(f,"tabs");
-  Check(tabs.TabPages.Count==8,"All six pages exist immediately after construction, before showing the form");
+  Check(tabs.TabPages.Count==7,"All seven pages exist immediately after construction, before showing the form");
   Check(Ordered(tabs),"Startup tab order is Studio, queue, library, tools, cloning, guide");
   Check(tabs.TabPages.Cast<TabPage>().All(p=>p.Parent==tabs&&tabs.Controls.Contains(p)),"Every registered page is attached to the same TabControl");
+  Check(!f.GetType().Assembly.GetTypes().Any(t=>t.Name.StartsWith("Creator")||t.Name=="ReviewTransport"||t.Name=="ReviewMediaHost"),"Removed video workflow and embedded player are absent from executable");
   f.Shown+=(s,e)=>{
    var timer=new Timer{Interval=350};int step=0;
    timer.Tick+=(a,b)=>{try{
     if(step==0){
-     Check(f.Text.EndsWith("2.0.7")&&f.GetType().Assembly.GetName().Version==new Version(2,0,7,0),"Title and EXE assembly both identify 2.0.7");
-     Check(tabs.TabCount==8&&Ordered(tabs),"All six tabs remain registered after native handle creation");
-     for(int i=0;i<8;i++){tabs.SelectedIndex=i;Check(tabs.SelectedTab==tabs.TabPages[i]&&tabs.TabPages[i].Visible,"Tab "+i+" can be selected and displays its page");}
+     Check(f.Text.EndsWith("2.0.8")&&f.GetType().Assembly.GetName().Version==new Version(2,0,8,0),"Title and EXE assembly both identify 2.0.8");
+     Check(tabs.TabCount==7&&Ordered(tabs),"All seven tabs remain registered after native handle creation");
+     for(int i=0;i<7;i++){tabs.SelectedIndex=i;Check(tabs.SelectedTab==tabs.TabPages[i]&&tabs.TabPages[i].Visible,"Tab "+i+" can be selected and displays its page");}
      tabs.SelectedIndex=3;
     }else if(step==1){
      var device=(ComboBox)Field(f,"devicePicker");
@@ -58,7 +59,7 @@ public static class Ui1411Tests {
      Call(f,"Apply",qs);Check(!((NumericUpDown)Field(f,"maxSpeed")).Enabled,"Gentle mode disables custom upper bound");
      Capture(f,"v15_146_cloning");
      typeof(Control).GetMethod("RecreateHandle",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(tabs,null);
-     Check(tabs.TabCount==8&&Ordered(tabs),"Recreating the TabControl handle preserves all six tabs and their order");
+     Check(tabs.TabCount==7&&Ordered(tabs),"Recreating the TabControl handle preserves all seven tabs and their order");
      tabs.SelectedIndex=3;
     }else{
      Check(((ComboBox)Field(f,"devicePicker")).Visible&&((ComboBox)Field(f,"devicePicker")).SelectedIndex==1,"Tools remain reachable and retain selection after handle recreation");
@@ -75,7 +76,7 @@ public static class Ui1411Tests {
      var fixedVoice=(Control)Field(f,"studioVoiceCard");var card=fixedVoice.RectangleToScreen(fixedVoice.ClientRectangle);var studio=tabs.TabPages[0].RectangleToScreen(tabs.TabPages[0].ClientRectangle);Check(card.Top>=studio.Top&&card.Bottom<=studio.Bottom,"Voice card is fully visible within Studio");
      var body=(ScrollableControl)prose.Parent;body.AutoScrollPosition=new Point(0,5000);Application.DoEvents();Check(fixedVoice.RectangleToScreen(fixedVoice.ClientRectangle).Location==card.Location,"Voice card remains fixed when TXT settings are scrolled");
      Call(f,"SaveProseProject");Check((bool)Call(f,"RestoreProseProject"),"Latest edited TXT can be restored after reopening");Capture(f,"v15_146_prose");
-     timer.Stop();Console.WriteLine("TOTAL UI 2.0.7 "+count+" passed.");f.Close();
+     timer.Stop();Console.WriteLine("TOTAL UI 2.0.8 "+count+" passed.");f.Close();
     }step++;
    }catch(Exception ex){timer.Stop();Console.WriteLine(ex);code=1;f.Close();}};
    timer.Start();

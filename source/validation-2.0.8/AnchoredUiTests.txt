@@ -1,0 +1,31 @@
+PASS Third timeline mode exposes V15.6
+PASS Queue exposes explicit V15.6 override
+PASS Hard anchor checkbox replaces word count in new mode
+PASS Measure control uses stages, not five legacy cues
+PASS Legacy sentence join and short-cue slowdown do not override stage fitting
+PASS New mode summary has no ten-word warning
+PASS New mode routes renderer and defaults to WAV only
+PASS New mode reuses persistent speech cache
+PASS Checkbox reaches source cue anchor
+PASS Checkbox creates a hard stage boundary
+PASS Anchor survives grid refresh
+PASS Optional SRT uses measured alignment callback
+PASS New settings captured
+PASS New settings restore correctly
+PASS Opening SRT preserves chosen V15.6 mode
+PASS Reopening unchanged source restores manual anchors
+PASS Changed source cannot inherit stale anchors
+PASS Explicit anchored queue choice persists
+PASS Editing queued SRT preserves new mode
+PASS Queue anchor survives saved session
+PASS Anchor controls reachable inside settings scroll panel
+PASS Anchor editing and queue options locked while rendering
+PASS Controls unlock after task completes
+PASS Legacy mode retains existing columns
+PASS Legacy locked renderer remains selectable
+PASS Legacy flexible renderer remains selectable
+PASS TXT retains natural mode rather than inventing source duration
+PASS TXT never uses hard stage renderer
+TOTAL ANCHORED UI 28 passed.
+Could not set X locale modifiers
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme
