@@ -19,13 +19,14 @@ public static class UserVoices {
   if(new FileInfo(source).Length>(ext==".mp4"?1024L:200L)*1024*1024)throw new Exception("File quá lớn: MP4 tối đa 1 GB, âm thanh tối đa 200 MB.");
   target=Path.GetFullPath(target);Directory.CreateDirectory(Path.GetDirectoryName(target));string stem=Path.Combine(Path.GetDirectoryName(target),".v15_sample_"+Guid.NewGuid().ToString("N")),raw=stem+".float.wav",pcm=stem+".wav";var ci=System.Globalization.CultureInfo.InvariantCulture;
   try{
+   MediaSupport.Ensure(root,cancelled);
    AudioProcess.Run(root,"-v error -y -ss "+start.ToString("0.000",ci)+" -i "+KokoroEngine.Q(source)+" -t "+length.ToString("0.000",ci)+" -map 0:a:0 -vn -ac 1 -ar 24000 -c:a pcm_f32le "+KokoroEngine.Q(raw),cancelled);
    var stats=FinalAudio.Measure(root,raw,cancelled);double gain=Double.IsInfinity(stats.TruePeak)?0:Math.Min(0,-1-stats.TruePeak);
    AudioProcess.Run(root,"-v error -y -i "+KokoroEngine.Q(raw)+" -af volume="+gain.ToString("0.000000",ci)+"dB -ac 1 -ar 24000 -c:a pcm_s16le "+KokoroEngine.Q(pcm),cancelled);
    var wave=Wave.Read(pcm);if(wave.Duration<length-.1)throw new Exception("Không đủ "+length.ToString("0.0",ci)+" giây ở vị trí đã chọn. Hãy giảm thời lượng hoặc chọn đoạn sớm hơn.");
    double rms=Math.Sqrt(wave.Samples.Average(x=>(double)x*x));if(rms<50)throw new Exception("Mẫu quá nhỏ hoặc gần như im lặng. Chọn đoạn có lời đọc rõ.");
    if(cancelled())throw new OperationCanceledException();if(File.Exists(target))File.Replace(pcm,target,null);else File.Move(pcm,target);return wave;
-  }finally{try{File.Delete(raw);}catch{}try{File.Delete(pcm);}catch{}}
+  }catch(Exception e){throw MediaSupport.InputError(source,e);}finally{try{File.Delete(raw);}catch{}try{File.Delete(pcm);}catch{}}
  }
 }
 }

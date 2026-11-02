@@ -53,4 +53,4 @@ PASS Complete render with loudness processing preserves source timeline and exac
 PASS Complete render applies selected loudness target at final stage
 PASS Older sessions receive compatible quality defaults
 PASS All new quality choices survive preset serialization
-TOTAL UPDATE 1.4.5 53 passed. Artifacts: /tmp/V15_145_0301e45749ce4487828bd30d99c37631
+TOTAL UPDATE 1.4.5 53 passed. Artifacts: /tmp/V15_145_fb7f1ac01be34a4380c451f6fa1454b5

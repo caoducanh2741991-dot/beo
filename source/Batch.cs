@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace V15Voice {
 public enum JobState { Queued, ImportFailed, Running, Done, Failed, Cancelled }
 public sealed class BatchJob {
- public string SourceHash="";
+ public double AudioDuration;public bool DurationFinal;public string SourceHash="";
  public string InputPath,Error="",OutputPath="";public bool Timed;
  public List<Cue> CheckpointCues;public List<Cue> Cues=new List<Cue>();public JobState State=JobState.Queued;
  public string Name {get{return Path.GetFileName(InputPath);}}
@@ -19,7 +19,7 @@ public sealed class BatchJob {
    string ext=Path.GetExtension(path).ToLowerInvariant();if(ext==".mp3"||ext==".wav")throw new Exception("Mẫu âm thanh cần nhập ở tab Sao chép giọng MP3 / WAV. Tại đây chỉ nhận SRT / TXT.");if(ext!=".srt"&&ext!=".txt")throw new Exception("Chỉ nhận SRT hoặc TXT.");
    if(new FileInfo(path).Length>5*1024*1024)throw new Exception("Mỗi kịch bản tối đa 5 MB.");
    j.SourceHash=StateFiles.Hash(path);string text=File.ReadAllText(path);j.Timed=ext==".srt"||text.Contains("-->")||Regex.IsMatch(text,@"\d+:\d{2}:\d{2}");
-   j.Cues=ext==".srt"?Scripts.ParseSrt(text):Scripts.ParseText(text);
+   j.Cues=ext==".srt"?Scripts.ParseSrt(text):j.Timed?Scripts.ParseText(text):LongText.Parse(text);
   }catch(Exception e){j.State=JobState.ImportFailed;j.Error=e.Message;}
   return j;
  }
@@ -32,7 +32,7 @@ public static class BatchRunner {
    if(skipDone&&j.State==JobState.Done){if(File.Exists(j.OutputPath))last=j.OutputPath;continue;}
    if(cancelled())break;
    if(j.State==JobState.ImportFailed){finished++;progress(total==0?0:finished*100/total,j.Name+": lỗi nhập file");continue;}
-   j.CheckpointCues=j.Cues.Select(c=>new Cue{Id=c.Id,Start=c.Start,End=c.End,Text=c.Text}).ToList();j.State=JobState.Running;j.Error="";j.OutputPath="";progress(total==0?0:finished*100/total,j.Name+": bắt đầu");
+   j.CheckpointCues=j.Cues.Select(c=>new Cue{Id=c.Id,Start=c.Start,End=c.End,Text=c.Text,Prose=c.Prose,ParagraphEnd=c.ParagraphEnd,VoiceLock=c.VoiceLock}).ToList();j.State=JobState.Running;j.Error="";j.OutputPath="";progress(total==0?0:finished*100/total,j.Name+": bắt đầu");
    try {
     j.OutputPath=render(j,OutputFiles.Beside(j.InputPath),(p,message)=>progress(total==0?0:(finished*100+Math.Min(100,Math.Max(0,p)))/total,j.Name+" • "+message));
     j.State=JobState.Done;j.CheckpointCues=null;last=j.OutputPath;

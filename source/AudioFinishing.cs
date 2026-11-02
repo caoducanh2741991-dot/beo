@@ -4,7 +4,7 @@ public static class AudioProcess {
  public static string Run(string root,string args,Func<bool> cancel,int timeout=120000){
   if(cancel())throw new OperationCanceledException();string log="";var gate=new object();
   var si=new ProcessStartInfo(Tempo.Executable(root),"-nostdin -hide_banner -nostats "+args){UseShellExecute=false,CreateNoWindow=true,RedirectStandardError=true,RedirectStandardOutput=true};
-  using(var p=new Process{StartInfo=si}){p.ErrorDataReceived+=(s,e)=>{if(e.Data!=null)lock(gate){log+=e.Data+"\n";if(log.Length>32768)log=log.Substring(log.Length-32768);}};p.OutputDataReceived+=(s,e)=>{};
+  using(var p=new Process{StartInfo=si}){p.ErrorDataReceived+=(s,e)=>{if(e.Data!=null)lock(gate){log+=e.Data+"\n";if(log.Length>262144)log=log.Substring(log.Length-262144);}};p.OutputDataReceived+=(s,e)=>{if(e.Data!=null)lock(gate){log+=e.Data+"\n";if(log.Length>262144)log=log.Substring(log.Length-262144);}};
    p.Start();p.BeginErrorReadLine();p.BeginOutputReadLine();var clock=Stopwatch.StartNew();
    while(!p.WaitForExit(100)){if(cancel()||clock.ElapsedMilliseconds>timeout){try{p.Kill();p.WaitForExit(2000);}catch{}if(cancel())throw new OperationCanceledException();throw new TimeoutException("Xử lý âm thanh quá thời gian cho phép.");}}
    p.WaitForExit();if(cancel())throw new OperationCanceledException();if(p.ExitCode!=0)throw new IOException("Không xử lý được âm thanh: "+log.Substring(Math.Max(0,log.Length-2500)));return log;

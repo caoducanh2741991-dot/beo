@@ -25,8 +25,8 @@ public sealed class VoiceSettings {
 }
 public static class QueueStore {
  public static void Save(string path,IEnumerable<BatchJob> jobs){
-  var xml=new XElement("queue",new XAttribute("version",1));foreach(var j in jobs){var row=new XElement("job",new XAttribute("path",j.InputPath),new XAttribute("hash",j.SourceHash??""),new XAttribute("timed",j.Timed?1:0),new XAttribute("state",(int)j.State),new XAttribute("output",j.OutputPath??""),new XAttribute("error",j.Error??""));
-   foreach(var c in (j.State==JobState.Running&&j.CheckpointCues!=null?j.CheckpointCues:j.Cues))row.Add(new XElement("cue",new XAttribute("start",c.Start),new XAttribute("end",c.End),c.Text??""));xml.Add(row);
+  var xml=new XElement("queue",new XAttribute("version",1));foreach(var j in jobs){var row=new XElement("job",new XAttribute("path",j.InputPath),new XAttribute("hash",j.SourceHash??""),new XAttribute("timed",j.Timed?1:0),new XAttribute("state",(int)j.State),new XAttribute("output",j.OutputPath??""),new XAttribute("audioDuration",j.AudioDuration),new XAttribute("durationFinal",j.DurationFinal?1:0),new XAttribute("error",j.Error??""));
+   foreach(var c in (j.State==JobState.Running&&j.CheckpointCues!=null?j.CheckpointCues:j.Cues))row.Add(new XElement("cue",new XAttribute("start",c.Start),new XAttribute("end",c.End),new XAttribute("prose",c.Prose?1:0),new XAttribute("paragraph",c.ParagraphEnd?1:0),new XAttribute("voiceLock",c.VoiceLock??""),c.Text??""));xml.Add(row);
   }StateFiles.Write(path,xml);
  }
  public static List<BatchJob> Load(string path){var jobs=new List<BatchJob>();var xml=StateFiles.Read(path);if(xml==null)return jobs;
@@ -34,7 +34,7 @@ public static class QueueStore {
    string input=StateFiles.S(row,"path");if(String.IsNullOrWhiteSpace(input))continue;var fresh=BatchJob.Load(input);
    if(fresh.State==JobState.ImportFailed){jobs.Add(fresh);continue;}
    if(String.IsNullOrEmpty(StateFiles.S(row,"hash"))||fresh.SourceHash!=StateFiles.S(row,"hash")){fresh.Error="File nguồn đã thay đổi; đã nhập lại để tạo bản mới.";jobs.Add(fresh);continue;}
-   try{var cues=row.Elements("cue").Select(c=>new Cue{Start=StateFiles.D(c,"start"),End=StateFiles.D(c,"end"),Text=c.Value}).ToList();Scripts.Validate(cues);fresh.Cues=cues;fresh.Timed=StateFiles.I(row,"timed")==1;int state=StateFiles.I(row,"state");fresh.State=Enum.IsDefined(typeof(JobState),state)?(JobState)state:JobState.Queued;fresh.OutputPath=StateFiles.S(row,"output");fresh.Error=StateFiles.S(row,"error");
+   try{var cues=row.Elements("cue").Select(c=>new Cue{Start=StateFiles.D(c,"start"),End=StateFiles.D(c,"end"),Text=c.Value,Prose=StateFiles.I(c,"prose")==1,ParagraphEnd=StateFiles.I(c,"paragraph")==1,VoiceLock=StateFiles.S(c,"voiceLock")}).ToList();if(StateFiles.I(row,"timed")==1)Scripts.Validate(cues);else{foreach(var c in cues)c.Prose=true;LongText.Validate(cues);}fresh.Cues=cues;fresh.Timed=StateFiles.I(row,"timed")==1;int state=StateFiles.I(row,"state");fresh.State=Enum.IsDefined(typeof(JobState),state)?(JobState)state:JobState.Queued;fresh.AudioDuration=StateFiles.D(row,"audioDuration");fresh.DurationFinal=StateFiles.I(row,"durationFinal")==1;fresh.OutputPath=StateFiles.S(row,"output");fresh.Error=StateFiles.S(row,"error");
     if(fresh.State==JobState.Running||fresh.State==JobState.Cancelled)fresh.State=JobState.Queued;
     if(fresh.State==JobState.Done&&!File.Exists(fresh.OutputPath)){fresh.State=JobState.Queued;fresh.Error="WAV cũ không còn; cần tạo lại.";}
    }catch{fresh=BatchJob.Load(input);}jobs.Add(fresh);

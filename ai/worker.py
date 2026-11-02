@@ -45,15 +45,22 @@ def emit(kind, value=""):
 
 
 def split_text(text):
+    words = text.split()
     segments = []
-    current = []
-    for word in text.split():
-        current.append(word)
-        if len(current) >= 24 or (len(current) >= 4 and re.search(r'[.!?][\"”’)\]]?$', word)):
-            segments.append(" ".join(current))
-            current = []
-    if current:
-        segments.append(" ".join(current))
+    abbreviation = re.compile(r'(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|vs|etc|U\.S|U\.K|e\.g|i\.e|[A-Za-z])\.$', re.I)
+    while words:
+        count = min(24, len(words))
+        for index, word in enumerate(words[:count]):
+            if index >= 3 and re.search(r'[.!?][\"”’)\]]?$', word) and not abbreviation.fullmatch(word):
+                count = index + 1
+                break
+        else:
+            if len(words) > count:
+                boundaries = [i + 1 for i, word in enumerate(words[:count]) if i >= 5 and re.search(r'[,;:—]$', word)]
+                if boundaries:
+                    count = boundaries[-1]
+        segments.append(" ".join(words[:count]))
+        words = words[count:]
     return segments
 
 

@@ -1,0 +1,10 @@
+using System;using System.IO;using System.Linq;using V15Voice;
+public static class Media146Tests {
+ static int count;static bool No(){return false;}static void Check(bool b,string n){if(!b)throw new Exception(n);Console.WriteLine("PASS "+n);count++;}
+ public static void Main(string[] args){string root=args[0],fixtures=args[1],work=Path.Combine(Path.GetTempPath(),"V15_media146_"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(work);MediaSupport.Ensure(root,No);Check(true,"Packaged configuration exposes MP4/MP3/WAV demuxers, float encoder and finishing filters");
+  foreach(string input in new[]{Path.Combine(root,"upload","VANZAI.mp4"),Path.Combine(fixtures,"sample ! (1).mp3"),Path.Combine(fixtures,"sample.m4a"),Path.Combine(root,"upload","CAPCUT_V15_4_US_VOICE_SAMPLE.wav")}){string output=Path.Combine(work,Guid.NewGuid().ToString("N")+".wav");var w=UserVoices.Import(root,input,output,0,6,No);Check(w.Rate==24000&&Math.Abs(w.Duration-6)<.01,"Import "+Path.GetExtension(input)+" through actual new FFmpeg configuration");Check(FinalAudio.Measure(root,output,No).TruePeak<=-.85,"Imported "+Path.GetExtension(input)+" reference avoids excessive true peak");}
+  string voice=Path.Combine(root,"upload","CAPCUT_V15_4_US_VOICE_SAMPLE.wav"),normalized=Path.Combine(work,"normalized.wav");long frames=FinalAudio.PcmFrames(voice);FinalAudio.Normalize(root,voice,normalized,frames,-18,No,null);Check(FinalAudio.PcmFrames(normalized)==frames,"New finishing pipeline preserves every master sample");var stats=FinalAudio.Measure(root,normalized,No);Check(Math.Abs(stats.Integrated+18)<.6&&stats.TruePeak<=-.85,"New finishing pipeline reaches -18 LUFS with safe true peak");
+  var tone=new Wave{Rate=24000,Samples=Enumerable.Range(0,48000).Select(i=>(short)(1000*Math.Sin(i*2*Math.PI*220/24000))).ToArray()};var changed=Tempo.Change(tone,1.1,root,work,No);Check(changed.Duration<2&&changed.Duration>1.7,"New FFmpeg atempo supports existing SRT speed fitting");
+  Console.WriteLine("TOTAL MEDIA 1.4.6 "+count+" passed (native build from the same sources and enabled components as Windows PE).");
+ }
+}

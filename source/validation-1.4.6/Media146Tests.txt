@@ -1,0 +1,13 @@
+PASS Packaged configuration exposes MP4/MP3/WAV demuxers, float encoder and finishing filters
+PASS Import .mp4 through actual new FFmpeg configuration
+PASS Imported .mp4 reference avoids excessive true peak
+PASS Import .mp3 through actual new FFmpeg configuration
+PASS Imported .mp3 reference avoids excessive true peak
+PASS Import .m4a through actual new FFmpeg configuration
+PASS Imported .m4a reference avoids excessive true peak
+PASS Import .wav through actual new FFmpeg configuration
+PASS Imported .wav reference avoids excessive true peak
+PASS New finishing pipeline preserves every master sample
+PASS New finishing pipeline reaches -18 LUFS with safe true peak
+PASS New FFmpeg atempo supports existing SRT speed fitting
+TOTAL MEDIA 1.4.6 12 passed (native build from the same sources and enabled components as Windows PE).
