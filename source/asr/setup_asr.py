@@ -12,7 +12,7 @@ from pathlib import Path
 from asr_worker import progress
 
 BASE=Path(__file__).resolve().parent
-REQ=['faster-whisper==1.1.1','ctranslate2==4.6.0','numpy==2.1.3','pandas==2.2.3','nltk==3.9.1','transformers==4.48.3','scipy==1.15.2']
+REQ=['setuptools==75.8.2','faster-whisper==1.1.1','ctranslate2==4.6.0','numpy==2.1.3','pandas==2.2.3','nltk==3.9.1','transformers==4.48.3','scipy==1.15.2']
 
 
 def digest(path):
@@ -70,7 +70,7 @@ def main():
     call([str(python),'-c',code,model['repo'],model['revision'],str(home/'models'/args.model)])
     align=home/'models/alignment/wav2vec2_fairseq_base_ls960_asr_ls960.pth';download('https://download.pytorch.org/torchaudio/models/'+align.name,align,'488fd4f16de84438ffc945334278c1b9fb9b7159a806c1080b16111a958c945d')
     progress(90,'Kiểm tra các thư viện và dữ liệu offline…');call([str(python),str(BASE/'asr_worker.py'),'probe','--home',str(home),'--model',args.model,'--device','cpu'])
-    (home/'ready.json').write_text(json.dumps(dict(version='1.4.7',model=args.model)),encoding='utf-8');progress(100,'Đã cài bộ phụ đề '+args.model+'. Có thể ngắt mạng và tạo SRT.')
+    (home/'ready.json').write_text(json.dumps(dict(version='1.4.8',model=args.model)),encoding='utf-8');progress(100,'Đã cài bộ phụ đề '+args.model+'. Có thể ngắt mạng và tạo SRT.')
 
 
 if __name__=='__main__':

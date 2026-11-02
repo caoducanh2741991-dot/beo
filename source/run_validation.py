@@ -52,17 +52,17 @@ def ui():
     with socket.create_connection(('127.0.0.1',port),.2):break
    except OSError:time.sleep(.1)
   else:raise RuntimeError('Xvfb failed '+x.stderr.read().decode())
-  for name in ['UiTests','Ui147Tests','SubtitleUiTests']:
+  for name in ['UiTests','Ui148Tests','SubtitleUiTests','SubtitleQualityUiTests']:
    data=tempfile.mkdtemp(prefix='v15-ui-state-');run(name,env=dict(ENV,DISPLAY='127.0.0.1:'+str(display),XDG_DATA_HOME=data),timeout=45)
  finally:x.terminate();x.wait(timeout=5)
 def main():
  subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15VoiceStudio.exe')]+REFS+[str(SOURCE/x) for x in APP],env=ENV,check=True)
  subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15Updater.exe')]+REFS+['-r:'+str(REF_DIR/'System.IO.Compression.dll'),'-r:'+str(REF_DIR/'System.IO.Compression.FileSystem.dll'),str(SOURCE/'Updater.cs')],env=ENV,check=True)
- specs={'Tests':['Tests.cs'],'BatchTests':['BatchTests.cs'],'FeatureTests':['FeatureTests.cs'],'Update141Tests':['Update141Tests.cs'],'Update145Tests':['Update141Tests.cs','Update145Tests.cs'],'Update146Tests':['Update146Tests.cs'],'BreathStreamingTests':['Update141Tests.cs','BreathStreamingTests.cs'],'PunctuationTests':['PunctuationTests.cs'],'NativeGpuTests':['NativeGpuTests.cs'],'UiTests':['UiTests.cs'],'Ui147Tests':['Ui147Tests.cs'],'SubtitleTests':['SubtitleTests.cs'],'SubtitleUiTests':['SubtitleUiTests.cs']}
+ specs={'Tests':['Tests.cs'],'BatchTests':['BatchTests.cs'],'FeatureTests':['FeatureTests.cs'],'Update141Tests':['Update141Tests.cs'],'Update145Tests':['Update141Tests.cs','Update145Tests.cs'],'Update146Tests':['Update146Tests.cs'],'BreathStreamingTests':['Update141Tests.cs','BreathStreamingTests.cs'],'PunctuationTests':['PunctuationTests.cs'],'NativeGpuTests':['NativeGpuTests.cs'],'UiTests':['UiTests.cs'],'Ui148Tests':['Ui148Tests.cs'],'SubtitleQualityUiTests':['SubtitleQualityUiTests.cs'],'SubtitleTests':['SubtitleTests.cs'],'SubtitleUiTests':['SubtitleUiTests.cs']}
  for name,files in specs.items():compile(name,files,main=name,app=True)
  compile('UpdaterTests',['Updater.cs','UpdaterTests.cs'],main='UpdaterTests')
  compile('OnnxUpdaterTests',['Updater.cs','OnnxUpdaterTests.cs'],main='OnnxUpdaterTests')
- non_ui=[k for k in specs if not k.startswith('Ui') and k!='SubtitleUiTests']+['UpdaterTests','OnnxUpdaterTests']
+ non_ui=[k for k in specs if not k.startswith('Ui') and k not in ['SubtitleUiTests','SubtitleQualityUiTests']]+['UpdaterTests','OnnxUpdaterTests']
  native=fixture()
  with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
   jobs=[pool.submit(run,k,[str(native)] if k=='NativeGpuTests' else [str(ROOT.parent)] if k in ['Update145Tests','Update146Tests'] else []) for k in non_ui]

@@ -1,0 +1,44 @@
+{
+  "environment": "CPU/Linux, local models; no physical Windows/GPU claim",
+  "video_seconds": 250.033008,
+  "decoded_audio_seconds": 250.057125,
+  "original_supplied_srt": {
+    "cues": 81,
+    "under_1second": 6,
+    "over_25cps": 26,
+    "overlong_lines": 11
+  },
+  "v148_real_video": {
+    "cues": 87,
+    "under_1second": 0,
+    "over_25cps": 3,
+    "overlong_lines": 0,
+    "pending_review": 49,
+    "lexical_edits": [
+      {
+        "kind": "duplicate",
+        "start": "27.61",
+        "removed": "playing"
+      },
+      {
+        "kind": "duplicate",
+        "start": "83.75",
+        "removed": "just"
+      },
+      {
+        "kind": "duplicate",
+        "start": "112.66",
+        "removed": "So"
+      },
+      {
+        "kind": "duplicate",
+        "start": "222.06",
+        "removed": "his"
+      }
+    ]
+  },
+  "delayed_2_5second_mp4_first_cue": 2.498,
+  "word_preservation_after_verified_edits": true,
+  "python_socket_audit": "blocked connect/getaddrinfo during full video QC and alignment",
+  "cache_provenance": "Fresh large-v3 baseline with production primary settings; actual model clip hypotheses cached for bounded retries; continuous punctuation uses the previously measured full-file large-v3 recognition with exact production secondary settings. Fresh short MP3 and delayed MP4 invoke the production worker without recognition cache. No manual full transcript or word-boundary ground truth."
+}

@@ -1,0 +1,4 @@
+using System;using System.IO;using System.Linq;using V15Voice;
+public static class TimelineRepairXmlTests {
+ public static void Main(string[] args){int count=0;foreach(string file in Directory.GetFiles(args[0],"*.xml")){var d=SubtitleDocument.Load(file);d.Validate();string input=Path.ChangeExtension(file,".mp4");File.WriteAllText(input,"fixture");string output=d.ExportBeside(input);var parsed=Scripts.ParseSrt(File.ReadAllText(output));if(parsed.Count!=d.Cues.Count||parsed.Sum(c=>c.Words)!=d.Cues.Sum(c=>c.Text.Split(new[]{' ','\n','\r'},StringSplitOptions.RemoveEmptyEntries).Length))throw new Exception("Text/timing lost in C# SRT export");if(!d.Cues.Any(c=>!String.IsNullOrWhiteSpace(c.Note)))throw new Exception("Fallback review note missing");Console.WriteLine("PASS production C# XML/SRT export "+Path.GetFileName(file));count++;}if(count!=4)throw new Exception("Missing timeline fixtures");Console.WriteLine("TOTAL TIMELINE XML "+count+" passed.");}
+}
