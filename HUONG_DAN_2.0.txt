@@ -1,14 +1,24 @@
-V15 VOICE STUDIO 1.4.12 — GÓI TIẾNG VIỆT OFFLINE
+BẢN 2.0 — SỬA CÀI TIẾNG VIỆT TRÊN WINDOWS
+
+- Sửa WinError 1314 tại bước tải model: lưu bản sao tệp, không tạo symlink, không cần bật Developer Mode hay Run as administrator chỉ để tải model.
+- Giữ model tiếng Anh, GPU tiếng Anh, giọng riêng, thiết lập và WAV/SRT cũ.
+- Dùng lại gói tiếng Việt đang cài dở gần nhất và phần tải đệm; chỉ tải tiếp phần còn thiếu. Nếu có tệp hỏng/thiếu vẫn cần tải lại tệp đó.
+- Sau cập nhật: Công cụ & thiết lập 2.0 → Cài gói Việt · NVIDIA GPU để tiếp tục. Không xóa thư mục vietnamese_pack.
+- Cách lưu bằng bản sao có thể dùng thêm dung lượng đĩa so với symlink.
+- Tên cửa sổ và công cụ cập nhật: 2.0; phiên bản EXE: 2.0.0.0.
+- Đây là bản sửa cài đặt; không thay model/thuật toán đọc, sao chép hay timeline của 1.4.12.
+
+V15 VOICE STUDIO 2.0 — GÓI TIẾNG VIỆT OFFLINE
 
 CẬP NHẬT ỨNG DỤNG
 1. Trong V15 hiện tại, mở Công cụ & thiết lập → Cập nhật từ ZIP.
-2. Chọn V15VoiceStudio_1.4.12_Update.zip. Chờ ứng dụng mở lại.
-3. Kiểm tra tiêu đề cửa sổ ghi 1.4.12.
+2. Chọn V15VoiceStudio_2.0_Update.zip. Chờ ứng dụng mở lại.
+3. Kiểm tra tiêu đề cửa sổ ghi 2.0.
 Nếu cập nhật trong app không mở: giải nén toàn bộ ZIP vào một thư mục mới, chạy CAP_NHAT.cmd, chọn đúng thư mục V15 đang dùng. Không chỉ chép riêng EXE.
 ZIP này là bản cập nhật ứng dụng. Không gộp model/CUDA dung lượng lớn; gói tiếng Việt được tải một lần qua nút Cài gói bên dưới.
 
 CÀI TIẾNG VIỆT MỘT LẦN
-- Mở Công cụ & thiết lập 1.4.12 → GÓI TIẾNG VIỆT · OFFLINE.
+- Mở Công cụ & thiết lập 2.0 → GÓI TIẾNG VIỆT · OFFLINE.
 - RTX 2070 8 GB: chọn Cài gói Việt · NVIDIA GPU.
 - Nếu CUDA/driver chưa tương thích, có lựa chọn Cài gói Việt · CPU.
 - Cần mạng lúc cài: tải Python, thư viện, model và bộ sao chép. Không cần API key.

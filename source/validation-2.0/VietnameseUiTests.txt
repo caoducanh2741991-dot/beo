@@ -1,0 +1,22 @@
+PASS English remains startup default
+PASS All six English engines and Vietnamese engine available
+PASS Vietnamese picker exposes ten curated preset voices
+PASS Voice descriptions include regional provenance
+PASS Styles and star provenance present for every Vietnamese voice
+PASS Script grid labels Vietnamese text
+PASS Studio routes Vietnamese engine separately
+PASS Saved settings retain Vietnamese voice key
+PASS Selecting English engine synchronizes language
+PASS Preset restoration retains language and exact voice
+PASS Queue uses same Vietnamese voice
+PASS Cannot change language during synthesis
+PASS Language controls unlock after task
+PASS Both isolated pack installation paths available
+PASS Vietnamese clone reference defaults to seven seconds with three-to-eight bounds
+PASS Vietnamese clone does not request reference transcript
+PASS English cloning retains previous sample rules
+PASS Vietnamese custom voice persists with engine and Unicode name
+PASS Saving Vietnamese voices preserves English references
+PASS English word aligner cannot silently process Vietnamese output
+TOTAL VI UI 20 passed.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

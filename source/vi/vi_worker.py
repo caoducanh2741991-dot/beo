@@ -11,6 +11,8 @@ import sys
 import unicodedata
 import wave
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 
 def emit(kind, message):
     print('V15_' + kind + '\t' + base64.b64encode(str(message).encode('utf-8')).decode('ascii'), flush=True)
@@ -37,6 +39,9 @@ def environment(home, offline=True):
             if event in ('socket.connect', 'socket.getaddrinfo'):
                 raise RuntimeError('Đang chạy offline; model còn thiếu. Hãy chạy lại Cài gói tiếng Việt.')
         sys.addaudithook(no_network)
+    # Hugging Face reads offline/cache settings at import time.
+    from hf_cache import configure_copy_cache
+    configure_copy_cache(Path(home) / 'hf')
 
 
 def device_policy(requested, torch_module=None):

@@ -74,12 +74,31 @@ def fetch_models(home, mode):
     if mode == 'gpu':
         repos.append(('OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano', spec['codec_revision'], ['*.py', '*.json', '*.safetensors']))
     for repo, revision, patterns in repos:
-        status('Đang tải model ' + repo + ' · chỉ cần tải một lần')
+        status('Đang kiểm tra/tải model ' + repo + ' · lưu tệp thường, không cần quyền symlink')
         snapshot_download(repo, revision=revision, allow_patterns=patterns, max_workers=3)
         # SDK requests main. Resolve it to the exact snapshot validated with this release.
         ref = home / 'hf' / 'hub' / ('models--' + repo.replace('/', '--')) / 'refs' / 'main'
         ref.parent.mkdir(parents=True, exist_ok=True)
         ref.write_text(revision)
+
+
+def staging_home(folder, mode):
+    """Reuse the newest incomplete 1.4.12/2.0 pack; never select an active pack."""
+    incomplete = [p for p in folder.glob('vieneu-3.8.3-' + mode + '-*')
+                  if (p / '.incomplete').is_file() and not (p / 'ready.json').exists()]
+    return max(incomplete, key=lambda p: (p / '.incomplete').stat().st_mtime_ns) if incomplete else folder / ('vieneu-3.8.3-' + mode + '-' + uuid.uuid4().hex[:10])
+
+
+def space_required(home, mode):
+    # A retry already owns runtime/model bytes on disk; do not require the entire
+    # initial-install budget again after CUDA was successfully installed.
+    existing = 0
+    for parent, directories, files in os.walk(home, followlinks=False):
+        for name in files:
+            path = Path(parent) / name
+            if not path.is_symlink():
+                existing += path.stat().st_size
+    return max(2 * 1024**3, (12 if mode == 'gpu' else 5) * 1024**3 - existing)
 
 
 def activate(folder, home, mode):
@@ -121,9 +140,7 @@ def main():
             raise RuntimeError('Đang có một lần cài gói Việt khác. Chờ tác vụ đó hoàn tất.') from exc
         spec = json.loads((HERE / 'sdk_lock.json').read_text())
         cache = folder / 'downloads'
-        incomplete = sorted(p for p in folder.glob('vieneu-3.8.3-' + args.mode + '-*')
-                            if (p / '.incomplete').is_file() and not (p / 'ready.json').exists())
-        home = incomplete[-1] if incomplete else folder / ('vieneu-3.8.3-' + args.mode + '-' + uuid.uuid4().hex[:10])
+        home = staging_home(folder, args.mode)
         runtime = home / 'runtime'
         runtime.mkdir(parents=True, exist_ok=True)
         (home / '.incomplete').touch()
@@ -133,8 +150,9 @@ def main():
             env.pop(name, None)
         success = False
         try:
-            if shutil.disk_usage(folder).free < (12 if args.mode == 'gpu' else 5) * 1024**3:
-                raise RuntimeError('Cần ít nhất ' + ('12' if args.mode == 'gpu' else '5') + ' GB trống để tải và cài gói Việt.')
+            required = space_required(home, args.mode)
+            if shutil.disk_usage(folder).free < required:
+                raise RuntimeError('Cần thêm khoảng ' + str(round(required / 1024**3, 1)) + ' GB trống để tiếp tục cài gói Việt.')
             status('Đang tạo Python riêng cho tiếng Việt · không thay bộ tiếng Anh')
             embed = download(spec['python_url'], cache / 'python-3.12.10-embed-amd64.zip', spec['python_sha256'])
             extract(embed, runtime)
