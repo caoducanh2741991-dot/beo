@@ -1,0 +1,41 @@
+{
+  "version": "4.0.0.0",
+  "finished_utc": "2026-11-01T15:09:24.645948+00:00",
+  "counts": {
+    "Reno300Tests": 62,
+    "Acoustic300Tests": 11,
+    "RenderProgressTests": 30,
+    "Workflow217Tests": 47,
+    "Recovery216Tests": 42,
+    "Sync216Tests": 27,
+    "BatchTests": 12,
+    "TwoVoiceTests": 41,
+    "VoiceReportTests": 30,
+    "PunctuationTests": 20,
+    "BreathStreamingTests": 8,
+    "TextTargetTests": 37,
+    "AudioRepairTests": 45,
+    "CommunityVoiceTests": 20,
+    "VoiceDiagnosticTests": 26,
+    "LocalAiSafetyTests": 16,
+    "AnchoredTests": 65,
+    "NativeGpuTests": 15,
+    "UpdaterTests": 21,
+    "CreatorTests": 39,
+    "CreatorTests-reopen": 3,
+    "CreatorComponentTests": 4,
+    "CreatorUiTests": 28,
+    "Reno300Tests-reopen": 3,
+    "Recovery216Tests-reopen": 8,
+    "BeoUiTests": 51
+  },
+  "CSharp_total": 711,
+  "python_gpu_policy": 11,
+  "python_worker_probe": 4,
+  "binary_sha256": {
+    "V15VoiceStudio.exe": "d60ef3594d4a8fa29a43e224620e51fb807b9520601db8f0fd01a61d6f3a0120",
+    "V15Updater.exe": "193e0f64340498c93f31283d0bb92a4a5069600fde53a3d31442a6c5820bb9d7"
+  },
+  "environment": "Mono/Linux, actual WinForms on Xvfb, real FFmpeg H264/AAC MP4 mux/decode; synthetic TTS and translation fixtures; bundled Windows audio FFmpeg is insufficient for MP4; full Windows FFmpeg not bundled",
+  "physical_Windows_or_GPU_or_real_clone_tested": false
+}

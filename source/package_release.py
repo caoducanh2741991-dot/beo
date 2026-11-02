@@ -1,4 +1,4 @@
-"""Package the compiled 3.1.0 binaries and sources; include new community data once; keep installed runtimes and other models."""
+"""Package the compiled 4.0.0 binaries and sources; include new community data once; keep installed runtimes and other models."""
 from pathlib import Path
 import hashlib
 import shutil
@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "3.1.0"
+VERSION = "4.0.0"
 WITH_COMMUNITY = "--with-community" in sys.argv
 
 def main():
@@ -25,21 +25,23 @@ def main():
         ignored = set(shutil.ignore_patterns("__pycache__", "*.pyc", ".*", "validation-*")(folder, names))
         if not WITH_COMMUNITY and Path(folder).resolve() == (ROOT / "source/community/rvc").resolve():
             ignored.update({"weights", "deps", "sample.wav"})
+        if Path(folder).resolve() == (ROOT / "source/creator-tools").resolve():
+            ignored.update({"ffmpeg.exe"})
         if Path(folder).resolve() == (ROOT / "source/local-ai").resolve():
             ignored.update({"model", "runtime", "downloads"})
         return ignored
     shutil.copytree(ROOT / "source", payload / "source", ignore=source_ignore)
-    shutil.copytree(ROOT / "validation", payload / "source" / "validation-3.1.0", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
+    shutil.copytree(ROOT / "validation", payload / "source" / "validation-4.0.0", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
     guide = ROOT / ("HUONG_DAN_" + VERSION + ".txt")
     shutil.copyfile(guide, payload / guide.name)
-    manifest = ET.Element("update", product="V15VoiceStudio", version="3.1.0", kind="core", space=str(3 * sum(p.stat().st_size for p in payload.rglob("*") if p.is_file()) + 128 * 1024 * 1024))
-    assert not list((payload / "source").glob("Creator*.cs")), "Removed video feature must not ship"
+    manifest = ET.Element("update", product="V15VoiceStudio", version="4.0.0", kind="core", space=str(3 * sum(p.stat().st_size for p in payload.rglob("*") if p.is_file()) + 128 * 1024 * 1024))
+    assert len(list((payload / "source").glob("Creator*.cs"))) >= 4, "Creator implementation missing"
     for file in sorted(p for p in payload.rglob("*") if p.is_file()):
         ET.SubElement(manifest, "file", path=file.relative_to(payload).as_posix(), size=str(file.stat().st_size), sha256=hashlib.sha256(file.read_bytes()).hexdigest())
     output = ROOT.parent / ("output-" + VERSION)
     output.mkdir(exist_ok=True)
-    package = output / ("BEO_Voice_Studio_" + VERSION + ("_Update.zip" if WITH_COMMUNITY else "_Core_Update.zip"))
-    build_folder = Path(tempfile.mkdtemp(prefix="beo-release-310-"))
+    package = output / ("BEO_Voice_Studio_" + VERSION + ("_Update.zip" if WITH_COMMUNITY else "_Creator_Update.zip"))
+    build_folder = Path(tempfile.mkdtemp(prefix="beo-release-400-"))
     built = build_folder / package.name
     with zipfile.ZipFile(built, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=1) as archive:
         archive.writestr("manifest.xml", ET.tostring(manifest, encoding="utf-8", xml_declaration=True))
@@ -47,10 +49,10 @@ def main():
         archive.write(ROOT / "V15Updater.exe", "BEO_Update.exe")
         archive.write(ROOT / "source" / "CAP_NHAT.cmd", "CAP_NHAT.cmd")
         archive.write(guide, "HUONG_DAN.txt")
-        for name in ["BAO_CAO_NANG_CAP_3.1.0.txt", "KET_QUA_KIEM_THU_3.1.0.txt"]:
+        for name in ["BAO_CAO_NANG_CAP_4.0.0.txt", "KET_QUA_KIEM_THU_4.0.0.txt"]:
             if (ROOT / name).exists(): archive.write(ROOT / name, name)
         for image in sorted((ROOT / "validation").glob("beo-*.png")):
-            archive.write(image, "GIAO_DIEN_3.1.0/" + image.name)
+            archive.write(image, "GIAO_DIEN_4.0.0/" + image.name)
         for file in sorted(p for p in payload.rglob("*") if p.is_file()):
             archive.write(file, file.relative_to(ROOT).as_posix())
     shutil.copyfile(built, package)

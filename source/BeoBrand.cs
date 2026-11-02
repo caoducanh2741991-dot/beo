@@ -1,7 +1,7 @@
 using System;using System.IO;using System.Reflection;
 namespace BEO {
 public static class BeoBrand {
- public const string Name="BÉO Voice Studio",Version="3.1.0";
+ public const string Name="BÉO Voice Studio",Version="4.0.0";
  // Installation IDs, cache paths, executable names and mutex stay compatible
  // with existing 3.0/2.x installations. Branding is a display identity.
  public static void UpdateWindowsIdentity(string folder){if(Environment.OSVersion.Platform!=PlatformID.Win32NT)return;

@@ -1,0 +1,125 @@
+BÉO VOICE STUDIO 4.0.0 — CREATOR
+BẢN NÂNG CẤP KIỂM THỬ · ngày 01/11/2026
+
+DÀNH CHO QUY TRÌNH LÀM CLIP
+Video → SRT → voice → kiểm tra → gói dựng hoặc MP4.
+Trang Creator được thêm vào app đang có. TTS, clone giọng, hai giọng,
+AI Repair và hàng đợi voice vẫn dùng các module cũ.
+
+CẬP NHẬT TỪ 3.1.0 / 3.0 / 2.0.17
+1. Lưu công việc và đóng app đang chạy.
+2. Giải nén ZIP cập nhật vào một thư mục riêng.
+3. Chạy CAP_NHAT.cmd hoặc BEO_Update.exe trong thư mục vừa giải nén.
+4. Chọn ZIP/thư mục cập nhật và thư mục cài BÉO/V15 hiện có, rồi CẬP NHẬT.
+5. Mở app trong thư mục đã cài. Tiêu đề hiển thị BÉO Voice Studio 4.0.0.
+Tên executable nền vẫn là V15VoiceStudio.exe để giữ tương thích cập nhật,
+lối tắt và cache. Model, mẫu clone, giọng riêng và runtime cũ được giữ.
+Đây là core update, cần bản app đã có các bộ giọng/runtime được cài trước.
+Mã nguồn đầy đủ nằm trong payload/source của ZIP, hoặc source sau cập nhật.
+
+BẮT ĐẦU VỚI CREATOR
+1. Mở Creator → Thêm video, hoặc kéo video vào khi trang Creator đang mở.
+   Có thể thêm nhiều clip. App tìm filename.srt, filename.wav,
+   filename.final.srt cạnh video theo đúng tên gốc.
+2. Dùng Gắn file / dự án để chọn WAV, SRT cuối hoặc SRT nguồn ở nơi khác.
+   Có thể lấy kết quả từ dòng đang chọn trong Hàng đợi voice.
+   Mục Tạo voice từ SRT nguồn đưa về trang voice hiện tại.
+3. Bấm Kiểm tra clip: xem kích thước/FPS, thời lượng hình và PCM WAV,
+   chênh lệch, timecode nguồn, phụ đề đọc nhanh/dài và bằng chứng đồng bộ.
+4. Tùy chọn xuất:
+   - Gói dựng (mặc định): giữ video gốc + WAV rời + SRT để dựng tiếp.
+   - MP4 ghép voice: thay audio bằng voice, tùy chọn trộn audio gốc.
+   - Dịch đủ EN–VI: dùng Qwen offline đang cài, có cache/kiểm tra.
+     Nếu chưa có model/runtime, lỗi dịch được báo TRANSLATION_INCOMPLETE;
+     clip đó không nhận gói hoàn tất. Có thể chủ động bỏ yêu cầu Việt để
+     xuất bộ không kèm bản dịch, được ghi VI_NOT_REQUESTED.
+   - In phụ đề: chữ trắng/viền tối, tối đa hai dòng; câu dài bị báo để
+     chia SRT trước, không tự bỏ chữ hoặc viết lại lời voice.
+   - Thêm viền dọc: xuất 1080×1920, giữ trọn hình; không tự crop nội dung.
+   - Audio gốc: mặc định tắt. Khi bật trộn 0–30%, gồm cả lời thoại/nhạc
+     có sẵn; app không tự tách riêng ambience/SFX.
+   - Caption/hashtag: bản nháp do người dùng biên tập, lưu theo clip.
+5. Tick clip cần chạy → XUẤT GÓI ĐƯỢC CHỌN. Một clip lỗi không chặn clip
+   khác. Dừng tác vụ dùng nút chung; chờ tiến trình dừng rồi đóng app.
+6. Mở kết quả. Mỗi lần công bố có thư mục riêng, giữ tên file bên trong;
+   lần cũ được giữ. ZIP bên trong phẳng, không chứa thư mục con.
+
+ĐẦU RA CREATOR
+filename.mp4 (hoặc phần mở rộng video gốc trong Gói dựng)
+filename.wav
+filename.final.srt
+filename.final.vi.txt — khi đã yêu cầu và dịch đủ
+filename.caption.txt — chỉ khi có bản nháp
+filename.creator.xml — dữ liệu nguồn, hash, loại gói và trạng thái riêng
+filename.creator.zip — toàn bộ các file trên và báo cáo voice hợp lệ
+
+Nếu WAV có biên nhận render 4.0, gói sao chép đúng bộ báo cáo của lần đó:
+CHẾ ĐỘ 1 — theo file, không sửa lời: đúng 1 filename.voice-report.txt.
+CHẾ ĐỘ 2 — AI tự sửa: đúng 2 file filename.ai-before-after-report.txt và
+filename.ai-changes-en-vi.txt. Không thêm báo cáo voice thứ ba.
+Dịch đầy đủ trong Creator là bước đối chiếu clip riêng, không thay đổi
+quy tắc 1/2 báo cáo hay lời của hai chế độ render voice.
+WAV nhập ngoài thiếu báo cáo gốc sẽ không được tạo báo cáo TTS giả.
+
+ĐỒNG BỘ VÀ KIỂM TRA
+- Bằng chứng của render 4.0 lưu trong dữ liệu app, gắn đúng đường dẫn/lần
+  xuất, hash WAV, hash SRT, lời TTS và báo cáo. Hai lần render có WAV byte
+  giống nhau vẫn giữ đúng nguồn báo cáo. Không tạo file báo cáo phụ cạnh SRT.
+- WAV từ bản cũ/đã chuyển sang đường dẫn khác có thể chưa có biên nhận.
+  Hãy nghe/đối chiếu và tick xác nhận cặp nhập ngoài, hoặc render lại bằng
+  4.0. Khi tự xác nhận, trạng thái là USER_REVIEWED, không phải TTS chứng minh.
+- Xác nhận thủ công hết hiệu lực khi WAV hoặc SRT đổi byte.
+- SRT đã khác biên nhận của WAV sẽ bị chặn; tick thủ công không bỏ qua được.
+- Lệch WAV/video quá 0,150s hoặc SRT vượt video bị chặn để kiểm tra nguồn.
+  MP4 chỉ có thể căn đuôi audio trong giới hạn nhỏ đã công bố này, không
+  tăng tốc video/voice, loop hình hoặc chèn khoảng lặng dài.
+- Kiểm tra >60s chỉ là cảnh báo thời lượng. Không kéo dài clip để làm đạt.
+- Cột timecode là mốc SRT, không phải số đo âm thanh riêng từng cue.
+  Không có karaoke hay forced alignment mới trong bản này.
+- Bản Việt kiểm tra cấu trúc, số liệu và đối chiếu nghĩa bằng model;
+  vẫn cần đọc lại tên riêng, thuật ngữ và sắc thái.
+- Các ô kỹ thuật không xác nhận tính nguyên gốc, quyền sử dụng hay đủ
+  điều kiện Creator Rewards. Người dùng cần kiểm tra phần này trên TikTok.
+
+TIẾP TỤC / KHÔI PHỤC
+Dự án, đường dẫn, tùy chọn và bản dịch khớp snapshot được lưu tự động.
+Mở lại và bấm xuất: gói đạt chỉ được dùng lại nếu input/options, ZIP và các
+file đầu ra vẫn đúng hash. Clip đang làm dở được chạy lại từ đầu phần
+đóng gói của chính clip đó; các gói đã xong và cache voice không mất.
+Bản này không tiếp tục mã hóa video từ một frame dở dang. ETA cũ sau
+khởi động lại bị bỏ; % chỉ đạt 100 khi đã công bố bộ file hoàn chỉnh.
+
+THÀNH PHẦN MP4 TRÊN WINDOWS
+FFmpeg audio đang kèm app vẫn giữ nguyên. Gói dựng đã thử với đúng tập
+thành phần này và không đòi bộ video đầy đủ.
+MP4 cần FFmpeg Windows static có AAC encoder và MP4 muxer; in chữ/đổi
+khung cần libx264, libass/ass, scale/pad. Lấy bản từ nguồn tin cậy; trang
+của dự án FFmpeg: https://ffmpeg.org/download.html
+Trong Creator chọn Thành phần video → ffmpeg.exe. App kiểm tra khả năng
+và chạy lại bản sao trong thư mục riêng trước khi thay thành phần video.
+Thiếu codec được báo trước khi gọi Qwen dịch. Không thay FFmpeg audio,
+không tải model/video runtime tự động khi bấm xuất.
+Bộ FFmpeg video Windows đầy đủ KHÔNG được kèm trong ZIP core update này.
+Mã hóa hình dùng CPU; giữ H264 nguyên luồng khi không in chữ/đổi khung.
+MP4 cuối được probe và giải mã toàn bộ để kiểm tra, không chỉ kiểm độ dài.
+
+GIỚI HẠN KIỂM THỬ / PHÁT HÀNH
+EXE Windows x64 .NET 4.5 đã build; chạy WinForms trên Mono/Linux/Xvfb.
+FFmpeg MP4 thật; video tổng hợp, TTS/dịch/AI dùng fixture.
+Chưa xác nhận Windows vật lý, RTX2070, voice clone và Qwen thật.
+Vì vậy bản Creator 4.0 này là bản kiểm thử trên máy người dùng, chưa tuyên
+bố ổn định toàn bộ trên Windows. Dùng KET_QUA_KIEM_THU_4.0.0.txt để đối chiếu.
+Chức năng AI viết lại TXT đích/SRT linh hoạt và AI biên tập hook toàn bài
+chưa được thêm. Bộ sửa timeline an toàn của 3.1 vẫn giữ nguyên.
+
+NGUỒN QUY TẮC THAM KHẢO · kiểm tra ngày 01/11/2026
+https://developers.tiktok.com/docs/en/content-posting-api-media-transfer-guide
+https://newsroom.tiktok.com/introducing-the-new-creator-rewards-program
+Đây là tham chiếu cảnh báo, không tích hợp đăng bài hay xác nhận tài khoản.
+
+BUILD / TÁI CHẠY
+Windows: source/BUILD_WINDOWS.cmd.
+Kiểm thử tự động: source/validate400.py, thiết lập V15_BUILD_TOOLS và
+V15_NET45_REFS theo môi trường Mono. Ca component dùng bản FFmpeg Linux
+build bằng các switch audio trong source/media/BUILD_FFMPEG.txt, đặt tại
+build_tools/creator-audio-components/ffmpeg-8.1.3/ffmpeg cạnh thư mục dự án.

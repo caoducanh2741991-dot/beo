@@ -1,0 +1,5 @@
+PASS Same component selection as bundled audio-only FFmpeg still probes H264 MP4 by packet copy
+PASS Audio-only component build correctly reports no MP4/AAC encoder capability
+PASS Editing package works with bundled audio component set, without a full video runtime
+PASS MP4 component absence is caught before spending time or VRAM on translation
+TOTAL CREATOR COMPONENTS 4 PASS · native Linux FFmpeg built with the shipped Windows audio-only component switches; not Windows PE execution

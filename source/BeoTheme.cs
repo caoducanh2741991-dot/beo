@@ -11,7 +11,7 @@ public sealed class BeoPalette {
 }
 public sealed class BeoAppearance {
  public string Theme="system";public int Scale=100,Page=1;
- public static BeoAppearance Load(string file){var x=StateFiles.Read(file);var a=new BeoAppearance();if(x!=null){string theme=StateFiles.S(x,"theme","system");if(new[]{"system","light","dark","warm","ocean"}.Contains(theme))a.Theme=theme;int scale=StateFiles.I(x,"scale",100);if(new[]{100,110,125}.Contains(scale))a.Scale=scale;a.Page=Math.Max(0,Math.Min(6,StateFiles.I(x,"page",1)));}return a;}
+ public static BeoAppearance Load(string file){var x=StateFiles.Read(file);var a=new BeoAppearance();if(x!=null){string theme=StateFiles.S(x,"theme","system");if(new[]{"system","light","dark","warm","ocean"}.Contains(theme))a.Theme=theme;int scale=StateFiles.I(x,"scale",100);if(new[]{100,110,125}.Contains(scale))a.Scale=scale;a.Page=Math.Max(0,Math.Min(7,StateFiles.I(x,"page",1)));}return a;}
  public void Save(string file){StateFiles.Write(file,new XElement("appearance",new XAttribute("schema",1),new XAttribute("theme",Theme),new XAttribute("scale",Scale),new XAttribute("page",Page)));}
 }
 public class BeoButton:Button {

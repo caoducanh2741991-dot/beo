@@ -1,0 +1,4 @@
+PASS Separate process restores actual completed project progress
+PASS Separate process validates persisted input, ZIP hash and complete output before reuse
+PASS Separate process restores full VI snapshot bound to final English
+TOTAL CREATOR REOPEN 3 PASS

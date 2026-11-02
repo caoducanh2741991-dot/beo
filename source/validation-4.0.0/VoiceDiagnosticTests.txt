@@ -1,0 +1,27 @@
+PASS TTS failure fixture stops export
+PASS TTS failure records exact phase/current unit/stage instead of blaming timeline
+PASS Report retains full exception chain and native/process codes
+PASS All stages planned upfront retain pass/error/unvisited states
+PASS Pending stage retains complete narration without fabricated measurements
+PASS Incomplete TTS never receives a fake zero or timeline diagnosis
+PASS Cancellation preserves completed and untouched stages
+PASS Missing model reports all planned stages as unvisited
+PASS Existing audio outside stage limits is classified as timeline mismatch
+PASS Unclamped required speed is distinct from bounded actual attempts
+PASS Last trial retains measured positive overflow separately from chosen best
+PASS Too-short stage retains unconstrained estimate and measured underflow
+PASS Custom-punctuation/breath stage fixture succeeds
+PASS TTS, explicit inner/inter-unit pauses and breath sum to actual prefit PCM
+PASS App-inserted pauses and breaths are measured separately without double counting
+PASS Source unit audio and pauses measured; final grouped-unit times remain unknown
+PASS Real tempo subprocess failure retains exit code/log and exact phase
+PASS Failed atempo retains initial estimate without inventing completed output
+PASS Normalization failure is distinct from successful TTS/fitting and unpublished WAV
+PASS Actual overlapping PCM write is reported as assembly failure
+PASS Output publication error preserves report beside source and correct diagnosis
+PASS Recovered worker fixture publishes a real WAV
+PASS Recovered TTS subprocess remains successful; missing translator has its own incomplete status
+PASS Natural TXT does not invent a required timeline speed
+PASS Legacy pause-compression fixture renders
+PASS Legacy speed estimate uses measured post-pause-compression input and real fit budget
+TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics 9920dcc0f03841ec997f678c16a50e24

@@ -1,0 +1,49 @@
+PASS Real existing workflow renders fixture WAV/SRT through FFmpeg and publisher
+INFO · VIDEO_MEASURED · 360 × 640 · 6.500s · h264 · 30 fps
+WARN · CREATOR_DURATION · Video không dài hơn 1 phút; không tự kéo dài hình hoặc chèn im lặng.
+INFO · SRT_PARSED · 2 cue · kết thúc 00:00:06,500 · mốc SRT không phải forced alignment
+INFO · SOURCE_TIMELINE · Mốc nguồn và SRT cuối khớp từng cue.
+INFO · WAV_MEASURED · 6.500s · PCM mono 24 kHz/16-bit
+INFO · DURATION_SYNC · WAV − video = 0.000s · giới hạn ghép 0,150s. Không đổi tốc độ hình/voice.
+INFO · TTS_TEXT_VERIFIED · SRT khớp chính xác lời đã gửi TTS và hash WAV/SRT của lần render 4.0. Chưa xác nhận phát âm bằng ASR.
+WARN · TRANSLATION_PENDING · Xuất gói sẽ dịch đủ cue bằng Qwen offline và kiểm tra; thiếu bản dịch sẽ dừng gói này.
+WARN · CONTENT_REVIEW · Cần tự xác nhận nguồn hình/nhạc và tính nguyên gốc. Kiểm tra kỹ thuật không xác nhận điều kiện kiếm tiền.
+PASS Publisher receipt verifies exact TTS wording and WAV/SRT hash without manual checkbox
+PASS Actual FFmpeg probe measures source video dimensions, FPS, duration and audio
+PASS A short clip warns about duration and never claims reward eligibility
+PASS Original SRT timeline is compared against the published final SRT
+PASS Editing package is committed only after ZIP and all files are verified
+PASS Full bilingual review translates and verifies every cue, not just AI changed cues
+PASS Creator ZIP is flat and has no duplicate or subfolder entries
+PASS All exported components retain the original video basename
+PASS Mode 1 package keeps exactly its original one voice report
+PASS Bilingual file contains exact English used for TTS and nonempty validated Vietnamese fixture
+PASS Manifest keeps technical sync separate from unassessed content eligibility and cue alignment
+PASS Progress reports 100 only after complete directory publication
+PASS Matching complete checkpoint is reused without rebuilding successful clip
+PASS Resume reuses measured completed clip and translation without extra model calls
+PASS Actual FFmpeg muxes, burns readable subtitles and decodes full MP4 for verification
+PASS Exported MP4 has H264/AAC and matches source duration
+PASS MP4 export preserves original SRT, final English and previous successful ZIP
+PASS 9:16 pad preset creates real 1080×1920 video without stretching timeline
+PASS Failed full translation publishes neither placeholder VI nor completed package
+PASS A later independent clip can complete after translation failure
+PASS Cancellation cleans staging and retains no partial successful output
+PASS Failure before publication removes staged video, ZIP and sidecars together
+PASS Editing final SRT after render is detected even if external-review checkbox is ticked
+PASS Unrelated/imported WAV is never certified using an arbitrary SRT
+PASS Explicit external pair review is labeled human reviewed, not automatic TTS proof
+PASS Large WAV/video mismatch is blocked rather than hidden by shortest/padding/speed change
+PASS Missing Vietnamese cue invalidates complete-translation status
+PASS Restart keeps interrupted progress and invalidates stale ETA
+PASS Probe parser uses input media metadata, never output metadata
+PASS Audio-only bundled FFmpeg cannot masquerade as video export runtime
+PASS Burn-in refuses overflowing captions instead of dropping words
+PASS ASS text cannot inject drawing/style instructions
+PASS Resume rejects a modified loose WAV even when its ZIP remains intact
+PASS Human review expires when WAV bytes change even with the same duration
+PASS FFmpeg progress callback failure becomes a recoverable job error, not an unhandled process-thread crash
+PASS Mode 2 Creator bundle preserves exactly before/after plus changed-cue bilingual reports
+PASS Identical WAV bytes from another render mode cannot replace this run’s report provenance
+PASS Checkpoint rejects a modified ZIP rather than skipping work
+TOTAL CREATOR 39 PASS · real FFmpeg; synthetic voice/translation; no physical Windows or GPU claims

@@ -1,0 +1,49 @@
+PASS Mode 1 succeeds with exactly one user-facing report
+PASS Mode 1 calls neither rewrite nor translation AI
+PASS Mode 1 reads source bytes, not stale or edited queue wording
+PASS Mode 1 does not emit old AI/VI sidecar reports
+PASS Each repeated run reserves one new common basename without overwriting an earlier report
+PASS Mode 1 timing failure still ends with exactly one report and no AI edits
+PASS A failed file is reported without silently publishing an invalid WAV
+PASS Mode 2 safe measured repair completes with exactly two reports
+PASS Safe measured repair is accepted unattended, without a human confirmation step
+PASS Applied TTS wording, final SRT and preserved original source agree
+PASS Final WAV verification maps the repaired TTS request back to its actual cue
+PASS Short bilingual report contains only the actual changed cue, original EN, used EN and real VI fixture
+PASS Detailed report compares actual before/after measurements and repair attempts
+PASS Only changed cues are translated and verified; unchanged script is not sent for translation
+PASS Mode 2 does not leave a third old-style report
+PASS A partial two-report publication rolls back reports and WAV atomically
+PASS Failed VI translation preserves a verified WAV and exactly two reports with incomplete status
+PASS A missing Vietnamese translation cannot be replaced by fabricated bilingual text
+PASS Mode 2 without duration errors writes two reports but needlessly rewrites/translates no cues
+PASS The quick report explicitly says zero applied changes
+PASS Repeated original AI output ends unattended with two failure reports after different strategies
+PASS Unaccepted or failed proposals never appear as successfully changed cues
+PASS An unrepaired stage preserves another successful measured stage
+PASS Unattended mode tries another strategy after an uncertain proposal, then accepts only the safe measured one
+PASS Invented facts cannot become automatically applied wording
+PASS Engine error produces the correct report count and useful cause in mode 1
+PASS Engine error produces the correct report count and useful cause in mode 2
+PASS Cancellation ends with the selected report count in mode 1
+PASS Cancellation ends with the selected report count in mode 2
+PASS Invalid source input still gets the selected report count in mode 1
+PASS Invalid source input still gets the selected report count in mode 2
+PASS Changing the workflow/review choice reuses compatible measured PCM rather than discarding prior progress
+PASS Queue persists the two-mode choice and short report path across restart
+PASS Old approve-first preferences migrate to the non-rewriting mode, never to silent automatic approval
+PASS Natural TXT remains unchanged and emits the correct report count in mode 1
+PASS Natural TXT remains unchanged and emits the correct report count in mode 2
+PASS van 4 mode 1 completes every synthetic stage with exactly one report
+PASS van 4 mode 2 emits two new reports and invokes no language model for unchanged passing cues
+PASS van 4 final SRT preserves every English word and source timecode in both modes
+PASS van 5 mode 1 completes every synthetic stage with exactly one report
+PASS van 5 mode 2 emits two new reports and invokes no language model for unchanged passing cues
+PASS van 5 final SRT preserves every English word and source timecode in both modes
+PASS van 6 mode 1 completes every synthetic stage with exactly one report
+PASS van 6 mode 2 emits two new reports and invokes no language model for unchanged passing cues
+PASS van 6 final SRT preserves every English word and source timecode in both modes
+PASS Genuine VAN6 cue5–8 shortage ends unattended with exactly two reports, without crashing or repeated TTS trials
+PASS VAN6 reports identify the exact blocked timeline and retain ten successful PCM measurements
+TOTAL WORKFLOW217 47 PASS. Synthetic TTS/rewriter/translator; actual FFmpeg; no physical Windows or GPU claim.
+Outputs: /tmp/workflow217 6fbbd1132331446ea5336ab190bddbe8
