@@ -1,0 +1,74 @@
+V15 VOICE STUDIO 3.0.0 — THAY ĐỔI VÀ NGUYÊN NHÂN ĐÃ SỬA
+Ngày: 01/11/2026 (Asia/Saigon). Nâng trực tiếp từ 2.0.17.
+
+1. KHÓA NGHĨA NHẬN NHẦM VIẾT TẮT LÀ TÊN RIÊNG
+Bộ nhận dạng chữ viết hoa trước đây coi “We'd” ở đầu câu như tên nhân vật.
+Việc mở rộng “We had already spent...” có thể bị chặn dù giữ nguyên nghĩa.
+Bản 3.0.0 chuẩn hóa các viết tắt có nghĩa xác định trước khi đối chiếu tên.
+'d + read/cut và dạng sở hữu “Jen's expression” không bị tự đoán/mở rộng.
+
+2. SỬA THEO QUY TẮC TƯƠNG ĐƯƠNG VÀ ĐO TTS TRƯỚC KHI ÁP DỤNG
+Thêm RepairLanguage.cs: các phương án nhỏ, có thể đối chiếu qua quy tắc ngữ
+pháp/cụm tương đương; ưu tiên một cue, tối đa hai cue khi cần, tối đa sáu từ
+chênh trong phương án tự sinh. Có kiểm tra riêng từng cue trước khi đo.
+Hỗ trợ cả rút gọn và mở rộng; dùng phản hồi đo thực tế để chọn phương án kế.
+Giữ tối đa 3 thử/chặng/chính sách; không tự tăng vòng lặp. Phương án chỉ được
+áp dụng khi PCM hợp lệ, thời lượng đo đạt và kiểm tra nghĩa cho phép.
+
+Không nâng mọi nhãn “equivalent” của Qwen thành an toàn. Phương án Reno 1
+đổi “ruin” thành “destroy” vẫn cần thận trọng về sắc thái; 3.0 dùng cách diễn
+đạt nhỏ hơn như “we would ...” và đo lại. Không khẳng định máy bảo đảm nghĩa 100%.
+
+3. CHẶN MỆNH ĐỀ/THÔNG TIN MỚI
+Các phương án Reno 2 thêm “the shelves were neatly organized/arranged” và
+Reno 3 thêm trạng thái “completely indifferent to the chaos” bị chặn trước
+TTS thử, kể cả báo cáo 2.0.17 ghi Qwen tự chấm “equivalent”.
+Giữ khóa số, tên, timeline, giọng A/B, phủ định, thứ tự và quan hệ sự kiện.
+Cách diễn đạt ngoài phạm vi kiểm chứng có giới hạn tiếp tục NEEDS_REVIEW.
+
+4. THỐNG NHẤT ĐO THỬ VÀ RENDER
+Đưa cân nghỉ hợp lệ về một hàm dùng chung cho AiTimeline và AnchoredVoice.
+Chế độ 1 cũng cân được thiếu nhẹ bằng nghỉ app, giữ nguyên lời, không gọi AI.
+Ghi số đo trước cân nghỉ và sau cân, không coi cân nghỉ là AI sửa nội dung.
+Giữ giới hạn tốc độ và giới hạn nghỉ; không đệm im lặng dài.
+
+5. KHÔI PHỤC VÀ BÁO CÁO KHI DỪNG/LỖI
+Lưu chặng/bước đang chạy trong session. Khi dừng lúc chuẩn bị AI, tạo Voice
+Report từ dữ liệu session thực thay vì một báo cáo mới không có số đo.
+Reno 3 replay giữ 8 chặng đạt, 1 chặng chưa đạt, 10 chưa có số đo; mô phỏng
+dừng ở chặng 10 được ghi riêng, không xóa kết quả của 9 chặng trước.
+Bắt cả RepairPendingException từ đường gọi cũ tại phạm vi job và chuyển về
+NEEDS_REVIEW; giữ checkpoint, ghi stack và không để nó hủy cả batch.
+
+6. TRẠNG THÁI VÀ SỐ ĐẾM
+Thêm RenderStatus.cs dùng chung: TIMELINE_MISMATCH -> NEEDS_REVIEW,
+CANCELLED -> CANCELLED; lỗi TTS/model khác lỗi xử lý audio. Giữ mã nguyên nhân
+và stack để chẩn đoán. Tổng trạng thái chặng bao gồm PASS, NEEDS_REVIEW,
+ENGINE_ERROR, RENDER_FAILED, CANCELLED, UNMEASURED và IN_PROGRESS; tổng đếm
+phải bằng số chặng. Không bỏ các chặng NEEDS_REVIEW khỏi footer.
+Dịch không cần thiết ghi NOT_REQUIRED, không giả báo thiếu dịch ở chế độ 1.
+
+7. CACHE CŨ VÀ BẰNG CHỨNG ĐO
+Giữ chữ ký PCM tương thích. Đề xuất cũ được kiểm tra lại bằng chính sách 3.0,
+không tin cờ 'safe' cũ khi có tình tiết mới. Giữ lịch sử cũ và audio hợp lệ;
+chính sách mới có giới hạn 3 lần riêng, lưu bền qua lần mở ứng dụng tiếp theo.
+Checkpoint chỉ có tổng nghỉ không bị gán thành số đo riêng nghỉ trong/giữa
+đơn vị. Thiết bị đã ghi trong session được đưa vào báo cáo checkpoint.
+
+8. GIỮ HAI CHẾ ĐỘ VÀ FILE ĐẦU RA
+Chế độ 1: đúng một báo cáo. Chế độ 2: đúng hai báo cáo; báo cáo ngắn chỉ gồm
+câu đã áp dụng, EN gốc/EN dùng/VI thật. Lời final.srt khớp dữ liệu TTS. Giữ
+SRT gốc, timecode và các bộ kết quả cũ. Không thêm nút duyệt/sửa/resume vào
+luồng tự động. Giữ các trang voice clone, thư viện giọng và định tuyến A/B.
+Các worker/engine TTS, GPU và xử lý audio nền liệt kê trong kết quả kiểm thử
+được kiểm tra byte hash không đổi so với 2.0.17.
+
+GIỚI HẠN CÒN LẠI
+Bản build Windows đã được tạo và chạy kiểm thử trên Mono/Linux; chưa chạy
+trên Windows vật lý với Steven/RTX 2070. Các phép đo trong báo cáo Reno cũ
+là dữ liệu replay; không phải audio Steven được đo lại ở 3.0.0. Chưa thể kết
+luận mọi chặng Reno/VAN sẽ đạt với giọng và cấu hình trên máy người dùng.
+Qwen và dịch offline giữ module hiện có; lượt kiểm thử 3.0 dùng provider giả
+lập và bản dịch fixture có nội dung thật, chưa chạy model Qwen thật ở lượt này.
+Những câu thiếu căn cứ ngữ nghĩa vẫn có thể NEEDS_REVIEW và không xuất WAV.
+AI viết lại TXT theo thời lượng đích/SRT linh hoạt chưa được mở rộng ở bản này.

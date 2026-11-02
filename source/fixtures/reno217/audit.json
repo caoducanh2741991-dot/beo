@@ -1,0 +1,3383 @@
+{
+  "provenance": "Replay extracted from actual user 2.0.17 reports. No voice audio is included. Reconstructed SRT is not an original-byte copy.",
+  "cases": [
+    {
+      "name": "reno 1",
+      "cues": [
+        {
+          "id": 1,
+          "start": 0.0,
+          "end": 3.705,
+          "text": "A contractor wanted forty-two thousand dollars for our basement bathroom."
+        },
+        {
+          "id": 2,
+          "start": 3.705,
+          "end": 7.41,
+          "text": "For Jen and me, that price was completely out of reach."
+        },
+        {
+          "id": 3,
+          "start": 7.41,
+          "end": 11.115,
+          "text": "He actually laughed when he saw the shock on our faces."
+        },
+        {
+          "id": 4,
+          "start": 11.115,
+          "end": 14.82,
+          "text": "Worse, he bet we'd give up within just two weeks."
+        },
+        {
+          "id": 5,
+          "start": 14.82,
+          "end": 18.525,
+          "text": "He was sure we'd ruin the floor and beg for help."
+        },
+        {
+          "id": 6,
+          "start": 18.525,
+          "end": 22.23,
+          "text": "We left that meeting with something we desperately wanted to prove."
+        },
+        {
+          "id": 7,
+          "start": 22.23,
+          "end": 25.935,
+          "text": "We'd already spent our savings on this old mountain home."
+        },
+        {
+          "id": 8,
+          "start": 25.935,
+          "end": 29.64,
+          "text": "Another enormous loan? There was simply no way we could afford it."
+        },
+        {
+          "id": 9,
+          "start": 29.64,
+          "end": 33.345,
+          "text": "Our marriage was about to face a pretty serious test."
+        },
+        {
+          "id": 10,
+          "start": 33.345,
+          "end": 37.05,
+          "text": "I'd be on my knees doing the exhausting part all day."
+        },
+        {
+          "id": 11,
+          "start": 37.05,
+          "end": 40.755,
+          "text": "Meanwhile, Jen watched from her tiny wooden stool, smiling at me."
+        },
+        {
+          "id": 12,
+          "start": 40.755,
+          "end": 44.46,
+          "text": "Somehow, her jokes kept us both going through those long days."
+        },
+        {
+          "id": 13,
+          "start": 44.46,
+          "end": 48.165,
+          "text": "But we weren't taking on this challenge just for our pride."
+        },
+        {
+          "id": 14,
+          "start": 48.165,
+          "end": 51.87,
+          "text": "Jen's parents were coming to stay with us for the holidays."
+        },
+        {
+          "id": 15,
+          "start": 51.87,
+          "end": 55.575,
+          "text": "Her mom struggled with arthritis, especially during those freezing winter mornings."
+        },
+        {
+          "id": 16,
+          "start": 55.575,
+          "end": 59.28,
+          "text": "We wanted her mornings here to feel warm and comfortable."
+        },
+        {
+          "id": 17,
+          "start": 59.28,
+          "end": 62.985,
+          "text": "So we installed heated floors and saved six thousand in labor."
+        },
+        {
+          "id": 18,
+          "start": 62.985,
+          "end": 66.69,
+          "text": "Just last year, Jen was afraid to touch any power tool."
+        },
+        {
+          "id": 19,
+          "start": 66.69,
+          "end": 70.395,
+          "text": "Some relatives doubted she'd ever become a confident home builder."
+        },
+        {
+          "id": 20,
+          "start": 70.395,
+          "end": 74.1,
+          "text": "Now she handled the wet saw better than anyone I'd seen."
+        },
+        {
+          "id": 21,
+          "start": 74.1,
+          "end": 77.805,
+          "text": "Every successful cut felt like another answer to their doubts."
+        },
+        {
+          "id": 22,
+          "start": 77.805,
+          "end": 81.51,
+          "text": "But confidence alone couldn't make those next few days easy."
+        },
+        {
+          "id": 23,
+          "start": 81.51,
+          "end": 85.215,
+          "text": "Our knees hurt, and construction dust seemed to follow us everywhere."
+        },
+        {
+          "id": 24,
+          "start": 85.215,
+          "end": 88.92,
+          "text": "Yet that empty concrete basement finally started feeling like a home."
+        },
+        {
+          "id": 25,
+          "start": 88.92,
+          "end": 92.625,
+          "text": "Late at night, I was still carefully measuring and mixing materials."
+        },
+        {
+          "id": 26,
+          "start": 92.625,
+          "end": 96.33,
+          "text": "One careless mistake could wipe out several entire days of progress."
+        },
+        {
+          "id": 27,
+          "start": 96.33,
+          "end": 100.035,
+          "text": "We had no money left for expensive do-overs or extra help."
+        },
+        {
+          "id": 28,
+          "start": 100.035,
+          "end": 103.74000000000001,
+          "text": "Even when we were exhausted, neither of us wanted to quit."
+        },
+        {
+          "id": 29,
+          "start": 103.74000000000001,
+          "end": 107.445,
+          "text": "We carried the heaviest loads and kept moving forward together."
+        },
+        {
+          "id": 30,
+          "start": 107.445,
+          "end": 111.15,
+          "text": "The next morning, Jen's huge smile said we were finally winning."
+        },
+        {
+          "id": 31,
+          "start": 111.15,
+          "end": 114.85499999999999,
+          "text": "For a moment, we actually felt like professional home renovation experts."
+        },
+        {
+          "id": 32,
+          "start": 114.85499999999999,
+          "end": 118.56,
+          "text": "Of course, that was when another tiny problem suddenly appeared."
+        },
+        {
+          "id": 33,
+          "start": 118.56,
+          "end": 122.265,
+          "text": "To anyone else, the new bathroom already looked completely finished."
+        },
+        {
+          "id": 34,
+          "start": 122.265,
+          "end": 125.97,
+          "text": "But Jen could spot one almost invisible gap from across the room."
+        },
+        {
+          "id": 35,
+          "start": 125.97,
+          "end": 129.675,
+          "text": "Funny how building something yourself makes you notice every tiny flaw."
+        },
+        {
+          "id": 36,
+          "start": 129.675,
+          "end": 133.38,
+          "text": "Luckily, that particular problem was simple enough to fix ourselves."
+        },
+        {
+          "id": 37,
+          "start": 133.38,
+          "end": 137.085,
+          "text": "In a house from the seventies, even the walls fight back."
+        },
+        {
+          "id": 38,
+          "start": 137.085,
+          "end": 140.79,
+          "text": "Nothing fit neatly against all those uneven, crooked old surfaces."
+        },
+        {
+          "id": 39,
+          "start": 140.79,
+          "end": 144.495,
+          "text": "So we decided custom wooden cabinets were our only real answer."
+        },
+        {
+          "id": 40,
+          "start": 144.495,
+          "end": 148.2,
+          "text": "Cutting into that beautiful finished wood still made my stomach drop."
+        },
+        {
+          "id": 41,
+          "start": 148.2,
+          "end": 151.905,
+          "text": "One wrong move would mean starting the whole piece over tomorrow."
+        },
+        {
+          "id": 42,
+          "start": 151.905,
+          "end": 155.61,
+          "text": "But then the tall cabinet finally slid perfectly into its corner."
+        },
+        {
+          "id": 43,
+          "start": 155.61,
+          "end": 159.315,
+          "text": "Suddenly, even that old stone wall looked warm and beautiful."
+        },
+        {
+          "id": 44,
+          "start": 159.315,
+          "end": 163.02,
+          "text": "Even the drawers fit neatly around those awkward hidden plumbing pipes."
+        },
+        {
+          "id": 45,
+          "start": 163.02,
+          "end": 166.725,
+          "text": "Remember that contractor who insisted we'd never finish this bathroom?"
+        },
+        {
+          "id": 46,
+          "start": 166.725,
+          "end": 170.43,
+          "text": "We saved thirty-five thousand dollars and built something we genuinely loved."
+        },
+        {
+          "id": 47,
+          "start": 170.43,
+          "end": 174.135,
+          "text": "Then our toughest little inspector unexpectedly walked into the finished room."
+        },
+        {
+          "id": 48,
+          "start": 174.135,
+          "end": 177.977,
+          "text": "Otis, our little pug, sat down like he officially approved."
+        }
+      ],
+      "file_stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "measure": {
+            "tts": 13.448,
+            "pauses": 0.095,
+            "breaths": 0.208,
+            "natural": 13.751,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.926
+          },
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "measure": {
+            "tts": 12.677,
+            "pauses": 0.1,
+            "breaths": 0.254,
+            "natural": 13.03,
+            "after": 14.453,
+            "target": 14.82,
+            "delta": -0.367,
+            "speed": 0.9
+          },
+          "attempts": []
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "measure": {
+            "tts": 14.582,
+            "pauses": 0.093,
+            "breaths": 0.286,
+            "natural": 14.962,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 1.007
+          },
+          "attempts": []
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "measure": {
+            "tts": 13.912,
+            "pauses": 0.098,
+            "breaths": 0.315,
+            "natural": 14.325,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.965
+          },
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "measure": {
+            "tts": 13.159,
+            "pauses": 0.107,
+            "breaths": 0.208,
+            "natural": 13.475,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.909
+          },
+          "attempts": []
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "measure": {
+            "tts": 14.386,
+            "pauses": 0.097,
+            "breaths": 0.254,
+            "natural": 14.736,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.993
+          },
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "measure": {
+            "tts": 14.615,
+            "pauses": 0.08,
+            "breaths": 0.286,
+            "natural": 14.981,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 1.011
+          },
+          "attempts": []
+        },
+        {
+          "number": 8,
+          "ids": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "measure": {
+            "tts": 14.357,
+            "pauses": 0.123,
+            "breaths": 0.315,
+            "natural": 14.795,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.998
+          },
+          "attempts": []
+        },
+        {
+          "number": 9,
+          "ids": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "measure": {
+            "tts": 14.899,
+            "pauses": 0.098,
+            "breaths": 0.208,
+            "natural": 15.205,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 1.026
+          },
+          "attempts": []
+        },
+        {
+          "number": 10,
+          "ids": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "measure": {
+            "tts": 14.606,
+            "pauses": 0.099,
+            "breaths": 0.254,
+            "natural": 14.959,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 1.009
+          },
+          "attempts": []
+        },
+        {
+          "number": 11,
+          "ids": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "measure": {
+            "tts": 14.343,
+            "pauses": 0.094,
+            "breaths": 0.286,
+            "natural": 14.723,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.993
+          },
+          "attempts": []
+        },
+        {
+          "number": 12,
+          "ids": [
+            45,
+            46,
+            47,
+            48
+          ],
+          "measure": {
+            "tts": 16.593,
+            "pauses": 0.093,
+            "breaths": 0.315,
+            "natural": 17.002,
+            "after": 14.957,
+            "target": 14.957,
+            "delta": 0.0,
+            "speed": 1.137
+          },
+          "attempts": []
+        }
+      ],
+      "auto_stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "measure": {
+            "tts": 13.448,
+            "pauses": 0.095,
+            "breaths": 0.208,
+            "natural": 13.751,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.926
+          },
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "measure": {
+            "tts": 12.677,
+            "pauses": 0.1,
+            "breaths": 0.254,
+            "natural": 13.03,
+            "after": 14.453,
+            "target": 14.82,
+            "delta": -0.367,
+            "speed": 0.9
+          },
+          "attempts": [
+            {
+              "number": 1,
+              "strategy": "MINIMAL_ONE_CUE",
+              "code": "NO_NEW_TEXT",
+              "cues": [
+                {
+                  "id": 5,
+                  "text": "He was sure we'd ruin the floor and beg for help."
+                },
+                {
+                  "id": 6,
+                  "text": "We left that meeting with something we desperately wanted to prove."
+                },
+                {
+                  "id": 7,
+                  "text": "We'd already spent our savings on this old mountain home."
+                },
+                {
+                  "id": 8,
+                  "text": "Another enormous loan? There was simply no way we could afford it."
+                }
+              ],
+              "measure": null,
+              "model_verdict": ""
+            },
+            {
+              "number": 2,
+              "strategy": "SYNTACTIC_EQUIVALENT",
+              "code": "SEMANTIC_REVIEW_REQUIRED",
+              "cues": [
+                {
+                  "id": 5,
+                  "text": "He was certain we'd destroy the floor and beg for assistance."
+                },
+                {
+                  "id": 6,
+                  "text": "We left that meeting with something we desperately wanted to prove."
+                },
+                {
+                  "id": 7,
+                  "text": "We'd already spent our savings on this old mountain home."
+                },
+                {
+                  "id": 8,
+                  "text": "Another enormous loan? There was simply no way we could afford it."
+                }
+              ],
+              "measure": {
+                "tts": 12.902,
+                "pauses": 0.204,
+                "breaths": 0.254,
+                "natural": 13.36,
+                "after": 14.82,
+                "target": 14.82,
+                "delta": 0.0,
+                "speed": 0.9
+              },
+              "model_verdict": "equivalent"
+            },
+            {
+              "number": 3,
+              "strategy": "LOCAL_PARAPHRASE_REVIEW",
+              "code": "NO_NEW_TEXT",
+              "cues": [
+                {
+                  "id": 5,
+                  "text": "He was sure we'd ruin the floor and beg for help."
+                },
+                {
+                  "id": 6,
+                  "text": "We left that meeting with something we desperately wanted to prove."
+                },
+                {
+                  "id": 7,
+                  "text": "We'd already spent our savings on this old mountain home."
+                },
+                {
+                  "id": 8,
+                  "text": "Another enormous loan? There was simply no way we could afford it."
+                }
+              ],
+              "measure": null,
+              "model_verdict": ""
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "measure": {
+            "tts": 14.582,
+            "pauses": 0.093,
+            "breaths": 0.286,
+            "natural": 14.962,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 1.007
+          },
+          "attempts": []
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "measure": {
+            "tts": 13.912,
+            "pauses": 0.098,
+            "breaths": 0.315,
+            "natural": 14.325,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.965
+          },
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "measure": {
+            "tts": 13.159,
+            "pauses": 0.107,
+            "breaths": 0.208,
+            "natural": 13.475,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.909
+          },
+          "attempts": []
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "measure": {
+            "tts": 14.386,
+            "pauses": 0.097,
+            "breaths": 0.254,
+            "natural": 14.736,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.993
+          },
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "measure": {
+            "tts": 14.615,
+            "pauses": 0.08,
+            "breaths": 0.286,
+            "natural": 14.981,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 1.011
+          },
+          "attempts": []
+        },
+        {
+          "number": 8,
+          "ids": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "measure": {
+            "tts": 14.357,
+            "pauses": 0.123,
+            "breaths": 0.315,
+            "natural": 14.795,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.998
+          },
+          "attempts": []
+        },
+        {
+          "number": 9,
+          "ids": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "measure": {
+            "tts": 14.899,
+            "pauses": 0.098,
+            "breaths": 0.208,
+            "natural": 15.205,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 1.026
+          },
+          "attempts": []
+        },
+        {
+          "number": 10,
+          "ids": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "measure": {
+            "tts": 14.606,
+            "pauses": 0.099,
+            "breaths": 0.254,
+            "natural": 14.959,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 1.009
+          },
+          "attempts": []
+        },
+        {
+          "number": 11,
+          "ids": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "measure": {
+            "tts": 14.343,
+            "pauses": 0.094,
+            "breaths": 0.286,
+            "natural": 14.723,
+            "after": 14.82,
+            "target": 14.82,
+            "delta": 0.0,
+            "speed": 0.993
+          },
+          "attempts": []
+        },
+        {
+          "number": 12,
+          "ids": [
+            45,
+            46,
+            47,
+            48
+          ],
+          "measure": {
+            "tts": 16.593,
+            "pauses": 0.093,
+            "breaths": 0.315,
+            "natural": 17.002,
+            "after": 14.957,
+            "target": 14.957,
+            "delta": 0.0,
+            "speed": 1.137
+          },
+          "attempts": []
+        }
+      ],
+      "auto_status": "NEEDS_REVIEW",
+      "reports": [
+        {
+          "name": "reno 1 (2).voice-report.txt",
+          "sha256": "02418d94f5a9fbb15ad70e03007f5891e61d1523b8f39d5dd61d70fcb46293f7"
+        },
+        {
+          "name": "reno 1.ai-before-after-report.txt",
+          "sha256": "526236ed7ba98e64bf09b5a3062a01414b0e27d77837e12c65168f550fbee109"
+        },
+        {
+          "name": "reno 1.ai-changes-en-vi.txt",
+          "sha256": "1c98c12dbf8ca548233eddf7553285fc4e49ee0bab289d31342cb260286756bc"
+        }
+      ]
+    },
+    {
+      "name": "reno 2",
+      "cues": [
+        {
+          "id": 1,
+          "start": 0.0,
+          "end": 3.75,
+          "text": "Our biggest marriage test came with these enormous wooden cabinets."
+        },
+        {
+          "id": 2,
+          "start": 3.75,
+          "end": 7.5,
+          "text": "And one broken bedroom doorframe nearly ruined everyone's good mood."
+        },
+        {
+          "id": 3,
+          "start": 7.5,
+          "end": 11.25,
+          "text": "Jen and I had spent eight exhausting months living upstairs."
+        },
+        {
+          "id": 4,
+          "start": 11.25,
+          "end": 15.0,
+          "text": "An old air mattress was still serving as our bed."
+        },
+        {
+          "id": 5,
+          "start": 15.0,
+          "end": 18.75,
+          "text": "Now we were finally building a real bedroom downstairs together."
+        },
+        {
+          "id": 6,
+          "start": 18.75,
+          "end": 22.5,
+          "text": "Our friends thought ordering those giant flat-pack wardrobes was crazy."
+        },
+        {
+          "id": 7,
+          "start": 22.5,
+          "end": 26.25,
+          "text": "Just getting the heavy boxes downstairs almost finished us both."
+        },
+        {
+          "id": 8,
+          "start": 26.25,
+          "end": 30.0,
+          "text": "Those thick wooden panels weighed far more than we'd ever expected."
+        },
+        {
+          "id": 9,
+          "start": 30.0,
+          "end": 33.75,
+          "text": "I promised Jen I'd be the gentleman taking the heavier side."
+        },
+        {
+          "id": 10,
+          "start": 33.75,
+          "end": 37.5,
+          "text": "Naturally, she finished first while I was still struggling badly."
+        },
+        {
+          "id": 11,
+          "start": 37.5,
+          "end": 41.25,
+          "text": "All I could think about were my poor, vulnerable fingers."
+        },
+        {
+          "id": 12,
+          "start": 41.25,
+          "end": 45.0,
+          "text": "On television, assembling furniture always looks incredibly fast and simple."
+        },
+        {
+          "id": 13,
+          "start": 45.0,
+          "end": 48.75,
+          "text": "Real life involved sweat, nerves, and plenty of second guesses."
+        },
+        {
+          "id": 14,
+          "start": 48.75,
+          "end": 52.5,
+          "text": "Then we finally stood the first giant wardrobe upright together."
+        },
+        {
+          "id": 15,
+          "start": 52.5,
+          "end": 56.25,
+          "text": "It cleared the ceiling vent by less than half an inch."
+        },
+        {
+          "id": 16,
+          "start": 56.25,
+          "end": 60.0,
+          "text": "Somehow, that massive wooden box slipped perfectly into its place."
+        },
+        {
+          "id": 17,
+          "start": 60.0,
+          "end": 63.75,
+          "text": "For once, our measurements had actually turned out completely right."
+        },
+        {
+          "id": 18,
+          "start": 63.75,
+          "end": 67.5,
+          "text": "But we still had a little surprise planned for those shelves."
+        },
+        {
+          "id": 19,
+          "start": 67.5,
+          "end": 71.25,
+          "text": "When the hidden lights switched on, Jen actually cheered out loud."
+        },
+        {
+          "id": 20,
+          "start": 71.25,
+          "end": 75.0,
+          "text": "Suddenly, our homemade wardrobe looked like a very expensive showroom display."
+        },
+        {
+          "id": 21,
+          "start": 75.0,
+          "end": 78.75,
+          "text": "Next came wooden wall panels we'd buried inside our cluttered garage."
+        },
+        {
+          "id": 22,
+          "start": 78.75,
+          "end": 82.5,
+          "text": "Finding the right panels felt like a game nobody enjoyed playing."
+        },
+        {
+          "id": 23,
+          "start": 82.5,
+          "end": 86.25,
+          "text": "And naturally, the exact boards we needed were underneath everything else."
+        },
+        {
+          "id": 24,
+          "start": 86.25,
+          "end": 90.0,
+          "text": "But moving all those boxes wasn't even our biggest problem."
+        },
+        {
+          "id": 25,
+          "start": 90.0,
+          "end": 93.75,
+          "text": "The basement floor was finally level, at least for now."
+        },
+        {
+          "id": 26,
+          "start": 93.75,
+          "end": 97.5,
+          "text": "The old ceiling, however, had a completely different idea."
+        },
+        {
+          "id": 27,
+          "start": 97.5,
+          "end": 101.25,
+          "text": "Every crooked ceiling beam threw off another wooden wall panel."
+        },
+        {
+          "id": 28,
+          "start": 101.25,
+          "end": 105.0,
+          "text": "We had to adjust nearly every board to make it fit."
+        },
+        {
+          "id": 29,
+          "start": 105.0,
+          "end": 108.75,
+          "text": "And that low ceiling gave us almost no room for mistakes."
+        },
+        {
+          "id": 30,
+          "start": 108.75,
+          "end": 112.5,
+          "text": "Each new measurement tested what little patience I had left."
+        },
+        {
+          "id": 31,
+          "start": 112.5,
+          "end": 116.25,
+          "text": "Meanwhile, Otis was already completely sick of the construction noise."
+        },
+        {
+          "id": 32,
+          "start": 116.25,
+          "end": 120.0,
+          "text": "Our little pug looked betrayed whenever he saw the saw."
+        },
+        {
+          "id": 33,
+          "start": 120.0,
+          "end": 123.75,
+          "text": "He didn't even need to hear the machine running anymore."
+        },
+        {
+          "id": 34,
+          "start": 123.75,
+          "end": 127.5,
+          "text": "One little tune from me was enough to send him running."
+        },
+        {
+          "id": 35,
+          "start": 127.5,
+          "end": 131.25,
+          "text": "Then my thirtieth birthday arrived, along with another mountain of sawdust."
+        },
+        {
+          "id": 36,
+          "start": 131.25,
+          "end": 135.0,
+          "text": "Forget a beach party; all I wanted was finally finished walls."
+        },
+        {
+          "id": 37,
+          "start": 135.0,
+          "end": 138.75,
+          "text": "Jen found a clever little trick for hiding those tiny nail marks."
+        },
+        {
+          "id": 38,
+          "start": 138.75,
+          "end": 142.5,
+          "text": "Suddenly, the finished wooden panels looked cleaner than we'd ever imagined."
+        },
+        {
+          "id": 39,
+          "start": 142.5,
+          "end": 146.25,
+          "text": "At last, we stood back and admired our hard-earned progress."
+        },
+        {
+          "id": 40,
+          "start": 146.25,
+          "end": 150.0,
+          "text": "That's when the bedroom door caused our next unexpected disaster."
+        },
+        {
+          "id": 41,
+          "start": 150.0,
+          "end": 153.75,
+          "text": "Three stubborn screws snapped inside that thick wooden door frame."
+        },
+        {
+          "id": 42,
+          "start": 153.75,
+          "end": 157.5,
+          "text": "I could practically feel my remaining patience disappearing by the second."
+        },
+        {
+          "id": 43,
+          "start": 157.5,
+          "end": 161.25,
+          "text": "Then Jen picked up a surprisingly long drill extension from nearby."
+        },
+        {
+          "id": 44,
+          "start": 161.25,
+          "end": 165.0,
+          "text": "She laughed so hard we had to stop working completely."
+        },
+        {
+          "id": 45,
+          "start": 165.0,
+          "end": 168.75,
+          "text": "Somehow, those ridiculous little moments kept our marriage feeling sane."
+        },
+        {
+          "id": 46,
+          "start": 168.75,
+          "end": 172.5,
+          "text": "We'd learned that laughing together worked better than arguing over mistakes."
+        },
+        {
+          "id": 47,
+          "start": 172.5,
+          "end": 176.25,
+          "text": "At last, that troublesome bedroom door finally clicked shut properly."
+        },
+        {
+          "id": 48,
+          "start": 176.25,
+          "end": 180.0,
+          "text": "After eight long months, a little privacy felt like luxury."
+        },
+        {
+          "id": 49,
+          "start": 180.0,
+          "end": 183.75,
+          "text": "But we still had one messy surprise waiting downstairs for us."
+        },
+        {
+          "id": 50,
+          "start": 183.75,
+          "end": 187.5,
+          "text": "Wet cement had to pass right beside our brand-new wood floors."
+        },
+        {
+          "id": 51,
+          "start": 187.5,
+          "end": 191.25,
+          "text": "One careless spill could undo weeks of our careful work."
+        },
+        {
+          "id": 52,
+          "start": 191.25,
+          "end": 195.0,
+          "text": "So we covered the entire hallway like a disaster zone."
+        },
+        {
+          "id": 53,
+          "start": 195.0,
+          "end": 198.75,
+          "text": "Five hundred pounds of leveling cement waited for us in buckets."
+        },
+        {
+          "id": 54,
+          "start": 198.75,
+          "end": 202.5,
+          "text": "I mixed each batch while Jen raced to spread it smoothly."
+        },
+        {
+          "id": 55,
+          "start": 202.5,
+          "end": 206.25,
+          "text": "We had only minutes before the wet mixture hardened completely."
+        },
+        {
+          "id": 56,
+          "start": 206.25,
+          "end": 210.0,
+          "text": "By the end, both our arms felt completely useless."
+        },
+        {
+          "id": 57,
+          "start": 210.0,
+          "end": 213.75,
+          "text": "The following morning, the new floor was finally perfectly flat."
+        },
+        {
+          "id": 58,
+          "start": 213.75,
+          "end": 217.5,
+          "text": "And not one splash had reached our precious wooden hallway."
+        },
+        {
+          "id": 59,
+          "start": 217.5,
+          "end": 221.25,
+          "text": "Our downstairs was suddenly starting to feel like a real home."
+        },
+        {
+          "id": 60,
+          "start": 221.25,
+          "end": 225.0,
+          "text": "Even the laundry room finally had its own closing door."
+        },
+        {
+          "id": 61,
+          "start": 225.0,
+          "end": 228.75,
+          "text": "A neat closet concealed all our scattered tools and clutter."
+        },
+        {
+          "id": 62,
+          "start": 228.75,
+          "end": 232.5,
+          "text": "Then came the room we'd been waiting months to see."
+        },
+        {
+          "id": 63,
+          "start": 232.5,
+          "end": 236.25,
+          "text": "Sunshine made that beautiful oak wall glow for the first time."
+        },
+        {
+          "id": 64,
+          "start": 236.25,
+          "end": 240.0,
+          "text": "We'd spent so many days fighting those crooked old corners."
+        },
+        {
+          "id": 65,
+          "start": 240.0,
+          "end": 243.75,
+          "text": "Nothing in this old house had ever cooperated easily with us."
+        },
+        {
+          "id": 66,
+          "start": 243.75,
+          "end": 247.5,
+          "text": "Now the wardrobe doors finally closed in perfect alignment across the wall."
+        },
+        {
+          "id": 67,
+          "start": 247.5,
+          "end": 251.25,
+          "text": "Jen could finally order a real bed, not another mattress."
+        },
+        {
+          "id": 68,
+          "start": 251.25,
+          "end": 255.255,
+          "text": "Best birthday gift ever? The bedroom we'd proudly built together."
+        }
+      ],
+      "file_stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "measure": {
+            "tts": 13.503,
+            "pauses": 0.107,
+            "breaths": 0.208,
+            "natural": 13.818,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.92
+          },
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "measure": {
+            "tts": 15.081,
+            "pauses": 0.093,
+            "breaths": 0.254,
+            "natural": 15.428,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 1.029
+          },
+          "attempts": []
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "measure": {
+            "tts": 14.208,
+            "pauses": 0.112,
+            "breaths": 0.286,
+            "natural": 14.606,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.974
+          },
+          "attempts": []
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "measure": {
+            "tts": 14.151,
+            "pauses": 0.08,
+            "breaths": 0.315,
+            "natural": 14.547,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.968
+          },
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "measure": {
+            "tts": 15.206,
+            "pauses": 0.081,
+            "breaths": 0.208,
+            "natural": 15.495,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 1.033
+          },
+          "attempts": []
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "measure": {
+            "tts": 14.425,
+            "pauses": 0.1,
+            "breaths": 0.254,
+            "natural": 14.779,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.985
+          },
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "measure": {
+            "tts": 13.33,
+            "pauses": 0.084,
+            "breaths": 0.286,
+            "natural": 13.7,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.912
+          },
+          "attempts": []
+        },
+        {
+          "number": 8,
+          "ids": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "measure": {
+            "tts": 13.055,
+            "pauses": 0.093,
+            "breaths": 0.315,
+            "natural": 13.463,
+            "after": 14.939,
+            "target": 15.0,
+            "delta": -0.061,
+            "speed": 0.9
+          },
+          "attempts": []
+        },
+        {
+          "number": 9,
+          "ids": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "measure": {
+            "tts": 13.743,
+            "pauses": 0.097,
+            "breaths": 0.208,
+            "natural": 14.048,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.935
+          },
+          "attempts": []
+        },
+        {
+          "number": 10,
+          "ids": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "measure": {
+            "tts": 14.823,
+            "pauses": 0.099,
+            "breaths": 0.254,
+            "natural": 15.175,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 1.012
+          },
+          "attempts": []
+        },
+        {
+          "number": 11,
+          "ids": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "measure": {
+            "tts": 14.287,
+            "pauses": 0.08,
+            "breaths": 0.286,
+            "natural": 14.653,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.977
+          },
+          "attempts": []
+        },
+        {
+          "number": 12,
+          "ids": [
+            45,
+            46,
+            47,
+            48
+          ],
+          "measure": {
+            "tts": 14.985,
+            "pauses": 0.131,
+            "breaths": 0.315,
+            "natural": 15.432,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 1.027
+          },
+          "attempts": []
+        },
+        {
+          "number": 13,
+          "ids": [
+            49,
+            50,
+            51,
+            52
+          ],
+          "measure": {
+            "tts": 14.399,
+            "pauses": 0.084,
+            "breaths": 0.208,
+            "natural": 14.692,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.978
+          },
+          "attempts": []
+        },
+        {
+          "number": 14,
+          "ids": [
+            53,
+            54,
+            55,
+            56
+          ],
+          "measure": {
+            "tts": 12.828,
+            "pauses": 0.094,
+            "breaths": 0.254,
+            "natural": 13.175,
+            "after": 14.622,
+            "target": 15.0,
+            "delta": -0.378,
+            "speed": 0.9
+          },
+          "attempts": []
+        },
+        {
+          "number": 15,
+          "ids": [
+            57,
+            58,
+            59,
+            60
+          ],
+          "measure": {
+            "tts": 13.742,
+            "pauses": 0.111,
+            "breaths": 0.286,
+            "natural": 14.139,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.943
+          },
+          "attempts": []
+        },
+        {
+          "number": 16,
+          "ids": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "measure": {
+            "tts": 12.811,
+            "pauses": 0.08,
+            "breaths": 0.315,
+            "natural": 13.206,
+            "after": 14.626,
+            "target": 15.0,
+            "delta": -0.374,
+            "speed": 0.9
+          },
+          "attempts": []
+        },
+        {
+          "number": 17,
+          "ids": [
+            65,
+            66,
+            67,
+            68
+          ],
+          "measure": {
+            "tts": 14.022,
+            "pauses": 0.175,
+            "breaths": 0.462,
+            "natural": 14.658,
+            "after": 15.255,
+            "target": 15.255,
+            "delta": 0.0,
+            "speed": 0.961
+          },
+          "attempts": []
+        }
+      ],
+      "auto_stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "measure": {
+            "tts": 13.503,
+            "pauses": 0.107,
+            "breaths": 0.208,
+            "natural": 13.818,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.92
+          },
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "measure": {
+            "tts": 15.081,
+            "pauses": 0.093,
+            "breaths": 0.254,
+            "natural": 15.428,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 1.029
+          },
+          "attempts": []
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "measure": {
+            "tts": 14.208,
+            "pauses": 0.112,
+            "breaths": 0.286,
+            "natural": 14.606,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.974
+          },
+          "attempts": []
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "measure": {
+            "tts": 14.151,
+            "pauses": 0.08,
+            "breaths": 0.315,
+            "natural": 14.547,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.968
+          },
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "measure": {
+            "tts": 15.206,
+            "pauses": 0.081,
+            "breaths": 0.208,
+            "natural": 15.495,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 1.033
+          },
+          "attempts": []
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "measure": {
+            "tts": 14.425,
+            "pauses": 0.1,
+            "breaths": 0.254,
+            "natural": 14.779,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.985
+          },
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "measure": {
+            "tts": 13.33,
+            "pauses": 0.084,
+            "breaths": 0.286,
+            "natural": 13.7,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.912
+          },
+          "attempts": []
+        },
+        {
+          "number": 8,
+          "ids": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "measure": {
+            "tts": 13.055,
+            "pauses": 0.148,
+            "breaths": 0.315,
+            "natural": 13.518,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.901
+          },
+          "attempts": []
+        },
+        {
+          "number": 9,
+          "ids": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "measure": {
+            "tts": 13.743,
+            "pauses": 0.097,
+            "breaths": 0.208,
+            "natural": 14.048,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.935
+          },
+          "attempts": []
+        },
+        {
+          "number": 10,
+          "ids": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "measure": {
+            "tts": 14.823,
+            "pauses": 0.099,
+            "breaths": 0.254,
+            "natural": 15.175,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 1.012
+          },
+          "attempts": []
+        },
+        {
+          "number": 11,
+          "ids": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "measure": {
+            "tts": 14.287,
+            "pauses": 0.08,
+            "breaths": 0.286,
+            "natural": 14.653,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.977
+          },
+          "attempts": []
+        },
+        {
+          "number": 12,
+          "ids": [
+            45,
+            46,
+            47,
+            48
+          ],
+          "measure": {
+            "tts": 14.985,
+            "pauses": 0.131,
+            "breaths": 0.315,
+            "natural": 15.432,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 1.027
+          },
+          "attempts": []
+        },
+        {
+          "number": 13,
+          "ids": [
+            49,
+            50,
+            51,
+            52
+          ],
+          "measure": {
+            "tts": 14.399,
+            "pauses": 0.084,
+            "breaths": 0.208,
+            "natural": 14.692,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.978
+          },
+          "attempts": []
+        },
+        {
+          "number": 14,
+          "ids": [
+            53,
+            54,
+            55,
+            56
+          ],
+          "measure": {
+            "tts": 12.828,
+            "pauses": 0.094,
+            "breaths": 0.254,
+            "natural": 13.175,
+            "after": 14.622,
+            "target": 15.0,
+            "delta": -0.378,
+            "speed": 0.9
+          },
+          "attempts": [
+            {
+              "number": 1,
+              "strategy": "MINIMAL_ONE_CUE",
+              "code": "NO_NEW_TEXT",
+              "cues": [
+                {
+                  "id": 53,
+                  "text": "Five hundred pounds of leveling cement waited for us in buckets."
+                },
+                {
+                  "id": 54,
+                  "text": "I mixed each batch while Jen raced to spread it smoothly."
+                },
+                {
+                  "id": 55,
+                  "text": "We had only minutes before the wet mixture hardened completely."
+                },
+                {
+                  "id": 56,
+                  "text": "By the end, both our arms felt completely useless."
+                }
+              ],
+              "measure": null,
+              "model_verdict": ""
+            },
+            {
+              "number": 2,
+              "strategy": "SYNTACTIC_EQUIVALENT",
+              "code": "NO_NEW_TEXT",
+              "cues": [
+                {
+                  "id": 53,
+                  "text": "Five hundred pounds of leveling cement waited for us in buckets."
+                },
+                {
+                  "id": 54,
+                  "text": "I mixed each batch while Jen raced to spread it smoothly."
+                },
+                {
+                  "id": 55,
+                  "text": "We had only minutes before the wet mixture hardened completely."
+                },
+                {
+                  "id": 56,
+                  "text": "By the end, both our arms felt completely useless."
+                }
+              ],
+              "measure": null,
+              "model_verdict": ""
+            }
+          ]
+        },
+        {
+          "number": 15,
+          "ids": [
+            57,
+            58,
+            59,
+            60
+          ],
+          "measure": {
+            "tts": 13.742,
+            "pauses": 0.111,
+            "breaths": 0.286,
+            "natural": 14.139,
+            "after": 15.0,
+            "target": 15.0,
+            "delta": 0.0,
+            "speed": 0.943
+          },
+          "attempts": []
+        },
+        {
+          "number": 16,
+          "ids": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "measure": {
+            "tts": 12.811,
+            "pauses": 0.08,
+            "breaths": 0.315,
+            "natural": 13.206,
+            "after": 14.626,
+            "target": 15.0,
+            "delta": -0.374,
+            "speed": 0.9
+          },
+          "attempts": [
+            {
+              "number": 1,
+              "strategy": "MINIMAL_ONE_CUE",
+              "code": "SEMANTIC_REVIEW_REQUIRED",
+              "cues": [
+                {
+                  "id": 61,
+                  "text": "A neat closet concealed all our scattered tools and clutter, and the shelves were neatly organized."
+                },
+                {
+                  "id": 62,
+                  "text": "Then came the room we'd been waiting months to see."
+                },
+                {
+                  "id": 63,
+                  "text": "Sunshine made that beautiful oak wall glow for the first time."
+                },
+                {
+                  "id": 64,
+                  "text": "We'd spent so many days fighting those crooked old corners."
+                }
+              ],
+              "measure": {
+                "tts": 14.879,
+                "pauses": 0.08,
+                "breaths": 0.315,
+                "natural": 15.275,
+                "after": 15.0,
+                "target": 15.0,
+                "delta": 0.0,
+                "speed": 1.018
+              },
+              "model_verdict": "equivalent"
+            },
+            {
+              "number": 2,
+              "strategy": "SYNTACTIC_EQUIVALENT",
+              "code": "SEMANTIC_REVIEW_REQUIRED",
+              "cues": [
+                {
+                  "id": 61,
+                  "text": "A neat closet concealed all our scattered tools and clutter, and the shelves were neatly arranged."
+                },
+                {
+                  "id": 62,
+                  "text": "Then came the room we'd been waiting months to see."
+                },
+                {
+                  "id": 63,
+                  "text": "Sunshine made that beautiful oak wall glow for the first time."
+                },
+                {
+                  "id": 64,
+                  "text": "We'd spent so many days fighting those crooked old corners."
+                }
+              ],
+              "measure": {
+                "tts": 14.425,
+                "pauses": 0.08,
+                "breaths": 0.315,
+                "natural": 14.82,
+                "after": 15.0,
+                "target": 15.0,
+                "delta": 0.0,
+                "speed": 0.986
+              },
+              "model_verdict": "equivalent"
+            },
+            {
+              "number": 3,
+              "strategy": "LOCAL_PARAPHRASE_REVIEW",
+              "code": "DUPLICATE_PROPOSAL",
+              "cues": [
+                {
+                  "id": 61,
+                  "text": "A neat closet concealed all our scattered tools and clutter, and the shelves were neatly organized."
+                },
+                {
+                  "id": 62,
+                  "text": "Then came the room we'd been waiting months to see."
+                },
+                {
+                  "id": 63,
+                  "text": "Sunshine made that beautiful oak wall glow for the first time."
+                },
+                {
+                  "id": 64,
+                  "text": "We'd spent so many days fighting those crooked old corners."
+                }
+              ],
+              "measure": null,
+              "model_verdict": ""
+            }
+          ]
+        },
+        {
+          "number": 17,
+          "ids": [
+            65,
+            66,
+            67,
+            68
+          ],
+          "measure": {
+            "tts": 14.022,
+            "pauses": 0.175,
+            "breaths": 0.462,
+            "natural": 14.658,
+            "after": 15.255,
+            "target": 15.255,
+            "delta": 0.0,
+            "speed": 0.961
+          },
+          "attempts": []
+        }
+      ],
+      "auto_status": "NEEDS_REVIEW",
+      "reports": [
+        {
+          "name": "reno 2 (2).voice-report.txt",
+          "sha256": "e2f5458280188659ca8e4d220d3707ed00ba269b7e249acead051e8cb89f5135"
+        },
+        {
+          "name": "reno 2.ai-before-after-report.txt",
+          "sha256": "a4de4c628778e5c16d350e3d9a99dd3d722a82a54af66c48c9c70668e72d9a3c"
+        },
+        {
+          "name": "reno 2.ai-changes-en-vi.txt",
+          "sha256": "97e96ba2ee74460aa9992b2cb3d1e1b942bb19092fc332bda672e11c7ed75cc6"
+        }
+      ]
+    },
+    {
+      "name": "reno 3",
+      "cues": [
+        {
+          "id": 1,
+          "start": 0.0,
+          "end": 3.735,
+          "text": "A flooring expert wanted eighteen thousand dollars just for labor."
+        },
+        {
+          "id": 2,
+          "start": 3.735,
+          "end": 7.47,
+          "text": "Jen and I stared at that shocking quote in disbelief."
+        },
+        {
+          "id": 3,
+          "start": 7.47,
+          "end": 11.205,
+          "text": "But before tackling the basement, we finally celebrated something upstairs."
+        },
+        {
+          "id": 4,
+          "start": 11.205,
+          "end": 14.94,
+          "text": "Jen had ordered kitchen stools months before our renovation was finished."
+        },
+        {
+          "id": 5,
+          "start": 14.94,
+          "end": 18.675,
+          "text": "Back then, our entire kitchen was still a dusty construction site."
+        },
+        {
+          "id": 6,
+          "start": 18.675,
+          "end": 22.41,
+          "text": "We had absolutely no idea whether those stools would look right."
+        },
+        {
+          "id": 7,
+          "start": 22.41,
+          "end": 26.145,
+          "text": "When we opened them, the soft blue looked surprisingly perfect."
+        },
+        {
+          "id": 8,
+          "start": 26.145,
+          "end": 29.88,
+          "text": "All four fit neatly beneath our beautiful finished kitchen island."
+        },
+        {
+          "id": 9,
+          "start": 29.88,
+          "end": 33.615,
+          "text": "After one exhausting year, upstairs finally felt like a real home."
+        },
+        {
+          "id": 10,
+          "start": 33.615,
+          "end": 37.35,
+          "text": "Unfortunately, our biggest and messiest challenge was waiting right below."
+        },
+        {
+          "id": 11,
+          "start": 37.35,
+          "end": 41.085,
+          "text": "First, the dark basement walls needed a complete fresh start."
+        },
+        {
+          "id": 12,
+          "start": 41.085,
+          "end": 44.82,
+          "text": "Jen and I already knew exactly how to divide the work."
+        },
+        {
+          "id": 13,
+          "start": 44.82,
+          "end": 48.555,
+          "text": "She handled the edges while I tackled those enormous walls."
+        },
+        {
+          "id": 14,
+          "start": 48.555,
+          "end": 52.29,
+          "text": "We were grateful that one wall already had wood paneling."
+        },
+        {
+          "id": 15,
+          "start": 52.29,
+          "end": 56.025,
+          "text": "The ceiling, however, seemed absolutely determined to exhaust us."
+        },
+        {
+          "id": 16,
+          "start": 56.025,
+          "end": 59.76,
+          "text": "Even our older dog wandered downstairs to investigate the commotion."
+        },
+        {
+          "id": 17,
+          "start": 59.76,
+          "end": 63.495,
+          "text": "He looked thoroughly unimpressed by all that endless construction noise."
+        },
+        {
+          "id": 18,
+          "start": 63.495,
+          "end": 67.23,
+          "text": "Our two dogs clearly thought this entire renovation was ridiculous."
+        },
+        {
+          "id": 19,
+          "start": 67.23,
+          "end": 70.965,
+          "text": "I joked that we might need another nine coats of paint."
+        },
+        {
+          "id": 20,
+          "start": 70.965,
+          "end": 74.7,
+          "text": "Jen's expression immediately told me it was time to stop."
+        },
+        {
+          "id": 21,
+          "start": 74.7,
+          "end": 78.435,
+          "text": "Somehow, we finished the narrow hallway before the afternoon ended."
+        },
+        {
+          "id": 22,
+          "start": 78.435,
+          "end": 82.17,
+          "text": "Fresh white paint transformed the dreary basement almost instantly."
+        },
+        {
+          "id": 23,
+          "start": 82.17,
+          "end": 85.905,
+          "text": "But the real test of patience was the oak flooring."
+        },
+        {
+          "id": 24,
+          "start": 85.905,
+          "end": 89.64,
+          "text": "We wanted that beautiful herringbone pattern running through every room."
+        },
+        {
+          "id": 25,
+          "start": 89.64,
+          "end": 93.375,
+          "text": "Every wooden angle had to lead toward that gorgeous backyard view."
+        },
+        {
+          "id": 26,
+          "start": 93.375,
+          "end": 97.11,
+          "text": "And that complicated pattern left absolutely no room for mistakes."
+        },
+        {
+          "id": 27,
+          "start": 97.11,
+          "end": 100.845,
+          "text": "One crooked starting line could ruin the look of everything."
+        },
+        {
+          "id": 28,
+          "start": 100.845,
+          "end": 104.58,
+          "text": "We watched those first rows like they were pure gold."
+        },
+        {
+          "id": 29,
+          "start": 104.58,
+          "end": 108.315,
+          "text": "Jen took her usual little wooden stool to supervise my work."
+        },
+        {
+          "id": 30,
+          "start": 108.315,
+          "end": 112.05,
+          "text": "She laughed at how seriously I guarded that straight line."
+        },
+        {
+          "id": 31,
+          "start": 112.05,
+          "end": 115.785,
+          "text": "Then we noticed the pattern slipping slightly near a doorway."
+        },
+        {
+          "id": 32,
+          "start": 115.785,
+          "end": 119.52000000000001,
+          "text": "For one horrible second, I thought we'd have to restart."
+        },
+        {
+          "id": 33,
+          "start": 119.52000000000001,
+          "end": 123.255,
+          "text": "Luckily, we found a clever little idea from installers online."
+        },
+        {
+          "id": 34,
+          "start": 123.255,
+          "end": 126.99,
+          "text": "A long straight rail helped keep our pattern properly aligned."
+        },
+        {
+          "id": 35,
+          "start": 126.99,
+          "end": 130.725,
+          "text": "Our inexpensive version worked much better than we'd ever imagined."
+        },
+        {
+          "id": 36,
+          "start": 130.725,
+          "end": 134.46,
+          "text": "It felt amazing to solve another problem without hiring professionals."
+        },
+        {
+          "id": 37,
+          "start": 134.46,
+          "end": 138.195,
+          "text": "Then Otis suddenly appeared beside a bucket of wet glue."
+        },
+        {
+          "id": 38,
+          "start": 138.195,
+          "end": 141.93,
+          "text": "We panicked because we'd witnessed this exact disaster once before."
+        },
+        {
+          "id": 39,
+          "start": 141.93,
+          "end": 145.665,
+          "text": "Months earlier, he'd walked right through some fresh floor adhesive."
+        },
+        {
+          "id": 40,
+          "start": 145.665,
+          "end": 149.4,
+          "text": "So this time, our little pug got outdoor patio privileges."
+        },
+        {
+          "id": 41,
+          "start": 149.4,
+          "end": 153.135,
+          "text": "But the next problem was much harder to avoid."
+        },
+        {
+          "id": 42,
+          "start": 153.135,
+          "end": 156.87,
+          "text": "Tiny wood pieces had to fit against those uneven wall edges."
+        },
+        {
+          "id": 43,
+          "start": 156.87,
+          "end": 160.605,
+          "text": "There was no good reason to risk our fingers doing that."
+        },
+        {
+          "id": 44,
+          "start": 160.605,
+          "end": 164.34,
+          "text": "So we made a small guide to hold everything safely."
+        },
+        {
+          "id": 45,
+          "start": 164.34,
+          "end": 168.075,
+          "text": "At least those tricky little corners finally started looking right."
+        },
+        {
+          "id": 46,
+          "start": 168.075,
+          "end": 171.81,
+          "text": "Then the hallway suddenly turned into a giant wooden puzzle."
+        },
+        {
+          "id": 47,
+          "start": 171.81,
+          "end": 175.54500000000002,
+          "text": "Every doorway seemed to hide another completely impossible angle."
+        },
+        {
+          "id": 48,
+          "start": 175.54500000000002,
+          "end": 179.28,
+          "text": "We measured, moved around, and measured the same pieces again."
+        },
+        {
+          "id": 49,
+          "start": 179.28,
+          "end": 183.015,
+          "text": "By late afternoon, I was almost completely losing my mind."
+        },
+        {
+          "id": 50,
+          "start": 183.015,
+          "end": 186.75,
+          "text": "Ninety long minutes had vanished with almost no visible progress."
+        },
+        {
+          "id": 51,
+          "start": 186.75,
+          "end": 190.485,
+          "text": "All that exhausting work had produced just three tiny pieces."
+        },
+        {
+          "id": 52,
+          "start": 190.485,
+          "end": 194.22,
+          "text": "I honestly couldn't believe how slowly this renovation was moving."
+        },
+        {
+          "id": 53,
+          "start": 194.22,
+          "end": 197.95499999999998,
+          "text": "Jen held them up and laughed at my defeated expression."
+        },
+        {
+          "id": 54,
+          "start": 197.95499999999998,
+          "end": 201.69,
+          "text": "Suddenly, that eighteen-thousand-dollar labor quote sounded a lot less outrageous."
+        },
+        {
+          "id": 55,
+          "start": 201.69,
+          "end": 205.425,
+          "text": "Nobody else would ever know how difficult those corners were."
+        },
+        {
+          "id": 56,
+          "start": 205.425,
+          "end": 209.16,
+          "text": "But watching everything fit made every frustrating minute worth it."
+        },
+        {
+          "id": 57,
+          "start": 209.16,
+          "end": 212.895,
+          "text": "Then Otis appeared again, making it very clear he wanted dinner."
+        },
+        {
+          "id": 58,
+          "start": 212.895,
+          "end": 216.63,
+          "text": "Somehow, his familiar little routine always told us when to stop."
+        },
+        {
+          "id": 59,
+          "start": 216.63,
+          "end": 220.365,
+          "text": "Before bedtime, Jen revealed our plans for another bathroom downstairs."
+        },
+        {
+          "id": 60,
+          "start": 220.365,
+          "end": 224.1,
+          "text": "At least we could reuse materials we already had left over."
+        },
+        {
+          "id": 61,
+          "start": 224.1,
+          "end": 227.835,
+          "text": "Some leftover porcelain tiles matched the beautiful rooms upstairs perfectly."
+        },
+        {
+          "id": 62,
+          "start": 227.835,
+          "end": 231.57,
+          "text": "But those tiny little wall tiles made me nervous again."
+        },
+        {
+          "id": 63,
+          "start": 231.57,
+          "end": 235.305,
+          "text": "Luckily, they came already attached to convenient, easy-to-handle mesh sheets."
+        },
+        {
+          "id": 64,
+          "start": 235.305,
+          "end": 239.04,
+          "text": "We even had leftover quartz and some warm wooden cabinets."
+        },
+        {
+          "id": 65,
+          "start": 239.04,
+          "end": 242.775,
+          "text": "And we were determined to keep the original seventies stone wall."
+        },
+        {
+          "id": 66,
+          "start": 242.775,
+          "end": 246.51,
+          "text": "Everyone else had told us to tear that old wall down."
+        },
+        {
+          "id": 67,
+          "start": 246.51,
+          "end": 250.245,
+          "text": "But we knew it could become the room's best feature."
+        },
+        {
+          "id": 68,
+          "start": 250.245,
+          "end": 253.98,
+          "text": "The next day, the final cloud of sawdust finally disappeared."
+        },
+        {
+          "id": 69,
+          "start": 253.98,
+          "end": 257.715,
+          "text": "And our finished hallway looked even better than we'd dreamed."
+        },
+        {
+          "id": 70,
+          "start": 257.715,
+          "end": 261.45,
+          "text": "All those tricky wooden corners finally lined up beautifully."
+        },
+        {
+          "id": 71,
+          "start": 261.45,
+          "end": 265.185,
+          "text": "Even the entrance to the utility room looked perfectly seamless."
+        },
+        {
+          "id": 72,
+          "start": 265.185,
+          "end": 268.92,
+          "text": "The pattern flowed beautifully straight into our new guest bedroom."
+        },
+        {
+          "id": 73,
+          "start": 268.92,
+          "end": 272.655,
+          "text": "Each board seemed to point outside toward the trees and water."
+        },
+        {
+          "id": 74,
+          "start": 272.655,
+          "end": 276.39,
+          "text": "Our backs hurt, our knees ached, and money was tight."
+        },
+        {
+          "id": 75,
+          "start": 276.39,
+          "end": 280.125,
+          "text": "But we'd saved eighteen thousand dollars by doing it together."
+        },
+        {
+          "id": 76,
+          "start": 280.125,
+          "end": 284.117,
+          "text": "Otis had just one question left: was it finally walk time?"
+        }
+      ],
+      "file_stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "measure": {
+            "tts": 14.459,
+            "pauses": 0.113,
+            "breaths": 0.208,
+            "natural": 14.78,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.989
+          },
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "measure": {
+            "tts": 14.427,
+            "pauses": 0.081,
+            "breaths": 0.254,
+            "natural": 14.762,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.988
+          },
+          "attempts": []
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "measure": {
+            "tts": 15.387,
+            "pauses": 0.117,
+            "breaths": 0.286,
+            "natural": 15.79,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 1.057
+          },
+          "attempts": []
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "measure": {
+            "tts": 14.537,
+            "pauses": 0.089,
+            "breaths": 0.315,
+            "natural": 14.941,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 1.0
+          },
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "measure": {
+            "tts": 12.463,
+            "pauses": 0.1,
+            "breaths": 0.208,
+            "natural": 12.771,
+            "after": 14.178,
+            "target": 14.94,
+            "delta": -0.762,
+            "speed": 0.9
+          },
+          "attempts": []
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "measure": {
+            "tts": 13.961,
+            "pauses": 0.101,
+            "breaths": 0.254,
+            "natural": 14.315,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.957
+          },
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "measure": {
+            "tts": 13.422,
+            "pauses": 0.08,
+            "breaths": 0.286,
+            "natural": 13.788,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.923
+          },
+          "attempts": []
+        },
+        {
+          "number": 8,
+          "ids": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "measure": {
+            "tts": 13.158,
+            "pauses": 0.095,
+            "breaths": 0.315,
+            "natural": 13.569,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.908
+          },
+          "attempts": []
+        },
+        {
+          "number": 9,
+          "ids": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "measure": {
+            "tts": 13.497,
+            "pauses": 0.109,
+            "breaths": 0.208,
+            "natural": 13.814,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.923
+          },
+          "attempts": []
+        },
+        {
+          "number": 10,
+          "ids": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "measure": {
+            "tts": 13.69,
+            "pauses": 0.101,
+            "breaths": 0.254,
+            "natural": 14.045,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.939
+          },
+          "attempts": []
+        },
+        {
+          "number": 11,
+          "ids": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "measure": {
+            "tts": 12.188,
+            "pauses": 0.098,
+            "breaths": 0.286,
+            "natural": 12.572,
+            "after": 13.893,
+            "target": 14.94,
+            "delta": -1.047,
+            "speed": 0.9
+          },
+          "attempts": []
+        },
+        {
+          "number": 12,
+          "ids": [
+            45,
+            46,
+            47,
+            48
+          ],
+          "measure": {
+            "tts": 13.561,
+            "pauses": 0.083,
+            "breaths": 0.315,
+            "natural": 13.959,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.934
+          },
+          "attempts": []
+        },
+        {
+          "number": 13,
+          "ids": [
+            49,
+            50,
+            51,
+            52
+          ],
+          "measure": {
+            "tts": 14.242,
+            "pauses": 0.08,
+            "breaths": 0.208,
+            "natural": 14.53,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.971
+          },
+          "attempts": []
+        },
+        {
+          "number": 14,
+          "ids": [
+            53,
+            54,
+            55,
+            56
+          ],
+          "measure": {
+            "tts": 14.246,
+            "pauses": 0.117,
+            "breaths": 0.254,
+            "natural": 14.617,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.977
+          },
+          "attempts": []
+        },
+        {
+          "number": 15,
+          "ids": [
+            57,
+            58,
+            59,
+            60
+          ],
+          "measure": {
+            "tts": 16.092,
+            "pauses": 0.08,
+            "breaths": 0.286,
+            "natural": 16.459,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 1.097
+          },
+          "attempts": []
+        },
+        {
+          "number": 16,
+          "ids": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "measure": {
+            "tts": 15.349,
+            "pauses": 0.101,
+            "breaths": 0.315,
+            "natural": 15.766,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 1.055
+          },
+          "attempts": []
+        },
+        {
+          "number": 17,
+          "ids": [
+            65,
+            66,
+            67,
+            68
+          ],
+          "measure": {
+            "tts": 12.481,
+            "pauses": 0.099,
+            "breaths": 0.208,
+            "natural": 12.788,
+            "after": 14.186,
+            "target": 14.94,
+            "delta": -0.754,
+            "speed": 0.9
+          },
+          "attempts": []
+        },
+        {
+          "number": 18,
+          "ids": [
+            69,
+            70,
+            71,
+            72
+          ],
+          "measure": {
+            "tts": 12.59,
+            "pauses": 0.084,
+            "breaths": 0.254,
+            "natural": 12.928,
+            "after": 14.34,
+            "target": 14.94,
+            "delta": -0.6,
+            "speed": 0.9
+          },
+          "attempts": []
+        },
+        {
+          "number": 19,
+          "ids": [
+            73,
+            74,
+            75,
+            76
+          ],
+          "measure": {
+            "tts": 12.973,
+            "pauses": 0.096,
+            "breaths": 0.286,
+            "natural": 13.355,
+            "after": 14.822,
+            "target": 15.197,
+            "delta": -0.375,
+            "speed": 0.9
+          },
+          "attempts": []
+        }
+      ],
+      "auto_stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "measure": {
+            "tts": 14.459,
+            "pauses": 0.113,
+            "breaths": 0.208,
+            "natural": 14.78,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.989
+          },
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "measure": {
+            "tts": 14.427,
+            "pauses": 0.081,
+            "breaths": 0.254,
+            "natural": 14.762,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.988
+          },
+          "attempts": []
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "measure": {
+            "tts": 15.387,
+            "pauses": 0.117,
+            "breaths": 0.286,
+            "natural": 15.79,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 1.057
+          },
+          "attempts": []
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "measure": {
+            "tts": 14.537,
+            "pauses": 0.089,
+            "breaths": 0.315,
+            "natural": 14.941,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 1.0
+          },
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "measure": {
+            "tts": 12.463,
+            "pauses": 0.1,
+            "breaths": 0.208,
+            "natural": 12.771,
+            "after": 14.178,
+            "target": 14.94,
+            "delta": -0.762,
+            "speed": 0.9
+          },
+          "attempts": [
+            {
+              "number": 1,
+              "strategy": "MINIMAL_ONE_CUE",
+              "code": "SEMANTIC_REVIEW_REQUIRED",
+              "cues": [
+                {
+                  "id": 17,
+                  "text": "He looked thoroughly unimpressed by all that endless construction noise and seemed completely indifferent to the chaos."
+                },
+                {
+                  "id": 18,
+                  "text": "Our two dogs clearly thought this entire renovation was ridiculous."
+                },
+                {
+                  "id": 19,
+                  "text": "I joked that we might need another nine coats of paint."
+                },
+                {
+                  "id": 20,
+                  "text": "Jen's expression immediately told me it was time to stop."
+                }
+              ],
+              "measure": {
+                "tts": 14.735,
+                "pauses": 0.1,
+                "breaths": 0.208,
+                "natural": 15.043,
+                "after": 14.94,
+                "target": 14.94,
+                "delta": 0.0,
+                "speed": 1.007
+              },
+              "model_verdict": "equivalent"
+            },
+            {
+              "number": 2,
+              "strategy": "SYNTACTIC_EQUIVALENT",
+              "code": "SEMANTIC_REVIEW_REQUIRED",
+              "cues": [
+                {
+                  "id": 17,
+                  "text": "He looked thoroughly unimpressed by all that endless construction noise and remained completely indifferent to the chaos."
+                },
+                {
+                  "id": 18,
+                  "text": "Our two dogs clearly thought this entire renovation was ridiculous."
+                },
+                {
+                  "id": 19,
+                  "text": "I joked that we might need another nine coats of paint."
+                },
+                {
+                  "id": 20,
+                  "text": "Jen's expression immediately told me it was time to stop."
+                }
+              ],
+              "measure": {
+                "tts": 14.951,
+                "pauses": 0.1,
+                "breaths": 0.208,
+                "natural": 15.259,
+                "after": 14.94,
+                "target": 14.94,
+                "delta": 0.0,
+                "speed": 1.021
+              },
+              "model_verdict": "equivalent"
+            },
+            {
+              "number": 3,
+              "strategy": "LOCAL_PARAPHRASE_REVIEW",
+              "code": "DUPLICATE_PROPOSAL",
+              "cues": [
+                {
+                  "id": 17,
+                  "text": "He looked thoroughly unimpressed by all that endless construction noise and seemed completely indifferent to the chaos."
+                },
+                {
+                  "id": 18,
+                  "text": "Our two dogs clearly thought this entire renovation was ridiculous."
+                },
+                {
+                  "id": 19,
+                  "text": "I joked that we might need another nine coats of paint."
+                },
+                {
+                  "id": 20,
+                  "text": "Jen's expression immediately told me it was time to stop."
+                }
+              ],
+              "measure": null,
+              "model_verdict": ""
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "measure": {
+            "tts": 13.961,
+            "pauses": 0.101,
+            "breaths": 0.254,
+            "natural": 14.315,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.957
+          },
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "measure": {
+            "tts": 13.422,
+            "pauses": 0.08,
+            "breaths": 0.286,
+            "natural": 13.788,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.923
+          },
+          "attempts": []
+        },
+        {
+          "number": 8,
+          "ids": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "measure": {
+            "tts": 13.158,
+            "pauses": 0.095,
+            "breaths": 0.315,
+            "natural": 13.569,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.908
+          },
+          "attempts": []
+        },
+        {
+          "number": 9,
+          "ids": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "measure": {
+            "tts": 13.497,
+            "pauses": 0.109,
+            "breaths": 0.208,
+            "natural": 13.814,
+            "after": 14.94,
+            "target": 14.94,
+            "delta": 0.0,
+            "speed": 0.923
+          },
+          "attempts": []
+        },
+        {
+          "number": 10,
+          "ids": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 11,
+          "ids": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 12,
+          "ids": [
+            45,
+            46,
+            47,
+            48
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 13,
+          "ids": [
+            49,
+            50,
+            51,
+            52
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 14,
+          "ids": [
+            53,
+            54,
+            55,
+            56
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 15,
+          "ids": [
+            57,
+            58,
+            59,
+            60
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 16,
+          "ids": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 17,
+          "ids": [
+            65,
+            66,
+            67,
+            68
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 18,
+          "ids": [
+            69,
+            70,
+            71,
+            72
+          ],
+          "measure": null,
+          "attempts": []
+        },
+        {
+          "number": 19,
+          "ids": [
+            73,
+            74,
+            75,
+            76
+          ],
+          "measure": null,
+          "attempts": []
+        }
+      ],
+      "auto_status": "CANCELLED",
+      "reports": [
+        {
+          "name": "reno 3 (2).voice-report.txt",
+          "sha256": "c41319e0ac41b456dfd51cbd370cdf9bbbb5f3f0db861628015ef423c27c0a86"
+        },
+        {
+          "name": "reno 3.ai-before-after-report.txt",
+          "sha256": "c5ff07bcee76faa3a3617b0fd5a4ef680b74ad0e88bb741c34fd89c7536444ec"
+        },
+        {
+          "name": "reno 3.ai-changes-en-vi.txt",
+          "sha256": "b149f2544fc0d26d29ec783216789bf33086296d11effcc838266ca89e8e4bac"
+        }
+      ]
+    }
+  ]
+}

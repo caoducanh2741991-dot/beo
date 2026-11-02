@@ -1,0 +1,12 @@
+PASS Mode 1 performs a measured, bounded pause repair with correct report count
+PASS Mode 1 pause correction never changes words or invokes rewrite/translation AI
+PASS Mode 1 needs only four real fixture synthesis requests; the final assembly reuses measured PCM
+PASS Mode 1 respects measured target, pause limit and technical minimum speed
+PASS Mode 2 performs a measured, bounded pause repair with correct report count
+PASS Mode 2 pause correction never changes words or invokes rewrite/translation AI
+PASS Mode 2 needs only four real fixture synthesis requests; the final assembly reuses measured PCM
+PASS Mode 2 respects measured target, pause limit and technical minimum speed
+PASS Before/after report retains the actual pre-pause failure and the measured bounded-pause success
+PASS A pause-only fix never masquerades as an AI wording change
+PASS Measurement and final render share one acoustic repair policy in both modes
+TOTAL ACOUSTIC300 11 PASS. Synthetic speech and actual FFmpeg, no word rewrite or native silence edit.

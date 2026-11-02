@@ -24,4 +24,4 @@ PASS Recovered TTS subprocess remains successful; missing translator has its own
 PASS Natural TXT does not invent a required timeline speed
 PASS Legacy pause-compression fixture renders
 PASS Legacy speed estimate uses measured post-pause-compression input and real fit budget
-TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics 4a8cb396c55e4c8bbfcb364c3bcad53f
+TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics 6fd517ed2ffd4dd9a15e12874302802e

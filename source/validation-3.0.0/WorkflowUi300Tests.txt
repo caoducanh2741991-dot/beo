@@ -1,4 +1,4 @@
-PASS Actual WinForms executable reports version 2.0.17
+PASS Actual WinForms executable reports version 3.0.0
 PASS Studio and batch each expose exactly two workflow choices
 PASS Clean installation starts in the non-rewriting file mode
 PASS Selecting unattended AI in Studio also selects it for batch
@@ -26,5 +26,5 @@ PASS Every processed batch row exposes both existing report paths
 PASS Batch completes automatically with no pause-for-review control
 PASS Existing two-voice routing remains available
 PASS Voice clone and voice library pages are retained
-TOTAL WORKFLOW UI217 28 PASS. Real EXE under Mono/Xvfb, intentional missing-engine failures; no physical Windows/GPU or real TTS claim.
+TOTAL WORKFLOW UI300 28 PASS. Real EXE under Mono/Xvfb, intentional missing-engine failures; no physical Windows/GPU or real TTS claim.
 Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

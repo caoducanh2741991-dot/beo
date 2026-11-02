@@ -10,6 +10,6 @@ public static class RenderCheckpoint {
 public sealed partial class VoiceRenderReport {
  public void VerifySourceUnchanged(){if(sourceHash.Length==64&&!String.IsNullOrEmpty(context.SourcePath)&&FileHash(context.SourcePath)!=sourceHash)throw new IOException("File nguồn thay đổi trong lúc render. Giữ checkpoint; mở lại nguồn trước khi xuất.");}
  public void ArtifactPublished(){Notify();}
- public void CachedStage(AnchorStage s,AiMeasurement m){PlanStageUnits(s.Number,new List<string>{s.Text});BeginUnit(s.Text,s.Number);Origin(true);if(Current!=null){Current.Before=m.Natural;Current.Tts=m.Tts;Current.PauseBefore=m.AppPauses;Current.PauseAfter=m.AppPauses;Current.Detail="Cache toàn chặng; chưa có mốc sau căn riêng từng cue.";}StageComponents(m.Tts,m.AppPauses,0,m.Breaths,m.Natural);UnitBeforeStageDone();Step("CACHE","Dùng lại chặng đo đạt; không tổng hợp TTS hoặc căn lại chặng này.");}
+ public void CachedStage(AnchorStage s,AiMeasurement m){PlanStageUnits(s.Number,new List<string>{s.Text});BeginUnit(s.Text,s.Number);Origin(true);if(Current!=null){Current.Before=m.Natural;Current.Tts=m.Tts;Current.PauseBefore=0;Current.PauseAfter=0;Current.Detail="Cache toàn chặng; chưa có mốc sau căn riêng từng cue.";}StageComponents(m.Tts,m.AppPauses,0,m.Breaths,m.Natural);if(CurrentStage!=null){CurrentStage.InnerPauses=CurrentStage.BetweenPauses=null;CurrentStage.AppPauses=m.AppPauses;}UnitBeforeStageDone();Step("CACHE","Dùng lại chặng đo đạt; không tổng hợp TTS hoặc căn lại chặng này.");}
 }
 }

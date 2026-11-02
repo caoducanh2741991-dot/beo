@@ -1,0 +1,4 @@
+PASS Separate process restores nine measured Reno3 stages from real checkpoint files
+PASS Separate process keeps cancellation stage/phase
+PASS Restart retains pending cue17-20 and unchanged valid PCM hash
+TOTAL RENO300 REOPEN 3 PASS

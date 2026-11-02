@@ -1,5 +1,0 @@
-Sync216Tests TOTAL SYNC216 27 PASS; synthetic voice/translator + real FFmpeg; content examples are explicit test data.
-BatchTests TOTAL BATCH: 12 passed.
-TwoVoiceTests TOTAL TWO VOICE 41 passed. Fixtures: /tmp/V15 hai giọng f270853941d549adb68a083a4cb1ba04
-Workflow217Tests Outputs: /tmp/workflow217 e00b748ca21e49e2b66f56e72087a46a
-PunctuationTests TOTAL PUNCTUATION 20 passed.

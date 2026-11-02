@@ -24,9 +24,11 @@ public static class RepairPolicy {
    string a=Canonical(before[i].Text),b=Canonical(after[i].Text);var aa=a.Split(' ');var bb=b.Split(' ');
    var numbers=new Regex(@"(?:[-+]?[$€£]?|[$€£][-+]?)\d[\d,.]*(?:%)?");
    if(!numbers.Matches(before[i].Text).Cast<Match>().Select(m=>m.Value).SequenceEqual(numbers.Matches(after[i].Text).Cast<Match>().Select(m=>m.Value))||!aa.Where(numberWords.Contains).SequenceEqual(bb.Where(numberWords.Contains)))return new SemanticCheck{Rejected=true,Reason="ENTITY_CHANGED: số/số tiền hoặc số viết bằng chữ khác tại cue #"+before[i].Id};
-   Func<string,IEnumerable<string>> names=s=>Regex.Matches(s,@"\b[A-Z][a-z]+(?:[-'][A-Z]?[a-z]+)*\b").Cast<Match>().Select(m=>m.Value).Where(w=>!ordinaryNames.Contains(w));
+   Func<string,IEnumerable<string>> names=s=>Regex.Matches(RepairLanguage.Expand(s),@"\b[A-Z][a-z]+(?:[-'][A-Z]?[a-z]+)*\b").Cast<Match>().Select(m=>m.Value).Where(w=>!ordinaryNames.Contains(w));
    if(!names(before[i].Text).SequenceEqual(names(after[i].Text)))return new SemanticCheck{Rejected=true,Reason="ENTITY_CHANGED: tên riêng/địa điểm/từ viết hoa khác tại cue #"+before[i].Id};
    var neg=new HashSet<string>("not never nobody nothing neither without".Split(' '));if(!aa.Where(neg.Contains).SequenceEqual(bb.Where(neg.Contains)))return new SemanticCheck{Rejected=true,Reason="FACT_CHANGED: phủ định khác tại cue #"+before[i].Id};
+   if(RepairLanguage.Equivalent(before[i].Text,after[i].Text))continue;
+   string extra=RepairLanguage.AddedProposition(before[i].Text,after[i].Text);if(extra.Length>0)return new SemanticCheck{Rejected=true,Reason=extra+" tại cue #"+before[i].Id};
    string ma=MeaningTokens(before[i].Text),mb=MeaningTokens(after[i].Text);
    var actA=ma.Split(' ').Where(actions.Contains).ToList();var actB=mb.Split(' ').Where(actions.Contains).ToList();
    if(actB.Except(actA).Any()||(actA.OrderBy(x=>x).SequenceEqual(actB.OrderBy(x=>x))&&!actA.SequenceEqual(actB)))return new SemanticCheck{Rejected=true,Reason="FACT_CHANGED: hành động mới hoặc thứ tự hành động khác tại cue #"+before[i].Id};
@@ -35,7 +37,7 @@ public static class RepairPolicy {
    if(ma==mb){if(SafeSurface(before[i].Text)!=SafeSurface(after[i].Text))result.Reason="SEMANTIC_REVIEW_REQUIRED: đổi dạng động từ, dấu câu hoặc cấu trúc; không tự coi là đồng nghĩa chỉ vì stem trùng.";continue;}
    result.Reason="SEMANTIC_REVIEW_REQUIRED: cách diễn đạt thay đổi; đối chiếu sự kiện, kết quả, sắc thái và nhân quả trước khi chấp nhận.";
   }
-  result.Safe=result.Reason.Length==0;if(result.Safe)result.Reason="NORMALIZED_EQUIVALENT: cấu trúc/từ đồng nghĩa hẹp và thực thể giữ nguyên; không phải chứng minh ngữ nghĩa tổng quát.";return result;
+  result.Safe=result.Reason.Length==0;if(result.Safe)result.Reason="CONTROLLED_EQUIVALENT: đối chiếu được qua quy tắc ngữ pháp/từ tương đương có giới hạn, giữ thực thể và thứ tự; không phải bảo đảm nghĩa 100%.";return result;
  }
  public static bool Acceptable(AiAttempt a){return a!=null&&!a.Rejected&&a.Measurement!=null&&a.Measurement.Valid&&!a.Measurement.NeedsRepair;}
  public static void ValidateGeometry(List<Cue> original,List<Cue> proposed){
@@ -44,7 +46,7 @@ public static class RepairPolicy {
  }
  public static string Quality(double speed){return speed>1.10001?"CẢNH BÁO CHẤT LƯỢNG: vượt 1.10x; đạt kỹ thuật không đồng nghĩa giọng tự nhiên.":"Trong vùng ưu tiên 0.90–1.10x.";}
 }
-public sealed class RepairPendingException:Exception {public readonly AiRepairSession Session;public RepairPendingException(AiRepairSession p):base("CẦN SỬA THỦ CÔNG hoặc duyệt lời: mở SỬA NGAY tại chặng lỗi rồi TIẾP TỤC RENDER."){Session=p;}}
+public sealed class RepairPendingException:Exception {public readonly AiRepairSession Session;public RepairPendingException(AiRepairSession p):base("NEEDS_REVIEW: chưa có phương án đo đạt và đủ chắc về nghĩa; đã giữ checkpoint, xem cue lỗi trong báo cáo."){Session=p;}}
 public sealed class BreathState {
  public int Sentences,Index;public double Last=-100;
  public string Key{get{return Sentences+"|"+Index+"|"+Last.ToString("R",System.Globalization.CultureInfo.InvariantCulture);}}

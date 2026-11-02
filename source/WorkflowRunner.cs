@@ -31,15 +31,16 @@ public static class WorkflowRunner {
    }
    if(o.ReportContext!=null)o.ReportContext.SourceCues=VoiceRenderReport.Snapshot(words);Renderer.Render(words,engine,o,output,progress);result.Bundle=o.WorkflowBundle;result.Status=o.WorkflowBundle.Status;result.Cues=VoiceRenderReport.Snapshot(words);return result;
   }catch(Exception e){
+   var pending=e as RepairPendingException;if(pending!=null&&o.AiRepair==null)o.AiRepair=pending.Session;
    result.Error=e;if(o.AiRepair!=null)words=o.AiRepair.Effective();result.Cues=VoiceRenderReport.Snapshot(words);
-   string code=e is OperationCanceledException?"CANCELLED":e.Message.StartsWith("INPUT_ERROR")||inputFailure!=null?"INPUT_ERROR":o.RunReport!=null&&!String.IsNullOrEmpty(o.RunReport.FailureCode)?Normalize(o.RunReport.FailureCode):e.Data.Contains("V15Status")?Convert.ToString(e.Data["V15Status"]):"ENGINE_ERROR";
-   if(o.RunReport==null){o.RunReport=new VoiceRenderReport(words,engine,o,output);o.RunReport.Step("INPUT","Lỗi đầu vào hoặc chuẩn bị");o.RunReport.Finish(e is OperationCanceledException?"ĐÃ DỪNG":"THẤT BẠI","",e);}
+   string code=e is OperationCanceledException?"CANCELLED":pending!=null?"NEEDS_REVIEW":e.Message.StartsWith("INPUT_ERROR")||inputFailure!=null?"INPUT_ERROR":o.RunReport!=null&&!String.IsNullOrEmpty(o.RunReport.FailureCode)?RenderStatus.Normalize(o.RunReport.FailureCode):e.Data.Contains("V15Status")?RenderStatus.Normalize(Convert.ToString(e.Data["V15Status"])):"ENGINE_ERROR";
+   if(o.RunReport==null){o.RunReport=new VoiceRenderReport(words,engine,o,output);if(o.AiRepair!=null)o.RunReport.SnapshotRepair(o.AiRepair,code,e);else{o.RunReport.Step("INPUT","Lỗi đầu vào hoặc chuẩn bị");o.RunReport.Finish(e is OperationCanceledException?"ĐÃ DỪNG":"THẤT BẠI","",e);o.RunReport.FailureCode=code;}}
    // A failed/cancelled task must still finish with the selected report count.
    // Never invoke a language model after the user has cancelled.
    if(mode==2&&!(e is OperationCanceledException)&&WorkflowReports.Changed(o,words).Count>0&&o.Translation==null){try{engine.ReleaseModels();o.Translation=WorkflowReports.Translate(o,words,()=>engine.Cancelled,progress);}catch(OperationCanceledException){code="CANCELLED";}}
    result.Bundle=WorkflowReports.Publish(null,output,words,o,o.RunReport,code,e);result.Status=code;return result;
   }
  }
- static string Normalize(string code){if(code=="CANCELLED"||code=="NEEDS_REVIEW"||code=="TRANSLATION_INCOMPLETE")return code;if(code.Contains("TIMELINE")||code=="AI_REWRITE_FAILED")return "NEEDS_REVIEW";if(code.Contains("TTS")||code.Contains("MODEL")||code=="ENGINE_ERROR")return "ENGINE_ERROR";if(code=="INPUT_OR_SETUP_FAILED")return "INPUT_ERROR";return "RENDER_FAILED";}
+
 }
 }

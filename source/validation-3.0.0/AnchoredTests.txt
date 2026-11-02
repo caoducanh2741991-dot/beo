@@ -1,4 +1,4 @@
-Artifacts /tmp/v1411-tests-16c14c10a6f24c0e955021a0aeaa2aa9
+Artifacts /tmp/v1411-tests-1c08aee0276a453bb476ce338077e216
 PASS Display cues are grouped into a meaningful stage
 PASS One continuous speech request rather than one request per display cue
 PASS Fast speech fitted and remeasured to exactly source duration

@@ -1,0 +1,98 @@
+V15 VOICE STUDIO 3.0.0 — KẾT QUẢ KIỂM THỬ
+Ngày: 01/11/2026 (Asia/Saigon)
+
+PHẠM VI ĐÃ THỰC THI
+Build Windows PE32+ GUI x64 .NET 4.5: V15VoiceStudio.exe và V15Updater.exe.
+Chạy EXE với Mono/Linux; giao diện WinForms thật trên Xvfb; dùng FFmpeg thật.
+TTS/AI/dịch trong bộ hồi quy dùng fixture/provider giả lập; không phải phép đo
+mới bằng giọng Steven hoặc RTX 2070. Replay Reno giữ số đo từ báo cáo 2.0.17.
+
+TỔNG C# ĐÃ ĐẠT: 584 kiểm tra trong 21 lượt/bộ.
+  Reno300Tests: 62 PASS
+  Acoustic300Tests: 11 PASS
+  Workflow217Tests: 47 PASS
+  Recovery216Tests: 42 PASS
+  Sync216Tests: 27 PASS
+  BatchTests: 12 PASS
+  TwoVoiceTests: 41 PASS
+  VoiceReportTests: 30 PASS
+  PunctuationTests: 20 PASS
+  BreathStreamingTests: 8 PASS
+  TextTargetTests: 37 PASS
+  AudioRepairTests: 45 PASS
+  CommunityVoiceTests: 20 PASS
+  VoiceDiagnosticTests: 26 PASS
+  LocalAiSafetyTests: 16 PASS
+  AnchoredTests: 65 PASS
+  NativeGpuTests: 15 PASS
+  UpdaterTests: 21 PASS
+  Reno300Tests-reopen: 3 PASS
+  Recovery216Tests-reopen: 8 PASS
+  WorkflowUi300Tests: 28 PASS
+
+PYTHON ĐÃ ĐẠT: 15 kiểm tra (gpu_policy 11, worker_probe 4).
+
+CA THỰC TẾ RENO ĐƯỢC TÁI HIỆN BẰNG DỮ LIỆU BÁO CÁO
+Reno 1: 48 cue / 12 chặng; replay giữ 11 PASS + 1 NEEDS_REVIEW.
+Reno 2: 68 cue / 17 chặng; mode1 replay giữ 14 PASS + 3 NEEDS_REVIEW.
+Reno 3: 76 cue / 19 chặng; mode1 replay giữ 14 PASS + 5 NEEDS_REVIEW.
+Reno 3 dừng lúc AI: 9 chặng đã đo = 8 PASS + 1 NEEDS_REVIEW; 10 chưa đo.
+Mô phỏng dừng trước chặng10: CANCELLED=1, UNMEASURED=9; các nhóm cộng đủ 19.
+Kiểm tra mở lại ở tiến trình riêng giữ hash PCM thật và đúng chặng/bước dừng.
+Các đề xuất thêm kệ hoặc thêm trạng thái thờ ơ bị chặn dù verdict cũ equivalent.
+Nguồn SRT Reno được tái dựng theo EN/timecode trong báo cáo, không phải bản
+sao byte của SRT gốc. Hash cả 9 báo cáo nằm trong fixtures/reno217/audit.json.
+
+RENDER / SỬA ĐÃ CHẠY VỚI AUDIO GIẢ LẬP VÀ FFMPEG THẬT
+Reno1: đo thiếu -> mở rộng viết tắt cùng nghĩa -> đo lại -> tự nhận -> xuất WAV
+và final.srt, đúng 2 báo cáo; quick report có EN gốc/EN dùng/VI fixture thật.
+Cân nghỉ: cùng một nguồn/cấu hình, hai chế độ cho số đo/căn nhất quán; giữ lời,
+không gọi AI viết lại/dịch, không ghi cân nghỉ thành câu AI đã sửa.
+Lời final.srt khớp dữ liệu TTS, timecode nguồn giữ nguyên, source hash không đổi.
+Không gọi lại TTS khi stage PCM hợp lệ được dùng lại ở lần render kế.
+Trạng thái pending, CANCELLED, lỗi engine, lỗi render và dịch thiếu được tách.
+RepairPendingException cũ được chuyển thành NEEDS_REVIEW tại job, giữ số đo.
+Thử đổi cường độ, mức chắc chắn, số lượng, tên và thêm tình tiết không được
+tự chấp nhận chỉ vì giống một quy tắc ngữ pháp.
+
+HỒI QUY VAN 4 / VAN 5 / VAN 6
+Dùng SRT thật trong fixtures/van215, audio/AI giả lập, FFmpeg thật.
+VAN4: đủ 7/7 chặng trong ca giả lập đạt; giữ lời/timecode.
+VAN5: đủ 18/18 chặng trong ca giả lập đạt; giữ lời/timecode.
+VAN6: đủ 11/11 trong ca đạt; ca thiếu cue5-8 ở 14.400-28.800s giữ lại 10 chặng
+đã đo đạt khi AI trả nguyên văn. Kết thúc NEEDS_REVIEW, đúng 2 báo cáo, không crash.
+Không coi những kết quả này là xác nhận WAV mới với giọng Steven thật.
+
+GIAO DIỆN VÀ TÍNH NĂNG HIỆN CÓ
+28 kiểm tra giao diện EXE thật: hai chế độ đồng bộ Studio/batch, 3 nút chính,
+không nút sửa/duyệt/resume dư; vừa 1440x960 và 1100x740; voice clone, thư viện
+giọng và chọn hai giọng còn nguyên. Ca thiếu engine chạy tới báo cáo, không
+mở hộp thoại sửa hoặc làm mất khả năng mở kết quả.
+Hai giọng, ngắt nghỉ, hơi thở, cache, TXT đích và GPU routing được kiểm tra
+bằng fixture. Đã so hash 8 module TTS/GPU/audio nền không đổi so với 2.0.17:
+ai_worker.py, gpu_policy.py, NativeGpu.cs, ExternalSpeech.cs, TwoVoices.cs,
+Punctuation.cs, AudioProcessing.cs, AudioFinishing.cs.
+
+THỬ GÓI CẬP NHẬT
+PASS: 10 kiểm tra cập nhật trong 2 tiến trình độc lập.
+Bộ cập nhật 2.0.17 và bộ cập nhật 3.0.0 đều áp dụng gói lên cài đặt thử 2.0.17.
+Xác nhận app đích 3.0.0.0, module mới/hướng dẫn có mặt, không còn journal dở.
+Hash của model/runtime/mẫu clone/GPU/SRT/WAV thử giữ nguyên sau cập nhật.
+Đây là cài đặt fixture trên Mono/Linux, chưa phải cập nhật trên Windows vật lý.
+
+BINARY ĐÃ CHẠY TRONG BỘ HỒI QUY (SHA256)
+V15VoiceStudio.exe: 457712fa96687c35367331e03905592c23ebdf8167dbf534e75d1f9c4adfa403
+V15Updater.exe: ecbd8551d11aaeef1add029a1b6de57ed3e799ec5e48c769e9eddda06467a73c
+
+CHƯA ĐƯỢC XÁC NHẬN / GIỚI HẠN
+- Windows vật lý, RTX2070 8GB, mẫu Steven và các model đã cài trên máy người dùng.
+- Render lại toàn bộ Reno/VAN với các giọng thật, một/hai giọng và clone thật.
+- Chạy model Qwen/dịch offline thật trong lượt 3.0; các module này được giữ lại
+  nhưng kiểm thử lần này dùng provider giả lập, không lấy log 2.0.16 làm PASS 3.0.
+- Các diễn đạt chưa đủ căn cứ tương đương vẫn NEEDS_REVIEW, giữ checkpoint;
+  không bảo đảm máy có thể tự sửa mọi câu hoặc bảo đảm nghĩa 100%.
+- Tự viết lại TXT theo đích/SRT linh hoạt chưa được mở rộng.
+
+Các log chi tiết nằm trong payload/source/validation-3.0.0 trong gói.
+Build Windows: payload/source/BUILD_WINDOWS.cmd.
+Validation entry: payload/source/validate300.py; cấu hình Mono/refs theo run_validation.py.

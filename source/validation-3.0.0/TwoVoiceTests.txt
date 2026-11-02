@@ -39,4 +39,4 @@ PASS V15.6 reports actual speaker and does not invent final per-cue measurements
 PASS Two-voice TXT duration target and loudness normalization produce exact final frames
 PASS Whole-TXT fitting preserves voice map while keeping final cue timing unknown
 PASS TXT estimation does not transfer measured slow A rate to unmeasured B
-TOTAL TWO VOICE 41 passed. Fixtures: /tmp/V15 hai giọng f270853941d549adb68a083a4cb1ba04
+TOTAL TWO VOICE 41 passed. Fixtures: /tmp/V15 hai giọng 8d1e0471b0354c3e970c2e7865880e44
