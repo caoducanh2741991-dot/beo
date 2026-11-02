@@ -9,6 +9,6 @@ test_speed_only_request_reuses_accepted_natural_audio (__main__.ProtocolTests.te
 test_three_invalid_results_never_overwrite_existing_output (__main__.ProtocolTests.test_three_invalid_results_never_overwrite_existing_output) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 1.300s
+Ran 9 tests in 1.933s
 
 OK

@@ -1,101 +1,60 @@
-V15 VOICE STUDIO 1.4.6 — SỬA NHẬP MẪU VÀ ĐỌC TXT DÀI
+﻿V15 VOICE STUDIO 1.4.7 — CẬP NHẬT VÀ HƯỚNG DẪN
 
 CẬP NHẬT
-Dừng tác vụ đang chạy > Công cụ & thiết lập > Cập nhật từ ZIP > chọn
-V15VoiceStudio_1.4.6_Update.zip. Khi mở lại, tiêu đề phải ghi 1.4.6.
-Không cần gỡ cài đặt, tải lại model hay gói GPU.
-Nếu trình cập nhật trong app lỗi: giải nén TOÀN BỘ ZIP vào thư mục mới,
-chạy CAP_NHAT.cmd rồi chọn đúng thư mục V15 đã cài có ai/runtime và ai/models.
-Không lấy riêng EXE để chạy; bản này cần cả source/media đi cùng.
-Gói giữ nguyên model, CUDA, các giọng đã lưu, danh sách giọng và thiết lập hiện có.
-ZIP lớn hơn bản 1.4.5 vì có bộ xử lý âm thanh Windows và mã nguồn tương ứng;
-không phải bộ cài lớn và không chứa model/GPU.
+1. Trong V15 đang dùng, mở Công cụ & thiết lập → Cập nhật từ ZIP.
+2. Chọn V15VoiceStudio_1.4.7_Update.zip. Chờ app đóng, cập nhật và mở lại.
+3. Kiểm tra tiêu đề cửa sổ: Offline 1.4.7.
+Nếu cần: giải nén ZIP đầy đủ, chạy CAP_NHAT.cmd và chọn đúng thư mục V15 đang cài.
+Đây là bản cập nhật cho V15 1.4 đã cài đầy đủ; không chạy riêng EXE trong thư mục
+ZIP thay cho cập nhật app đang cài. Các model, giọng riêng và bộ GPU cũ được giữ.
 
-SỬA LỖI NHẬP MP3 / WAV / MP4 / M4A
-Ảnh lỗi "Unknown encoder pcm_f32le" xuất phát từ bộ FFmpeg cũ thiếu codec.
-Bản 1.4.6 bổ sung FFmpeg dành cho xử lý âm thanh, có MP4/M4A/AAC, MP3,
-WAV PCM/float và các bộ lọc cần cho cân âm lượng/căn tốc độ.
-App ưu tiên bộ này khi nhập mẫu, nghe thử, cân âm lượng và căn SRT.
-Bộ FFmpeg cũ của tiến trình AI được giữ nguyên; không đổi GPU hay model.
-Trước khi nhập mẫu, app kiểm tra codec, định dạng và bộ lọc cần thiết.
-Sửa lỗi nút "Nghe đoạn đang chọn" xóa WAV tạm trước khi phát.
+MỚI: MP4 / MP3 → SRT
+• Lấy lời nói tiếng Anh và căn timeline theo âm thanh thực tế.
+• Nhận nhiều file, chạy lần lượt, báo lỗi riêng và tiếp tục các file khác.
+• Chỉ xuất SRT cạnh media gốc. Tên đã có sẽ thêm _2, _3... để tránh ghi đè.
+• Giữ khoảng im lặng, độ trễ tiếng nói so với video; không ép vào khối 3,3 giây.
+• Có Chất lượng (Whisper large-v3) và Nhanh (Distil large-v3 English).
+• Có Câu tự nhiên (tối đa hai dòng) và Ngắn (phù hợp TikTok).
+• Hỗ trợ MP4/MP3/WAV/M4A/MOV/MKV khi codec phù hợp. Tối đa 2 giờ/file, 500 file/hàng đợi.
 
-Chọn mẫu > đặt Bắt đầu / Độ dài 6–20 giây > Nghe đoạn đang chọn >
-nhập tên và thông tin giọng > xác nhận quyền sử dụng > LƯU GIỌNG RIÊNG.
-Mẫu 10–15 giây, một người nói rõ, không nhạc nền thường thuận tiện.
-Bản chép lời nếu nhập phải khớp chính xác đoạn đã chọn; không có thì để trống.
-File gốc được giữ nguyên. MP4 lấy track âm thanh đầu tiên, không lấy hình.
-Bộ mới không thể đảm bảo sửa file tải thiếu/hỏng hoặc không có track âm thanh.
-Lỗi "Invalid data found when processing input" của MP4 trong ảnh đầu cần
-chính file gốc để tái hiện nếu vẫn xảy ra sau cập nhật; không khẳng định
-cùng nguyên nhân với lỗi thiếu encoder của MP3.
+CÀI BỘ PHỤ ĐỀ MỘT LẦN
+1. Mở tab MP4 / MP3 → SRT, chọn mô hình.
+2. Bấm Cài bộ phụ đề. Lần đầu cần mạng, tải vài GB, nên có 12 GB trống.
+3. Đợi báo đã cài xong, sau đó bấm Kiểm tra bộ phụ đề.
+4. Chọn Auto để ưu tiên CUDA và dự phòng CPU khi lỗi; hoặc chọn GPU/CPU riêng.
+5. Có thể ngắt mạng để tạo SRT. Không cần API hoặc tài khoản, không gửi video lên mạng.
+Đổi sang mô hình chưa có sẽ cần cài bổ sung. Nếu cài bị gián đoạn, bấm cài lại.
+Bộ nhận dạng, CUDA và model được cài riêng trong dữ liệu người dùng, không cài đè
+môi trường tạo voice. ZIP cập nhật app không chứa sẵn các model nhận dạng.
 
-ĐỌC VĂN BẢN DÀI — TXT HOẶC DÁN NỘI DUNG
-Mở TXT không có timecode hoặc dán văn bản thuần tại Tạo voice.
-App tự chuyển sang đọc tự nhiên: chia theo câu, giữ thứ tự và dấu câu;
-câu rất dài chia thêm theo mệnh đề/giới hạn an toàn. Không áp khung 7–9 từ của SRT.
-Giọng được đọc ở tốc độ gốc đã chọn, không tự ép mỗi câu vào một khung giả định.
-Giữ ngắt đoạn gốc để điều chỉnh nghỉ giữa đoạn. Hơi thở vẫn có Auto / Tùy chọn /
-Không dùng; không cộng thêm các khoảng nghỉ ngoài cần thiết ở điểm nối.
-Bộ chia bên trong giọng sao chép ưu tiên dấu câu, có giới hạn an toàn cho mỗi cụm.
+TẠO SRT
+1. Chọn Luồng tiếng trước khi thêm file (1 = luồng âm thanh đầu tiên).
+2. Bấm Thêm MP4 / MP3 hoặc kéo thả nhiều media vào app.
+3. Chọn kiểu chia phụ đề, bấm TẠO SRT HÀNG ĐỢI.
+4. Nhấp vào file để xem nội dung/mốc. Bấm Mở kết quả để tìm SRT cạnh media gốc.
+5. Giữ Bỏ qua file đã xong khi chạy lại. File nguồn thay đổi sẽ được nhận dạng lại.
+Dừng tác vụ ở góc dưới ngắt file đang chạy và không xuất SRT dang dở.
+Hàng đợi và bản chỉnh được lưu. Lần chạy lại có thể tái sử dụng bản nhận dạng đã hoàn tất;
+không tiếp tục từ giữa một lần nhận dạng còn dang dở.
 
-THỜI LƯỢNG BÊN PHẢI
-Bảng ĐỌC VĂN BẢN DÀI hiện khi nhập TXT:
-• Trước khi chạy: thời lượng dự kiến sơ bộ theo số từ/tốc độ.
-• Nghe thử & ước lượng TXT: đo các đoạn rải đều bằng giọng đã chọn, phát mẫu
-  và cập nhật khoảng thời lượng dự kiến. Các đoạn đạt được dùng lại khi render.
-• Trong khi chạy: voice đã tạo, tổng thời lượng dự kiến, số đoạn xong/tổng số,
-  số từ và thời gian máy còn xử lý (ước tính).
-• Sau khi ghép/cân âm lượng xong: thời lượng WAV chính xác.
-Thời lượng voice và thời gian máy xử lý là hai thông tin khác nhau.
-Ước lượng không phải cam kết sai số cố định; thay giọng/tốc độ/nội dung cần tính lại.
-Các đoạn chưa render chưa có mốc chính xác; chỉ hiện mốc khi âm thanh đã được tạo.
+SỬA / CĂN LẠI
+• Dòng tô vàng cần nghe kiểm tra: nhận dạng yếu, căn từ yếu, số liệu hoặc chữ chạy nhanh.
+  Các dòng không bị đánh dấu vẫn có thể có lỗi; không xem đây là chứng nhận đúng tuyệt đối.
+• Chọn một dòng → Nghe đoạn để nghe tiếng gốc; sửa lời hoặc mốc ngay trong bảng.
+• Căn lại lời đã sửa: căn theo âm thanh và xuất một SRT mới, giữ bản SRT trước.
+• Xuất SRT: lưu bản đang chỉnh với mốc hiện tại. Mốc phải hợp lệ, không chồng nhau/vượt thời lượng.
+• Gắn / bỏ TXT lời gốc: chọn media trong hàng đợi, gắn TXT UTF-8 đúng với lời đọc.
+  TXT có thể giúp sửa một số lỗi nhận dạng. Nếu khác quá nhiều hoặc thiếu cả đoạn, app báo lỗi.
+  Bấm lại nút để bỏ TXT và nhận dạng trực tiếp từ âm thanh.
+• Những từ phải dùng mốc nhận dạng dự phòng được đánh dấu để nghe đối chiếu.
 
-SỬA RIÊNG TỪNG ĐOẠN
-Chọn dòng > Nghe thử câu đang chọn để nghe riêng.
-Tạo lại đoạn đang chọn: sinh bản đọc mới, giữ bản trước để có thể quay lại.
-Dùng bản đọc trước: quay về bản đã lưu theo đúng giọng/lời/tốc độ hiện tại.
-Khóa / mở khóa đoạn: bảo vệ lời và ngăn tạo lại khi thiết lập không khớp.
-Cần có âm thanh đã tạo/nghe thử trước khi khóa. Muốn đổi giọng/tốc độ/lời của
-đoạn đã khóa, mở khóa trước. Cache bị dọn/mất thì cũng cần mở khóa để tạo lại.
-Sau khi sửa/tạo lại/phục hồi đoạn, bấm TẠO VOICE & XUẤT để ghép lại WAV tổng.
-Các đoạn không đổi được dùng lại, không phải gọi model đọc lại cả bài.
-Chỉ đổi mức âm lượng tổng thì không cần sinh lại giọng.
-WAV tổng cũ giữ nguyên; lần xuất tiếp theo tạo tên mới nếu đã có file cùng tên.
+SỬA LỖI
+• TXT → SRT tự mở lại các ô giới hạn tốc độ, không cần nghe thử để mở khóa.
+• Các tab có thể xuống dòng khi cửa sổ hẹp để truy cập đủ công cụ.
+• Tạo voice, sao chép giọng, GPU, hơi thở và TXT dài giữ cách dùng cũ.
 
-DỪNG VÀ TIẾP TỤC
-Âm thanh từng đoạn được lưu tại dữ liệu ứng dụng text_audio, tách khỏi thư mục
-nguyên liệu. Khi chạy lại cùng giọng/mẫu/lời/tốc độ, app dùng phần đã hoàn thành.
-Bài TXT gần nhất cùng các sửa đổi được lưu; mở app lại sẽ khôi phục bài này.
-Nếu TXT gốc đã thay đổi ngoài app, app nhập lại file mới.
-Bộ nhớ âm thanh trên đĩa có giới hạn khoảng 1 GB, dọn đoạn cũ khi mở kho mới;
-không phải lưu vĩnh viễn mọi dự án hoặc mọi phiên bản. Mỗi đoạn giữ một bản trước.
-Không xuất WAV tổng thiếu câu khi tác vụ lỗi/hủy. Có thể tiếp tục từ các đoạn đã lưu.
-
-HÀNG ĐỢI
-Có thể thêm nhiều TXT/SRT. TXT dùng giọng tự nhiên; SRT giữ chức năng căn mốc.
-Dòng kết quả hàng đợi hiện thời lượng voice đã tạo hoặc thời lượng WAV hoàn tất.
-Dùng chung giọng, tốc độ, âm lượng, ngắt nghỉ và hơi thở.
-Kết quả cạnh mỗi nguyên liệu vẫn chỉ là WAV; file nguồn không bị ghi đè.
-Các đoạn của TXT trong hàng đợi cũ được giữ, bổ sung cờ chế độ đọc tự nhiên.
-Nếu muốn nhập lại theo cách chia câu mới, bỏ file đó khỏi hàng đợi rồi thêm lại.
-
-KIỂM CHỨNG VÀ GIỚI HẠN
-Đã kiểm tra 2.000 từ bằng bộ tổng hợp mô phỏng để đối chiếu đủ nội dung,
-đúng thứ tự, timeline, sửa một câu, khóa/phục hồi, dừng và tiếp tục.
-Đã dùng các WAV/MP4 ADAM, EXCITER, VANZAI được cung cấp và mẫu MP3/M4A
-chuyển đổi từ chúng để kiểm tra bộ xử lý âm thanh thật.
-Bản FFmpeg Windows được biên dịch x64 từ nguồn chính thức với các codec/bộ lọc
-cần thiết; đã kiểm tra thành phần và DLL phụ thuộc. Các ca xử lý thực tế chạy
-trên bản Linux biên dịch từ cùng nguồn và cùng danh sách thành phần.
-Chưa chạy trực tiếp bản Windows, RTX 2070 hoặc model thật trên bài 2.000 từ
-trong môi trường này. Các bài kiểm tra giọng sao chép dùng mô phỏng lỗi/hồi quy;
-không phải bằng chứng chấm độ giống hoặc xác nhận mọi từ đọc đều đúng.
-Không tích hợp ASR kiểm duyệt từng từ; nên nghe kiểm tra các đoạn quan trọng.
-EXE biên dịch theo bộ tham chiếu .NET Framework 4.5 của Microsoft.
-
-PHẦN MỀM NGUỒN MỞ
-Bộ xử lý âm thanh sử dụng FFmpeg theo LGPL 2.1 hoặc mới hơn, chạy như tiến trình
-riêng. Mã nguồn FFmpeg tương ứng, giấy phép, cấu hình và hướng dẫn biên dịch
-được kèm tại source/media trong gói cập nhật. Có thể thay bản FFmpeg tương thích
-hoặc tự biên dịch lại từ mã nguồn này; không có thay đổi mã nguồn FFmpeg.
+GIỚI HẠN KIỂM THỬ
+Đã kiểm tra logic, giao diện, cập nhật ZIP và nhận dạng/căn từ thật trên Linux/CPU.
+EXE dành cho Windows x64 / .NET Framework 4.5. Chưa chạy trực tiếp trên máy Windows
+RTX 2070 của bạn. Nhạc nền lớn, nói chồng nhau, tên riêng và số liệu có thể gây sai;
+không cam kết chính xác 100% hay tốc độ cố định.

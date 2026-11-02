@@ -1,0 +1,14 @@
+V15 1.4.7 ASR upstream components
+faster-whisper 1.1.1: https://github.com/SYSTRAN/faster-whisper
+CTranslate2 4.6.0: https://github.com/OpenNMT/CTranslate2
+WhisperX 3.3.4 (alignment only): https://github.com/m-bain/whisperX/tree/v3.3.4
+PyTorch / torchaudio 2.6.0 CUDA 12.4: https://pytorch.org/
+Silero VAD: https://github.com/snakers4/silero-vad
+Python 3.12.10 embedded x64: https://www.python.org/
+Models: https://huggingface.co/Systran/faster-whisper-large-v3
+https://huggingface.co/Systran/faster-distil-whisper-large-v3
+Torchaudio WAV2VEC2_ASR_BASE_960H checkpoint.
+Exact model revisions and Python/pip hashes: download_lock.json.
+Third-party licenses/model cards are supplied by their respective distributions.
+The minimal alignment install does not need diarization/pyannote tokens or online transcription.
+setup_asr.py only installs into the separate subtitles/runtime user-data folder.

@@ -30,4 +30,4 @@ PASS Reference import works for .mp4 including spaces and punctuation in filenam
 PASS Queue recognizes plain TXT and uses long-form sentence parser
 PASS Queue persistence retains prose metadata and paragraph locks
 PASS Older TXT queues migrate safely into natural-text mode without losing edited sentences
-TOTAL UPDATE 1.4.6 32 passed. Artifacts: /tmp/V15_146_006da14e3686443783d04cc0c9dd48ab
+TOTAL UPDATE 1.4.6 32 passed. Artifacts: /tmp/V15_146_74124b50792a494b9035a303403d63ea
