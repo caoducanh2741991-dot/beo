@@ -1,0 +1,33 @@
+V15 Voice Studio 1.0.1 — compatibility fix
+PASS: Old binary reproduces the unsupported String.Split(char, StringSplitOptions) reference shown in the user screenshot.
+PASS: New binary has no such method reference. It uses the .NET Framework-supported char[] overload.
+PASS: Entire application compiled with -noconfig -nostdlib against Microsoft.NETFramework.ReferenceAssemblies.net45 1.0.3.
+PASS: Windows executable version updated to 1.0.1.0.
+Scope: compatibility build and IL reference inspection. Windows installation/audio playback still require testing on the user's PC.
+Reference package: https://api.nuget.org/v3-flatcontainer/microsoft.netframework.referenceassemblies.net45/1.0.3/microsoft.netframework.referenceassemblies.net45.1.0.3.nupkg
+Package SHA256: 23a9f94ea3e2cb88cd8341af75b811c6fb5cb82516fc696e95ed4620279128e3
+
+PASS SRT parse CRLF and 150ms gap
+PASS SRT roundtrip words and exact milliseconds
+PASS Reject overlapping cues
+PASS Reject invalid minutes
+PASS Reject missing separator instead of reading timestamps
+PASS TXT splitting preserves every word
+PASS TXT V15 word budget
+PASS Timed TXT parse
+PASS Reject mixed timed/untimed overlaps
+PASS Windows quote escaping
+PASS Windows trailing backslash quoting
+PASS WAV PCM exact roundtrip
+PASS Breath sample rate conversion
+PASS Kokoro native speed changes measured duration
+PASS Locked master ends at exact original SRT time
+PASS Locked rendering preserves timecodes and text
+PASS Explicit 150ms gap remains clear, no overlap
+PASS Detailed timeline report and individual cues exported
+PASS Flexible timeline derives voice duration and 150ms gap
+PASS Flexible WAV matches generated SRT
+PASS Oversize voice rejected instead of truncating or overlapping
+PASS LibriTTS highest speaker ID 903 works
+PASS Cancellation stops further synthesis
+TOTAL: 23 passed. Output: /tmp/v15_tests_2be58c37c0a04ffa8ee0576c1a36b42e

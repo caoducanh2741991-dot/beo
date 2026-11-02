@@ -1,0 +1,24 @@
+PASS SRT parse CRLF and 150ms gap
+PASS SRT roundtrip words and exact milliseconds
+PASS Reject overlapping cues
+PASS Reject invalid minutes
+PASS Reject missing separator instead of reading timestamps
+PASS TXT splitting preserves every word
+PASS TXT V15 word budget
+PASS Timed TXT parse
+PASS Reject mixed timed/untimed overlaps
+PASS Windows quote escaping
+PASS Windows trailing backslash quoting
+PASS WAV PCM exact roundtrip
+PASS Breath sample rate conversion
+PASS Kokoro native speed changes measured duration
+PASS Locked master ends at exact original SRT time
+PASS Locked rendering preserves timecodes and text
+PASS Explicit 150ms gap remains clear, no overlap
+PASS Only final WAV exported; cue WAVs and reports not retained
+PASS Flexible timeline derives voice duration and 150ms gap
+PASS Flexible WAV matches generated SRT
+PASS Oversize voice rejected instead of truncating or overlapping
+PASS LibriTTS highest speaker ID 903 works
+PASS Cancellation stops further synthesis
+TOTAL: 23 passed. Output: /tmp/v15_tests_95d2a45bdafb43459d8b0353fef35441

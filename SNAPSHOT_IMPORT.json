@@ -1,0 +1,749 @@
+{
+  "version": "1.4.1",
+  "kind": "imported-packaged-snapshot",
+  "note": "Imported now from an existing packaged release. This is not the original development commit history.",
+  "original_assets": [
+    {
+      "name": "V15VoiceStudio_1.4.1_Update.zip",
+      "bytes": 392114,
+      "sha256": "f375bf6bdfac3254e70ae35cf8f4b07cc7fca95a5ca674562a172b7cc87d8e25",
+      "validation": "ZIP_CRC_OK"
+    }
+  ],
+  "assembled_archive_sha256": "f375bf6bdfac3254e70ae35cf8f4b07cc7fca95a5ca674562a172b7cc87d8e25",
+  "excluded_installed_components": [],
+  "mapped_files": [
+    {
+      "archive_path": "manifest.xml",
+      "repository_path": "release-info/manifest.xml",
+      "bytes": 15699,
+      "sha256": "0df19fbbae6bbcd7d5122e9df6b4aad16fa01ffb7bf1885052115c69c93e722a"
+    },
+    {
+      "archive_path": "CAP_NHAT.cmd",
+      "repository_path": "release-info/CAP_NHAT.cmd",
+      "bytes": 282,
+      "sha256": "d7dcc3f4a052794b02ef40e8c0112b48e07d39b5d36196ec4bdd13a730a3933e"
+    },
+    {
+      "archive_path": "HUONG_DAN.txt",
+      "repository_path": "release-info/HUONG_DAN.txt",
+      "bytes": 4763,
+      "sha256": "79fcc627ab97809475bbd672e2e6fbb6db7bae052b2618aa23061115f6df39fc"
+    },
+    {
+      "archive_path": "payload/HUONG_DAN_1.4.1.txt",
+      "repository_path": "HUONG_DAN_1.4.1.txt",
+      "bytes": 4763,
+      "sha256": "79fcc627ab97809475bbd672e2e6fbb6db7bae052b2618aa23061115f6df39fc"
+    },
+    {
+      "archive_path": "payload/V15Updater.exe",
+      "repository_path": "V15Updater.exe",
+      "bytes": 27136,
+      "sha256": "b9ebe5269b1edb642bf5f19dcfb6b570bde38838fd22be3a2d4b16e7ac804b3a"
+    },
+    {
+      "archive_path": "payload/V15VoiceStudio.exe",
+      "repository_path": "V15VoiceStudio.exe",
+      "bytes": 133632,
+      "sha256": "9a5850037e3f22bd8f5ede8edc433541476fc84f1e8c26bc393aa5e9f2fbd3b6"
+    },
+    {
+      "archive_path": "payload/ai/gpu_policy.py",
+      "repository_path": "ai/gpu_policy.py",
+      "bytes": 1680,
+      "sha256": "4a31d5a873e125cb450dd0988722a7ac50b71d22dff42b1bd1f368d1e7eeb005"
+    },
+    {
+      "archive_path": "payload/ai/worker.py",
+      "repository_path": "ai/worker.py",
+      "bytes": 8548,
+      "sha256": "74884741746dbf20816354b8a19e29e09f467efbd82272ae9bf90c38954ecdfc"
+    },
+    {
+      "archive_path": "payload/source/AiPipelineTests-1.4.0.txt",
+      "repository_path": "source/AiPipelineTests-1.4.0.txt",
+      "bytes": 1051,
+      "sha256": "be056d0a00148e839b2481a65e22cbef267b8f5448ae8eddabaddd1635bb20c6"
+    },
+    {
+      "archive_path": "payload/source/AiPipelineTests.cs",
+      "repository_path": "source/AiPipelineTests.cs",
+      "bytes": 2621,
+      "sha256": "c311b9b57583c459b3c94fd37f4c03cc59f3f80366c1b362e4b581894e882588"
+    },
+    {
+      "archive_path": "payload/source/App.cs",
+      "repository_path": "source/App.cs",
+      "bytes": 38908,
+      "sha256": "31628656235eed224f99f45a4dae595787bed131a904a9f9919d6d67130fc0b9"
+    },
+    {
+      "archive_path": "payload/source/AudioProcessing.cs",
+      "repository_path": "source/AudioProcessing.cs",
+      "bytes": 4213,
+      "sha256": "63a34a00e6bfedb49da2fd1d820a13fd171ae7ad1002bc84136d1a2785b44143"
+    },
+    {
+      "archive_path": "payload/source/BUILD_WINDOWS.cmd",
+      "repository_path": "source/BUILD_WINDOWS.cmd",
+      "bytes": 976,
+      "sha256": "a204783ba34c1c4b88facaa458df52b90032052820e3b6057ac333c9d4eab5de"
+    },
+    {
+      "archive_path": "payload/source/Batch.cs",
+      "repository_path": "source/Batch.cs",
+      "bytes": 3138,
+      "sha256": "ef449c57968cf7110220fb33ec98897f1cac936e068cfea5b3b80fefe6aa908e"
+    },
+    {
+      "archive_path": "payload/source/BatchTests-1.4.0.txt",
+      "repository_path": "source/BatchTests-1.4.0.txt",
+      "bytes": 1158,
+      "sha256": "2c8805c94e5e437fc9d5ab76b253417433cebbcb0550f192ce43e71daafbde01"
+    },
+    {
+      "archive_path": "payload/source/BatchTests.cs",
+      "repository_path": "source/BatchTests.cs",
+      "bytes": 5425,
+      "sha256": "015d000617c5aeaab104e885548a5405202565e9707d711395132d0792e9c9a4"
+    },
+    {
+      "archive_path": "payload/source/BreathStreamingTests.cs",
+      "repository_path": "source/BreathStreamingTests.cs",
+      "bytes": 2531,
+      "sha256": "94d619d18ad634cbe053111772674083842580af3438426c6df01fd4f97fbd8a"
+    },
+    {
+      "archive_path": "payload/source/BreathTests-1.4.0.txt",
+      "repository_path": "source/BreathTests-1.4.0.txt",
+      "bytes": 1409,
+      "sha256": "a83ace9339e87936f919eac978370f5c9f0ecf97087d103872623710368894d6"
+    },
+    {
+      "archive_path": "payload/source/BreathTests.cs",
+      "repository_path": "source/BreathTests.cs",
+      "bytes": 6270,
+      "sha256": "5da0615d68d93a49679305615c5f5c22b42da39ad12b490529ca3c940df5e888"
+    },
+    {
+      "archive_path": "payload/source/CAP_NHAT.cmd",
+      "repository_path": "source/CAP_NHAT.cmd",
+      "bytes": 282,
+      "sha256": "d7dcc3f4a052794b02ef40e8c0112b48e07d39b5d36196ec4bdd13a730a3933e"
+    },
+    {
+      "archive_path": "payload/source/Core.cs",
+      "repository_path": "source/Core.cs",
+      "bytes": 19747,
+      "sha256": "262cb94f778e8fb071b3c5867fe91b38fa61ecac76ed0ca75a8f311fcd9fab18"
+    },
+    {
+      "archive_path": "payload/source/DeviceAndUpdates.cs",
+      "repository_path": "source/DeviceAndUpdates.cs",
+      "bytes": 3958,
+      "sha256": "9a44fd1ebccc95fb25b0962f47544778025ae8a8ec5e49e6db6884881dab14d2"
+    },
+    {
+      "archive_path": "payload/source/Enhancements.cs",
+      "repository_path": "source/Enhancements.cs",
+      "bytes": 21287,
+      "sha256": "6d55d97f90f17c6e3b357bd5d2ec191fa347cb0035c123879cbf7e4910947d7c"
+    },
+    {
+      "archive_path": "payload/source/ExternalSpeech.cs",
+      "repository_path": "source/ExternalSpeech.cs",
+      "bytes": 7402,
+      "sha256": "7be5450053f0b82fe7d8247e80ab61244d395b0366806282f3ec8898a6f047da"
+    },
+    {
+      "archive_path": "payload/source/FeatureTests-1.4.0.txt",
+      "repository_path": "source/FeatureTests-1.4.0.txt",
+      "bytes": 1575,
+      "sha256": "d4991b8dfd073ea94a7533e9956030509afcad7042f2401e8a31e655552ecc0a"
+    },
+    {
+      "archive_path": "payload/source/FeatureTests.cs",
+      "repository_path": "source/FeatureTests.cs",
+      "bytes": 7072,
+      "sha256": "7f268f81845fd9c6bc9de3f490bd39da59b0d4283cf9197480d2c73e08893edd"
+    },
+    {
+      "archive_path": "payload/source/GpuFallbackTests.cs",
+      "repository_path": "source/GpuFallbackTests.cs",
+      "bytes": 1389,
+      "sha256": "47adbedd3c79b930d2dd5814afddf539d654b71b26b32515ae733cd7fa736ce6"
+    },
+    {
+      "archive_path": "payload/source/GpuPackageTests.cs",
+      "repository_path": "source/GpuPackageTests.cs",
+      "bytes": 885,
+      "sha256": "c238d1b63470e9d51e515c4633b8d7ca76e3d8cdaccfba7177009a1f3413970a"
+    },
+    {
+      "archive_path": "payload/source/InstallTools.cs",
+      "repository_path": "source/InstallTools.cs",
+      "bytes": 3297,
+      "sha256": "3630cbcd530b8227e5b4217181ab29b7b1fd52867e9c3899f146a449aee78f12"
+    },
+    {
+      "archive_path": "payload/source/InstallerTests-1.4.0.txt",
+      "repository_path": "source/InstallerTests-1.4.0.txt",
+      "bytes": 456,
+      "sha256": "b24717197cfd4f90ba8d8b73422ea2d1cdbb3d24af6f8f1ad0d747fc79948904"
+    },
+    {
+      "archive_path": "payload/source/ProjectState.cs",
+      "repository_path": "source/ProjectState.cs",
+      "bytes": 6255,
+      "sha256": "6e65300688fe550d6bb7e2d0bba01808329e7ea395eb12aa1310a9cbb453c79e"
+    },
+    {
+      "archive_path": "payload/source/Tests-1.4.0.txt",
+      "repository_path": "source/Tests-1.4.0.txt",
+      "bytes": 1050,
+      "sha256": "c0f9457343b66fae1f6fb69cd7ee8946f32fb6caceec9d28b4e3acd83e3f76f1"
+    },
+    {
+      "archive_path": "payload/source/Tests.cs",
+      "repository_path": "source/Tests.cs",
+      "bytes": 5094,
+      "sha256": "403d46f1832cf78d7ff9677f68d059778c29da5c8efcfc2d2a2b418926ad24b6"
+    },
+    {
+      "archive_path": "payload/source/Ui141Tests.cs",
+      "repository_path": "source/Ui141Tests.cs",
+      "bytes": 3079,
+      "sha256": "a05d1853f194ff30e3bc2085e82349c156c9f3caaf706aa346ccc1181bd69e16"
+    },
+    {
+      "archive_path": "payload/source/UiFeatureTests-1.4.0.txt",
+      "repository_path": "source/UiFeatureTests-1.4.0.txt",
+      "bytes": 854,
+      "sha256": "375ab096e2c98f0eda4866654050262b3756c9b627a878c461c46ca2e0a0985c"
+    },
+    {
+      "archive_path": "payload/source/UiFeatureTests.cs",
+      "repository_path": "source/UiFeatureTests.cs",
+      "bytes": 5335,
+      "sha256": "bb32524ef2442ee4517da877b98b27be2b7be491b3d411ca4b1226afdd1642c1"
+    },
+    {
+      "archive_path": "payload/source/UiTests-1.4.0.txt",
+      "repository_path": "source/UiTests-1.4.0.txt",
+      "bytes": 1462,
+      "sha256": "e25163f3c066be925dccfbfb67bc92f95fa8ce4163f7e02b28f1b47ebc18b06e"
+    },
+    {
+      "archive_path": "payload/source/UiTests.cs",
+      "repository_path": "source/UiTests.cs",
+      "bytes": 6868,
+      "sha256": "c7b008f1364916b384ef0e440223026ab720fb856a5536d12cd6bec26b941859"
+    },
+    {
+      "archive_path": "payload/source/Update141Tests.cs",
+      "repository_path": "source/Update141Tests.cs",
+      "bytes": 5341,
+      "sha256": "b1cc16a1cb8ea0341ab92181f56f4843a090a09831d25a7a839d3e360afae6c9"
+    },
+    {
+      "archive_path": "payload/source/Updater.cs",
+      "repository_path": "source/Updater.cs",
+      "bytes": 18147,
+      "sha256": "569bfcf2bd691bbe9ed520f915b7d78ebd29b0b315c1c71e63e9e154532eb515"
+    },
+    {
+      "archive_path": "payload/source/UpdaterTests.cs",
+      "repository_path": "source/UpdaterTests.cs",
+      "bytes": 6600,
+      "sha256": "a5d996e355c5209850611697990d559202ef972d084f8639d525031501182737"
+    },
+    {
+      "archive_path": "payload/source/UserVoices.cs",
+      "repository_path": "source/UserVoices.cs",
+      "bytes": 3618,
+      "sha256": "eb5ee9f72a348c0bbb7c08d004c3ae55cabbd96c27263e619994ae72c5485a76"
+    },
+    {
+      "archive_path": "payload/source/VALIDATION.txt",
+      "repository_path": "source/VALIDATION.txt",
+      "bytes": 1582,
+      "sha256": "8af47984378b826340cd22ee186a2d2806c73074931f2ad018092fb70d16be78"
+    },
+    {
+      "archive_path": "payload/source/VALIDATION_1.4.0.txt",
+      "repository_path": "source/VALIDATION_1.4.0.txt",
+      "bytes": 3264,
+      "sha256": "a622145a10cdc363cacec90395b6cc61af08500d67698c17f9317b6bc29f02ef"
+    },
+    {
+      "archive_path": "payload/source/VALIDATION_1.4.1.txt",
+      "repository_path": "source/VALIDATION_1.4.1.txt",
+      "bytes": 1582,
+      "sha256": "8af47984378b826340cd22ee186a2d2806c73074931f2ad018092fb70d16be78"
+    },
+    {
+      "archive_path": "payload/source/VoiceCatalog.cs",
+      "repository_path": "source/VoiceCatalog.cs",
+      "bytes": 3488,
+      "sha256": "28166497de5d74d9e909136d7c0da11b86151d30d5d034c1d04a1747f8b54497"
+    },
+    {
+      "archive_path": "payload/source/VoiceTests-1.4.0.txt",
+      "repository_path": "source/VoiceTests-1.4.0.txt",
+      "bytes": 3819,
+      "sha256": "203b51e8bbaefb2433a83d3008003bf3c639a2e63dd48b513e2795a7e8f0f1da"
+    },
+    {
+      "archive_path": "payload/source/VoiceTests.cs",
+      "repository_path": "source/VoiceTests.cs",
+      "bytes": 3339,
+      "sha256": "03cadaf9f66302d6bc29dbb87a118063279ef72d5ab2dcf7966ce85ce94a42de"
+    },
+    {
+      "archive_path": "payload/source/ai_asr_qa.json",
+      "repository_path": "source/ai_asr_qa.json",
+      "bytes": 1270,
+      "sha256": "d3397bdd2ef4471f53259f1a3e56e9ac269dfe41f85b05ba8a65d7df85262ddc"
+    },
+    {
+      "archive_path": "payload/source/ai_final_pipeline_qa.json",
+      "repository_path": "source/ai_final_pipeline_qa.json",
+      "bytes": 604,
+      "sha256": "5d2966a82a6c90cc644cb791f80c8a80f5d5b68bda6ac9b9f12b859d2efbbca4"
+    },
+    {
+      "archive_path": "payload/source/ai_worker.py",
+      "repository_path": "source/ai_worker.py",
+      "bytes": 8548,
+      "sha256": "74884741746dbf20816354b8a19e29e09f467efbd82272ae9bf90c38954ecdfc"
+    },
+    {
+      "archive_path": "payload/source/batch-final-results-1.3.0.txt",
+      "repository_path": "source/batch-final-results-1.3.0.txt",
+      "bytes": 1158,
+      "sha256": "1b828f0ddd1eb226e4c460abcaf706c1a151feaa7a531b63f07b9e724c31f1b9"
+    },
+    {
+      "archive_path": "payload/source/batch-results-1.2.0.txt",
+      "repository_path": "source/batch-results-1.2.0.txt",
+      "bytes": 1143,
+      "sha256": "b5a99464ed0e562eb14bdae49d73d6f05382a2360730007f1ae03c47668c5139"
+    },
+    {
+      "archive_path": "payload/source/batch-results.txt",
+      "repository_path": "source/batch-results.txt",
+      "bytes": 1050,
+      "sha256": "02ed4a91e5f28120791d792261376932972bee4879bdd94e86b5c7ba8c99a07c"
+    },
+    {
+      "archive_path": "payload/source/breath-results-1.2.0.txt",
+      "repository_path": "source/breath-results-1.2.0.txt",
+      "bytes": 1409,
+      "sha256": "a83ace9339e87936f919eac978370f5c9f0ecf97087d103872623710368894d6"
+    },
+    {
+      "archive_path": "payload/source/breath-results-1.3.0.txt",
+      "repository_path": "source/breath-results-1.3.0.txt",
+      "bytes": 1409,
+      "sha256": "a83ace9339e87936f919eac978370f5c9f0ecf97087d103872623710368894d6"
+    },
+    {
+      "archive_path": "payload/source/compatibility-test-results.txt",
+      "repository_path": "source/compatibility-test-results.txt",
+      "bytes": 1878,
+      "sha256": "732def947748e02c96d4079bd89cc36577243b9744da88ff0dc488133703ba63"
+    },
+    {
+      "archive_path": "payload/source/core-final-results-1.3.0.txt",
+      "repository_path": "source/core-final-results-1.3.0.txt",
+      "bytes": 1050,
+      "sha256": "3cae8a8e43be561b8452d370f36de9095037469553bd14f6b29ea55099f2a41a"
+    },
+    {
+      "archive_path": "payload/source/core-results-1.2.0.txt",
+      "repository_path": "source/core-results-1.2.0.txt",
+      "bytes": 1050,
+      "sha256": "c5d3ef10c08286ab45d851f61ef7e20df3322e3d8c561ffe36c3ddce7c061915"
+    },
+    {
+      "archive_path": "payload/source/extracted-release-integrity.txt",
+      "repository_path": "source/extracted-release-integrity.txt",
+      "bytes": 84,
+      "sha256": "ecb5ee5b95a73244140869a756388705558aa2eb25c305975a56d35ae9f470bb"
+    },
+    {
+      "archive_path": "payload/source/gpu_policy.py",
+      "repository_path": "source/gpu_policy.py",
+      "bytes": 1680,
+      "sha256": "4a31d5a873e125cb450dd0988722a7ac50b71d22dff42b1bd1f368d1e7eeb005"
+    },
+    {
+      "archive_path": "payload/source/installer-1.4.nsi",
+      "repository_path": "source/installer-1.4.nsi",
+      "bytes": 6685,
+      "sha256": "58689ac4e024ba3e9ff487a6eb6a3e4fc13c02ffa99adf15ff58537c6387efa3"
+    },
+    {
+      "archive_path": "payload/source/installer.nsi",
+      "repository_path": "source/installer.nsi",
+      "bytes": 6685,
+      "sha256": "58689ac4e024ba3e9ff487a6eb6a3e4fc13c02ffa99adf15ff58537c6387efa3"
+    },
+    {
+      "archive_path": "payload/source/package-integrity-1.4.0.txt",
+      "repository_path": "source/package-integrity-1.4.0.txt",
+      "bytes": 3,
+      "sha256": "a12b7cb43c9d9134b5bb1b35e9096b66775d9e92e7611d1cc92b02edd6782a87"
+    },
+    {
+      "archive_path": "payload/source/research/KOKORO_VOICES.md",
+      "repository_path": "source/research/KOKORO_VOICES.md",
+      "bytes": 7625,
+      "sha256": "ec7e4941ad7e194af61e3455928528a9ff5360c7c505e412efab27d6a69ea106"
+    },
+    {
+      "archive_path": "payload/source/research/P_john_qa.json",
+      "repository_path": "source/research/P_john_qa.json",
+      "bytes": 902,
+      "sha256": "c029aa4375969bb17e232f722ae32f2c63060e6949add4ed058821c7c7bc9382"
+    },
+    {
+      "archive_path": "payload/source/research/P_kristin_qa.json",
+      "repository_path": "source/research/P_kristin_qa.json",
+      "bytes": 907,
+      "sha256": "c0b26ab5abf2978c30547b3c88ac9235399017f0e478d1dd15b4e9b5696a8f21"
+    },
+    {
+      "archive_path": "payload/source/research/T_0_qa.json",
+      "repository_path": "source/research/T_0_qa.json",
+      "bytes": 901,
+      "sha256": "03f7ff145146396125ca2271ca24fe2d1b9ce110536934b3f2425c9bc8b24f28"
+    },
+    {
+      "archive_path": "payload/source/research/T_1_qa.json",
+      "repository_path": "source/research/T_1_qa.json",
+      "bytes": 902,
+      "sha256": "389dbd44d8326f658b9bd8eb58c415bc9ceba63221eb6705cee5de13b1123009"
+    },
+    {
+      "archive_path": "payload/source/research/T_2_qa.json",
+      "repository_path": "source/research/T_2_qa.json",
+      "bytes": 901,
+      "sha256": "cebfd97250a201a567e1e8c6c9a46d4fcdc59cfffa2a6fce3b5e1e1bc67ec50d"
+    },
+    {
+      "archive_path": "payload/source/research/T_3_qa.json",
+      "repository_path": "source/research/T_3_qa.json",
+      "bytes": 906,
+      "sha256": "4f35cdf28eb35fed181efe1ccb6bb149f491460f2137a9f2b3d5f378217ed255"
+    },
+    {
+      "archive_path": "payload/source/research/T_4_qa.json",
+      "repository_path": "source/research/T_4_qa.json",
+      "bytes": 902,
+      "sha256": "7aa9a91383e3b24c950d5eae0daeace69cee7352ec0d5d7d6a04f0cc62ebad34"
+    },
+    {
+      "archive_path": "payload/source/research/T_5_qa.json",
+      "repository_path": "source/research/T_5_qa.json",
+      "bytes": 906,
+      "sha256": "a7ca159589d115bc4fce1293299e60610d94ce8be4a0c0fd987dcc70b0c9063b"
+    },
+    {
+      "archive_path": "payload/source/research/T_6_qa.json",
+      "repository_path": "source/research/T_6_qa.json",
+      "bytes": 900,
+      "sha256": "d01faca260e46ed293c825eeab090dfa29f07e1bf566073bdf0cf93bb52f3a52"
+    },
+    {
+      "archive_path": "payload/source/research/T_7_qa.json",
+      "repository_path": "source/research/T_7_qa.json",
+      "bytes": 908,
+      "sha256": "acd0b8ea0bd300c14bc8ca0bc517f2c6d46fde25f0dc91bceacddbb5d4ea1ad9"
+    },
+    {
+      "archive_path": "payload/source/research/amy_medium_card.txt",
+      "repository_path": "source/research/amy_medium_card.txt",
+      "bytes": 284,
+      "sha256": "858419ea604c427ff2e9918556345667eb46397da3c965de75f4f7f0bb50a962"
+    },
+    {
+      "archive_path": "payload/source/research/build_catalog.py",
+      "repository_path": "source/research/build_catalog.py",
+      "bytes": 4510,
+      "sha256": "3a8fbc8a2fec32a4e1793eb57b768d93e3910c65ca3156fde6bb689962f4ca15"
+    },
+    {
+      "archive_path": "payload/source/research/build_release_catalog_1.3.0.py",
+      "repository_path": "source/research/build_release_catalog_1.3.0.py",
+      "bytes": 7311,
+      "sha256": "efe75b15762d1491b77ac8817c397d34dad0114f73df6bdba3f1408c7002896d"
+    },
+    {
+      "archive_path": "payload/source/research/candidate_ids_1.3.0.json",
+      "repository_path": "source/research/candidate_ids_1.3.0.json",
+      "bytes": 481,
+      "sha256": "5651c0c86edc55943f9e2368f6c3c8385404320f10b83fb2a59ecd82491b963c"
+    },
+    {
+      "archive_path": "payload/source/research/curate_1.3.0.py",
+      "repository_path": "source/research/curate_1.3.0.py",
+      "bytes": 5284,
+      "sha256": "4375c7c9a99e99ef4e27ed925cfd5ad0c201d2eff9168c40e171789a633b49c7"
+    },
+    {
+      "archive_path": "payload/source/research/df1_en.csv",
+      "repository_path": "source/research/df1_en.csv",
+      "bytes": 301058,
+      "sha256": "ac0b0c1eb8ab8eaabb4aa90d250360abf85cca9444018ae72ec8573407e8b324"
+    },
+    {
+      "archive_path": "payload/source/research/df2_en.csv",
+      "repository_path": "source/research/df2_en.csv",
+      "bytes": 711290,
+      "sha256": "5792233484f4275c50953509d40cd702b5b2f4d39ce371e02fdaf0bf3219446d"
+    },
+    {
+      "archive_path": "payload/source/research/df3_en.csv",
+      "repository_path": "source/research/df3_en.csv",
+      "bytes": 191290,
+      "sha256": "de3ea6f9de487c2fcbcf1e09986562d77e67a67e307569ac3234d11bd643fd7a"
+    },
+    {
+      "archive_path": "payload/source/research/excluded_spk_list.txt",
+      "repository_path": "source/research/excluded_spk_list.txt",
+      "bytes": 44,
+      "sha256": "0023c08daaf6a463f25ee15323c0abd5894c8d719a65e5073b0052eed395b255"
+    },
+    {
+      "archive_path": "payload/source/research/finalize_libri_1.3.0.py",
+      "repository_path": "source/research/finalize_libri_1.3.0.py",
+      "bytes": 3082,
+      "sha256": "76fd73842fab4d70e198e636ae7284ca479fcaddc3d9ef4ef3b4e0e4d7cdcde5"
+    },
+    {
+      "archive_path": "payload/source/research/hfc_female_medium_card.txt",
+      "repository_path": "source/research/hfc_female_medium_card.txt",
+      "bytes": 354,
+      "sha256": "108e287f2128ef724e67b0e7b5f886c3f9b5ec7eaa0e07554b815d7d683c4fc3"
+    },
+    {
+      "archive_path": "payload/source/research/hfc_male_medium_card.txt",
+      "repository_path": "source/research/hfc_male_medium_card.txt",
+      "bytes": 352,
+      "sha256": "acd9f3607969454dead836c1939d4906a7b7b618f38dfd2c282856d13e4e968c"
+    },
+    {
+      "archive_path": "payload/source/research/joe_medium_card.txt",
+      "repository_path": "source/research/joe_medium_card.txt",
+      "bytes": 281,
+      "sha256": "d2caa63aca0fccb155105e959e393e5c0c0f03a1f388ef5ba217b83ef860c760"
+    },
+    {
+      "archive_path": "payload/source/research/john_medium_card.txt",
+      "repository_path": "source/research/john_medium_card.txt",
+      "bytes": 498,
+      "sha256": "a056da65cd70dcbda96fc3420fe8d3442dbf3c8b75f49cdf800a715b42e299d1"
+    },
+    {
+      "archive_path": "payload/source/research/kitten_config_1.3.0.json",
+      "repository_path": "source/research/kitten_config_1.3.0.json",
+      "bytes": 470,
+      "sha256": "6b160bc9b19e24ecb21e84bc14f8a7da21fdf47ec72d42450bc5cf514b61804a"
+    },
+    {
+      "archive_path": "payload/source/research/kristin_medium_card.txt",
+      "repository_path": "source/research/kristin_medium_card.txt",
+      "bytes": 479,
+      "sha256": "8c181b1d5f7d8152b914faab941fcbe6b8f0495e63e5189d6f27b8c68c8393fc"
+    },
+    {
+      "archive_path": "payload/source/research/lessac_card.txt",
+      "repository_path": "source/research/lessac_card.txt",
+      "bytes": 347,
+      "sha256": "7671826d947a0ffc11dd76af0bd890d93e956b00358696ad71348f21aa827100"
+    },
+    {
+      "archive_path": "payload/source/research/libri_selection_qa_1.3.0.json",
+      "repository_path": "source/research/libri_selection_qa_1.3.0.json",
+      "bytes": 95630,
+      "sha256": "a2b0c54c976fec352eb9b85c4fcfd1100cf5b58ad31643603a7a53ade94f6247"
+    },
+    {
+      "archive_path": "payload/source/research/ljspeech_high_card.txt",
+      "repository_path": "source/research/ljspeech_high_card.txt",
+      "bytes": 513,
+      "sha256": "289f7421072d689a3d91f6c632f486af46f9b8b04417536104a4ea667b8a394b"
+    },
+    {
+      "archive_path": "payload/source/research/profile_voices.py",
+      "repository_path": "source/research/profile_voices.py",
+      "bytes": 2320,
+      "sha256": "1e35470cb886b4110edcf3e6c3b80f62d8bcaebde566550abf4ccfb65df2427e"
+    },
+    {
+      "archive_path": "payload/source/research/release_profiles_1.3.0.json",
+      "repository_path": "source/research/release_profiles_1.3.0.json",
+      "bytes": 56550,
+      "sha256": "cd7e1c9f5c8f5d077a94b7f46e2cc1fb087a3931f1e9ec2a8f05db4f4b12644b"
+    },
+    {
+      "archive_path": "payload/source/research/ryan_card.txt",
+      "repository_path": "source/research/ryan_card.txt",
+      "bytes": 265,
+      "sha256": "7c3b337dd4e96c3f311f476118b15d93867aefa4bee54263e250c45f759fad0d"
+    },
+    {
+      "archive_path": "payload/source/research/selected_libri_1.3.0.json",
+      "repository_path": "source/research/selected_libri_1.3.0.json",
+      "bytes": 179,
+      "sha256": "155359cc619554dc951da03a659c9a93bd33101e14ca67eecc3cce830dd0431f"
+    },
+    {
+      "archive_path": "payload/source/research/stable_vits_qa_1.3.0.py",
+      "repository_path": "source/research/stable_vits_qa_1.3.0.py",
+      "bytes": 2174,
+      "sha256": "8535ff4e8bb27be74c6ee9f361cf8e2922f600a1bb44e6df0960f30874bb4526"
+    },
+    {
+      "archive_path": "payload/source/research/stable_vits_results_1.3.0.json",
+      "repository_path": "source/research/stable_vits_results_1.3.0.json",
+      "bytes": 28127,
+      "sha256": "164ae7e7847406e2fc685a508e9b1a30f8356a12cbd89c67acb69b18ed869f24"
+    },
+    {
+      "archive_path": "payload/source/research/unannotated_spk_list.txt",
+      "repository_path": "source/research/unannotated_spk_list.txt",
+      "bytes": 14,
+      "sha256": "fb4e49c15724281667a41b4147eff0d6a72bff8177e4529fc4eb8c1ca790a91a"
+    },
+    {
+      "archive_path": "payload/source/research/voice_metrics.json",
+      "repository_path": "source/research/voice_metrics.json",
+      "bytes": 92143,
+      "sha256": "647cefad6fefb83e0bfb783ea410058a74b2fb79507047b7a0a96d7d7d30481c"
+    },
+    {
+      "archive_path": "payload/source/research/voice_profiles_all_1.2.0.tsv",
+      "repository_path": "source/research/voice_profiles_all_1.2.0.tsv",
+      "bytes": 478926,
+      "sha256": "eb3bfd31d6bab0804e29da67b144b7a2617204d048bbde2f98bc848b194b059e"
+    },
+    {
+      "archive_path": "payload/source/test-results.txt",
+      "repository_path": "source/test-results.txt",
+      "bytes": 1045,
+      "sha256": "2398220f5b12ab77e1ef5059ec1bebf3b2240ae2e793b9fb3010a0bf5060fb09"
+    },
+    {
+      "archive_path": "payload/source/test_gpu_policy.py",
+      "repository_path": "source/test_gpu_policy.py",
+      "bytes": 4006,
+      "sha256": "acd94a03fbdf4095d1f1f38d8b04a10243a898b7591a08b62f937fbecf30f95b"
+    },
+    {
+      "archive_path": "payload/source/ui-final-results-1.3.0.txt",
+      "repository_path": "source/ui-final-results-1.3.0.txt",
+      "bytes": 1355,
+      "sha256": "de00547a9231e7a440c27b9e69defa7cdd9b47055b29a7f0b123b07e67c90795"
+    },
+    {
+      "archive_path": "payload/source/ui-results-1.2.0.txt",
+      "repository_path": "source/ui-results-1.2.0.txt",
+      "bytes": 937,
+      "sha256": "25e079393639240f99933cf09de1e07847c11ded53ec62d203691f7d88e1673f"
+    },
+    {
+      "archive_path": "payload/source/ui-results.txt",
+      "repository_path": "source/ui-results.txt",
+      "bytes": 509,
+      "sha256": "1a742d2f0c14743080d529c399b4732be913f45358f7de8602df4ce6ced761d2"
+    },
+    {
+      "archive_path": "payload/source/update.nsi",
+      "repository_path": "source/update.nsi",
+      "bytes": 95,
+      "sha256": "9c0ff042709566ee3290e97681912f915f75998e2d2751779218a8b13e756b6a"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/BatchTests.txt",
+      "repository_path": "source/validation-1.4.1/BatchTests.txt",
+      "bytes": 744,
+      "sha256": "78ff456500ebd1ebe7ffb3fb00690214ccffb81472f8a5c215661cdc03254a39"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/BreathStreamingTests.txt",
+      "repository_path": "source/validation-1.4.1/BreathStreamingTests.txt",
+      "bytes": 549,
+      "sha256": "bb13b8b06f36e3f73af5d9575eb2cb485bc2b406b3081742bfa40bd970ef2e29"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/FeatureTests.txt",
+      "repository_path": "source/validation-1.4.1/FeatureTests.txt",
+      "bytes": 1214,
+      "sha256": "a709f2a0eb3342bb07c1d32b8fa1bb1bf639f3da9dafd7d6b0814945820e8624"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/GpuFallbackTests.txt",
+      "repository_path": "source/validation-1.4.1/GpuFallbackTests.txt",
+      "bytes": 417,
+      "sha256": "5f053fc69473044f5e3dccbec95c03c0804c177730dfed077a4562794ea26806"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/GpuPackageTests.txt",
+      "repository_path": "source/validation-1.4.1/GpuPackageTests.txt",
+      "bytes": 299,
+      "sha256": "71f6b803a01f56eae32e68b526933e23a40ef866b08abb62c4f0997b66116dca"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/GpuPolicyTests.txt",
+      "repository_path": "source/validation-1.4.1/GpuPolicyTests.txt",
+      "bytes": 1273,
+      "sha256": "e5271095694f55691800fbacd37803ec2157fcf8f7b90e4e5aba0d20b084e6f9"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/Tests.txt",
+      "repository_path": "source/validation-1.4.1/Tests.txt",
+      "bytes": 532,
+      "sha256": "c114c2a0a3dc163cc78d0149fe9ccd5956b5b48f9ed782754bd4891805816c31"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/Ui141Tests.txt",
+      "repository_path": "source/validation-1.4.1/Ui141Tests.txt",
+      "bytes": 618,
+      "sha256": "728beaeb0e05a81b058c6451d7a0de39e56368aa25a195dc6d3c2fd3660b5c2f"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/UiTests.txt",
+      "repository_path": "source/validation-1.4.1/UiTests.txt",
+      "bytes": 1462,
+      "sha256": "e25163f3c066be925dccfbfb67bc92f95fa8ce4163f7e02b28f1b47ebc18b06e"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/Update141Tests.txt",
+      "repository_path": "source/validation-1.4.1/Update141Tests.txt",
+      "bytes": 1079,
+      "sha256": "922d04eba03965fc69cc7cdfe0373b3e3c9d1c9faefcc3c3200097eb6912949f"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.1/UpdaterTests.txt",
+      "repository_path": "source/validation-1.4.1/UpdaterTests.txt",
+      "bytes": 1200,
+      "sha256": "99e2ac259e64c93a55905e6fe615ac690364d21495ab21cab0949e414143172f"
+    },
+    {
+      "archive_path": "payload/source/voice-final-results-1.3.0.txt",
+      "repository_path": "source/voice-final-results-1.3.0.txt",
+      "bytes": 3819,
+      "sha256": "203b51e8bbaefb2433a83d3008003bf3c639a2e63dd48b513e2795a7e8f0f1da"
+    },
+    {
+      "archive_path": "payload/source/voice_samples_report.json",
+      "repository_path": "source/voice_samples_report.json",
+      "bytes": 1286,
+      "sha256": "dbff0d06f72f206bbe9933b239355c6910e7267321a839a7b125fa63679de496"
+    }
+  ]
+}

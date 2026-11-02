@@ -1,0 +1,9 @@
+PASS Complete stage passes SHA-256 and size verification
+PASS Corrupted same-size file is rejected before installation
+PASS Missing file is rejected before installation
+PASS Commit replaces known app files and preserves unrelated user files
+PASS Mid-commit failure rolls back the prior app file
+PASS Manifest cannot escape installation directory
+PASS Insufficient disk space is rejected before extraction
+PASS Malformed manifest is rejected
+TOTAL 8 passed

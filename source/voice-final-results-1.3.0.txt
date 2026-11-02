@@ -1,0 +1,66 @@
+PASS Release catalog exposes 20 Kokoro, 20 curated LibriTTS, 8 Kitten and 2 Piper voices
+PASS Every voice has one main and at most two recognized secondary styles
+PASS Every recommendation includes a usage reason and readable name
+PASS All seven requested styles have matching voices
+PASS Every displayed voice has a bundled offline audition WAV
+PASS Star labels always identify their actual recommendation source
+PASS LibriTTS selection balances ten male and ten female source speakers
+PASS Native process synthesizes Kokoro · Alloy using K:0
+PASS Native process synthesizes Kokoro · Aoede using K:1
+PASS Native process synthesizes Kokoro · Bella using K:2
+PASS Native process synthesizes Kokoro · Heart using K:3
+PASS Native process synthesizes Kokoro · Jessica using K:4
+PASS Native process synthesizes Kokoro · Kore using K:5
+PASS Native process synthesizes Kokoro · Nicole using K:6
+PASS Native process synthesizes Kokoro · Nova using K:7
+PASS Native process synthesizes Kokoro · River using K:8
+PASS Native process synthesizes Kokoro · Sarah using K:9
+PASS Native process synthesizes Kokoro · Sky using K:10
+PASS Native process synthesizes Kokoro · Adam using K:11
+PASS Native process synthesizes Kokoro · Echo using K:12
+PASS Native process synthesizes Kokoro · Eric using K:13
+PASS Native process synthesizes Kokoro · Fenrir using K:14
+PASS Native process synthesizes Kokoro · Liam using K:15
+PASS Native process synthesizes Kokoro · Michael using K:16
+PASS Native process synthesizes Kokoro · Onyx using K:17
+PASS Native process synthesizes Kokoro · Puck using K:18
+PASS Native process synthesizes Kokoro · Santa using K:19
+PASS Native process synthesizes Libri #678 using L:678
+PASS Native process synthesizes Libri #425 using L:425
+PASS Native process synthesizes Libri #270 using L:270
+PASS Native process synthesizes Libri #747 using L:747
+PASS Native process synthesizes Libri #895 using L:895
+PASS Native process synthesizes Libri #326 using L:326
+PASS Native process synthesizes Libri #608 using L:608
+PASS Native process synthesizes Libri #709 using L:709
+PASS Native process synthesizes Libri #616 using L:616
+PASS Native process synthesizes Libri #568 using L:568
+PASS Native process synthesizes Libri #131 using L:131
+PASS Native process synthesizes Libri #708 using L:708
+PASS Native process synthesizes Libri #682 using L:682
+PASS Native process synthesizes Libri #557 using L:557
+PASS Native process synthesizes Libri #074 using L:74
+PASS Native process synthesizes Libri #869 using L:869
+PASS Native process synthesizes Libri #449 using L:449
+PASS Native process synthesizes Libri #354 using L:354
+PASS Native process synthesizes Libri #455 using L:455
+PASS Native process synthesizes Libri #873 using L:873
+PASS Native process synthesizes Kitten · Jasper using T:0
+PASS Native process synthesizes Kitten · Bella using T:1
+PASS Native process synthesizes Kitten · Bruno using T:2
+PASS Native process synthesizes Kitten · Luna using T:3
+PASS Native process synthesizes Kitten · Hugo using T:4
+PASS Native process synthesizes Kitten · Rosie using T:5
+PASS Native process synthesizes Kitten · Leo using T:6
+PASS Native process synthesizes Kitten · Kiki using T:7
+PASS Native process synthesizes Piper · John using P:john
+PASS Native process synthesizes Piper · Kristin using P:kristin
+PASS Native speed fitting changes duration for Kokoro
+PASS Locked timeline and breath composition work for Kokoro
+PASS Native speed fitting changes duration for LibriTTS
+PASS Locked timeline and breath composition work for LibriTTS
+PASS Native speed fitting changes duration for Kitten
+PASS Locked timeline and breath composition work for Kitten
+PASS Native speed fitting changes duration for Piper
+PASS Locked timeline and breath composition work for Piper
+TOTAL VOICES: 65 passed.

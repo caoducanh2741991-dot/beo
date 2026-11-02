@@ -1,0 +1,23 @@
+{
+  "key": "P:kristin",
+  "tests": [
+    {
+      "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+      "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+      "wer": 0.0,
+      "seconds": 4.476,
+      "rms": 0.1018,
+      "clip_fraction": 0.0
+    },
+    {
+      "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+      "recognized": "At first, a new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+      "wer": 0.069,
+      "seconds": 9.927,
+      "rms": 0.063,
+      "clip_fraction": 0.0
+    }
+  ],
+  "wer": 0.0345,
+  "traits_rank": null
+}

@@ -1,0 +1,26 @@
+using System;using System.IO;using System.Linq;using System.Collections.Generic;using System.Text;using System.Xml.Linq;using V15Voice;
+public class FakeSpeech:KokoroEngine {
+ public int Calls;public double Seconds=1;public bool Fail;public override void CheckFiles(){}public override Wave Generate(string text,double speed,string output){if(Cancelled)throw new OperationCanceledException();if(Fail)throw new Exception("model unavailable");Calls++;int n=(int)Math.Round(Seconds*24000/speed);return new Wave{Rate=24000,Samples=Enumerable.Range(0,n).Select(i=>(short)(6000*Math.Sin(2*Math.PI*220*i/24000))).ToArray()};}
+}
+public static class Update141Tests {
+ static int count;static void Check(bool ok,string name){if(!ok)throw new Exception("FAIL "+name);count++;Console.WriteLine("PASS "+name);}static void Reject(Action f,string name){try{f();}catch{Check(true,name);return;}throw new Exception("FAIL "+name);}
+ public static void Main(){string dir=Path.Combine(Path.GetTempPath(),"V15_141_tests_"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(dir);
+  var longCues=Enumerable.Range(0,5001).Select(i=>new Cue{Id=i+1,Start=i*.2,End=i*.2+.1,Text="Hello."}).ToList();string srt=Scripts.ToSrt(longCues);var parsed=Scripts.ParseSrt(srt);Check(parsed.Count==5001&&Scripts.ToSrt(parsed)==srt,"5001-block SRT imports with exact original times and words");
+  var tooMany=Enumerable.Range(0,20001).Select(i=>new Cue{Start=i*.2,End=i*.2+.1,Text="Hello"}).ToList();Reject(()=>Scripts.Validate(tooMany),"Large-file safety limit reports beyond 20000 blocks");
+  Reject(()=>Scripts.Validate(new List<Cue>{new Cue{Start=21599,End=21601,Text="Hello"}}),"Rejects timelines beyond six-hour WAV limit");
+  var engine=new FakeSpeech{Root=dir,Seconds=3.8};var cue=new Cue{Id=1,Start=0,End=3.3,Text="This sentence is longer than the selected window."};string original=Scripts.ToSrt(new List<Cue>{cue});
+  string output=Renderer.Render(new List<Cue>{cue},engine,new RenderOptions{SlowShort=false,Breathing=BreathMode.None,MaxSpeed=1.3},Path.Combine(dir,"fit.wav"),(n,m)=>{});
+  var wave=Wave.Read(output);Check(engine.Calls==1,"Automatic fitting synthesizes once and adjusts the same waveform");Check(cue.Speed>1&&cue.Speed<=1.3&&cue.Actual<=3.3&&cue.Status.Contains("tự tăng tốc"),"Overlong cue automatically fits within selected speed cap");Check(Scripts.ToSrt(new List<Cue>{cue})==original&&Math.Abs(wave.Duration-3.3)<1.0/24000,"Locked source times and exact final WAV duration survive fitting");
+  // Count positive zero-crossings: pitch must remain near 220 Hz after atempo.
+  int crossings=0;int a=(int)(.2*wave.Rate),b=(int)(Math.Min(cue.Actual-.2,2.5)*wave.Rate);for(int i=a+1;i<b;i++)if(wave.Samples[i-1]<0&&wave.Samples[i]>=0)crossings++;double hz=crossings/((b-a)/(double)wave.Rate);Check(Math.Abs(hz-220)<5,"Real FFmpeg atempo preserves a 220 Hz voice-tone pitch");
+  var impossible=new Cue{Id=1,Start=0,End=1,Text="A sentence that cannot fit."};engine.Seconds=4;int before=Directory.GetFiles(dir,"*.wav").Length;
+  Reject(()=>Renderer.Render(new List<Cue>{impossible},engine,new RenderOptions{SlowShort=false,Breathing=BreathMode.None,MaxSpeed=1.1},Path.Combine(dir,"bad.wav"),(n,m)=>{}),"Unfixable cue fails after reaching the speed limit");Check(impossible.Speed<=1.1&&impossible.Status.Contains("tối đa 1.10")&&!File.Exists(Path.Combine(dir,"bad.wav")),"Overrun reports the limit and never clips or publishes an invalid WAV");
+  engine.Fail=true;Reject(()=>Renderer.Render(new List<Cue>{cue},engine,new RenderOptions{Breathing=BreathMode.None},Path.Combine(dir,"model.wav"),(n,m)=>{}),"Model errors propagate without inappropriate speed retries");engine.Fail=false;
+  Reject(()=>Renderer.Render(new List<Cue>{cue},engine,new RenderOptions{BaseSpeed=1.3,MaxSpeed=1.1,Breathing=BreathMode.None},Path.Combine(dir,"range.wav"),(n,m)=>{}),"Rejects a speed cap below the base speed");
+  engine.Seconds=.05;engine.Calls=0;GC.Collect();long memory=GC.GetTotalMemory(true);output=Renderer.Render(longCues,engine,new RenderOptions{SlowShort=false,Breathing=BreathMode.None},Path.Combine(dir,"long.wav"),(n,m)=>{});long after=GC.GetTotalMemory(true);
+  Check(engine.Calls==5001&&new FileInfo(output).Length==44+(long)Math.Round(longCues.Last().End*24000)*2,"Streaming render handles 5001 blocks in one exact-length WAV");Check(after-memory<32*1024*1024,"Long render does not retain all generated audio in managed RAM");Check(!Directory.GetFiles(dir,"*.tmp").Any()&&longCues.All(c=>c.AudioPath==null),"Long render leaves no partial audio or per-cue exports");
+  string keep=Path.Combine(dir,"cancel.wav");File.WriteAllText(keep,"KEEP");engine.Seconds=1;engine.Cancelled=false;Reject(()=>Renderer.Render(new List<Cue>{new Cue{Id=1,Start=0,End=2,Text="Hello"}},engine,new RenderOptions{Breathing=BreathMode.None},keep,(n,m)=>{if(n==95)engine.Cancelled=true;}),"Cancellation before publication discards streaming partial output");Check(File.ReadAllText(keep)=="KEEP"&&!Directory.GetFiles(dir,"*.tmp").Any(),"Cancellation preserves pre-existing user WAV");
+  var settings=new VoiceSettings{Device="gpu"};Check(VoiceSettings.From(settings.Xml()).Device=="gpu"&&VoiceSettings.From(new XElement("settings")).Device=="auto","Device preference persists and older sessions default to Auto");
+  Console.WriteLine("TOTAL 1.4.1 "+count+" passed.");
+ }
+}

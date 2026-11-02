@@ -1,0 +1,578 @@
+[
+  {
+    "key": "L:291",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts to the doorway.",
+        "wer": 0.1111111111111111,
+        "seconds": 3.7732426303854876
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 6.977596371882086
+      }
+    ],
+    "wer": 0.07279693486590039
+  },
+  {
+    "key": "L:386",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain made a switched context of a doorway.",
+        "wer": 0.2222222222222222,
+        "seconds": 3.877732426303855
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.697414965986394
+      }
+    ],
+    "wer": 0.12835249042145594
+  },
+  {
+    "key": "L:654",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain made a switched context at the doorway.",
+        "wer": 0.1111111111111111,
+        "seconds": 3.842902494331066
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.650975056689342
+      }
+    ],
+    "wer": 0.07279693486590039
+  },
+  {
+    "key": "L:678",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context at the doorway.",
+        "wer": 0.0,
+        "seconds": 4.260861678004535
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 8.614603174603175
+      }
+    ],
+    "wer": 0.0
+  },
+  {
+    "key": "L:425",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.7964625850340137
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then, Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 6.942766439909297
+      }
+    ],
+    "wer": 0.045019157088122604
+  },
+  {
+    "key": "L:270",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context at the doorway.",
+        "wer": 0.0,
+        "seconds": 4.632380952380952
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 8.75342403628118
+      }
+    ],
+    "wer": 0.0
+  },
+  {
+    "key": "L:878",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts to the doorway.",
+        "wer": 0.1111111111111111,
+        "seconds": 3.7732426303854876
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 6.942766439909297
+      }
+    ],
+    "wer": 0.07279693486590039
+  },
+  {
+    "key": "L:747",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 4.4117913832199545
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 8.289523809523809
+      }
+    ],
+    "wer": 0.027777777777777776
+  },
+  {
+    "key": "L:895",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context at the doorway.",
+        "wer": 0.0,
+        "seconds": 4.167981859410431
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first the new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 8.196643990929704
+      }
+    ],
+    "wer": 0.0
+  },
+  {
+    "key": "L:326",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.6687528344671203
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.186575963718821
+      }
+    ],
+    "wer": 0.045019157088122604
+  },
+  {
+    "key": "L:131",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts to the doorway.",
+        "wer": 0.1111111111111111,
+        "seconds": 3.959002267573696
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 7.778684807256236
+      }
+    ],
+    "wer": 0.05555555555555555
+  },
+  {
+    "key": "L:601",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten while you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.1111111111111111,
+        "seconds": 4.121541950113379
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.929614512471655
+      }
+    ],
+    "wer": 0.07279693486590039
+  },
+  {
+    "key": "L:708",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.866122448979592
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first the new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 6.873106575963718
+      }
+    ],
+    "wer": 0.045019157088122604
+  },
+  {
+    "key": "L:682",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 4.632380952380952
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first the new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 8.765532879818593
+      }
+    ],
+    "wer": 0.027777777777777776
+  },
+  {
+    "key": "L:557",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.5874829931972787
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 6.478367346938776
+      }
+    ],
+    "wer": 0.045019157088122604
+  },
+  {
+    "key": "L:10",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may switch context at the doorway.",
+        "wer": 0.1111111111111111,
+        "seconds": 3.622312925170068
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.244625850340136
+      }
+    ],
+    "wer": 0.07279693486590039
+  },
+  {
+    "key": "L:74",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 4.051882086167801
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.511655328798186
+      }
+    ],
+    "wer": 0.045019157088122604
+  },
+  {
+    "key": "L:147",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain is a switch context of the doorway.",
+        "wer": 0.2222222222222222,
+        "seconds": 4.017052154195011
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail the way it could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.10344827586206896,
+        "seconds": 7.5180045351473925
+      }
+    ],
+    "wer": 0.16283524904214558
+  },
+  {
+    "key": "L:869",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context at the doorway.",
+        "wer": 0.0,
+        "seconds": 3.982222222222222
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.558095238095238
+      }
+    ],
+    "wer": 0.017241379310344827
+  },
+  {
+    "key": "L:449",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context at the doorway.",
+        "wer": 0.0,
+        "seconds": 4.458231292517007
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first the new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 8.092154195011338
+      }
+    ],
+    "wer": 0.0
+  },
+  {
+    "key": "P:john",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context at the doorway.",
+        "wer": 0.0,
+        "seconds": 5.007256235827664
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 8.797868480725624
+      }
+    ],
+    "wer": 0.0
+  },
+  {
+    "key": "P:kristin",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context to the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 4.263219954648526
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 8.999274376417233
+      }
+    ],
+    "wer": 0.045019157088122604
+  },
+  {
+    "key": "L:608",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context at the doorway.",
+        "wer": 0.0,
+        "seconds": 3.7964625850340137
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.325895691609977
+      }
+    ],
+    "wer": 0.017241379310344827
+  },
+  {
+    "key": "L:709",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.842902494331066
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary, then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.2142403628117915
+      }
+    ],
+    "wer": 0.045019157088122604
+  },
+  {
+    "key": "L:616",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched context at the doorway.",
+        "wer": 0.0,
+        "seconds": 3.8080725623582765
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.418775510204082
+      }
+    ],
+    "wer": 0.017241379310344827
+  },
+  {
+    "key": "L:568",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.5894331065759637
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 6.864716553287982
+      }
+    ],
+    "wer": 0.045019157088122604
+  },
+  {
+    "key": "L:354",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 4.284081632653061
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "at first the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 8.115374149659864
+      }
+    ],
+    "wer": 0.027777777777777776
+  },
+  {
+    "key": "L:455",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may switch context at the doorway.",
+        "wer": 0.1111111111111111,
+        "seconds": 3.8080725623582765
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "wer": 0.0,
+        "seconds": 7.244625850340136
+      }
+    ],
+    "wer": 0.05555555555555555
+  },
+  {
+    "key": "L:214",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.982222222222222
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, a new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.06896551724137931,
+        "seconds": 7.151746031746032
+      }
+    ],
+    "wer": 0.06226053639846743
+  },
+  {
+    "key": "L:193",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.7848526077097504
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary, then Sarah noticed when detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.06896551724137931,
+        "seconds": 7.500045351473923
+      }
+    ],
+    "wer": 0.06226053639846743
+  },
+  {
+    "key": "L:343",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.7268027210884354
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first the new camera looked ordinary, then Sarah noticed when detail no way could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.13793103448275862,
+        "seconds": 6.965986394557823
+      }
+    ],
+    "wer": 0.09674329501915709
+  },
+  {
+    "key": "L:873",
+    "tests": [
+      {
+        "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+        "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contacts at the doorway.",
+        "wer": 0.05555555555555555,
+        "seconds": 3.7964625850340137
+      },
+      {
+        "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+        "recognized": "At first, the new camera looked ordinary. Then, Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here's what happened next.",
+        "wer": 0.034482758620689655,
+        "seconds": 7.012426303854875
+      }
+    ],
+    "wer": 0.045019157088122604
+  }
+]

@@ -1,0 +1,22 @@
+Qwen 0 Đọc câu 1/2
+Qwen 45 Đọc câu 2/2
+Qwen 95 Ghép timeline và xuất WAV
+Qwen 100 Hoàn tất: Qwen.wav
+PASS Qwen locked WAV retains exact master duration
+PASS Qwen rendering preserves every source word and timestamp
+PASS Qwen locked gap contains no speech overlap
+PASS Qwen measured cue durations fit their frames
+PASS Qwen cached synthesis changes duration through pitch-preserving tempo
+Chatterbox 0 Đọc câu 1/2
+Chatterbox 45 Đọc câu 2/2
+Chatterbox 95 Ghép timeline và xuất WAV
+Chatterbox 100 Hoàn tất: Chatterbox.wav
+PASS Chatterbox locked WAV retains exact master duration
+PASS Chatterbox rendering preserves every source word and timestamp
+PASS Chatterbox locked gap contains no speech overlap
+PASS Chatterbox measured cue durations fit their frames
+PASS Chatterbox cached synthesis changes duration through pitch-preserving tempo
+PASS Cancellation interrupts AI model startup without waiting for synthesis
+PASS AI cancellation cleans owned temporary speech directory
+PASS AI pipeline exports WAV only
+TOTAL 13 passed

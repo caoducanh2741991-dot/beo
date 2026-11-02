@@ -1,0 +1,16 @@
+V15 Voice Studio 1.4.0 — validation scope
+
+Build: x64 C# against official Microsoft .NET Framework 4.5 reference assemblies; Linux Mono compiler. No native Windows execution available.
+Assertions: core 23; batch/catalog 19; breath/output 23; classic native voice/model 65; legacy UI 23; persistence/import/feature 27; AI pipeline 13; new UI 12. Total: 205. See per-suite logs.
+New AI: actual CPU synthesis of Aiden, Ryan, Chatterbox default; Qwen Base and Chatterbox reference-conditioned synthesis from a generated Aiden fixture. This fixture is synthetic; no human user's voice or Adam CapCut has been tested.
+AI startup/synthesis tests block connect syscalls using Linux seccomp, including native dependency calls; worker also disables HF telemetry/downloads and Python socket connections. The unused Qwen 25Hz imports and ONNX Runtime are excluded. First exploratory Qwen run was rejected by automatic review due to ONNX Runtime telemetry; that run is not counted as a successful final test. Final offline runs use the corrected 12Hz-only path.
+ASR: Whisper tiny.en int8 round-trip checks returned 0 normalized WER on five exploratory AI clips and four final C# pipeline/tempo clips. This checks intelligibility on these short texts only, not MOS, perceptual naturalness, accent certification, or voice identity similarity.
+AI pipeline tests verify exact locked SRT master duration, unchanged source text/timecodes, silent original gap, fit by measured cue duration, atempo retries using cached speech, cancellation during model startup and owned temporary-directory cleanup.
+UI: actual WinForms controls exercised via Mono and Xvfb. New tests import a local reference, save/select it, restore queue and selected voice in another form instance, generate three real native comparison clips and inspect the queue's shared settings. Screenshots are internal QA, not release deliverables.
+An exploratory parallel run of two Qwen model test processes exceeded the 8 GiB test-container memory limit; final AI tests ran sequentially. App uses one active operation/model, with a single-instance mutex at the executable entry point. Recommend 16 GB system RAM for the new AI engines. No GPU acceleration is bundled in 1.4.
+Windows Python wheels/PE files, native audio playback, installer UI, Explorer integration and the Windows file lock guard remain untested on native Windows. Installer helper logic and data integrity are validated separately on Linux/Mono; this does not replace Windows installation testing.
+Sentence joining is experimental and applies only to flexible timeline. Locked SRT remains cue-based. Queue resume restarts unfinished files from the beginning, not from a partially rendered cue.
+
+Installer helper tests: 8 assertions passed, including corrupted/missing files, verified replacement, rollback after a mid-commit error, preservation of unrelated user files, manifest traversal rejection and disk-space checks.
+
+Release data packaging: 15 volumes, 5,971,621,678 archive bytes. Full extraction passed archive CRC, then 28,681 payload files were checked by SHA-256 after core overlay. Embedded installer core, manifests and helper were independently extracted and compared. No Windows case-insensitive or reserved-name collisions were found.

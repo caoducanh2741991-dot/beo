@@ -1,0 +1,20 @@
+# Installed voices, private clone samples, temporary audio and generated state
+/models/
+/runtime/
+/engine/
+/cache/
+/output/
+/temp/
+/validation/
+/payload/
+/samples/
+/user-voices/
+/source/local-ai/model/
+/source/local-ai/runtime/
+/source/local-ai/downloads/
+/source/community/rvc/weights/
+/source/community/rvc/deps/
+**/__pycache__/
+*.pyc
+*.user
+*.suo

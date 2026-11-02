@@ -1,0 +1,250 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Linq;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.Threading;
+
+namespace V15Voice {
+public sealed class Cue {
+ public int Id; public double Start, End; public string Text;
+ public double Natural, Actual, Speed=1; public string Status="Chưa tạo"; public string AudioPath;
+ public int Words { get { return Regex.Matches(Regex.Replace(Text??"", @"<[^>]*>", ""), @"[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*").Count; } }
+ public double Duration { get { return End-Start; } }
+}
+public static class Scripts {
+ public const int MaxCues=20000; public const int MaxSeconds=21600;
+ public static double Time(string s) {
+  var m=Regex.Match(s.Trim(), @"^(\d{1,3}):(\d{2}):(\d{2})[,.](\d{3})$");
+  if(!m.Success || int.Parse(m.Groups[2].Value)>59 || int.Parse(m.Groups[3].Value)>59) throw new Exception("Timecode không hợp lệ: "+s);
+  return int.Parse(m.Groups[1].Value)*3600+int.Parse(m.Groups[2].Value)*60+int.Parse(m.Groups[3].Value)+int.Parse(m.Groups[4].Value)/1000.0;
+ }
+ public static string Stamp(double s) {
+  long ms=(long)Math.Round(s*1000); if(ms<0) throw new Exception("Timecode âm.");
+  return String.Format(CultureInfo.InvariantCulture,"{0:00}:{1:00}:{2:00},{3:000}",ms/3600000,(ms/60000)%60,(ms/1000)%60,ms%1000);
+ }
+ public static List<Cue> ParseSrt(string text) {
+  var result=new List<Cue>();
+  foreach(var block in Regex.Split(text.Trim('\uFEFF',' ','\r','\n','\t').Replace("\r\n","\n").Replace("\r","\n"), @"\n[ \t]*\n+")) {
+   if(String.IsNullOrWhiteSpace(block)) continue;
+   var lines=block.Split(new char[] { '\n' }, StringSplitOptions.None); int offset=0, id;
+   if(int.TryParse(lines[0].Trim(),out id)) offset=1;
+   if(lines.Length<=offset+1) throw new Exception("Khối SRT thiếu lời hoặc timecode: "+block);
+   var m=Regex.Match(lines[offset], @"^(\d{1,3}:\d{2}:\d{2}[,.]\d{3})\s*-->\s*(\d{1,3}:\d{2}:\d{2}[,.]\d{3})\s*$");
+   if(!m.Success) throw new Exception("Dòng thời gian SRT không hợp lệ: "+lines[offset]);
+   string speech=String.Join(" ",lines.Skip(offset+1)).Trim();
+   speech=Regex.Replace(speech,@"</?(i|b|u|font)(\s+[^>]*)?>","",RegexOptions.IgnoreCase);
+   if(speech.Contains("-->")) throw new Exception("SRT thiếu dòng trống giữa các khối.");
+   result.Add(new Cue{Id=result.Count+1,Start=Time(m.Groups[1].Value),End=Time(m.Groups[2].Value),Text=speech});
+  }
+  Validate(result); return result;
+ }
+ public static List<Cue> ParseText(string text) {
+  if(text.Contains("-->")) return ParseSrt(text);
+  var result=new List<Cue>(); double t=0;bool timedInput=Regex.IsMatch(text,@"\d+:\d{2}:\d{2}");
+  foreach(var line in text.Replace("\r","").Split(new char[] { '\n' }, StringSplitOptions.None)) {
+   if(String.IsNullOrWhiteSpace(line)) continue;
+   var timed=Regex.Match(line,@"^\s*\[?(\d{1,3}:\d{2}:\d{2}[,.]\d{3})\s*[-–]\s*(\d{1,3}:\d{2}:\d{2}[,.]\d{3})\]?\s+(.+)$");
+   if(timed.Success) {
+    result.Add(new Cue{Id=result.Count+1,Start=Time(timed.Groups[1].Value),End=Time(timed.Groups[2].Value),Text=timed.Groups[3].Value}); continue;
+   }
+   if(timedInput) throw new Exception("TXT có mốc thời gian chưa đúng hoặc trộn dòng chưa có mốc. Dùng [00:00:00.000 - 00:00:03.300] lời đọc cho mọi dòng.");
+   foreach(var sentence in Regex.Split(line.Trim(),@"(?<=[.!?])\s+(?=[A-Z""“])")) {
+    var words=Regex.Split(sentence.Trim(),@"\s+"); int pos=0;
+    while(pos<words.Length) {
+     int take=Math.Min(9,words.Length-pos);
+     if(words.Length-pos>10) {
+      for(int j=take;j>=6;j--) if(Regex.IsMatch(words[pos+j-1],@"[,;:—]$")){take=j;break;}
+      if(words.Length-pos-take<=2) take=Math.Max(6,take-2);
+     } else take=words.Length-pos;
+     string unit=String.Join(" ",words.Skip(pos).Take(take));
+     double dur=Math.Max(0.8,take/2.55);
+     result.Add(new Cue{Id=result.Count+1,Start=t,End=t+dur,Text=unit}); t+=dur+0.15; pos+=take;
+    }
+   }
+  }
+  Validate(result); return result;
+ }
+ public static void Validate(List<Cue> cues) {
+  if(cues.Count==0) throw new Exception("Chưa có lời đọc.");
+  if(cues.Count>MaxCues) throw new Exception("Kịch bản có "+cues.Count+" khối; bản 1.4.1 hỗ trợ tối đa 20.000 khối mỗi file.");
+  for(int i=0;i<cues.Count;i++) {
+   Cue c=cues[i]; c.Id=i+1;
+   if(String.IsNullOrWhiteSpace(c.Text)) throw new Exception("Khối "+c.Id+" chưa có lời.");
+   if(c.Text.Length>2000) throw new Exception("Khối "+c.Id+" quá dài; hãy chia nhỏ.");
+   if(Double.IsNaN(c.Start)||Double.IsNaN(c.End)||Double.IsInfinity(c.Start)||Double.IsInfinity(c.End)||c.Start<0||c.Duration<0.08) throw new Exception("Khối "+c.Id+": thời gian không hợp lệ.");
+   if(i>0 && c.Start<cues[i-1].End-0.0001) throw new Exception("Khối "+c.Id+" chồng thời gian với khối trước.");
+   if(c.End>MaxSeconds) throw new Exception("Mỗi file hỗ trợ tối đa 6 giờ. Hãy chia phần kịch bản dài hơn.");
+  }
+ }
+ public static string ToSrt(List<Cue> cues) {
+  var sb=new StringBuilder(); foreach(var c in cues) sb.Append(c.Id+"\r\n"+Stamp(c.Start)+" --> "+Stamp(c.End)+"\r\n"+c.Text+"\r\n\r\n"); return sb.ToString();
+ }
+ public static string Advice(Cue c) {
+  var a=new List<string>(); if(c.Words>10) a.Add(">10 từ"); if(c.Words<6) a.Add("Câu ngắn");
+  if(c.Words/c.Duration>3.2) a.Add("Nhịp đọc gấp");
+  if(c.Words/c.Duration<1.5) a.Add("Dễ dư khoảng trống"); return a.Count==0?"V15: hợp lý":String.Join(" · ",a);
+ }
+}
+public sealed class Wave {
+ public int Rate; public short[] Samples;
+ public double Duration {get{return Samples.Length/(double)Rate;}}
+ public static Wave Read(string path) {
+  using(var r=new BinaryReader(File.OpenRead(path))) {
+   if(new string(r.ReadChars(4))!="RIFF") throw new Exception("Không phải WAV RIFF."); r.ReadInt32();
+   if(new string(r.ReadChars(4))!="WAVE") throw new Exception("Không phải WAV.");
+   int rate=0,channels=0,bits=0,format=0; byte[] data=null;
+   while(r.BaseStream.Position+8<=r.BaseStream.Length) {
+    string name=new string(r.ReadChars(4)); int n=r.ReadInt32(); long next=r.BaseStream.Position+n+(n%2);
+    if(n<0 || next>r.BaseStream.Length+1) throw new Exception("WAV bị hỏng.");
+    if(name=="fmt "){format=r.ReadUInt16(); channels=r.ReadUInt16(); rate=r.ReadInt32();r.ReadInt32();r.ReadUInt16();bits=r.ReadUInt16();}
+    else if(name=="data") data=r.ReadBytes(n);
+    r.BaseStream.Position=Math.Min(next,r.BaseStream.Length);
+   }
+   if(format!=1 || bits!=16 || channels!=1 || rate<8000 || data==null || data.Length%2!=0) throw new Exception("Cần WAV PCM 16 bit mono.");
+   short[] s=new short[data.Length/2]; Buffer.BlockCopy(data,0,s,0,data.Length); return new Wave{Rate=rate,Samples=s};
+  }
+ }
+ public void Write(string path) {
+  using(var w=new BinaryWriter(File.Create(path))) {
+   w.Write(Encoding.ASCII.GetBytes("RIFF"));w.Write(36+Samples.Length*2);w.Write(Encoding.ASCII.GetBytes("WAVEfmt "));w.Write(16);w.Write((short)1);w.Write((short)1);w.Write(Rate);w.Write(Rate*2);w.Write((short)2);w.Write((short)16);w.Write(Encoding.ASCII.GetBytes("data"));w.Write(Samples.Length*2);
+   byte[] b=new byte[Samples.Length*2];Buffer.BlockCopy(Samples,0,b,0,b.Length);w.Write(b);
+  }
+ }
+ public Wave Resample(int rate){if(rate==Rate)return this;int n=(int)Math.Round(Samples.Length*(double)rate/Rate);var output=new short[n];for(int i=0;i<n;i++){double pos=i*(double)Rate/rate;int a=Math.Min(Samples.Length-1,(int)pos),b=Math.Min(Samples.Length-1,a+1);double f=pos-a;output[i]=(short)Math.Round(Samples[a]*(1-f)+Samples[b]*f);}return new Wave{Rate=rate,Samples=output};}
+ public Wave TrimEdges() {
+  // Only boundary silence is shortened; quiet consonants keep a 45 ms margin.
+  int first=0,last=Samples.Length-1; while(first<Samples.Length && Math.Abs((int)Samples[first])<45) first++;
+  while(last>first && Math.Abs((int)Samples[last])<45) last--;
+  if(first>=Samples.Length) throw new Exception("Mô hình trả về âm thanh trống.");
+  first=Math.Max(0,first-Rate*45/1000); last=Math.Min(Samples.Length-1,last+Rate*65/1000);
+  short[] output=new short[last-first+1];Array.Copy(Samples,first,output,0,output.Length);return new Wave{Rate=Rate,Samples=output};
+ }
+}
+public enum EngineKind { Kokoro, LibriTTS, Kitten, Piper, Qwen, Chatterbox }
+public class KokoroEngine : IDisposable {
+ public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged;ExternalSpeech external;
+ public void ReportDevice(string text){DeviceInfo=text;if(DeviceChanged!=null)DeviceChanged(text);}
+ public void Dispose(){if(external!=null){external.Dispose();external=null;}}
+ public string Root; public int Speaker=3,Threads=2; public EngineKind Kind=EngineKind.Kokoro;public string ModelFolder="";public bool Libri {get{return Kind==EngineKind.LibriTTS;}set{Kind=value?EngineKind.LibriTTS:EngineKind.Kokoro;}} public volatile bool Cancelled; private Process running;
+ public string Executable {get{return Path.Combine(Root,"engine",Environment.OSVersion.Platform==PlatformID.Win32NT?"sherpa-onnx-offline-tts.exe":"sherpa-onnx-offline-tts");}}
+ public void Cancel(){Cancelled=true;if(external!=null)external.Cancel();try{if(running!=null&&!running.HasExited)running.Kill();}catch{}}
+ public string VoiceFolder {get{return Path.Combine(Root,Kind==EngineKind.Kokoro?"model":Kind==EngineKind.LibriTTS?"libritts":Kind==EngineKind.Kitten?"kitten":ModelFolder);}}
+ public string ModelFile {get{return Path.Combine(VoiceFolder,Kind==EngineKind.LibriTTS?"en_US-libritts_r-medium.onnx":"model.onnx");}}
+ public virtual void CheckFiles(){
+  if(Kind==EngineKind.Qwen||Kind==EngineKind.Chatterbox){ExternalSpeech.Check(this);return;}
+  if(Kind==EngineKind.Piper&&ModelFolder!="piper_john"&&ModelFolder!="piper_kristin")throw new Exception("Bộ giọng Piper chưa được cài hoặc không được hỗ trợ.");
+  var required=new List<string>{Executable,ModelFile,Path.Combine(VoiceFolder,"tokens.txt")};
+  if(Kind==EngineKind.Kokoro||Kind==EngineKind.Kitten)required.Add(Path.Combine(VoiceFolder,"voices.bin"));
+  if(Kind==EngineKind.Kokoro)required.Add(Path.Combine(VoiceFolder,"lexicon-us-en.txt"));
+  foreach(string p in required)if(!File.Exists(p))throw new Exception("Thiếu tệp: "+p+". Hãy cài lại bộ đầy đủ.");
+  if(!Directory.Exists(Path.Combine(VoiceFolder,"espeak-ng-data")))throw new Exception("Thiếu bộ phát âm offline. Hãy cài lại bộ đầy đủ.");
+ }
+ // Windows CommandLineToArgvW-compatible quoting, including trailing backslashes.
+ public static string Q(string s){var b=new StringBuilder("\"");int slashes=0;foreach(char c in s){if(c=='\\'){slashes++;continue;}if(c=='\"')b.Append('\\',slashes*2+1);else b.Append('\\',slashes);b.Append(c);slashes=0;}b.Append('\\',slashes*2);b.Append('"');return b.ToString();}
+ public virtual Wave Generate(string text,double speed,string output) {
+  if(Cancelled)throw new OperationCanceledException();
+  if(Kind==EngineKind.Qwen||Kind==EngineKind.Chatterbox){if(external==null)external=new ExternalSpeech(this);return external.Generate(text,speed,output);}
+  string model=VoiceFolder;
+  string args="--debug=0 --num-threads="+Threads+" --sid="+Speaker+" --speed="+speed.ToString("0.000",CultureInfo.InvariantCulture)+" --output-filename="+Q(output)+" ";
+  if(Kind==EngineKind.Kokoro)args+="--kokoro-model="+Q(ModelFile)+" --kokoro-voices="+Q(Path.Combine(model,"voices.bin"))+" --kokoro-tokens="+Q(Path.Combine(model,"tokens.txt"))+" --kokoro-data-dir="+Q(Path.Combine(model,"espeak-ng-data"))+" --kokoro-lexicon="+Q(Path.Combine(model,"lexicon-us-en.txt"))+" ";
+  else if(Kind==EngineKind.Kitten)args+="--kitten-model="+Q(ModelFile)+" --kitten-voices="+Q(Path.Combine(model,"voices.bin"))+" --kitten-tokens="+Q(Path.Combine(model,"tokens.txt"))+" --kitten-data-dir="+Q(Path.Combine(model,"espeak-ng-data"))+" ";
+  else args+="--vits-noise-scale-w=0 --vits-model="+Q(ModelFile)+" --vits-tokens="+Q(Path.Combine(model,"tokens.txt"))+" --vits-data-dir="+Q(Path.Combine(model,"espeak-ng-data"))+" ";
+  args+=Q(text);
+  var info=new ProcessStartInfo(Executable,args){UseShellExecute=false,CreateNoWindow=true,RedirectStandardError=true,RedirectStandardOutput=true,WorkingDirectory=Root};
+  string err="",stdout="";
+  using(var p=new Process{StartInfo=info}) {
+   running=p; p.ErrorDataReceived+=(s,e)=>{if(e.Data!=null && err.Length<12000)err+=e.Data+"\n";};p.OutputDataReceived+=(s,e)=>{if(e.Data!=null && stdout.Length<12000)stdout+=e.Data+"\n";};
+   p.Start();p.BeginErrorReadLine();p.BeginOutputReadLine();
+   while(!p.WaitForExit(100)){if(Cancelled){try{p.Kill();}catch{}throw new OperationCanceledException();}}
+   p.WaitForExit();running=null;if(Cancelled)throw new OperationCanceledException();
+   if(p.ExitCode!=0 || !File.Exists(output))throw new Exception("Bộ đọc offline gặp lỗi: "+err+stdout);
+  }
+  return Wave.Read(output).TrimEdges();
+ }
+}
+public sealed class RenderOptions {
+ public bool Locked=true,SlowShort=true,JoinSentences=false;public double BaseSpeed=1,MaxSpeed=1.3,MinSpeed=.8,Gap=.15;
+ public BreathMode Breathing=BreathMode.Auto;public string BreathPath;public double BreathLevel=.16;public int BreathEvery=3;
+}
+public enum BreathMode { Auto, Custom, None }
+public sealed class BreathTrack {
+ readonly List<Wave> samples=new List<Wave>();readonly RenderOptions options;int sentences,index;double last=-100;
+ public BreathTrack(RenderOptions o,string root){
+  options=o;if(o.Breathing==BreathMode.None)return;
+  string[] files=o.Breathing==BreathMode.Custom&&!String.IsNullOrWhiteSpace(o.BreathPath)?new[]{o.BreathPath}:Directory.GetFiles(Path.Combine(root,"breaths"),"*.wav").OrderBy(x=>x,StringComparer.Ordinal).ToArray();
+  if(files.Length==0)throw new Exception("Thiếu bộ mẫu hơi thở. Cài lại bản cập nhật hoặc chọn Không dùng.");
+  foreach(string file in files){Wave w=Wave.Read(file).TrimEdges();if(w.Duration>2)throw new Exception("Mẫu hơi thở dài quá 2 giây. Hãy chọn WAV ngắn hơn.");samples.Add(w);}
+ }
+ public Wave After(Cue cue,int rate,double room=Double.MaxValue){
+  if(samples.Count==0||!Regex.IsMatch(cue.Text.TrimEnd(),@"[.!?][""”')\]]?$"))return null;
+  sentences++;int every=options.Breathing==BreathMode.Auto?3:Math.Max(1,options.BreathEvery);
+  if(sentences<every||(options.Breathing==BreathMode.Auto&&cue.End-last<6))return null;
+  // Retry at the next sentence if a fixed timeline has no room; never stretch a sample.
+  for(int n=0;n<samples.Count;n++){var sample=samples[(index+n)%samples.Count].Resample(rate);if(sample.Duration+.08<=room)return sample;}return null;
+ }
+ public void Inserted(Cue cue){sentences=0;last=cue.End;index++;}
+ public void Mix(Wave breath,Wave speech,short[] master,int start){
+  double voiceRms=Math.Sqrt(speech.Samples.Average(x=>(double)x*x));
+  double breathRms=Math.Sqrt(breath.Samples.Average(x=>(double)x*x));
+  double level=options.Breathing==BreathMode.Auto?.16:Math.Max(.01,Math.Min(.6,options.BreathLevel));
+  double gain=Math.Min(8,voiceRms*level/Math.Max(1,breathRms));int fade=Math.Min(breath.Samples.Length/2,breath.Rate*12/1000);
+  for(int j=0;j<breath.Samples.Length;j++){
+   double edge=fade==0?1:Math.Min(1,Math.Min(j/(double)fade,(breath.Samples.Length-1-j)/(double)fade));
+   master[start+j]=(short)Math.Max(short.MinValue,Math.Min(short.MaxValue,Math.Round(breath.Samples[j]*gain*edge)));
+  }
+ }
+}
+public static class OutputFiles {
+ public static string Beside(string input){return Path.ChangeExtension(Path.GetFullPath(input),".wav");}
+ public static string Publish(string temporary,string requested){
+  string dir=Path.GetDirectoryName(Path.GetFullPath(requested)),stem=Path.GetFileNameWithoutExtension(requested);
+  for(int n=0;n<10000;n++){
+   string file=Path.Combine(dir,stem+(n==0?"":" ("+(n+1)+")")+".wav");
+   if(File.Exists(file)||Directory.Exists(file))continue;
+   try{File.Move(temporary,file);return file;}catch(IOException){if(File.Exists(file)||Directory.Exists(file))continue;throw;}
+  }
+  throw new IOException("Có quá nhiều file WAV trùng tên trong thư mục.");
+ }
+}
+public static class Renderer {
+ public static string Render(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress) {
+  Scripts.Validate(cues);engine.CheckFiles();
+  if(o.BaseSpeed<.8||o.BaseSpeed>1.3||o.MaxSpeed<o.BaseSpeed||o.MaxSpeed>1.6)throw new Exception("Tốc độ tối đa phải lớn hơn hoặc bằng tốc độ gốc (giới hạn 1,60).");
+  if(!String.Equals(Path.GetExtension(output),".wav",StringComparison.OrdinalIgnoreCase))throw new Exception("Kết quả phải là file WAV.");
+  output=Path.GetFullPath(output);string parent=Path.GetDirectoryName(output);
+  if(!Directory.Exists(parent))throw new DirectoryNotFoundException("Không tìm thấy thư mục nguồn: "+parent);
+  string temporary=Path.Combine(parent,".v15_"+Guid.NewGuid().ToString("N")+".tmp"),work=Path.Combine(Path.GetTempPath(),"V15_work_"+Guid.NewGuid().ToString("N"));
+  bool failed=false;double cursor=0;const int rate=24000;
+  try {
+   Directory.CreateDirectory(work);var track=new BreathTrack(o,engine.Root);
+   using(var writer=new StreamingWave(temporary,rate)){
+    for(int i=0;i<cues.Count;i++){
+     if(engine.Cancelled)throw new OperationCanceledException();
+     var c=cues[i];progress(i*90/cues.Count,"Đọc câu "+(i+1)+"/"+cues.Count);
+     Wave wav=engine.Generate(c.Text,o.BaseSpeed,Path.Combine(work,"cue.wav")).Resample(rate);c.Natural=wav.Duration;c.Speed=o.BaseSpeed;c.AudioPath=null;
+     if(o.Locked){
+      wav=Tempo.Fit(wav,c,o,engine.Root,work,()=>engine.Cancelled);
+      if(wav.Duration>c.Duration){c.Status="QUÁ DÀI: +"+(wav.Duration-c.Duration).ToString("0.000")+"s tại tốc độ "+c.Speed.ToString("0.00")+" (tối đa "+o.MaxSpeed.ToString("0.00")+")";failed=true;continue;}
+      c.Status="Khớp timeline"+(c.Speed>o.BaseSpeed+.001?" · tự tăng tốc "+c.Speed.ToString("0.00"):"");
+     }else{c.Start=cursor;c.End=c.Start+wav.Duration;c.Actual=wav.Duration;c.Status="Timeline theo voice";}
+     if(c.End>Scripts.MaxSeconds)throw new Exception("WAV dài hơn 6 giờ; hãy chia kịch bản.");
+     writer.At(c.Start,wav);
+     double room=o.Locked&&i<cues.Count-1?cues[i+1].Start-c.Start-wav.Duration:Double.MaxValue;
+     Wave breath=i<cues.Count-1?track.After(c,rate,room):null;
+     if(breath!=null&&o.Locked&&Math.Round(c.Start*rate)+wav.Samples.Length+Math.Round(.04*rate)+breath.Samples.Length+Math.Ceiling(.04*rate)>Math.Round(cues[i+1].Start*rate))breath=null;
+     if(breath!=null){track.Inserted(c);c.Status+=" · hơi thở";var scaled=new short[breath.Samples.Length];track.Mix(breath,wav,scaled,0);writer.At(c.Start+wav.Duration+.04,new Wave{Rate=rate,Samples=scaled});}
+     if(!o.Locked)cursor=c.End+Math.Max(o.Gap,breath==null?0:breath.Duration+.08);
+    }
+    if(failed){var bad=cues.Where(c=>c.Status.StartsWith("QUÁ")).ToList();throw new Exception("Có "+bad.Count+" câu vẫn vượt timeline sau khi tăng đến giới hạn. Chưa xuất WAV.\r\n"+String.Join("\r\n",bad.Take(12).Select(c=>"Câu "+c.Id+": "+c.Status))+"\r\nGiảm lời hoặc điều chỉnh giới hạn tốc độ / timeline.");}
+    progress(95,"Hoàn tất WAV · kiểm tra độ dài");writer.Finish(cues.Last().End);
+   }
+   if(engine.Cancelled)throw new OperationCanceledException();
+   string final=OutputFiles.Publish(temporary,output);progress(100,"Hoàn tất: "+Path.GetFileName(final));return final;
+  }finally{try{if(File.Exists(temporary))File.Delete(temporary);}catch{}try{if(Directory.Exists(work))Directory.Delete(work,true);}catch{}foreach(var c in cues)c.AudioPath=null;}
+ }
+}
+}

@@ -1,0 +1,24 @@
+PASS Auto is the default breath mode
+PASS Subtitle boundaries inside a sentence do not trigger a breath
+PASS Auto waits for three sentence boundaries 0
+PASS Auto waits for three sentence boundaries 1
+PASS Auto selects bundled short real breath
+PASS Auto minimum spacing prevents dense breath repetition
+PASS A whole breath is skipped when fixed timeline has insufficient room
+PASS Bundled breath is resampled for LibriTTS
+PASS Breath level follows selected speech RMS rather than raw sample volume
+PASS Breath edges fade without boundary clicks
+PASS Off mode never loads or inserts breath audio
+PASS Reject custom breath longer than two seconds
+PASS Collision adds suffix and preserves the existing WAV bytes
+PASS Auto breath preserves every locked SRT timestamp and final duration
+PASS Auto inserts only after the third complete sentence
+PASS Real offline final WAV contains breath audio in the available gap
+PASS Successful render exports exactly one WAV without reports or cue folders
+PASS Custom frequency works; no trailing breath after the last cue
+PASS Flexible timeline reserves complete breath and silence without clipping
+PASS Cancellation during finalization rejects publication
+PASS Cancellation leaves no output, partial file, or temporary cue directory
+PASS Overrun never publishes a misleading completed WAV
+PASS Overrun leaves only earlier successful WAV files
+TOTAL BREATH/OUTPUT: 23 passed.

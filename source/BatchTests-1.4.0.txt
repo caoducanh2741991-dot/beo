@@ -1,0 +1,20 @@
+PASS Mixed SRT/TXT auto modes and malformed input captured per file
+PASS Bad import does not block later files
+PASS Identical base names save beside their own sources
+PASS No queue summary or auxiliary CSV is created
+PASS Synthesis failure is isolated and next file continues
+PASS Failed job reports error in UI data without publishing a result
+PASS Cancellation between jobs preserves remaining pending jobs
+PASS Pending job has no output path after cancellation
+PASS Mid-file cancellation stops current and does not start next
+PASS Resume skips completed files and runs pending files only
+PASS Voice descriptions load and personal Unicode notes survive restart
+PASS Unicode source name and original stem are preserved
+PASS Real offline batch generates both locked SRT and flexible TXT
+PASS Real batch writes separate complete WAV outputs
+PASS Batch leaves original SRT bytes unchanged
+PASS Batch source folders contain only original script and one WAV
+PASS All 53 curated voice profiles installed
+PASS Exactly 20 LibriTTS choices have descriptions and style tags
+PASS Publisher and V15 recommendation sources remain distinguishable
+TOTAL BATCH: 19 passed.

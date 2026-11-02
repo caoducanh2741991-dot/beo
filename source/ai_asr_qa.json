@@ -1,0 +1,42 @@
+[
+  {
+    "file": "offline_chatter_nano_Clone.wav",
+    "seconds": 4.437875,
+    "transcript": "You thought it was a coincidence, but your brain had already noticed the pattern.",
+    "wer": 0.0,
+    "rms": 0.047475434839725494,
+    "clip_fraction": 0.0
+  },
+  {
+    "file": "offline_qwen_custom_Ryan.wav",
+    "seconds": 6.4805625,
+    "transcript": "You thought it was a coincidence, but your brain had already noticed the pattern.",
+    "wer": 0.0,
+    "rms": 0.057890310883522034,
+    "clip_fraction": 0.0
+  },
+  {
+    "file": "offline_qwen_base_Clone.wav",
+    "seconds": 4.4586875,
+    "transcript": "You thought it was a coincidence, but your brain had already noticed the pattern.",
+    "wer": 0.0,
+    "rms": 0.08235321938991547,
+    "clip_fraction": 0.0
+  },
+  {
+    "file": "offline_qwen_custom_Aiden.wav",
+    "seconds": 4.877,
+    "transcript": "You thought it was a coincidence, but your brain had already noticed the pattern.",
+    "wer": 0.0,
+    "rms": 0.10054457187652588,
+    "clip_fraction": 0.0
+  },
+  {
+    "file": "chatter_nano_Default.wav",
+    "seconds": 4.075875,
+    "transcript": "You thought it was a coincidence, but your brain had already noticed the pattern.",
+    "wer": 0.0,
+    "rms": 0.0558672733604908,
+    "clip_fraction": 0.0
+  }
+]

@@ -1,0 +1,11 @@
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme
+PASS Window visibly identifies version 1.4.1
+PASS Device picker offers Auto / NVIDIA GPU / CPU with Auto default
+PASS Session captures explicit NVIDIA selection
+PASS Studio engine receives the shared GPU preference
+PASS Batch visibly uses the same device preference
+PASS Restoring a session restores the GPU mode
+PASS Tools expose ZIP update and GPU diagnostics
+PASS UI never allows a speed cap below the selected base speed
+PASS Studio imports and displays 3001 blocks instead of rejecting over 2000
+TOTAL UI 1.4.1 9 passed.

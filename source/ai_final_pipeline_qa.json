@@ -1,0 +1,26 @@
+[
+  {
+    "file": "Qwen.wav",
+    "transcript": "The red light appeared every night. Then, Sarah noticed one unusual detail.",
+    "wer": 0.0,
+    "seconds": 8.15
+  },
+  {
+    "file": "Chatterbox.wav",
+    "transcript": "The red light appeared every night. Then Sarah noticed one unusual detail.",
+    "wer": 0.0,
+    "seconds": 8.15
+  },
+  {
+    "file": "normal.wav",
+    "transcript": "A quiet room can hide a strange story.",
+    "wer": 0.0,
+    "seconds": 2.43475
+  },
+  {
+    "file": "fast.wav",
+    "transcript": "A quiet room can hide a strange story.",
+    "wer": 0.0,
+    "seconds": 1.8855
+  }
+]

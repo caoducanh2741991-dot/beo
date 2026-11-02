@@ -1,0 +1,15 @@
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme
+PASS Startup V15 sample displays without compatibility error
+PASS Breath selector exposes exactly Auto, Custom, Off
+PASS Custom mode displays WAV picker, level and frequency controls
+PASS Off mode hides custom breath controls
+PASS Three publisher-rated voices carry stars in selector
+PASS Multi-file import fills queue and deduplicates input path
+PASS Single-file import remembers original directory for WAV output
+PASS Pasted or sample scripts do not inherit a previous source file path
+PASS Queued editor preserves its source path for beside-source export
+PASS Editing queued file updates only that queue entry
+PASS Unchanged inspection preserves completed state for resume
+PASS Voice library displays 924 per-voice descriptions
+PASS Highly rated filter shows exactly the three rated voices
+PASS Custom breath settings survive save and reload

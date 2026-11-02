@@ -1,0 +1,23 @@
+{
+  "key": "T:4",
+  "tests": [
+    {
+      "text": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+      "recognized": "Have you ever forgotten why you entered a room? Your brain may have switched contexts at the doorway.",
+      "wer": 0.0,
+      "seconds": 5.326,
+      "rms": 0.1006,
+      "clip_fraction": 0.0
+    },
+    {
+      "text": "At first, the new camera looked ordinary. Then Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+      "recognized": "At first, the new camera looked ordinary. Then, Sarah noticed one detail nobody could explain. Why did the same red light appear every night? Here is what happened next.",
+      "wer": 0.0,
+      "seconds": 10.868,
+      "rms": 0.1057,
+      "clip_fraction": 0.0
+    }
+  ],
+  "wer": 0.0,
+  "traits_rank": null
+}

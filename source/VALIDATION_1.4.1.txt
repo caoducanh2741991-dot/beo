@@ -1,0 +1,12 @@
+V15 Voice Studio 1.4.1 validation scope
+
+Compiled x64 managed Windows EXEs against .NET Framework 4.5 APIs with Mono mcs.
+UI executed on Linux through Mono/Xvfb; actual Windows updater and physical NVIDIA GPU execution were not available.
+RTX 2070 selection, driver absence, simulated GPU OOM during startup/generation, strict GPU errors and fresh-process CPU recovery were tested with controlled fixtures. No speed or VRAM benchmark is claimed.
+Real FFmpeg atempo verified duration fitting and approximately 220 Hz pitch preservation; narration/breath streaming tests used synthetic tone fixtures.
+A 5001-cue SRT imported and rendered into one sample-exact timeline WAV without retaining all generated waveforms. UI imported 3001 cues.
+New limit: 20000 cues and six hours per input; full six-hour speech was not rendered.
+Updater tests cover SHA verification, Windows path traversal/reserved names, user-data preservation, mid-commit rollback, crash journal recovery including missing app EXE, and cleanup of marked abandoned staging.
+All eight GPU ZIPs were reassembled and checked against hashes from the official PyTorch CUDA 12.4 index. Both wheels fully extracted: 11080 files and 4668019393 bytes. This verifies transport/extraction, not Windows DLL loading or physical GPU synthesis.
+Qwen uses float32 with SDPA, including on Turing; no unsupported BF16/FlashAttention requirement is introduced. CUDA runtime is isolated from the retained CPU runtime.
+Models and vendor libraries from installed 1.4 are reused. No model weights are included in the small application update.

@@ -1,0 +1,28 @@
+PASS Queue restores in-app edits without changing original source
+PASS Queue editing never rewrites source TXT
+PASS Interrupted active job is queued again after restart
+PASS Running checkpoint preserves edited script before partial flexible timing changes
+PASS Failed batch restores pre-render cues for a safe retry
+PASS Completed existing WAV remains completed across restart
+PASS Missing completed WAV is queued again
+PASS Changed source hash reloads script and invalidates completed result
+PASS Missing input is isolated as an import error
+PASS Damaged primary checkpoint falls back to atomic backup
+PASS Session loader rejects external XML entities
+PASS Preset roundtrip preserves voice and timing parameters
+PASS Preset roundtrip preserves breath, batch and sentence preferences
+PASS Flexible sentence join combines only unfinished adjoining blocks
+PASS Joining creates a copy and preserves locked source timeline
+PASS Sentence join does not bridge a deliberate long gap
+PASS Preflight identifies long blank gaps
+PASS Custom voice names, transcript and style notes persist
+PASS Voice reference resolves only inside private voice directory
+PASS Voice storage rejects path traversal identifiers
+PASS Qwen bundled model and shared codec are present
+PASS Chatterbox bundled model and conditionals are present
+PASS Unknown AI model directories are rejected
+PASS MP3 conversion fixture was created
+PASS MP3 reference converts locally to a usable mono PCM WAV
+PASS Too-short reference excerpts are rejected
+PASS Rejected reference conversion cleans partial WAV
+TOTAL 27 passed

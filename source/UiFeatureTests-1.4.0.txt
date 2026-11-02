@@ -1,0 +1,14 @@
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme
+PASS Six tabs expose Studio, queue, library, tools, cloning and guide
+PASS Comparison tool is visible in its own tools tab
+PASS Reference import completes asynchronously and releases controls
+PASS Cloning tab stores local reference and registers Qwen Base voice
+PASS New custom voice is immediately selected in Studio
+PASS Opening another app instance restores queue without overwriting it empty
+PASS Last selected custom voice survives restart
+PASS Custom voice catalog survives restart
+PASS Gender filter includes Libri profiles carrying source gender labels
+PASS Comparison generates three real offline samples from one text
+PASS Comparison dialog finishes and cleans up without hanging
+PASS Queue displays shared voice, speed and breath mode
+TOTAL 12 passed
