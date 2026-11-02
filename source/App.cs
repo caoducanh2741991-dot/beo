@@ -11,8 +11,9 @@ using System.Media;
 using System.Diagnostics;
 using System.Reflection;
 
-[assembly: AssemblyVersion("1.4.3.0")]
-[assembly: AssemblyFileVersion("1.4.3.0")]
+[assembly: System.Runtime.Versioning.TargetFramework(".NETFramework,Version=v4.5", FrameworkDisplayName=".NET Framework 4.5")]
+[assembly: AssemblyVersion("1.4.3.1")]
+[assembly: AssemblyFileVersion("1.4.3.1")]
 namespace V15Voice {
 public class VoiceItem {
  public int Id; public string Name,Key; public override string ToString(){return Name;}
@@ -34,7 +35,7 @@ public partial class MainForm:Form {
   if(File.Exists(Path.Combine(stateDir,"favorites.txt")))favorites=new HashSet<string>(File.ReadAllLines(Path.Combine(stateDir,"favorites.txt")));
   catalog=new VoiceCatalog(Path.Combine(root,"voice_profiles.tsv"),Path.Combine(stateDir,"voice_notes.tsv"));
   foreach(var own in UserVoices.Load(stateDir))catalog.Add(own);
-  Text="V15 Voice Studio · Offline 1.4.3";MinimumSize=new Size(1100,740);Size=new Size(1280,850);StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);BackColor=Color.FromArgb(244,247,251);
+  Text="V15 Voice Studio · Offline 1.4.3.1";MinimumSize=new Size(1100,740);Size=new Size(1280,850);StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);BackColor=Color.FromArgb(244,247,251);
   var shell=new TableLayoutPanel{Dock=DockStyle.Fill,RowCount=3,ColumnCount=1,Padding=new Padding(20)};
   shell.RowStyles.Add(new RowStyle(SizeType.Absolute,82));shell.RowStyles.Add(new RowStyle(SizeType.Percent,100));shell.RowStyles.Add(new RowStyle(SizeType.Absolute,52));Controls.Add(shell);
   var header=new Panel{Dock=DockStyle.Fill};header.Controls.Add(new Label{Text="V15 VOICE STUDIO",Font=new Font("Segoe UI",22,FontStyle.Bold),ForeColor=navy,AutoSize=true,Location=new Point(0,0)});
@@ -165,7 +166,7 @@ public partial class MainForm:Form {
    openOutput.Enabled=!String.IsNullOrEmpty(lastOutput);int done=jobs.Count(j=>j.State==JobState.Done),errors=jobs.Count(j=>j.State==JobState.Failed||j.State==JobState.ImportFailed);status.Text=(engine.Cancelled?"Đã dừng":"Xong hàng đợi")+" • "+done+" hoàn tất • "+errors+" lỗi. WAV nằm cạnh từng SRT/TXT gốc.";
   }catch(Exception e){Error(e);}finally{if(active!=null)active.Dispose();SetBusy(false);active=null;if(editingJob!=null){cues=editingJob.Cues;Populate();}RefreshJobs();SaveSession();}
  }
- void BuildGuide(){var page=new TabPage("  Hướng dẫn  "){BackColor=Color.White,Padding=new Padding(20)};tabs.TabPages.Add(page);var box=new TextBox{Multiline=true,ReadOnly=true,ScrollBars=ScrollBars.Vertical,Dock=DockStyle.Fill,BorderStyle=BorderStyle.None,BackColor=Color.White,Font=new Font("Segoe UI",11)};box.Text=File.Exists(Path.Combine(root,"HUONG_DAN_1.4.3.txt"))?File.ReadAllText(Path.Combine(root,"HUONG_DAN_1.4.3.txt")):File.Exists(Path.Combine(root,"HUONG_DAN.txt"))?File.ReadAllText(Path.Combine(root,"HUONG_DAN.txt")):"Mở SRT/TXT → chọn giọng → nghe thử → tạo voice. Chỉ xuất WAV cạnh file SRT/TXT gốc.\r\nHoàn toàn offline. Hơi thở: Auto, Tùy chọn hoặc Không dùng.";page.Controls.Add(box);}
+ void BuildGuide(){var page=new TabPage("  Hướng dẫn  "){BackColor=Color.White,Padding=new Padding(20)};tabs.TabPages.Add(page);var box=new TextBox{Multiline=true,ReadOnly=true,ScrollBars=ScrollBars.Vertical,Dock=DockStyle.Fill,BorderStyle=BorderStyle.None,BackColor=Color.White,Font=new Font("Segoe UI",11)};box.Text=File.Exists(Path.Combine(root,"HUONG_DAN_1.4.3.1.txt"))?File.ReadAllText(Path.Combine(root,"HUONG_DAN_1.4.3.1.txt")):File.Exists(Path.Combine(root,"HUONG_DAN.txt"))?File.ReadAllText(Path.Combine(root,"HUONG_DAN.txt")):"Mở SRT/TXT → chọn giọng → nghe thử → tạo voice. Chỉ xuất WAV cạnh file SRT/TXT gốc.\r\nHoàn toàn offline. Hơi thở: Auto, Tùy chọn hoặc Không dùng.";page.Controls.Add(box);}
  void LoadFile(string path){try{if(busy)return;var job=BatchJob.Load(path);if(job.State==JobState.ImportFailed)throw new Exception(job.Error);editingJob=null;cues=job.Cues;mode.SelectedIndex=job.Timed?0:1;sourcePath=job.InputPath;Populate();status.Text="Đã mở "+Path.GetFileName(path);}catch(Exception e){if(!busy){cues=new List<Cue>();sourcePath=null;editingJob=null;waveform=null;lastOutput=null;openOutput.Enabled=false;Populate();info.Text="Chưa nhập được "+Path.GetFileName(path)+" · "+e.Message;}Error(e);}}
  void LoadSample(){try{editingJob=null;sourcePath=null;cues=Scripts.ParseSrt("1\n00:00:00,000 --> 00:00:03,300\nHave you ever forgotten why you entered a room?\n\n2\n00:00:03,450 --> 00:00:06,750\nYour brain may have switched contexts at the doorway.\n\n3\n00:00:06,900 --> 00:00:10,200\nBut the unfinished thought can still come back later.\n");mode.SelectedIndex=0;Populate();}catch(Exception e){Error(e);}}
  void Paste(){using(var f=new Form{Text="Dán SRT hoặc TXT tiếng Anh",Size=new Size(780,520),StartPosition=FormStartPosition.CenterParent}){var t=new TextBox{Multiline=true,ScrollBars=ScrollBars.Both,Dock=DockStyle.Fill,Font=new Font("Consolas",11)};var b=new Button{Text="Nhập kịch bản",Dock=DockStyle.Bottom,Height=42};f.Controls.Add(t);f.Controls.Add(b);b.Click+=(s,e)=>{try{editingJob=null;cues=t.Text.Contains("-->")?Scripts.ParseSrt(t.Text):Scripts.ParseText(t.Text);mode.SelectedIndex=(t.Text.Contains("-->")||System.Text.RegularExpressions.Regex.IsMatch(t.Text,@"\d+:\d{2}:\d{2}"))?0:1;sourcePath=null;Populate();f.Close();}catch(Exception x){Error(x);}};f.ShowDialog(this);}}

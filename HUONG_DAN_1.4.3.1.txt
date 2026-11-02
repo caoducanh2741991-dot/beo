@@ -1,3 +1,24 @@
+V15 VOICE STUDIO 1.4.3.1 — BẢN SỬA CÔNG CỤ CẬP NHẬT WINDOWS
+
+Khắc phục: Method not found: Boolean System.String.Contains(Char).
+Bản cũ tham chiếu API không có trong .NET Framework trên Windows. Bản này
+biên dịch lại APP và UPDATER bằng bộ tham chiếu .NET Framework 4.5 của Microsoft.
+
+CÁCH CÀI BẢN SỬA LẦN NÀY:
+1. Đóng app V15 và cửa sổ cập nhật cũ.
+2. Giải nén toàn bộ V15VoiceStudio_1.4.3.1_Update.zip vào MỘT THƯ MỤC MỚI.
+   Không giải nén chồng vào gói cập nhật cũ, không giải nén vào thư mục app đã cài.
+3. Mở thư mục mới, chạy CAP_NHAT.cmd. Công cụ mới phải hiển thị 1.4.3.1.
+4. Chọn đúng thư mục V15 đang cài, có V15VoiceStudio.exe, ai/runtime và ai/models.
+5. Bấm CẬP NHẬT. Khi mở lại, app hiển thị 1.4.3.1.
+
+Không dùng nút cập nhật của app cũ để cài bản sửa lần này: nút đó gọi updater cũ.
+Không cần tải lại 4 phần GPU ONNX. Khi đã lên 1.4.3.1, cài gói GPU ONNX 1.4.3
+bằng nút Cập nhật từ ZIP nếu chưa cài. Model, giọng riêng và WAV được giữ nguyên.
+Phạm vi: sửa tương thích bộ cập nhật; lỗi render giọng sao chép vẫn được tạm gác.
+
+HƯỚNG DẪN TÍNH NĂNG GIỮ TỪ BẢN 1.4.3:
+
 V15 VOICE STUDIO 1.4.3 — CẬP NHẬT ZIP
 
 1. CẬP NHẬT APP

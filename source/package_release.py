@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "1.4.3"
+VERSION = "1.4.3.1"
 
 def main():
     payload = ROOT / "payload"
@@ -19,7 +19,7 @@ def main():
     for source, destination in (("ai_worker.py", "worker.py"), ("gpu_policy.py", "gpu_policy.py")):
         shutil.copyfile(ROOT / "source" / source, payload / "ai" / destination)
     shutil.copytree(ROOT / "source", payload / "source", ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "*.exe"))
-    shutil.copytree(ROOT / "validation", payload / "source" / "validation-1.4.3")
+    shutil.copytree(ROOT / "validation", payload / "source" / "validation-1.4.3.1")
     guide = ROOT / ("HUONG_DAN_" + VERSION + ".txt")
     shutil.copyfile(guide, payload / guide.name)
     manifest = ET.Element("update", product="V15VoiceStudio", version=VERSION, kind="core", space=str(32 * 1024 * 1024))

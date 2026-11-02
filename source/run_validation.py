@@ -6,13 +6,14 @@ SOURCE=ROOT/'source';TOOLS=Path('/tmp/v15-tools')
 ENV=dict(os.environ,MONO_CFG_DIR=str(TOOLS/'etc'),MONO_PATH=str(TOOLS/'usr/lib/mono/4.5')+':'+str(ROOT),LD_LIBRARY_PATH=str(TOOLS/'usr/lib')+':'+str(TOOLS/'usr/lib/x86_64-linux-gnu'))
 MONO=str(TOOLS/'usr/bin/mono');MCS=str(TOOLS/'usr/lib/mono/4.5/mcs.exe')
 APP='App.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs'.split()
-REFS=['-r:System.Core','-r:System.Xml.Linq','-r:System.Drawing','-r:System.Windows.Forms']
+REF_DIR=Path(os.environ.get('V15_NET45_REFS','/tmp/v15-net45/reference/build/.NETFramework/v4.5'))
+REFS=['-nostdlib','-noconfig']+['-r:'+str(REF_DIR/(n+'.dll')) for n in ['mscorlib','System','System.Core','System.Xml','System.Xml.Linq','System.Drawing','System.Windows.Forms']]
 VALID=ROOT/'validation';VALID.mkdir(exist_ok=True)
 def compile(name,files,main=None,app=False):
  args=[MONO,MCS,'-platform:x64','-out:'+str(ROOT/(name+'.exe'))]+REFS
  if main:args+=['-main:'+main]
  if app:args+=['-r:'+str(ROOT/'V15VoiceStudio.exe')]
- if 'Updater' in name:args+=['-r:System.IO.Compression','-r:System.IO.Compression.FileSystem']
+ if 'Updater' in name:args+=['-r:'+str(REF_DIR/'System.IO.Compression.dll'),'-r:'+str(REF_DIR/'System.IO.Compression.FileSystem.dll')]
  args += [str(SOURCE/f) for f in files]
  subprocess.run(args,env=ENV,check=True,capture_output=True,text=True)
 def run(name,args=None,env=None,timeout=90):
@@ -51,13 +52,13 @@ def ui():
     with socket.create_connection(('127.0.0.1',port),.2):break
    except OSError:time.sleep(.1)
   else:raise RuntimeError('Xvfb failed '+x.stderr.read().decode())
-  for name in ['UiTests','Ui143Tests']:
+  for name in ['UiTests','Ui1431Tests']:
    data=tempfile.mkdtemp(prefix='v15-ui-state-');run(name,env=dict(ENV,DISPLAY='127.0.0.1:'+str(display),XDG_DATA_HOME=data),timeout=45)
  finally:x.terminate();x.wait(timeout=5)
 def main():
  subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15VoiceStudio.exe')]+REFS+[str(SOURCE/x) for x in APP],env=ENV,check=True)
- subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15Updater.exe')]+REFS+['-r:System.IO.Compression','-r:System.IO.Compression.FileSystem',str(SOURCE/'Updater.cs')],env=ENV,check=True)
- specs={'Tests':['Tests.cs'],'BatchTests':['BatchTests.cs'],'FeatureTests':['FeatureTests.cs'],'Update141Tests':['Update141Tests.cs'],'BreathStreamingTests':['Update141Tests.cs','BreathStreamingTests.cs'],'PunctuationTests':['PunctuationTests.cs'],'NativeGpuTests':['NativeGpuTests.cs'],'UiTests':['UiTests.cs'],'Ui143Tests':['Ui143Tests.cs']}
+ subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15Updater.exe')]+REFS+['-r:'+str(REF_DIR/'System.IO.Compression.dll'),'-r:'+str(REF_DIR/'System.IO.Compression.FileSystem.dll'),str(SOURCE/'Updater.cs')],env=ENV,check=True)
+ specs={'Tests':['Tests.cs'],'BatchTests':['BatchTests.cs'],'FeatureTests':['FeatureTests.cs'],'Update141Tests':['Update141Tests.cs'],'BreathStreamingTests':['Update141Tests.cs','BreathStreamingTests.cs'],'PunctuationTests':['PunctuationTests.cs'],'NativeGpuTests':['NativeGpuTests.cs'],'UiTests':['UiTests.cs'],'Ui1431Tests':['Ui1431Tests.cs']}
  for name,files in specs.items():compile(name,files,main=name,app=True)
  compile('UpdaterTests',['Updater.cs','UpdaterTests.cs'],main='UpdaterTests')
  compile('OnnxUpdaterTests',['Updater.cs','OnnxUpdaterTests.cs'],main='OnnxUpdaterTests')
