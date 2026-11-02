@@ -124,20 +124,21 @@ public sealed class Wave {
   short[] output=new short[last-first+1];Array.Copy(Samples,first,output,0,output.Length);return new Wave{Rate=Rate,Samples=output};
  }
 }
-public enum EngineKind { Kokoro, LibriTTS, Kitten, Piper, Qwen, Chatterbox, VieNeu }
+public enum EngineKind { Kokoro, LibriTTS, Kitten, Piper, Qwen, Chatterbox, VieNeu, Rvc }
 public class KokoroEngine : IDisposable {
  public SpeechCache PreviewCache;public SpeechArchive Archive;public VoiceRenderReport RunReport;
  public Wave GetSpeech(string text,double speed,string output){if(Cancelled)throw new OperationCanceledException();var cached=Archive==null?null:Archive.Get(this,text,speed);if(cached!=null){if(RunReport!=null)RunReport.Origin(true);return cached;}if(Archive==null||!Archive.Refresh)cached=PreviewCache==null?null:PreviewCache.Get(this,text,speed);if(cached!=null){if(RunReport!=null)RunReport.Origin(true);if(Archive!=null)Archive.Put(this,text,speed,cached);return cached;}if(RunReport!=null)RunReport.Origin(false);var wave=Generate(text,speed,output);if(PreviewCache!=null)PreviewCache.Put(this,text,speed,wave);if(Archive!=null)Archive.Put(this,text,speed,wave);return wave;}
- internal bool NativeForcedCpu;internal string NativeFallbackReason;public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged,ActivityChanged;public string RenderContext="";ExternalSpeech external;
+ internal bool NativeForcedCpu;internal string NativeFallbackReason;public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged,ActivityChanged;public string RenderContext="";ExternalSpeech external;RvcSpeech rvc;
  public void ReportActivity(string text){if(ActivityChanged!=null)ActivityChanged(text);}
  public void ReportDevice(string text){DeviceInfo=text;if(RunReport!=null)RunReport.Device(text);if(DeviceChanged!=null)DeviceChanged(text);}
- public void Dispose(){if(external!=null){external.Dispose();external=null;}}
+ public void Dispose(){if(rvc!=null){rvc.Dispose();rvc=null;}if(external!=null){external.Dispose();external=null;}}
  public string Root; public int Speaker=3,Threads=2; public EngineKind Kind=EngineKind.Kokoro;public string ModelFolder="";public bool Libri {get{return Kind==EngineKind.LibriTTS;}set{Kind=value?EngineKind.LibriTTS:EngineKind.Kokoro;}} public volatile bool Cancelled; private Process running;
  public string Executable {get{return Path.Combine(Root,"engine",Environment.OSVersion.Platform==PlatformID.Win32NT?"sherpa-onnx-offline-tts.exe":"sherpa-onnx-offline-tts");}}
- public void Cancel(){Cancelled=true;if(external!=null)external.Cancel();try{if(running!=null&&!running.HasExited)running.Kill();}catch{}}
- public string VoiceFolder {get{return Path.Combine(Root,Kind==EngineKind.Kokoro?"model":Kind==EngineKind.LibriTTS?"libritts":Kind==EngineKind.Kitten?"kitten":ModelFolder);}}
- public string ModelFile {get{return Path.Combine(VoiceFolder,Kind==EngineKind.LibriTTS?"en_US-libritts_r-medium.onnx":"model.onnx");}}
+ public void Cancel(){Cancelled=true;if(rvc!=null)rvc.Cancel();if(external!=null)external.Cancel();try{if(running!=null&&!running.HasExited)running.Kill();}catch{}}
+ public string VoiceFolder {get{if(Kind==EngineKind.Rvc)return Path.Combine(CommunityVoices.RvcHome(Root),"weights");return Path.Combine(Root,Kind==EngineKind.Kokoro?"model":Kind==EngineKind.LibriTTS?"libritts":Kind==EngineKind.Kitten?"kitten":ModelFolder);}}
+ public string ModelFile {get{if(Kind==EngineKind.Rvc)return CommunityVoices.RvcModel(Root);return Path.Combine(VoiceFolder,Kind==EngineKind.LibriTTS?"en_US-libritts_r-medium.onnx":"model.onnx");}}
  public virtual void CheckFiles(){
+  if(Kind==EngineKind.Rvc){CommunityVoices.CheckRvc(this);return;}
   if(Kind==EngineKind.Qwen||Kind==EngineKind.Chatterbox||Kind==EngineKind.VieNeu){ExternalSpeech.Check(this);return;}
   if(Kind==EngineKind.Piper&&ModelFolder!="piper_john"&&ModelFolder!="piper_kristin")throw new Exception("Bộ giọng Piper chưa được cài hoặc không được hỗ trợ.");
   var required=new List<string>{Executable,ModelFile,Path.Combine(VoiceFolder,"tokens.txt")};
@@ -150,6 +151,7 @@ public class KokoroEngine : IDisposable {
  public static string Q(string s){var b=new StringBuilder("\"");int slashes=0;foreach(char c in s){if(c=='\\'){slashes++;continue;}if(c=='\"')b.Append('\\',slashes*2+1);else b.Append('\\',slashes);b.Append(c);slashes=0;}b.Append('\\',slashes*2);b.Append('"');return b.ToString();}
  public virtual Wave Generate(string text,double speed,string output) {
   if(Cancelled)throw new OperationCanceledException();
+  if(Kind==EngineKind.Rvc){if(rvc==null)rvc=new RvcSpeech(this);return rvc.Generate(text,speed,output);}
   if(Kind==EngineKind.Qwen||Kind==EngineKind.Chatterbox||Kind==EngineKind.VieNeu){if(external==null)external=new ExternalSpeech(this);return external.Generate(text,speed,output);}
   string model=VoiceFolder;
   string args="--debug=0 --num-threads="+Threads+" --sid="+Speaker+" --speed="+speed.ToString("0.000",CultureInfo.InvariantCulture)+" --output-filename="+Q(output)+" ";

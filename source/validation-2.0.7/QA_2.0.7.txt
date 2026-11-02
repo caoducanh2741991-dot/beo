@@ -1,9 +1,0 @@
-V15 2.0.7 VALIDATION
-Scope: simpler input UI, visible independent video list, selected mismatched-name pairing, single mixed pair auto-association, explicit input diagnostics, compatible file picker, child-control file drop.
-CreatorImportUiTests: 23 assertions; video-first, separate imports, Unicode/spaces/case extension, selected manual pair, one mixed pair, duplicate, missing/folder/unsupported/bad SRT, file picker properties, drop to both grids, remove without deleting source, missing old video, no silent pair replacement, busy lock/unlock, minimum window, source preservation.
-CreatorUiTests: 24 assertions; existing batch creation, failure continuation, quality filters, A/B trial and accepted B adoption, repair group, original SRT/cache preservation, output sync.
-Ui1411Tests: 48 assertions, including assembly/title 2.0.7.0; StudioLayoutTests: 59 assertions.
-CreatorTests: 37 assertions; real FFmpeg plus fake TTS, timing/merge/reports/cache/cancel/A-B.
-BatchTests:12; AnchoredTests:65; UpdaterTests:21 assertions.
-Release ZIP verification and 2.0.6 upgrade/preservation/downgrade checks: see release207.log.
-Mono/Linux/Xvfb only. File picker properties and app import handlers are tested; the actual Windows shell dialog, ActiveX codecs, and physical RTX 2070 are not exercised. The screenshot's native file-not-found cause is not conclusively reproduced; AddExtension is disabled and the compatible picker selected while retaining existence checks. Existing TTS, GPU and model code is unchanged.

@@ -1,0 +1,11 @@
+Sarah Atlas is excluded from selectable voices and the shipped models.
+Original model: rocky232/piper-sarah-atlas, e3fc15130bb14cfda553faebf224d4ab42a4222a
+Original ONNX SHA256: b689d5c1f5d6e979512165b15c55ec7825dbcb4609e01d45a0fb86ba99e8fd9c
+Both original Piper 1.3.0 and sherpa-onnx 1.13.8 returned noise/non-speech in these tests.
+Whisper tiny.en ASR is a diagnostic, not a final perceptual benchmark.
+Inputs/output durations/ASR:
+At first, it looks like a simple detail. | 1.115s | (static)
+This is a test of the offline voice system. | 1.045s | (wind blowing)
+The story begins in a quiet town. A stranger arrives with a small wooden box. Nobody knows what is hidden inside. | 3.111s | (wind blowing)
+Original Piper on second text: 1.277s, (wind blowing).
+No attempt to fix the upstream model or claim it works.

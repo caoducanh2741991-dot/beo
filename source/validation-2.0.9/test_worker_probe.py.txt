@@ -1,5 +1,0 @@
-PASS gpu 1 UTF-8 protocol is on stdout; decoded device/error matches
-PASS auto 0 UTF-8 protocol is on stdout; decoded device/error matches
-PASS gpu 0 UTF-8 protocol is on stdout; decoded device/error matches
-PASS cpu 1 UTF-8 protocol is on stdout; decoded device/error matches
-TOTAL WORKER PROBE 4 passed

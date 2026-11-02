@@ -13,7 +13,7 @@ public partial class MainForm {
  void ShowActivity(string message){if(IsDisposed||Disposing)return;Action update=()=>status.Text=message;if(InvokeRequired){if(IsHandleCreated)BeginInvoke(update);}else update();}
  void BuildDeviceAndUpdates(FlowLayoutPanel panel){
   AddLabel(panel,"THIẾT BỊ CHẠY VOICE",true);devicePicker.Width=300;devicePicker.DropDownStyle=ComboBoxStyle.DropDownList;devicePicker.Items.AddRange(new object[]{"Auto · ưu tiên NVIDIA GPU","NVIDIA GPU · bắt buộc CUDA","CPU"});devicePicker.SelectedIndex=0;devicePicker.SelectedIndexChanged+=(s,e)=>{UpdateShared();ShowDevice("Đã chọn "+SelectedDeviceLabel()+" · áp dụng cho mọi nguồn giọng ở cả hai tab.");};panel.Controls.Add(devicePicker);
-  deviceStatus.Text="Kokoro / LibriTTS / Kitten / Piper: gói GPU ONNX. Qwen / Chatterbox: gói GPU CUDA 12.4. Mỗi gói chỉ cài một lần.";deviceStatus.AutoSize=true;deviceStatus.MaximumSize=new Size(320,0);deviceStatus.ForeColor=muted;panel.Controls.Add(deviceStatus);
+  deviceStatus.Text="Kokoro / LibriTTS / Kitten / Piper: gói GPU ONNX. Qwen / Chatterbox: gói GPU CUDA 12.4. Adam RVC cần cả hai gói; index chạy CPU. Mỗi gói chỉ cài một lần.";deviceStatus.AutoSize=true;deviceStatus.MaximumSize=new Size(320,0);deviceStatus.ForeColor=muted;panel.Controls.Add(deviceStatus);
   panel.Controls.Add(Btn("Kiểm tra GPU / VRAM",async(s,e)=>await ProbeDevice()));
   panel.Controls.Add(Btn("Thử giọng đang chọn trên GPU",async(s,e)=>await ProbeVoiceGpu()));
   AddLabel(panel,"CẬP NHẬT ỨNG DỤNG",true);panel.Controls.Add(Btn("Cập nhật từ ZIP",(s,e)=>ChooseUpdate()));

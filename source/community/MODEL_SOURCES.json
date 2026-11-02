@@ -1,0 +1,40 @@
+{
+  "retrieved": "2026-10-27",
+  "models": [
+    {
+      "file": "rvc/weights/adam.pth",
+      "size": 56274804,
+      "sha256": "68699f5bbe2086556439983fd44510f538e7d48544e5608234c59ea3a8ff840a",
+      "source": "https://huggingface.co/Coolwowsocoolwow/Adam_Elevenlabs/resolve/b5362f5505eb1f833dfb5ae7d1f19564a5656c9b/added_Adam_Elevenlabs_v2.zip",
+      "license_note": "OpenRAIL tag only; full license and upstream voice/data rights not verified"
+    },
+    {
+      "file": "rvc/weights/adam.index",
+      "size": 408494379,
+      "sha256": "73d4b45a643e89a96b21d92f1e1f1674cd04c9ca925c2904b7b751d94e06eaaa",
+      "source": "https://huggingface.co/Coolwowsocoolwow/Adam_Elevenlabs/resolve/b5362f5505eb1f833dfb5ae7d1f19564a5656c9b/added_Adam_Elevenlabs_v2.zip",
+      "license_note": "OpenRAIL tag only; full license and upstream voice/data rights not verified"
+    },
+    {
+      "file": "rvc/weights/hubert.bin",
+      "size": 189206711,
+      "sha256": "cc8c20f4b90a520757260197a3ff2505705a7adbd20ad9eeaa4e1a9b38442ef5",
+      "source": "https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/e6d0c1a17da07c33557852f9dfa2bd44cc75737d/hubert_base/pytorch_model.bin",
+      "license_note": "Separate auxiliary checkpoint; see upstream repository; commercial provenance not verified here"
+    },
+    {
+      "file": "rvc/weights/hubert-config.json",
+      "size": 1492,
+      "sha256": "0346950779dfb7f9316fa74ed846e2b8a22a08eedfdc5387b73f327cb1a4a7cf",
+      "source": "https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/e6d0c1a17da07c33557852f9dfa2bd44cc75737d/hubert_base/config.json",
+      "license_note": "Separate auxiliary checkpoint; see upstream repository; commercial provenance not verified here"
+    },
+    {
+      "file": "rvc/weights/rmvpe.pt",
+      "size": 181184272,
+      "sha256": "6d62215f4306e3ca278246188607209f09af3dc77ed4232efdd069798c4ec193",
+      "source": "https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/e6d0c1a17da07c33557852f9dfa2bd44cc75737d/rmvpe.pt",
+      "license_note": "Separate auxiliary checkpoint; see upstream repository; commercial provenance not verified here"
+    }
+  ]
+}

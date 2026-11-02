@@ -1,0 +1,15 @@
+PASS RVC gets separate source selector while existing group indices remain stable
+PASS Rejected Sarah cannot be selected in Studio or A/B
+PASS Adam selection remains in English mode
+PASS Studio selects community Adam, distinct from existing Kokoro Adam
+PASS Voice panel shows suggested content style
+PASS Shared Studio/queue settings retain selected community voice
+PASS Tools provides community source/status dialog
+PASS Library provides community source/status dialog
+PASS Community chooser cannot change voice during active work
+PASS Dialog discloses rejected model rather than advertising it as ready
+PASS Dialog explains offline conversion workflow
+PASS One-click use action returns to Studio with Adam selected
+PASS No extra video workflow or main tab added
+TOTAL COMMUNITY UI 13 passed.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

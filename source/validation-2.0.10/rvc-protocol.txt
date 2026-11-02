@@ -1,0 +1,4 @@
+PASS bad requests and silence return four errors without corrupting input/output or reloading worker
+PASS unknown voice cannot silently load another voice
+PASS worker network access is explicitly disabled
+TOTAL RVC PROTOCOL 3 passed; real model load, CPU/Linux.

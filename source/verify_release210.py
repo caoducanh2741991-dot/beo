@@ -1,0 +1,44 @@
+"""Verify payload hashes and upgrade 2.0.9 through installed and new updater."""
+from pathlib import Path
+import hashlib, tempfile, shutil, subprocess, sys, zipfile, xml.etree.ElementTree as ET
+sys.path.insert(0,str(Path(__file__).parent))
+import run_validation as v
+root=v.ROOT
+package=root.parent/'output-2.0.10/V15VoiceStudio_2.0.10_Update.zip'
+base=root.parent/'V15VoiceStudio-2.0.9'
+with zipfile.ZipFile(package) as z:
+ assert z.testzip() is None
+ manifest=ET.fromstring(z.read('manifest.xml'));assert manifest.attrib['version']=='2.0.10'
+ for entry in manifest:
+  path=entry.attrib['path']; data=z.read('payload/'+path)
+  assert len(data)==int(entry.attrib['size']) and hashlib.sha256(data).hexdigest()==entry.attrib['sha256'],path
+  assert path not in ['voice_profiles.tsv','voices.bin']
+  assert not any(part.startswith(".") for part in path.split("/")),path
+ import json
+ sources=json.loads(z.read('payload/source/community/MODEL_SOURCES.json'))
+ for item in sources['models']:
+  data=z.read('payload/source/community/'+item['file'])
+  assert hashlib.sha256(data).hexdigest()==item['sha256']
+ assert 'payload/source/community/sarah/model.onnx' not in z.namelist()
+ for abi in ['cp311','cp312']:
+  assert 'payload/source/community/rvc/deps/'+abi+'/faiss/_swigfaiss.'+abi+'-win_amd64.pyd' in z.namelist()
+  assert len([n for n in z.namelist() if '/deps/'+abi+'/faiss_cpu.libs/' in n and n.endswith('.dll')]) == 6
+ print('PASS ZIP CRC, every payload/model hash, Sarah exclusion and Windows FAISS assets')
+ folder=Path(tempfile.mkdtemp(prefix='v15-release210-package-'));z.extractall(folder)
+keep=['ai/runtime/python.exe','ai/models/weights.bin','ai/runtime/torch.dll','engine/gpu/onnxruntime.dll','model/model.onnx','breaths/custom.wav','libritts/voice.bin','kitten/model.onnx','piper_john/model.onnx','piper_kristin/model.onnx','voice_profiles.tsv','voices.bin','user_voices/voices.xml','vietnamese_pack/state.dat','subtitles/config.xml','creator/project.xml','creator-videos.xml','settings.xml','example.srt','example.wav']
+for updater in [base/'V15Updater.exe',root/'V15Updater.exe']:
+ for pack in [package,folder]:
+  target=Path(tempfile.mkdtemp(prefix='v15-release210-installed-'))
+  for name in ['V15VoiceStudio.exe','V15Updater.exe']:shutil.copyfile(base/name,target/name)
+  for name in keep:
+   p=target/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(('PRESERVE '+name).encode())
+  before={name:hashlib.sha256((target/name).read_bytes()).hexdigest() for name in keep}
+  r=subprocess.run([v.MONO,str(updater),'--apply-cli','--zip' if pack==package else '--folder',str(pack),'--target',str(target)],env=v.ENV,capture_output=True,text=True,timeout=90)
+  assert r.returncode==0,r.stdout+r.stderr
+  for name in ['V15VoiceStudio.exe','V15Updater.exe']:assert (target/name).read_bytes()==(root/name).read_bytes()
+  for name,digest in before.items():assert hashlib.sha256((target/name).read_bytes()).hexdigest()==digest,name
+  print('PASS',updater.parent.name,'ZIP' if pack==package else 'folder','upgrade installs final binaries; preserves',len(keep),'data/settings files')
+  r=subprocess.run([v.MONO,str(root/'V15Updater.exe'),'--apply-cli','--zip',str(root.parent/'output-2.0.9/V15VoiceStudio_2.0.9_Update.zip'),'--target',str(target)],env=v.ENV,capture_output=True,text=True,timeout=90)
+  assert r.returncode!=0 and (target/'V15VoiceStudio.exe').read_bytes()==(root/'V15VoiceStudio.exe').read_bytes()
+  print('PASS downgrade to 2.0.9 is rejected')
+print('RELEASE 2.0.10 VERIFIED; physical Windows/GPU not exercised')

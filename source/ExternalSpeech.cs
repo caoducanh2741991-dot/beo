@@ -14,6 +14,7 @@ public sealed class ExternalSpeech : IDisposable {
  public static string B64(string s){return Convert.ToBase64String(Encoding.UTF8.GetBytes(s??""));}
  public static string Decode(string s){return Encoding.UTF8.GetString(Convert.FromBase64String(s));}
  public static void Check(KokoroEngine e){
+  if(e.Kind==EngineKind.Rvc){CommunityVoices.CheckRvc(e);return;}
   if(e.Kind==EngineKind.VieNeu){VietnamesePack.Check(e);return;}
   string model=Path.Combine(e.Root,"ai","models",e.ModelFolder);
   var required=new List<string>{Path.Combine(e.Root,"ai","worker.py"),Path.Combine(e.Root,"ai","ffmpeg.exe")};
@@ -31,7 +32,7 @@ public sealed class ExternalSpeech : IDisposable {
   if(disposed)throw new ObjectDisposedException("ExternalSpeech");
   if(process!=null&&!process.HasExited)return;
   StopWorker();Check(owner);work=Path.Combine(Path.GetTempPath(),"V15_ai_owner_"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(work);
-  string worker=owner.Kind==EngineKind.VieNeu?VietnamesePack.Script(owner.Root,"vi_worker.py"):Path.Combine(owner.Root,"ai","worker.py");
+  string worker=owner.Kind==EngineKind.Rvc?Path.Combine(CommunityVoices.Home(owner.Root),"rvc_worker.py"):owner.Kind==EngineKind.VieNeu?VietnamesePack.Script(owner.Root,"vi_worker.py"):Path.Combine(owner.Root,"ai","worker.py");
   string args=KokoroEngine.Q(worker)+" --device "+(forceCpu?"cpu":owner.DeviceMode)+" --model "+owner.ModelFolder+" --speaker "+KokoroEngine.Q(owner.VoiceName??"Aiden")+" --threads "+owner.Threads+" --work-dir "+KokoroEngine.Q(work)+" --seed-offset "+seedOffset;
   if(!String.IsNullOrEmpty(owner.ReferencePath))args+=" --reference "+KokoroEngine.Q(owner.ReferencePath);
   if(!String.IsNullOrEmpty(owner.ReferenceText))args+=" --ref-text "+KokoroEngine.Q(owner.ReferenceText);
