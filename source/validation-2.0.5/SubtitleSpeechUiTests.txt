@@ -1,0 +1,16 @@
+PASS Preserve repetition is the default with an explicit clean option
+PASS run carries the safe repetition policy
+PASS refine carries the safe repetition policy
+PASS align carries the safe repetition policy
+PASS Explicit normalization reaches worker arguments
+PASS Changing repetition mode invalidates completed-job profile
+PASS Selection events persist user changes immediately
+PASS Repetition mode is stored in queue preferences
+PASS Old preferences migrate to preservation
+PASS Repetition mode cannot change during a running batch
+PASS Mode unlocks after processing
+PASS Mode is reachable on subtitles page
+PASS Mode remains reachable at minimum window size
+PASS Project round-trip keeps its processing policy
+TOTAL SPEECH UI 14 passed.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

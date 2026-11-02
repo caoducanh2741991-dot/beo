@@ -9,7 +9,7 @@ using V15Voice;
 
 public static class Ui1411Tests {
  static int count, code;
- static readonly string[] Names={"Tạo voice","Hàng đợi nhiều file","Thư viện & phong cách giọng","Công cụ & thiết lập 2.0.4","Sao chép giọng MP3 / WAV / MP4","MP4 / MP3 → SRT","Hướng dẫn"};
+ static readonly string[] Names={"Tạo voice","Hàng đợi nhiều file","Thư viện & phong cách giọng","Công cụ & thiết lập 2.0.5","Sao chép giọng MP3 / WAV / MP4","MP4 / MP3 → SRT","Hướng dẫn"};
  static object Field(object o,string name){return o.GetType().GetField(name,BindingFlags.Instance|BindingFlags.NonPublic).GetValue(o);}
  static object Call(object o,string name,params object[] args){return o.GetType().GetMethod(name,BindingFlags.Instance|BindingFlags.NonPublic).Invoke(o,args);}
  static void Check(bool value,string name){if(!value)throw new Exception("FAIL "+name);Console.WriteLine("PASS "+name);count++;}
@@ -25,7 +25,7 @@ public static class Ui1411Tests {
    var timer=new Timer{Interval=350};int step=0;
    timer.Tick+=(a,b)=>{try{
     if(step==0){
-     Check(f.Text.EndsWith("2.0.4")&&f.GetType().Assembly.GetName().Version==new Version(2,0,4,0),"Title and EXE assembly both identify 2.0.4");
+     Check(f.Text.EndsWith("2.0.5")&&f.GetType().Assembly.GetName().Version==new Version(2,0,5,0),"Title and EXE assembly both identify 2.0.5");
      Check(tabs.TabCount==7&&Ordered(tabs),"All six tabs remain registered after native handle creation");
      for(int i=0;i<7;i++){tabs.SelectedIndex=i;Check(tabs.SelectedTab==tabs.TabPages[i]&&tabs.TabPages[i].Visible,"Tab "+i+" can be selected and displays its page");}
      tabs.SelectedIndex=3;
@@ -44,7 +44,7 @@ public static class Ui1411Tests {
      Check(((Label)Field(f,"batchInfo")).Text.Contains("nghỉ dấu câu: Tùy chỉnh"),"Queue summary reflects same punctuation mode");
      var ro=(RenderOptions)Call(f,"PacingOptions");Check(ro.Punctuation==PunctuationMode.Custom&&ro.CommaPause==.23,"Preview pacing uses same Studio values");
      pacing.SelectedIndex=0;Call(f,"Apply",paced);Check(pacing.SelectedIndex==1&&((NumericUpDown)Field(f,"commaPause")).Value==.23m,"Restoring preset restores custom pacing controls");
-     tabs.SelectedIndex=0;var settings=(FlowLayoutPanel)Field(f,"punctuationSettings");((ScrollableControl)settings.Parent).ScrollControlIntoView(settings);Application.DoEvents();Check(settings.Visible&&Walk(settings).OfType<NumericUpDown>().Count()==4,"Four punctuation values are reachable in Studio scroll panel");Capture(f,"v15_146_pacing");
+     tabs.SelectedIndex=0;((TabControl)Field(f,"studioSettings")).SelectedIndex=2;var settings=(FlowLayoutPanel)Field(f,"punctuationSettings");((ScrollableControl)settings.Parent).ScrollControlIntoView(settings);Application.DoEvents();Check(settings.Visible&&Walk(settings).OfType<NumericUpDown>().Count()==4,"Four punctuation values are reachable in Studio scroll panel");Capture(f,"v15_146_pacing");
      tabs.SelectedIndex=3;Capture(f,"v15_146_tools");tabs.SelectedIndex=4;
     }else if(step==2){
      Check(Walk(tabs.SelectedTab).OfType<Button>().Any(x=>x.Visible&&x.Text=="Chọn MP3 / WAV / MP4 mẫu"),"Cloning tab visibly exposes the MP3/WAV sample picker");
@@ -72,10 +72,10 @@ public static class Ui1411Tests {
      var txtEngine=(KokoroEngine)Call(f,"NewEngine");Check(txtEngine.Archive!=null,"TXT uses persistent audio store for continuation");
      var rows=(List<Cue>)Field(f,"cues");foreach(var cue in rows)txtEngine.Archive.Put(txtEngine,cue.Text,(double)speed.Value,new Wave{Rate=24000,Samples=new short[24000]});Call(f,"LockProse");Check(!String.IsNullOrEmpty(((List<Cue>)Field(f,"cues"))[0].VoiceLock)&&((DataGridView)Field(f,"grid")).Rows[0].Cells[3].ReadOnly,"Locking a generated paragraph protects its text");Call(f,"LockProse");Check(String.IsNullOrEmpty(((List<Cue>)Field(f,"cues"))[0].VoiceLock),"Paragraph can be unlocked");
      Call(f,"SetBusy",true);Check(!prose.Enabled,"Prose editing controls disabled during render");Call(f,"SetBusy",false);Check(prose.Enabled&&!((ComboBox)Field(f,"mode")).Enabled,"After render, natural controls enabled without enabling SRT lock");
-     var card=prose.RectangleToScreen(prose.ClientRectangle);var studio=tabs.TabPages[0].RectangleToScreen(tabs.TabPages[0].ClientRectangle);Check(card.Top>=studio.Top&&card.Bottom<=studio.Bottom,"TXT timing card is fully visible within Studio");
-     var body=(ScrollableControl)((FlowLayoutPanel)Field(f,"qualityControls")).Parent;body.AutoScrollPosition=new Point(0,5000);Application.DoEvents();Check(prose.RectangleToScreen(prose.ClientRectangle).Location==card.Location,"Timing card remains fixed when voice/settings panel is scrolled");
+     var fixedVoice=(Control)Field(f,"studioVoiceCard");var card=fixedVoice.RectangleToScreen(fixedVoice.ClientRectangle);var studio=tabs.TabPages[0].RectangleToScreen(tabs.TabPages[0].ClientRectangle);Check(card.Top>=studio.Top&&card.Bottom<=studio.Bottom,"Voice card is fully visible within Studio");
+     var body=(ScrollableControl)prose.Parent;body.AutoScrollPosition=new Point(0,5000);Application.DoEvents();Check(fixedVoice.RectangleToScreen(fixedVoice.ClientRectangle).Location==card.Location,"Voice card remains fixed when TXT settings are scrolled");
      Call(f,"SaveProseProject");Check((bool)Call(f,"RestoreProseProject"),"Latest edited TXT can be restored after reopening");Capture(f,"v15_146_prose");
-     timer.Stop();Console.WriteLine("TOTAL UI 2.0.4 "+count+" passed.");f.Close();
+     timer.Stop();Console.WriteLine("TOTAL UI 2.0.5 "+count+" passed.");f.Close();
     }step++;
    }catch(Exception ex){timer.Stop();Console.WriteLine(ex);code=1;f.Close();}};
    timer.Start();

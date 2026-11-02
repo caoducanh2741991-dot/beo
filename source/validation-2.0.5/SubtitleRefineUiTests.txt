@@ -1,0 +1,9 @@
+PASS Refine action is present on subtitles page
+PASS Refine invokes the distinct production command
+PASS Refined project and pipeline are loaded
+PASS Correction audit survives refinement
+PASS Previous SRT is preserved beside new result
+PASS Source untouched and controls unlocked
+PASS Stopping refinement preserves completed result
+TOTAL REFINE UI 7 passed.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

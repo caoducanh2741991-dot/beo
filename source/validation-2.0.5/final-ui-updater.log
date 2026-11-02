@@ -1,0 +1,7 @@
+UpdaterTests TOTAL UPDATER 21 passed.
+OnnxUpdaterTests TOTAL ONNX UPDATER 6 passed.
+StudioLayoutTests TOTAL LAYOUT 59 passed.
+Ui1411Tests TOTAL UI 2.0.5 47 passed.
+AnchoredUiTests TOTAL ANCHORED UI 28 passed.
+VoiceReportUiTests TOTAL REPORT UI 18 passed.
+TextTargetUiTests TOTAL TXT TARGET UI 22 passed.

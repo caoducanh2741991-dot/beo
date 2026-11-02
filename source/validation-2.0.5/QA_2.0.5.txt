@@ -1,0 +1,14 @@
+V15 Voice Studio 2.0.5 — release verification
+
+Environment: .NET Framework 4.5 references, Mono/Linux, Xvfb, real FFmpeg.
+Synthetic TTS used for deterministic duration/error fixtures. No physical Windows or NVIDIA GPU inference claim.
+
+Full regression suite: validation/regressions205.log.
+Final layout refinements retested: validation/final-ui-updater.log.
+Final UI: 59 layout assertions at 1440x960, 1280x850, 1100x740; voice dropdowns and actions reachable; settings viewport usable; long messages bounded; independent scrolling; shared breath settings; busy/unlock behavior.
+Other final UI: 47 studio, 28 anchored, 18 report, 22 TXT-target checks.
+Final updater tests: 21 core and 6 ONNX checks.
+Renderer tests from full suite: including 37 TXT-target, 65 anchored, 30 voice-report and 26 diagnostics checks.
+63 engine/GPU/ASR/Vietnamese source files byte-identical to the delivered 2.0.4.
+Both EXEs carry version 2.0.5.0 and embedded multi-resolution icon. Both use Windows GUI subsystem.
+Final ZIP test verifies every payload SHA256, installed 2.0.4 updater and new updater, ZIP and folder modes, user data preservation, downgrade refusal and .NET Framework API compatibility.

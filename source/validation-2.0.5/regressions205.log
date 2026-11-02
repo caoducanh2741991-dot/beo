@@ -1,0 +1,28 @@
+/workspace/scratch/90ca2bf1b089/V15VoiceStudio-2.0.5/source/StudioLayout.cs(3,77): warning CS0414: The private field `V15Voice.MainForm.studioActions' is assigned but its value is never used
+Compilation succeeded - 1 warning(s)
+Tests TOTAL: 13 passed. Output: /tmp/v15_tests_de08ddb8e4984ced85ef29c702b7b01b
+BatchTests TOTAL BATCH: 12 passed.
+FeatureTests TOTAL 20 passed
+BreathStreamingTests TOTAL BREATH STREAMING 8 passed.
+PunctuationTests TOTAL PUNCTUATION 20 passed.
+Update141Tests TOTAL 1.4.1 17 passed.
+NativeGpuTests TOTAL NATIVE GPU 14 passed.
+SubtitleTests TOTAL SUBTITLES 17 passed.
+UpdaterTests TOTAL UPDATER 21 passed.
+OnnxUpdaterTests TOTAL ONNX UPDATER 6 passed.
+AnchoredTests TOTAL ANCHORED 65 passed.
+test_gpu_policy.py PASS
+test_worker_probe.py PASS
+Ui1411Tests TOTAL UI 2.0.5 47 passed.
+AnchoredUiTests TOTAL ANCHORED UI 28 passed.
+SubtitleUiTests TOTAL SUBTITLE UI 18 passed.
+SubtitleQualityUiTests TOTAL QUALITY UI 13 passed.
+SubtitleRefineUiTests TOTAL REFINE UI 7 passed.
+SubtitleSpeechUiTests TOTAL SPEECH UI 14 passed.
+VoiceReportTests TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo fc0381af15ea480caa88f3da7f04fcd6
+VoiceDiagnosticTests TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics f85ac9b829504479b1a6b70f38efe371
+TextTargetTests TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target bad70387d64447c9a82c4cf59373b71a
+VoiceReportUiTests TOTAL REPORT UI 18 passed.
+TextTargetUiTests TOTAL TXT TARGET UI 22 passed.
+StudioLayoutTests TOTAL LAYOUT 41 passed.
+VALIDATION COMPLETE (Mono/Linux; physical Windows GPU not tested)

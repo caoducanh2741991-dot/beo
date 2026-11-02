@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parent.parent
 SOURCE=ROOT/'source';TOOLS=Path('/tmp/v15-tools')
 ENV=dict(os.environ,MONO_CFG_DIR=str(TOOLS/'etc'),MONO_PATH=str(TOOLS/'usr/lib/mono/4.5')+':'+str(ROOT),LD_LIBRARY_PATH=str(TOOLS/'usr/lib')+':'+str(TOOLS/'usr/lib/x86_64-linux-gnu'))
 MONO=str(TOOLS/'usr/bin/mono');MCS=str(TOOLS/'usr/lib/mono/4.5/mcs.exe')
-APP='App.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs AudioFinishing.cs VoiceRhythm.cs QualityControls.cs LongText.cs LongTextControls.cs TextTargetVoice.cs TextTargetControls.cs TextTargetReports.cs MediaSupport.cs AnchoredVoice.cs AnchoredControls.cs Vietnamese.cs VietnameseVoices.cs VoiceReports.cs VoiceReportDiagnostics.cs VoiceReportControls.cs Subtitles.cs SubtitleControls.cs'.split()
+APP='App.cs StudioLayout.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs AudioFinishing.cs VoiceRhythm.cs QualityControls.cs LongText.cs LongTextControls.cs TextTargetVoice.cs TextTargetControls.cs TextTargetReports.cs MediaSupport.cs AnchoredVoice.cs AnchoredControls.cs Vietnamese.cs VietnameseVoices.cs VoiceReports.cs VoiceReportDiagnostics.cs VoiceReportControls.cs Subtitles.cs SubtitleControls.cs'.split()
 REF_DIR=Path(os.environ.get('V15_NET45_REFS','/tmp/v15-net45/reference/build/.NETFramework/v4.5'))
 REFS=['-nostdlib','-noconfig']+['-r:'+str(REF_DIR/(n+'.dll')) for n in ['mscorlib','System','System.Core','System.Xml','System.Xml.Linq','System.Drawing','System.Windows.Forms']]
 VALID=ROOT/'validation';VALID.mkdir(exist_ok=True)
@@ -58,11 +58,11 @@ def ui(names=None):
    data=tempfile.mkdtemp(prefix='v15-ui-state-');run(name,env=dict(ENV,DISPLAY='127.0.0.1:'+str(display),XDG_DATA_HOME=data),timeout=45)
  finally:x.terminate();x.wait(timeout=5)
 def main():
- subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15VoiceStudio.exe')]+REFS+[str(SOURCE/x) for x in APP],env=ENV,check=True)
- subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15Updater.exe')]+REFS+['-r:'+str(REF_DIR/'System.IO.Compression.dll'),'-r:'+str(REF_DIR/'System.IO.Compression.FileSystem.dll'),str(SOURCE/'Updater.cs')],env=ENV,check=True)
+ subprocess.run([MONO,MCS,'-target:winexe','-win32icon:'+str(SOURCE/'assets/V15VoiceStudio.ico'),'-resource:'+str(SOURCE/'assets/V15VoiceStudio.ico')+',V15VoiceStudio.Icon','-platform:x64','-out:'+str(ROOT/'V15VoiceStudio.exe')]+REFS+[str(SOURCE/x) for x in APP],env=ENV,check=True)
+ subprocess.run([MONO,MCS,'-target:winexe','-win32icon:'+str(SOURCE/'assets/V15VoiceStudio.ico'),'-resource:'+str(SOURCE/'assets/V15VoiceStudio.ico')+',V15VoiceStudio.Icon','-platform:x64','-out:'+str(ROOT/'V15Updater.exe')]+REFS+['-r:'+str(REF_DIR/'System.IO.Compression.dll'),'-r:'+str(REF_DIR/'System.IO.Compression.FileSystem.dll'),str(SOURCE/'Updater.cs')],env=ENV,check=True)
  specs={'AnchoredTests':['AnchoredTests.cs'],'AnchoredUiTests':['AnchoredUiTests.cs'],'Tests':['Tests.cs'],'BatchTests':['BatchTests.cs'],'FeatureTests':['FeatureTests.cs'],'Update141Tests':['Update141Tests.cs'],'Update145Tests':['Update141Tests.cs','Update145Tests.cs'],'Update146Tests':['Update146Tests.cs'],'BreathStreamingTests':['Update141Tests.cs','BreathStreamingTests.cs'],'PunctuationTests':['PunctuationTests.cs'],'NativeGpuTests':['NativeGpuTests.cs'],'UiTests':['UiTests.cs'],'Ui1411Tests':['Ui1411Tests.cs'],'SubtitleQualityUiTests':['SubtitleQualityUiTests.cs'],'SubtitleRefineUiTests':['SubtitleRefineUiTests.cs'],'SubtitleSpeechUiTests':['SubtitleSpeechUiTests.cs'],'SubtitleTests':['SubtitleTests.cs'],'SubtitleUiTests':['SubtitleUiTests.cs']}
  for name,files in specs.items():compile(name,files,main=name,app=True)
- for name in ['VoiceReportTests','VoiceReportUiTests','VoiceDiagnosticTests','TextTargetTests','TextTargetUiTests']:compile(name,[name+'.cs'],main=name,app=True)
+ for name in ['VoiceReportTests','VoiceReportUiTests','VoiceDiagnosticTests','TextTargetTests','TextTargetUiTests','StudioLayoutTests']:compile(name,[name+'.cs'],main=name,app=True)
  compile('UpdaterTests',['Updater.cs','UpdaterTests.cs'],main='UpdaterTests')
  compile('OnnxUpdaterTests',['Updater.cs','OnnxUpdaterTests.cs'],main='OnnxUpdaterTests')
  non_ui=[k for k in specs if not k.startswith('Ui') and k not in ['AnchoredUiTests','SubtitleUiTests','SubtitleQualityUiTests','SubtitleRefineUiTests','SubtitleSpeechUiTests','Update145Tests','Update146Tests']]+['UpdaterTests','OnnxUpdaterTests']
@@ -78,6 +78,6 @@ def main():
  run('VoiceReportTests',timeout=180)
  run('VoiceDiagnosticTests',timeout=180)
  run('TextTargetTests',timeout=180)
- ui(['VoiceReportUiTests','TextTargetUiTests'])
+ ui(['VoiceReportUiTests','TextTargetUiTests','StudioLayoutTests'])
  print('VALIDATION COMPLETE (Mono/Linux; physical Windows GPU not tested)',flush=True)
 if __name__=='__main__':main()

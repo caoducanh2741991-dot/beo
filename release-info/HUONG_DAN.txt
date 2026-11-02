@@ -1,45 +1,40 @@
-V15 VOICE STUDIO 2.0.4 — TXT THEO THỜI LƯỢNG ĐÍCH
+V15 VOICE STUDIO 2.0.5 — GIAO DIỆN CHỌN GIỌNG MỚI
 
 CẬP NHẬT
-Trong app: Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.4_Update.zip. Chờ mở lại và kiểm tra phiên bản 2.0.4.
+Trong app: Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.5_Update.zip. Chờ mở lại và kiểm tra tiêu đề Offline 2.0.5.
 Nếu không mở được mục cập nhật: giải nén TOÀN BỘ ZIP vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục app đang dùng. Không lấy riêng EXE.
-Dùng lại các giọng/model/runtime/GPU đang cài; không cần tải lại model. Giữ gói tiếng Việt và các sửa lỗi từ các bản trước.
+Dùng lại các giọng/model/runtime/GPU đang cài; không cần tải lại model hoặc gói Việt. Giữ nguyên các dữ liệu cá nhân, hàng đợi, bản đọc đệm và báo cáo cũ.
 
-LUỒNG DÙNG VỚI CHAT TẠO KỊCH BẢN
-1. Gửi cho chat nội dung, thời lượng đích, giọng và tốc độ gốc; kèm báo cáo đã đo nếu có. Chat viết lời gần thời lượng mong muốn.
-2. Lấy TXT chỉ chứa lời đọc, không gồm timecode/chú thích không muốn đọc. Mở TXT hoặc dán văn bản ở tab Tạo voice.
-3. Chọn đúng giọng và tốc độ gốc. Trong ĐỌC VĂN BẢN DÀI, tích Căn TXT theo thời lượng đích.
-4. Nhập đích: 45 hoặc 45s hoặc 00:45; 01:30 = 90 giây; cũng nhận hh:mm:ss và phần nghìn giây bằng dấu chấm/phẩy. Phạm vi 1 giây đến 6 giờ.
-5. Mặc định Căn TXT tối đa ±10%. Giới hạn thực sự là giao giữa mức này và các giới hạn tốc độ/căn nhịp đang đặt. Có thể đặt mức TXT từ ±1% đến ±25%; dùng mức nhỏ để ưu tiên nhịp tự nhiên.
-6. Bấm TẠO VOICE XUẤT. App đọc giọng gốc, đo tổng lời/nghỉ/hơi thở, căn toàn bài, đo lại rồi xuất WAV nếu đạt.
-7. Nếu thiếu/dư nhiều, app báo số giây sau lần căn cuối và chưa xuất WAV đích. Gửi .voice-report.txt cho chat sửa đúng nội dung rồi render lại.
+BỐ CỤC MỚI
+- Khung GIỌNG ĐỌC cố định ở trên bên phải: ngôn ngữ, phong cách, nguồn giọng, giọng đang sử dụng, đặc điểm và dấu ★ như trước.
+- Khi cửa sổ thấp, mô tả ngắn thu gọn để dành chỗ cho cài đặt; bấm Chi tiết giọng để xem đầy đủ đặc điểm/phong cách.
+- Nghe thử: tạo mẫu từ câu đang chọn. Mẫu có sẵn: nghe mẫu được đóng gói nếu có. Yêu thích: thêm/bỏ giọng đang chọn.
+- TXT & đích: thời lượng dự kiến, đích TXT và mức co giãn, thông báo sau render, tạo lại/bản đọc trước/khóa đoạn, đo thử và mở báo cáo lần chạy. Khi chưa mở TXT, tab này hướng dẫn cách nhập.
+- Căn SRT: chế độ timeline, tốc độ đọc gốc, khoảng nghỉ timeline linh hoạt, giới hạn căn, đo nhịp, cân âm lượng và tùy chọn V15.6. Tốc độ gốc, cân âm lượng và giới hạn căn cũng áp dụng cho TXT.
+- Ngắt nghỉ: Auto hoặc thời gian nghỉ tùy chỉnh theo dấu câu.
+- Hơi thở: Auto / Tùy chọn / Không dùng. Hơi thở và ngắt nghỉ vẫn dùng chung cho hàng đợi.
+- Mỗi tab cuộn riêng. Các thông báo dài cuộn trong khung riêng, không đẩy phần chọn giọng xuống dưới.
+- Thanh TẠO VOICE · WAV / Dừng / Voice tổng / dừng nghe / Mở kết quả cố định bên dưới, trải toàn chiều ngang.
+- Icon mới hình sóng âm, dùng cho EXE và cửa sổ ứng dụng. Nếu Windows vẫn lưu ảnh icon cũ ở shortcut đã ghim, đóng/mở lại app; có thể bỏ ghim rồi ghim lại shortcut app đúng thư mục vừa cập nhật.
 
-ĐỌC CẢNH BÁO
-Trước render, app chỉ ước lượng. Khi chưa có số đo, số từ/tốc độ đọc sơ bộ không phải quy chuẩn cho mọi giọng/ngôn ngữ. Có thể bấm Nghe thử & ước lượng TXT để đọc mẫu bằng đúng giọng; thời lượng đo mẫu vẫn là dự kiến cho toàn bài.
-Sau khi đo đủ toàn bài, phần bên phải hiển thị voice gốc, đích, tốc độ và số giây dư/thiếu. Đổi đích cho cùng lời/giọng có thể dùng lại audio TTS đã lưu; không phải tổng hợp lại mọi câu nếu bộ đệm còn hợp lệ.
-App không tự viết thêm lời, cắt lời, nới giới hạn tốc độ hoặc đệm khoảng lặng dài. Chỉ bù sai số cuối tối đa 20 ms; phần cắt đuôi phải được kiểm tra là im lặng.
-Không hứa chất lượng giọng chỉ từ tỷ lệ tốc độ. Nghe lại WAV để kiểm tra phát âm, hơi thở và nhịp kể.
+TXT THEO THỜI LƯỢNG ĐÍCH
+1. Nhờ chat viết lời gần thời lượng đích; cung cấp giọng/tốc độ và báo cáo đo nếu đã có.
+2. Mở TXT chỉ chứa lời đọc, hoặc dán văn bản không timecode.
+3. Chọn giọng ở khung GIỌNG ĐỌC. Tốc độ gốc nằm trong tab Căn SRT.
+4. Vào TXT & đích → tích Căn TXT theo thời lượng đích, nhập giây / mm:ss / hh:mm:ss. Ví dụ 45 hoặc 45s hoặc 00:45; 01:30 = 90 giây. Nhận phần nghìn bằng dấu chấm/phẩy; phạm vi 1 giây–6 giờ.
+5. Căn tối đa mặc định ±10%, có thể đặt ±1–25%. Giới hạn thực sự là giao với các giới hạn tốc độ đang chọn.
+6. Bấm TẠO VOICE · WAV. App đo audio gốc, căn trong giới hạn, đo lại rồi xuất WAV nếu đạt. Ước lượng trước render không phải thời lượng chính xác.
+7. Nếu quá dài/ngắn, xem thông báo và .voice-report.txt rồi gửi chat sửa lời. Không cắt lời hoặc tự đệm im lặng dài để ép đủ đích.
+8. Đổi đích cùng lời/giọng có thể dùng lại audio đã lưu nếu bộ đệm còn hợp lệ.
 
-HÀNG ĐỢI NHIỀU FILE
-- Thêm nhiều file như trước. Chọn một TXT → Đặt đích TXT, hoặc bấm đúp ô Đích TXT của dòng đó.
-- Nhập thời lượng riêng cho file này. Để trống = đọc tự nhiên. Không tự lấy đích đang gõ ở tab Tạo voice cho toàn bộ hàng đợi.
-- Giọng, tốc độ gốc, giới hạn tốc độ, mức căn TXT tối đa, hơi thở và cân âm vẫn dùng chung.
-- Cột Đích TXT cho biết đích riêng, Tự nhiên hoặc SRT nguồn. File không vừa khung có báo cáo; hàng đợi tiếp tục file sau.
-- Xem/sửa một TXT trong hàng đợi sẽ nạp đích của nó vào tab Tạo voice. Bỏ tích Căn TXT... đưa riêng file đó về tự nhiên.
-- Đổi đích của file đã xong đưa file về Đang chờ; WAV cũ không bị xóa. Giữ Bỏ qua file đã xong nếu chỉ muốn chạy các file chưa hoàn tất.
-- Đích từng file được lưu khi mở lại hàng đợi. Khi sửa nội dung nguồn của TXT, đích vẫn được giữ nhưng trạng thái hoàn tất cũ được bỏ để cần tạo bản mới.
+HÀNG ĐỢI
+Mỗi TXT đặt đích riêng bằng Đặt đích TXT hoặc bấm đúp ô Đích TXT. Để trống = tự nhiên. Không lấy đích đang gõ ở Studio cho toàn bộ hàng đợi. SRT dùng timeline nguồn.
+Giọng, tốc độ gốc, mức căn tối đa, hơi thở và cân âm vẫn dùng chung. File lỗi có báo cáo và hàng đợi tiếp tục file sau.
 
-TXT TỰ NHIÊN VÀ SRT
-Bỏ tích Căn TXT... để đọc tự nhiên như bản trước. Mở nguồn khác không tự mang theo đích của file trước; bài TXT gần nhất khôi phục từ phiên làm việc giữ đích của chính bài đó.
-SRT tiếp tục dùng timeline nguồn/điểm neo; không áp một tổng thời lượng TXT lên SRT. Nếu cần bám nhiều cảnh hoặc sự kiện, dùng SRT và V15.6/Khóa SRT phù hợp.
-TXT đích chỉ căn tổng thời lượng. Các cột Đầu trước căn/Cuối trước căn là mốc audio gốc đã đo trước khi đổi tốc độ toàn bài; chưa phải mốc từng câu trong WAV cuối.
+ĐẦU RA & BÁO CÁO
+Chỉ xuất WAV bên cạnh SRT/TXT nguồn. Khi không có file nguồn, app hỏi nơi lưu như trước.
+Mỗi lần thử tạo voice có báo cáo .voice-report.txt, kể cả thành công, lỗi và dừng. Giữ các báo cáo cũ. Báo cáo chứa giọng, thiết lập, lời và mốc nguồn, số đo thực tế, tốc độ căn và chi tiết lỗi.
+Ở TXT căn toàn bài, mốc từng đoạn trong bảng/báo cáo là mốc trước căn, không phải timeline cuối giả định bằng cách nhân tỷ lệ.
 
-KẾT QUẢ VÀ BÁO CÁO
-Chỉ xuất WAV, mặc định cạnh TXT nguồn; kịch bản dán chọn nơi lưu WAV. Giữ file cũ bằng tên có số thứ tự khi trùng.
-Tự lưu báo cáo .voice-report.txt cạnh nguồn cho cả thành công/lỗi/dừng. Bản 2.0.4 dùng schema 3: có đích TXT, giới hạn áp dụng, audio gốc, tốc độ ước tính trước giới hạn, từng lần căn, số giây thiếu/dư, bù đuôi và đường dẫn WAV thực sự.
-Giữ chẩn đoán bước lỗi/mã lỗi từ 2.0.3. TTS lỗi chưa có số đo khác với audio đã tạo được nhưng không vừa đích. Không suy ra mốc từng câu sau căn bằng tỷ lệ.
-Nút Mở báo cáo lần chạy / Mở báo cáo file giữ nguyên. Nếu không ghi được cạnh nguồn, báo cáo thử lưu tại %LOCALAPPDATA%\V15VoiceStudio\reports và app thông báo cảnh báo.
-
-PHẠM VI KIỂM THỬ
-Đã kiểm tra căn TXT thành công, quá dài/quá ngắn, giới hạn/tốc độ gốc khác 1.0, dùng lại cache, hủy/lỗi, nguồn bất biến, giữ file cũ, hàng đợi hỗn hợp và lưu/khôi phục đích. Kiểm tra GUI, báo cáo và updater; WAV các chế độ cũ khớp byte với 2.0.3 trong các bài thử đại diện.
-Môi trường Linux/Mono với .NET Framework 4.5 references, TTS mô phỏng và FFmpeg thật. Chưa thử trực tiếp Windows/RTX 2070 của bạn hoặc đánh giá chất lượng model thật trong lần này.
+KIỂM TRA PHÁT HÀNH
+Có kiểm tra tự động .NET/Mono trên Linux, giao diện ở nhiều kích thước, TTS giả lập kết hợp FFmpeg thật, báo cáo và cập nhật ZIP. Chưa kiểm tra trực tiếp bản này trên Windows / RTX 2070 của người dùng.
