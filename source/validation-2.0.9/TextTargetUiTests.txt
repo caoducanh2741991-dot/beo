@@ -21,4 +21,5 @@ PASS Editing queued TXT loads its target into Studio
 PASS Returning queued TXT to natural mode clears only its own target
 PASS GUI unlocked after target success, errors and queue operations
 TOTAL TXT TARGET UI 22 passed.
+Could not set X locale modifiers
 Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

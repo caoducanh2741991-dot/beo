@@ -1,0 +1,51 @@
+V15 VOICE STUDIO 2.0.9 — SO SÁNH HAI GIỌNG A/B & SỬA CÂU
+
+CẬP NHẬT
+Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.9_Update.zip.
+Mở lại kiểm tra Offline 2.0.9. Dùng lại model, giọng, GPU và gói Việt hiện có; đây là bản cập nhật lõi.
+
+MỞ A/B
+Tạo voice: mở SRT → chọn dòng trong bảng → A/B · sửa câu.
+Hàng đợi nhiều file: chọn file SRT → A/B · sửa câu; app mở nội dung file để chọn câu.
+Chọn Khóa SRT hoặc V15.6 trước khi mở. TXT và timeline Linh hoạt tiếp tục dùng luồng cũ.
+Không có tab video hoặc bộ phát video.
+
+PHẠM VI
+Khóa SRT: một cue là một câu so sánh/sửa.
+V15.6: cue có thể thuộc chặng nhiều cue. App hiển thị cue đang chọn và toàn bộ phạm vi chặng. A/B đọc TOÀN chặng để giữ ngữ điệu và mốc neo; thời lượng so sánh là của CHẶNG, không gán giả thời gian cho từng cue bên trong.
+Bạn chỉ sửa lời của cue đang chọn; các cue còn lại trong chặng giữ lời đang dùng. Chọn giọng A/B sẽ áp dụng giọng đó cho cả phạm vi chặng được báo.
+
+THAO TÁC
+1. Chọn dòng; sửa lời nếu cần.
+2. Chọn giọng A và B (có thể dùng các giọng đã cài, bao gồm giọng sao chép).
+3. Tạo thử A/B. Hai giọng đọc cùng lời và cùng khung; dùng các thiết lập tốc độ/ngắt nghỉ/hơi thở đã lưu cho file nền. Nếu chưa có dữ liệu nền, dùng thiết lập lúc mở lần đầu.
+4. Nghe A/B. Tích Nghe tự nhiên để nghe trước căn; bỏ tích để nghe sau căn (trước cân âm tổng).
+5. Chọn Dùng A/B & ghép WAV. App ghép đúng file đã nghe, không tạo ngẫu nhiên lại bản đã chọn. Bản vượt khung không được áp dụng.
+Đổi lời hoặc giọng sau khi thử: phải tạo thử lại. Chọn cùng giọng A và B cũng tạo hai lần thử riêng.
+
+ĐỌC SỐ LIỆU
+Trước căn: audio TTS đã ghép với ngắt nghỉ và hơi thở, ở tốc độ gốc đang lưu.
+Sau căn: audio đo được sau atempo, trước phần nghỉ đệm thêm. Tốc độ là tốc độ thực dùng so với TTS mặc định, không phải tỷ lệ so sánh hai giọng.
+Kết thúc lời ≈: ước lượng từ đuôi âm thanh theo ngưỡng khoảng lặng, không phải forced-alignment từng từ. Có thể sai với âm rất nhỏ hoặc hơi thở.
+Nghỉ cuối: từ mốc hết âm ước lượng tới cuối khung; phân biệt với độ dài lời. Waveform dùng chung thước; vạch đỏ là cuối khung. Bản tràn được mở rộng thước để nghe toàn bộ ứng viên.
+Thiếu tối đa 1,5 giây sau căn có thể đệm nghỉ và báo cần nghe lại. Thiếu nhiều hơn hoặc còn dư thì chưa đạt. Không tự kéo tốc độ ngoài giới hạn.
+Nếu bỏ Làm chậm nhẹ câu ngắn, bản A/B giữ tốc độ gốc cho câu ngắn và chỉ đệm nghỉ trong giới hạn trên.
+
+WAV NỀN VÀ TỐC ĐỘ
+Khi tạo SRT thành công ở 2.0.9 qua Studio hoặc Hàng đợi (Khóa SRT/V15.6), app lưu audio từng phạm vi trước cân âm tổng vào dữ liệu người dùng audio-repair.
+Nhờ đó sửa một phạm vi sẽ dùng lại audio các phạm vi còn lại. WAV có trước 2.0.9 không tự được nhận làm nền vì chưa xác minh thiết lập/timeline.
+Nếu thiếu nền, lần ghép đầu tạo các chặng còn lại bằng giọng nền đã lưu. Chặng lỗi vẫn có báo cáo; phần đạt được giữ. Sửa chặng lỗi và ghép lại để tiếp tục.
+Chọn A/B có thể tạo bài nhiều giọng. Giọng nền dùng cho những phần chưa có audio; giọng đã chọn cho từng chặng được lưu riêng.
+Giới hạn/phong cách của file nền được cố định để tránh vô tình đổi toàn bài. Muốn thay thiết lập nền, đóng A/B và tạo lại cả SRT từ màn hình chính với thiết lập mới.
+Cân âm tổng nếu bật có thể thay đổi mức âm của toàn WAV sau khi ghép. Khi tắt cân âm, phần audio đệm không sửa được giữ nguyên PCM.
+
+LƯU KẾT QUẢ
+WAV mới và báo cáo nằm cạnh SRT. WAV cũ được giữ bằng tên kế tiếp; không ghi đè file nguồn.
+Xuất SRT bản sửa là tùy chọn riêng. Các mốc cue giữ nguyên; với V15.6 đây vẫn là mốc nguồn, không phải căn từng từ theo bản giọng mới.
+SRT gốc không bị sửa. Nếu file nguồn thay đổi ngoài app, dữ liệu sửa cũ bị từ chối/nhập lại để bảo vệ timeline.
+Báo cáo từng lần thử, ghép thành công hoặc lỗi có giọng/timeline/tốc độ/nghỉ và lý do. Khi dùng lại nền, thời lượng TTS tự nhiên chưa được lưu riêng được ghi chưa đo, không suy đoán số liệu.
+Dữ liệu nằm ở %LOCALAPPDATA%\V15VoiceStudio\audio-repair. Không xóa nếu cần dùng lại các đoạn đã đạt. Đóng A/B khi đang chạy sẽ yêu cầu dừng trước.
+
+GIỚI HẠN KIỂM TRA
+Kiểm thử tự động trên Mono/Linux/Xvfb, TTS giả lập và FFmpeg thật; chưa chạy tổng hợp trên Windows/RTX 2070 thật trong bản phát hành này.
+GPU/runtime/TTS gốc không thay đổi. Chức năng Video · duyệt & sửa vẫn được gỡ.

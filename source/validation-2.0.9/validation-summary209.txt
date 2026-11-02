@@ -1,5 +1,7 @@
 AnchoredTests.txt: TOTAL ANCHORED 65 passed.
 AnchoredUiTests.txt: TOTAL ANCHORED UI 28 passed.
+AudioRepairTests.txt: TOTAL AUDIO REPAIR 45 passed.
+AudioRepairUiTests.txt: TOTAL AUDIO REPAIR UI 25 passed.
 BatchTests.txt: TOTAL BATCH: 12 passed.
 BreathStreamingTests.txt: TOTAL BREATH STREAMING 8 passed.
 FeatureTests.txt: TOTAL 20 passed
@@ -12,14 +14,14 @@ SubtitleRefineUiTests.txt: TOTAL REFINE UI 7 passed.
 SubtitleSpeechUiTests.txt: TOTAL SPEECH UI 14 passed.
 SubtitleTests.txt: TOTAL SUBTITLES 17 passed.
 SubtitleUiTests.txt: TOTAL SUBTITLE UI 18 passed.
-Tests.txt: TOTAL: 13 passed. Output: /tmp/v15_tests_a78cde07d51241e78ea696da232e9592
-TextTargetTests.txt: TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target a1d52cd55e0142a49544f655470ca3fc
+Tests.txt: TOTAL: 13 passed. Output: /tmp/v15_tests_dedb2a30b497435d8b610f72949e555a
+TextTargetTests.txt: TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target 7f28b149decd4530bde200d8fb514f2f
 TextTargetUiTests.txt: TOTAL TXT TARGET UI 22 passed.
-Ui1411Tests.txt: TOTAL UI 2.0.8 48 passed.
+Ui1411Tests.txt: TOTAL UI 2.0.9 48 passed.
 Update141Tests.txt: TOTAL 1.4.1 17 passed.
 UpdaterTests.txt: TOTAL UPDATER 21 passed.
-VoiceDiagnosticTests.txt: TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics 1b2aa98fa71748f19df8efb6271982f6
-VoiceReportTests.txt: TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo fc76c5f9b4f64237a5a4e7b7a15a0a1b
+VoiceDiagnosticTests.txt: TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics 1e146a5e3d4a4e6ea49bcc09cb718d64
+VoiceReportTests.txt: TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo ab32b68ce7454b198fb5e636be8a8f46
 VoiceReportUiTests.txt: TOTAL REPORT UI 18 passed.
 test_gpu_policy.py.txt: OK
 test_worker_probe.py.txt: TOTAL WORKER PROBE 4 passed

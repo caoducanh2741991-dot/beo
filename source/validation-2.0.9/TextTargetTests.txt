@@ -35,4 +35,4 @@ PASS Per-file queue target does not leak into SRT duration
 PASS Queue targets persist independently across reload
 PASS Editing source content retains its requested target while invalidating old completion
 PASS Target speed cap persists with safe default for old settings
-TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target a1d52cd55e0142a49544f655470ca3fc
+TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target 7f28b149decd4530bde200d8fb514f2f

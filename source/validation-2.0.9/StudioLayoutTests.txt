@@ -71,5 +71,4 @@ PASS All voice selectors disabled safely while rendering, stop remains enabled
 PASS Selectors unlock after rendering
 PASS V15.6 controls remain reachable in SRT tab
 TOTAL LAYOUT 59 passed.
-Could not set X locale modifiers
 Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

@@ -1,20 +1,21 @@
-REMOVED:
-CreatorTests.cs
-CreatorImportUiTests.cs
-CreatorVideo.cs
-CreatorCore.cs
-verify_release207.py
-CreatorControls.cs
-CreatorUiTests.cs
+NEW:
+verify_release209.py
+AudioRepair.cs
+AudioRepairControls.cs
+AudioRepairTests.cs
+AudioRepairUiTests.cs
 CHANGED:
 App.cs
-SubtitleControls.cs
+Core.cs
 Ui1411Tests.cs
 Updater.cs
 package_release.py
+Batch.cs
+AnchoredVoice.cs
+ProjectState.cs
 BUILD_WINDOWS.cmd
 run_validation.py
-BYTE IDENTICAL: 321
+BYTE IDENTICAL: 318
 TextTargetUiTests.cs
 VALIDATION.txt
 CAP_NHAT.cmd
@@ -39,11 +40,11 @@ batch-results-1.2.0.txt
 Update145Tests.cs
 VoiceReports.cs
 VALIDATION_1.4.2.txt
+SubtitleControls.cs
 ExternalSpeech.cs
 Release206Tests.py
 InstallerTests-1.4.0.txt
 validate_user_srt149.py
-Core.cs
 TextTargetReports.cs
 voice-final-results-1.3.0.txt
 Release143Tests.py
@@ -68,7 +69,6 @@ Release1431Tests.py
 VALIDATION_2.0.4.txt
 Tests-1.4.0.txt
 Tests.cs
-Batch.cs
 run_asr_validation.py
 Release144Tests.py
 Release142Tests.py
@@ -80,7 +80,6 @@ AnchoredUiTests.cs
 CLONE_FIX_1.4.4.md
 UiFeatureTests.cs
 SubtitleSpeechUiTests.cs
-AnchoredVoice.cs
 package-integrity-1.4.0.txt
 core-results-1.2.0.txt
 compatibility-test-results.txt
@@ -120,7 +119,6 @@ VoiceReportUiTests.cs
 VoiceCatalog.cs
 COMPATIBILITY_FIX_1.4.3.1.md
 AnchoredTests.cs
-ProjectState.cs
 StudioLayout.cs
 TimelineRepairXmlTests.cs
 VietnameseUiTests.cs

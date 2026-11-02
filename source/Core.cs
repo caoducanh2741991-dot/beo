@@ -162,6 +162,7 @@ public class KokoroEngine : IDisposable {
 }
 public sealed class RenderOptions {
  public double TargetSeconds,TargetChange=.10;public string TargetRaw="";public TextTargetResult TargetResult;public VoiceReportContext ReportContext;public VoiceRenderReport RunReport;
+ public Action<string> RepairSnapshot;
  public bool Anchored;public AnchorReport AnchorResult;public Action<AnchorReport> AnchorChanged;public Func<string,List<AnchorUnit>,SubtitleDocument> AnchorAlignment;
  public bool Prose;public Action<ReadingProgress> ReadingChanged;public bool NormalizeLoudness,GentleFit;public double TargetLufs=-18;
  public bool Locked=true,SlowShort=true,JoinSentences=false;public double BaseSpeed=1,MaxSpeed=1.3,MinSpeed=.8,Gap=.15;
@@ -258,6 +259,7 @@ public static class Renderer {
    }
    if(engine.Cancelled)throw new OperationCanceledException();
    if(meter!=null&&o.ReadingChanged!=null)o.ReadingChanged(meter.Snapshot("Đang ghép / cân âm lượng…"));
+   if(o.RepairSnapshot!=null)o.RepairSnapshot(temporary);
    if(o.NormalizeLoudness){if(o.RunReport!=null)o.RunReport.Step("NORMALIZE","Đo và cân âm lượng WAV");string normalized=Path.Combine(work,"normalized.wav");FinalAudio.Normalize(engine.Root,temporary,normalized,(long)Math.Round(cues.Last().End*rate),o.TargetLufs,()=>engine.Cancelled,m=>progress(97,m));File.Copy(normalized,temporary,true);}
    if(engine.Cancelled)throw new OperationCanceledException();
    if(o.RunReport!=null)o.RunReport.Step("PUBLISH","Lưu WAV cuối cạnh nguồn");string final=OutputFiles.Publish(temporary,output);if(meter!=null&&o.ReadingChanged!=null)o.ReadingChanged(meter.Snapshot("WAV đã xuất",true));progress(100,"Hoàn tất: "+Path.GetFileName(final));return final;
