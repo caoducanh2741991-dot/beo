@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace V15Voice {
 public sealed class Cue {
- public int Id; public double Start, End; public string Text; public bool Prose,ParagraphEnd;public string VoiceLock="";
+ public int Id; public double Start, End; public string Text; public bool Prose,ParagraphEnd,AnchorAfter;public string VoiceLock="";
  public double Natural, Actual, Speed=1; public string Status="Chưa tạo"; public string AudioPath;
  public int Words { get { return Regex.Matches(Regex.Replace(Text??"", @"<[^>]*>", ""), @"[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*").Count; } }
  public double Duration { get { return End-Start; } }
@@ -161,6 +161,7 @@ public class KokoroEngine : IDisposable {
  }
 }
 public sealed class RenderOptions {
+ public bool Anchored;public AnchorReport AnchorResult;public Action<AnchorReport> AnchorChanged;public Func<string,List<AnchorUnit>,SubtitleDocument> AnchorAlignment;
  public bool Prose;public Action<ReadingProgress> ReadingChanged;public bool NormalizeLoudness,GentleFit;public double TargetLufs=-18;
  public bool Locked=true,SlowShort=true,JoinSentences=false;public double BaseSpeed=1,MaxSpeed=1.3,MinSpeed=.8,Gap=.15;
  public PunctuationMode Punctuation=PunctuationMode.Auto;public double CommaPause=.14,StopPause=.30,QuestionPause=.35,ParagraphPause=.50;
@@ -208,6 +209,7 @@ public static class OutputFiles {
 }
 public static class Renderer {
  public static string Render(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress) {
+  if(o.Anchored)return AnchoredVoice.Render(cues,engine,o,output,progress);
   if(o.Prose)LongText.Validate(cues);else Scripts.Validate(cues);engine.CheckFiles();Tempo.Validate(o);FinalAudio.Validate(o);
   if(o.BaseSpeed<.8||o.BaseSpeed>1.3||o.MaxSpeed<o.BaseSpeed||o.MaxSpeed>1.6)throw new Exception("Tốc độ tối đa phải lớn hơn hoặc bằng tốc độ gốc (giới hạn 1,60).");
   if(!String.Equals(Path.GetExtension(output),".wav",StringComparison.OrdinalIgnoreCase))throw new Exception("Kết quả phải là file WAV.");

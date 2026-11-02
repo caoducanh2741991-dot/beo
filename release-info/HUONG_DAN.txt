@@ -1,39 +1,88 @@
-V15 VOICE STUDIO 1.4.10 — GIỮ LỜI NÓI, CHIA CỤM VÀ RÀ MỐC CUỐI
+V15 VOICE STUDIO 1.4.11 — CẬP NHẬT NHỎ TỪ ZIP
 
-CẬP NHẬT
-Trong app đang dùng: Công cụ & thiết lập → Cập nhật từ ZIP → chọn nguyên V15VoiceStudio_1.4.10_Update.zip. Giữ đúng thư mục app hiện tại. Mở lại phải thấy “Offline 1.4.10” và “Công cụ & thiết lập 1.4.10”.
-Không cần gỡ cài đặt, tải lại giọng hoặc cài lại CUDA.
-Nếu cập nhật thủ công: giải nén vào thư mục tạm, chạy CAP_NHAT.cmd rồi chọn đúng thư mục app đã cài. EXE trong payload không phải bản cài độc lập.
+CÀI CẬP NHẬT
+1. Đóng V15 đang chạy.
+2. Giải nén toàn bộ ZIP vào một thư mục riêng; chạy CAP_NHAT.cmd.
+3. Chọn đúng thư mục V15 đã cài, có V15VoiceStudio.exe và ai/models,
+   ai/runtime/python.exe. Không chọn thư mục vừa giải nén ZIP cập nhật.
+4. Chờ báo thành công. Mở app từ chính thư mục được cập nhật;
+   tiêu đề phải ghi 1.4.11. Ghim lại shortcut nếu shortcut cũ trỏ nơi khác.
+Cũng có thể chọn ZIP qua Công cụ & thiết lập → Cập nhật từ ZIP.
+Đây là gói cập nhật cho bản V15 đầy đủ đã cài, không phải bộ cài độc lập.
+Gói không cài lại model, CUDA hoặc danh sách giọng. Công cụ kiểm tra mã
+SHA-256 trước khi thay tệp và chặn gói có phiên bản EXE cũ hơn.
 
-LỰA CHỌN MỚI TRONG TAB MP4 / MP3 → SRT
-• “Giữ từ lặp / nói vấp · mặc định”: giữ nguyên các từ của lượt nhận dạng chính. Các chỗ có thể là nói vấp hoặc lặp thật được ghi chú để nghe lại. Hai lượt nhận dạng cùng làm mượt một câu không còn là lý do tự xóa lời ở chế độ này.
-• “Làm gọn từ lặp · có đối chiếu”: chỉ xem xét các bản sao từ/cụm giống hệt nhau, cần ít nhất hai cửa sổ âm thanh ủng hộ. Nếu có cửa sổ đủ ngữ cảnh giữ lại cụm lặp, app giữ nguyên và báo cần nghe lại. Đây là chế độ làm gọn có chủ đích, không phải chứng nhận bản chép nguyên văn.
-• Các cấu trúc khởi đầu lại như “because he's he realizes” được giữ để duyệt trong cả hai chế độ. Had had, really really, very very tiếp tục được bảo vệ.
-Lựa chọn áp dụng cho cả tạo SRT mới và “Rà lỗi / chia lại”, được lưu khi đóng app. Đổi lựa chọn sẽ làm app nhận biết cần chạy lại; không lấy nhầm kết quả làm gọn làm bản giữ lời.
-Giữ từ lặp không có nghĩa mô hình nhận dạng chắc chắn nghe được mọi từ. Từ đã bị bỏ trong bản SRT cũ không được tự chèn lại vào lời bạn đã sửa.
+MỚI: CĂN TIMELINE V15.6 · GIỮ THỜI LƯỢNG NGUỒN
+Tại Tạo voice → Căn timeline, chọn lựa chọn thứ ba:
+  V15.6 · giữ thời lượng nguồn
 
-CHIA CỤM
-Bổ sung các liên kết chủ ngữ–động từ, động từ–hành động tiếp theo, đại từ quan hệ và cụm nơi chốn. Ví dụ: he begins walking; Frankie had gone; Frankie looks; the rest of the way; how he got there; then there were.
-Cân bằng cụm nghĩa, thời lượng và tốc độ đọc; giữ tối đa hai dòng theo bố cục. Không dùng một cụm dài làm khối quá dày chỉ vì muốn giữ mọi liên kết ngữ pháp. Khi giới hạn buộc phải chia ở chỗ chưa tốt, app ghi chú ranh giới cần duyệt.
-Không sửa lời hoặc kéo mốc sang lời tiếp theo để làm hết cảnh báo chữ chạy nhanh. Đoạn nguồn nói quá gấp vẫn có thể cần duyệt.
+Phù hợp SRT chia cue để hiển thị nhưng lời đọc cần liên tục theo câu.
+App gộp các cue liền nhau thành chặng, tách câu/đơn vị đọc theo dấu câu,
+tạo giọng rồi đo âm thanh thực tế. Không áp dụng quy tắc 7–9 hoặc 10 từ/cue.
+Mốc hiển thị của từng cue bên trong chặng không còn là ranh giới render.
 
-MỐC KẾT THÚC
-Chỉ rút một đuôi từ bị kéo dài khi khoảng lặng trong PCM gốc và mốc nhận dạng ASR độc lập cùng ủng hộ. Nếu còn tiếng nói, nền âm thanh quá rõ, thiếu mốc độc lập hoặc hai bộ căn bất đồng, app giữ mốc đo và ghi chú để nghe lại.
-“Rà lỗi / chia lại” đối chiếu mốc với nhận dạng từ âm thanh, giữ nguyên lời đã sửa; có thể dùng lại mốc nhận dạng đã lưu đúng video/model để tiết kiệm thời gian. Lần chưa có dữ liệu này có thể lâu hơn do cần nhận dạng đối chiếu.
-Không gọi hai lần căn CTC là hai nguồn độc lập. Nhật ký mốc ghi riêng mốc ASR và mốc đuôi trước khi rút nếu có điều chỉnh.
+GIỮ ĐIỂM NEO
+Tích cột “Khóa cuối chặng” tại cue kết thúc đoạn/cảnh cần giữ mốc.
+Chặng đó kết thúc đúng end của cue được chọn; chặng sau bắt đầu tại
+start của cue kế tiếp. Mốc đầu/cuối mỗi chặng và khoảng trống giữa các
+chặng được giữ. Khi chưa đặt neo, app chia sơ bộ theo dấu câu, thời lượng
+và khoảng trống SRT; app không nhìn video để suy ra cảnh.
+Chặng dài khoảng 60 giây bị tách dự phòng sẽ được báo cần xem lại neo.
+Neo được lưu trong hàng đợi; khi mở lại file nguồn gần nhất không đổi,
+app khôi phục neo đã lưu. Nếu nội dung nguồn đổi, không dùng neo cũ.
 
-DÙNG VỚI KẾT QUẢ ĐÃ CÓ
-1. Chọn dòng video có kết quả cũ trong hàng đợi MP4 / MP3 → SRT.
-2. Chọn cách xử lý từ lặp; khuyến nghị giữ mặc định.
-3. Bấm “Rà lỗi / chia lại”. File SRT mới vẫn nằm cạnh nguồn, tự thêm hậu tố nếu tên đã tồn tại.
-Nếu muốn nhận dạng toàn bộ lại, dùng “Tạo SRT hàng đợi”. Dữ liệu cũ không được mang dấu đã xử lý bằng 1.4.10 chỉ vì mở hoặc lưu lại.
-Để sửa chữ sau khi nghe: sửa trong bảng → “Căn lại lời đã sửa”. Tác vụ này giữ lời sửa, không tự làm gọn từ lặp.
-Vàng: cần nghe/kiểm tra. “Đã nghe / duyệt khối” xác nhận bạn đã xem; sửa chữ hoặc mốc sẽ hủy xác nhận cũ.
+TỰ CĂN TỐC ĐỘ
+Mặc định “Nhẹ ±10%”: tự tăng hoặc giảm tốc quanh tốc độ gốc, đồng thời
+tuân thủ giới hạn tối thiểu/tối đa đã lưu. Muốn chỉnh khoảng rộng hơn,
+chọn “Dùng giới hạn tốc độ đã đặt”. Ví dụ giọng gốc dài 10,6 giây trong
+khung 10 giây cần tăng khoảng 1,06x; giọng 9,4 giây cần giảm khoảng 0,94x.
+App đo lại kết quả sau đổi tốc độ; không dùng mỗi công thức ước lượng.
+Tốc độ thay đổi bằng time-stretch, giữ cao độ; có thể ảnh hưởng chất giọng
+khi dùng khoảng rộng. Không tự viết lại, cắt chữ hoặc đổi timecode nguồn.
 
-GIỌNG VÀ GPU
-Tạo voice vẫn xuất WAV cạnh SRT/TXT. Giữ model, giọng sao chép, thư viện giọng, runtime Qwen/Chatterbox, CUDA và cấu hình GPU hiện có. ZIP không đóng gói lại các bộ giọng lớn.
-Bộ phụ đề tiếp tục chạy offline sau khi cài dữ liệu. Không tải mô hình chia cụm khi chạy; mô hình nhỏ này đi kèm ZIP. Cài dữ liệu là thao tác riêng khi bạn chủ động chọn.
+Nếu có chặng vẫn quá dài/quá ngắn, app báo số chặng, cue nguồn, số giây
+thiếu/dư và tốc độ đã thử. File đó CHƯA được xuất WAV. Cần sửa lượng lời,
+đổi neo hoặc giới hạn tốc độ rồi chạy lại. Không thêm nhiều giây im lặng
+để che thiếu lời. Chỉ cho phép hiệu chỉnh đuôi tối đa 20 ms để chốt số mẫu;
+nếu phải cắt đuôi thì chỉ nhận phần đuôi yên lặng. Báo cáo ghi mức này.
+Khoảng trống vốn có giữa các chặng trong SRT được giữ có chủ đích.
 
-KIỂM THỬ VÀ GIỚI HẠN
-Bản cập nhật được kiểm tra với video Wild Night Out đã gửi và chính SRT 89 khối của 1.4.9, đồng thời kiểm tra luồng tạo mới, rà lại, lựa chọn từ lặp, hàng đợi và trình cập nhật. Chi tiết kết quả ở source/VALIDATION_1.4.10.md.
-Kiểm thử âm thanh bằng mô hình cục bộ trên CPU; giao diện/logic bằng Mono/Linux và bộ tham chiếu .NET Framework 4.5 cho Windows x64. Chưa kiểm thử trực tiếp trên Windows/RTX 2070 vật lý. Không có cam kết chép đúng 100% mọi từ hoặc mọi video.
+Tổng thời lượng đích là end của cue cuối SRT, không phải thời lượng video
+chưa nhập vào app. Nếu SRT kết thúc trước video, cần chuẩn hóa mốc nguồn.
+Đúng thời lượng không tự chứng minh giọng đã đọc đúng mọi chữ hay khớp
+mọi cảnh bên trong chặng. Nghe kiểm tra giọng mới và đặt neo tại cảnh quan trọng.
+
+ĐO VÀ XEM BÁO CÁO
+“Đo giọng · tất cả chặng” chạy đo/căn thử, không xuất WAV cạnh nguồn.
+Âm thanh giọng gốc được lưu đệm để có thể dùng lại khi tạo WAV cùng thiết lập.
+“Xem chặng / báo cáo” cho biết kế hoạch trước khi chạy và kết quả sau khi chạy.
+Hơi thở Auto/Tùy chọn/Không dùng và nghỉ dấu câu dùng chung hai tab;
+thời lượng hơi thở/nghỉ được tính vào chặng trước khi căn.
+
+HÀNG ĐỢI NHIỀU FILE
+“Theo file” dùng Căn timeline hiện chọn đối với SRT; TXT vẫn đọc tự nhiên.
+Hoặc chọn rõ “V15.6 · giữ thời lượng nguồn” trong hàng đợi để áp dụng mọi SRT.
+Hai lựa chọn Khóa timeline tất cả / Linh hoạt tất cả vẫn theo cách cũ.
+File lỗi không làm dừng các file sau. Chọn Xem/sửa file → báo cáo để xem chặng.
+WAV thành công lưu cạnh từng SRT/TXT gốc; trùng tên sẽ sinh tên mới.
+
+TẠO THÊM SRT THEO WAV — TÙY CHỌN
+Mặc định TẮT: chỉ tạo WAV như yêu cầu.
+Nếu cần phụ đề bám WAV sau căn tốc độ, tích “Tạo thêm SRT theo WAV”.
+Cần có bộ phụ đề đã cài trong tab MP4/MP3 → SRT. App dùng căn từ CTC
+trên WAV cuối cùng với lời đã biết, không coi thời gian ước lượng là mốc từ.
+SRT mới không vượt neo chặng, không đổi chữ và không ghi đè SRT nguồn.
+Nếu thiếu model/căn từ lỗi, WAV đạt vẫn được giữ; báo rõ chưa có SRT.
+Căn từ không phải xác nhận chất lượng phát âm. Các khối mốc yếu cần nghe duyệt.
+
+TXT THƯỜNG VÀ HAI CHẾ ĐỘ CŨ
+TXT không có timeline tiếp tục đọc tự nhiên, báo thời lượng theo giọng;
+không tự tạo thời lượng video nguồn. Hai chế độ timeline trước vẫn dùng được.
+Đường chạy model/GPU hiện có được giữ; bản này tập trung vào căn timeline.
+
+PHẠM VI KIỂM TRA
+Bản này được biên dịch x64 với bộ tham chiếu .NET Framework 4.5 và kiểm tra
+logic/giao diện/cập nhật bằng Mono trên Linux, cùng kiểm tra time-stretch
+FFmpeg trên mẫu giọng thật. Chưa trực tiếp chạy Windows/RTX 2070 của bạn.
+Căn từ CTC tùy chọn đã kiểm thử xử lý mốc/neo/lỗi bằng dữ liệu kiểm soát;
+chưa chạy lại toàn bộ model CTC trên âm thanh thật trong phiên 1.4.11.

@@ -2,7 +2,7 @@
 setlocal
 cd /d "%~dp0"
 set "CSC=%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
-"%CSC%" /nologo /codepage:65001 /target:winexe /platform:x64 /out:..\V15VoiceStudio.exe /reference:System.dll /reference:System.Core.dll /reference:System.Xml.dll /reference:System.Xml.Linq.dll /reference:System.Drawing.dll /reference:System.Windows.Forms.dll App.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs AudioFinishing.cs VoiceRhythm.cs QualityControls.cs LongText.cs LongTextControls.cs MediaSupport.cs Subtitles.cs SubtitleControls.cs
+"%CSC%" /nologo /codepage:65001 /target:winexe /platform:x64 /out:..\V15VoiceStudio.exe /reference:System.dll /reference:System.Core.dll /reference:System.Xml.dll /reference:System.Xml.Linq.dll /reference:System.Drawing.dll /reference:System.Windows.Forms.dll App.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs AudioFinishing.cs VoiceRhythm.cs QualityControls.cs LongText.cs LongTextControls.cs MediaSupport.cs AnchoredVoice.cs AnchoredControls.cs Subtitles.cs SubtitleControls.cs
 if errorlevel 1 exit /b 1
 "%CSC%" /nologo /codepage:65001 /target:winexe /platform:x64 /out:..\V15Updater.exe /reference:System.dll /reference:System.Core.dll /reference:System.Xml.dll /reference:System.Xml.Linq.dll /reference:System.Drawing.dll /reference:System.Windows.Forms.dll /reference:System.IO.Compression.dll /reference:System.IO.Compression.FileSystem.dll Updater.cs
 if errorlevel 1 exit /b 1

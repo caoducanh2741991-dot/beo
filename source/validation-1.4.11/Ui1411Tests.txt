@@ -1,0 +1,49 @@
+PASS All six pages exist immediately after construction, before showing the form
+PASS Startup tab order is Studio, queue, library, tools, cloning, guide
+PASS Every registered page is attached to the same TabControl
+PASS Title and EXE assembly both identify 1.4.11
+PASS All six tabs remain registered after native handle creation
+PASS Tab 0 can be selected and displays its page
+PASS Tab 1 can be selected and displays its page
+PASS Tab 2 can be selected and displays its page
+PASS Tab 3 can be selected and displays its page
+PASS Tab 4 can be selected and displays its page
+PASS Tab 5 can be selected and displays its page
+PASS Tab 6 can be selected and displays its page
+PASS GPU device picker is visible inside Tools with all three modes
+PASS ZIP update button is visible and reachable from Tools
+PASS GPU diagnostics button is visible and reachable from Tools
+PASS GPU selection reaches saved settings and the Studio engine
+PASS Queue receives the same GPU selection
+PASS Restoring settings restores the GPU selection
+PASS Tools exposes actual selected-voice GPU synthesis check
+PASS Studio custom pauses reach shared persistent settings
+PASS Queue summary reflects same punctuation mode
+PASS Preview pacing uses same Studio values
+PASS Restoring preset restores custom pacing controls
+PASS Four punctuation values are reachable in Studio scroll panel
+PASS Cloning tab visibly exposes the MP3/WAV sample picker
+PASS Cloning tab visibly exposes Qwen and Chatterbox choices
+PASS Saved custom voices list is attached and visible
+PASS Reference excerpt can be previewed before saving
+PASS Gentle rhythm and loudness enabled by default
+PASS Quality options captured for presets and queue
+PASS Custom mode enables speed bounds
+PASS Gentle mode disables custom upper bound
+PASS Recreating the TabControl handle preserves all six tabs and their order
+PASS Tools remain reachable and retain selection after handle recreation
+PASS Timeline speed limit still follows the selected base speed
+PASS Plain TXT automatically activates natural voice timing
+PASS Natural TXT controls for regenerate, previous version and locking are reachable
+PASS Before rendering, duration is provisional and SRT lock is disabled
+PASS Studio passes natural mode and live timing callbacks to renderer
+PASS TXT uses persistent audio store for continuation
+PASS Locking a generated paragraph protects its text
+PASS Paragraph can be unlocked
+PASS Prose editing controls disabled during render
+PASS After render, natural controls enabled without enabling SRT lock
+PASS TXT timing card is fully visible within Studio
+PASS Timing card remains fixed when voice/settings panel is scrolled
+PASS Latest edited TXT can be restored after reopening
+TOTAL UI 1.4.11 47 passed.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

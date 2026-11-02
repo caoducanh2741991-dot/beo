@@ -1,0 +1,9 @@
+PASS exact ZIP CRC, every payload SHA256, 1.4.11 manifest, local grammar model hash, bootstrap parity, no voice/model/runtime/catalog replacement
+PASS upgrade via installed 1.4.10 zip all files verified and 11 voice/runtime/settings/output fixtures preserved
+PASS upgrade via installed 1.4.10 folder all files verified and 11 voice/runtime/settings/output fixtures preserved
+PASS upgrade via new 1.4.11 zip all files verified and 11 voice/runtime/settings/output fixtures preserved
+PASS upgrade via new 1.4.11 folder all files verified and 11 voice/runtime/settings/output fixtures preserved
+PASS downgrade to 1.4.10 rejected
+PASS installed V15VoiceStudio.exe 1.4.11.0 / .NET Framework compatibility
+PASS installed V15Updater.exe 1.4.11.0 / .NET Framework compatibility
+Installer gates passed before bundling this report; final ZIP is verified again at publication.
