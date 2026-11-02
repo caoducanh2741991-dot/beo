@@ -24,4 +24,4 @@ PASS Recovered subprocess diagnostic does not turn successful run into failure
 PASS Natural TXT does not invent a required timeline speed
 PASS Legacy pause-compression fixture renders
 PASS Legacy speed estimate uses measured post-pause-compression input and real fit budget
-TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics ca09c13458a64a23aa324579cb81a944
+TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics ec646882003545ee8d606c35b6fef9b7

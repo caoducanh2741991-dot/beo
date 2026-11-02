@@ -1,0 +1,58 @@
+V15 VOICE STUDIO 2.0.12 · KIỂM TRA PHÁT HÀNH
+
+KẾT QUẢ
+Hai giọng A/B đã triển khai trong SRT/TXT, chọn giọng riêng, preview theo cue, gán cột / gán nhiều dòng / xen kẽ, xuất một WAV, timeline cố định/linh hoạt/V15.6/TXT đích, hàng đợi và khôi phục phiên. Báo cáo ghi danh tính giọng từng đơn vị.
+Toàn bộ nhóm kiểm tra dưới đây đã qua; số đếm là assertion trong từng chương trình, không phải tỷ lệ chất lượng giọng và không cộng các lần chạy lại.
+
+MÔI TRƯỜNG
+Biên dịch Windows .NET Framework 4.5 x64 app + updater 2.0.12.0. Chạy Mono/Linux/Xvfb và FFmpeg thật. Chạy hai Kokoro thật và Kokoro + Adam RVC thật bằng CPU. Không có Windows hoặc RTX 2070 vật lý; không khẳng định thử CUDA thực tế.
+SRT giọng thật xuất một WAV 15 giây chính xác 360.000 mẫu/24 kHz; TXT đi theo thời lượng âm thanh từng lượt. Nhãn không chuyển vào lời tổng hợp.
+Các constructor/device CUDA RVC không thay đổi so với 2.0.11; gói giữ nguyên bản vá đó. Không thêm tối ưu GPU khác.
+
+CHI TIẾT
+Tests: TOTAL: 13 passed. Output: /tmp/v15_tests_3185cbe252014208b44faadd866a4048
+BatchTests: TOTAL BATCH: 12 passed.
+FeatureTests: TOTAL 20 passed
+BreathStreamingTests: TOTAL BREATH STREAMING 8 passed.
+PunctuationTests: TOTAL PUNCTUATION 20 passed.
+Update141Tests: TOTAL 1.4.1 17 passed.
+SubtitleTests: TOTAL SUBTITLES 17 passed.
+UpdaterTests: TOTAL UPDATER 21 passed.
+OnnxUpdaterTests: TOTAL ONNX UPDATER 6 passed.
+AnchoredTests: TOTAL ANCHORED 65 passed.
+NativeGpuTests: TOTAL NATIVE GPU 14 passed.
+Ui1411Tests: TOTAL UI 2.0.12 48 passed.
+AnchoredUiTests: TOTAL ANCHORED UI 28 passed.
+SubtitleUiTests: TOTAL SUBTITLE UI 18 passed.
+SubtitleQualityUiTests: TOTAL QUALITY UI 13 passed.
+SubtitleRefineUiTests: TOTAL REFINE UI 7 passed.
+SubtitleSpeechUiTests: TOTAL SPEECH UI 14 passed.
+VoiceReportTests: TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo 9ce1d2e2a5f94bd2896f94bee41e9c92
+VoiceDiagnosticTests: TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics ec646882003545ee8d606c35b6fef9b7
+TextTargetTests: TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target 881fdeaea804450d97c6e8e030f77368
+AudioRepairTests: TOTAL AUDIO REPAIR 45 passed.
+CommunityVoiceTests: TOTAL COMMUNITY 20 passed.
+VoiceReportUiTests: TOTAL REPORT UI 18 passed.
+TextTargetUiTests: TOTAL TXT TARGET UI 22 passed.
+StudioLayoutTests: TOTAL LAYOUT 59 passed.
+AudioRepairUiTests: TOTAL AUDIO REPAIR UI 25 passed.
+CommunityVoiceUiTests: TOTAL COMMUNITY UI 13 passed.
+TwoVoiceTests: TOTAL TWO VOICE 41 passed. Fixtures: /tmp/V15 hai giọng 2eeccfb22a7549e98271d70e39888352
+TwoVoiceUiTests: TOTAL TWO VOICE UI 28 passed.
+TwoVoiceRealKokoroTests: TOTAL REAL TWO VOICE 6 passed (two Kokoro voices, CPU Linux). Artifacts: /tmp/V15 dual neural 48e77628ae6c402fb9fc0dc4f7608eb4
+TwoVoiceRealRvcTests: TOTAL REAL TWO VOICE 6 passed (Kokoro/RVC, CPU Linux). Artifacts: /tmp/V15 dual neural f58ddccc75184e5a97d62689d119853f
+
+Tổng assertion đếm được: 717
+
+KIỂM TRA GÓI CẬP NHẬT
+ZIP kiểm tra CRC, toàn bộ kích thước/SHA256 payload, version, mã hai giọng và runtime RVC đã vá. Ma trận updater 2.0.11/2.0.12 × ZIP/thư mục đã qua, bảo toàn 27 đường dẫn dữ liệu mẫu: model, CUDA/ONNX runtime, FAISS, voice_profiles.tsv, giọng riêng, cấu hình, SRT và WAV. Hạ phiên bản bị từ chối.
+ZIP này không chứa model lớn/FAISS/gói GPU hoặc thay catalog giọng; không phải bộ cài full.
+
+GIỚI HẠN CÓ CHỦ Ý
+V15.6 tách chặng ở đổi người nói, căn trong giới hạn. Lượt quá ngắn hoặc thiếu lời vẫn có thể không vừa; có báo cáo, không tự cắt lời hoặc hạ tốc độ sâu.
+Hơi thở và thiết lập tốc độ/cân âm dùng chung hai người. Không sinh hơi thở theo danh tính riêng.
+Công cụ cũ A/B sửa câu dành kịch bản một giọng. Trong hai giọng, sửa lời/phân vai rồi tạo WAV mới, audio cache phù hợp được tái dùng.
+Tên nguồn cộng đồng không đồng nghĩa giọng chính thức từ nhà cung cấp; giữ nguyên ghi chú nguồn trong app.
+
+GHI CHÚ QUÁ TRÌNH KIỂM TRA
+Assertion số phiên bản của bộ UI cũ được sửa từ Version(2,0,11,0) sang Version(2,0,12,0), đã chạy lại đạt. Assertion so sánh double trong test TXT model thật dùng dung sai một mẫu PCM thay vì ==; file WAV và báo cáo đã thành công. Các log cuối từng nhóm là kết quả xác nhận.

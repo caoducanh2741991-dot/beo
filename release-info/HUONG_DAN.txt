@@ -1,25 +1,43 @@
-V15 VOICE STUDIO 2.0.11 · VÁ LỖI ADAM RVC TRÊN GPU
+V15 VOICE STUDIO 2.0.12 · HAI GIỌNG TRONG MỘT WAV
 
 CÀI ĐẶT
-Dành cho máy đã cài V15 2.0.10 và gói Adam RVC.
-Mở app → Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.11_Core_Update.zip.
-Đợi app mở lại và kiểm tra tiêu đề Offline 2.0.11.
-Sau đó chọn thiết bị Auto hoặc NVIDIA GPU và nghe thử Adam RVC.
-Không cần tải lại hai phần dữ liệu 708 MB, không cần cài lại CUDA hoặc model.
-Nếu cập nhật ngoài app: giải nén ZIP, chạy CAP_NHAT.cmd và chọn đúng thư mục V15 hiện đang dùng.
+Mở V15 đang dùng → Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.12_Core_Update.zip.
+Đợi hoàn tất, mở đúng lối tắt và kiểm tra tiêu đề Offline 2.0.12.
+Cách khác: giải nén ZIP, chạy CAP_NHAT.cmd và chọn đúng thư mục V15 hiện đang cài.
+Đây là ZIP cập nhật lõi, không phải bộ EXE cài full. Giữ các model, giọng riêng và gói GPU đã cài. Nếu chưa có một model, cần cài model trước khi dùng giọng đó.
 
-ĐÃ SỬA
-Lỗi: No module named 'configs' khi khởi tạo RMVPE trên CUDA.
-Nguyên nhân: RMVPE nguồn gọi cấu hình WebUI khi nhận CUDA; gói V15 không dùng WebUI đó.
-Bản vá cho RMVPE nhận thiết bị/độ chính xác trực tiếp từ worker V15. CPU dùng float32; CUDA giữ thiết bị đã chọn và float32 mà worker đang yêu cầu. Không tự dò/chọn GPU lần nữa và không đổi cấu hình GPU của các giọng khác.
-Bổ sung khai báo package cục bộ để tránh nạp nhầm infer/tools từ thư viện Python khác.
+TẠO HAI GIỌNG
+1. Mở SRT/TXT hoặc dán kịch bản. Chọn “2 giọng · A / B” tại Giọng đọc.
+2. Chọn nguồn/giọng A bằng bộ chọn hiện có. Chọn B ở bộ “Giọng B · tất cả nguồn / giọng riêng”.
+   B có giọng có sẵn, giọng riêng, tiếng Việt và Adam RVC nếu máy đã có dữ liệu tương ứng. Tên nguồn/engine được ghi trong danh sách. “Chi tiết giọng B” mở đặc điểm/phong cách. Không có thêm model mới trong ZIP này.
+3. Nếu file có [A] / [B], app tự bật hai giọng và nhận vai. Không tự thay lựa chọn A/B đã lưu.
+   Nếu file không có nhãn, các câu mặc định A. Sửa cột Giọng; Ctrl/Shift chọn nhiều dòng rồi Gán A / Gán B. “Xen kẽ A–B” chỉ khi bạn chủ động bấm; app không ép đối thoại luôn luân phiên.
+4. Nghe thử câu đang chọn sử dụng đúng giọng được gán. Bấm TẠO VOICE để tạo một WAV chung.
+5. WAV và báo cáo nằm cạnh SRT/TXT nguồn. Lần tạo tiếp theo có tên mới; giữ WAV cũ và giữ nguyên kịch bản gốc.
+   “Lưu kịch bản A/B…” xuất bản có nhãn với tên mới, để giữ phân vai khi mở lại; không ghi vào file nguồn đang mở.
 
-DỮ LIỆU
-ZIP này chỉ cập nhật app và mã chạy. Không chứa hoặc ghi đè trọng số Adam/HuBERT/RMVPE, index, FAISS, giọng riêng, voice_profiles.tsv hoặc gói GPU đang cài.
-WAV và báo cáo vẫn nằm cạnh SRT/TXT. Giữ nguyên các chế độ timeline, hàng đợi và A/B.
+QUY CHUẨN KỊCH BẢN
+SRT: mỗi cue một nhãn viết hoa ở đầu lời: [A] lời hoặc [B] lời. Một người mỗi cue, nhãn một lần nếu lời xuống dòng. Khi đã dùng nhãn, phải gắn nhãn cho mọi cue. Không dùng A:, B:, [a], [C] hoặc hai nhãn trong cùng cue.
+TXT: mỗi lượt một dòng bắt đầu [A] / [B]. Một lượt có thể nhiều câu; app chia đoạn nhưng giữ cùng người nói. TXT để render chỉ chứa lời cần đọc, không header kỹ thuật hoặc bản dịch không muốn đọc.
+Nhãn không được đọc, không tính vào số từ. Nếu bật một giọng trong khi kịch bản có B, app yêu cầu bật lại hai giọng, tránh đọc nhầm toàn bộ bằng A.
+Chế độ một giọng vẫn dùng như cũ. [A]/[B] là vai nói, độc lập chế độ kịch bản A/B/C của prompt.
+
+TIMELINE, NGẮT NGHỈ VÀ HÀNG ĐỢI
+Khóa SRT: đo từng câu bằng giọng được gán; tự căn trong giới hạn hiện có; giữ mốc nguồn. Vượt giới hạn thì báo lỗi, không cắt lời hoặc xuất WAV thiếu câu.
+Linh hoạt/TXT: ghép lần lượt âm thanh thực tế của từng giọng và khoảng nghỉ. Ước lượng TXT thống kê riêng A/B; trước khi có mẫu một giọng thì vẫn là ước lượng sơ bộ.
+V15.6: kết thúc chặng ở mỗi điểm đổi người nói để bảo vệ lượt A/B. Các câu liên tiếp cùng vai vẫn có thể ghép thành chặng. Lượt rất ngắn/ít lời có thể không vừa khung trong giới hạn; sửa lời hoặc neo. Không tự giảm tốc xuống ngoài giới hạn bạn đặt.
+TXT có thời lượng đích: tổng hợp đúng từng vai rồi căn WAV chung trong giới hạn TXT. Báo cáo giữ mốc trước căn; không suy diễn mốc cuối từng câu từ tỷ lệ toàn file.
+Tốc độ gốc, giới hạn, ngắt nghỉ, hơi thở Auto / Tùy chọn / Không dùng và cân âm lượng dùng chung cả hai giọng và cả hàng đợi. Các mẫu hơi thở app là bộ dùng chung, không phải hơi thở riêng được sao chép từ từng người.
+Hàng đợi: thêm nhiều SRT/TXT; tất cả dùng ánh xạ A/B hiển thị tại bảng thông tin. File không nhãn dùng A. Nhãn mỗi file và thay đổi trong “Sửa file đang chọn” được lưu khi mở lại. Khi chuyển sang cặp giọng khác phải kiểm tra ánh xạ trước khi chạy.
+Đổi giọng có model lớn: app nhả model trước khi nạp giọng tiếp theo để tránh giữ hai model lớn cùng lúc. Giữ âm thanh cache theo danh tính giọng; lượt tiếp cùng giọng vẫn có thể dùng lại. Đổi qua lại giữa model lớn có thể chờ nạp lại.
+Đoạn TXT đã khóa âm thanh cần mở khóa trước khi đổi người nói/thiết lập.
+
+BÁO CÁO
+Báo cáo luôn ghi thành công/thất bại/dừng, ánh xạ A/B, tên/mã giọng/engine từng đơn vị đã chạy, thời lượng trước/sau căn nếu đã đo, tốc độ và lý do lỗi.
+Chặng V15.6 và TXT căn toàn file: không có mốc từng câu sau căn nếu chưa đo riêng. Không lấy thời lượng toàn chặng chia theo tỷ lệ để nhận là số đo từng câu.
+Có thể gửi báo cáo cho chat viết prompt để chỉnh độ dài lời theo từng giọng.
+“A/B · sửa câu” cũ là công cụ so sánh/thay một giọng của kịch bản một giọng, độc lập chế độ hai người nói. Với bản hai giọng, sửa Lời đọc/cột Giọng và tạo lại WAV; cache phù hợp được dùng lại. Không mở công cụ cũ trên nền hai giọng để tránh ghép sai người nói.
 
 KIỂM TRA
-Tái hiện lỗi gốc, kiểm tra constructor ở nhánh CUDA với phần cấp phát GPU được mô phỏng, kiểm tra lựa chọn thiết bị/precision và xung đột tên package.
-Chạy model thật trên CPU qua nghe thử, SRT, TXT, A/B, dừng tác vụ và kiểm tra giao thức/lỗi. Kiểm tra nâng cấp từ 2.0.10 và bảo toàn dữ liệu đã cài.
-Chưa có GPU vật lý hoặc Windows trong môi trường kiểm tra. Kiểm tra nhánh CUDA không đồng nghĩa đã chạy phép tính CUDA trên RTX 2070.
-Nếu còn lỗi: gửi ảnh lỗi hoặc file ai-errors.log tại thư mục logs của V15 trong LocalAppData. Bản ghi thiết bị của RVC mới có chữ RVC runtime 2.0.11.
+Kiểm tra nhãn, chia câu, phân vai, cache riêng, timeline cố định/linh hoạt/V15.6/TXT đích, báo cáo lỗi/dừng, hàng đợi, lưu/mở lại, giao diện ba kích thước, cập nhật bảo toàn dữ liệu.
+Có chạy model thật bằng CPU trên Linux; không có Windows/RTX 2070 vật lý ở môi trường này. Không khẳng định đã thử CUDA thực tế trên máy của bạn. Bản vá RMVPE CUDA 2.0.11 được giữ nguyên.

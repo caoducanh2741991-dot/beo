@@ -1,0 +1,17 @@
+Ui1411Tests TOTAL UI 2.0.12 48 passed.
+AnchoredUiTests TOTAL ANCHORED UI 28 passed.
+SubtitleUiTests TOTAL SUBTITLE UI 18 passed.
+SubtitleQualityUiTests TOTAL QUALITY UI 13 passed.
+SubtitleRefineUiTests TOTAL REFINE UI 7 passed.
+SubtitleSpeechUiTests TOTAL SPEECH UI 14 passed.
+VoiceReportTests TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo 9ce1d2e2a5f94bd2896f94bee41e9c92
+VoiceDiagnosticTests TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics ec646882003545ee8d606c35b6fef9b7
+TextTargetTests TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target 881fdeaea804450d97c6e8e030f77368
+AudioRepairTests TOTAL AUDIO REPAIR 45 passed.
+CommunityVoiceTests TOTAL COMMUNITY 20 passed.
+VoiceReportUiTests TOTAL REPORT UI 18 passed.
+TextTargetUiTests TOTAL TXT TARGET UI 22 passed.
+StudioLayoutTests TOTAL LAYOUT 59 passed.
+AudioRepairUiTests TOTAL AUDIO REPAIR UI 25 passed.
+CommunityVoiceUiTests TOTAL COMMUNITY UI 13 passed.
+REMAINING VALIDATION COMPLETE

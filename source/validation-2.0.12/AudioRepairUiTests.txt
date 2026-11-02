@@ -25,4 +25,5 @@ PASS Minimum window keeps sentence list editor and waveform visible
 PASS Both primary actions stay visible
 PASS Next cue navigation moves within same SRT
 TOTAL AUDIO REPAIR UI 25 passed.
+Could not set X locale modifiers
 Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

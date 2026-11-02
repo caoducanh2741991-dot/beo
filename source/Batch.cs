@@ -32,7 +32,7 @@ public static class BatchRunner {
    if(skipDone&&j.State==JobState.Done){if(File.Exists(j.OutputPath))last=j.OutputPath;continue;}
    if(cancelled())break;
    if(j.State==JobState.ImportFailed){finished++;progress(total==0?0:finished*100/total,j.Name+": lỗi nhập file");continue;}
-   j.CheckpointCues=j.Cues.Select(c=>new Cue{Id=c.Id,Start=c.Start,End=c.End,Text=c.Text,Prose=c.Prose,ParagraphEnd=c.ParagraphEnd,AnchorAfter=c.AnchorAfter,VoiceLock=c.VoiceLock}).ToList();j.State=JobState.Running;j.Warning=j.TimelineReport=j.Error="";j.OutputPath="";progress(total==0?0:finished*100/total,j.Name+": bắt đầu");
+   j.CheckpointCues=j.Cues.Select(c=>new Cue{Id=c.Id,Start=c.Start,End=c.End,Text=c.Text,Speaker=c.Speaker,Prose=c.Prose,ParagraphEnd=c.ParagraphEnd,AnchorAfter=c.AnchorAfter,VoiceLock=c.VoiceLock}).ToList();j.State=JobState.Running;j.Warning=j.TimelineReport=j.Error="";j.OutputPath="";progress(total==0?0:finished*100/total,j.Name+": bắt đầu");
    try {
     j.OutputPath=render(j,OutputFiles.Beside(j.InputPath),(p,message)=>progress(total==0?0:(finished*100+Math.Min(100,Math.Max(0,p)))/total,j.Name+" • "+message));
     j.State=JobState.Done;j.CheckpointCues=null;last=j.OutputPath;

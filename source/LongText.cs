@@ -2,7 +2,8 @@ using System;using System.IO;using System.Linq;using System.Text;using System.Te
 namespace V15Voice {
 public static class LongText {
  static readonly Regex Abbrev=new Regex(@"(?:\b(?:Mr|Mrs|Ms|Dr|Prof|Sr|Jr|St|vs|etc|Fig|No|U\.S|U\.K|e\.g|i\.e)|\b[A-Za-z])\.$",RegexOptions.IgnoreCase);
- public static List<Cue> Parse(string text){
+ public static List<Cue> Parse(string text){return SpeakerScript.HasTags(text)?SpeakerScript.ParseProse(text):ParsePlain(text);}
+ internal static List<Cue> ParsePlain(string text){
   var result=new List<Cue>();double time=0;foreach(var paragraph in Regex.Split(text.Trim('\uFEFF',' ','\r','\n','\t').Replace("\r\n","\n").Replace("\r","\n"),@"\n\s*\n")){
    string value=Regex.Replace(paragraph.Trim(),@"\s+"," ");if(value.Length==0)continue;var sentences=new List<string>();int start=0;
    for(int i=0;i<value.Length;i++){char c=value[i];if(".!?".IndexOf(c)<0)continue;if(c=='.'&&((i>0&&i+1<value.Length&&Char.IsDigit(value[i-1])&&Char.IsDigit(value[i+1]))||Abbrev.IsMatch(value.Substring(start,i+1-start))))continue;int end=i+1;while(end<value.Length&&".!?\"”’')]}".IndexOf(value[end])>=0)end++;if(end<value.Length&&!Char.IsWhiteSpace(value[end]))continue;sentences.Add(value.Substring(start,end-start).Trim());start=end;i=end-1;}
@@ -24,10 +25,10 @@ public sealed class ReadingProgress {
  public string Summary {get{return (Final?"WAV hoàn tất: "+Scripts.Stamp(AudioSeconds):"Voice đã tạo: "+Scripts.Stamp(AudioSeconds))+"\r\n"+(Final?"Thời lượng chính xác":"Voice dự kiến: "+Scripts.Stamp(EstimateLow)+" – "+Scripts.Stamp(EstimateHigh))+"\r\n"+Done+" / "+Total+" đoạn · "+Words+" từ\r\nMáy còn xử lý: "+(Final?"Đã xong":Done==Total?"Đang hoàn thiện WAV…":RemainingWork<0?"Đang tính…":"khoảng "+Scripts.Stamp(RemainingWork).Split(',')[0])+"\r\n"+(Stage??"");}}
 }
 public sealed class ReadingMeter {
- readonly int total,words;readonly double speed;readonly Stopwatch timer=Stopwatch.StartNew();int done,doneWords,firstWords;double audio,voice,firstTime;
- public ReadingMeter(List<Cue> cues,double speed){total=cues.Count;words=cues.Sum(c=>c.Words);this.speed=speed;}
- public ReadingProgress Update(Cue c,double end,string stage){done++;doneWords+=c.Words;voice+=c.Actual;audio=end;if(done==1){firstTime=timer.Elapsed.TotalSeconds;firstWords=doneWords;}return Snapshot(stage);}
- public ReadingProgress Snapshot(string stage,bool final=false){double rate=doneWords>0?voice/doneWords:.4/speed;double remaining=Math.Max(0,words-doneWords)*rate;double uncertainty=done<3?.25:.12;return new ReadingProgress{Done=done,Total=total,Words=words,AudioSeconds=audio,EstimateLow=audio+remaining*(1-uncertainty),EstimateHigh=audio+remaining*(1+uncertainty)+Math.Max(0,total-done)*.3,RemainingWork=doneWords>firstWords?(timer.Elapsed.TotalSeconds-firstTime)/(doneWords-firstWords)*Math.Max(0,words-doneWords):-1,Final=final,Stage=stage};}
+ readonly int total,words;readonly double speed;readonly Dictionary<string,int> roleWords=new Dictionary<string,int>(),roleDone=new Dictionary<string,int>();readonly Dictionary<string,double> roleAudio=new Dictionary<string,double>();readonly Stopwatch timer=Stopwatch.StartNew();int done,doneWords,firstWords;double audio,voice,firstTime;
+ public ReadingMeter(List<Cue> cues,double speed){total=cues.Count;words=cues.Sum(c=>c.Words);this.speed=speed;foreach(var g in cues.GroupBy(SpeakerScript.Role)){roleWords[g.Key]=g.Sum(c=>c.Words);roleDone[g.Key]=0;roleAudio[g.Key]=0;}}
+ public ReadingProgress Update(Cue c,double end,string stage){done++;doneWords+=c.Words;voice+=c.Actual;string role=SpeakerScript.Role(c);roleDone[role]+=c.Words;roleAudio[role]+=c.Actual;audio=end;if(done==1){firstTime=timer.Elapsed.TotalSeconds;firstWords=doneWords;}return Snapshot(stage);}
+ public ReadingProgress Snapshot(string stage,bool final=false){double remaining=roleWords.Sum(p=>Math.Max(0,p.Value-roleDone[p.Key])*(roleDone[p.Key]>0?roleAudio[p.Key]/roleDone[p.Key]:.4/speed));double uncertainty=done<3?.25:.12;return new ReadingProgress{Done=done,Total=total,Words=words,AudioSeconds=audio,EstimateLow=audio+remaining*(1-uncertainty),EstimateHigh=audio+remaining*(1+uncertainty)+Math.Max(0,total-done)*.3,RemainingWork=doneWords>firstWords?(timer.Elapsed.TotalSeconds-firstTime)/(doneWords-firstWords)*Math.Max(0,words-doneWords):-1,Final=final,Stage=stage};}
 }
 // Persistent bounded waveform store. No model weights or GPU buffers are retained here.
 public sealed class SpeechArchive {

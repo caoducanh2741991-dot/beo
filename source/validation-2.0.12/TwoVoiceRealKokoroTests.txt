@@ -1,0 +1,12 @@
+0 Đọc câu 1/3
+30 Đọc câu 2/3
+60 Đọc câu 3/3
+95 Hoàn tất WAV · kiểm tra độ dài
+100 Hoàn tất: two voices.wav
+PASS Real two-speaker neural render produces one 15s WAV beside unchanged SRT
+PASS Actual voice map is Michael → second voice → Michael
+PASS Each neural cue has its own measured duration and bounded speed
+PASS Both assigned speech windows contain audible waveform
+PASS Real render report keeps speaker identities separate from spoken text
+PASS Real natural TXT follows actual durations and speaker mapping
+TOTAL REAL TWO VOICE 6 passed (two Kokoro voices, CPU Linux). Artifacts: /tmp/V15 dual neural 48e77628ae6c402fb9fc0dc4f7608eb4
