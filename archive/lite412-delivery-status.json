@@ -1,0 +1,16 @@
+{
+  "version": "4.1.2",
+  "edition": "Lite",
+  "source_and_binaries": "main",
+  "build_and_package": "verified",
+  "github_release": "not_published",
+  "release_blocker": "Browser upload and control requests timed out; no release was published.",
+  "successful_workflow_run": "https://github.com/caoducanh2741991-dot/beo/actions/runs/41490667624",
+  "core_artifact_url": "https://github.com/caoducanh2741991-dot/beo/actions/runs/41490667624/artifacts/13163393307",
+  "evidence_artifact_url": "https://github.com/caoducanh2741991-dot/beo/actions/runs/41490667624/artifacts/13163812910",
+  "actions_artifacts_expire_utc": "2026-12-02",
+  "core_package_sha256": "492312def9c02fd69a78f736ca0929fd89d38b4d83b925b828277500d7aefd9b",
+  "full_fresh_install_ready": false,
+  "full_install_blocker": "Missing base TTS data V15VoiceStudio_1.4_Data.7z.001 through .015",
+  "delivery_note": "Verified core ZIP supplied directly in the conversation. Do not describe v4.1.2 as a published GitHub release or a full fresh installer."
+}
