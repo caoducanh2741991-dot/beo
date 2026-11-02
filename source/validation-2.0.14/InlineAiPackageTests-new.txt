@@ -1,0 +1,6 @@
+PASS Actual updater upgrades 2.0.13 app to 2.0.14
+PASS Upgrade preserves installed TTS, AI model/runtime, custom reference, GPU, SRT and WAV
+PASS Installed package contains new implementation and matching guide
+PASS Successful upgrade has no incomplete transaction journal
+PASS Core update does not bundle or replace installed voice or AI models
+TOTAL INLINE PACKAGE 5 passed with updater 2.0.14.0. Mono/Linux fixture install.

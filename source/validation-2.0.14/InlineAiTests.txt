@@ -1,0 +1,20 @@
+PASS Only timing failures expose a repair action
+PASS GPU/model failure is not presented as a wording error
+PASS One click measures, rewrites, remeasures and accepts the selected failing cue
+PASS Other failing and passing cues are not measured or rewritten
+PASS Measured accepted wording is applied into the existing row
+PASS Other rows retain their wording, error status and measurement
+PASS Effective script matches session and original SRT bytes remain untouched
+PASS Repairing a second row preserves the first accepted repair
+PASS Report retains history of both targeted repairs
+PASS Undo restores only the selected original row and its timing error
+PASS Repaired script exports a full WAV exactly 10.2 seconds long
+PASS Invalid proposals stop after two attempts without touching other rows
+PASS Unmeasured or invalid AI output never replaces source wording
+PASS Selected model error is reported without an AI rewrite
+PASS Selected B cue uses B voice and preserves its role
+PASS Clicking an interior cue repairs exactly its V15.6 stage
+PASS Stage repair updates its member cues while preserving anchors and other stages
+PASS Cancellation leaves the active script unchanged
+PASS Externally changed source blocks applying stale repair
+TOTAL INLINE AI 19 passed. Fixture TTS/rewriter, not a real model/GPU test.

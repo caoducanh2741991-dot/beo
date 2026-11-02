@@ -1,0 +1,26 @@
+PASS Timing error has an actionable repair button in the main row
+PASS Passing row has no misleading empty repair button
+PASS Inline repair is available while global automatic AI is off
+PASS Timing render failure is shown at the rows without a blocking error dialog
+PASS Real engine faults keep their diagnostic error handling
+CELL {Width=1440, Height=960} {X=791,Y=35,Width=122,Height=44} grid {Width=919, Height=484}
+PASS Repair button is visible without horizontal scroll at {Width=1440, Height=960}
+PASS Script remains editable at {Width=1440, Height=960}
+PASS Rows retain readable height and script wrapping at {Width=1440, Height=960}
+CELL {Width=1100, Height=740} {X=463,Y=35,Width=110,Height=70} grid {Width=579, Height=264}
+PASS Repair button is visible without horizontal scroll at {Width=1100, Height=740}
+PASS Script remains editable at {Width=1100, Height=740}
+PASS Rows retain readable height and script wrapping at {Width=1100, Height=740}
+PASS Repair locks rendering and leaves Stop available
+PASS Successful one-row repair updates wording and exposes Undo
+PASS Other error and passing rows are preserved
+PASS After repair UI unlocks and points directly to WAV export
+PASS Inline repair attaches its history to the next full render
+PASS Clicking Undo restores original wording with a direct reapply action
+PASS Second-row repair reached the AI stage
+PASS Stop cancels the selected repair without applying partial wording
+PASS All inline UI actions preserve original SRT bytes
+PASS Flexible mode hides fixed-timeline repair actions
+PASS V15.6 button clearly says it repairs the whole stage
+TOTAL INLINE AI UI 22 passed. Fixture voice/rewriter on Mono/Linux.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme
