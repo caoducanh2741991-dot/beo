@@ -1,0 +1,25 @@
+[
+  {
+    "args": [
+      "translate",
+      "van 4"
+    ],
+    "exit_code": 0,
+    "log": "RealQwen216-van4-final.log"
+  },
+  {
+    "args": [
+      "translate",
+      "van 6"
+    ],
+    "exit_code": 0,
+    "log": "RealQwen216-van6-final.log"
+  },
+  {
+    "args": [
+      "repair"
+    ],
+    "exit_code": 0,
+    "log": "RealQwen216-repair.log"
+  }
+]

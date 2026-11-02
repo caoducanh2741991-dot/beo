@@ -1,0 +1,28 @@
+PASS Complete translation status requires all final cue IDs
+PASS Publish all five synchronized outputs using a single basename
+PASS Actual TTS request, final SRT and bilingual EN are exact; VI contains the full checked translation
+PASS Successful bilingual export contains real Vietnamese, cue number and source timecode
+PASS Source bytes and exact timeline duration remain protected
+PASS Translation failure preserves verified WAV work with an explicit incomplete set status
+PASS Both reports separate WAV verification from translation failure and retain the useful error
+PASS Retry after translation failure reuses completed PCM stage without TTS
+PASS Legacy A/B adoption publishes all five files through the same atomic synchronization path
+PASS A/B final SRT and bilingual EN use the actual adopted take instead of old source wording
+PASS A/B translation failure also preserves verified PCM with a visibly incomplete output set
+PASS A/B V15.6 cannot pad the stage tail and pretend the measured shortage was repaired
+PASS Legacy accepted A/B stage with artificial tail must be remeasured instead of silently imported as PASS
+PASS Vietnamese number validation supports actual compound quantity: He paid three hundred thirty-two dollars.
+PASS Vietnamese number validation supports actual compound quantity: He paid twelve hundred dollars.
+PASS Vietnamese number validation supports actual compound quantity: He bought a six-foot log.
+PASS Vietnamese number validation supports actual compound quantity: They started with an American tray priced at two fifty.
+PASS Vietnamese number validation supports actual compound quantity: The price was two fifty.
+PASS Normalize an untranslated sentence adverb in subject context while preserving a similarly spelled proper name
+PASS Structured food/place subject mismatch overrides an inconsistent model ok=true and never silently passes translation
+PASS Food noun compound is clarified only for translation and cannot be silently changed into retail-shop subject or an imperative
+PASS Matching original EN, cue and timecode reuse real provided Vietnamese with semantic verification and no unnecessary generation
+PASS Edited final English cannot reuse a source Vietnamese sentence bound to the old English
+PASS A whole 250 dollars cannot pass as a decimal 2.50 price
+PASS Implicit cardinal both matches Vietnamese hai, but cannot silently become three
+PASS Locale-aware decimal money stays distinct from integer money and preserves thousands grouping
+PASS Translation cannot silently alter numeric value
+TOTAL SYNC216 27 PASS; synthetic voice/translator + real FFmpeg; content examples are explicit test data.

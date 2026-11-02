@@ -1,0 +1,20 @@
+BatchTests TOTAL BATCH: 12 passed.
+Sync216Tests TOTAL SYNC216 27 PASS; synthetic voice/translator + real FFmpeg; content examples are explicit test data.
+TwoVoiceTests TOTAL TWO VOICE 41 passed. Fixtures: /tmp/V15 hai giọng 98d5013ed4284ddfb9a6a38bf4cd1740
+PunctuationTests TOTAL PUNCTUATION 20 passed.
+BreathStreamingTests TOTAL BREATH STREAMING 8 passed.
+VoiceReportTests TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo 38b2fbc6c1f64903ac5c5eb6df6589f5
+TextTargetTests TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target f96e54615a934012af77ba20d1a70666
+CommunityVoiceTests TOTAL COMMUNITY 20 passed.
+AudioRepairTests TOTAL AUDIO REPAIR 45 passed.
+LocalAiSafetyTests TOTAL LOCAL AI SAFETY 16 passed.
+VoiceDiagnosticTests TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics 464fbb4805e5408ba2a70ebcdff58dea
+NativeGpuTests TOTAL NATIVE GPU 15 passed.
+UpdaterTests TOTAL UPDATER 21 passed.
+AnchoredTests TOTAL ANCHORED 65 passed.
+Recovery216Tests TOTAL RECOVERY 42 PASS; synthetic TTS/rewriter + real FFmpeg. Run reopen in a separate process.
+Separate process recovery TOTAL REOPEN 8 PASS; synthetic voice + real FFmpeg; separate process.
+StableRepairUiTests TOTAL STABLE UI 36 passed. Mono/Linux with injected synthetic voice/rewriter.
+StudioLayoutTests TOTAL LAYOUT 59 passed.
+AudioRepairUiTests TOTAL AUDIO REPAIR UI 25 passed.
+2.0.16 CONTRACTS COMPLETE. Physical Windows/RTX2070 and selected cloned TTS are NOT validated.

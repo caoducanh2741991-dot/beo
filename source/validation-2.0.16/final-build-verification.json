@@ -1,0 +1,43 @@
+{
+  "version": "2.0.16.0",
+  "platform": "Windows x64 PE32+ / .NET Framework 4.5",
+  "executed_on": "Mono/Linux; WinForms via Xvfb; real FFmpeg",
+  "contract_counts": {
+    "AnchoredTests": 65,
+    "AudioRepairTests": 45,
+    "AudioRepairUiTests": 25,
+    "BatchTests": 12,
+    "BreathStreamingTests": 8,
+    "CommunityVoiceTests": 20,
+    "LocalAiSafetyTests": 16,
+    "NativeGpuTests": 15,
+    "PunctuationTests": 20,
+    "Recovery216Tests-reopen": 8,
+    "Recovery216Tests": 42,
+    "StableRepairUiTests": 36,
+    "StudioLayoutTests": 59,
+    "Sync216Tests": 27,
+    "TextTargetTests": 37,
+    "TwoVoiceTests": 41,
+    "UpdaterTests": 21,
+    "VoiceDiagnosticTests": 26,
+    "VoiceReportTests": 30
+  },
+  "contract_total": 553,
+  "python_gpu_policy_unittest": 11,
+  "python_worker_probe": 4,
+  "physical_windows_tested": false,
+  "physical_RTX2070_tested": false,
+  "selected_Steven_clone_tested": false,
+  "binary_sha256": {
+    "V15VoiceStudio.exe": "f2495cbf0364a6c6623995409c3b87024f7779daafea765532f7143ca93febfb",
+    "V15Updater.exe": "c1da8a1eefb8ef34e1dc63295578c0bd2f801b2db6aa01a469e5aa6e7175d182"
+  },
+  "real_Qwen_language_modules_identical_to_final_source": true,
+  "meaning_and_translation": "Model/structural checks do not prove full semantic equivalence; VAN5 translation remains incomplete.",
+  "actual_update_package_checks": {
+    "updater_2_0_15": 5,
+    "updater_2_0_16": 5,
+    "environment": "Mono/Linux fixture install, not physical Windows"
+  }
+}

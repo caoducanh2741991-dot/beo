@@ -1,0 +1,3 @@
+{"cues":[{"id":19,"text":"Với bánh mì được nướng hoàn hảo, ngọn núi thực sự bắt đầu nổi lên."},{"id":20,"text":"Soon, bàn ăn biến mất dưới một bức tường khổng lồ của các bánh mì."},{"id":21,"text":"Hàng trăm chiếc bánh mì cao vút đứng hàng dọc trên bàn."},{"id":22,"text":"Mỗi chiếc đều chứa trứng, hành, phô mai và đầy đủ các nguyên liệu."},{"id":23,"text":"Nhưng Vance không làm tất cả thực phẩm này để ăn cho chính mình."},{"id":24,"text":"Sau khi trời tối, những thùng vàng được đóng kín với bánh mì đổ đầy vào chiếc xe tải."}]} [end of text]
+
+

@@ -7,25 +7,35 @@ public static class RepairPolicy {
   {"can't","can not"},{"cannot","can not"},{"won't","will not"},{"don't","do not"},{"doesn't","does not"},{"didn't","did not"},{"isn't","is not"},{"aren't","are not"},{"wasn't","was not"},{"weren't","were not"},{"hasn't","has not"},{"haven't","have not"},{"hadn't","had not"},{"wouldn't","would not"},{"shouldn't","should not"},{"couldn't","could not"},{"mustn't","must not"},{"we're","we are"},{"they're","they are"},{"you're","you are"},{"i'm","i am"},{"we've","we have"},{"they've","they have"},{"you've","you have"},{"i've","i have"},{"i'll","i will"},{"he'll","he will"},{"she'll","she will"},{"we'll","we will"},{"they'll","they will"},{"you'll","you will"}};
  // These words still require human approval when changed. They are not a
  // license to drop actions, modal verbs, negation, quantities or causal links.
- static readonly HashSet<string> reviewWords=new HashSet<string>("a an the very really quite actually simply basically just".Split(' '));
+
  public static string Canonical(string text){string t=(text??"").Replace('’','\'').ToLowerInvariant();foreach(var x in contractions.OrderByDescending(x=>x.Key.Length))t=Regex.Replace(t,@"\b"+Regex.Escape(x.Key)+@"\b",x.Value);return String.Join(" ",Regex.Matches(t,@"[\p{L}\p{N}]+(?:'[\p{L}]+)?").Cast<Match>().Select(m=>m.Value));}
  static string PunctuationKey(string text){string t=(text??"").Replace('’','\'').ToLowerInvariant();foreach(var x in contractions.OrderByDescending(x=>x.Key.Length))t=Regex.Replace(t,@"\b"+Regex.Escape(x.Key)+@"\b",x.Value);return Regex.Replace(t,@"\s+"," ").Trim();}
  public static string Signature(IEnumerable<Cue> cues){return String.Join("|",cues.Select(c=>c.Id+":"+Canonical(c.Text)));}
+ static readonly HashSet<string> ordinaryNames=new HashSet<string>("The This That These Those He She They We You It I A An And But So First Then After Before Nobody Everyone Instead Could Would Is Was His Her Their Our What When Why How Even Still Soon Almost Against Days Not Once Suddenly".Split(' '));
+ static readonly HashSet<string> numberWords=new HashSet<string>("zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand million billion dollars dollar pounds euros percent".Split(' '));
+ static readonly Dictionary<string,string> equivalents=new Dictionary<string,string>{
+  {"enormous","huge"},{"massive","huge"},{"entirely","completely"},{"beginning","start"},{"headed","go"},{"went","go"},{"traveled","go"},{"seemed","look"},{"bought","buy"},{"buying","buy"},{"purchased","buy"},{"carried","carry"},{"carrying","carry"},{"ignored","ignore"},{"ignoring","ignore"},{"knew","know"},{"realized","realize"},{"weighed","weigh"},{"opened","open"},{"watched","watch"},{"looked","look"},{"appeared","appear"},{"glowed","glow"},{"glowing","glow"},{"flew","fly"},{"vanished","vanish"},{"exploded","explode"},{"added","add"},{"removed","remove"},{"discovered","discover"},{"found","find"},{"inspected","inspect"},{"tasted","taste"},{"counted","count"}};
+ static string MeaningTokens(string text){return String.Join(" ",Canonical(text).Split(' ').Select(w=>equivalents.ContainsKey(w)?equivalents[w]:w));}
+ static string SafeSurface(string text){string value=PunctuationKey(text);foreach(var pair in new[]{new[]{"enormous","huge"},new[]{"massive","huge"},new[]{"entirely","completely"},new[]{"beginning","start"},new[]{"headed","went"}})value=Regex.Replace(value,@"\b"+pair[0]+@"\b",pair[1]);return value;}
+ static readonly HashSet<string> actions=new HashSet<string>("go buy carry ignore know realize weigh open watch look appear glow fly vanish explode add remove discover find inspect taste count sell kill die burn steal leave arrive lift cut cook eat drink".Split(' '));
  public static SemanticCheck Check(List<Cue> before,List<Cue> after){
-  var result=new SemanticCheck();
+  ValidateGeometry(before,after);var result=new SemanticCheck();
   for(int i=0;i<before.Count;i++){
-   string a=Canonical(before[i].Text),b=Canonical(after[i].Text);
-   var numbers=new Regex(@"(?:[-+]?[$€£]?|[$€£][-+]?)\d[\d,.]*(?:%)?");if(!numbers.Matches(before[i].Text).Cast<Match>().Select(m=>m.Value).SequenceEqual(numbers.Matches(after[i].Text).Cast<Match>().Select(m=>m.Value)))return new SemanticCheck{Rejected=true,Reason="Khóa số liệu/tiền/đơn vị: không đổi dấu, số hoặc ký hiệu tiền tệ."};
-   var ordinary=new HashSet<string>("The This That These Those He She They We You It A An And But So First Then After Before Nobody Everyone Instead Could Would Is Was His Her Their Our".Split(' '));foreach(Match name in Regex.Matches(before[i].Text,@"\b[A-Z][a-z]+\b"))if(!ordinary.Contains(name.Value)&&!Regex.IsMatch(after[i].Text,@"\b"+Regex.Escape(name.Value)+@"\b"))return new SemanticCheck{Rejected=true,Reason="Giữ nguyên tên/từ viết hoa: "+name.Value};
-   if(a==b){if(PunctuationKey(before[i].Text)!=PunctuationKey(after[i].Text))result.Reason="Cần duyệt thay đổi dấu câu có thể đổi phạm vi ý nghĩa.";continue;}
-   var aa=a.Split(' ');var bb=b.Split(' ');
-   var sourceCore=aa.Where(w=>!reviewWords.Contains(w));var targetCore=bb.Where(w=>!reviewWords.Contains(w));
-   if(!sourceCore.SequenceEqual(targetCore))return new SemanticCheck{Rejected=true,Reason="Khóa ngữ nghĩa: thêm/bỏ/đổi từ nội dung, tên, số lượng, phủ định hoặc thứ tự hành động tại cue #"+before[i].Id+". Cần sửa thủ công; không tự nhận tương đương nghĩa."};
-   result.Reason="Cần duyệt thay đổi từ nhấn mạnh hoặc từ chức năng; chưa chứng minh giữ nguyên sắc thái.";
+   string a=Canonical(before[i].Text),b=Canonical(after[i].Text);var aa=a.Split(' ');var bb=b.Split(' ');
+   var numbers=new Regex(@"(?:[-+]?[$€£]?|[$€£][-+]?)\d[\d,.]*(?:%)?");
+   if(!numbers.Matches(before[i].Text).Cast<Match>().Select(m=>m.Value).SequenceEqual(numbers.Matches(after[i].Text).Cast<Match>().Select(m=>m.Value))||!aa.Where(numberWords.Contains).SequenceEqual(bb.Where(numberWords.Contains)))return new SemanticCheck{Rejected=true,Reason="ENTITY_CHANGED: số/số tiền hoặc số viết bằng chữ khác tại cue #"+before[i].Id};
+   Func<string,IEnumerable<string>> names=s=>Regex.Matches(s,@"\b[A-Z][a-z]+(?:[-'][A-Z]?[a-z]+)*\b").Cast<Match>().Select(m=>m.Value).Where(w=>!ordinaryNames.Contains(w));
+   if(!names(before[i].Text).SequenceEqual(names(after[i].Text)))return new SemanticCheck{Rejected=true,Reason="ENTITY_CHANGED: tên riêng/địa điểm/từ viết hoa khác tại cue #"+before[i].Id};
+   var neg=new HashSet<string>("not never nobody nothing neither without".Split(' '));if(!aa.Where(neg.Contains).SequenceEqual(bb.Where(neg.Contains)))return new SemanticCheck{Rejected=true,Reason="FACT_CHANGED: phủ định khác tại cue #"+before[i].Id};
+   string ma=MeaningTokens(before[i].Text),mb=MeaningTokens(after[i].Text);
+   var actA=ma.Split(' ').Where(actions.Contains).ToList();var actB=mb.Split(' ').Where(actions.Contains).ToList();
+   if(actB.Except(actA).Any()||(actA.OrderBy(x=>x).SequenceEqual(actB.OrderBy(x=>x))&&!actA.SequenceEqual(actB)))return new SemanticCheck{Rejected=true,Reason="FACT_CHANGED: hành động mới hoặc thứ tự hành động khác tại cue #"+before[i].Id};
+   if(!actA.SequenceEqual(actB))result.Reason="SEMANTIC_REVIEW_REQUIRED: động từ/cấu trúc hành động khác; cần đối chiếu nghĩa thay vì khóa từ nguyên văn.";
+   if(a==b){if(PunctuationKey(before[i].Text)!=PunctuationKey(after[i].Text))result.Reason="SEMANTIC_REVIEW_REQUIRED: dấu câu có thể đổi phạm vi ý nghĩa.";continue;}
+   if(ma==mb){if(SafeSurface(before[i].Text)!=SafeSurface(after[i].Text))result.Reason="SEMANTIC_REVIEW_REQUIRED: đổi dạng động từ, dấu câu hoặc cấu trúc; không tự coi là đồng nghĩa chỉ vì stem trùng.";continue;}
+   result.Reason="SEMANTIC_REVIEW_REQUIRED: cách diễn đạt thay đổi; đối chiếu sự kiện, kết quả, sắc thái và nhân quả trước khi chấp nhận.";
   }
-  result.Safe=result.Reason.Length==0;
-  if(result.Safe)result.Reason="Chỉ thay cách viết tắt/mở rộng không mơ hồ, chữ hoa hoặc dấu câu; chuỗi từ chuẩn hóa giữ nguyên.";
-  return result;
+  result.Safe=result.Reason.Length==0;if(result.Safe)result.Reason="NORMALIZED_EQUIVALENT: cấu trúc/từ đồng nghĩa hẹp và thực thể giữ nguyên; không phải chứng minh ngữ nghĩa tổng quát.";return result;
  }
  public static bool Acceptable(AiAttempt a){return a!=null&&!a.Rejected&&a.Measurement!=null&&a.Measurement.Valid&&!a.Measurement.NeedsRepair;}
  public static void ValidateGeometry(List<Cue> original,List<Cue> proposed){

@@ -1,0 +1,44 @@
+V15 2.0.16 — NGUYÊN NHÂN GỐC, BẢN VÁ VÀ PHẠM VI
+
+BẰNG CHỨNG ĐẦU VÀO
+Đọc năm report (3) mới: VAN4/5 AI + Voice, VAN6 Voice có nhúng lịch sử AI; hai final.srt và hai TXT VI; đối chiếu SRT4 đính kèm, ba SRT gốc đúng hash và sáu report (1) 2.0.14 đã đọc ở lần trước.
+VAN4/5 final.srt mới giữ nguyên lời và timecode so với nguồn. TXT VI của chúng vẫn có 28/72 placeholder, nên 2.0.15 chưa hoàn thành dịch.
+VAN6: source SHA256 88fdd77c73859b097e31637aaa74323426ecfcf4513d45fbd81379e852fbfb3f. Cue5–8: 14.400→28.800s, target14.400s, natural12.598s (TTS12.226 + nghỉ app0.118 + hơi thở0.254), sau căn13.962s, thiếu0.438s, min0.900x. Đây là số đo Windows lịch sử của người dùng.
+
+NGUYÊN NHÂN
+1. Prompt 2.0.15 cấm mọi từ nội dung mới và chỉ cho nới bằng mở rộng viết tắt. Cue5–8 không có viết tắt phù hợp để mở rộng. Qwen được chính prompt cho phép trả nguyên văn nếu không sửa được.
+2. RepairPolicy kiểm tra nguyên chuỗi từ nội dung, nên nhiều cách nói tương đương bị chặn. Prompt còn tính số từ từ target/natural thay vì khoảng thiếu còn lại SAU căn, dễ gợi ý sửa nhiều hơn mức cần.
+3. LocalAi dùng cùng seed213/temp0.2; các lần thử không có chiến lược khác nhau. Parser chỉ chọn object đầu, chưa dùng schema giới hạn số cue. Không có bằng chứng rằng riêng JSON parser làm ra lỗi VAN6, nhưng đây là điểm yếu đã vá.
+4. AutoAiPreparation bắt buộc p.Ready rồi ném RepairPendingException. ExportBatch catch chung ghi THẤT BẠI/AI_REWRITE_FAILED trước khi BatchRunner biến job thành Failed. Không phải lỗi crash native TTS; đây là lỗi phân loại/phục hồi khiến job bị coi là thất bại dù 10 chặng đã đo đạt.
+5. Báo cáo tạo sau preflight không sao chép các phép đo đã đạt, nên đầu report nói 0/11 chưa chạy còn phần nhúng AI đã có 10 PASS.
+6. final.vi.txt chỉ là placeholder, nhưng nhãn FINAL VERIFIED của bộ xuất chưa tách trạng thái dịch.
+
+VÁ TRỰC TIẾP
+AiTimeline.cs / LocalAi.cs: chiến lược theo lần và phản hồi đo thật, hướng dẫn sửa một cue, tính mức lời theo chênh sau căn; không-new và trùng có mã riêng, dừng sớm khi lặp. Schema JSON đúng số cue và parser chặn nhiều object mơ hồ. Không tăng giới hạn ba phương án.
+RepairPolicy.cs: khóa cấu trúc/thực thể/số liệu, từ đồng nghĩa/động từ có chuẩn hóa hẹp; diễn đạt khác được giữ để duyệt và đối chiếu nghĩa thay vì cấm toàn bộ từ. Thêm tình tiết rõ hoặc đổi tên/số bị chặn. Không khẳng định chứng minh nghĩa 100%.
+NaturalPauseRepair.cs: lớp C chỉ cân khoảng nghỉ app đã biết với biên nhỏ và đo lại; nếu chưa đạt không áp dụng. Không chèn im lặng dài, không xóa lời/hơi thở.
+RepairRecovery.cs / App.cs / Batch.cs / ProjectState.cs: NEEDS_REVIEW là kết quả phục hồi, không ném lỗi cho thất bại sửa nội dung thông thường. Bắt cả ngoại lệ pending cũ tại job; giữ stack chẩn đoán, PCM và cue. Report phản ánh các chặng đã đo. Chính sách tiếp tục/tạm dừng batch có lựa chọn lưu được.
+QuickRepairPanel.cs / InlineAiControls.cs: SỬA NGAY trên bảng file/câu, bốn câu nguyên bản và đề xuất trong cùng khung, ĐO LẠI riêng, lý do/mã/chiến lược, nghe/chấp nhận/tiếp tục. Mở lại job khôi phục phiên sửa.
+BilingualSource.cs + OfflineTranslation.cs: tái sử dụng VI nguồn chỉ khi cùng EN/ID/timecode, dịch lại đúng phần EN thay đổi; dịch Qwen offline theo EN cuối, kiểm tra ngôn ngữ/số/đơn vị/ID và nghĩa; sửa riêng cue thất bại, cache bản đạt. Không sinh dịch giả. Lỗi tạo trạng thái TRANSLATION_INCOMPLETE, không hủy PCM đã đạt.
+Core.cs / StableArtifacts.cs / VoiceReports.cs: giải phóng TTS nặng trước Qwen, xuất bộ file cùng snapshot, trạng thái WAV và dịch độc lập; duy trì giao dịch xuất/rollback và kiểm tra lời TTS/final.srt.
+Giữ worker engine TTS, GPU/clone, A/B, TXT/SRT, timeline, giới hạn tốc độ, cache TTS và hệ thống cập nhật. Sửa trực tiếp nguồn 2.0.15, không dựng lại app.
+
+HỒI QUY PHƯƠNG ÁN 2.0.14
+Bản cũ cho cue5–8 có “much tighter budget” thay cho “very different budget”, cùng các diễn đạt khác. Không nhập lại nhãn PASS như bằng chứng mới. Bộ test đo lại phương án đó với voice fixture và giữ trạng thái cần duyệt; chưa đo lại bằng clone Steven thật vì không có mẫu/model.
+
+NGHIỆM THU
+Đọc báo cáo kiểm thử đi kèm để xem chính xác bộ đã chạy, phạm vi mô phỏng, số đo Qwen thật và hạn chế. Chưa nghiệm thu Windows/RTX2070/Steven clone; không được gọi các bài fixture là render clone thật mới đạt.
+
+DỊCH VIỆT: BẰNG CHỨNG VÀ GIỚI HẠN
+Qwen CPU thật từng dịch “pasta” thành “phở” và để nguyên “Soon”; máy đã từ chối và giữ TRANSLATION_INCOMPLETE. Đã sửa số đọc tiếng Việt, giá nói tắt, kiểm tra chủ thể và cơ chế sửa riêng cue; làm rõ cụm danh từ “store sandwiches” chỉ trong đầu vào dịch, không đổi lời TTS/final.srt.
+Đã thử các mô hình MT nhỏ khác trên CPU nhưng thấy sai tên/vật thể/số liệu ở mẫu thử, nên không đưa các mô hình chưa đạt đó vào bộ cập nhật. Gói vẫn dùng Qwen đã cài và bản đối chiếu gốc còn khớp. Không có model dịch chưa kiểm chứng được nhét vào gói.
+Không tuyên bố mọi câu trong ba file đều do Qwen dịch mới. Các kết quả cuối kết hợp cache đã kiểm tra, VI nguồn khớp chính xác và Qwen sinh/sửa phần cần thiết. Kịch bản mới không có bản Việt đi kèm vẫn có thể cần kiểm tra bổ sung nếu model không dịch đạt; phải báo chưa hoàn thiện.
+Lỗi audio/ghép sau khi AI đã được chấp nhận giữ lại lời mới và phiên sửa, thay vì rollback về lời cũ. Các số đo chưa hoàn tất để trống, không dùng0 làm số đo. Đề xuất bị loại/lặp có mã và lý do ngay trong khung SỬA NGAY.
+Phiên2.0.15 có chặng chưa đạt được kiểm lại qua lớp ngắt nghỉ mới; các chặng đã đạt giữ nguyên PCM hợp lệ.
+
+Bộ kiểm số liệu dịch nhận dạng “both” là số lượng hai, tránh loại nhầm “cả hai tay”. Tiền thập phân được đọc theo định dạng EN/VI, không bỏ dấu chấm/phẩy để biến2.50 thành250; có kiểm thử chống nhận nhầm giá và giữ phân nhóm hàng nghìn.
+
+VÁ ĐƯỜNG A/B CŨ
+AudioRepair.Merge trước đây công bố WAV riêng. Đã đưa qua StableArtifacts.Publish với đúng snapshot lời của take được chọn hoặc PCM nền có metadata/checksum khớp. Xuất cùng final.srt, final.vi.txt và hai báo cáo; dịch lại lời đã chỉnh. Giao diện A/B/queue hiển thị TRANSLATION_INCOMPLETE riêng nếu dịch chưa đạt. Không đặt mốc audio từng cue theo tỷ lệ chặng.
+Trial A/B V15.6 không được bù đuôi im lặng để tự nhận PASS. Take cũ từng dùng đệm đuôi ở chặng phải đo lại. Khóa SRT chỉ giữ nghỉ cuối cue nhỏ: tối đa0.75s và20% cue, ghi riêng khoảng không phải lời nói. Tắt chậm câu không biến khoảng thiếu dài thành sửa đạt.
+NaturalPauseRepair dùng biên khoảng nghỉ được bộ ghép ghi rõ; không quét im lặng không có nguồn gốc bên trong mẫu hơi thở. Lỗi engine/audio khi đo đề xuất cũng giữ đúng mã trong queue, AI report và Voice report.

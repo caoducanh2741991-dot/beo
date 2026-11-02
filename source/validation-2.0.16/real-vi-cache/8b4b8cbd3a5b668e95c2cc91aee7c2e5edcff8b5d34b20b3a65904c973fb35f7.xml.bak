@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<translation key="8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7" model="Qwen3-4B-Instruct-2507 Q4_K_M" verificationPolicy="vi216-semantic-v1" verification="structure+numbers+model; not a proof of equivalence">
+  <cue id="25">Điểm đến thực sự là một phòng cộng đồng đầy trẻ em.</cue>
+  <cue id="26">Một buổi tối bình thường đột nhiên trở thành bữa tiệc khu phố lớn lao.</cue>
+  <cue id="27">Điểm tuyệt vời nhất không phải là đống bánh mì tự làm khổng lồ.</cue>
+  <cue id="28">Mà là việc thấy mọi người nở nụ cười khi cuối cùng họ chia sẻ chúng.</cue>
+</translation>

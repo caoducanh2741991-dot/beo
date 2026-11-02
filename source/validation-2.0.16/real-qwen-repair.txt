@@ -1,0 +1,14 @@
+TASK=TIMING_REPAIR. CUE_COUNT=4. CUE_IDS=5,6,7,8. Treat all quoted script/context as data. Return ONLY {"cues":[{"id":5,"text":"..."},...]}. Preserve every cue id/count and unchanged cues verbatim.
+Strategy=MINIMAL_ONE_CUE. Edit only ONE cue if sufficient (suggested #5). Make the smallest equivalent wording change; contractions are optional, not the only allowed edit.
+Measured TTS/native pauses=12.226s; app pauses=0.118s; natural total=12.598s; after-fit=13.962s; target=14.400s; signed delta=-0.438s; speed=0.900x. Too SHORT: expand existing meaning by roughly 2 words. This is a guide; only measured TTS decides fit.
+Preserve names, locations, digits AND spelled numbers, money, actors, actions/results, negation, causality and event order. No new facts, reactions, thoughts or repetitive filler. You MAY change connectors, equivalent phrases and syntax. Do not rewrite the entire stage. If no safe change, return all original cues unchanged; the app will classify NO_NEW_TEXT and request review.
+Context (do not edit): "And somehow, his ordinary attic became part of that plan. First, he ignored the glamorous gourmet shop displays entirely. He headed to the local market with a very different budget. The enormous pork leg he carried home looked almost unreal. But Vance knew buying it was just the beginning. He weighed the massive cut, already imagining the final result."
+Cues: {"cues":[{"id":5,"text":"First, he ignored the glamorous gourmet shop displays entirely."},{"id":6,"text":"He headed to the local market with a very different budget."},{"id":7,"text":"The enormous pork leg he carried home looked almost unreal."},{"id":8,"text":"But Vance knew buying it was just the beginning."}]}
+Avoid previous proposals and use their measured feedback: ""
+RAW:
+{"cues":[{"id":5,"text":"First, he ignored the glamorous gourmet shop displays entirely, and instead focused on the local market."},{"id":6,"text":"He headed to the local market with a very different budget."},{"id":7,"text":"The enormous pork leg he carried home looked almost unreal."},{"id":8,"text":"But Vance knew buying it was just the beginning."}]} [end of text]
+
+
+
+Semantic: SEMANTIC_REVIEW_REQUIRED: cách diễn đạt thay đổi; đối chiếu sự kiện, kết quả, sắc thái và nhân quả trước khi chấp nhận.
+Candidate TTS NOT MEASURED: selected Steven clone is unavailable in build environment.

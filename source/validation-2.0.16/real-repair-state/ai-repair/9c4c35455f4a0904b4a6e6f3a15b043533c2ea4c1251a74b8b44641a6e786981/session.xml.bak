@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<aiRepair schema="2" source="/workspace/scratch/3224c4e44fb8/V15VoiceStudio-2.0.16/source/fixtures/van215/van 6.srt" sourceHash="88FDD77C73859B097E31637AAA74323426ECFCF4513D45FBD81379E852FBFB3F" settings="&lt;settings aiMode=&quot;1&quot; aiFixShort=&quot;1&quot; twoVoices=&quot;0&quot; voiceBKey=&quot;&quot; textTargetChange=&quot;0.1&quot; anchorSrt=&quot;0&quot; normalize=&quot;1&quot; targetLufs=&quot;-18&quot; gentleFit=&quot;1&quot; minSpeed=&quot;0.9&quot; punctuation=&quot;0&quot; commaPause=&quot;0.14&quot; stopPause=&quot;0.3&quot; questionPause=&quot;0.35&quot; paragraphPause=&quot;0.5&quot; device=&quot;auto&quot; name=&quot;&quot; key=&quot;K:3&quot; mode=&quot;2&quot; breathing=&quot;0&quot; every=&quot;3&quot; speed=&quot;1&quot; max=&quot;1.25&quot; gap=&quot;0.15&quot; level=&quot;16&quot; slow=&quot;1&quot; join=&quot;0&quot; batchMode=&quot;0&quot; skip=&quot;1&quot; breathPath=&quot;&quot; /&gt;" fingerprint="historical-context-only" short="1" stamp="9c4c35455f4a0904b4a6e6f3a15b043533c2ea4c1251a74b8b44641a6e786981" report="/workspace/scratch/3224c4e44fb8/V15VoiceStudio-2.0.16/validation/real-repair-state/ai-repair/9c4c35455f4a0904b4a6e6f3a15b043533c2ea4c1251a74b8b44641a6e786981/ai-repair-report.txt" output="" outcome="Chưa chạy">
+  <sources>
+    <cue id="1" start="0" end="3.6" speaker="" anchor="0">Would you hang a giant ham upstairs to avoid a luxury price?</cue>
+    <cue id="2" start="3.6" end="7.2" speaker="" anchor="0">Vance thought twelve thousand dollars for Spanish ham was outrageous.</cue>
+    <cue id="3" start="7.2" end="10.8" speaker="" anchor="0">Instead of buying expensive slices, he imagined making one himself.</cue>
+    <cue id="4" start="10.8" end="14.4" speaker="" anchor="0">And somehow, his ordinary attic became part of that plan.</cue>
+    <cue id="5" start="14.4" end="18" speaker="" anchor="0">First, he ignored the glamorous gourmet shop displays entirely.</cue>
+    <cue id="6" start="18" end="21.6" speaker="" anchor="0">He headed to the local market with a very different budget.</cue>
+    <cue id="7" start="21.6" end="25.2" speaker="" anchor="0">The enormous pork leg he carried home looked almost unreal.</cue>
+    <cue id="8" start="25.2" end="28.8" speaker="" anchor="0">But Vance knew buying it was just the beginning.</cue>
+    <cue id="9" start="28.8" end="32.4" speaker="" anchor="0">He weighed the massive cut, already imagining the final result.</cue>
+    <cue id="10" start="32.4" end="36" speaker="" anchor="0">Soon the kitchen counter looked more like an unusual experiment.</cue>
+    <cue id="11" start="36" end="39.6" speaker="" anchor="0">The mountain of salt alone made the whole project look absurd.</cue>
+    <cue id="12" start="39.6" end="43.2" speaker="" anchor="0">Still, his grocery receipt was nothing like the boutique price.</cue>
+    <cue id="13" start="43.2" end="46.8" speaker="" anchor="0">Then a bright red wooden chest appeared in the backyard.</cue>
+    <cue id="14" start="46.8" end="50.4" speaker="" anchor="0">Neighbors probably had questions, but Vance wasn't giving explanations.</cue>
+    <cue id="15" start="50.4" end="54" speaker="" anchor="0">Days passed, and the yard slowly changed with the seasons.</cue>
+    <cue id="16" start="54" end="57.6" speaker="" anchor="0">After three long weeks, he finally opened the strange chest.</cue>
+    <cue id="17" start="57.6" end="61.2" speaker="" anchor="0">What emerged looked surprisingly different from the meat he started with.</cue>
+    <cue id="18" start="61.2" end="64.8" speaker="" anchor="0">Vance and his friend could barely lift the enormous leg.</cue>
+    <cue id="19" start="64.8" end="68.4" speaker="" anchor="0">But the strangest part of his experiment was still ahead.</cue>
+    <cue id="20" start="68.4" end="72" speaker="" anchor="0">He carried that giant ham upstairs into his attic.</cue>
+    <cue id="21" start="72" end="75.6" speaker="" anchor="0">The empty room suddenly had a very unusual new resident.</cue>
+    <cue id="22" start="75.6" end="79.2" speaker="" anchor="0">Even Vance had to laugh at his bizarre home setup.</cue>
+    <cue id="23" start="79.2" end="82.8" speaker="" anchor="0">He hoped this space could resemble an old European curing cellar.</cue>
+    <cue id="24" start="82.8" end="86.4" speaker="" anchor="0">But months of waiting would test his patience more than anything.</cue>
+    <cue id="25" start="86.4" end="90" speaker="" anchor="0">A giant piece of meat hanging upstairs looked risky to outsiders.</cue>
+    <cue id="26" start="90" end="93.6" speaker="" anchor="0">And a homemade setup is no guarantee that food stays safe.</cue>
+    <cue id="27" start="93.6" end="97.2" speaker="" anchor="0">Still, Vance kept returning to check on his unusual project.</cue>
+    <cue id="28" start="97.2" end="100.8" speaker="" anchor="0">The hanging ham gradually took on an almost cake-like white coating.</cue>
+    <cue id="29" start="100.8" end="104.4" speaker="" anchor="0">After more waiting, the moment of truth finally arrived.</cue>
+    <cue id="30" start="104.4" end="108" speaker="" anchor="0">Vance inspected the ham with the focus of a nervous contestant.</cue>
+    <cue id="31" start="108" end="111.6" speaker="" anchor="0">He seemed convinced the enormous gamble had finally worked.</cue>
+    <cue id="32" start="111.6" end="115.2" speaker="" anchor="0">So he carried his prize downstairs for the big reveal.</cue>
+    <cue id="33" start="115.2" end="118.8" speaker="" anchor="0">The giant leg took center stage on its wooden stand.</cue>
+    <cue id="34" start="118.8" end="122.4" speaker="" anchor="0">Almost two months of waiting had led to this moment.</cue>
+    <cue id="35" start="122.4" end="126" speaker="" anchor="0">The first exposed slice showed a surprisingly deep red color.</cue>
+    <cue id="36" start="126" end="129.6" speaker="" anchor="0">It looked remarkably similar to the ham behind gourmet counters.</cue>
+    <cue id="37" start="129.6" end="133.2" speaker="" anchor="0">Vance shaved off thin ribbons as everyone watched closely.</cue>
+    <cue id="38" start="133.2" end="136.8" speaker="" anchor="0">Then he finally tasted the result of his long experiment.</cue>
+    <cue id="39" start="136.8" end="140.4" speaker="" anchor="0">His reaction suggested he loved the rich, salty flavor.</cue>
+    <cue id="40" start="140.4" end="144" speaker="" anchor="0">A little cheese and a crunchy cracker completed his tasting plate.</cue>
+    <cue id="41" start="144" end="147.5" speaker="" anchor="0">Then came the final question: how much had he spent?</cue>
+    <cue id="42" start="147.5" end="151" speaker="" anchor="0">Vance counted about three hundred fifty dollars for the project.</cue>
+    <cue id="43" start="151" end="154.5" speaker="" anchor="0">Against that boutique price tag, the difference looked enormous.</cue>
+    <cue id="44" start="154.5" end="157.991" speaker="" anchor="0">But would you trust a homemade attic ham? That's the debate.</cue>
+  </sources>
+  <row n="1" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="2" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="3" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="4" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="5" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="6" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="7" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="8" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="9" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="10" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+  <row n="11" accepted="0" error="" final="0" fn="0" fa="0" fs="0" resolution="">
+    <original />
+  </row>
+</aiRepair>

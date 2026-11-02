@@ -1,0 +1,58 @@
+{
+  "evidence": "User Windows 2.0.15 reports, not a new build-machine TTS render",
+  "reports": [
+    {
+      "file": "van 4.ai-repair-report(3).txt",
+      "sha256": "d457fd9b6e9d5f99d29b5ae06b89c2e1f8f0a7764824359175dd41d30b6fb157",
+      "first_result": "Kết quả: FINAL VERIFIED · bộ WAV/SRT/TXT cùng lời",
+      "lines": 125
+    },
+    {
+      "file": "van 4.voice-report(3).txt",
+      "sha256": "6f2c5e49a4b530e8b861a2376f1f13b0b471e6b0c10b6004b935580bfbe44856",
+      "first_result": "Kết quả: THÀNH CÔNG",
+      "lines": 460
+    },
+    {
+      "file": "van 5.ai-repair-report(3).txt",
+      "sha256": "9676eaf8ef2db53b97e5436e0ab774f34e605e9b0830689dec007171ff4df630",
+      "first_result": "Kết quả: FINAL VERIFIED · bộ WAV/SRT/TXT cùng lời",
+      "lines": 301
+    },
+    {
+      "file": "van 5.voice-report(3).txt",
+      "sha256": "22f3206e32245bf3c77e853b224520ddc3d8187d03005d1a1a8740fb12cecbe7",
+      "first_result": "Kết quả: THÀNH CÔNG",
+      "lines": 1076
+    },
+    {
+      "file": "van 6.voice-report(3).txt",
+      "sha256": "00d1a7839c2cc0b7a0aba4100ea77ff53914f2cb7e1e4234850efa785f54bdbe",
+      "first_result": "Kết quả: THẤT BẠI",
+      "lines": 494
+    }
+  ],
+  "van6_failure": {
+    "source_sha256": "88fdd77c73859b097e31637aaa74323426ecfcf4513d45fbd81379e852fbfb3f",
+    "ids": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "start": 14.4,
+    "end": 28.8,
+    "target": 14.4,
+    "natural": 12.598,
+    "tts": 12.226,
+    "app_pauses": 0.118,
+    "breaths": 0.254,
+    "after_fit": 13.962,
+    "delta": -0.438,
+    "speed": 0.9,
+    "stack_AutoAiPreparation": true,
+    "stack_ExportBatch": true,
+    "old_code": "AI_REWRITE_FAILED",
+    "pending_exception": true
+  }
+}

@@ -1,0 +1,16 @@
+PASS Kokoro dispatches CUDA and confirms a valid WAV
+PASS LibriTTS dispatches CUDA and confirms a valid WAV
+PASS Kitten dispatches CUDA and confirms a valid WAV
+PASS Piper dispatches CUDA and confirms a valid WAV
+PASS Explicit CPU uses original executable and reports CPU
+PASS Auto detects silent CPU fallback and reruns once on original CPU engine
+PASS Following cue stays on working CPU after GPU failure
+PASS Required GPU rejects silent CPU fallback
+PASS Rejected GPU result is removed
+PASS Nonzero GPU process error recovers with fresh CPU process
+PASS Required GPU explains missing addon
+PASS Auto reports reason for CPU when addon is absent
+PASS Active worker startup is observed before testing cancellation
+PASS Cancel stops active process without CPU retry
+PASS Recognizes unavailable CUDA without mistaking partial CPU graph nodes for full fallback
+TOTAL NATIVE GPU 15 passed.

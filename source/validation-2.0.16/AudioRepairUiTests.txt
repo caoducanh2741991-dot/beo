@@ -1,0 +1,28 @@
+PASS Seven main tabs remain; removed video workspace is not restored
+PASS Studio and queue both expose A/B entry button
+PASS Standard Studio recording hook persists exact repair background
+OPEN ROW=3 current=1 editor=Second story stays here.
+PASS Opening A/B targets selected cue and current text
+PASS Dialog labels single-cue repair scope
+PASS Apply is disabled before real measurement
+PASS Two different voices are rendered and measured through UI
+PASS UI separates speech end and tail silence
+PASS Measured valid B can be adopted
+PASS UI offers original versus fitted audition
+PASS Natural audition toggle also displays natural waveform
+PASS Changing text disables stale adoption
+PASS Restoring exact text reuses matching measured candidate
+PASS Changing selected voice invalidates stale comparison
+PASS Adopt B prepares missing intervals and publishes exact WAV
+PASS UI leaves source SRT untouched
+PASS Dialog returns a separate successfully published snapshot
+PASS UI rows retain original sentence numbering after background creation
+PASS Chosen B voice persists in selected part
+PASS Failed later adoption rolls back selected take and keeps published snapshot
+PASS Busy state locks edits and preserves Stop
+PASS Controls unlock after work
+PASS Minimum window keeps sentence list editor and waveform visible
+PASS Both primary actions stay visible
+PASS Next cue navigation moves within same SRT
+TOTAL AUDIO REPAIR UI 25 passed.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

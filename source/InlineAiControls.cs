@@ -12,7 +12,7 @@ namespace V15Voice {
 public static class InlineAiRepair {
  public static bool TimingProblem(Cue c) {
   string s=c.Status??"";
-  return !c.Prose && (s.StartsWith("QUÁ",StringComparison.OrdinalIgnoreCase)||s.Contains("Dư ")||s.Contains("Thiếu ")||s.Contains("Cần sửa lời")||s.Contains("MANUAL REQUIRED")||s.Contains("REVIEW REQUIRED")||s.Contains("ENGINE ERROR")||s.Contains("AUDIO ERROR"));
+  return !c.Prose && (s.StartsWith("QUÁ",StringComparison.OrdinalIgnoreCase)||s.Contains("Dư ")||s.Contains("Thiếu ")||s.Contains("Cần sửa lời")||s.Contains("NEEDS_REVIEW")||s.Contains("SEMANTIC_REVIEW_REQUIRED")||s.Contains("ENGINE_ERROR")||s.Contains("RENDER_FAILED")||s.Contains("MANUAL REQUIRED")||s.Contains("REVIEW REQUIRED")||s.Contains("ENGINE ERROR")||s.Contains("AUDIO ERROR"));
  }
  public static AiRepairRow At(AiRepairSession p,int id) {
   return p.Rows.FirstOrDefault(r=>r.Stage.Cues.Any(c=>c.Id==id));
@@ -29,7 +29,7 @@ public static class InlineAiRepair {
    t.Cue.Text=t.Word.Text;t.Cue.AudioPath=null;t.Cue.Actual=0;
    var m=chosen==null?row.Original:chosen.Measurement;
    t.Cue.Natural=!p.Anchored&&m!=null?m.Natural:0;t.Cue.Speed=m==null?row.BaseSpeed:m.Speed;
-   t.Cue.Status=chosen!=null?"AI đã sửa · "+(p.Anchored?"chặng ":"")+m.After.ToString("0.000")+"s · cần xuất WAV tổng":m==null?"Chưa tạo":m.Error.Length>0?"Lỗi TTS/model · "+m.Error:m.Detail;
+   t.Cue.Status=chosen!=null?(chosen.Manual?"MANUAL_FIXED · ":"AI_FIXED · ")+(p.Anchored?"chặng ":"")+m.After.ToString("0.000")+"s · cần xuất WAV tổng":m==null?"Chưa tạo":m.Error.Length>0?"Lỗi TTS/model · "+m.Error:m.Detail;
   }
  }
 }
@@ -97,7 +97,7 @@ public partial class MainForm {
   if(proseInput||mode.SelectedIndex==1||!(message.Contains("câu vẫn vượt timeline")||message.StartsWith("Chưa xuất WAV: có chặng ngoài giới hạn căn tốc độ.")))return false;
   if(!cues.Any(InlineAiRepair.TimingProblem))return false;
   if(report!=null)lastVoiceReport=report.PathName;
-  status.Text="Chưa xuất WAV: có phần chưa vừa timeline. Bấm AI sửa câu/chặng ngay cạnh dòng lỗi, rồi TẠO VOICE · WAV.";
+  status.Text="Chưa xuất WAV: có phần chưa vừa timeline. Bấm SỬA NGAY cạnh dòng lỗi, đo/chấp nhận rồi TIẾP TỤC RENDER.";
   return true;
  }
  void FocusFirstInlineError(){if(busy||!grid.Columns.Contains("aiFix"))return;int i=cues.FindIndex(InlineAiRepair.TimingProblem);if(i>=0&&i<grid.Rows.Count){grid.CurrentCell=grid.Rows[i].Cells["aiFix"];grid.FirstDisplayedScrollingRowIndex=i;}}
@@ -122,7 +122,7 @@ public partial class MainForm {
    await Task.Run(()=>AiTimeline.Run(p,rewriter,role=>{inlineAiEngine=factory(role);return inlineAiEngine;},()=>inlineAiCancelled,notify,acceptAutomatically,true,id));
    if(inlineAiCancelled)throw new OperationCanceledException();
    var row=InlineAiRepair.At(p,id);InlineAiApplied(p,id);
-   status.Text=row.Chosen!=null?"Đã sửa "+(p.Anchored?"chặng chứa câu #":"câu #")+id+" và đo đạt. Bấm TẠO VOICE · WAV để xuất toàn bài; có thể Hoàn tác tại dòng.":row.Best!=null?"Có đề xuất đã đo đạt. Bấm CHẤP NHẬN rồi TIẾP TỤC RENDER.":row.Original!=null&&row.Original.Error.Length>0?"Lỗi bộ tạo giọng: "+row.Original.Error:row.Original!=null&&!row.Original.NeedsRepair?"Câu #"+id+" đã đo đạt, giữ nguyên lời.":"AI chưa tìm được bản vừa khung. Bấm Sửa tay tại dòng lỗi; xem báo cáo để biết chi tiết.";
+   status.Text=row.Chosen!=null?"Đã sửa "+(p.Anchored?"chặng chứa câu #":"câu #")+id+" và đo đạt. Bấm TẠO VOICE · WAV để xuất toàn bài; có thể Hoàn tác tại dòng.":row.Best!=null?"Có đề xuất đã đo đạt. Bấm CHẤP NHẬN rồi TIẾP TỤC RENDER.":row.Original!=null&&row.Original.Error.Length>0?"Lỗi bộ tạo giọng: "+row.Original.Error:row.Original!=null&&!row.Original.NeedsRepair?"Câu #"+id+" đã đo đạt, giữ nguyên lời.":"AI chưa tìm được bản vừa khung. Bấm TỰ SỬA trong khung; nguyên nhân và số đo nằm ngay tại đây.";
   } catch(OperationCanceledException){selectedRow.Accepted=priorAccepted;p.Save();status.Text="Đã dừng sửa câu #"+id+". Lời đang dùng và file nguồn được giữ nguyên.";}
    catch(Exception ex){status.Text="Chưa sửa được câu #"+id+": "+ex.Message;}
   finally {inlineAiEngine=null;inlineAiRunning=false;lastVoiceReport=p.Report;SetBusy(false);Populate();SaveSession();RefreshQuickRepair();}

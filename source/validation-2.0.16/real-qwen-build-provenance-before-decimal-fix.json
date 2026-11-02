@@ -1,0 +1,9 @@
+{
+  "V15VoiceStudio.exe": "15ee7955077c9e92633ab350d609fff74446ba6e19c00c84c231d1c2ef1db95a",
+  "RealQwen216Tests.exe": "8452a9d9766c64b053f65beddefe102e9e2112f352815b6d673cf36707f7e38a",
+  "LocalAi.cs": "cea3f1c51b1c8b5e19622c6d1b9d6e4bb0e43ff193a863adbe696dddb79efff0",
+  "OfflineTranslation.cs": "2dc0fb3c74df592f03ec8799c6aa51f6627e26cb50abaf44e4bc95b9ce54f4b1",
+  "RepairPolicy.cs": "05a3dc396489891cf3dfced4961c25d843fd422507b1aff2d6ca2f685c1bfcef",
+  "BilingualSource.cs": "30233115b7208033e304db2eaf33d5f0d54bb6d21157e14440bfda38bd1bb5d5",
+  "model_sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597"
+}

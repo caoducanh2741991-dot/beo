@@ -1,4 +1,4 @@
-"""Package the compiled 2.0.15 binaries and sources; include new community data once; keep installed runtimes and other models."""
+"""Package the compiled 2.0.16 binaries and sources; include new community data once; keep installed runtimes and other models."""
 from pathlib import Path
 import hashlib
 import shutil
@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2.0.15"
+VERSION = "2.0.16"
 WITH_COMMUNITY = "--with-community" in sys.argv
 
 def main():
@@ -22,34 +22,34 @@ def main():
     for source, destination in (("ai_worker.py", "worker.py"), ("gpu_policy.py", "gpu_policy.py")):
         shutil.copyfile(ROOT / "source" / source, payload / "ai" / destination)
     def source_ignore(folder, names):
-        ignored = set(shutil.ignore_patterns("__pycache__", "*.pyc", ".*")(folder, names))
+        ignored = set(shutil.ignore_patterns("__pycache__", "*.pyc", ".*", "validation-2.0.15")(folder, names))
         if not WITH_COMMUNITY and Path(folder).resolve() == (ROOT / "source/community/rvc").resolve():
             ignored.update({"weights", "deps", "sample.wav"})
         if Path(folder).resolve() == (ROOT / "source/local-ai").resolve():
             ignored.update({"model", "runtime", "downloads"})
         return ignored
     shutil.copytree(ROOT / "source", payload / "source", ignore=source_ignore)
-    shutil.copytree(ROOT / "validation", payload / "source" / "validation-2.0.15", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
+    shutil.copytree(ROOT / "validation", payload / "source" / "validation-2.0.16", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
     guide = ROOT / ("HUONG_DAN_" + VERSION + ".txt")
     shutil.copyfile(guide, payload / guide.name)
-    manifest = ET.Element("update", product="V15VoiceStudio", version="2.0.15", kind="core", space=str(3 * sum(p.stat().st_size for p in payload.rglob("*") if p.is_file()) + 128 * 1024 * 1024))
+    manifest = ET.Element("update", product="V15VoiceStudio", version="2.0.16", kind="core", space=str(3 * sum(p.stat().st_size for p in payload.rglob("*") if p.is_file()) + 128 * 1024 * 1024))
     assert not list((payload / "source").glob("Creator*.cs")), "Removed video feature must not ship"
     for file in sorted(p for p in payload.rglob("*") if p.is_file()):
         ET.SubElement(manifest, "file", path=file.relative_to(payload).as_posix(), size=str(file.stat().st_size), sha256=hashlib.sha256(file.read_bytes()).hexdigest())
     output = ROOT.parent / ("output-" + VERSION)
     output.mkdir(exist_ok=True)
     package = output / ("V15VoiceStudio_" + VERSION + ("_Update.zip" if WITH_COMMUNITY else "_Core_Update.zip"))
-    build_folder = Path(tempfile.mkdtemp(prefix="v15-release-215-"))
+    build_folder = Path(tempfile.mkdtemp(prefix="v15-release-216-"))
     built = build_folder / package.name
     with zipfile.ZipFile(built, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=1) as archive:
         archive.writestr("manifest.xml", ET.tostring(manifest, encoding="utf-8", xml_declaration=True))
         archive.write(ROOT / "V15Updater.exe", "V15Updater.exe")
         archive.write(ROOT / "source" / "CAP_NHAT.cmd", "CAP_NHAT.cmd")
         archive.write(guide, "HUONG_DAN.txt")
-        for name in ["BAO_CAO_NANG_CAP_2.0.15.txt", "KET_QUA_KIEM_THU_2.0.15.txt"]:
+        for name in ["BAO_CAO_NANG_CAP_2.0.16.txt", "KET_QUA_KIEM_THU_2.0.16.txt"]:
             if (ROOT / name).exists(): archive.write(ROOT / name, name)
-        for image in ["stable215-quick-1440.png", "stable215-quick-1100.png"]:
-            if (ROOT / "validation" / image).exists(): archive.write(ROOT / "validation" / image, "GIAO_DIEN_2.0.15/" + image)
+        for image in ["stable216-quick-1440.png", "stable216-quick-1100.png"]:
+            if (ROOT / "validation" / image).exists(): archive.write(ROOT / "validation" / image, "GIAO_DIEN_2.0.16/" + image)
         for file in sorted(p for p in payload.rglob("*") if p.is_file()):
             archive.write(file, file.relative_to(ROOT).as_posix())
     shutil.copyfile(built, package)

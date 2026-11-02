@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<translation key="5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4" model="Qwen3-4B-Instruct-2507 Q4_K_M" verificationPolicy="vi216-semantic-v1" verification="structure+numbers+model; not a proof of equivalence">
+  <cue id="7">Họ bắt đầu với một chiếc đĩa Mỹ giá hai đô la năm mươi.</cue>
+  <cue id="8">Nó có một burger, khoai tây, một cái bánh donut và một ly nước ngọt.</cue>
+  <cue id="9">Một cái bánh donut và ly nước ngọt cho bữa trưa? Điều đó nhanh chóng kích thích tranh cãi.</cue>
+  <cue id="10">Không ai có thể quyết định liệu điều đó là bữa trưa hay một buổi tiệc.</cue>
+  <cue id="11">Vance yêu thích burger và khoai tây hơn mong đợi.</cue>
+  <cue id="12">Ẩm thực quen thuộc rõ ràng đang giành chiến thắng trong vòng đầu về hương vị.</cue>
+</translation>

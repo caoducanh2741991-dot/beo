@@ -1,0 +1,18 @@
+van 6 0% Dịch Việt offline · cue 1–6
+van 6 0% Đối chiếu nghĩa bản dịch · cue 1–6
+van 6 13% Dịch Việt offline · cue 7–12
+van 6 13% Đối chiếu nghĩa bản dịch · cue 7–12
+van 6 27% Dịch Việt offline · cue 13–18
+van 6 27% Đối chiếu nghĩa bản dịch · cue 13–18
+van 6 40% Dịch Việt offline · cue 19–24
+van 6 40% Đối chiếu nghĩa bản dịch · cue 19–24
+van 6 54% Dịch Việt offline · cue 25–30
+van 6 54% Đối chiếu nghĩa bản dịch · cue 25–30
+van 6 68% Dịch Việt offline · cue 31–36
+van 6 68% Đối chiếu nghĩa bản dịch · cue 31–36
+van 6 81% Dịch Việt offline · cue 37–42
+van 6 81% Đối chiếu nghĩa bản dịch · cue 37–42
+van 6 95% Dịch Việt offline · cue 43–44
+van 6 95% Đối chiếu nghĩa bản dịch · cue 43–44
+van 6 100% Dịch Việt hoàn tất; đã kiểm tra cấu trúc, số liệu và đối chiếu nghĩa bằng model. Cần đọc lại khi sử dụng.
+PASS offline EN-VI completion (aligned source + real Qwen CPU): van 6 44/44 cues, structure/numeric/model verification; not a TTS/GPU test.

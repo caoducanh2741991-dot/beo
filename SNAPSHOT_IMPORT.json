@@ -1,23 +1,23 @@
 {
-  "version": "2.0.15",
+  "version": "2.0.16",
   "kind": "imported-packaged-snapshot",
   "note": "Imported now from an existing packaged release. This is not the original development commit history.",
   "original_assets": [
     {
-      "name": "V15VoiceStudio_2.0.15_Core_Update.zip",
-      "bytes": 17688981,
-      "sha256": "9d61ef2c6cd5dad71a9f69cbe2ff455ffc690a7cf8eb7d57c9acdade23dc03ed",
+      "name": "V15VoiceStudio_2.0.16_Core_Update.zip",
+      "bytes": 17876170,
+      "sha256": "788ac04891b4b7442c448eaf1e3a36b6b245167ba98cb57fc9df947c21a79acb",
       "validation": "ZIP_CRC_OK"
     }
   ],
-  "assembled_archive_sha256": "9d61ef2c6cd5dad71a9f69cbe2ff455ffc690a7cf8eb7d57c9acdade23dc03ed",
+  "assembled_archive_sha256": "788ac04891b4b7442c448eaf1e3a36b6b245167ba98cb57fc9df947c21a79acb",
   "excluded_installed_components": [],
   "mapped_files": [
     {
       "archive_path": "manifest.xml",
       "repository_path": "release-info/manifest.xml",
-      "bytes": 61273,
-      "sha256": "2d7d0cd7cb42f20e14174157ab77910f79a86a34beb6443aba23bfdfe254508f"
+      "bytes": 85371,
+      "sha256": "11f65272fe4d3e7e14536d6c11c4698cf079e675ef672bc12a841bedb0a50d75"
     },
     {
       "archive_path": "CAP_NHAT.cmd",
@@ -28,50 +28,50 @@
     {
       "archive_path": "HUONG_DAN.txt",
       "repository_path": "release-info/HUONG_DAN.txt",
-      "bytes": 7918,
-      "sha256": "920ec3270f57ca5be726c8e1519d732c30da46dcdadc59d9a0f3496d89a6c5e9"
+      "bytes": 8271,
+      "sha256": "c4df6b01f7d4dd7eb2ea7e9c9bf82fc95088e4d5c65eadd66c8d6d9b00a22d5a"
     },
     {
-      "archive_path": "BAO_CAO_NANG_CAP_2.0.15.txt",
-      "repository_path": "release-info/BAO_CAO_NANG_CAP_2.0.15.txt",
-      "bytes": 6031,
-      "sha256": "dc0cf99e98fb4fdcc1c7d848de7445889de61644f4eeccebd660855721588a97"
+      "archive_path": "BAO_CAO_NANG_CAP_2.0.16.txt",
+      "repository_path": "release-info/BAO_CAO_NANG_CAP_2.0.16.txt",
+      "bytes": 8150,
+      "sha256": "05362a18e90e861df10ef6b8494339d413eba8858816442543d5c07e13fae9c3"
     },
     {
-      "archive_path": "KET_QUA_KIEM_THU_2.0.15.txt",
-      "repository_path": "release-info/KET_QUA_KIEM_THU_2.0.15.txt",
-      "bytes": 6406,
-      "sha256": "8545bedf71d00c47703d660b6c81aa512f299b92fae87899f857b601f539cf9a"
+      "archive_path": "KET_QUA_KIEM_THU_2.0.16.txt",
+      "repository_path": "release-info/KET_QUA_KIEM_THU_2.0.16.txt",
+      "bytes": 8692,
+      "sha256": "3efeff43a3dbd8dcb1e9abc3810801fe9f418ebcf1abac8d7c8b5045af1cbae2"
     },
     {
-      "archive_path": "GIAO_DIEN_2.0.15/stable215-quick-1440.png",
-      "repository_path": "release-info/GIAO_DIEN_2.0.15/stable215-quick-1440.png",
-      "bytes": 142831,
-      "sha256": "ab032daa4277814fe67c3912a682d87e062d578491d00cfa824c5bb2a16a6c6e"
+      "archive_path": "GIAO_DIEN_2.0.16/stable216-quick-1440.png",
+      "repository_path": "release-info/GIAO_DIEN_2.0.16/stable216-quick-1440.png",
+      "bytes": 146581,
+      "sha256": "2ae30f330a1321c05d36b324e698a0dd216c1ec9edc0432b37f933a07ce96299"
     },
     {
-      "archive_path": "GIAO_DIEN_2.0.15/stable215-quick-1100.png",
-      "repository_path": "release-info/GIAO_DIEN_2.0.15/stable215-quick-1100.png",
-      "bytes": 109633,
-      "sha256": "63e9e0b5a8756921d477aaa4b0f0c9f33cd7436421453a0d5253b9481eeb66c9"
+      "archive_path": "GIAO_DIEN_2.0.16/stable216-quick-1100.png",
+      "repository_path": "release-info/GIAO_DIEN_2.0.16/stable216-quick-1100.png",
+      "bytes": 115361,
+      "sha256": "988ed256ba166c402efc7b2953922c84d6a2761409f61d7c20583d4d79d23e15"
     },
     {
-      "archive_path": "payload/HUONG_DAN_2.0.15.txt",
-      "repository_path": "HUONG_DAN_2.0.15.txt",
-      "bytes": 7918,
-      "sha256": "920ec3270f57ca5be726c8e1519d732c30da46dcdadc59d9a0f3496d89a6c5e9"
+      "archive_path": "payload/HUONG_DAN_2.0.16.txt",
+      "repository_path": "HUONG_DAN_2.0.16.txt",
+      "bytes": 8271,
+      "sha256": "c4df6b01f7d4dd7eb2ea7e9c9bf82fc95088e4d5c65eadd66c8d6d9b00a22d5a"
     },
     {
       "archive_path": "payload/V15Updater.exe",
       "repository_path": "V15Updater.exe",
       "bytes": 776192,
-      "sha256": "cdd0c3dc4ef72a95bffcc8dcc5717dd29ab7b1a3ca5f838d416174a1ed4cb57f"
+      "sha256": "c1da8a1eefb8ef34e1dc63295578c0bd2f801b2db6aa01a469e5aa6e7175d182"
     },
     {
       "archive_path": "payload/V15VoiceStudio.exe",
       "repository_path": "V15VoiceStudio.exe",
-      "bytes": 1286656,
-      "sha256": "e10a821688f6af81b0c28ead4f89b0ee8e71b7b9c5faf32833fe4a39b8d1d342"
+      "bytes": 1337344,
+      "sha256": "f2495cbf0364a6c6623995409c3b87024f7779daafea765532f7143ca93febfb"
     },
     {
       "archive_path": "payload/ai/gpu_policy.py",
@@ -118,14 +118,14 @@
     {
       "archive_path": "payload/source/AiTimeline.cs",
       "repository_path": "source/AiTimeline.cs",
-      "bytes": 28908,
-      "sha256": "309d28bcfdb9bb9059b611e6dc02d6762061b5ffb765a5cc91a862ae3024393f"
+      "bytes": 33329,
+      "sha256": "1e8fdbf1cfcd7b3d0de319b2486673a1a0a25f645dd630baffd8c6bc0e40d696"
     },
     {
       "archive_path": "payload/source/AiTimelineControls.cs",
       "repository_path": "source/AiTimelineControls.cs",
-      "bytes": 18379,
-      "sha256": "13af4c2e76686f0a5b9c8bbe099c6bb3e816be5842918941ba4303c62cc97753"
+      "bytes": 18362,
+      "sha256": "c1a0f740acca4b91835927b4fa795acb57ec187d42918f2fd370fcc638e63179"
     },
     {
       "archive_path": "payload/source/AiTimelineTests.cs",
@@ -160,14 +160,14 @@
     {
       "archive_path": "payload/source/AnchoredVoice.cs",
       "repository_path": "source/AnchoredVoice.cs",
-      "bytes": 16711,
-      "sha256": "80e2c8c5fa3dc4ce3c1d0d283349ede48fe00bb49e922809818a4067c411d437"
+      "bytes": 16799,
+      "sha256": "9e39119c92ffe73f276929bbdb07f339fdf027cab0248c8d39dbd8f85acbe7f0"
     },
     {
       "archive_path": "payload/source/App.cs",
       "repository_path": "source/App.cs",
-      "bytes": 48789,
-      "sha256": "3faf29142d68b4f0eabee47a94e7733e920bd2d48409644437e39e9107d602e0"
+      "bytes": 51569,
+      "sha256": "3634d64852d4a27f0111d10c7713ebf9e33a1c246537ec5443cca74173bdeb6c"
     },
     {
       "archive_path": "payload/source/AudioFinishing.cs",
@@ -184,20 +184,20 @@
     {
       "archive_path": "payload/source/AudioRepair.cs",
       "repository_path": "source/AudioRepair.cs",
-      "bytes": 16854,
-      "sha256": "426b46e59f36a4e3f46b0793c87859fe318521bf4d12013b737faae11912d463"
+      "bytes": 18814,
+      "sha256": "165d084bf91d1bcca3da62ce611cbac126072a43fa6fe7a07064951bb8357d55"
     },
     {
       "archive_path": "payload/source/AudioRepairControls.cs",
       "repository_path": "source/AudioRepairControls.cs",
-      "bytes": 19666,
-      "sha256": "c465be166ce1b7e3d25200f212c10c731dcda1105f05591ea37b38adeb67715b"
+      "bytes": 20500,
+      "sha256": "3dd679707816adf37d1657044c2a99d6d466571381aa31a08b153195a28e4f3f"
     },
     {
       "archive_path": "payload/source/AudioRepairTests.cs",
       "repository_path": "source/AudioRepairTests.cs",
-      "bytes": 10832,
-      "sha256": "04e32a146e49b4e016db1db0143f533e01de8c0f089d3d65874181158218430c"
+      "bytes": 10843,
+      "sha256": "78cd0aca67c7c23e1c1ca6f3b24f2c7cde8b96d2b5137f4b333d532d76dffe1e"
     },
     {
       "archive_path": "payload/source/AudioRepairUiTests.cs",
@@ -208,14 +208,14 @@
     {
       "archive_path": "payload/source/BUILD_WINDOWS.cmd",
       "repository_path": "source/BUILD_WINDOWS.cmd",
-      "bytes": 1907,
-      "sha256": "3bd005d6c5334a64f81ef4131393eb93ce3197846f4c3d973656f8a5d4645c56"
+      "bytes": 1988,
+      "sha256": "19f65b02cbea24b6c3cde0dad340593d242efeff7abc3056371618ebc287d381"
     },
     {
       "archive_path": "payload/source/Batch.cs",
       "repository_path": "source/Batch.cs",
-      "bytes": 3909,
-      "sha256": "0ec4d1fd47bc70ec2f3b9d3be033f8681e81a6d3b7ae74b0efc6e24ecaee126c"
+      "bytes": 4711,
+      "sha256": "70b46a749f56d660a2a392889a81071a96394790cadf66c509b29303aba032f5"
     },
     {
       "archive_path": "payload/source/BatchTests-1.4.0.txt",
@@ -226,8 +226,14 @@
     {
       "archive_path": "payload/source/BatchTests.cs",
       "repository_path": "source/BatchTests.cs",
-      "bytes": 5425,
-      "sha256": "015d000617c5aeaab104e885548a5405202565e9707d711395132d0792e9c9a4"
+      "bytes": 5601,
+      "sha256": "886fbfec4ba567a306c2767b113e05815618e6a8e05c9134e7ea3d7884e59950"
+    },
+    {
+      "archive_path": "payload/source/BilingualSource.cs",
+      "repository_path": "source/BilingualSource.cs",
+      "bytes": 1676,
+      "sha256": "30233115b7208033e304db2eaf33d5f0d54bb6d21157e14440bfda38bd1bb5d5"
     },
     {
       "archive_path": "payload/source/BreathStreamingTests.cs",
@@ -292,8 +298,8 @@
     {
       "archive_path": "payload/source/Core.cs",
       "repository_path": "source/Core.cs",
-      "bytes": 28113,
-      "sha256": "14159cb729d12fef7b4829d33e733ebb1ae56ef082cb559a838272b8e038cae3"
+      "bytes": 29047,
+      "sha256": "ae1426bfda934a1decc7c0bbb30cca55747c2ce3331312619dec99fabd3f694f"
     },
     {
       "archive_path": "payload/source/DeviceAndUpdates.cs",
@@ -352,8 +358,8 @@
     {
       "archive_path": "payload/source/InlineAiControls.cs",
       "repository_path": "source/InlineAiControls.cs",
-      "bytes": 11284,
-      "sha256": "39d37f6293ab3b18d08932e4202bde99eef9ed37db5363bde76330eb55622242"
+      "bytes": 11449,
+      "sha256": "a9ad708828cb269130083799181c76d76bf6423be41a8741c9b72c4a6137a679"
     },
     {
       "archive_path": "payload/source/InlineAiPackageTests.cs",
@@ -388,8 +394,8 @@
     {
       "archive_path": "payload/source/LocalAi.cs",
       "repository_path": "source/LocalAi.cs",
-      "bytes": 11191,
-      "sha256": "ed40e62b4a8e8121208e20b42ca495e1408fec2aade3e78d77c0b7efaceb85e1"
+      "bytes": 13643,
+      "sha256": "cea3f1c51b1c8b5e19622c6d1b9d6e4bb0e43ff193a863adbe696dddb79efff0"
     },
     {
       "archive_path": "payload/source/LocalAiSafetyTests.cs",
@@ -430,8 +436,20 @@
     {
       "archive_path": "payload/source/NativeGpuTests.cs",
       "repository_path": "source/NativeGpuTests.cs",
-      "bytes": 3543,
-      "sha256": "a43c43e64015ab2f2d277a79579b97df13088714963739238cc239211923cabf"
+      "bytes": 3802,
+      "sha256": "42b9a17fbef2b7205d9109839df1bf67a48512810eddbca7c396d320680bed49"
+    },
+    {
+      "archive_path": "payload/source/NaturalPauseRepair.cs",
+      "repository_path": "source/NaturalPauseRepair.cs",
+      "bytes": 1904,
+      "sha256": "a18268b304eb82cd3691768b086475c0811d0e9e4adfa6d6669f469ac5089050"
+    },
+    {
+      "archive_path": "payload/source/OfflineTranslation.cs",
+      "repository_path": "source/OfflineTranslation.cs",
+      "bytes": 16768,
+      "sha256": "654778de1975da102d4cabbfeb09c447c3618f465c35fc1c33e888d060670ec7"
     },
     {
       "archive_path": "payload/source/OnnxUpdaterTests.cs",
@@ -448,8 +466,8 @@
     {
       "archive_path": "payload/source/ProjectState.cs",
       "repository_path": "source/ProjectState.cs",
-      "bytes": 9699,
-      "sha256": "3665f521e68675dafa8888c8118cea2a10190afc166d99ac8ada180166266a9d"
+      "bytes": 9873,
+      "sha256": "02a8423312127cf65cd6d73fdf44a4efd5f6a0f4e0a657e96f21604af2d01b40"
     },
     {
       "archive_path": "payload/source/Punctuation.cs",
@@ -472,14 +490,26 @@
     {
       "archive_path": "payload/source/QuickRepairPanel.cs",
       "repository_path": "source/QuickRepairPanel.cs",
-      "bytes": 9931,
-      "sha256": "7c53bb4ab2d51e265483e2a2e563246932f20fa399bc1e75f498956707200d16"
+      "bytes": 10383,
+      "sha256": "9fa049eda684bf62f62af55c754aec87224bdbb2d4585c32ddfa73016b52fa29"
     },
     {
       "archive_path": "payload/source/RealCloneIntegrationTests.cs",
       "repository_path": "source/RealCloneIntegrationTests.cs",
       "bytes": 2084,
       "sha256": "890b51035971c92eabb9bf35975a886940eaa139e1cd037226805cd34b5fc7a4"
+    },
+    {
+      "archive_path": "payload/source/RealQwen216Tests.cs",
+      "repository_path": "source/RealQwen216Tests.cs",
+      "bytes": 2980,
+      "sha256": "2bc18b6a435ba70077b062f561ebffdd96e85f892440334268da2dd22340969d"
+    },
+    {
+      "archive_path": "payload/source/Recovery216Tests.cs",
+      "repository_path": "source/Recovery216Tests.cs",
+      "bytes": 20165,
+      "sha256": "1f7e935fd4f04f5c3fe80fefc210f24b6de569bcebd917e9545f52e0968731a5"
     },
     {
       "archive_path": "payload/source/Release1410Tests.py",
@@ -604,8 +634,14 @@
     {
       "archive_path": "payload/source/RepairPolicy.cs",
       "repository_path": "source/RepairPolicy.cs",
-      "bytes": 5722,
-      "sha256": "df16850adc8ef0189c8f4ed0fbfe5fbc4b4995bde9d1cc72248772b0dea1899e"
+      "bytes": 8486,
+      "sha256": "05a3dc396489891cf3dfced4961c25d843fd422507b1aff2d6ca2f685c1bfcef"
+    },
+    {
+      "archive_path": "payload/source/RepairRecovery.cs",
+      "repository_path": "source/RepairRecovery.cs",
+      "bytes": 3256,
+      "sha256": "1f9183a2f638a222a4ecc5fe13797456d3ee2b67a4f3480877bf27dc2a3e7b26"
     },
     {
       "archive_path": "payload/source/ReportAudioCompatibilityTests.cs",
@@ -616,14 +652,14 @@
     {
       "archive_path": "payload/source/StableArtifacts.cs",
       "repository_path": "source/StableArtifacts.cs",
-      "bytes": 6666,
-      "sha256": "e92775e10f10510e2322158dc1f1342c3a4b1256ab87b384c4fd9888d5f83e9c"
+      "bytes": 8301,
+      "sha256": "93d47650270dd172e1f1620b12d25053a37963707164bf9a2d318675b7b60f6d"
     },
     {
       "archive_path": "payload/source/StablePackageTests.cs",
       "repository_path": "source/StablePackageTests.cs",
-      "bytes": 2716,
-      "sha256": "5ba0a0bcc9f2a25ce53a280fe974a696dd7e7d55d21d82ed8526ed5b1dc732c2"
+      "bytes": 2714,
+      "sha256": "37dc17eebccdb55508ed7f4ffe21716ff69b8eccf80848da0ac46e851113a8a8"
     },
     {
       "archive_path": "payload/source/StableRepairTests.cs",
@@ -634,8 +670,8 @@
     {
       "archive_path": "payload/source/StableRepairUiTests.cs",
       "repository_path": "source/StableRepairUiTests.cs",
-      "bytes": 6698,
-      "sha256": "face52866a7c724489cd34b97dc1b4218463ded3aaf72c1054b54327e7ef8c3a"
+      "bytes": 8222,
+      "sha256": "10ebe476cdcf24213bf524c42dc787a72e3928e45e8b49fea8706305e6b32bdb"
     },
     {
       "archive_path": "payload/source/StudioLayout.cs",
@@ -708,6 +744,12 @@
       "repository_path": "source/Subtitles.cs",
       "bytes": 9626,
       "sha256": "7e603b1ac577a4f06a4227e24c6a8621b27415b6f26385de857cfeab40641e0d"
+    },
+    {
+      "archive_path": "payload/source/Sync216Tests.cs",
+      "repository_path": "source/Sync216Tests.cs",
+      "bytes": 11411,
+      "sha256": "7c871e20724c0b6234dc1d182053e82797b6a9bae2d630793d3615988309b654"
     },
     {
       "archive_path": "payload/source/Tests-1.4.0.txt",
@@ -905,7 +947,7 @@
       "archive_path": "payload/source/Updater.cs",
       "repository_path": "source/Updater.cs",
       "bytes": 21207,
-      "sha256": "e0990b0e4cda6c3b7a5e3e55e4fa5fb79773bfef6518cbefa6f77353f172064b"
+      "sha256": "8bfbaa4026582f46b31f989815434e497ad3abb60c78692a9e5b87682424d545"
     },
     {
       "archive_path": "payload/source/UpdaterTests.cs",
@@ -1060,8 +1102,8 @@
     {
       "archive_path": "payload/source/VoiceDiagnosticTests.cs",
       "repository_path": "source/VoiceDiagnosticTests.cs",
-      "bytes": 10307,
-      "sha256": "16bf0699e4a05bb0c3ab77a4aeb308c28d88b84c9a24f2e0b95760ba4964a519"
+      "bytes": 10349,
+      "sha256": "cbdf48b12f740ee1ceb929615b2db4994c4b7cf5cc4ba2b89dba5abe7278ea07"
     },
     {
       "archive_path": "payload/source/VoiceReportControls.cs",
@@ -1078,8 +1120,8 @@
     {
       "archive_path": "payload/source/VoiceReportTests.cs",
       "repository_path": "source/VoiceReportTests.cs",
-      "bytes": 10749,
-      "sha256": "ea5e582b0ef3f679a6e0b63a9ed7f096c999beebaa76c3475227756179328891"
+      "bytes": 10791,
+      "sha256": "07c68ab7b8aaeb18b0d056acb1c91949191e154a1172da6af2fb019ed9f68ecd"
     },
     {
       "archive_path": "payload/source/VoiceReportUiTests.cs",
@@ -1090,8 +1132,8 @@
     {
       "archive_path": "payload/source/VoiceReports.cs",
       "repository_path": "source/VoiceReports.cs",
-      "bytes": 24397,
-      "sha256": "94007841fa4285f1e661655a48f5876ce989ae321a16a3e09928f4fc45110d70"
+      "bytes": 24850,
+      "sha256": "e1d7dbcfde44ff04fa709b66c5b093c67289df20c406f0e29ee4aa14776dbd30"
     },
     {
       "archive_path": "payload/source/VoiceRhythm.cs",
@@ -1454,16 +1496,40 @@
       "sha256": "d534f88a057dbf914c1a1d6548cf0d117b3195b934717197ac6b363ddab260a5"
     },
     {
+      "archive_path": "payload/source/fixtures/van215/van 4_Tieng_Viet.txt",
+      "repository_path": "source/fixtures/van215/van 4_Tieng_Viet.txt",
+      "bytes": 5570,
+      "sha256": "cf06090a7d0a3eea585f844acd7b62e2a9308278a2c0a9a3eab2374e4782605f"
+    },
+    {
       "archive_path": "payload/source/fixtures/van215/van 5.srt",
       "repository_path": "source/fixtures/van215/van 5.srt",
       "bytes": 6906,
       "sha256": "7abd139b699b65dfe5c0cdfaed5d89e5d4c4bdbebdf8403bebd247e89c26d373"
     },
     {
+      "archive_path": "payload/source/fixtures/van215/van 5_Tieng_Viet.txt",
+      "repository_path": "source/fixtures/van215/van 5_Tieng_Viet.txt",
+      "bytes": 13414,
+      "sha256": "338b7d3275b4dd00fb89f4a9f92eca35f174b20dd55a9be65989275183616cd9"
+    },
+    {
       "archive_path": "payload/source/fixtures/van215/van 6.srt",
       "repository_path": "source/fixtures/van215/van 6.srt",
       "bytes": 4172,
       "sha256": "88fdd77c73859b097e31637aaa74323426ecfcf4513d45fbd81379e852fbfb3f"
+    },
+    {
+      "archive_path": "payload/source/fixtures/van215/van 6_Tieng_Viet.txt",
+      "repository_path": "source/fixtures/van215/van 6_Tieng_Viet.txt",
+      "bytes": 8246,
+      "sha256": "7f76c379a8433c40dcc6f3eb6108ef4eeaf1da86d21d69ebe9ee89f1e79703d2"
+    },
+    {
+      "archive_path": "payload/source/fixtures/van216/audit.json",
+      "repository_path": "source/fixtures/van216/audit.json",
+      "bytes": 1742,
+      "sha256": "bbb5b714e735da0468cfaa514742315155f32dd0a31be1bc89b189a977100471"
     },
     {
       "archive_path": "payload/source/gpu_policy.py",
@@ -1576,8 +1642,8 @@
     {
       "archive_path": "payload/source/package_release.py",
       "repository_path": "source/package_release.py",
-      "bytes": 3601,
-      "sha256": "7e97dc48d96fe94b92130d7a863c48f23008a53e634599aca7938d6c75ab30fc"
+      "bytes": 3622,
+      "sha256": "2bedd855434b63833b04943185408a8965d718df06014c6a48a3e59d2947ba3d"
     },
     {
       "archive_path": "payload/source/prepare_native_gpu.py",
@@ -1846,8 +1912,8 @@
     {
       "archive_path": "payload/source/run_validation.py",
       "repository_path": "source/run_validation.py",
-      "bytes": 8383,
-      "sha256": "9ed9a3e9e735ccfae7f958fe534856822f70b7a2b66a0d04e647d1ae8ba04002"
+      "bytes": 8466,
+      "sha256": "0075b07ae74532b0eaccb5f03736db48758333eaf557e7aa73af170ce4df4e23"
     },
     {
       "archive_path": "payload/source/test-results.txt",
@@ -1914,6 +1980,12 @@
       "repository_path": "source/update.nsi",
       "bytes": 95,
       "sha256": "9c0ff042709566ee3290e97681912f915f75998e2d2751779218a8b13e756b6a"
+    },
+    {
+      "archive_path": "payload/source/validate_recovery216.py",
+      "repository_path": "source/validate_recovery216.py",
+      "bytes": 3180,
+      "sha256": "d2ae5079f080c1ba944421c5f6641d3046ae80986be53497301da64042945858"
     },
     {
       "archive_path": "payload/source/validate_stable215.py",
@@ -2522,130 +2594,778 @@
       "sha256": "9fb0910ee689a9278b34ef3288f72c9437814dc345fc4e22d346ae60da8ce4ea"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/AnchoredTests.txt",
-      "repository_path": "source/validation-2.0.15/AnchoredTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/AnchoredTests.txt",
+      "repository_path": "source/validation-2.0.16/AnchoredTests.txt",
       "bytes": 3068,
-      "sha256": "7685a311ca0cf433b69bc76bb09f315f95f966a7fa77ec363a4edcf379f98f25"
+      "sha256": "f128bec3f0f0ad3c6644d556d1bc7fa33b7f7a726a935cc8cc5d1f8364d38ad2"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/AudioRepairTests.txt",
-      "repository_path": "source/validation-2.0.15/AudioRepairTests.txt",
-      "bytes": 2643,
-      "sha256": "f792399c53d7ef62d5c641f94965f85495d3f35cdd9647ce6cab60a4d4e3adff"
+      "archive_path": "payload/source/validation-2.0.16/AudioRepairTests.txt",
+      "repository_path": "source/validation-2.0.16/AudioRepairTests.txt",
+      "bytes": 2653,
+      "sha256": "d2f7b9ad5f8dff315db1082882a90bf56dd7fe7d400e4f23895b819f3950210f"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/BatchTests.txt",
-      "repository_path": "source/validation-2.0.15/BatchTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/AudioRepairUiTests.txt",
+      "repository_path": "source/validation-2.0.16/AudioRepairUiTests.txt",
+      "bytes": 1524,
+      "sha256": "2839ff1650948b6eec33972f7c51fc059586388df43a21becc27d0c36e631c94"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/BatchTests.txt",
+      "repository_path": "source/validation-2.0.16/BatchTests.txt",
       "bytes": 744,
       "sha256": "78ff456500ebd1ebe7ffb3fb00690214ccffb81472f8a5c215661cdc03254a39"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/BreathStreamingTests.txt",
-      "repository_path": "source/validation-2.0.15/BreathStreamingTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/BreathStreamingTests.txt",
+      "repository_path": "source/validation-2.0.16/BreathStreamingTests.txt",
       "bytes": 549,
       "sha256": "bb13b8b06f36e3f73af5d9575eb2cb485bc2b406b3081742bfa40bd970ef2e29"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/CommunityVoiceTests.txt",
-      "repository_path": "source/validation-2.0.15/CommunityVoiceTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/CommunityVoiceTests.txt",
+      "repository_path": "source/validation-2.0.16/CommunityVoiceTests.txt",
       "bytes": 1541,
-      "sha256": "f8d2960fac702458ae88264380a32642873ae9c80e8339c0b81355d6b02e6f5d"
+      "sha256": "d1238869d557d9298693b3209b3374875479d84a21b8065f9b9f2c39a7a53cc0"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/LocalAiSafetyTests.txt",
-      "repository_path": "source/validation-2.0.15/LocalAiSafetyTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/LocalAiSafetyTests.txt",
+      "repository_path": "source/validation-2.0.16/LocalAiSafetyTests.txt",
       "bytes": 870,
       "sha256": "925d97a5e5858850e5b70b94ebcef6e29922de0cc1a8fd504b53d0607e8e811b"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/NativeGpuTests.txt",
-      "repository_path": "source/validation-2.0.15/NativeGpuTests.txt",
-      "bytes": 819,
-      "sha256": "968ccd9004c9ede74fa92d9d11619de2a5a47aa8fc981c1d08ff9e2741d97537"
+      "archive_path": "payload/source/validation-2.0.16/NativeGpuTests.txt",
+      "repository_path": "source/validation-2.0.16/NativeGpuTests.txt",
+      "bytes": 886,
+      "sha256": "ffec8959a772e8e1b288bed86324a075213c2a20479f95884eb216180246a596"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/PunctuationTests.txt",
-      "repository_path": "source/validation-2.0.15/PunctuationTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/PunctuationTests.txt",
+      "repository_path": "source/validation-2.0.16/PunctuationTests.txt",
       "bytes": 1012,
       "sha256": "4b419dee07e98e92175500e6f414bb0d12930657e49fbe2aed73871c91bdb019"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/StablePackageTests-new215.txt",
-      "repository_path": "source/validation-2.0.15/StablePackageTests-new215.txt",
+      "archive_path": "payload/source/validation-2.0.16/RealQwen216-repair-final.log",
+      "repository_path": "source/validation-2.0.16/RealQwen216-repair-final.log",
+      "bytes": 142,
+      "sha256": "46fd03e97c2769c33d87fa0ee1d62bf93aa2a10337e60b401a87b33e01f47cec"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/RealQwen216-repair.log",
+      "repository_path": "source/validation-2.0.16/RealQwen216-repair.log",
+      "bytes": 142,
+      "sha256": "46fd03e97c2769c33d87fa0ee1d62bf93aa2a10337e60b401a87b33e01f47cec"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/RealQwen216-translate-before-both-fix.log",
+      "repository_path": "source/validation-2.0.16/RealQwen216-translate-before-both-fix.log",
+      "bytes": 1959,
+      "sha256": "ca7498e9c3c902271d5c27cf1aa22d22925d5f30a7d02e2b8a27ad634d8e99ed"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/RealQwen216-translate.log",
+      "repository_path": "source/validation-2.0.16/RealQwen216-translate.log",
+      "bytes": 2846,
+      "sha256": "0e252680c22a5e2486ccaeaf154b2be76864ca426e0c2dda36ecb33308ff5629"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/RealQwen216-van4-final-cache.log",
+      "repository_path": "source/validation-2.0.16/RealQwen216-van4-final-cache.log",
+      "bytes": 295,
+      "sha256": "95b6df31b6104b38939965b781a1330a600ec1e8a3cced884799d7b2c76e98ca"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/RealQwen216-van4-final.log",
+      "repository_path": "source/validation-2.0.16/RealQwen216-van4-final.log",
+      "bytes": 295,
+      "sha256": "95b6df31b6104b38939965b781a1330a600ec1e8a3cced884799d7b2c76e98ca"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/RealQwen216-van6-final-cache.log",
+      "repository_path": "source/validation-2.0.16/RealQwen216-van6-final-cache.log",
+      "bytes": 295,
+      "sha256": "8f9bb932d2c40ef12ca140627934ad3bef5a5fc5f710afa4d42d3d0a3d61f4dc"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/RealQwen216-van6-final.log",
+      "repository_path": "source/validation-2.0.16/RealQwen216-van6-final.log",
+      "bytes": 1143,
+      "sha256": "afbffebb0305de6b611b7f7b8b3445cd2113179ba1adcf910750e42caf634aa8"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/Recovery216Tests-reopen.txt",
+      "repository_path": "source/validation-2.0.16/Recovery216Tests-reopen.txt",
+      "bytes": 695,
+      "sha256": "dbe849279e8f975c8c30db2d329a71c85dd9f81dda791e9d0b28d80ae962e063"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/Recovery216Tests.txt",
+      "repository_path": "source/validation-2.0.16/Recovery216Tests.txt",
+      "bytes": 3865,
+      "sha256": "3cbf5a5f1c434ae962e99f44ff2960ec0b23e91bdba7cfa591a69f14069af7ab"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/StablePackageTests-new216.txt",
+      "repository_path": "source/validation-2.0.16/StablePackageTests-new216.txt",
       "bytes": 427,
-      "sha256": "32269bc56ff7a7746319eb44bc7e7ebc2831e983256ff1c98d9d3a42c5bbe32c"
+      "sha256": "972e3f1003ce2c57aea1c4617508f35aed151449e4601966dcf9c863c4f8d111"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/StablePackageTests-old214.txt",
-      "repository_path": "source/validation-2.0.15/StablePackageTests-old214.txt",
+      "archive_path": "payload/source/validation-2.0.16/StablePackageTests-old215.txt",
+      "repository_path": "source/validation-2.0.16/StablePackageTests-old215.txt",
       "bytes": 427,
-      "sha256": "e20c30a998b3f98e7eb2d5e4fc12041ef3dafc66504da5a16043ea1556a8280a"
+      "sha256": "a4d7ff3cd14acd2bc22b3339dea91dbb53de443ed4d4011bd9517df0c85f831d"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/StableRepairTests.txt",
-      "repository_path": "source/validation-2.0.15/StableRepairTests.txt",
-      "bytes": 2896,
-      "sha256": "bc384447b335b6deba6ca0298ebd3c73e40fb2a5d6d19f123af7789174628fd1"
+      "archive_path": "payload/source/validation-2.0.16/StableRepairUiTests.txt",
+      "repository_path": "source/validation-2.0.16/StableRepairUiTests.txt",
+      "bytes": 3443,
+      "sha256": "b4ec49f29ff60f86ff87a8f34ac6f0620e50fcf99492ee79a40822a351d11ecc"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/StableRepairUiTests.txt",
-      "repository_path": "source/validation-2.0.15/StableRepairUiTests.txt",
-      "bytes": 2626,
-      "sha256": "cd891aca719b8950863dfba24d24f3f3c582a8ed8ea782f32c8fb67f6f3f1352"
+      "archive_path": "payload/source/validation-2.0.16/StudioLayoutTests.txt",
+      "repository_path": "source/validation-2.0.16/StudioLayoutTests.txt",
+      "bytes": 5181,
+      "sha256": "7fe142542acc960dfa45e82d92d02fd6e2b4530fa94aeb03a47d5ea31753491f"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/StudioLayoutTests.txt",
-      "repository_path": "source/validation-2.0.15/StudioLayoutTests.txt",
-      "bytes": 5214,
-      "sha256": "07313e928fafecce6091b08c1d71c3c2cbcb4b956f0395ae7039dd1abef14b11"
+      "archive_path": "payload/source/validation-2.0.16/Sync216Tests.txt",
+      "repository_path": "source/validation-2.0.16/Sync216Tests.txt",
+      "bytes": 2651,
+      "sha256": "c121fa56153083dbe7782080b7ef99edce0224e9043eff20d8db62fa5037836c"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/TextTargetTests.txt",
-      "repository_path": "source/validation-2.0.15/TextTargetTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/TextTargetTests.txt",
+      "repository_path": "source/validation-2.0.16/TextTargetTests.txt",
       "bytes": 2132,
-      "sha256": "8ff29111bf1cd0b1fd4cb5487975875be26fa7173685d4a9bbb823246aced64f"
+      "sha256": "7283b0357675eebc393abdf96a05b9b00e8d892693cea18cbb530e214cf452fc"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/TwoVoiceTests.txt",
-      "repository_path": "source/validation-2.0.15/TwoVoiceTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/TwoVoiceTests.txt",
+      "repository_path": "source/validation-2.0.16/TwoVoiceTests.txt",
       "bytes": 2582,
-      "sha256": "3bd6b411ea3036d623dcd26ddb73d16b9ade50bb0c6779f5a24513d9cf68a815"
+      "sha256": "b0445ffc2a40477748354440f10b04fecfca844d3dd82321e074f1ada0fe1d7c"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/UpdaterTests.txt",
-      "repository_path": "source/validation-2.0.15/UpdaterTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/UpdaterTests.txt",
+      "repository_path": "source/validation-2.0.16/UpdaterTests.txt",
       "bytes": 1200,
       "sha256": "99e2ac259e64c93a55905e6fe615ac690364d21495ab21cab0949e414143172f"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/VanRegressionTests.txt",
-      "repository_path": "source/validation-2.0.15/VanRegressionTests.txt",
-      "bytes": 2438,
-      "sha256": "0a9f7844c6b6e91356a714358a0d9732f82037510f97c5b4e02ef24b61c41425"
+      "archive_path": "payload/source/validation-2.0.16/VoiceDiagnosticTests.txt",
+      "repository_path": "source/validation-2.0.16/VoiceDiagnosticTests.txt",
+      "bytes": 1955,
+      "sha256": "f62130dc75b2cdbdfd36c8b5d054e8ec1b264730191396990559b75f23b99b27"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/VoiceDiagnosticTests.txt",
-      "repository_path": "source/validation-2.0.15/VoiceDiagnosticTests.txt",
-      "bytes": 1935,
-      "sha256": "5f467c29ed0828bf83cbadabb6cee79f7bb361c826de436469596c6bac5fab94"
-    },
-    {
-      "archive_path": "payload/source/validation-2.0.15/VoiceReportTests.txt",
-      "repository_path": "source/validation-2.0.15/VoiceReportTests.txt",
+      "archive_path": "payload/source/validation-2.0.16/VoiceReportTests.txt",
+      "repository_path": "source/validation-2.0.16/VoiceReportTests.txt",
       "bytes": 2027,
-      "sha256": "e281db09e3d42a4a994fa9dfc523708af2dae025d14752af19e3c43c43f9dab2"
+      "sha256": "0bb45f561a6646fd2f6ad02d50630c45ed6ed32157af9ccf9bd4efd890b8d416"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/test_gpu_policy.py.txt",
-      "repository_path": "source/validation-2.0.15/test_gpu_policy.py.txt",
+      "archive_path": "payload/source/validation-2.0.16/final-build-verification.json",
+      "repository_path": "source/validation-2.0.16/final-build-verification.json",
+      "bytes": 1475,
+      "sha256": "a86951a99b3250ea5618ec0eb719b1730e888a4f77ac92db052e5a7d3d6bdc54"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/preserved-engine-modules.json",
+      "repository_path": "source/validation-2.0.16/preserved-engine-modules.json",
+      "bytes": 1794,
+      "sha256": "d7cf636bcfb3a81afe0629548badde49115091fa1a6c1ac0933c4415147d52ed"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-qwen-build-provenance-before-decimal-fix.json",
+      "repository_path": "source/validation-2.0.16/real-qwen-build-provenance-before-decimal-fix.json",
+      "bytes": 634,
+      "sha256": "862cb08f25457490a7c37875bbae146c24f4e2dbd885d10c37c1a1995a83a8df"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-qwen-build-provenance-before-final-ab-sync.json",
+      "repository_path": "source/validation-2.0.16/real-qwen-build-provenance-before-final-ab-sync.json",
+      "bytes": 634,
+      "sha256": "4a7508838411fd4b37e38d909cdaf9a6768bf9d01c81e4a2ce3962c3f3cf3e08"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-qwen-build-provenance.json",
+      "repository_path": "source/validation-2.0.16/real-qwen-build-provenance.json",
+      "bytes": 809,
+      "sha256": "0090bbe00e5a92943f35d866447b2b43891124c948db331fefc243b913331710"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-qwen-final-binary-results.json",
+      "repository_path": "source/validation-2.0.16/real-qwen-final-binary-results.json",
+      "bytes": 367,
+      "sha256": "2cf422e119fcdff962d5f7116c5045286c90fc7cbb76084f339b45bd7ddd132a"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-qwen-final-results.json",
+      "repository_path": "source/validation-2.0.16/real-qwen-final-results.json",
+      "bytes": 349,
+      "sha256": "83753564c96d75c6dce9e1cb8daf1bfc7490218d0f0f295142d3788c5ff26ceb"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-qwen-repair-raw.txt",
+      "repository_path": "source/validation-2.0.16/real-qwen-repair-raw.txt",
+      "bytes": 373,
+      "sha256": "0d5a63eb8aaa24491b228fd3d759ac07eefa950070569ebe285ee0e8fa76bb58"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-qwen-repair.txt",
+      "repository_path": "source/validation-2.0.16/real-qwen-repair.txt",
+      "bytes": 2397,
+      "sha256": "1b58d0ed5182d1285632c547afeda521a52530bf46592848027409b83bdf8ad0"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-repair-state/ai-repair/25f9a674466d2146a84d37e86c4a728f27436834b7876cb6ad9615653f5687c2/ai-repair-report.txt",
+      "repository_path": "source/validation-2.0.16/real-repair-state/ai-repair/25f9a674466d2146a84d37e86c4a728f27436834b7876cb6ad9615653f5687c2/ai-repair-report.txt",
+      "bytes": 5930,
+      "sha256": "63ab4098544bd60f7d77641a56371beeff98a8959f3149195cccf5d06a86539e"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-repair-state/ai-repair/9c4c35455f4a0904b4a6e6f3a15b043533c2ea4c1251a74b8b44641a6e786981/ai-repair-report.txt",
+      "repository_path": "source/validation-2.0.16/real-repair-state/ai-repair/9c4c35455f4a0904b4a6e6f3a15b043533c2ea4c1251a74b8b44641a6e786981/ai-repair-report.txt",
+      "bytes": 5932,
+      "sha256": "595c70f1394d38c61a488c55a9840c32e8a5db68067be5f5c6ec093a693f708e"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-repair-state/ai-repair/9c4c35455f4a0904b4a6e6f3a15b043533c2ea4c1251a74b8b44641a6e786981/session.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-repair-state/ai-repair/9c4c35455f4a0904b4a6e6f3a15b043533c2ea4c1251a74b8b44641a6e786981/session.xml.bak",
+      "bytes": 8232,
+      "sha256": "437648208ddba2a631fa08cb231a0c73f43062aad1bec9961289e30430619619"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-repair-state/ai-repair/b91887111443e93cd8a6551284883094bf0d4e834b94858178ea4130d03ad929/ai-repair-report.txt",
+      "repository_path": "source/validation-2.0.16/real-repair-state/ai-repair/b91887111443e93cd8a6551284883094bf0d4e834b94858178ea4130d03ad929/ai-repair-report.txt",
+      "bytes": 5930,
+      "sha256": "b504bc390647373284849ff524e25eeb4907102034652e9db8da44c85e5538cb"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-translations/van 4.vi.txt",
+      "repository_path": "source/validation-2.0.16/real-translations/van 4.vi.txt",
+      "bytes": 6397,
+      "sha256": "05994da769b3ba4ad4abb2b27ba19ac261ad3f67a56cd7719f52a9428cbec93d"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-translations/van 5.vi.txt",
+      "repository_path": "source/validation-2.0.16/real-translations/van 5.vi.txt",
+      "bytes": 14072,
+      "sha256": "bb0ed3ef848675febb0f7ab9fd4d44fcd8a6397b65e478b5e15f525fa2adfbbf"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-translations/van 6.vi.txt",
+      "repository_path": "source/validation-2.0.16/real-translations/van 6.vi.txt",
+      "bytes": 9159,
+      "sha256": "287de8acbded6a51230a4474e1dffcdf8a28009429fcfa77511d7387032cf677"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.attempt0.txt",
+      "bytes": 146,
+      "sha256": "0d79671cf3a85d88cc769cab53f2f97983d05be8a6e955ad10e273ff91a74f31"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.attempt1.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.attempt1.txt",
+      "bytes": 140,
+      "sha256": "4b676f4119db29b456f50b186ca81bee6e1d97bfec5a9a9adf96b8d1b80ba0d8"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.validated-response.json",
+      "bytes": 623,
+      "sha256": "209c657ede2da57f5e6cdf1db367f4047c60febb4cec56d2d6f69e5e3d5c33dc"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.verification-fixed1.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.verification-fixed1.json",
+      "bytes": 822,
+      "sha256": "7960226fc772e70999ac1a146d1bfb36cdfeb1906c7ed6666aff38b78b31f2c2"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.verification0.json",
+      "bytes": 846,
+      "sha256": "c0197647dbe76a38f49e16802ecb23f898b741876afac1aa9e74581e6fd0ec73"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.verification1.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/057a36cce1e648dddb22e8c9ebd9fb555bae1bb46dc7843001856955a596eef2.verification1.json",
+      "bytes": 815,
+      "sha256": "31f6a675d24c81b304b2571b4018ac562fecf96eb2dbfba88700dedb579903e9"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/0f8f2441dfd3e7e55923c39d853a4e404ab7d184ddf194abcbcc31b855f70d1c.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/0f8f2441dfd3e7e55923c39d853a4e404ab7d184ddf194abcbcc31b855f70d1c.validated-response.json",
+      "bytes": 560,
+      "sha256": "abcd71788692e482b896f847c51086424a02050a5baf94d32f6002c183d280bb"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/0f8f2441dfd3e7e55923c39d853a4e404ab7d184ddf194abcbcc31b855f70d1c.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/0f8f2441dfd3e7e55923c39d853a4e404ab7d184ddf194abcbcc31b855f70d1c.verification0.json",
+      "bytes": 811,
+      "sha256": "5614dc3f442bee5c5566de76bca405529b62efebbc3cbf004b033fad2cdfc882"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.attempt0.txt",
+      "bytes": 610,
+      "sha256": "a2254b7626f1b84e0cc19092e6f2f2fb636f302f49ae93b41cae113051ee5ad4"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.validated-response.json",
+      "bytes": 610,
+      "sha256": "a2254b7626f1b84e0cc19092e6f2f2fb636f302f49ae93b41cae113051ee5ad4"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.verification-fixed0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.verification-fixed0.json",
+      "bytes": 468,
+      "sha256": "e2e853b611c2454acb815e16b0a6b7481339a103663d7ddbd4d63d81b540c1e2"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.verification0.json",
+      "bytes": 818,
+      "sha256": "b6115e3a537c637adcd9c21ecb371c87a882e1615aa43e9426ea7649d6cddf2d"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/1c7931569c9c4bbebcb634e3b5471bc27fc95aa9a14402fa67650bf51dc13fc3.xml.bak",
+      "bytes": 897,
+      "sha256": "cd7575eb8941f02a17429f6c5430762807255358e495e1cfca99286ed0981c9a"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.attempt0.txt",
+      "bytes": 736,
+      "sha256": "bfdea5b976d1eeac8b652c60d0fae05c6054bf5c0351156ed89501d60bc9cd4e"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.attempt1.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.attempt1.txt",
+      "bytes": 755,
+      "sha256": "cd856ac58668fddf3c70eeeff9fc65ef4ba7fdb0fbb305578d298042769dc23b"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.validated-response.json",
+      "bytes": 553,
+      "sha256": "4e2fe8d68235943088ea25c8df4e1a3c7d384ab63410a12440d906444c73b686"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.verification-fixed0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.verification-fixed0.json",
+      "bytes": 767,
+      "sha256": "fff413824a9bee166198b46968a0e971cc5635564fb957fa1915c53859db4713"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.verification-fixed1.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.verification-fixed1.json",
+      "bytes": 761,
+      "sha256": "43396c27100f97675eb96444565fd8dbd879f36710a45440fb3364a0346444d4"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.verification0.json",
+      "bytes": 832,
+      "sha256": "bb55504a2adff2bd438310fef994294d9f4ba7fc174d96345dc13fe4b0883a33"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.verification1.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/212fbcc439f38281905199204e9a2e1c5f04376005438762dbaa995382e7f3fb.verification1.json",
+      "bytes": 779,
+      "sha256": "fed2ca9431d327c7c673b67cea5d76854c3f5a6902a0e85dc9440dd7d5d912f5"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.attempt0.txt",
+      "bytes": 116,
+      "sha256": "c9fa0875ca7cb81f26fa1ba75c5a9b68d60f52962334994e948826fb518f7630"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.attempt1.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.attempt1.txt",
+      "bytes": 115,
+      "sha256": "db1e455fcbb070381c4bedd795883d70606602df12e4849258d04db607338c6e"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.verification-fixed0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.verification-fixed0.json",
+      "bytes": 939,
+      "sha256": "ea6baac3f6fd2bc294386fa38c6881ffd27b989692dd7673cc250d489d92c8b6"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.verification-fixed1.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.verification-fixed1.json",
+      "bytes": 939,
+      "sha256": "ea6baac3f6fd2bc294386fa38c6881ffd27b989692dd7673cc250d489d92c8b6"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.verification0.json",
+      "bytes": 970,
+      "sha256": "ae80c67edcc660f42a4ad8f8b3d088c6cb29c4e9de976b938279f6456f6a77d7"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.verification1.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3214e4a3a2ef069c19da12d3ac3013fd242fb6ff1ee44a7e5a6a00f049b04e04.verification1.json",
+      "bytes": 970,
+      "sha256": "ae80c67edcc660f42a4ad8f8b3d088c6cb29c4e9de976b938279f6456f6a77d7"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e.attempt0.txt",
+      "bytes": 757,
+      "sha256": "7a48cc9c923e3ba3d092f398d0c2ec2ffa3f89dd6070b3e91786a6ef7f33153b"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e.validated-response.json",
+      "bytes": 757,
+      "sha256": "7a48cc9c923e3ba3d092f398d0c2ec2ffa3f89dd6070b3e91786a6ef7f33153b"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e.verification0.json",
+      "bytes": 1000,
+      "sha256": "938460c9fee9e039ed2c0cf12123d3039bd1a36ebad02ee661d2ed35d8e6e93f"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e.xml.bak",
+      "bytes": 1044,
+      "sha256": "89062765417638eb7e08b847c469cbe62636bb61794139703e7477f74dca21d9"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/379663fbd4cd0abf6f6da76235f072b6ec7ba2190fbee87517784c045aa8b39b.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/379663fbd4cd0abf6f6da76235f072b6ec7ba2190fbee87517784c045aa8b39b.validated-response.json",
+      "bytes": 599,
+      "sha256": "c45c02fdb577878c2882da722cf869365fe36bb020283ab2ab31ff7d7f6894e0"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/379663fbd4cd0abf6f6da76235f072b6ec7ba2190fbee87517784c045aa8b39b.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/379663fbd4cd0abf6f6da76235f072b6ec7ba2190fbee87517784c045aa8b39b.verification0.json",
+      "bytes": 864,
+      "sha256": "b5e677b4ac3a85f5d707e24e3de5c9d0c6115ff0db7d9b26869a98f14e39a606"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.attempt0.txt",
+      "bytes": 701,
+      "sha256": "303a5312ef5f01ed99799b3be5ddf8e8a64f1388662139c23ff0a6f0defa2a8e"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.attempt1.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.attempt1.txt",
+      "bytes": 723,
+      "sha256": "8ab7585ad1adfd1b269bcff9f7959c03f427abf1760e6c6a5bbc1024d6ab7f00"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.validated-response.json",
+      "bytes": 701,
+      "sha256": "303a5312ef5f01ed99799b3be5ddf8e8a64f1388662139c23ff0a6f0defa2a8e"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.verification0.json",
+      "bytes": 885,
+      "sha256": "895d8217a9d4365a8d60be23f44c082edecc38fe53438572d590429d3f38611f"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126.xml.bak",
+      "bytes": 988,
+      "sha256": "35cd2616ded42d1be9fd9cfafd3766d9c9fdad5631d6439a598693f5d34eb043"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3f7c81348f4e5dcc865146cd69cc59e560e4f4898142b0c2c88aaebf1f52a43e.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3f7c81348f4e5dcc865146cd69cc59e560e4f4898142b0c2c88aaebf1f52a43e.validated-response.json",
+      "bytes": 614,
+      "sha256": "a51dd932fe2fd1a054e42aefc757f4ab259b1b7f2c101d704ff2e95f0910249c"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3f7c81348f4e5dcc865146cd69cc59e560e4f4898142b0c2c88aaebf1f52a43e.verification-fixed0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3f7c81348f4e5dcc865146cd69cc59e560e4f4898142b0c2c88aaebf1f52a43e.verification-fixed0.json",
+      "bytes": 842,
+      "sha256": "e754d8e5c4e4f30809ec46e1a15eb83ff727ec45eff08268ffa64e1007b84b52"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/3f7c81348f4e5dcc865146cd69cc59e560e4f4898142b0c2c88aaebf1f52a43e.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/3f7c81348f4e5dcc865146cd69cc59e560e4f4898142b0c2c88aaebf1f52a43e.verification0.json",
+      "bytes": 823,
+      "sha256": "de6e0a6e1dd2271ddd882995cfe86d45606047db33368fd810f0157aa9d67815"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/4c6f060769cc233a10a0932c3bfdd30f495c2af8e8c16e9999dfa891ebc0b660.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/4c6f060769cc233a10a0932c3bfdd30f495c2af8e8c16e9999dfa891ebc0b660.validated-response.json",
+      "bytes": 590,
+      "sha256": "4a0b0a9a02e8a34323381a4ff5055c77d9c3aeb012d8ee8bf0aacf3360979d70"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/4c6f060769cc233a10a0932c3bfdd30f495c2af8e8c16e9999dfa891ebc0b660.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/4c6f060769cc233a10a0932c3bfdd30f495c2af8e8c16e9999dfa891ebc0b660.verification0.json",
+      "bytes": 869,
+      "sha256": "621f85812b55ba29e87fdc63f2db04b9cf4a6e0a38bd8f14e5f3b29c53bade52"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.attempt0.txt",
+      "bytes": 685,
+      "sha256": "3660cd2a35f1ec0d87103516e28f3d7409a96c8e0f158baad7f7b2d558a821af"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.attempt1.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.attempt1.txt",
+      "bytes": 690,
+      "sha256": "fc00e04ebc27feaf544e8d90685bcfe7e788e68a9fae854ae870db33f1f9381f"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.validated-response.json",
+      "bytes": 685,
+      "sha256": "3660cd2a35f1ec0d87103516e28f3d7409a96c8e0f158baad7f7b2d558a821af"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.verification-fixed0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.verification-fixed0.json",
+      "bytes": 438,
+      "sha256": "0a820f8993a8b5893e687ced3e7c2ce2ce75f50e0e68c204e4cd4869870c8d98"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.verification0.json",
+      "bytes": 838,
+      "sha256": "90afd191fe691b06a46c69562b65215fe1da62d0e2e8259d0a58f99652cda7fd"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/535255fed64bb676563f48b6c3b1b9a06f3839c12f83914729e1dc72cececad6.xml.bak",
+      "bytes": 972,
+      "sha256": "d880c018146819234dda8a6b699e6a88fc4556c66b316704d17ecc1c66144d32"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.attempt0.txt",
+      "bytes": 656,
+      "sha256": "a926ca09f5b08f2bdf24140ee058536c6eaa6df8b58a7c957b76877d7776881f"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.attempt1.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.attempt1.txt",
+      "bytes": 699,
+      "sha256": "c97be08fb829946abf11f7c5a6c1f758426d458490cda18af45f6db8240d440b"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.validated-response.json",
+      "bytes": 656,
+      "sha256": "a926ca09f5b08f2bdf24140ee058536c6eaa6df8b58a7c957b76877d7776881f"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.verification0.json",
+      "bytes": 833,
+      "sha256": "0e388f55148716a6987a704446252d32985fefccb50f18d5d52530be1a3c3642"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/5ffd6d6d0db43d6643ef838caf206bcd5af09ec1a541ccf20359e279c857cad4.xml.bak",
+      "bytes": 943,
+      "sha256": "02c97b04414e173afbbfc32f48b5889e7aa0ca9a87ce0c5de91d319dbea5e315"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/61ba6e65235c985a9a4ff5cc7ba117725df5bfba47adcd249f4fe8f2b7e658d4.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/61ba6e65235c985a9a4ff5cc7ba117725df5bfba47adcd249f4fe8f2b7e658d4.validated-response.json",
+      "bytes": 238,
+      "sha256": "78ba6eda1f9d4dc8a83c1081b67bd870262eaddee1830bcc923e2fad4c09881d"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/61ba6e65235c985a9a4ff5cc7ba117725df5bfba47adcd249f4fe8f2b7e658d4.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/61ba6e65235c985a9a4ff5cc7ba117725df5bfba47adcd249f4fe8f2b7e658d4.verification0.json",
+      "bytes": 293,
+      "sha256": "a1e41b960ce002724e4a56bb30c5e12a3afe7c28849445aa599c988478ed4c3d"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/7ce4ac0b6900a1d7c8f90c4d52c7bb7a364a35f6e086a27759eb52d961c9edca.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/7ce4ac0b6900a1d7c8f90c4d52c7bb7a364a35f6e086a27759eb52d961c9edca.validated-response.json",
+      "bytes": 594,
+      "sha256": "5119265522c85051602e9195d19cea1be9d9fb2fa71c762eff2f9f43174ec4d0"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/7ce4ac0b6900a1d7c8f90c4d52c7bb7a364a35f6e086a27759eb52d961c9edca.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/7ce4ac0b6900a1d7c8f90c4d52c7bb7a364a35f6e086a27759eb52d961c9edca.verification0.json",
+      "bytes": 882,
+      "sha256": "6770dbd0ba223c3c1b5263d0d49d7cc439720c61be98a0b1942dfc95ad1f3d72"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7.attempt0.txt",
+      "bytes": 442,
+      "sha256": "ee135f2c7fe230b1a2623b0c49e54c0801c965a8a38e34b865bdfdcdb4867ac6"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7.validated-response.json",
+      "bytes": 442,
+      "sha256": "ee135f2c7fe230b1a2623b0c49e54c0801c965a8a38e34b865bdfdcdb4867ac6"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7.verification0.json",
+      "bytes": 507,
+      "sha256": "f35e1e13e947f0e046d8d2fcfb4216cf098cc0a6955cb7d30c89ef0f7c3e9cc4"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/8b4b8cbd3a5b668e95c2cc91aee7c2e5edcff8b5d34b20b3a65904c973fb35f7.xml.bak",
+      "bytes": 725,
+      "sha256": "80a982b05a4ac477d3d9c82f53cfd1fb99ab80d3c73272eb003b6c3f4bf25796"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/92013b3061d641027f3e020a7cb282dbb27e5981064c4ce3b63372ba85644a5e.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/92013b3061d641027f3e020a7cb282dbb27e5981064c4ce3b63372ba85644a5e.attempt0.txt",
+      "bytes": 715,
+      "sha256": "42fc2b7ffac86e70ea35a35a327c9e586833663caafc6a2e4f4d0cea05a6678a"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/92013b3061d641027f3e020a7cb282dbb27e5981064c4ce3b63372ba85644a5e.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/92013b3061d641027f3e020a7cb282dbb27e5981064c4ce3b63372ba85644a5e.validated-response.json",
+      "bytes": 715,
+      "sha256": "42fc2b7ffac86e70ea35a35a327c9e586833663caafc6a2e4f4d0cea05a6678a"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/92013b3061d641027f3e020a7cb282dbb27e5981064c4ce3b63372ba85644a5e.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/92013b3061d641027f3e020a7cb282dbb27e5981064c4ce3b63372ba85644a5e.verification0.json",
+      "bytes": 777,
+      "sha256": "5e361ac60f761e159cac9f4147e9554a6b01650d4d949581bd08de45e97d5661"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/92013b3061d641027f3e020a7cb282dbb27e5981064c4ce3b63372ba85644a5e.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/92013b3061d641027f3e020a7cb282dbb27e5981064c4ce3b63372ba85644a5e.xml.bak",
+      "bytes": 1002,
+      "sha256": "5d2b1859420408602c7fba01d15af5bd8998ee1c86aa55b81feb270a1ff0217f"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/aa6782bd7ac5dddc1e238d7bf664a752989625b6c1627f5f702b47b5034e3f82.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/aa6782bd7ac5dddc1e238d7bf664a752989625b6c1627f5f702b47b5034e3f82.validated-response.json",
+      "bytes": 657,
+      "sha256": "6b96c8b1f6f7d1b0bb7046efc86517dd609c1ff17c5755ba3c237a103ee8cb7d"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/aa6782bd7ac5dddc1e238d7bf664a752989625b6c1627f5f702b47b5034e3f82.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/aa6782bd7ac5dddc1e238d7bf664a752989625b6c1627f5f702b47b5034e3f82.verification0.json",
+      "bytes": 925,
+      "sha256": "5dda7142e2ad5f5862db15dd23aa2daff5a21a2f2b9c06e36b5a6c1d7a6f191e"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/ba24e8a5becc758df165072de40d55c207d8c9b539243b7b411a29e79ca29141.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/ba24e8a5becc758df165072de40d55c207d8c9b539243b7b411a29e79ca29141.validated-response.json",
+      "bytes": 620,
+      "sha256": "8a3cda26c1b4f8b07325011d7dffef6b49067254ba28f9cae4aca08f6c96b211"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/ba24e8a5becc758df165072de40d55c207d8c9b539243b7b411a29e79ca29141.verification-fixed0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/ba24e8a5becc758df165072de40d55c207d8c9b539243b7b411a29e79ca29141.verification-fixed0.json",
+      "bytes": 923,
+      "sha256": "c560bca53c0a88c7df48d3f29e28b6542a9cb6558e2312ac86c79bce8a4e71f2"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/ba24e8a5becc758df165072de40d55c207d8c9b539243b7b411a29e79ca29141.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/ba24e8a5becc758df165072de40d55c207d8c9b539243b7b411a29e79ca29141.verification0.json",
+      "bytes": 871,
+      "sha256": "341310b1f5adf1e4a0b349faff873e7dc27ec4ae709021201da322dfc7ba45d0"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/c13519b1c2cebe8547059f3e8b7680026071af573c9d129da1d7e1aa1302d7cc.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/c13519b1c2cebe8547059f3e8b7680026071af573c9d129da1d7e1aa1302d7cc.validated-response.json",
+      "bytes": 628,
+      "sha256": "4b5c07ae5ebe62890f2c283df03cc7280786c31e42ab9ee5d459277f10f6ff08"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/c13519b1c2cebe8547059f3e8b7680026071af573c9d129da1d7e1aa1302d7cc.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/c13519b1c2cebe8547059f3e8b7680026071af573c9d129da1d7e1aa1302d7cc.verification0.json",
+      "bytes": 885,
+      "sha256": "160fd4f0babfb8893e9d8e036684c9af749b60b1f14a269b6df5531bc9e92f43"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.attempt0.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.attempt0.txt",
+      "bytes": 694,
+      "sha256": "d15dd004627ee31f6eeca90a7e4a54f6ba06840f05fed0da3e5d7cd87c8f8f68"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.attempt1.txt",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.attempt1.txt",
+      "bytes": 717,
+      "sha256": "ede9741dae71ab7e7077101a0fab299ae364ba1bf1a45851354b20b53898edaa"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.validated-response.json",
+      "bytes": 627,
+      "sha256": "b57199ab9f77d659f5f737c3b0558b16edaa1bf0b5c78c41b8d88183db8d0b25"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.verification-fixed0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.verification-fixed0.json",
+      "bytes": 1606,
+      "sha256": "ada7a65f5935b6ef2a9a4744a50e91687e7d0c19cae717255e12e12b53da4732"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.verification0.json",
+      "bytes": 775,
+      "sha256": "cfd76cf2d7a6db2b903d6332d4aa2591d1fad8bb6d3c11bb4e1a0f053c034432"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.xml.bak",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/d4f99694b178afbe050611e020a9094bd540b826410120139a825d148d8f51bb.xml.bak",
+      "bytes": 981,
+      "sha256": "3d1eeccd62bbc94e3e34cf11568dbb22edaabe21dca6bb462893f022788eda09"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/e5ae0c5f23f50d72e18efea9129be43e90d6f893566a3ad62dd64175c1e56053.validated-response.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/e5ae0c5f23f50d72e18efea9129be43e90d6f893566a3ad62dd64175c1e56053.validated-response.json",
+      "bytes": 560,
+      "sha256": "31f0d6f0dd284c88185547963f083e248b1eda3d04938c84490fa2db437f2600"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/real-vi-cache/e5ae0c5f23f50d72e18efea9129be43e90d6f893566a3ad62dd64175c1e56053.verification0.json",
+      "repository_path": "source/validation-2.0.16/real-vi-cache/e5ae0c5f23f50d72e18efea9129be43e90d6f893566a3ad62dd64175c1e56053.verification0.json",
+      "bytes": 795,
+      "sha256": "408ef89c962bd1cb590c6d6eb9b755b13bbbec1a58f8aad4ed7c2e7d0a0cfe5b"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/recovery-root.txt",
+      "repository_path": "source/validation-2.0.16/recovery-root.txt",
+      "bytes": 53,
+      "sha256": "ff790156cbd9fd858ca4d851d4544f09f7c93ed2e07daa3ac7f2f8d24f5a6b41"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/test_gpu_policy.py.txt",
+      "repository_path": "source/validation-2.0.16/test_gpu_policy.py.txt",
       "bytes": 1273,
-      "sha256": "5f591ca463cf07993df3274a192261fa8300efe772d13bde1b53bda526bd508f"
+      "sha256": "e7d505990dd8d52c5cddccdc0e3582cc13636fa4c1237f3319d5cfe1f4d1e2d1"
     },
     {
-      "archive_path": "payload/source/validation-2.0.15/test_worker_probe.py.txt",
-      "repository_path": "source/validation-2.0.15/test_worker_probe.py.txt",
+      "archive_path": "payload/source/validation-2.0.16/test_worker_probe.py.txt",
+      "repository_path": "source/validation-2.0.16/test_worker_probe.py.txt",
       "bytes": 305,
       "sha256": "ded7231fe278d2c3d529b60a11229b573b570e66294d52ae00d63d70be04a140"
+    },
+    {
+      "archive_path": "payload/source/validation-2.0.16/validation-driver.log",
+      "repository_path": "source/validation-2.0.16/validation-driver.log",
+      "bytes": 1472,
+      "sha256": "c30e07a7e1cdd82879e67723119775dc5f8b2f63e9998f4e7588218fea4c5906"
     },
     {
       "archive_path": "payload/source/verify_completion1410.py",

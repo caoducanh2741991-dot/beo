@@ -1,0 +1,9 @@
+PASS New process restores NEEDS_REVIEW queue state without claiming success
+PASS New process restores ten actual successful VAN6 PCM measurements
+PASS Manual correction is measured but not applied before explicit acceptance
+PASS Explicitly accepted measured manual edit makes recovery ready
+PASS Recovered final render uses actual checkpoints, not rerendering ten successful stages
+PASS Recovered final SRT uses the measured accepted text and unchanged source timecodes
+PASS Missing translator is an explicit incomplete output status, not a completed bilingual set
+PASS Recovered VAN6 WAV has exact full timeline frame count
+TOTAL REOPEN 8 PASS; synthetic voice + real FFmpeg; separate process.

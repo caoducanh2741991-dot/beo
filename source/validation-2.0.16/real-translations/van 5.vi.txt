@@ -1,0 +1,291 @@
+V15 2.0.16 · ĐỐI CHIẾU DỊCH KIỂM THỬ — CHƯA TẠO WAV GIỌNG THẬT
+DỊCH VIỆT: TRANSLATION_INCOMPLETE · bộ đầu ra chưa hoàn thiện; Kiểm tra nghĩa bản dịch chưa đạt: {"items":[{"id":43,"ok":false,"reason":"Bra xơ mistranslates 'Brazil' and uses incorrect term for tray","source_subject_type":"person","target_subject_type":"person"},{"id":44,"ok":false,"reason":"'Mango juice' mistranslated as 'nước ép dừa' (wrong fruit)","source_subject_type":"object","target_subject_type":"object"},{"id":45,"ok":false,"reason":"'Green wrap' mistranslated as 'bánh cuốn xanh' (wrong object type)","source_subject_type":"object","target_subject_type":"object"},{"id":46,"ok":false,"reason":"'Judges' mistranslated as 'các nhà đánh giá' (incorrect role)","source_subject_type":"person","target_subject_type":"person"},{"id":47,"ok":false,"reason":"'Brazil' misrendered as 'Bra-xin' (incorrect name)","source_subject_type":"person","target_subject_type":"person"},{"id":48,"ok":false,"reason":"'Total' missing in translation, causality lost","source_subject_type":"object","target_subject_type":"object"}]}
+Mốc dưới đây là TIMELINE SRT NGUỒN; chưa có mốc WAV riêng từng cue sau căn chặng.
+
+#1 | 00:00:00,000 --> 00:00:03,500 | Giọng A
+EN: Could your old school lunch beat meals from nine other countries?
+VI: Lunch của trường cũ của anh có thể cạnh tranh với các bữa ăn từ chín quốc gia khác không?
+
+#2 | 00:00:03,500 --> 00:00:07,000 | Giọng A
+EN: Vance brought two friends to settle that question once and for all.
+VI: Vance đã mang hai người bạn đến để giải quyết câu hỏi đó một cách tuyệt đối.
+
+#3 | 00:00:07,000 --> 00:00:10,400 | Giọng A
+EN: Ten different school lunch trays entered their homemade food showdown.
+VI: Mười khay bữa ăn trường học khác nhau tham gia cuộc đối đầu với thực phẩm tự làm của họ.
+
+#4 | 00:00:10,400 --> 00:00:13,900 | Giọng A
+EN: And these three grown men were taking every bite seriously.
+VI: Và ba người đàn ông lớn tuổi này đang ăn từng miếng một cách nghiêm túc.
+
+#5 | 00:00:13,900 --> 00:00:17,400 | Giọng A
+EN: Taste, nutrition, and fullness would decide the winning country.
+VI: Mùi vị, dinh dưỡng và cảm giác no sẽ quyết định quốc gia chiến thắng.
+
+#6 | 00:00:17,400 --> 00:00:20,900 | Giọng A
+EN: Only one tray could claim the title of school lunch champion.
+VI: Chỉ một khay mới có thể giành được danh hiệu là bữa ăn trường học xuất sắc.
+
+#7 | 00:00:20,900 --> 00:00:24,300 | Giọng A
+EN: They started with an American tray priced at two fifty.
+VI: Họ bắt đầu với một chiếc đĩa Mỹ giá hai đô la năm mươi.
+
+#8 | 00:00:24,300 --> 00:00:27,800 | Giọng A
+EN: It had a burger, fries, a donut, and a soda.
+VI: Nó có một burger, khoai tây, một cái bánh donut và một ly nước ngọt.
+
+#9 | 00:00:27,800 --> 00:00:31,300 | Giọng A
+EN: A donut and soda for lunch? That sparked instant debate.
+VI: Một cái bánh donut và ly nước ngọt cho bữa trưa? Điều đó nhanh chóng kích thích tranh cãi.
+
+#10 | 00:00:31,300 --> 00:00:34,800 | Giọng A
+EN: Nobody could decide if this was lunch or a party.
+VI: Không ai có thể quyết định liệu điều đó là bữa trưa hay một buổi tiệc.
+
+#11 | 00:00:34,800 --> 00:00:38,200 | Giọng A
+EN: Vance loved the burger and fries more than he expected.
+VI: Vance yêu thích burger và khoai tây hơn mong đợi.
+
+#12 | 00:00:38,200 --> 00:00:41,700 | Giọng A
+EN: Comfort food was clearly winning this first round on taste.
+VI: Ẩm thực quen thuộc rõ ràng đang giành chiến thắng trong vòng đầu về hương vị.
+
+#13 | 00:00:41,700 --> 00:00:45,200 | Giọng A
+EN: Milo and Zack finished their trays and joined the judging.
+VI: Milo và Zack hoàn thành những đĩa ăn của mình và tham gia vào phần đánh giá.
+
+#14 | 00:00:45,200 --> 00:00:48,700 | Giọng A
+EN: America scored well for flavor, but only four for health.
+VI: Mỹ đạt điểm tốt về hương vị, nhưng chỉ có bốn điểm về sức khỏe.
+
+#15 | 00:00:48,700 --> 00:00:52,100 | Giọng A
+EN: Japan's tray changed the mood as soon as it appeared.
+VI: Đĩa ăn của Nhật Bản thay đổi tinh thần ngay khi xuất hiện.
+
+#16 | 00:00:52,100 --> 00:00:55,600 | Giọng A
+EN: Fish, vegetables, and fruit offered a completely different kind of lunch.
+VI: Cá, rau và trái cây mang lại một loại bữa trưa hoàn toàn khác.
+
+#17 | 00:00:55,600 --> 00:00:59,100 | Giọng A
+EN: The guys struggled with chopsticks, then washed everything down with milk.
+VI: Các anh em khó khăn với thìa, rồi rửa hết bằng sữa
+
+#18 | 00:00:59,100 --> 00:01:02,600 | Giọng A
+EN: Japan walked away with seventy-one points on their scoreboard.
+VI: Nhật Bản rời đi với 71 điểm trên bảng điểm của họ.
+
+#19 | 00:01:02,600 --> 00:01:06,000 | Giọng A
+EN: Then India arrived with a price that surprised everyone.
+VI: Tiếp theo là Ấn Độ, với mức giá khiến ai cũng bất ngờ.
+
+#20 | 00:01:06,000 --> 00:01:09,500 | Giọng A
+EN: Warm lentils, vegetables, flatbread, and chai filled the colorful tray.
+VI: Đậu lăng, rau, bánh mì dẹt và trà chai phủ đầy khay.
+
+#21 | 00:01:09,500 --> 00:01:13,000 | Giọng A
+EN: They listed this hearty school meal at absolutely no charge.
+VI: Họ giới thiệu phần ăn no bụng này có giá bằng không.
+
+#22 | 00:01:13,000 --> 00:01:16,500 | Giọng A
+EN: That alone impressed the judges before Italy even took the stage.
+VI: Chỉ riêng điều đó đã gây ấn tượng trước khi đến phần của Ý.
+
+#23 | 00:01:16,500 --> 00:01:19,900 | Giọng A
+EN: Italy's tray looked more like dinner at a family restaurant.
+VI: Khay cơm Ý giống bữa tối ở nhà hàng gia đình hơn.
+
+#24 | 00:01:19,900 --> 00:01:23,400 | Giọng A
+EN: Pasta, pizza, salad, and grapes made everyone lean forward.
+VI: Mì pasta, pizza, salad và nho khiến cả nhóm hào hứng.
+
+#25 | 00:01:23,400 --> 00:01:26,900 | Giọng A
+EN: Vance joked that he would never skip school for pizza.
+VI: Vance đùa rằng có pizza thế này thì anh chẳng bao giờ trốn học.
+
+#26 | 00:01:26,900 --> 00:01:30,400 | Giọng A
+EN: He looked ready to give the Italian tray a trophy.
+VI: Anh ấy trông như đang muốn trao giải thưởng cho bộ khay Ý
+
+#27 | 00:01:30,400 --> 00:01:33,800 | Giọng A
+EN: But first, the judges finally finished calculating India's total.
+VI: Nhưng trước tiên, ban giám khảo phải tính xong tổng điểm của Ấn Độ.
+
+#28 | 00:01:33,800 --> 00:01:37,300 | Giọng A
+EN: India earned fifty points, with fullness helping its score.
+VI: Ấn Độ được năm mươi điểm, trong đó độ no đóng góp đáng kể.
+
+#29 | 00:01:37,300 --> 00:01:40,800 | Giọng A
+EN: Italy still looked tempting, but its final score could wait.
+VI: Đồ ăn Ý vẫn hấp dẫn, nhưng điểm cuối cùng sẽ công bố sau.
+
+#30 | 00:01:40,800 --> 00:01:44,300 | Giọng A
+EN: Now Ukraine brought a comforting, home-style tray to the table.
+VI: Giờ đến Ukraine với khay thức ăn dân dã, ấm áp như cơm nhà.
+
+#31 | 00:01:44,300 --> 00:01:47,700 | Giọng A
+EN: Buckwheat and a savory cutlet were the stars of this meal.
+VI: Buckwheat và một miếng thịt ngon là những điểm nổi bật của bữa ăn này.
+
+#32 | 00:01:47,700 --> 00:01:51,200 | Giọng A
+EN: Cabbage salad, cheesy bread, and fruit compote rounded it out.
+VI: Salad bắp cải, bánh mì phô mai và nước trái cây nấu hoàn thiện phần ăn.
+
+#33 | 00:01:51,200 --> 00:01:54,700 | Giọng A
+EN: It wasn't flashy, but the judges immediately understood its appeal.
+VI: Không rực rỡ, nhưng các giám khảo ngay lập tức hiểu được sức hấp dẫn của nó
+
+#34 | 00:01:54,700 --> 00:01:58,200 | Giọng A
+EN: This was exactly the kind of meal that actually fills you.
+VI: Đây chính là loại bữa ăn thực sự làm bạn no
+
+#35 | 00:01:58,200 --> 00:02:01,600 | Giọng A
+EN: All three plates were cleared before anyone could say another word.
+VI: Cả ba khay sạch trơn trước khi ai kịp bình luận thêm.
+
+#36 | 00:02:01,600 --> 00:02:05,100 | Giọng A
+EN: Ukraine surged into the lead with seventy-five total points.
+VI: Ukraine vươn lên dẫn đầu với bảy mươi lăm điểm tổng cộng
+
+#37 | 00:02:05,100 --> 00:02:08,600 | Giọng A
+EN: Mexico arrived next, bringing an entirely different lunchtime energy.
+VI: Mexico xuất hiện tiếp theo, mang đến không khí bữa trưa rất khác.
+
+#38 | 00:02:08,600 --> 00:02:12,100 | Giọng A
+EN: The tray paired a casserole with a generously filled taco.
+VI: Khay cơm kết hợp một phần bánh đút lò với taco đầy nhân.
+
+#39 | 00:02:12,100 --> 00:02:15,600 | Giọng A
+EN: Chips, guacamole, and chocolate milk made the deal even sweeter.
+VI: Khoai chiên giòn, sốt bơ và sữa sô cô la càng hấp dẫn.
+
+#40 | 00:02:15,600 --> 00:02:19,100 | Giọng A
+EN: And the listed price was just one dollar for everything.
+VI: Và mức giá ghi trên khay chỉ có một đô la.
+
+#41 | 00:02:19,100 --> 00:02:22,600 | Giọng A
+EN: Vance gave the flavor a perfect ten without hesitation.
+VI: Vance lập tức cho hương vị điểm mười tuyệt đối.
+
+#42 | 00:02:22,600 --> 00:02:26,100 | Giọng A
+EN: But nutrition pulled Mexico's overall score down to sixty.
+VI: Nhưng điểm dinh dưỡng khiến Mexico chỉ đạt tổng sáu mươi điểm.
+
+#43 | 00:02:26,100 --> 00:02:29,600 | Giọng A
+EN: Brazil answered with one of the freshest looking trays yet.
+VI: [TRANSLATION_INCOMPLETE]
+
+#44 | 00:02:29,600 --> 00:02:33,100 | Giọng A
+EN: Seasoned grains, a green wrap, fruit, and mango juice stood out.
+VI: [TRANSLATION_INCOMPLETE]
+
+#45 | 00:02:33,100 --> 00:02:36,600 | Giọng A
+EN: That huge green wrap almost looked bigger than a textbook.
+VI: [TRANSLATION_INCOMPLETE]
+
+#46 | 00:02:36,600 --> 00:02:40,100 | Giọng A
+EN: The judges needed both hands just to hold each bite.
+VI: [TRANSLATION_INCOMPLETE]
+
+#47 | 00:02:40,100 --> 00:02:43,600 | Giọng A
+EN: Brazil scored a perfect thirty for their health category.
+VI: [TRANSLATION_INCOMPLETE]
+
+#48 | 00:02:43,600 --> 00:02:47,100 | Giọng A
+EN: That pushed its total to seventy-five, tying Ukraine.
+VI: [TRANSLATION_INCOMPLETE]
+
+#49 | 00:02:47,100 --> 00:02:50,600 | Giọng A
+EN: Next, China's colorful tray gave the judges even more choices.
+VI: [TRANSLATION_INCOMPLETE]
+
+#50 | 00:02:50,600 --> 00:02:54,100 | Giọng A
+EN: Rice, savory meat, and dumplings immediately caught everyone's attention.
+VI: [TRANSLATION_INCOMPLETE]
+
+#51 | 00:02:54,100 --> 00:02:57,600 | Giọng A
+EN: Braised greens, an egg, and orange slices completed the spread.
+VI: [TRANSLATION_INCOMPLETE]
+
+#52 | 00:02:57,600 --> 00:03:01,100 | Giọng A
+EN: Suddenly, this felt more like a weekend feast than school lunch.
+VI: [TRANSLATION_INCOMPLETE]
+
+#53 | 00:03:01,100 --> 00:03:04,600 | Giọng A
+EN: Their chopstick skills were shaky, but the dumplings disappeared fast.
+VI: [TRANSLATION_INCOMPLETE]
+
+#54 | 00:03:04,600 --> 00:03:08,100 | Giọng A
+EN: China collected sixty-nine points after everyone finished eating.
+VI: [TRANSLATION_INCOMPLETE]
+
+#55 | 00:03:08,100 --> 00:03:11,600 | Giọng A
+EN: Spain was next with a colorful Mediterranean-inspired lunch tray.
+VI: [TRANSLATION_INCOMPLETE]
+
+#56 | 00:03:11,600 --> 00:03:15,100 | Giọng A
+EN: Rice, cucumber salad, and fruit gave the meal a fresh look.
+VI: [TRANSLATION_INCOMPLETE]
+
+#57 | 00:03:15,100 --> 00:03:18,600 | Giọng A
+EN: That little foil drink pouch brought back everyone's childhood memories.
+VI: [TRANSLATION_INCOMPLETE]
+
+#58 | 00:03:18,600 --> 00:03:22,100 | Giọng A
+EN: Even the judges were smiling before the final scores appeared.
+VI: [TRANSLATION_INCOMPLETE]
+
+#59 | 00:03:22,100 --> 00:03:25,600 | Giọng A
+EN: Spain took the lead with an impressive seventy-six points.
+VI: [TRANSLATION_INCOMPLETE]
+
+#60 | 00:03:25,600 --> 00:03:29,100 | Giọng A
+EN: Only Turkey's tray and Italy's final score were still waiting.
+VI: [TRANSLATION_INCOMPLETE]
+
+#61 | 00:03:29,100 --> 00:03:32,600 | Giọng A
+EN: Turkey served up a lunch that looked restaurant-worthy.
+VI: [TRANSLATION_INCOMPLETE]
+
+#62 | 00:03:32,600 --> 00:03:36,100 | Giọng A
+EN: Grilled kebab, fresh herbs, and flatbread covered the tray.
+VI: [TRANSLATION_INCOMPLETE]
+
+#63 | 00:03:36,100 --> 00:03:39,600 | Giọng A
+EN: Then baklava arrived, making dessert feel like a bonus round.
+VI: [TRANSLATION_INCOMPLETE]
+
+#64 | 00:03:39,600 --> 00:03:43,100 | Giọng A
+EN: But the salted yogurt drink caught all three judges off guard.
+VI: [TRANSLATION_INCOMPLETE]
+
+#65 | 00:03:43,100 --> 00:03:46,600 | Giọng A
+EN: The grilled food earned praise, while that drink divided opinions.
+VI: [TRANSLATION_INCOMPLETE]
+
+#66 | 00:03:46,600 --> 00:03:50,100 | Giọng A
+EN: Nobody expected their first sip to taste quite that salty.
+VI: [TRANSLATION_INCOMPLETE]
+
+#67 | 00:03:50,100 --> 00:03:53,600 | Giọng A
+EN: A perfect fullness score still gave Turkey sixty-two points overall.
+VI: [TRANSLATION_INCOMPLETE]
+
+#68 | 00:03:53,600 --> 00:03:57,100 | Giọng A
+EN: And at last, everyone turned toward Italy's waiting scorecard.
+VI: [TRANSLATION_INCOMPLETE]
+
+#69 | 00:03:57,100 --> 00:04:00,600 | Giọng A
+EN: Its judges loved the combination of taste, nutrition, and satisfaction.
+VI: [TRANSLATION_INCOMPLETE]
+
+#70 | 00:04:00,600 --> 00:04:04,100 | Giọng A
+EN: Italy won their challenge with a massive eighty-six points.
+VI: [TRANSLATION_INCOMPLETE]
+
+#71 | 00:04:04,100 --> 00:04:07,600 | Giọng A
+EN: Apparently, a plate of pasta can make school seem exciting.
+VI: [TRANSLATION_INCOMPLETE]
+
+#72 | 00:04:07,600 --> 00:04:11,050 | Giọng A
+EN: At least that's what these three very hungry judges decided.
+VI: [TRANSLATION_INCOMPLETE]
