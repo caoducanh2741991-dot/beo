@@ -1,0 +1,332 @@
+[
+  {
+    "name": "BEO_Voice_Studio_3.1.0_Core_Update.zip",
+    "bytes": 18498168,
+    "sha256": "d4beaa09fbbda806412a7f3d507f421fe5c42fa52c078ecd9f051eb299280f74",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "BEO_Voice_Studio_4.0.0_Creator_Update.zip",
+    "bytes": 18915429,
+    "sha256": "5e034900c1a98e2c773316b20b346552cddc251b0081fde6b87d04c28857279a",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "BEO_Voice_Studio_4.1.0_Fast_Voice_Update.zip",
+    "bytes": 18784518,
+    "sha256": "7daf4869aef036aecd3c0e69e678878b3f7ceb0387e8caea6fad20e85a4b5856",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "BEO_Voice_Studio_4.1.1_Render_Fix_Update.zip",
+    "bytes": 18811153,
+    "sha256": "03507ba3dd8f4e73217c7f4a82c1099a13e31f6f67abfcc0c3c4e96b347108ce",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.10_Update.zip",
+    "bytes": 16193731,
+    "sha256": "2a02aca8acfa990e7bf88fdedf17aac02274654a9eb2f6d6e3c37b41ff5b516b",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.11_KiemTraBoSung.zip",
+    "bytes": 13466,
+    "sha256": "c5f1b47307d9289b25cad5d64f0482c781c97072ac673f278c3cef7edbad5e1c",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.11_Update.zip",
+    "bytes": 16246337,
+    "sha256": "3ce2538a21fea6844b51dbe905da9667d1d7fe29f04becff44de9ae0f024e463",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.11_WorkCheckpoint.zip",
+    "bytes": 405837,
+    "sha256": "ab589633cc98b8ddf3f66a96c7bdcd71b95b44f6dff33c30e83ead7c4ed2de93",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.12_Update.zip",
+    "bytes": 16230443,
+    "sha256": "36cd13414b45b17be8cfa8a381e4a6455e7eb9d2526e6810d8d7f1b9eecc7957",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.1_Update.zip",
+    "bytes": 392114,
+    "sha256": "f375bf6bdfac3254e70ae35cf8f4b07cc7fca95a5ca674562a172b7cc87d8e25",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.2_Update.zip",
+    "bytes": 401392,
+    "sha256": "263225c18ffd60006ce0fd9574a7ceb1b60f0cd635236d346f048c89b4e28105",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.3.1_Update.zip",
+    "bytes": 471813,
+    "sha256": "b5cf971d6f903b233515f1a6a0c545649e0b2af0dc05256c3ea2e08c9abc5477",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.3_Update.zip",
+    "bytes": 453748,
+    "sha256": "fac293a81e1d065f1085cc8871ca9c3b3f2ed6a55f3d00b69db5db6789b1d9c3",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.3_Working_Source_Checkpoint.zip",
+    "bytes": 311657,
+    "sha256": "c7c2b4548c7e0c7c9ed933f507810f50505d0ecadf04edae74251d3829f0edd8",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.4_Update.zip",
+    "bytes": 500700,
+    "sha256": "0d265a3d24484ae711d38dd0b99557464cf10d043b1f79002cdb84e0f24cf428",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.5_Update.zip",
+    "bytes": 528159,
+    "sha256": "6de6868e225932f9a8d9ec1d2b78632cc540e79824b3cfbd6025f517f6158122",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.6_Update.zip",
+    "bytes": 13360161,
+    "sha256": "42e22af1b60342e027b956685159d3fcad6171fad221a101978be426788eefac",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.7_Fix_PhuDe.zip",
+    "bytes": 1286758,
+    "sha256": "fac8bf94369b5240653be46ce7236902e1c4d5a5d62b63b83eced7e98837808f",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.7_Fix_Timeline.zip",
+    "bytes": 1293571,
+    "sha256": "7bd7b1b97122ad3062946e661d04cd1887917864a11e1a305fb9478b0bd4819d",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.7_Update.zip",
+    "bytes": 13411202,
+    "sha256": "417d12911a14743a85d3a7fc36469870d26a5188e86f41a59496dd54b62e6668",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.7_WorkCheckpoint.zip",
+    "bytes": 13328255,
+    "sha256": "6d54d9bb591e5bf678e0c7929a31f292e3efa7a0b45183579cbc786f2108d801",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.8_Update.zip",
+    "bytes": 14593606,
+    "sha256": "ec9a6196f77a916f943c30c951ea9f5e6773b29359f92dceec5edf911e8b6d6b",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.9_Update.zip",
+    "bytes": 16171457,
+    "sha256": "1c9a9b496d55b75c290dc3d5aa693dc3f16b21ccd4c6846192b0d22f0a218676",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_1.4.9_WorkCheckpoint.zip",
+    "bytes": 14999926,
+    "sha256": "ac56fcca18ef74cf3240544194a270cd513d2853782dfc7f8f59aaac1c5f585a",
+    "validation": "INVALID_OR_INCOMPLETE_ZIP"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.10_Update.zip.001",
+    "bytes": 354080199,
+    "sha256": "e3d7c66d43bfcc6e673d830ad8ee847222d925652375f27bf08119439c1fcb2a",
+    "validation": "SPLIT_PART_PRESERVED"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.10_Update.zip.002",
+    "bytes": 354080199,
+    "sha256": "76320e4331c7ce0a48cf99e71b76c913514cf3fbf8474e99bc44f4435d9ce498",
+    "validation": "SPLIT_PART_PRESERVED"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.11_Core_Update.zip",
+    "bytes": 17172221,
+    "sha256": "fb133d124af1b76e86fc7f199051a7ee574b27dccd72f9d20f61321e032ad7e2",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.12_Core_Update.zip",
+    "bytes": 17203816,
+    "sha256": "50c6d57c0125faf88653a6d4a1706ddc2277cdec1840349d1e71a48ad2f65298",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.13_AI_Offline_Update.zip.001",
+    "bytes": 440401920,
+    "sha256": "69924deef332c7d18a3a6a60886d145ccf1197d2070864af373af88fb6a2d67b",
+    "validation": "SPLIT_PART_PRESERVED"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.13_AI_Offline_Update.zip.002",
+    "bytes": 440401920,
+    "sha256": "c4ac12537386ee82f8c73f3da9e2c1c616ae5ad7e29e57b4771f3762c1177572",
+    "validation": "SPLIT_PART_PRESERVED"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.13_AI_Offline_Update.zip.003",
+    "bytes": 440401920,
+    "sha256": "1c7edc2f78a7f736bb654c7194f09d62fa5c2db0dd895727643ce6db5721e473",
+    "validation": "SPLIT_PART_PRESERVED"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.13_AI_Offline_Update.zip.004",
+    "bytes": 440401920,
+    "sha256": "865db1b84675782d8db293144be5689deccb1cc73ed580e77d6aff0fe49ec063",
+    "validation": "SPLIT_PART_PRESERVED"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.13_AI_Offline_Update.zip.005",
+    "bytes": 440401920,
+    "sha256": "290d343fa8a5b46fb91adec65c5ac857d85b54ac441b139585040f2fdc38e9ed",
+    "validation": "SPLIT_PART_PRESERVED"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.13_AI_Offline_Update.zip.006",
+    "bytes": 311369562,
+    "sha256": "f817e6bf15a9cecce0518585cc100dddca3df187d879f7ea9acbfdbc87aff63f",
+    "validation": "SPLIT_PART_PRESERVED"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.13_Core_Update.zip",
+    "bytes": 17321150,
+    "sha256": "5480bbc6fd53ab184f2db735f6340d760a55fbbd270c667ae7eac5fcf2f98b5c",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.14_Core_Update.zip",
+    "bytes": 17352573,
+    "sha256": "8df2ca4fba9cdc6cc9c7ad329b5b190412af4c49d9e9c03ba305d0910d9c52d5",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.15_Core_Update.zip",
+    "bytes": 17688981,
+    "sha256": "9d61ef2c6cd5dad71a9f69cbe2ff455ffc690a7cf8eb7d57c9acdade23dc03ed",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.16_Core_Update.zip",
+    "bytes": 17876170,
+    "sha256": "788ac04891b4b7442c448eaf1e3a36b6b245167ba98cb57fc9df947c21a79acb",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.17_Core_Update.zip",
+    "bytes": 17864806,
+    "sha256": "ae6858ee73c1dfdb35b0b34f2de9cec4be8f9922f6b5ae6695ad0e4361a133fb",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.1_Update.zip",
+    "bytes": 16240928,
+    "sha256": "5cd08519449117552071950b541490e7fe35ed15da59fe2cc21ef5815df03b0c",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.2_Update.zip",
+    "bytes": 16273160,
+    "sha256": "1920ca520582753df8971ebfaf28494ea357ce093febd2beb201e9d139627ed2",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.3_Update.zip",
+    "bytes": 16297516,
+    "sha256": "b566f8b19882e12fb01f07651f3b16144998b0ee05356fb07b3698cad5c495bf",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.4_Update.zip",
+    "bytes": 16324993,
+    "sha256": "b624be989c32e52de8ed321ef9bfb5983d7e297d4ad85404dfda3e5ef7c243c4",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.5_Update.zip",
+    "bytes": 16752775,
+    "sha256": "23b4c1f2306e1ee7beb027324bf5bf27a1a32983a2da2689bb97ebd8faea98dc",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.6_Update.zip",
+    "bytes": 16826264,
+    "sha256": "b4ca0125e60bafaa87c5e77f5a11daefd0b25ecda097c1fb356d26493e8c582b",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.7_Update.zip",
+    "bytes": 16817009,
+    "sha256": "0e8b324ac8941484e2a91032174254208708c9007ca5721993f5c9fd4dc30393",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.8_Update.zip",
+    "bytes": 16791026,
+    "sha256": "0de3dbf85d985f5ee21a81be2d9e22767ef2509d8f065e86878e993ec5068e6e",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0.9_Update.zip",
+    "bytes": 16833690,
+    "sha256": "6d17e9e9c7e7be23f86c2ee1cfff7c85ed210f6a68667534c4fd0f47e80952b7",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_2.0_Update.zip",
+    "bytes": 16259099,
+    "sha256": "22e7a090d3458db635303cce606d3cccc7a12a2677484defed61b8d5a6fffd21",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_3.0.0_Core_Update.zip",
+    "bytes": 17926595,
+    "sha256": "f6ed1766abf204e8d6347a95594a1b5cbea5e68fa4e4aefa6ce42b93ff9ee1d2",
+    "validation": "ZIP_CRC_OK"
+  },
+  {
+    "name": "V15VoiceStudio_Offline_Setup.exe",
+    "bytes": 2158816,
+    "sha256": "0b3913bdc5f0869af8e8d708981378f26f82446ffc026eadd2c0ca0038af0df3",
+    "validation": "ORIGINAL_INSTALLER_PRESERVED_NOT_EXECUTED"
+  },
+  {
+    "name": "V15VoiceStudio_Update_1.0.1.exe",
+    "bytes": 219701,
+    "sha256": "9590f487a5bb2dfc58688d6336c38a772513306fd0f053639d07042fb0b7060c",
+    "validation": "ORIGINAL_INSTALLER_PRESERVED_NOT_EXECUTED"
+  },
+  {
+    "name": "V15VoiceStudio_Update_1.1.0.exe",
+    "bytes": 400047,
+    "sha256": "9414a480c322a137e9225df867d65bd586c3a8b31199f43cda192fd3a4f4b898",
+    "validation": "ORIGINAL_INSTALLER_PRESERVED_NOT_EXECUTED"
+  },
+  {
+    "name": "V15VoiceStudio_Update_1.2.0.exe",
+    "bytes": 446070,
+    "sha256": "9012c925a6fd88cf6d85b076f0ba3724e005f31803cbd20a1e57b0783ca4a787",
+    "validation": "ORIGINAL_INSTALLER_PRESERVED_NOT_EXECUTED"
+  },
+  {
+    "name": "V15VoiceStudio_Update_1.3.0.exe",
+    "bytes": 191417831,
+    "sha256": "43389bb6203ec39eb60c1821317756bd5b36a059ec7e2ac588cde97afeb9de44",
+    "validation": "ORIGINAL_INSTALLER_PRESERVED_NOT_EXECUTED"
+  }
+]

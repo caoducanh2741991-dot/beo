@@ -1,0 +1,460 @@
+V15 VOICE REPORT · schema 3 · app 2.0.15.0
+Kết quả: THÀNH CÔNG
+Bắt đầu UTC: 2026-10-31T12:13:03.8064010Z; đã chạy 2.634s
+Mục đích: Tạo WAV
+Nguồn: van 4.srt
+SHA256 file nguồn: d534f88a057dbf914c1a1d6548cf0d117b3195b934717197ac6b363ddab260a5
+SHA256 snapshot lời+mốc dùng trong app: c0f8d6740cbfa34227f83ef6b9f08de6150ec2d2ce3812d2e1ae61f7084bd99c
+Tổng đơn vị đã lên kế hoạch: 7; có số đo trước căn: 7; chưa đo: 0; chặng có kết quả: 7
+WAV cuối của LẦN NÀY: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.wav
+Báo cáo: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.voice-report.txt
+
+GIỌNG VÀ THIẾT LẬP
+Chế độ: MỘT GIỌNG
+Ngôn ngữ: English theo nguồn giọng đã chọn
+Tên giọng: Steven hảley; mã: U:26e931bd135b45f1bc86fb795e11f54d
+Engine/model: Chatterbox / chatter_nano / speaker -1
+Nguồn giọng: Mẫu do người dùng cung cấp • Chatterbox
+Đặc điểm: Giọng riêng theo mẫu tham chiếu; cần nghe thử để đánh giá độ giống.
+Phong cách: Kể chuyện
+Ghi chú của người dùng: 
+Loại giọng: sao chép · mẫu 26e931bd135b45f1bc86fb795e11f54d.wav · SHA256 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Không đính kèm file âm thanh tham chiếu trong báo cáo.
+Thiết bị yêu cầu: auto
+Thiết bị đã báo trong lần chạy: chưa có xác nhận; có thể chưa tổng hợp hoặc dùng cache
+Thiết bị của âm thanh lấy từ cache: không suy đoán từ thiết bị đang chọn.
+Số chênh: dương = dài hơn đích, âm = ngắn hơn đích. Khóa SRT có thể dành chỗ nghỉ và biên 0.025s khi căn; ngắn hơn khung không tự động là lỗi, cần xem trạng thái tác vụ/chặng.
+Timeline: V15.6 · theo chặng
+Tốc độ gốc: 1.000x; giới hạn đặt: 0.900–1.250x; giới hạn áp dụng: 0.900–1.250x; nhẹ ±10%: False
+Ngắt nghỉ: Auto; phẩy=0.140s; chấm=0.300s; hỏi/cảm=0.350s; đoạn=0.500s; gap=0.100s
+Hơi thở: Auto; mỗi 3 câu; mức=16.000%; cân âm=True / -18.000 LUFS
+
+CUE NGUỒN · nguyên văn dùng trong app trước khi ghép/căn
+Số cue theo thứ tự trong app; file nguồn có thể đã được đánh lại số khi nhập.
+Timeline nguồn và mốc WAV là hai trường riêng. TXT không có timeline nguồn; không dùng mốc dự kiến như mốc đã đo.
+#1 | 00:00:00,000 → 00:00:03,400 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: He bought a six-foot bologna log. His plan was even bigger.
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#2 | 00:00:03,400 → 00:00:06,800 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Vance wanted to beat the price of ordinary store sandwiches.
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#3 | 00:00:06,800 → 00:00:10,200 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Buying that many packaged sandwiches would cost over twelve hundred dollars.
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#4 | 00:00:10,200 → 00:00:13,600 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: His homemade version came to just three hundred thirty-two dollars.
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#5 | 00:00:13,600 → 00:00:17,000 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The enormous bologna looked more like a fence post than lunch.
+Trạng thái: đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#6 | 00:00:17,000 → 00:00:20,400 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Suddenly, Vance's quiet kitchen looked like a busy sandwich shop.
+Trạng thái: đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#7 | 00:00:20,400 → 00:00:23,800 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Store sandwiches often come with barely any fresh vegetables inside.
+Trạng thái: đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#8 | 00:00:23,800 → 00:00:27,200 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Vance wanted every bite to feel like a proper meal.
+Trạng thái: đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#9 | 00:00:27,200 → 00:00:30,600 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: But plain meat and bread weren't going to impress anybody.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#10 | 00:00:30,600 → 00:00:34,000 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Then his giant pot appeared, and the challenge got serious.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#11 | 00:00:34,000 → 00:00:37,400 | khung 3.400s | 12 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Sweet onions slowly turned golden as the whole kitchen filled with aroma.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#12 | 00:00:37,400 → 00:00:40,800 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Even Vance looked surprised by how delicious everything suddenly smelled.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#13 | 00:00:40,800 → 00:00:44,200 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Next came a mountain of cheese that seemed impossible to finish.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#14 | 00:00:44,200 → 00:00:47,600 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The deli slicer made his giant sandwich dream feel real.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#15 | 00:00:47,600 → 00:00:51,000 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Then Vance revealed the ingredient nobody expected in this sandwich marathon.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#16 | 00:00:51,000 → 00:00:54,400 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: An unbelievable number of eggs covered the wide metal griddle.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#17 | 00:00:54,400 → 00:00:57,800 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: He laid out twenty-eight bread slices at once for the crowd.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#18 | 00:00:57,800 → 00:01:01,200 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: That tiny kitchen toaster never stood a chance against this plan.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#19 | 00:01:01,200 → 00:01:04,600 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: With the bread perfectly toasted, the real mountain began rising.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#20 | 00:01:04,600 → 00:01:08,000 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#21 | 00:01:08,000 → 00:01:11,400 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Hundreds of towering sandwiches stood in rows across the table.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#22 | 00:01:11,400 → 00:01:14,900 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Each one held eggs, onions, cheese, and plenty of filling.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#23 | 00:01:14,900 → 00:01:18,300 | khung 3.400s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: But Vance wasn't making all this food for himself.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#24 | 00:01:18,300 → 00:01:21,800 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: After dark, yellow crates packed with sandwiches filled the station wagon.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#25 | 00:01:21,800 → 00:01:25,200 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The real destination was a community room filled with children.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#26 | 00:01:25,200 → 00:01:28,600 | khung 3.400s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: One ordinary evening suddenly became a huge neighborhood dinner.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#27 | 00:01:28,600 → 00:01:32,000 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The best part wasn't the massive pile of homemade sandwiches.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#28 | 00:01:32,000 → 00:01:35,495 | khung 3.495s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: It was watching everyone smile when they finally shared them.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+
+ĐƠN VỊ LỜI ĐỌC · số đo âm thanh thực tế
+Đơn vị 1 | cue 1,2,3,4 | chặng 1 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: He bought a six-foot bologna log. His plan was even bigger. Vance wanted to beat the price of ordinary store sandwiches. Buying that many packaged sandwiches would cost over twelve hundred dollars. His homemade version came to just three hundred thirty-two dollars.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.848s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 14.554s; tổng sau ghép nghỉ trong đơn vị: 14.848s
+Nghỉ app trong đơn vị: trước 0.086s → sau chỉnh 0.086s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.090x; tăng 8.957% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 2 | cue 5,6,7,8 | chặng 2 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: The enormous bologna looked more like a fence post than lunch. Suddenly, Vance's quiet kitchen looked like a busy sandwich shop. Store sandwiches often come with barely any fresh vegetables inside. Vance wanted every bite to feel like a proper meal.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.033s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.679s; tổng sau ghép nghỉ trong đơn vị: 14.033s
+Nghỉ app trong đơn vị: trước 0.100s → sau chỉnh 0.100s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.032x; tăng 3.180% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 3 | cue 9,10,11,12 | chặng 3 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: But plain meat and bread weren't going to impress anybody. Then his giant pot appeared, and the challenge got serious. Sweet onions slowly turned golden as the whole kitchen filled with aroma. Even Vance looked surprised by how delicious everything suddenly smelled.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.168s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.801s; tổng sau ghép nghỉ trong đơn vị: 14.168s
+Nghỉ app trong đơn vị: trước 0.080s → sau chỉnh 0.080s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.040x; tăng 4.013% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 4 | cue 13,14,15,16 | chặng 4 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Next came a mountain of cheese that seemed impossible to finish. The deli slicer made his giant sandwich dream feel real. Then Vance revealed the ingredient nobody expected in this sandwich marathon. An unbelievable number of eggs covered the wide metal griddle.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.258s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.817s; tổng sau ghép nghỉ trong đơn vị: 14.258s
+Nghỉ app trong đơn vị: trước 0.126s → sau chỉnh 0.126s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.839% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 5 | cue 17,18,19,20 | chặng 5 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: He laid out twenty-eight bread slices at once for the crowd. That tiny kitchen toaster never stood a chance against this plan. With the bread perfectly toasted, the real mountain began rising. Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.471s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 14.138s; tổng sau ghép nghỉ trong đơn vị: 14.471s
+Nghỉ app trong đơn vị: trước 0.124s → sau chỉnh 0.124s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.064x; tăng 6.401% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 6 | cue 21,22,23,24 | chặng 6 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Hundreds of towering sandwiches stood in rows across the table. Each one held eggs, onions, cheese, and plenty of filling. But Vance wasn't making all this food for himself. After dark, yellow crates packed with sandwiches filled the station wagon.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 13.893s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.559s; tổng sau ghép nghỉ trong đơn vị: 13.893s
+Nghỉ app trong đơn vị: trước 0.080s → sau chỉnh 0.080s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.007x; tăng 0.674% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 7 | cue 25,26,27,28 | chặng 7 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: The real destination was a community room filled with children. One ordinary evening suddenly became a huge neighborhood dinner. The best part wasn't the massive pile of homemade sandwiches. It was watching everyone smile when they finally shared them.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.351s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.962s; tổng sau ghép nghỉ trong đơn vị: 14.351s
+Nghỉ app trong đơn vị: trước 0.103s → sau chỉnh 0.103s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.790% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+
+CHẶNG V15.6 · không gán thời lượng chung thành số đo riêng từng cue
+Chặng 1 | cue 1,2,3,4 | nguồn 00:00:00,000 → 00:00:13,600 | khung 13.600s
+Lời toàn chặng: He bought a six-foot bologna log. His plan was even bigger. Vance wanted to beat the price of ordinary store sandwiches. Buying that many packaged sandwiches would cost over twelve hundred dollars. His homemade version came to just three hundred thirty-two dollars.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.848s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.090x; tăng 8.957% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.554s; nghỉ app trong đơn vị 0.086s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.092x; tăng 9.173% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 2 | cue 5,6,7,8 | nguồn 00:00:13,600 → 00:00:27,200 | khung 13.600s
+Lời toàn chặng: The enormous bologna looked more like a fence post than lunch. Suddenly, Vance's quiet kitchen looked like a busy sandwich shop. Store sandwiches often come with barely any fresh vegetables inside. Vance wanted every bite to feel like a proper meal.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.033s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.032x; tăng 3.180% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.679s; nghỉ app trong đơn vị 0.100s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.032x; tăng 3.180% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 3 | cue 9,10,11,12 | nguồn 00:00:27,200 → 00:00:40,800 | khung 13.600s
+Lời toàn chặng: But plain meat and bread weren't going to impress anybody. Then his giant pot appeared, and the challenge got serious. Sweet onions slowly turned golden as the whole kitchen filled with aroma. Even Vance looked surprised by how delicious everything suddenly smelled.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.168s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.040x; tăng 4.013% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.801s; nghỉ app trong đơn vị 0.080s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.286s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.042x; tăng 4.173% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 4 | cue 13,14,15,16 | nguồn 00:00:40,800 → 00:00:54,400 | khung 13.600s
+Lời toàn chặng: Next came a mountain of cheese that seemed impossible to finish. The deli slicer made his giant sandwich dream feel real. Then Vance revealed the ingredient nobody expected in this sandwich marathon. An unbelievable number of eggs covered the wide metal griddle.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.258s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.048x; tăng 4.839% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.817s; nghỉ app trong đơn vị 0.126s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.315s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.048x; tăng 4.839% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 5 | cue 17,18,19,20 | nguồn 00:00:54,400 → 00:01:08,000 | khung 13.600s
+Lời toàn chặng: He laid out twenty-eight bread slices at once for the crowd. That tiny kitchen toaster never stood a chance against this plan. With the bread perfectly toasted, the real mountain began rising. Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.471s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.064x; tăng 6.401% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.138s; nghỉ app trong đơn vị 0.124s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.064x; tăng 6.401% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 6 | cue 21,22,23,24 | nguồn 00:01:08,000 → 00:01:21,800 | khung 13.800s
+Lời toàn chặng: Hundreds of towering sandwiches stood in rows across the table. Each one held eggs, onions, cheese, and plenty of filling. But Vance wasn't making all this food for himself. After dark, yellow crates packed with sandwiches filled the station wagon.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 13.893s | sau căn: 13.800s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.007x; tăng 0.674% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.559s; nghỉ app trong đơn vị 0.080s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.800s; tốc độ ƯỚC TÍNH trước giới hạn: 1.007x; tăng 0.674% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 7 | cue 25,26,27,28 | nguồn 00:01:21,800 → 00:01:35,495 | khung 13.695s
+Lời toàn chặng: The real destination was a community room filled with children. One ordinary evening suddenly became a huge neighborhood dinner. The best part wasn't the massive pile of homemade sandwiches. It was watching everyone smile when they finally shared them.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.351s | sau căn: 13.695s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.048x; tăng 4.790% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.962s; nghỉ app trong đơn vị 0.103s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.286s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.695s; tốc độ ƯỚC TÍNH trước giới hạn: 1.048x; tăng 4.790% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+
+LỊCH SỬ SỬA LỜI AI · CÙNG LẦN TẠO
+V15 AI REPAIR REPORT · 2.0.15 · schema 2 · AI REPAIR STABLE
+Kết quả: FINAL VERIFIED · bộ WAV/SRT/TXT cùng lời
+Nguồn: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.srt
+SHA256 nguồn: D534F88A057DBF914C1A1D6548CF0D117B3195B934717197AC6B363DDAB260A5
+Model: Qwen3-4B-Instruct-2507 Q4_K_M · offline · không phải giọng TTS
+Số cue thay đổi lời: 0
+WAV tổng: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.wav
+Khóa ngữ nghĩa bảo thủ: không tự chấp nhận thay đổi từ nội dung. Cần duyệt khi không chứng minh được tương đương; không có cam kết máy chứng minh mọi ngữ nghĩa.
+Tối đa 3 lần AI/đơn vị/phiên. Không lặp lại phương án thất bại. Số đo TTS gồm nghỉ tự nhiên của engine; không giả tách lời nói thuần.
+
+Đơn vị 1 · cue 1,2,3,4 · 00:00:00,000 → 00:00:13,600 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #1: He bought a six-foot bologna log. His plan was even bigger.
+Gốc #2: Vance wanted to beat the price of ordinary store sandwiches.
+Gốc #3: Buying that many packaged sandwiches would cost over twelve hundred dollars.
+Gốc #4: His homemade version came to just three hundred thirty-two dollars.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.554s; nghỉ app 0.086s; hơi thở 0.208s; tổng trước căn 14.848s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.090x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 0|0|-100 → 2|1|6.9457916666666666
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.848s; sau căn 13.600s; tốc độ 1.090x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 2 · cue 5,6,7,8 · 00:00:13,600 → 00:00:27,200 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #5: The enormous bologna looked more like a fence post than lunch.
+Gốc #6: Suddenly, Vance's quiet kitchen looked like a busy sandwich shop.
+Gốc #7: Store sandwiches often come with barely any fresh vegetables inside.
+Gốc #8: Vance wanted every bite to feel like a proper meal.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.679s; nghỉ app 0.100s; hơi thở 0.254s; tổng trước căn 14.033s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.032x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 2|1|6.9457916666666666 → 3|2|17.171416666666666
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.033s; sau căn 13.600s; tốc độ 1.032x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 3 · cue 9,10,11,12 · 00:00:27,200 → 00:00:40,800 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #9: But plain meat and bread weren't going to impress anybody.
+Gốc #10: Then his giant pot appeared, and the challenge got serious.
+Gốc #11: Sweet onions slowly turned golden as the whole kitchen filled with aroma.
+Gốc #12: Even Vance looked surprised by how delicious everything suddenly smelled.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.801s; nghỉ app 0.080s; hơi thở 0.286s; tổng trước căn 14.168s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.040x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 3|2|17.171416666666666 → 3|3|29.934874999999998
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.168s; sau căn 13.600s; tốc độ 1.040x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 4 · cue 13,14,15,16 · 00:00:40,800 → 00:00:54,400 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #13: Next came a mountain of cheese that seemed impossible to finish.
+Gốc #14: The deli slicer made his giant sandwich dream feel real.
+Gốc #15: Then Vance revealed the ingredient nobody expected in this sandwich marathon.
+Gốc #16: An unbelievable number of eggs covered the wide metal griddle.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.817s; nghỉ app 0.126s; hơi thở 0.315s; tổng trước căn 14.258s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.048x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 3|3|29.934874999999998 → 3|4|44.38283333333333
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.258s; sau căn 13.600s; tốc độ 1.048x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 5 · cue 17,18,19,20 · 00:00:54,400 → 00:01:08,000 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #17: He laid out twenty-eight bread slices at once for the crowd.
+Gốc #18: That tiny kitchen toaster never stood a chance against this plan.
+Gốc #19: With the bread perfectly toasted, the real mountain began rising.
+Gốc #20: Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.138s; nghỉ app 0.124s; hơi thở 0.208s; tổng trước căn 14.471s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.064x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|4|44.38283333333333 → 3|5|58.170583333333333
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.471s; sau căn 13.600s; tốc độ 1.064x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 6 · cue 21,22,23,24 · 00:01:08,000 → 00:01:21,800 · khung 13.800s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #21: Hundreds of towering sandwiches stood in rows across the table.
+Gốc #22: Each one held eggs, onions, cheese, and plenty of filling.
+Gốc #23: But Vance wasn't making all this food for himself.
+Gốc #24: After dark, yellow crates packed with sandwiches filled the station wagon.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.559s; nghỉ app 0.080s; hơi thở 0.254s; tổng trước căn 13.893s; sau căn 13.800s; mục tiêu 13.800s; dư (+)/thiếu (-) 0.000s; tốc độ 1.007x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 3|5|58.170583333333333 → 3|6|71.577916666666667
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 13.893s; sau căn 13.800s; tốc độ 1.007x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 7 · cue 25,26,27,28 · 00:01:21,800 → 00:01:35,495 · khung 13.695s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #25: The real destination was a community room filled with children.
+Gốc #26: One ordinary evening suddenly became a huge neighborhood dinner.
+Gốc #27: The best part wasn't the massive pile of homemade sandwiches.
+Gốc #28: It was watching everyone smile when they finally shared them.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.962s; nghỉ app 0.103s; hơi thở 0.286s; tổng trước căn 14.351s; sau căn 13.695s; mục tiêu 13.695s; dư (+)/thiếu (-) 0.000s; tốc độ 1.048x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|6|71.577916666666667 → 3|7|85.122083333333336
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.351s; sau căn 13.695s; tốc độ 1.048x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+Không chia tỷ lệ thời lượng chặng thành mốc WAV riêng từng cue. final.srt giữ timeline nguồn nếu chưa căn từ thật. final.vi.txt ghi CHƯA DỊCH khi không có bản dịch đã xác minh.
+
+
+LỖI / KẾT THÚC
+
+CHẨN ĐOÁN QUY TRÌNH · mã app khác mã hệ điều hành/tiến trình
+Bước cuối: SYNC · Xác nhận lời TTS, SRT, TXT và báo cáo cùng một lần xuất
+Mã kết quả app: SUCCESS
+Trạng thái chặng: 7 đạt; 0 lỗi; 0 dừng; 0 chưa chạy. Đạt chặng chưa có nghĩa đã xuất WAV cuối.
+Không có lỗi tác vụ được ghi nhận.
+BÁO CÁO ĐÃ KẾT THÚC
+
+HƯỚNG DẪN CHO CHAT TẠO PROMPT
+Dùng đúng tên giọng, tốc độ gốc, giới hạn áp dụng và thời lượng đo trong báo cáo này. Đối chiếu nguyên văn, cue và mốc nguồn. Phần chưa đo không được dùng làm số liệu hiệu chuẩn. Đơn vị trong chặng chưa có mốc sau căn riêng không được suy ra bằng chia đều hoặc tỷ lệ.
+Ưu tiên phân tích các đơn vị/chặng không khớp và lịch sử thử tốc độ; tốc độ % được tính so với tốc độ gốc, không mặc định so với 1.00x. Giữ cốt truyện, thứ tự sự kiện và điểm neo. Không tự giảm giọng sâu, thêm lời đệm hay suy ra một định mức số từ áp dụng cho mọi giọng. Bản sửa prompt/SRT cần render lại để xác nhận.
+
+Tổng cue khác file nguồn: 0
+BỘ ĐẦU RA ĐỒNG BỘ: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.final.srt; C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.final.vi.txt
+Dịch Việt: CHƯA DỊCH.

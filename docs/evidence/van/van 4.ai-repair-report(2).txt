@@ -1,0 +1,125 @@
+V15 AI REPAIR REPORT · 2.0.15 · schema 2 · AI REPAIR STABLE
+Kết quả: FINAL VERIFIED · bộ WAV/SRT/TXT cùng lời
+Nguồn: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.srt
+SHA256 nguồn: D534F88A057DBF914C1A1D6548CF0D117B3195B934717197AC6B363DDAB260A5
+Model: Qwen3-4B-Instruct-2507 Q4_K_M · offline · không phải giọng TTS
+Số cue thay đổi lời: 0
+WAV tổng: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.wav
+Khóa ngữ nghĩa bảo thủ: không tự chấp nhận thay đổi từ nội dung. Cần duyệt khi không chứng minh được tương đương; không có cam kết máy chứng minh mọi ngữ nghĩa.
+Tối đa 3 lần AI/đơn vị/phiên. Không lặp lại phương án thất bại. Số đo TTS gồm nghỉ tự nhiên của engine; không giả tách lời nói thuần.
+
+Đơn vị 1 · cue 1,2,3,4 · 00:00:00,000 → 00:00:13,600 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #1: He bought a six-foot bologna log. His plan was even bigger.
+Gốc #2: Vance wanted to beat the price of ordinary store sandwiches.
+Gốc #3: Buying that many packaged sandwiches would cost over twelve hundred dollars.
+Gốc #4: His homemade version came to just three hundred thirty-two dollars.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.554s; nghỉ app 0.086s; hơi thở 0.208s; tổng trước căn 14.848s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.090x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 0|0|-100 → 2|1|6.9457916666666666
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.848s; sau căn 13.600s; tốc độ 1.090x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 2 · cue 5,6,7,8 · 00:00:13,600 → 00:00:27,200 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #5: The enormous bologna looked more like a fence post than lunch.
+Gốc #6: Suddenly, Vance's quiet kitchen looked like a busy sandwich shop.
+Gốc #7: Store sandwiches often come with barely any fresh vegetables inside.
+Gốc #8: Vance wanted every bite to feel like a proper meal.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.679s; nghỉ app 0.100s; hơi thở 0.254s; tổng trước căn 14.033s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.032x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 2|1|6.9457916666666666 → 3|2|17.171416666666666
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.033s; sau căn 13.600s; tốc độ 1.032x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 3 · cue 9,10,11,12 · 00:00:27,200 → 00:00:40,800 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #9: But plain meat and bread weren't going to impress anybody.
+Gốc #10: Then his giant pot appeared, and the challenge got serious.
+Gốc #11: Sweet onions slowly turned golden as the whole kitchen filled with aroma.
+Gốc #12: Even Vance looked surprised by how delicious everything suddenly smelled.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.801s; nghỉ app 0.080s; hơi thở 0.286s; tổng trước căn 14.168s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.040x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 3|2|17.171416666666666 → 3|3|29.934874999999998
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.168s; sau căn 13.600s; tốc độ 1.040x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 4 · cue 13,14,15,16 · 00:00:40,800 → 00:00:54,400 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #13: Next came a mountain of cheese that seemed impossible to finish.
+Gốc #14: The deli slicer made his giant sandwich dream feel real.
+Gốc #15: Then Vance revealed the ingredient nobody expected in this sandwich marathon.
+Gốc #16: An unbelievable number of eggs covered the wide metal griddle.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.817s; nghỉ app 0.126s; hơi thở 0.315s; tổng trước căn 14.258s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.048x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 3|3|29.934874999999998 → 3|4|44.38283333333333
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.258s; sau căn 13.600s; tốc độ 1.048x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 5 · cue 17,18,19,20 · 00:00:54,400 → 00:01:08,000 · khung 13.600s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #17: He laid out twenty-eight bread slices at once for the crowd.
+Gốc #18: That tiny kitchen toaster never stood a chance against this plan.
+Gốc #19: With the bread perfectly toasted, the real mountain began rising.
+Gốc #20: Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.138s; nghỉ app 0.124s; hơi thở 0.208s; tổng trước căn 14.471s; sau căn 13.600s; mục tiêu 13.600s; dư (+)/thiếu (-) 0.000s; tốc độ 1.064x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|4|44.38283333333333 → 3|5|58.170583333333333
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.471s; sau căn 13.600s; tốc độ 1.064x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 6 · cue 21,22,23,24 · 00:01:08,000 → 00:01:21,800 · khung 13.800s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #21: Hundreds of towering sandwiches stood in rows across the table.
+Gốc #22: Each one held eggs, onions, cheese, and plenty of filling.
+Gốc #23: But Vance wasn't making all this food for himself.
+Gốc #24: After dark, yellow crates packed with sandwiches filled the station wagon.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.559s; nghỉ app 0.080s; hơi thở 0.254s; tổng trước căn 13.893s; sau căn 13.800s; mục tiêu 13.800s; dư (+)/thiếu (-) 0.000s; tốc độ 1.007x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 3|5|58.170583333333333 → 3|6|71.577916666666667
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 13.893s; sau căn 13.800s; tốc độ 1.007x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 7 · cue 25,26,27,28 · 00:01:21,800 → 00:01:35,495 · khung 13.695s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #25: The real destination was a community room filled with children.
+Gốc #26: One ordinary evening suddenly became a huge neighborhood dinner.
+Gốc #27: The best part wasn't the massive pile of homemade sandwiches.
+Gốc #28: It was watching everyone smile when they finally shared them.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.962s; nghỉ app 0.103s; hơi thở 0.286s; tổng trước căn 14.351s; sau căn 13.695s; mục tiêu 13.695s; dư (+)/thiếu (-) 0.000s; tốc độ 1.048x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|6|71.577916666666667 → 3|7|85.122083333333336
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.351s; sau căn 13.695s; tốc độ 1.048x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+Không chia tỷ lệ thời lượng chặng thành mốc WAV riêng từng cue. final.srt giữ timeline nguồn nếu chưa căn từ thật. final.vi.txt ghi CHƯA DỊCH khi không có bản dịch đã xác minh.
+
+Tổng cue khác file nguồn: 0
+WAV SHA256: E4D1B1CA2AE854B86D12D6FB1BE055787A7B8A904098AA04175641422B32F77C

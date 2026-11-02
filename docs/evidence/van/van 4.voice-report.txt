@@ -1,0 +1,721 @@
+V15 VOICE REPORT · schema 3 · app 2.0.14.0
+Kết quả: THÀNH CÔNG
+Bắt đầu UTC: 2026-10-31T10:51:19.7252180Z; đã chạy 2.923s
+Mục đích: Tạo WAV
+Nguồn: van 4.srt
+SHA256 file nguồn: d534f88a057dbf914c1a1d6548cf0d117b3195b934717197ac6b363ddab260a5
+SHA256 snapshot lời+mốc dùng trong app: c0f8d6740cbfa34227f83ef6b9f08de6150ec2d2ce3812d2e1ae61f7084bd99c
+Tổng đơn vị đã lên kế hoạch: 29; có số đo trước căn: 29; chưa đo: 0; chặng có kết quả: 7
+WAV cuối của LẦN NÀY: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.wav
+Báo cáo: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.voice-report.txt
+
+GIỌNG VÀ THIẾT LẬP
+Chế độ: MỘT GIỌNG
+Ngôn ngữ: English theo nguồn giọng đã chọn
+Tên giọng: Steven hảley; mã: U:26e931bd135b45f1bc86fb795e11f54d
+Engine/model: Chatterbox / chatter_nano / speaker -1
+Nguồn giọng: Mẫu do người dùng cung cấp • Chatterbox
+Đặc điểm: Giọng riêng theo mẫu tham chiếu; cần nghe thử để đánh giá độ giống.
+Phong cách: Kể chuyện
+Ghi chú của người dùng: 
+Loại giọng: sao chép · mẫu 26e931bd135b45f1bc86fb795e11f54d.wav · SHA256 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Không đính kèm file âm thanh tham chiếu trong báo cáo.
+Thiết bị yêu cầu: auto
+Thiết bị đã báo trong lần chạy: chưa có xác nhận; có thể chưa tổng hợp hoặc dùng cache
+Thiết bị của âm thanh lấy từ cache: không suy đoán từ thiết bị đang chọn.
+Số chênh: dương = dài hơn đích, âm = ngắn hơn đích. Khóa SRT có thể dành chỗ nghỉ và biên 0.025s khi căn; ngắn hơn khung không tự động là lỗi, cần xem trạng thái tác vụ/chặng.
+Timeline: V15.6 · theo chặng
+Tốc độ gốc: 1.000x; giới hạn đặt: 0.900–1.250x; giới hạn áp dụng: 0.900–1.250x; nhẹ ±10%: False
+Ngắt nghỉ: Auto; phẩy=0.140s; chấm=0.300s; hỏi/cảm=0.350s; đoạn=0.500s; gap=0.100s
+Hơi thở: Auto; mỗi 3 câu; mức=16.000%; cân âm=True / -18.000 LUFS
+
+CUE NGUỒN · nguyên văn dùng trong app trước khi ghép/căn
+Số cue theo thứ tự trong app; file nguồn có thể đã được đánh lại số khi nhập.
+Timeline nguồn và mốc WAV là hai trường riêng. TXT không có timeline nguồn; không dùng mốc dự kiến như mốc đã đo.
+#1 | 00:00:00,000 → 00:00:03,400 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: He bought a six-foot bologna log. His plan was even bigger.
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng; đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#2 | 00:00:03,400 → 00:00:06,800 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Vance wanted to beat the price of ordinary store sandwiches.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#3 | 00:00:06,800 → 00:00:10,200 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Buying that many packaged sandwiches would cost over twelve hundred dollars.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#4 | 00:00:10,200 → 00:00:13,600 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: His homemade version came to just three hundred thirty-two dollars.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#5 | 00:00:13,600 → 00:00:17,000 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The enormous bologna looked more like a fence post than lunch.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#6 | 00:00:17,000 → 00:00:20,400 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Suddenly, Vance's quiet kitchen looked like a busy sandwich shop.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#7 | 00:00:20,400 → 00:00:23,800 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Store sandwiches often come with barely any fresh vegetables inside.
+Trạng thái: đơn vị 8: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#8 | 00:00:23,800 → 00:00:27,200 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Vance wanted every bite to feel like a proper meal.
+Trạng thái: đơn vị 9: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#9 | 00:00:27,200 → 00:00:30,600 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: But plain meat and bread weren't going to impress anybody.
+Trạng thái: đơn vị 10: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#10 | 00:00:30,600 → 00:00:34,000 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Then his giant pot appeared, and the challenge got serious.
+Trạng thái: đơn vị 11: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#11 | 00:00:34,000 → 00:00:37,400 | khung 3.400s | 12 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Sweet onions slowly turned golden as the whole kitchen filled with aroma.
+Trạng thái: đơn vị 12: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#12 | 00:00:37,400 → 00:00:40,800 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Even Vance looked surprised by how delicious everything suddenly smelled.
+Trạng thái: đơn vị 13: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#13 | 00:00:40,800 → 00:00:44,200 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Next came a mountain of cheese that seemed impossible to finish.
+Trạng thái: đơn vị 14: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#14 | 00:00:44,200 → 00:00:47,600 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The deli slicer made his giant sandwich dream feel real.
+Trạng thái: đơn vị 15: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#15 | 00:00:47,600 → 00:00:51,000 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Then Vance revealed the ingredient nobody expected in this sandwich marathon.
+Trạng thái: đơn vị 16: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#16 | 00:00:51,000 → 00:00:54,400 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: An unbelievable number of eggs covered the wide metal griddle.
+Trạng thái: đơn vị 17: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#17 | 00:00:54,400 → 00:00:57,800 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: He laid out twenty-eight bread slices at once for the crowd.
+Trạng thái: đơn vị 18: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#18 | 00:00:57,800 → 00:01:01,200 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: That tiny kitchen toaster never stood a chance against this plan.
+Trạng thái: đơn vị 19: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#19 | 00:01:01,200 → 00:01:04,600 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: With the bread perfectly toasted, the real mountain began rising.
+Trạng thái: đơn vị 20: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#20 | 00:01:04,600 → 00:01:08,000 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Trạng thái: đơn vị 21: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#21 | 00:01:08,000 → 00:01:11,400 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Hundreds of towering sandwiches stood in rows across the table.
+Trạng thái: đơn vị 22: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#22 | 00:01:11,400 → 00:01:14,900 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Each one held eggs, onions, cheese, and plenty of filling.
+Trạng thái: đơn vị 23: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#23 | 00:01:14,900 → 00:01:18,300 | khung 3.400s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: But Vance wasn't making all this food for himself.
+Trạng thái: đơn vị 24: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#24 | 00:01:18,300 → 00:01:21,800 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: After dark, yellow crates packed with sandwiches filled the station wagon.
+Trạng thái: đơn vị 25: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#25 | 00:01:21,800 → 00:01:25,200 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The real destination was a community room filled with children.
+Trạng thái: đơn vị 26: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#26 | 00:01:25,200 → 00:01:28,600 | khung 3.400s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: One ordinary evening suddenly became a huge neighborhood dinner.
+Trạng thái: đơn vị 27: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#27 | 00:01:28,600 → 00:01:32,000 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The best part wasn't the massive pile of homemade sandwiches.
+Trạng thái: đơn vị 28: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#28 | 00:01:32,000 → 00:01:35,495 | khung 3.495s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: It was watching everyone smile when they finally shared them.
+Trạng thái: đơn vị 29: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+
+ĐƠN VỊ LỜI ĐỌC · số đo âm thanh thực tế
+Đơn vị 1 | cue 1 | chặng 1 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: He bought a six-foot bologna log.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 2.044s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 2.044s; tổng sau ghép nghỉ trong đơn vị: 2.044s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.090x; tăng 8.957% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 2 | cue 1 | chặng 1 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: His plan was even bigger.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 1.517s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 1.517s; tổng sau ghép nghỉ trong đơn vị: 1.517s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.090x; tăng 8.957% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 3 | cue 2 | chặng 1 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Vance wanted to beat the price of ordinary store sandwiches.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.379s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.379s; tổng sau ghép nghỉ trong đơn vị: 3.379s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.005s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.090x; tăng 8.957% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 4 | cue 3 | chặng 1 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Buying that many packaged sandwiches would cost over twelve hundred dollars.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 4.031s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 4.031s; tổng sau ghép nghỉ trong đơn vị: 4.031s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.288s (gồm hơi thở 0.208s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.090x; tăng 8.957% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 5 | cue 4 | chặng 1 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: His homemade version came to just three hundred thirty-two dollars.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.582s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.582s; tổng sau ghép nghỉ trong đơn vị: 3.582s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.090x; tăng 8.957% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 6 | cue 5 | chặng 2 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: The enormous bologna looked more like a fence post than lunch.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.571s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.571s; tổng sau ghép nghỉ trong đơn vị: 3.571s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.032x; tăng 3.180% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 7 | cue 6 | chặng 2 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Suddenly, Vance's quiet kitchen looked like a busy sandwich shop.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.762s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.762s; tổng sau ghép nghỉ trong đơn vị: 3.762s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.334s (gồm hơi thở 0.254s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.032x; tăng 3.180% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 8 | cue 7 | chặng 2 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Store sandwiches often come with barely any fresh vegetables inside.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.648s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.648s; tổng sau ghép nghỉ trong đơn vị: 3.648s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.020s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.032x; tăng 3.180% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 9 | cue 8 | chặng 2 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Vance wanted every bite to feel like a proper meal.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 2.698s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 2.698s; tổng sau ghép nghỉ trong đơn vị: 2.698s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.032x; tăng 3.180% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 10 | cue 9 | chặng 3 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: But plain meat and bread weren't going to impress anybody.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 2.735s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 2.735s; tổng sau ghép nghỉ trong đơn vị: 2.735s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.040x; tăng 4.013% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 11 | cue 10 | chặng 3 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Then his giant pot appeared, and the challenge got serious.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.227s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.227s; tổng sau ghép nghỉ trong đơn vị: 3.227s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.366s (gồm hơi thở 0.286s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.040x; tăng 4.013% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 12 | cue 11 | chặng 3 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Sweet onions slowly turned golden as the whole kitchen filled with aroma.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 4.046s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 4.046s; tổng sau ghép nghỉ trong đơn vị: 4.046s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.040x; tăng 4.013% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 13 | cue 12 | chặng 3 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Even Vance looked surprised by how delicious everything suddenly smelled.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.793s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.793s; tổng sau ghép nghỉ trong đơn vị: 3.793s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.040x; tăng 4.013% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 14 | cue 13 | chặng 4 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Next came a mountain of cheese that seemed impossible to finish.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.583s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.583s; tổng sau ghép nghỉ trong đơn vị: 3.583s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.839% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 15 | cue 14 | chặng 4 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: The deli slicer made his giant sandwich dream feel real.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.130s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.130s; tổng sau ghép nghỉ trong đơn vị: 3.130s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.395s (gồm hơi thở 0.315s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.839% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 16 | cue 15 | chặng 4 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Then Vance revealed the ingredient nobody expected in this sandwich marathon.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.913s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.913s; tổng sau ghép nghỉ trong đơn vị: 3.913s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.021s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.839% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 17 | cue 16 | chặng 4 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: An unbelievable number of eggs covered the wide metal griddle.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.190s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.190s; tổng sau ghép nghỉ trong đơn vị: 3.190s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.025s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.839% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 18 | cue 17 | chặng 5 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: He laid out twenty-eight bread slices at once for the crowd.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.771s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.771s; tổng sau ghép nghỉ trong đơn vị: 3.771s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.064x; tăng 6.401% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 19 | cue 18 | chặng 5 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: That tiny kitchen toaster never stood a chance against this plan.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.615s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.615s; tổng sau ghép nghỉ trong đơn vị: 3.615s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.288s (gồm hơi thở 0.208s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.064x; tăng 6.401% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 20 | cue 19 | chặng 5 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: With the bread perfectly toasted, the real mountain began rising.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.423s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.423s; tổng sau ghép nghỉ trong đơn vị: 3.423s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.027s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.064x; tăng 6.401% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 21 | cue 20 | chặng 5 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.330s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.330s; tổng sau ghép nghỉ trong đơn vị: 3.330s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.017s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.064x; tăng 6.401% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 22 | cue 21 | chặng 6 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Hundreds of towering sandwiches stood in rows across the table.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.578s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.578s; tổng sau ghép nghỉ trong đơn vị: 3.578s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.007x; tăng 0.674% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 23 | cue 22 | chặng 6 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Each one held eggs, onions, cheese, and plenty of filling.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.355s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.355s; tổng sau ghép nghỉ trong đơn vị: 3.355s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.334s (gồm hơi thở 0.254s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.007x; tăng 0.674% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 24 | cue 23 | chặng 6 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: But Vance wasn't making all this food for himself.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 2.792s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 2.792s; tổng sau ghép nghỉ trong đơn vị: 2.792s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.007x; tăng 0.674% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 25 | cue 24 | chặng 6 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: After dark, yellow crates packed with sandwiches filled the station wagon.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.835s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.835s; tổng sau ghép nghỉ trong đơn vị: 3.835s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.007x; tăng 0.674% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 26 | cue 25 | chặng 7 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: The real destination was a community room filled with children.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.322s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.322s; tổng sau ghép nghỉ trong đơn vị: 3.322s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.790% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 27 | cue 26 | chặng 7 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: One ordinary evening suddenly became a huge neighborhood dinner.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.317s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.317s; tổng sau ghép nghỉ trong đơn vị: 3.317s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.366s (gồm hơi thở 0.286s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.790% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 28 | cue 27 | chặng 7 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: The best part wasn't the massive pile of homemade sandwiches.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.702s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.702s; tổng sau ghép nghỉ trong đơn vị: 3.702s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.020s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.790% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 29 | cue 28 | chặng 7 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: It was watching everyone smile when they finally shared them.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Trước căn tại tốc độ gốc: 3.621s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 3.621s; tổng sau ghép nghỉ trong đơn vị: 3.621s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.003s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.048x; tăng 4.790% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+
+CHẶNG V15.6 · không gán thời lượng chung thành số đo riêng từng cue
+Chặng 1 | cue 1,2,3,4 | nguồn 00:00:00,000 → 00:00:13,600 | khung 13.600s
+Lời toàn chặng: He bought a six-foot bologna log. His plan was even bigger. Vance wanted to beat the price of ordinary store sandwiches. Buying that many packaged sandwiches would cost over twelve hundred dollars. His homemade version came to just three hundred thirty-two dollars.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.848s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: -0.016s
+Tốc độ chặng: 1.090x; tăng 8.957% so với gốc 1.000x
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.554s; nghỉ app trong đơn vị 0.000s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.086s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.092x; tăng 9.173% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Lần thử CUỐI đã đo: 1.090x; 13.616s; chênh đo-đích 0.016s. Dương=dư, âm=thiếu. Kết quả được chọn có thể là lần thử khác.
+  Thử 1: 1.092x; atempo so với gốc 1.092; tăng 9.173% so với gốc 1.000x; đo 13.573s; đích 13.600s; chênh đo-đích -0.027s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+  Thử 2: 1.090x; atempo so với gốc 1.090; tăng 8.957% so với gốc 1.000x; đo 13.616s; đích 13.600s; chênh đo-đích 0.016s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+Chặng 2 | cue 5,6,7,8 | nguồn 00:00:13,600 → 00:00:27,200 | khung 13.600s
+Lời toàn chặng: The enormous bologna looked more like a fence post than lunch. Suddenly, Vance's quiet kitchen looked like a busy sandwich shop. Store sandwiches often come with barely any fresh vegetables inside. Vance wanted every bite to feel like a proper meal.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.033s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: -0.014s
+Tốc độ chặng: 1.032x; tăng 3.180% so với gốc 1.000x
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.679s; nghỉ app trong đơn vị 0.000s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.100s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.032x; tăng 3.180% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Lần thử CUỐI đã đo: 1.032x; 13.614s; chênh đo-đích 0.014s. Dương=dư, âm=thiếu. Kết quả được chọn có thể là lần thử khác.
+  Thử 1: 1.032x; atempo so với gốc 1.032; tăng 3.180% so với gốc 1.000x; đo 13.614s; đích 13.600s; chênh đo-đích 0.014s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+Chặng 3 | cue 9,10,11,12 | nguồn 00:00:27,200 → 00:00:40,800 | khung 13.600s
+Lời toàn chặng: But plain meat and bread weren't going to impress anybody. Then his giant pot appeared, and the challenge got serious. Sweet onions slowly turned golden as the whole kitchen filled with aroma. Even Vance looked surprised by how delicious everything suddenly smelled.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.168s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.040x; tăng 4.013% so với gốc 1.000x
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.801s; nghỉ app trong đơn vị 0.000s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.080s; hơi thở 0.286s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.042x; tăng 4.173% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Lần thử CUỐI đã đo: 1.040x; 13.600s; chênh đo-đích 0.000s. Dương=dư, âm=thiếu. Kết quả được chọn có thể là lần thử khác.
+  Thử 1: 1.042x; atempo so với gốc 1.042; tăng 4.173% so với gốc 1.000x; đo 13.579s; đích 13.600s; chênh đo-đích -0.021s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+  Thử 2: 1.040x; atempo so với gốc 1.040; tăng 4.013% so với gốc 1.000x; đo 13.600s; đích 13.600s; chênh đo-đích 0.000s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+Chặng 4 | cue 13,14,15,16 | nguồn 00:00:40,800 → 00:00:54,400 | khung 13.600s
+Lời toàn chặng: Next came a mountain of cheese that seemed impossible to finish. The deli slicer made his giant sandwich dream feel real. Then Vance revealed the ingredient nobody expected in this sandwich marathon. An unbelievable number of eggs covered the wide metal griddle.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.258s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: -0.007s
+Tốc độ chặng: 1.048x; tăng 4.839% so với gốc 1.000x
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.817s; nghỉ app trong đơn vị 0.000s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.126s; hơi thở 0.315s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.048x; tăng 4.839% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Lần thử CUỐI đã đo: 1.048x; 13.607s; chênh đo-đích 0.007s. Dương=dư, âm=thiếu. Kết quả được chọn có thể là lần thử khác.
+  Thử 1: 1.048x; atempo so với gốc 1.048; tăng 4.839% so với gốc 1.000x; đo 13.607s; đích 13.600s; chênh đo-đích 0.007s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+Chặng 5 | cue 17,18,19,20 | nguồn 00:00:54,400 → 00:01:08,000 | khung 13.600s
+Lời toàn chặng: He laid out twenty-eight bread slices at once for the crowd. That tiny kitchen toaster never stood a chance against this plan. With the bread perfectly toasted, the real mountain began rising. Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.471s | sau căn: 13.600s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: -0.014s
+Tốc độ chặng: 1.064x; tăng 6.401% so với gốc 1.000x
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.138s; nghỉ app trong đơn vị 0.000s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.124s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.600s; tốc độ ƯỚC TÍNH trước giới hạn: 1.064x; tăng 6.401% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Lần thử CUỐI đã đo: 1.064x; 13.614s; chênh đo-đích 0.014s. Dương=dư, âm=thiếu. Kết quả được chọn có thể là lần thử khác.
+  Thử 1: 1.064x; atempo so với gốc 1.064; tăng 6.401% so với gốc 1.000x; đo 13.614s; đích 13.600s; chênh đo-đích 0.014s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+Chặng 6 | cue 21,22,23,24 | nguồn 00:01:08,000 → 00:01:21,800 | khung 13.800s
+Lời toàn chặng: Hundreds of towering sandwiches stood in rows across the table. Each one held eggs, onions, cheese, and plenty of filling. But Vance wasn't making all this food for himself. After dark, yellow crates packed with sandwiches filled the station wagon.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 13.893s | sau căn: 13.800s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: -0.007s
+Tốc độ chặng: 1.007x; tăng 0.674% so với gốc 1.000x
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.559s; nghỉ app trong đơn vị 0.000s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.080s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.800s; tốc độ ƯỚC TÍNH trước giới hạn: 1.007x; tăng 0.674% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Lần thử CUỐI đã đo: 1.007x; 13.807s; chênh đo-đích 0.007s. Dương=dư, âm=thiếu. Kết quả được chọn có thể là lần thử khác.
+  Thử 1: 1.007x; atempo so với gốc 1.007; tăng 0.674% so với gốc 1.000x; đo 13.807s; đích 13.800s; chênh đo-đích 0.007s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+Chặng 7 | cue 25,26,27,28 | nguồn 00:01:21,800 → 00:01:35,495 | khung 13.695s
+Lời toàn chặng: The real destination was a community room filled with children. One ordinary evening suddenly became a huge neighborhood dinner. The best part wasn't the massive pile of homemade sandwiches. It was watching everyone smile when they finally shared them.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.351s | sau căn: 13.695s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.017s
+Tốc độ chặng: 1.048x; tăng 4.790% so với gốc 1.000x
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.962s; nghỉ app trong đơn vị 0.000s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.103s; hơi thở 0.286s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.695s; tốc độ ƯỚC TÍNH trước giới hạn: 1.048x; tăng 4.790% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Lần thử CUỐI đã đo: 1.048x; 13.678s; chênh đo-đích -0.017s. Dương=dư, âm=thiếu. Kết quả được chọn có thể là lần thử khác.
+  Thử 1: 1.048x; atempo so với gốc 1.048; tăng 4.790% so với gốc 1.000x; đo 13.678s; đích 13.695s; chênh đo-đích -0.017s; Căn toàn chặng; đo sau atempo, trước hiệu chỉnh đuôi
+
+LỊCH SỬ SỬA LỜI AI · CÙNG LẦN TẠO
+V15 AI REPAIR REPORT · 2.0.14 · schema 1
+Kết quả: WAV tổng đã xuất thành công · cần duyệt ý nghĩa lời sửa
+Nguồn: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.srt
+SHA256 nguồn: D534F88A057DBF914C1A1D6548CF0D117B3195B934717197AC6B363DDAB260A5
+Model sửa lời: Qwen3-4B-Instruct-2507 Q4_K_M · offline · nguồn model không phải Qwen3-TTS
+SHA256 model AI: 3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597; runtime llama.cpp b12019
+Giọng A: U:26e931bd135b45f1bc86fb795e11f54d; giọng B: không bật
+Timeline: V15.6 theo chặng; tốc độ gốc 1.000x; giới hạn đặt 0.900–1.250x; căn nhẹ=False
+Kiểm tra câu ngắn: True. Không coi lỗi TTS/model/CUDA là lỗi lời.
+Đề xuất đạt chỉ xác nhận phép đo thử. Phải xuất WAV tổng để xác nhận toàn bài; hơi thở/nghỉ tại ranh giới có thể khác phép thử riêng.
+AI có thể làm thay đổi sắc thái/ý; kiểm tra ngữ nghĩa tự động chỉ là bộ lọc số/tên và cấu trúc, cần duyệt nội dung. Không có bảo đảm giữ nghĩa 100%.
+WAV tổng: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.wav
+
+Đơn vị 1 · cue 1,2,3,4 · giọng A · 00:00:00,000 → 00:00:13,600 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #1: He bought a six-foot bologna log. His plan was even bigger.
+Gốc #2: Vance wanted to beat the price of ordinary store sandwiches.
+Gốc #3: Buying that many packaged sandwiches would cost over twelve hundred dollars.
+Gốc #4: His homemade version came to just three hundred thirty-two dollars.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.848s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.090x (+8.96% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 2 · cue 5,6,7,8 · giọng A · 00:00:13,600 → 00:00:27,200 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #5: The enormous bologna looked more like a fence post than lunch.
+Gốc #6: Suddenly, Vance's quiet kitchen looked like a busy sandwich shop.
+Gốc #7: Store sandwiches often come with barely any fresh vegetables inside.
+Gốc #8: Vance wanted every bite to feel like a proper meal.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.001s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.029x (+2.95% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 3 · cue 9,10,11,12 · giọng A · 00:00:27,200 → 00:00:40,800 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #9: But plain meat and bread weren't going to impress anybody.
+Gốc #10: Then his giant pot appeared, and the challenge got serious.
+Gốc #11: Sweet onions slowly turned golden as the whole kitchen filled with aroma.
+Gốc #12: Even Vance looked surprised by how delicious everything suddenly smelled.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.105s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.035x (+3.51% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 4 · cue 13,14,15,16 · giọng A · 00:00:40,800 → 00:00:54,400 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #13: Next came a mountain of cheese that seemed impossible to finish.
+Gốc #14: The deli slicer made his giant sandwich dream feel real.
+Gốc #15: Then Vance revealed the ingredient nobody expected in this sandwich marathon.
+Gốc #16: An unbelievable number of eggs covered the wide metal griddle.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.132s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.039x (+3.91% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 5 · cue 17,18,19,20 · giọng A · 00:00:54,400 → 00:01:08,000 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #17: He laid out twenty-eight bread slices at once for the crowd.
+Gốc #18: That tiny kitchen toaster never stood a chance against this plan.
+Gốc #19: With the bread perfectly toasted, the real mountain began rising.
+Gốc #20: Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.460s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.063x (+6.33% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 6 · cue 21,22,23,24 · giọng A · 00:01:08,000 → 00:01:21,800 · khung 13.800s
+Trạng thái: Đạt · giữ nguyên
+Gốc #21: Hundreds of towering sandwiches stood in rows across the table.
+Gốc #22: Each one held eggs, onions, cheese, and plenty of filling.
+Gốc #23: But Vance wasn't making all this food for himself.
+Gốc #24: After dark, yellow crates packed with sandwiches filled the station wagon.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.850s; sau căn đo 13.800s; đích thử 13.800s; tốc độ 1.004x (+0.37% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 7 · cue 25,26,27,28 · giọng A · 00:01:21,800 → 00:01:35,495 · khung 13.695s
+Trạng thái: Đạt · giữ nguyên
+Gốc #25: The real destination was a community room filled with children.
+Gốc #26: One ordinary evening suddenly became a huge neighborhood dinner.
+Gốc #27: The best part wasn't the massive pile of homemade sandwiches.
+Gốc #28: It was watching everyone smile when they finally shared them.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.270s; sau căn đo 13.695s; đích thử 13.695s; tốc độ 1.040x (+4.04% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Không suy ra thời lượng từng cue trong chặng bằng tỷ lệ toàn chặng. Không thay đổi timeline, vai nói hoặc file SRT nguồn.
+
+
+LỖI / KẾT THÚC
+
+CHẨN ĐOÁN QUY TRÌNH · mã app khác mã hệ điều hành/tiến trình
+Bước cuối: PUBLISH · Lưu WAV cuối cạnh nguồn
+Mã kết quả app: SUCCESS
+Trạng thái chặng: 7 đạt; 0 lỗi; 0 dừng; 0 chưa chạy. Đạt chặng chưa có nghĩa đã xuất WAV cuối.
+Không có lỗi tác vụ được ghi nhận.
+BÁO CÁO ĐÃ KẾT THÚC
+
+HƯỚNG DẪN CHO CHAT TẠO PROMPT
+Dùng đúng tên giọng, tốc độ gốc, giới hạn áp dụng và thời lượng đo trong báo cáo này. Đối chiếu nguyên văn, cue và mốc nguồn. Phần chưa đo không được dùng làm số liệu hiệu chuẩn. Đơn vị trong chặng chưa có mốc sau căn riêng không được suy ra bằng chia đều hoặc tỷ lệ.
+Ưu tiên phân tích các đơn vị/chặng không khớp và lịch sử thử tốc độ; tốc độ % được tính so với tốc độ gốc, không mặc định so với 1.00x. Giữ cốt truyện, thứ tự sự kiện và điểm neo. Không tự giảm giọng sâu, thêm lời đệm hay suy ra một định mức số từ áp dụng cho mọi giọng. Bản sửa prompt/SRT cần render lại để xác nhận.

@@ -1,0 +1,1076 @@
+V15 VOICE REPORT · schema 3 · app 2.0.15.0
+Kết quả: THÀNH CÔNG
+Bắt đầu UTC: 2026-10-31T12:17:55.9143740Z; đã chạy 6.742s
+Mục đích: Tạo WAV
+Nguồn: van 5.srt
+SHA256 file nguồn: 7abd139b699b65dfe5c0cdfaed5d89e5d4c4bdbebdf8403bebd247e89c26d373
+SHA256 snapshot lời+mốc dùng trong app: b317f2f81c05830926be44c63b24e7716133574549afd45a1f21137b5701c541
+Tổng đơn vị đã lên kế hoạch: 18; có số đo trước căn: 18; chưa đo: 0; chặng có kết quả: 18
+WAV cuối của LẦN NÀY: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 5.wav
+Báo cáo: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 5.voice-report.txt
+
+GIỌNG VÀ THIẾT LẬP
+Chế độ: MỘT GIỌNG
+Ngôn ngữ: English theo nguồn giọng đã chọn
+Tên giọng: Steven hảley; mã: U:26e931bd135b45f1bc86fb795e11f54d
+Engine/model: Chatterbox / chatter_nano / speaker -1
+Nguồn giọng: Mẫu do người dùng cung cấp • Chatterbox
+Đặc điểm: Giọng riêng theo mẫu tham chiếu; cần nghe thử để đánh giá độ giống.
+Phong cách: Kể chuyện
+Ghi chú của người dùng: 
+Loại giọng: sao chép · mẫu 26e931bd135b45f1bc86fb795e11f54d.wav · SHA256 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Không đính kèm file âm thanh tham chiếu trong báo cáo.
+Thiết bị yêu cầu: auto
+Thiết bị đã báo trong lần chạy: chưa có xác nhận; có thể chưa tổng hợp hoặc dùng cache
+Thiết bị của âm thanh lấy từ cache: không suy đoán từ thiết bị đang chọn.
+Số chênh: dương = dài hơn đích, âm = ngắn hơn đích. Khóa SRT có thể dành chỗ nghỉ và biên 0.025s khi căn; ngắn hơn khung không tự động là lỗi, cần xem trạng thái tác vụ/chặng.
+Timeline: V15.6 · theo chặng
+Tốc độ gốc: 1.000x; giới hạn đặt: 0.900–1.250x; giới hạn áp dụng: 0.900–1.250x; nhẹ ±10%: False
+Ngắt nghỉ: Auto; phẩy=0.140s; chấm=0.300s; hỏi/cảm=0.350s; đoạn=0.500s; gap=0.100s
+Hơi thở: Auto; mỗi 3 câu; mức=16.000%; cân âm=True / -18.000 LUFS
+
+CUE NGUỒN · nguyên văn dùng trong app trước khi ghép/căn
+Số cue theo thứ tự trong app; file nguồn có thể đã được đánh lại số khi nhập.
+Timeline nguồn và mốc WAV là hai trường riêng. TXT không có timeline nguồn; không dùng mốc dự kiến như mốc đã đo.
+#1 | 00:00:00,000 → 00:00:03,500 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Could your old school lunch beat meals from nine other countries?
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#2 | 00:00:03,500 → 00:00:07,000 | khung 3.500s | 12 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Vance brought two friends to settle that question once and for all.
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#3 | 00:00:07,000 → 00:00:10,400 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Ten different school lunch trays entered their homemade food showdown.
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#4 | 00:00:10,400 → 00:00:13,900 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: And these three grown men were taking every bite seriously.
+Trạng thái: đơn vị 1: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#5 | 00:00:13,900 → 00:00:17,400 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Taste, nutrition, and fullness would decide the winning country.
+Trạng thái: đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#6 | 00:00:17,400 → 00:00:20,900 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Only one tray could claim the title of school lunch champion.
+Trạng thái: đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#7 | 00:00:20,900 → 00:00:24,300 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: They started with an American tray priced at two fifty.
+Trạng thái: đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#8 | 00:00:24,300 → 00:00:27,800 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: It had a burger, fries, a donut, and a soda.
+Trạng thái: đơn vị 2: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#9 | 00:00:27,800 → 00:00:31,300 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: A donut and soda for lunch? That sparked instant debate.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#10 | 00:00:31,300 → 00:00:34,800 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Nobody could decide if this was lunch or a party.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#11 | 00:00:34,800 → 00:00:38,200 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Vance loved the burger and fries more than he expected.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#12 | 00:00:38,200 → 00:00:41,700 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Comfort food was clearly winning this first round on taste.
+Trạng thái: đơn vị 3: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#13 | 00:00:41,700 → 00:00:45,200 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Milo and Zack finished their trays and joined the judging.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#14 | 00:00:45,200 → 00:00:48,700 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: America scored well for flavor, but only four for health.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#15 | 00:00:48,700 → 00:00:52,100 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Japan's tray changed the mood as soon as it appeared.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#16 | 00:00:52,100 → 00:00:55,600 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Fish, vegetables, and fruit offered a completely different kind of lunch.
+Trạng thái: đơn vị 4: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#17 | 00:00:55,600 → 00:00:59,100 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The guys struggled with chopsticks, then washed everything down with milk.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#18 | 00:00:59,100 → 00:01:02,600 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Japan walked away with seventy-one points on their scoreboard.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#19 | 00:01:02,600 → 00:01:06,000 | khung 3.400s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Then India arrived with a price that surprised everyone.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#20 | 00:01:06,000 → 00:01:09,500 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Warm lentils, vegetables, flatbread, and chai filled the colorful tray.
+Trạng thái: đơn vị 5: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#21 | 00:01:09,500 → 00:01:13,000 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: They listed this hearty school meal at absolutely no charge.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#22 | 00:01:13,000 → 00:01:16,500 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: That alone impressed the judges before Italy even took the stage.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#23 | 00:01:16,500 → 00:01:19,900 | khung 3.400s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Italy's tray looked more like dinner at a family restaurant.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#24 | 00:01:19,900 → 00:01:23,400 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Pasta, pizza, salad, and grapes made everyone lean forward.
+Trạng thái: đơn vị 6: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#25 | 00:01:23,400 → 00:01:26,900 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Vance joked that he would never skip school for pizza.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#26 | 00:01:26,900 → 00:01:30,400 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: He looked ready to give the Italian tray a trophy.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#27 | 00:01:30,400 → 00:01:33,800 | khung 3.400s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: But first, the judges finally finished calculating India's total.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#28 | 00:01:33,800 → 00:01:37,300 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: India earned fifty points, with fullness helping its score.
+Trạng thái: đơn vị 7: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#29 | 00:01:37,300 → 00:01:40,800 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Italy still looked tempting, but its final score could wait.
+Trạng thái: đơn vị 8: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#30 | 00:01:40,800 → 00:01:44,300 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Now Ukraine brought a comforting, home-style tray to the table.
+Trạng thái: đơn vị 8: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#31 | 00:01:44,300 → 00:01:47,700 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Buckwheat and a savory cutlet were the stars of this meal.
+Trạng thái: đơn vị 8: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#32 | 00:01:47,700 → 00:01:51,200 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Cabbage salad, cheesy bread, and fruit compote rounded it out.
+Trạng thái: đơn vị 8: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#33 | 00:01:51,200 → 00:01:54,700 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: It wasn't flashy, but the judges immediately understood its appeal.
+Trạng thái: đơn vị 9: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#34 | 00:01:54,700 → 00:01:58,200 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: This was exactly the kind of meal that actually fills you.
+Trạng thái: đơn vị 9: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#35 | 00:01:58,200 → 00:02:01,600 | khung 3.400s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: All three plates were cleared before anyone could say another word.
+Trạng thái: đơn vị 9: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#36 | 00:02:01,600 → 00:02:05,100 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Ukraine surged into the lead with seventy-five total points.
+Trạng thái: đơn vị 9: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#37 | 00:02:05,100 → 00:02:08,600 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Mexico arrived next, bringing an entirely different lunchtime energy.
+Trạng thái: đơn vị 10: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#38 | 00:02:08,600 → 00:02:12,100 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The tray paired a casserole with a generously filled taco.
+Trạng thái: đơn vị 10: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#39 | 00:02:12,100 → 00:02:15,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Chips, guacamole, and chocolate milk made the deal even sweeter.
+Trạng thái: đơn vị 10: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#40 | 00:02:15,600 → 00:02:19,100 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: And the listed price was just one dollar for everything.
+Trạng thái: đơn vị 10: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#41 | 00:02:19,100 → 00:02:22,600 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Vance gave the flavor a perfect ten without hesitation.
+Trạng thái: đơn vị 11: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#42 | 00:02:22,600 → 00:02:26,100 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: But nutrition pulled Mexico's overall score down to sixty.
+Trạng thái: đơn vị 11: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#43 | 00:02:26,100 → 00:02:29,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Brazil answered with one of the freshest looking trays yet.
+Trạng thái: đơn vị 11: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#44 | 00:02:29,600 → 00:02:33,100 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Seasoned grains, a green wrap, fruit, and mango juice stood out.
+Trạng thái: đơn vị 11: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#45 | 00:02:33,100 → 00:02:36,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: That huge green wrap almost looked bigger than a textbook.
+Trạng thái: đơn vị 12: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#46 | 00:02:36,600 → 00:02:40,100 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The judges needed both hands just to hold each bite.
+Trạng thái: đơn vị 12: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#47 | 00:02:40,100 → 00:02:43,600 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Brazil scored a perfect thirty for their health category.
+Trạng thái: đơn vị 12: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#48 | 00:02:43,600 → 00:02:47,100 | khung 3.500s | 8 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: That pushed its total to seventy-five, tying Ukraine.
+Trạng thái: đơn vị 12: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#49 | 00:02:47,100 → 00:02:50,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Next, China's colorful tray gave the judges even more choices.
+Trạng thái: đơn vị 13: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#50 | 00:02:50,600 → 00:02:54,100 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Rice, savory meat, and dumplings immediately caught everyone's attention.
+Trạng thái: đơn vị 13: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#51 | 00:02:54,100 → 00:02:57,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Braised greens, an egg, and orange slices completed the spread.
+Trạng thái: đơn vị 13: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#52 | 00:02:57,600 → 00:03:01,100 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Suddenly, this felt more like a weekend feast than school lunch.
+Trạng thái: đơn vị 13: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#53 | 00:03:01,100 → 00:03:04,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Their chopstick skills were shaky, but the dumplings disappeared fast.
+Trạng thái: đơn vị 14: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#54 | 00:03:04,600 → 00:03:08,100 | khung 3.500s | 8 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: China collected sixty-nine points after everyone finished eating.
+Trạng thái: đơn vị 14: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#55 | 00:03:08,100 → 00:03:11,600 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Spain was next with a colorful Mediterranean-inspired lunch tray.
+Trạng thái: đơn vị 14: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#56 | 00:03:11,600 → 00:03:15,100 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Rice, cucumber salad, and fruit gave the meal a fresh look.
+Trạng thái: đơn vị 14: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#57 | 00:03:15,100 → 00:03:18,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: That little foil drink pouch brought back everyone's childhood memories.
+Trạng thái: đơn vị 15: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#58 | 00:03:18,600 → 00:03:22,100 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Even the judges were smiling before the final scores appeared.
+Trạng thái: đơn vị 15: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#59 | 00:03:22,100 → 00:03:25,600 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Spain took the lead with an impressive seventy-six points.
+Trạng thái: đơn vị 15: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#60 | 00:03:25,600 → 00:03:29,100 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Only Turkey's tray and Italy's final score were still waiting.
+Trạng thái: đơn vị 15: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#61 | 00:03:29,100 → 00:03:32,600 | khung 3.500s | 8 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Turkey served up a lunch that looked restaurant-worthy.
+Trạng thái: đơn vị 16: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#62 | 00:03:32,600 → 00:03:36,100 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Grilled kebab, fresh herbs, and flatbread covered the tray.
+Trạng thái: đơn vị 16: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#63 | 00:03:36,100 → 00:03:39,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Then baklava arrived, making dessert feel like a bonus round.
+Trạng thái: đơn vị 16: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#64 | 00:03:39,600 → 00:03:43,100 | khung 3.500s | 11 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: But the salted yogurt drink caught all three judges off guard.
+Trạng thái: đơn vị 16: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#65 | 00:03:43,100 → 00:03:46,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The grilled food earned praise, while that drink divided opinions.
+Trạng thái: đơn vị 17: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#66 | 00:03:46,600 → 00:03:50,100 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Nobody expected their first sip to taste quite that salty.
+Trạng thái: đơn vị 17: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#67 | 00:03:50,100 → 00:03:53,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: A perfect fullness score still gave Turkey sixty-two points overall.
+Trạng thái: đơn vị 17: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#68 | 00:03:53,600 → 00:03:57,100 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: And at last, everyone turned toward Italy's waiting scorecard.
+Trạng thái: đơn vị 17: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#69 | 00:03:57,100 → 00:04:00,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Its judges loved the combination of taste, nutrition, and satisfaction.
+Trạng thái: đơn vị 18: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#70 | 00:04:00,600 → 00:04:04,100 | khung 3.500s | 9 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Italy won their challenge with a massive eighty-six points.
+Trạng thái: đơn vị 18: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#71 | 00:04:04,100 → 00:04:07,600 | khung 3.500s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Apparently, a plate of pasta can make school seem exciting.
+Trạng thái: đơn vị 18: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+#72 | 00:04:07,600 → 00:04:11,050 | khung 3.450s | 10 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: At least that's what these three very hungry judges decided.
+Trạng thái: đơn vị 18: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+
+ĐƠN VỊ LỜI ĐỌC · số đo âm thanh thực tế
+Đơn vị 1 | cue 1,2,3,4 | chặng 1 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Could your old school lunch beat meals from nine other countries? Vance brought two friends to settle that question once and for all. Ten different school lunch trays entered their homemade food showdown. And these three grown men were taking every bite seriously.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 13.264s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 12.965s; tổng sau ghép nghỉ trong đơn vị: 13.264s
+Nghỉ app trong đơn vị: trước 0.091s → sau chỉnh 0.091s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 0.953x; giảm 4.729% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 2 | cue 5,6,7,8 | chặng 2 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Taste, nutrition, and fullness would decide the winning country. Only one tray could claim the title of school lunch champion. They started with an American tray priced at two fifty. It had a burger, fries, a donut, and a soda.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 13.895s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.535s; tổng sau ghép nghỉ trong đơn vị: 13.895s
+Nghỉ app trong đơn vị: trước 0.107s → sau chỉnh 0.107s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.000x; giảm 0.035% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 3 | cue 9,10,11,12 | chặng 3 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: A donut and soda for lunch? That sparked instant debate. Nobody could decide if this was lunch or a party. Vance loved the burger and fries more than he expected. Comfort food was clearly winning this first round on taste.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 12.657s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 11.887s; tổng sau ghép nghỉ trong đơn vị: 12.657s
+Nghỉ app trong đơn vị: trước 0.169s → sau chỉnh 0.169s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 0.909x; giảm 9.103% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 4 | cue 13,14,15,16 | chặng 4 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Milo and Zack finished their trays and joined the judging. America scored well for flavor, but only four for health. Japan's tray changed the mood as soon as it appeared. Fish, vegetables, and fruit offered a completely different kind of lunch.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 13.015s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 12.697s; tổng sau ghép nghỉ trong đơn vị: 13.015s
+Nghỉ app trong đơn vị: trước 0.109s → sau chỉnh 0.109s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 0.936x; giảm 6.370% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 5 | cue 17,18,19,20 | chặng 5 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: The guys struggled with chopsticks, then washed everything down with milk. Japan walked away with seventy-one points on their scoreboard. Then India arrived with a price that surprised everyone. Warm lentils, vegetables, flatbread, and chai filled the colorful tray.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.922s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 14.588s; tổng sau ghép nghỉ trong đơn vị: 14.922s
+Nghỉ app trong đơn vị: trước 0.080s → sau chỉnh 0.080s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.074x; tăng 7.351% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 6 | cue 21,22,23,24 | chặng 6 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: They listed this hearty school meal at absolutely no charge. That alone impressed the judges before Italy even took the stage. Italy's tray looked more like dinner at a family restaurant. Pasta, pizza, salad, and grapes made everyone lean forward.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.527s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 14.139s; tổng sau ghép nghỉ trong đơn vị: 14.527s
+Nghỉ app trong đơn vị: trước 0.102s → sau chỉnh 0.102s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.043x; tăng 4.313% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 7 | cue 25,26,27,28 | chặng 7 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Vance joked that he would never skip school for pizza. He looked ready to give the Italian tray a trophy. But first, the judges finally finished calculating India's total. India earned fifty points, with fullness helping its score.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 12.547s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 12.144s; tổng sau ghép nghỉ trong đơn vị: 12.547s
+Nghỉ app trong đơn vị: trước 0.087s → sau chỉnh 0.087s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 0.903x; giảm 9.737% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 8 | cue 29,30,31,32 | chặng 8 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Italy still looked tempting, but its final score could wait. Now Ukraine brought a comforting, home-style tray to the table. Buckwheat and a savory cutlet were the stars of this meal. Cabbage salad, cheesy bread, and fruit compote rounded it out.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 13.489s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.201s; tổng sau ghép nghỉ trong đơn vị: 13.489s
+Nghỉ app trong đơn vị: trước 0.080s → sau chỉnh 0.080s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 0.970x; giảm 2.954% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 9 | cue 33,34,35,36 | chặng 9 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: It wasn't flashy, but the judges immediately understood its appeal. This was exactly the kind of meal that actually fills you. All three plates were cleared before anyone could say another word. Ukraine surged into the lead with seventy-five total points.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.794s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 14.455s; tổng sau ghép nghỉ trong đơn vị: 14.794s
+Nghỉ app trong đơn vị: trước 0.086s → sau chỉnh 0.086s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.064x; tăng 6.431% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 10 | cue 37,38,39,40 | chặng 10 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Mexico arrived next, bringing an entirely different lunchtime energy. The tray paired a casserole with a generously filled taco. Chips, guacamole, and chocolate milk made the deal even sweeter. And the listed price was just one dollar for everything.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.529s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 14.163s; tổng sau ghép nghỉ trong đơn vị: 14.529s
+Nghỉ app trong đơn vị: trước 0.080s → sau chỉnh 0.080s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.038x; tăng 3.781% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 11 | cue 41,42,43,44 | chặng 11 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Vance gave the flavor a perfect ten without hesitation. But nutrition pulled Mexico's overall score down to sixty. Brazil answered with one of the freshest looking trays yet. Seasoned grains, a green wrap, fruit, and mango juice stood out.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 13.914s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.505s; tổng sau ghép nghỉ trong đơn vị: 13.914s
+Nghỉ app trong đơn vị: trước 0.093s → sau chỉnh 0.093s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 0.994x; giảm 0.618% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 12 | cue 45,46,47,48 | chặng 12 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: That huge green wrap almost looked bigger than a textbook. The judges needed both hands just to hold each bite. Brazil scored a perfect thirty for their health category. That pushed its total to seventy-five, tying Ukraine.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 12.685s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 12.374s; tổng sau ghép nghỉ trong đơn vị: 12.685s
+Nghỉ app trong đơn vị: trước 0.103s → sau chỉnh 0.103s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 0.905x; giảm 9.530% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 13 | cue 49,50,51,52 | chặng 13 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Next, China's colorful tray gave the judges even more choices. Rice, savory meat, and dumplings immediately caught everyone's attention. Braised greens, an egg, and orange slices completed the spread. Suddenly, this felt more like a weekend feast than school lunch.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 15.679s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 15.321s; tổng sau ghép nghỉ trong đơn vị: 15.679s
+Nghỉ app trong đơn vị: trước 0.104s → sau chỉnh 0.104s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.120x; tăng 11.994% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 14 | cue 53,54,55,56 | chặng 14 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Their chopstick skills were shaky, but the dumplings disappeared fast. China collected sixty-nine points after everyone finished eating. Spain was next with a colorful Mediterranean-inspired lunch tray. Rice, cucumber salad, and fruit gave the meal a fresh look.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 15.454s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 15.088s; tổng sau ghép nghỉ trong đơn vị: 15.454s
+Nghỉ app trong đơn vị: trước 0.080s → sau chỉnh 0.080s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.104x; tăng 10.388% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 15 | cue 57,58,59,60 | chặng 15 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: That little foil drink pouch brought back everyone's childhood memories. Even the judges were smiling before the final scores appeared. Spain took the lead with an impressive seventy-six points. Only Turkey's tray and Italy's final score were still waiting.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.854s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 14.450s; tổng sau ghép nghỉ trong đơn vị: 14.854s
+Nghỉ app trong đơn vị: trước 0.089s → sau chỉnh 0.089s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.061x; tăng 6.099% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 16 | cue 61,62,63,64 | chặng 16 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Turkey served up a lunch that looked restaurant-worthy. Grilled kebab, fresh herbs, and flatbread covered the tray. Then baklava arrived, making dessert feel like a bonus round. But the salted yogurt drink caught all three judges off guard.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.312s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 14.006s; tổng sau ghép nghỉ trong đơn vị: 14.312s
+Nghỉ app trong đơn vị: trước 0.099s → sau chỉnh 0.099s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.022x; tăng 2.231% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 17 | cue 65,66,67,68 | chặng 17 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: The grilled food earned praise, while that drink divided opinions. Nobody expected their first sip to taste quite that salty. A perfect fullness score still gave Turkey sixty-two points overall. And at last, everyone turned toward Italy's waiting scorecard.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 15.367s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 15.031s; tổng sau ghép nghỉ trong đơn vị: 15.367s
+Nghỉ app trong đơn vị: trước 0.082s → sau chỉnh 0.082s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.098x; tăng 9.762% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 18 | cue 69,70,71,72 | chặng 18 | liên kết cue theo nội dung
+Giọng thực tế: A · Steven hảley · mã U:26e931bd135b45f1bc86fb795e11f54d · Chatterbox / chatter_nano / speaker -1 · SHA256 mẫu 94b73aeba7a160b5be3fd3ca64c69c1f7f08e89b4733e23963e4d9380f92ce8a
+Lời: Its judges loved the combination of taste, nutrition, and satisfaction. Italy won their challenge with a massive eighty-six points. Apparently, a plate of pasta can make school seem exciting. At least that's what these three very hungry judges decided.
+Trạng thái: Đã xuất cùng chặng; chưa có mốc sau căn riêng
+Đánh giá của bộ căn: Cache toàn chặng; chưa có mốc sau căn riêng từng cue.
+Trước căn tại tốc độ gốc: 14.110s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: chưa đo
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 13.729s; tổng sau ghép nghỉ trong đơn vị: 14.110s
+Nghỉ app trong đơn vị: trước 0.095s → sau chỉnh 0.095s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap chưa đo (hơi thở chưa đo)
+Nguồn audio: 0 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 1 lượt dùng cache
+Tốc độ lưu: 1.010x; tăng 0.978% so với gốc 1.000x · áp dụng TOÀN CHẶNG
+Mốc WAV đo riêng: chưa xác định → chưa xác định
+Chặng được đổi tốc độ chung; không chia đều hoặc suy ra mốc từng câu sau căn. Xem số đo chặng bên dưới.
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+
+CHẶNG V15.6 · không gán thời lượng chung thành số đo riêng từng cue
+Chặng 1 | cue 1,2,3,4 | nguồn 00:00:00,000 → 00:00:13,900 | khung 13.900s
+Lời toàn chặng: Could your old school lunch beat meals from nine other countries? Vance brought two friends to settle that question once and for all. Ten different school lunch trays entered their homemade food showdown. And these three grown men were taking every bite seriously.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 13.264s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 0.953x; giảm 4.729% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 12.965s; nghỉ app trong đơn vị 0.091s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 0.954x; giảm 4.572% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 2 | cue 5,6,7,8 | nguồn 00:00:13,900 → 00:00:27,800 | khung 13.900s
+Lời toàn chặng: Taste, nutrition, and fullness would decide the winning country. Only one tray could claim the title of school lunch champion. They started with an American tray priced at two fifty. It had a burger, fries, a donut, and a soda.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 13.895s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.000x; giảm 0.035% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.535s; nghỉ app trong đơn vị 0.107s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 1.000x; giảm 0.035% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 3 | cue 9,10,11,12 | nguồn 00:00:27,800 → 00:00:41,700 | khung 13.900s
+Lời toàn chặng: A donut and soda for lunch? That sparked instant debate. Nobody could decide if this was lunch or a party. Vance loved the burger and fries more than he expected. Comfort food was clearly winning this first round on taste.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 12.657s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 0.909x; giảm 9.103% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 11.887s; nghỉ app trong đơn vị 0.169s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.601s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 0.911x; giảm 8.944% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 4 | cue 13,14,15,16 | nguồn 00:00:41,700 → 00:00:55,600 | khung 13.900s
+Lời toàn chặng: Milo and Zack finished their trays and joined the judging. America scored well for flavor, but only four for health. Japan's tray changed the mood as soon as it appeared. Fish, vegetables, and fruit offered a completely different kind of lunch.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 13.015s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 0.936x; giảm 6.370% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 12.697s; nghỉ app trong đơn vị 0.109s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 0.936x; giảm 6.370% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 5 | cue 17,18,19,20 | nguồn 00:00:55,600 → 00:01:09,500 | khung 13.900s
+Lời toàn chặng: The guys struggled with chopsticks, then washed everything down with milk. Japan walked away with seventy-one points on their scoreboard. Then India arrived with a price that surprised everyone. Warm lentils, vegetables, flatbread, and chai filled the colorful tray.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.922s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.074x; tăng 7.351% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.588s; nghỉ app trong đơn vị 0.080s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 1.074x; tăng 7.351% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 6 | cue 21,22,23,24 | nguồn 00:01:09,500 → 00:01:23,400 | khung 13.900s
+Lời toàn chặng: They listed this hearty school meal at absolutely no charge. That alone impressed the judges before Italy even took the stage. Italy's tray looked more like dinner at a family restaurant. Pasta, pizza, salad, and grapes made everyone lean forward.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.527s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.043x; tăng 4.313% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.139s; nghỉ app trong đơn vị 0.102s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.286s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 1.045x; tăng 4.512% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 7 | cue 25,26,27,28 | nguồn 00:01:23,400 → 00:01:37,300 | khung 13.900s
+Lời toàn chặng: Vance joked that he would never skip school for pizza. He looked ready to give the Italian tray a trophy. But first, the judges finally finished calculating India's total. India earned fifty points, with fullness helping its score.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 12.547s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 0.903x; giảm 9.737% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 12.144s; nghỉ app trong đơn vị 0.087s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.315s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 0.903x; giảm 9.737% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 8 | cue 29,30,31,32 | nguồn 00:01:37,300 → 00:01:51,200 | khung 13.900s
+Lời toàn chặng: Italy still looked tempting, but its final score could wait. Now Ukraine brought a comforting, home-style tray to the table. Buckwheat and a savory cutlet were the stars of this meal. Cabbage salad, cheesy bread, and fruit compote rounded it out.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 13.489s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 0.970x; giảm 2.954% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.201s; nghỉ app trong đơn vị 0.080s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 0.970x; giảm 2.954% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 9 | cue 33,34,35,36 | nguồn 00:01:51,200 → 00:02:05,100 | khung 13.900s
+Lời toàn chặng: It wasn't flashy, but the judges immediately understood its appeal. This was exactly the kind of meal that actually fills you. All three plates were cleared before anyone could say another word. Ukraine surged into the lead with seventy-five total points.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.794s | sau căn: 13.900s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.064x; tăng 6.431% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.455s; nghỉ app trong đơn vị 0.086s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.900s; tốc độ ƯỚC TÍNH trước giới hạn: 1.064x; tăng 6.431% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 10 | cue 37,38,39,40 | nguồn 00:02:05,100 → 00:02:19,100 | khung 14.000s
+Lời toàn chặng: Mexico arrived next, bringing an entirely different lunchtime energy. The tray paired a casserole with a generously filled taco. Chips, guacamole, and chocolate milk made the deal even sweeter. And the listed price was just one dollar for everything.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.529s | sau căn: 14.000s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.038x; tăng 3.781% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.163s; nghỉ app trong đơn vị 0.080s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.286s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 14.000s; tốc độ ƯỚC TÍNH trước giới hạn: 1.038x; tăng 3.781% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 11 | cue 41,42,43,44 | nguồn 00:02:19,100 → 00:02:33,100 | khung 14.000s
+Lời toàn chặng: Vance gave the flavor a perfect ten without hesitation. But nutrition pulled Mexico's overall score down to sixty. Brazil answered with one of the freshest looking trays yet. Seasoned grains, a green wrap, fruit, and mango juice stood out.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 13.914s | sau căn: 14.000s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 0.994x; giảm 0.618% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.505s; nghỉ app trong đơn vị 0.093s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.315s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 14.000s; tốc độ ƯỚC TÍNH trước giới hạn: 0.994x; giảm 0.618% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 12 | cue 45,46,47,48 | nguồn 00:02:33,100 → 00:02:47,100 | khung 14.000s
+Lời toàn chặng: That huge green wrap almost looked bigger than a textbook. The judges needed both hands just to hold each bite. Brazil scored a perfect thirty for their health category. That pushed its total to seventy-five, tying Ukraine.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 12.685s | sau căn: 14.000s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 0.905x; giảm 9.530% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 12.374s; nghỉ app trong đơn vị 0.103s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 14.000s; tốc độ ƯỚC TÍNH trước giới hạn: 0.906x; giảm 9.395% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 13 | cue 49,50,51,52 | nguồn 00:02:47,100 → 00:03:01,100 | khung 14.000s
+Lời toàn chặng: Next, China's colorful tray gave the judges even more choices. Rice, savory meat, and dumplings immediately caught everyone's attention. Braised greens, an egg, and orange slices completed the spread. Suddenly, this felt more like a weekend feast than school lunch.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 15.679s | sau căn: 14.000s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.120x; tăng 11.994% so với gốc 1.000x
+CẢNH BÁO CHẤT LƯỢNG: vượt 1.10x; đạt kỹ thuật không đồng nghĩa giọng tự nhiên.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 15.321s; nghỉ app trong đơn vị 0.104s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 14.000s; tốc độ ƯỚC TÍNH trước giới hạn: 1.120x; tăng 11.994% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 14 | cue 53,54,55,56 | nguồn 00:03:01,100 → 00:03:15,100 | khung 14.000s
+Lời toàn chặng: Their chopstick skills were shaky, but the dumplings disappeared fast. China collected sixty-nine points after everyone finished eating. Spain was next with a colorful Mediterranean-inspired lunch tray. Rice, cucumber salad, and fruit gave the meal a fresh look.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 15.454s | sau căn: 14.000s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.104x; tăng 10.388% so với gốc 1.000x
+CẢNH BÁO CHẤT LƯỢNG: vượt 1.10x; đạt kỹ thuật không đồng nghĩa giọng tự nhiên.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 15.088s; nghỉ app trong đơn vị 0.080s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.286s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 14.000s; tốc độ ƯỚC TÍNH trước giới hạn: 1.104x; tăng 10.388% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 15 | cue 57,58,59,60 | nguồn 00:03:15,100 → 00:03:29,100 | khung 14.000s
+Lời toàn chặng: That little foil drink pouch brought back everyone's childhood memories. Even the judges were smiling before the final scores appeared. Spain took the lead with an impressive seventy-six points. Only Turkey's tray and Italy's final score were still waiting.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.854s | sau căn: 14.000s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.061x; tăng 6.099% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.450s; nghỉ app trong đơn vị 0.089s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.315s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 14.000s; tốc độ ƯỚC TÍNH trước giới hạn: 1.061x; tăng 6.099% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 16 | cue 61,62,63,64 | nguồn 00:03:29,100 → 00:03:43,100 | khung 14.000s
+Lời toàn chặng: Turkey served up a lunch that looked restaurant-worthy. Grilled kebab, fresh herbs, and flatbread covered the tray. Then baklava arrived, making dessert feel like a bonus round. But the salted yogurt drink caught all three judges off guard.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.312s | sau căn: 14.000s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.022x; tăng 2.231% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 14.006s; nghỉ app trong đơn vị 0.099s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.208s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 14.000s; tốc độ ƯỚC TÍNH trước giới hạn: 1.022x; tăng 2.231% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 17 | cue 65,66,67,68 | nguồn 00:03:43,100 → 00:03:57,100 | khung 14.000s
+Lời toàn chặng: The grilled food earned praise, while that drink divided opinions. Nobody expected their first sip to taste quite that salty. A perfect fullness score still gave Turkey sixty-two points overall. And at last, everyone turned toward Italy's waiting scorecard.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 15.367s | sau căn: 14.000s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.098x; tăng 9.762% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 15.031s; nghỉ app trong đơn vị 0.082s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.254s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 14.000s; tốc độ ƯỚC TÍNH trước giới hạn: 1.098x; tăng 9.762% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Chặng 18 | cue 69,70,71,72 | nguồn 00:03:57,100 → 00:04:11,050 | khung 13.950s
+Lời toàn chặng: Its judges loved the combination of taste, nutrition, and satisfaction. Italy won their challenge with a massive eighty-six points. Apparently, a plate of pasta can make school seem exciting. At least that's what these three very hungry judges decided.
+Kết quả: Đạt khung chặng | trước căn (gồm nghỉ/hơi thở ghép): 14.110s | sau căn: 13.950s | chênh sau căn-khung: 0.000s | hiệu chỉnh đuôi: 0.000s
+Tốc độ chặng: 1.010x; tăng 0.978% so với gốc 1.000x
+Trong vùng ưu tiên 0.90–1.10x.
+Thành phần TRƯỚC căn: audio TTS gốc (gồm nghỉ tự nhiên) 13.729s; nghỉ app trong đơn vị 0.095s; nghỉ app giữa đơn vị (không gồm hơi thở) 0.000s; hơi thở 0.286s
+Khung chặng dùng chung cho toàn bộ lời/nghỉ/hơi thở. Sau đổi tốc độ chỉ đo tổng; không gán tỷ lệ thành số đo từng thành phần.
+Đích căn thực tế: 13.950s; tốc độ ƯỚC TÍNH trước giới hạn: 1.011x; tăng 1.149% so với gốc 1.000x
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+
+LỊCH SỬ SỬA LỜI AI · CÙNG LẦN TẠO
+V15 AI REPAIR REPORT · 2.0.15 · schema 2 · AI REPAIR STABLE
+Kết quả: FINAL VERIFIED · bộ WAV/SRT/TXT cùng lời
+Nguồn: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 5.srt
+SHA256 nguồn: 7ABD139B699B65DFE5C0CDFAED5D89E5D4C4BDBEBDF8403BEBD247E89C26D373
+Model: Qwen3-4B-Instruct-2507 Q4_K_M · offline · không phải giọng TTS
+Số cue thay đổi lời: 0
+WAV tổng: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 5.wav
+Khóa ngữ nghĩa bảo thủ: không tự chấp nhận thay đổi từ nội dung. Cần duyệt khi không chứng minh được tương đương; không có cam kết máy chứng minh mọi ngữ nghĩa.
+Tối đa 3 lần AI/đơn vị/phiên. Không lặp lại phương án thất bại. Số đo TTS gồm nghỉ tự nhiên của engine; không giả tách lời nói thuần.
+
+Đơn vị 1 · cue 1,2,3,4 · 00:00:00,000 → 00:00:13,900 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #1: Could your old school lunch beat meals from nine other countries?
+Gốc #2: Vance brought two friends to settle that question once and for all.
+Gốc #3: Ten different school lunch trays entered their homemade food showdown.
+Gốc #4: And these three grown men were taking every bite seriously.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 12.965s; nghỉ app 0.091s; hơi thở 0.208s; tổng trước căn 13.264s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 0.953x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 0|0|-100 → 1|1|9.630958333333334
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 13.264s; sau căn 13.900s; tốc độ 0.953x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 2 · cue 5,6,7,8 · 00:00:13,900 → 00:00:27,800 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #5: Taste, nutrition, and fullness would decide the winning country.
+Gốc #6: Only one tray could claim the title of school lunch champion.
+Gốc #7: They started with an American tray priced at two fifty.
+Gốc #8: It had a burger, fries, a donut, and a soda.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.535s; nghỉ app 0.107s; hơi thở 0.254s; tổng trước căn 13.895s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 1.000x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 1|1|9.630958333333334 → 2|2|21.305625
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 13.895s; sau căn 13.900s; tốc độ 1.000x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 3 · cue 9,10,11,12 · 00:00:27,800 → 00:00:41,700 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #9: A donut and soda for lunch? That sparked instant debate.
+Gốc #10: Nobody could decide if this was lunch or a party.
+Gốc #11: Vance loved the burger and fries more than he expected.
+Gốc #12: Comfort food was clearly winning this first round on taste.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 11.887s; nghỉ app 0.169s; hơi thở 0.601s; tổng trước căn 12.657s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 0.909x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 2|2|21.305625 → 1|4|36.680625
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 12.657s; sau căn 13.900s; tốc độ 0.909x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 4 · cue 13,14,15,16 · 00:00:41,700 → 00:00:55,600 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #13: Milo and Zack finished their trays and joined the judging.
+Gốc #14: America scored well for flavor, but only four for health.
+Gốc #15: Japan's tray changed the mood as soon as it appeared.
+Gốc #16: Fish, vegetables, and fruit offered a completely different kind of lunch.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 12.697s; nghỉ app 0.109s; hơi thở 0.208s; tổng trước căn 13.015s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 0.936x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 1|4|36.680625 → 2|5|48.041375
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 13.015s; sau căn 13.900s; tốc độ 0.936x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 5 · cue 17,18,19,20 · 00:00:55,600 → 00:01:09,500 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #17: The guys struggled with chopsticks, then washed everything down with milk.
+Gốc #18: Japan walked away with seventy-one points on their scoreboard.
+Gốc #19: Then India arrived with a price that surprised everyone.
+Gốc #20: Warm lentils, vegetables, flatbread, and chai filled the colorful tray.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.588s; nghỉ app 0.080s; hơi thở 0.254s; tổng trước căn 14.922s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 1.074x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 2|5|48.041375 → 3|6|59.530375
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.922s; sau căn 13.900s; tốc độ 1.074x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 6 · cue 21,22,23,24 · 00:01:09,500 → 00:01:23,400 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #21: They listed this hearty school meal at absolutely no charge.
+Gốc #22: That alone impressed the judges before Italy even took the stage.
+Gốc #23: Italy's tray looked more like dinner at a family restaurant.
+Gốc #24: Pasta, pizza, salad, and grapes made everyone lean forward.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.139s; nghỉ app 0.102s; hơi thở 0.286s; tổng trước căn 14.527s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 1.043x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|6|59.530375 → 3|7|73.294708333333332
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.527s; sau căn 13.900s; tốc độ 1.043x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 7 · cue 25,26,27,28 · 00:01:23,400 → 00:01:37,300 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #25: Vance joked that he would never skip school for pizza.
+Gốc #26: He looked ready to give the Italian tray a trophy.
+Gốc #27: But first, the judges finally finished calculating India's total.
+Gốc #28: India earned fifty points, with fullness helping its score.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 12.144s; nghỉ app 0.087s; hơi thở 0.315s; tổng trước căn 12.547s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 0.903x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|7|73.294708333333332 → 3|8|86.076291666666677
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 12.547s; sau căn 13.900s; tốc độ 0.903x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 8 · cue 29,30,31,32 · 00:01:37,300 → 00:01:51,200 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #29: Italy still looked tempting, but its final score could wait.
+Gốc #30: Now Ukraine brought a comforting, home-style tray to the table.
+Gốc #31: Buckwheat and a savory cutlet were the stars of this meal.
+Gốc #32: Cabbage salad, cheesy bread, and fruit compote rounded it out.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.201s; nghỉ app 0.080s; hơi thở 0.208s; tổng trước căn 13.489s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 0.970x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|8|86.076291666666677 → 3|9|100.66466666666666
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 13.489s; sau căn 13.900s; tốc độ 0.970x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 9 · cue 33,34,35,36 · 00:01:51,200 → 00:02:05,100 · khung 13.900s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #33: It wasn't flashy, but the judges immediately understood its appeal.
+Gốc #34: This was exactly the kind of meal that actually fills you.
+Gốc #35: All three plates were cleared before anyone could say another word.
+Gốc #36: Ukraine surged into the lead with seventy-five total points.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.455s; nghỉ app 0.086s; hơi thở 0.254s; tổng trước căn 14.794s; sau căn 13.900s; mục tiêu 13.900s; dư (+)/thiếu (-) 0.000s; tốc độ 1.064x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|9|100.66466666666666 → 3|10|115.13283333333334
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.794s; sau căn 13.900s; tốc độ 1.064x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 10 · cue 37,38,39,40 · 00:02:05,100 → 00:02:19,100 · khung 14.000s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #37: Mexico arrived next, bringing an entirely different lunchtime energy.
+Gốc #38: The tray paired a casserole with a generously filled taco.
+Gốc #39: Chips, guacamole, and chocolate milk made the deal even sweeter.
+Gốc #40: And the listed price was just one dollar for everything.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.163s; nghỉ app 0.080s; hơi thở 0.286s; tổng trước căn 14.529s; sau căn 14.000s; mục tiêu 14.000s; dư (+)/thiếu (-) 0.000s; tốc độ 1.038x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 3|10|115.13283333333334 → 3|11|128.99599999999998
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.529s; sau căn 14.000s; tốc độ 1.038x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 11 · cue 41,42,43,44 · 00:02:19,100 → 00:02:33,100 · khung 14.000s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #41: Vance gave the flavor a perfect ten without hesitation.
+Gốc #42: But nutrition pulled Mexico's overall score down to sixty.
+Gốc #43: Brazil answered with one of the freshest looking trays yet.
+Gốc #44: Seasoned grains, a green wrap, fruit, and mango juice stood out.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.505s; nghỉ app 0.093s; hơi thở 0.315s; tổng trước căn 13.914s; sau căn 14.000s; mục tiêu 14.000s; dư (+)/thiếu (-) 0.000s; tốc độ 0.994x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|11|128.99599999999998 → 3|12|142.15933333333334
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 13.914s; sau căn 14.000s; tốc độ 0.994x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 12 · cue 45,46,47,48 · 00:02:33,100 → 00:02:47,100 · khung 14.000s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #45: That huge green wrap almost looked bigger than a textbook.
+Gốc #46: The judges needed both hands just to hold each bite.
+Gốc #47: Brazil scored a perfect thirty for their health category.
+Gốc #48: That pushed its total to seventy-five, tying Ukraine.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 12.374s; nghỉ app 0.103s; hơi thở 0.208s; tổng trước căn 12.685s; sau căn 14.000s; mục tiêu 14.000s; dư (+)/thiếu (-) 0.000s; tốc độ 0.905x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|12|142.15933333333334 → 3|13|156.36362499999998
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 12.685s; sau căn 14.000s; tốc độ 0.905x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 13 · cue 49,50,51,52 · 00:02:47,100 → 00:03:01,100 · khung 14.000s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #49: Next, China's colorful tray gave the judges even more choices.
+Gốc #50: Rice, savory meat, and dumplings immediately caught everyone's attention.
+Gốc #51: Braised greens, an egg, and orange slices completed the spread.
+Gốc #52: Suddenly, this felt more like a weekend feast than school lunch.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 15.321s; nghỉ app 0.104s; hơi thở 0.254s; tổng trước căn 15.679s; sau căn 14.000s; mục tiêu 14.000s; dư (+)/thiếu (-) 0.000s; tốc độ 1.120x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|13|156.36362499999998 → 3|14|171.2325
+CẢNH BÁO CHẤT LƯỢNG: vượt 1.10x; đạt kỹ thuật không đồng nghĩa giọng tự nhiên.
+FINAL VERIFIED: trước căn 15.679s; sau căn 14.000s; tốc độ 1.120x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+CẢNH BÁO CHẤT LƯỢNG: vượt 1.10x; đạt kỹ thuật không đồng nghĩa giọng tự nhiên.
+
+Đơn vị 14 · cue 53,54,55,56 · 00:03:01,100 → 00:03:15,100 · khung 14.000s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #53: Their chopstick skills were shaky, but the dumplings disappeared fast.
+Gốc #54: China collected sixty-nine points after everyone finished eating.
+Gốc #55: Spain was next with a colorful Mediterranean-inspired lunch tray.
+Gốc #56: Rice, cucumber salad, and fruit gave the meal a fresh look.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 15.088s; nghỉ app 0.080s; hơi thở 0.286s; tổng trước căn 15.454s; sau căn 14.000s; mục tiêu 14.000s; dư (+)/thiếu (-) 0.000s; tốc độ 1.104x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|14|171.2325 → 3|15|185.13683333333333
+CẢNH BÁO CHẤT LƯỢNG: vượt 1.10x; đạt kỹ thuật không đồng nghĩa giọng tự nhiên.
+FINAL VERIFIED: trước căn 15.454s; sau căn 14.000s; tốc độ 1.104x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+CẢNH BÁO CHẤT LƯỢNG: vượt 1.10x; đạt kỹ thuật không đồng nghĩa giọng tự nhiên.
+
+Đơn vị 15 · cue 57,58,59,60 · 00:03:15,100 → 00:03:29,100 · khung 14.000s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #57: That little foil drink pouch brought back everyone's childhood memories.
+Gốc #58: Even the judges were smiling before the final scores appeared.
+Gốc #59: Spain took the lead with an impressive seventy-six points.
+Gốc #60: Only Turkey's tray and Italy's final score were still waiting.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.450s; nghỉ app 0.089s; hơi thở 0.315s; tổng trước căn 14.854s; sau căn 14.000s; mục tiêu 14.000s; dư (+)/thiếu (-) 0.000s; tốc độ 1.061x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|15|185.13683333333333 → 3|16|199.08012499999998
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.854s; sau căn 14.000s; tốc độ 1.061x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 16 · cue 61,62,63,64 · 00:03:29,100 → 00:03:43,100 · khung 14.000s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #61: Turkey served up a lunch that looked restaurant-worthy.
+Gốc #62: Grilled kebab, fresh herbs, and flatbread covered the tray.
+Gốc #63: Then baklava arrived, making dessert feel like a bonus round.
+Gốc #64: But the salted yogurt drink caught all three judges off guard.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 14.006s; nghỉ app 0.099s; hơi thở 0.208s; tổng trước căn 14.312s; sau căn 14.000s; mục tiêu 14.000s; dư (+)/thiếu (-) 0.000s; tốc độ 1.022x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Hơi thở trước/sau chặng: 3|16|199.08012499999998 → 3|17|211.952375
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.312s; sau căn 14.000s; tốc độ 1.022x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 17 · cue 65,66,67,68 · 00:03:43,100 → 00:03:57,100 · khung 14.000s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #65: The grilled food earned praise, while that drink divided opinions.
+Gốc #66: Nobody expected their first sip to taste quite that salty.
+Gốc #67: A perfect fullness score still gave Turkey sixty-two points overall.
+Gốc #68: And at last, everyone turned toward Italy's waiting scorecard.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 15.031s; nghỉ app 0.082s; hơi thở 0.254s; tổng trước căn 15.367s; sau căn 14.000s; mục tiêu 14.000s; dư (+)/thiếu (-) 0.000s; tốc độ 1.098x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|17|211.952375 → 3|18|227.47854166666667
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 15.367s; sau căn 14.000s; tốc độ 1.098x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+
+Đơn vị 18 · cue 69,70,71,72 · 00:03:57,100 → 00:04:11,050 · khung 13.950s
+Trạng thái: FINAL VERIFIED · PASS
+Gốc #69: Its judges loved the combination of taste, nutrition, and satisfaction.
+Gốc #70: Italy won their challenge with a massive eighty-six points.
+Gốc #71: Apparently, a plate of pasta can make school seem exciting.
+Gốc #72: At least that's what these three very hungry judges decided.
+Đo gốc: NONE; giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; Chatterbox / chatter_nano / speaker -1
+TTS gốc gồm nghỉ tự nhiên 13.729s; nghỉ app 0.095s; hơi thở 0.286s; tổng trước căn 14.110s; sau căn 13.950s; mục tiêu 13.950s; dư (+)/thiếu (-) 0.000s; tốc độ 1.010x
+Đạt khung chặng
+Thiết bị đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Hơi thở trước/sau chặng: 3|18|227.47854166666667 → 3|19|240.87070833333334
+Trong vùng ưu tiên 0.90–1.10x.
+FINAL VERIFIED: trước căn 14.110s; sau căn 13.950s; tốc độ 1.010x
+Đối chiếu phép thử/final: Dùng cùng audio/chặng và trạng thái hơi thở đã đo; renderer cuối xác nhận đạt.
+Trong vùng ưu tiên 0.90–1.10x.
+Không chia tỷ lệ thời lượng chặng thành mốc WAV riêng từng cue. final.srt giữ timeline nguồn nếu chưa căn từ thật. final.vi.txt ghi CHƯA DỊCH khi không có bản dịch đã xác minh.
+
+
+LỖI / KẾT THÚC
+
+CHẨN ĐOÁN QUY TRÌNH · mã app khác mã hệ điều hành/tiến trình
+Bước cuối: SYNC · Xác nhận lời TTS, SRT, TXT và báo cáo cùng một lần xuất
+Mã kết quả app: SUCCESS
+Trạng thái chặng: 18 đạt; 0 lỗi; 0 dừng; 0 chưa chạy. Đạt chặng chưa có nghĩa đã xuất WAV cuối.
+Không có lỗi tác vụ được ghi nhận.
+BÁO CÁO ĐÃ KẾT THÚC
+
+HƯỚNG DẪN CHO CHAT TẠO PROMPT
+Dùng đúng tên giọng, tốc độ gốc, giới hạn áp dụng và thời lượng đo trong báo cáo này. Đối chiếu nguyên văn, cue và mốc nguồn. Phần chưa đo không được dùng làm số liệu hiệu chuẩn. Đơn vị trong chặng chưa có mốc sau căn riêng không được suy ra bằng chia đều hoặc tỷ lệ.
+Ưu tiên phân tích các đơn vị/chặng không khớp và lịch sử thử tốc độ; tốc độ % được tính so với tốc độ gốc, không mặc định so với 1.00x. Giữ cốt truyện, thứ tự sự kiện và điểm neo. Không tự giảm giọng sâu, thêm lời đệm hay suy ra một định mức số từ áp dụng cho mọi giọng. Bản sửa prompt/SRT cần render lại để xác nhận.
+
+Tổng cue khác file nguồn: 0
+BỘ ĐẦU RA ĐỒNG BỘ: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 5.final.srt; C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 5.final.vi.txt
+Dịch Việt: CHƯA DỊCH.

@@ -1,0 +1,202 @@
+BÀN GIAO BÉO VOICE STUDIO CHO GEMINI / LẬP TRÌNH VIÊN TIẾP THEO
+Mốc hiện tại: 4.1.1 — RENDER FIX · ngày 02/11/2026
+
+1. NHỮNG FILE ANH CẦN GỬI
+
+Bắt đầu bằng ba file:
+  A. BEO_Voice_Studio_4.1.1_Render_Fix_Update.zip
+  B. KET_QUA_KIEM_THU_4.1.1.txt
+  C. Chính file bàn giao này.
+
+ZIP A đã có EXE, mã nguồn trong payload/source, hướng dẫn, bộ fixture và
+log. Đây là core update; không chứa đầy đủ model giọng/runtime đã cài.
+Tải các file về máy rồi đính kèm cho Gemini theo cách môi trường của anh
+hỗ trợ. Khi cần đọc mã, phải giải nén và đọc các file nguồn thực tế.
+
+Khi sửa lỗi hoặc tối ưu, bổ sung:
+  D. Một file SRT/TXT thực sự gây lỗi hoặc chạy chậm, giữ nguyên tên.
+  E. Báo cáo do chính lần chạy đó xuất ra; nếu có WAV thì gửi cùng WAV
+     và final.srt để đối chiếu. Ảnh màn hình nên có trạng thái bước/thiết bị.
+  F. Mô tả thao tác tái hiện và thông tin máy/cấu hình ở mục 6.
+  G. Nếu so với bản cũ: số phiên bản, gói/mã nguồn bản đó và kết quả đo
+     cùng input, cùng giọng/cấu hình, cùng trạng thái cache.
+
+Nếu cần tái hiện clone hoặc lỗi riêng một bộ giọng: gửi metadata giọng,
+mẫu tham chiếu/lời mẫu liên quan và danh sách thành phần đang cài. Chỉ
+bổ sung đúng model/runtime cần thiết khi môi trường kiểm thử cần dùng.
+Khi cần chạy TTS thật, Gemini/lập trình viên phải có các thành phần tương
+ứng hoặc hướng dẫn anh chạy phép đo trên máy Windows đã cài đầy đủ.
+
+2. MỐC MÃ NGUỒN VÀ CÁCH BUILD
+
+App: Windows offline, C# WinForms, .NET Framework 4.5, build x64.
+Tên hiển thị: BÉO Voice Studio.
+Executable và định danh nền vẫn là V15VoiceStudio để tương thích.
+Phần cứng mục tiêu đã biết: NVIDIA RTX 2070, 8 GB VRAM.
+CPU, RAM, bản Windows và driver thực tế: anh điền ở mục 6.
+
+Trong ZIP, đọc tối thiểu:
+  HUONG_DAN.txt
+  BAO_CAO_NANG_CAP_4.1.1.txt
+  KET_QUA_KIEM_THU_4.1.1.txt
+  payload/source/BUILD_WINDOWS.cmd
+  payload/source/run_validation.py
+  payload/source/validate411.py
+  payload/source/benchmark411.py
+  payload/source/verify_release411.py
+  payload/source/package_release.py
+
+Build Windows: chạy BUILD_WINDOWS.cmd ngay trong thư mục source.
+Script hiện dùng csc.exe của .NET Framework64 và ghi EXE lên thư mục cha.
+Model không cần để biên dịch C#, nhưng cần khi chạy TTS thực.
+Nếu thêm file C# vào build, cập nhật cả BUILD_WINDOWS.cmd và danh sách
+APP trong run_validation.py; file nằm trong source chưa chắc đã được build.
+
+validate411.py chạy hợp đồng/hồi quy bằng Mono, FFmpeg và Xvfb trong
+môi trường được thiết lập phù hợp. V15_BUILD_TOOLS và V15_NET45_REFS phải
+trỏ tới toolchain thực của máy kiểm thử; các đường dẫn /workspace hoặc
+/tmp của phiên làm việc cũ không phải thư mục cài cố định của app.
+benchmark411.py nhận EXE bản 3.1 và 4.1 để so sánh cùng pipeline với 4.1.1.
+verify_release411.py có các đường dẫn tới gói/updater bản cũ phục vụ kiểm
+thử phát hành; cần cung cấp đúng các bản nền hoặc điều chỉnh đường dẫn.
+
+SHA-256 executable đã build của mốc này:
+  V15VoiceStudio.exe
+  797c15b418346e6900004a7d1934695bb06cf4e2ea930adedfe6fbc0965cec66
+  V15Updater.exe
+  7ba1aa57c1d0cc0ff7c4259e8b0fdb0912f6d649eeb7b870598825a5e7934e75
+
+3. BẢN ĐỒ CÁC MODULE CHÍNH
+
+Giao diện, hàng đợi, gợi ý giọng:
+  App.cs, BeoWorkspace.cs, FastVoiceControls.cs, BatchUtilities.cs,
+  VoiceRecommendations.cs, BeoTheme.cs, BeoBrand.cs.
+Luồng chạy và hai chế độ:
+  WorkflowRunner.cs, WorkflowControls.cs, Batch.cs, ProjectState.cs.
+TTS, worker, ONNX/GPU:
+  Core.cs, ExternalSpeech.cs, NativeGpu.cs, TwoVoices.cs,
+  ai_worker.py, gpu_policy.py.
+AI Repair, khóa nghĩa:
+  AiTimeline.cs, AiTimelineControls.cs, RepairPolicy.cs, RepairLanguage.cs.
+Cache, tiếp tục, PCM đã đo/căn:
+  RenderReuse.cs, RenderCheckpoint.cs, RepairRecovery.cs, LongText.cs.
+Đo thời gian và ước lượng tiến độ:
+  RenderPerformance.cs, RenderProgress.cs, Enhancements.cs.
+Audio, nghỉ, hơi thở/cân âm:
+  Punctuation.cs, AudioProcessing.cs, AudioFinishing.cs, AnchoredVoice.cs,
+  NaturalPauseRepair.cs và các module cấu hình âm thanh liên quan.
+Đầu ra, đối chiếu lời, bản Việt, báo cáo:
+  WorkflowReports.cs, StableArtifacts.cs, OfflineTranslation.cs,
+  VoiceReports.cs và VoiceReportDiagnostics.cs.
+Cập nhật và đóng gói:
+  Updater.cs, CAP_NHAT.cmd, package_release.py.
+
+4. CÁC QUY TẮC SẢN PHẨM PHẢI GIỮ
+
+- Nâng cấp trực tiếp mã hiện có. Giữ app Windows offline và các engine,
+  voice clone, một/hai giọng, TXT/SRT, batch, WAV, V15.6, hơi thở, nghỉ,
+  cân âm, cache, checkpoint và dữ liệu giọng đã cài.
+- Tên app BÉO Voice Studio. Giữ tên EXE/định danh nền tương thích cập nhật.
+- Trang Creator/ghép MP4/đóng gói clip đã được gỡ theo yêu cầu. Module
+  lấy SRT từ video cũ vẫn tồn tại; không tự đưa Creator trở lại.
+- Chỉ hai chế độ voice trong giao diện chạy:
+  CHẾ ĐỘ 1: đọc theo file, không AI sửa/dịch; kết thúc mỗi file có đúng
+  một filename.voice-report.txt, kể cả khi lỗi.
+  CHẾ ĐỘ 2: AI tự sửa hoàn toàn tự động; kết thúc mỗi file có đúng hai
+  báo cáo filename.ai-before-after-report.txt và
+  filename.ai-changes-en-vi.txt. Báo cáo ngắn chỉ câu thực sự đổi Anh–Việt.
+- WAV và final.srt phải trùng lời thực tế đưa vào TTS. Giữ file nguồn.
+  Dịch thiếu phải báo TRANSLATION_INCOMPLETE, không tạo bản dịch giả.
+- Chỉ tự nhận lời sửa sau khi đo bằng đúng giọng/cấu hình và qua kiểm tra
+  nghĩa hiện hành. Tối đa ba chiến lược tự sửa, không lặp phương án thất bại.
+- Không thêm sự kiện/nhân vật, đổi tên/số liệu/tiền/địa điểm, hành động,
+  kết quả hoặc quan hệ nhân quả để làm câu vừa timeline.
+- AI không sửa được phải kết thúc an toàn, giữ các chặng đã đạt và cho
+  các job khác tiếp tục theo luồng hiện tại. Không che lỗi bằng WAV tồn tại.
+- Giới hạn kỹ thuật 0,90–1,25x, ưu tiên giọng tự nhiên 0,90–1,10x; cảnh
+  báo vượt 1,10x. Tối ưu thời gian tính toán không đổi tốc độ lời đọc.
+- Không thêm im lặng dài hoặc hạ tiêu chuẩn để báo đạt.
+- Không gán mốc âm thanh riêng từng cue từ số đo cả chặng. Chưa có forced
+  alignment mới. AI viết lại hiện dành cho SRT khóa/V15.6; không tự nhận
+  đã hỗ trợ viết lại TXT/SRT linh hoạt nếu chưa thực sự triển khai.
+- Giữ gợi ý giọng nhẹ theo metadata; không tự render nhiều giọng khi import.
+
+5. HIỆN TRẠNG 4.1.1 VÀ HẠN CHẾ CẦN BIẾT
+
+Đã vá:
+  Dùng một engine đo qua các chặng cùng vai; giải phóng trước LLM/đổi vai.
+  Dùng lại PCM SRT khóa đã đo/căn khi đúng lời/profile/timecode/hash.
+  Checkpoint cue sau căn, ghi I/O nền giới hạn hai mục và drain trước return.
+  Giảm ghi toàn bộ queue: chỉ đổi % giới hạn khoảng 5 giây; đổi trạng
+  thái/đầu ra/nguồn/dấu cấu hình lưu ngay. ETA dùng trọng số snapshot.
+  Ghi thời gian/counter vào báo cáo hiện có, không thêm báo cáo thứ ba.
+
+Kết quả mốc này: 745 kiểm tra C#, 15 Python và 28 kiểm tra cập nhật PASS.
+Môi trường đã chạy: Mono/Linux, WinForms/Xvfb, FFmpeg thật, PCM và tiến
+trình thật nhưng TTS/AI dùng fixture hoặc replay số đo có ghi nguồn.
+CHƯA xác nhận Windows vật lý, RTX2070, model giọng/clone thật của anh.
+Kokoro vẫn tạo tiến trình CLI cho mỗi phần cần tổng hợp mới; chưa có
+worker ONNX thường trú. Không diễn giải số đo fixture thành tốc độ GPU.
+
+Các nhãn thời gian trong báo cáo mới:
+  AI_PREPARE, TTS_SYNTHESIS, ATEMPO_PROCESS, RENDER_PCM,
+  CUE_CHECKPOINT_IO, TTS_REQUEST, EXTERNAL_WORKER_STARTED,
+  ONNX_PROCESS_STARTED, AI_MEASURED_PCM và LOCKED_CHECKPOINT.
+Một số bước lồng/chồng thời gian; không cộng thẳng các số thành tổng.
+
+6. MẪU THÔNG TIN ANH ĐIỀN CHO TỪNG LẦN YÊU CẦU
+
+Phiên bản đang dùng thực tế: [điền]
+Phiên bản mục tiêu: [điền hoặc để Gemini đề xuất sau khi đọc mã]
+Mục tiêu/lỗi cần sửa: [điền cụ thể]
+Kết quả mong muốn: [điền]
+Các bước tái hiện: [1... 2... 3...]
+File nguồn và báo cáo đính kèm: [tên đúng của các file]
+Windows/bản 64-bit: [điền]
+CPU: [điền]                    RAM: [điền]
+GPU: RTX2070 8 GB hoặc cấu hình thực khác: [điền]
+Driver NVIDIA: [điền]          Ổ cài/model/output SSD hay HDD: [điền]
+Engine/giọng A/giọng B: [điền; nếu Adam/Kokoro thì ghi đúng như đang chọn]
+Clone: [có/không; mẫu và lời mẫu nào]
+Thiết bị chọn: [Auto/GPU/CPU]   Thiết bị app thực tế báo: [điền]
+Chế độ: [1 theo file / 2 AI tự sửa]
+Timeline: [SRT khóa / V15.6 / linh hoạt / TXT]
+Tốc độ gốc/min/max, nghỉ, hơi thở, cân âm: [điền hoặc gửi ảnh cấu hình]
+Số file/cue, tổng thời lượng: [điền]
+Chạy mới hay có cache: [điền]
+Thời gian bản cũ và bản mới: [điền; chỉ so cùng điều kiện]
+Lỗi xuất hiện ở bước/cue/chặng nào: [điền theo báo cáo]
+
+7. KHỐI LỆNH GỬI GEMINI KÈM CÁC FILE
+
+Bạn tiếp tục phát triển BÉO Voice Studio từ mốc mã nguồn đính kèm.
+Hãy đọc file bàn giao, toàn bộ module liên quan, script build, kiểm thử
+và báo cáo thực tế trước khi sửa. Đối chiếu phiên bản/hash để chắc chắn
+mã nguồn và EXE nền đúng bản tôi đang dùng.
+
+Nhiệm vụ lần này: [DÁN MỤC TIÊU VÀ MẪU ĐÃ ĐIỀN Ở MỤC 6].
+
+Thực hiện sửa mã trực tiếp, tìm nguyên nhân qua luồng gọi và số đo.
+Giữ các quy tắc mục 4, tương thích dữ liệu/model/cache/giọng hiện có.
+Ưu tiên thay đổi nhỏ, có thể kiểm tra. Không viết lại app từ đầu hoặc tự
+thêm tính năng ngoài yêu cầu. Không chỉ gửi mô tả/prompt thay cho mã sửa.
+
+Với tối ưu tốc độ: đo toàn bộ đường render cùng nguồn/giọng/cấu hình,
+tách chạy lạnh và có cache, ghi số lần nạp tiến trình/TTS/FFmpeg và thời
+gian từng bước. Đo UI không chứng minh TTS nhanh hơn. Nếu chỉ có fixture,
+ghi rõ là fixture; không tuyên bố RTX2070/Windows thật đã được thử.
+
+Dùng VAN4/5/6 trong source/fixtures/van215 và các báo cáo/input thực tôi
+gửi làm ca hồi quy. Chạy bộ kiểm tra phù hợp thay đổi, kiểm tra đồng bộ
+lời WAV–final.srt, bản Việt của câu đổi, đúng số báo cáo của hai chế độ,
+khôi phục tiến độ, một/hai giọng, cache và các engine liên quan.
+
+Nếu môi trường có thể build/chạy, build EXE và chạy kiểm thử thật. Nếu
+không có toolchain, Windows/GPU/model hoặc thiếu dữ liệu, nêu đúng phần
+chưa chạy và cách để tôi kiểm tra trên máy; không báo đã build/đã đạt.
+
+Bàn giao phiên bản mới kèm mã nguồn đầy đủ, EXE thực sự build được nếu
+có, hướng dẫn cập nhật tương thích cách hiện tại, thay đổi, kết quả kiểm
+thử, số đo trước–sau và các hạn chế. Ghi rõ file đầu ra nào là bản mới.
+Ở cuối mỗi đợt, cập nhật lại file bàn giao này theo phiên bản đã kiểm thử
+để đợt sau tiếp tục được mà không phụ thuộc lịch sử cuộc chat.

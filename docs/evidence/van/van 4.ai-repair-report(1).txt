@@ -1,0 +1,77 @@
+V15 AI REPAIR REPORT · 2.0.14 · schema 1
+Kết quả: WAV tổng đã xuất thành công · cần duyệt ý nghĩa lời sửa
+Nguồn: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.srt
+SHA256 nguồn: D534F88A057DBF914C1A1D6548CF0D117B3195B934717197AC6B363DDAB260A5
+Model sửa lời: Qwen3-4B-Instruct-2507 Q4_K_M · offline · nguồn model không phải Qwen3-TTS
+SHA256 model AI: 3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597; runtime llama.cpp b12019
+Giọng A: U:26e931bd135b45f1bc86fb795e11f54d; giọng B: không bật
+Timeline: V15.6 theo chặng; tốc độ gốc 1.000x; giới hạn đặt 0.900–1.250x; căn nhẹ=False
+Kiểm tra câu ngắn: True. Không coi lỗi TTS/model/CUDA là lỗi lời.
+Đề xuất đạt chỉ xác nhận phép đo thử. Phải xuất WAV tổng để xác nhận toàn bài; hơi thở/nghỉ tại ranh giới có thể khác phép thử riêng.
+AI có thể làm thay đổi sắc thái/ý; kiểm tra ngữ nghĩa tự động chỉ là bộ lọc số/tên và cấu trúc, cần duyệt nội dung. Không có bảo đảm giữ nghĩa 100%.
+WAV tổng: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 4.wav
+
+Đơn vị 1 · cue 1,2,3,4 · giọng A · 00:00:00,000 → 00:00:13,600 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #1: He bought a six-foot bologna log. His plan was even bigger.
+Gốc #2: Vance wanted to beat the price of ordinary store sandwiches.
+Gốc #3: Buying that many packaged sandwiches would cost over twelve hundred dollars.
+Gốc #4: His homemade version came to just three hundred thirty-two dollars.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.848s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.090x (+8.96% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 2 · cue 5,6,7,8 · giọng A · 00:00:13,600 → 00:00:27,200 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #5: The enormous bologna looked more like a fence post than lunch.
+Gốc #6: Suddenly, Vance's quiet kitchen looked like a busy sandwich shop.
+Gốc #7: Store sandwiches often come with barely any fresh vegetables inside.
+Gốc #8: Vance wanted every bite to feel like a proper meal.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.001s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.029x (+2.95% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 3 · cue 9,10,11,12 · giọng A · 00:00:27,200 → 00:00:40,800 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #9: But plain meat and bread weren't going to impress anybody.
+Gốc #10: Then his giant pot appeared, and the challenge got serious.
+Gốc #11: Sweet onions slowly turned golden as the whole kitchen filled with aroma.
+Gốc #12: Even Vance looked surprised by how delicious everything suddenly smelled.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.105s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.035x (+3.51% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 4 · cue 13,14,15,16 · giọng A · 00:00:40,800 → 00:00:54,400 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #13: Next came a mountain of cheese that seemed impossible to finish.
+Gốc #14: The deli slicer made his giant sandwich dream feel real.
+Gốc #15: Then Vance revealed the ingredient nobody expected in this sandwich marathon.
+Gốc #16: An unbelievable number of eggs covered the wide metal griddle.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.132s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.039x (+3.91% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 5 · cue 17,18,19,20 · giọng A · 00:00:54,400 → 00:01:08,000 · khung 13.600s
+Trạng thái: Đạt · giữ nguyên
+Gốc #17: He laid out twenty-eight bread slices at once for the crowd.
+Gốc #18: That tiny kitchen toaster never stood a chance against this plan.
+Gốc #19: With the bread perfectly toasted, the real mountain began rising.
+Gốc #20: Soon the dining table disappeared beneath an enormous wall of sandwiches.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.460s; sau căn đo 13.600s; đích thử 13.600s; tốc độ 1.063x (+6.33% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 6 · cue 21,22,23,24 · giọng A · 00:01:08,000 → 00:01:21,800 · khung 13.800s
+Trạng thái: Đạt · giữ nguyên
+Gốc #21: Hundreds of towering sandwiches stood in rows across the table.
+Gốc #22: Each one held eggs, onions, cheese, and plenty of filling.
+Gốc #23: But Vance wasn't making all this food for himself.
+Gốc #24: After dark, yellow crates packed with sandwiches filled the station wagon.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.850s; sau căn đo 13.800s; đích thử 13.800s; tốc độ 1.004x (+0.37% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 7 · cue 25,26,27,28 · giọng A · 00:01:21,800 → 00:01:35,495 · khung 13.695s
+Trạng thái: Đạt · giữ nguyên
+Gốc #25: The real destination was a community room filled with children.
+Gốc #26: One ordinary evening suddenly became a huge neighborhood dinner.
+Gốc #27: The best part wasn't the massive pile of homemade sandwiches.
+Gốc #28: It was watching everyone smile when they finally shared them.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.270s; sau căn đo 13.695s; đích thử 13.695s; tốc độ 1.040x (+4.04% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Không suy ra thời lượng từng cue trong chặng bằng tỷ lệ toàn chặng. Không thay đổi timeline, vai nói hoặc file SRT nguồn.

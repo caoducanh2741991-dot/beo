@@ -1,0 +1,363 @@
+[
+  {
+    "version": "1.4.1",
+    "tag": "v1.4.1",
+    "commit": "c78cb782b69aedbc23a6109ae064235b730e41de",
+    "archive": [
+      "V15VoiceStudio_1.4.1_Update.zip"
+    ],
+    "mapped_files": 122,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.2",
+    "tag": "v1.4.2",
+    "commit": "befe39e640d11fe14c4d7fa4cfcf261ac6793a39",
+    "archive": [
+      "V15VoiceStudio_1.4.2_Update.zip"
+    ],
+    "mapped_files": 131,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.3",
+    "tag": "v1.4.3",
+    "commit": "6ae0af9ca2820320b206c432f58cf2e8716197e8",
+    "archive": [
+      "V15VoiceStudio_1.4.3_Update.zip"
+    ],
+    "mapped_files": 164,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.3.1",
+    "tag": "v1.4.3.1",
+    "commit": "934ce35ee4e28fdcab8b739da6ce1cc184f41ef0",
+    "archive": [
+      "V15VoiceStudio_1.4.3.1_Update.zip"
+    ],
+    "mapped_files": 184,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.4",
+    "tag": "v1.4.4",
+    "commit": "9b7c2a928105c38a5a97bd7f7b15a518e62e63bc",
+    "archive": [
+      "V15VoiceStudio_1.4.4_Update.zip"
+    ],
+    "mapped_files": 196,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.5",
+    "tag": "v1.4.5",
+    "commit": "602b1720d7253a2d16382692060e9ee260362d01",
+    "archive": [
+      "V15VoiceStudio_1.4.5_Update.zip"
+    ],
+    "mapped_files": 202,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.6",
+    "tag": "v1.4.6",
+    "commit": "8f97d39189b5e59263a3b00c46814aaa80cc6e0a",
+    "archive": [
+      "V15VoiceStudio_1.4.6_Update.zip"
+    ],
+    "mapped_files": 218,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.7",
+    "tag": "v1.4.7",
+    "commit": "cb7d7aa37c9ee7b07fcbbf3d36d6c9dd48e046e0",
+    "archive": [
+      "V15VoiceStudio_1.4.7_Update.zip"
+    ],
+    "mapped_files": 237,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.8",
+    "tag": "v1.4.8",
+    "commit": "aacbced7e5ccf8ed8ce1c12c68275c14bcefef47",
+    "archive": [
+      "V15VoiceStudio_1.4.8_Update.zip"
+    ],
+    "mapped_files": 247,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.9",
+    "tag": "v1.4.9",
+    "commit": "8f3797714d33d1c11f2f4ec8809ce833833e80ad",
+    "archive": [
+      "V15VoiceStudio_1.4.9_Update.zip"
+    ],
+    "mapped_files": 283,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.10",
+    "tag": "v1.4.10",
+    "commit": "672c8190203960244a77e206a6dd07e1558cc0a4",
+    "archive": [
+      "V15VoiceStudio_1.4.10_Update.zip"
+    ],
+    "mapped_files": 293,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.11",
+    "tag": "v1.4.11",
+    "commit": "12da5b3326a739ebd1a96d22faa2648d74b58a03",
+    "archive": [
+      "V15VoiceStudio_1.4.11_Update.zip"
+    ],
+    "mapped_files": 325,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "1.4.12",
+    "tag": "v1.4.12",
+    "commit": "ba36c9f08ff6073152fae0771680fae517337a0d",
+    "archive": [
+      "V15VoiceStudio_1.4.12_Update.zip"
+    ],
+    "mapped_files": 263,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.0",
+    "tag": "v2.0.0",
+    "commit": "a3b29eb8996f0109b45b0793797c2239790eb768",
+    "archive": [
+      "V15VoiceStudio_2.0_Update.zip"
+    ],
+    "mapped_files": 294,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.1",
+    "tag": "v2.0.1",
+    "commit": "5297780262f4d47f584fa1d51eb03287c880858f",
+    "archive": [
+      "V15VoiceStudio_2.0.1_Update.zip"
+    ],
+    "mapped_files": 268,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.2",
+    "tag": "v2.0.2",
+    "commit": "bd852f2e9b96ceacd119e9b4dc26bdad01cafc8e",
+    "archive": [
+      "V15VoiceStudio_2.0.2_Update.zip"
+    ],
+    "mapped_files": 271,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.3",
+    "tag": "v2.0.3",
+    "commit": "299b6ce3e75619745e152ecb1a36bf76d3612f88",
+    "archive": [
+      "V15VoiceStudio_2.0.3_Update.zip"
+    ],
+    "mapped_files": 282,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.4",
+    "tag": "v2.0.4",
+    "commit": "5f4a7f1628aecb0a7500421c192d60894d83d79d",
+    "archive": [
+      "V15VoiceStudio_2.0.4_Update.zip"
+    ],
+    "mapped_files": 288,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.5",
+    "tag": "v2.0.5",
+    "commit": "14caff26d9a4b01579e9d01732d4def610d1bd6b",
+    "archive": [
+      "V15VoiceStudio_2.0.5_Update.zip"
+    ],
+    "mapped_files": 324,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.6",
+    "tag": "v2.0.6",
+    "commit": "dcd54792cb55feac2958a66ddc0a8233323e5f2e",
+    "archive": [
+      "V15VoiceStudio_2.0.6_Update.zip"
+    ],
+    "mapped_files": 367,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.7",
+    "tag": "v2.0.7",
+    "commit": "3aab0722d48bd02db38b8cdf2a7a4e6b2f599ab7",
+    "archive": [
+      "V15VoiceStudio_2.0.7_Update.zip"
+    ],
+    "mapped_files": 343,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.8",
+    "tag": "v2.0.8",
+    "commit": "ab0f154009c5bd7ed092e33c126b423f6f0d237f",
+    "archive": [
+      "V15VoiceStudio_2.0.8_Update.zip"
+    ],
+    "mapped_files": 367,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.9",
+    "tag": "v2.0.9",
+    "commit": "1ad2c0812cef2f36be66d30cb8b090a3c44280f4",
+    "archive": [
+      "V15VoiceStudio_2.0.9_Update.zip"
+    ],
+    "mapped_files": 373,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.10",
+    "tag": "v2.0.10",
+    "commit": "0715b77f57a7a0ca62d0aa440a759fb70a816240",
+    "archive": [
+      "V15VoiceStudio_2.0.10_Update.zip.001",
+      "V15VoiceStudio_2.0.10_Update.zip.002"
+    ],
+    "mapped_files": 334,
+    "excluded_installed_files": 90
+  },
+  {
+    "version": "2.0.11",
+    "tag": "v2.0.11",
+    "commit": "e1479992dc97828436c6551bdc071ea937641ce0",
+    "archive": [
+      "V15VoiceStudio_2.0.11_Core_Update.zip"
+    ],
+    "mapped_files": 338,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.12",
+    "tag": "v2.0.12",
+    "commit": "8129d2c657b59d83e36a852bbd26bd083b519457",
+    "archive": [
+      "V15VoiceStudio_2.0.12_Core_Update.zip"
+    ],
+    "mapped_files": 345,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.13",
+    "tag": "v2.0.13",
+    "commit": "a5dfce8c2d38d9c91b89553fd84719ed619ce5ee",
+    "archive": [
+      "V15VoiceStudio_2.0.13_Core_Update.zip"
+    ],
+    "mapped_files": 405,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.14",
+    "tag": "v2.0.14",
+    "commit": "ef9bda679a464e8fdaabe6f0ada5ce247a9e6541",
+    "archive": [
+      "V15VoiceStudio_2.0.14_Core_Update.zip"
+    ],
+    "mapped_files": 423,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.15",
+    "tag": "v2.0.15",
+    "commit": "e0a525d5551b087d195a3a31cd03beb8af2d2545",
+    "archive": [
+      "V15VoiceStudio_2.0.15_Core_Update.zip"
+    ],
+    "mapped_files": 462,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.16",
+    "tag": "v2.0.16",
+    "commit": "3ac9761737cbd0216013fc2d1e9b13f4e466b875",
+    "archive": [
+      "V15VoiceStudio_2.0.16_Core_Update.zip"
+    ],
+    "mapped_files": 582,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "2.0.17",
+    "tag": "v2.0.17",
+    "commit": "c32ad5ba93d48a10ebad38f3e46d479ed862418f",
+    "archive": [
+      "V15VoiceStudio_2.0.17_Core_Update.zip"
+    ],
+    "mapped_files": 388,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "3.0.0",
+    "tag": "v3.0.0",
+    "commit": "ef6ada48c5f9afa526d5808d6e1040faf2912600",
+    "archive": [
+      "V15VoiceStudio_3.0.0_Core_Update.zip"
+    ],
+    "mapped_files": 403,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "3.1.0",
+    "tag": "v3.1.0",
+    "commit": "7c05a01f67da255ef0d14e92997cd10223916b2b",
+    "archive": [
+      "BEO_Voice_Studio_3.1.0_Core_Update.zip"
+    ],
+    "mapped_files": 415,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "4.0.0",
+    "tag": "v4.0.0",
+    "commit": "323f836022959e20806900bbd99b16a3f75c0411",
+    "archive": [
+      "BEO_Voice_Studio_4.0.0_Creator_Update.zip"
+    ],
+    "mapped_files": 434,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "4.1.0",
+    "tag": "v4.1.0",
+    "commit": "8ad342d2f47abb550f2073b0c4894d0121e0a096",
+    "archive": [
+      "BEO_Voice_Studio_4.1.0_Fast_Voice_Update.zip"
+    ],
+    "mapped_files": 430,
+    "excluded_installed_files": 0
+  },
+  {
+    "version": "4.1.1",
+    "tag": "v4.1.1",
+    "commit": "246653768197f8ff5ad1781b1260278f07445b7e",
+    "archive": [
+      "BEO_Voice_Studio_4.1.1_Render_Fix_Update.zip"
+    ],
+    "mapped_files": 443,
+    "excluded_installed_files": 0
+  }
+]

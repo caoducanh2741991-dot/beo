@@ -1,0 +1,204 @@
+V15 AI REPAIR REPORT · 2.0.14 · schema 1
+Kết quả: WAV tổng đã xuất thành công · cần duyệt ý nghĩa lời sửa
+Nguồn: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 5.srt
+SHA256 nguồn: 7ABD139B699B65DFE5C0CDFAED5D89E5D4C4BDBEBDF8403BEBD247E89C26D373
+Model sửa lời: Qwen3-4B-Instruct-2507 Q4_K_M · offline · nguồn model không phải Qwen3-TTS
+SHA256 model AI: 3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597; runtime llama.cpp b12019
+Giọng A: U:26e931bd135b45f1bc86fb795e11f54d; giọng B: không bật
+Timeline: V15.6 theo chặng; tốc độ gốc 1.000x; giới hạn đặt 0.900–1.250x; căn nhẹ=False
+Kiểm tra câu ngắn: True. Không coi lỗi TTS/model/CUDA là lỗi lời.
+Đề xuất đạt chỉ xác nhận phép đo thử. Phải xuất WAV tổng để xác nhận toàn bài; hơi thở/nghỉ tại ranh giới có thể khác phép thử riêng.
+AI có thể làm thay đổi sắc thái/ý; kiểm tra ngữ nghĩa tự động chỉ là bộ lọc số/tên và cấu trúc, cần duyệt nội dung. Không có bảo đảm giữ nghĩa 100%.
+WAV tổng: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 5.wav
+
+Đơn vị 1 · cue 1,2,3,4 · giọng A · 00:00:00,000 → 00:00:13,900 · khung 13.900s
+Trạng thái: Đạt · giữ nguyên
+Gốc #1: Could your old school lunch beat meals from nine other countries?
+Gốc #2: Vance brought two friends to settle that question once and for all.
+Gốc #3: Ten different school lunch trays entered their homemade food showdown.
+Gốc #4: And these three grown men were taking every bite seriously.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.264s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 0.953x (-4.73% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 2 · cue 5,6,7,8 · giọng A · 00:00:13,900 → 00:00:27,800 · khung 13.900s
+Trạng thái: Đạt · giữ nguyên
+Gốc #5: Taste, nutrition, and fullness would decide the winning country.
+Gốc #6: Only one tray could claim the title of school lunch champion.
+Gốc #7: They started with an American tray priced at two fifty.
+Gốc #8: It had a burger, fries, a donut, and a soda.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.867s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 0.998x (-0.24% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 3 · cue 9,10,11,12 · giọng A · 00:00:27,800 → 00:00:41,700 · khung 13.900s
+Trạng thái: Cần sửa thủ công
+Gốc #9: A donut and soda for lunch? That sparked instant debate.
+Gốc #10: Nobody could decide if this was lunch or a party.
+Gốc #11: Vance loved the burger and fries more than he expected.
+Gốc #12: Comfort food was clearly winning this first round on taste.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 12.181s; sau căn đo 13.510s; đích thử 13.900s; tốc độ 0.900x (-10.00% so với gốc); đuôi/room 0.390s; Thiếu 0.390s sau khi căn; giới hạn 0.90–1.25. Cần thêm lời hoặc đổi neo.
+Lần AI 1 · GPU Vulkan · đã xác nhận offload lớp model (không phải CUDA TTS) · chưa áp dụng
+Sửa #9: A donut and soda for lunch? That sparked instant debate, and everyone was split on whether it was a meal or a celebration.
+Sửa #10: Nobody could agree if it was lunch or a party, with some saying it was just too indulgent.
+Sửa #11: Vance loved the burger and fries more than he expected, calling them the perfect comfort food.
+Sửa #12: Comfort food was clearly winning this first round on taste, with the burger and fries taking the crown.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo lời sửa: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 23.103s; sau căn đo 18.495s; đích thử 13.900s; tốc độ 1.250x (+25.00% so với gốc); đuôi/room 0.000s; Dư 4.595s sau khi căn; giới hạn 0.90–1.25. Cần rút gọn lời hoặc đổi neo.
+Lần AI 2 · GPU Vulkan · đã xác nhận offload lớp model (không phải CUDA TTS) · chưa áp dụng
+Sửa #9: A donut and soda for lunch? That sparked instant debate.
+Sửa #10: Nobody could decide if it was lunch or a party.
+Sửa #11: Vance loved the burger and fries more than he expected.
+Sửa #12: Comfort food was clearly winning this first round on taste.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo lời sửa: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 12.248s; sau căn đo 13.571s; đích thử 13.900s; tốc độ 0.900x (-10.00% so với gốc); đuôi/room 0.329s; Thiếu 0.329s sau khi căn; giới hạn 0.90–1.25. Cần thêm lời hoặc đổi neo.
+
+Đơn vị 4 · cue 13,14,15,16 · giọng A · 00:00:41,700 → 00:00:55,600 · khung 13.900s
+Trạng thái: Đạt · giữ nguyên
+Gốc #13: Milo and Zack finished their trays and joined the judging.
+Gốc #14: America scored well for flavor, but only four for health.
+Gốc #15: Japan's tray changed the mood as soon as it appeared.
+Gốc #16: Fish, vegetables, and fruit offered a completely different kind of lunch.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.008s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 0.936x (-6.41% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 5 · cue 17,18,19,20 · giọng A · 00:00:55,600 → 00:01:09,500 · khung 13.900s
+Trạng thái: Đạt · giữ nguyên
+Gốc #17: The guys struggled with chopsticks, then washed everything down with milk.
+Gốc #18: Japan walked away with seventy-one points on their scoreboard.
+Gốc #19: Then India arrived with a price that surprised everyone.
+Gốc #20: Warm lentils, vegetables, flatbread, and chai filled the colorful tray.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.894s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 1.072x (+7.15% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 6 · cue 21,22,23,24 · giọng A · 00:01:09,500 → 00:01:23,400 · khung 13.900s
+Trạng thái: Đạt · giữ nguyên
+Gốc #21: They listed this hearty school meal at absolutely no charge.
+Gốc #22: That alone impressed the judges before Italy even took the stage.
+Gốc #23: Italy's tray looked more like dinner at a family restaurant.
+Gốc #24: Pasta, pizza, salad, and grapes made everyone lean forward.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.440s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 1.037x (+3.67% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 7 · cue 25,26,27,28 · giọng A · 00:01:23,400 → 00:01:37,300 · khung 13.900s
+Trạng thái: Đã chấp nhận
+Gốc #25: Vance joked that he would never skip school for pizza.
+Gốc #26: He looked ready to give the Italian tray a trophy.
+Gốc #27: But first, the judges finally finished calculating India's total.
+Gốc #28: India earned fifty points, with fullness helping its score.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 12.437s; sau căn đo 13.795s; đích thử 13.900s; tốc độ 0.900x (-10.00% so với gốc); đuôi/room 0.105s; Thiếu 0.105s sau khi căn; giới hạn 0.90–1.25. Cần thêm lời hoặc đổi neo.
+Lần AI 1 · GPU Vulkan · đã xác nhận offload lớp model (không phải CUDA TTS) · chưa áp dụng
+Sửa #25: Vance joked he'd never skip school for pizza, and it was clear he'd eat it all if given the chance.
+Sửa #26: He was already thinking of awarding the Italian tray a trophy.
+Sửa #27: But first, the judges finally finished calculating India's total.
+Sửa #28: India earned fifty points, with fullness playing a big part in the score.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo lời sửa: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 17.227s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 1.239x (+23.93% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+Lần AI 2 · GPU Vulkan · đã xác nhận offload lớp model (không phải CUDA TTS) · ĐÃ CHẤP NHẬN
+Sửa #25: Vance joked he'd never skip school for pizza, and he'd eat every bit if he had to.
+Sửa #26: He was already eyeing the Italian tray for a trophy.
+Sửa #27: But first, the judges finally finished calculating India's total.
+Sửa #28: India earned fifty points, with fullness helping push the score higher.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo lời sửa: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 15.244s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 1.097x (+9.67% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 8 · cue 29,30,31,32 · giọng A · 00:01:37,300 → 00:01:51,200 · khung 13.900s
+Trạng thái: Đạt · giữ nguyên
+Gốc #29: Italy still looked tempting, but its final score could wait.
+Gốc #30: Now Ukraine brought a comforting, home-style tray to the table.
+Gốc #31: Buckwheat and a savory cutlet were the stars of this meal.
+Gốc #32: Cabbage salad, cheesy bread, and fruit compote rounded it out.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.498s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 0.971x (-2.89% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 9 · cue 33,34,35,36 · giọng A · 00:01:51,200 → 00:02:05,100 · khung 13.900s
+Trạng thái: Đạt · giữ nguyên
+Gốc #33: It wasn't flashy, but the judges immediately understood its appeal.
+Gốc #34: This was exactly the kind of meal that actually fills you.
+Gốc #35: All three plates were cleared before anyone could say another word.
+Gốc #36: Ukraine surged into the lead with seventy-five total points.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.766s; sau căn đo 13.900s; đích thử 13.900s; tốc độ 1.061x (+6.06% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 10 · cue 37,38,39,40 · giọng A · 00:02:05,100 → 00:02:19,100 · khung 14.000s
+Trạng thái: Đạt · giữ nguyên
+Gốc #37: Mexico arrived next, bringing an entirely different lunchtime energy.
+Gốc #38: The tray paired a casserole with a generously filled taco.
+Gốc #39: Chips, guacamole, and chocolate milk made the deal even sweeter.
+Gốc #40: And the listed price was just one dollar for everything.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.469s; sau căn đo 14.000s; đích thử 14.000s; tốc độ 1.033x (+3.35% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 11 · cue 41,42,43,44 · giọng A · 00:02:19,100 → 00:02:33,100 · khung 14.000s
+Trạng thái: Đạt · giữ nguyên
+Gốc #41: Vance gave the flavor a perfect ten without hesitation.
+Gốc #42: But nutrition pulled Mexico's overall score down to sixty.
+Gốc #43: Brazil answered with one of the freshest looking trays yet.
+Gốc #44: Seasoned grains, a green wrap, fruit, and mango juice stood out.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.823s; sau căn đo 14.000s; đích thử 14.000s; tốc độ 0.987x (-1.27% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 12 · cue 45,46,47,48 · giọng A · 00:02:33,100 → 00:02:47,100 · khung 14.000s
+Trạng thái: Đạt · giữ nguyên
+Gốc #45: That huge green wrap almost looked bigger than a textbook.
+Gốc #46: The judges needed both hands just to hold each bite.
+Gốc #47: Brazil scored a perfect thirty for their health category.
+Gốc #48: That pushed its total to seventy-five, tying Ukraine.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 12.666s; sau căn đo 14.000s; đích thử 14.000s; tốc độ 0.905x (-9.53% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 13 · cue 49,50,51,52 · giọng A · 00:02:47,100 → 00:03:01,100 · khung 14.000s
+Trạng thái: Đạt · giữ nguyên
+Gốc #49: Next, China's colorful tray gave the judges even more choices.
+Gốc #50: Rice, savory meat, and dumplings immediately caught everyone's attention.
+Gốc #51: Braised greens, an egg, and orange slices completed the spread.
+Gốc #52: Suddenly, this felt more like a weekend feast than school lunch.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 15.623s; sau căn đo 14.000s; đích thử 14.000s; tốc độ 1.116x (+11.60% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 14 · cue 53,54,55,56 · giọng A · 00:03:01,100 → 00:03:15,100 · khung 14.000s
+Trạng thái: Đạt · giữ nguyên
+Gốc #53: Their chopstick skills were shaky, but the dumplings disappeared fast.
+Gốc #54: China collected sixty-nine points after everyone finished eating.
+Gốc #55: Spain was next with a colorful Mediterranean-inspired lunch tray.
+Gốc #56: Rice, cucumber salad, and fruit gave the meal a fresh look.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 15.391s; sau căn đo 14.000s; đích thử 14.000s; tốc độ 1.099x (+9.93% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 15 · cue 57,58,59,60 · giọng A · 00:03:15,100 → 00:03:29,100 · khung 14.000s
+Trạng thái: Đạt · giữ nguyên
+Gốc #57: That little foil drink pouch brought back everyone's childhood memories.
+Gốc #58: Even the judges were smiling before the final scores appeared.
+Gốc #59: Spain took the lead with an impressive seventy-six points.
+Gốc #60: Only Turkey's tray and Italy's final score were still waiting.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.742s; sau căn đo 14.000s; đích thử 14.000s; tốc độ 1.051x (+5.14% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 16 · cue 61,62,63,64 · giọng A · 00:03:29,100 → 00:03:43,100 · khung 14.000s
+Trạng thái: Đạt · giữ nguyên
+Gốc #61: Turkey served up a lunch that looked restaurant-worthy.
+Gốc #62: Grilled kebab, fresh herbs, and flatbread covered the tray.
+Gốc #63: Then baklava arrived, making dessert feel like a bonus round.
+Gốc #64: But the salted yogurt drink caught all three judges off guard.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.301s; sau căn đo 14.000s; đích thử 14.000s; tốc độ 1.022x (+2.15% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 17 · cue 65,66,67,68 · giọng A · 00:03:43,100 → 00:03:57,100 · khung 14.000s
+Trạng thái: Đạt · giữ nguyên
+Gốc #65: The grilled food earned praise, while that drink divided opinions.
+Gốc #66: Nobody expected their first sip to taste quite that salty.
+Gốc #67: A perfect fullness score still gave Turkey sixty-two points overall.
+Gốc #68: And at last, everyone turned toward Italy's waiting scorecard.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 15.321s; sau căn đo 14.000s; đích thử 14.000s; tốc độ 1.094x (+9.43% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 18 · cue 69,70,71,72 · giọng A · 00:03:57,100 → 00:04:11,050 · khung 13.950s
+Trạng thái: Đạt · giữ nguyên
+Gốc #69: Its judges loved the combination of taste, nutrition, and satisfaction.
+Gốc #70: Italy won their challenge with a massive eighty-six points.
+Gốc #71: Apparently, a plate of pasta can make school seem exciting.
+Gốc #72: At least that's what these three very hungry judges decided.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.017s; sau căn đo 13.950s; đích thử 13.950s; tốc độ 1.002x (+0.23% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Không suy ra thời lượng từng cue trong chặng bằng tỷ lệ toàn chặng. Không thay đổi timeline, vai nói hoặc file SRT nguồn.

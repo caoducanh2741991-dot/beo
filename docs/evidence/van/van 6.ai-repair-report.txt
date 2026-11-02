@@ -1,0 +1,141 @@
+V15 AI REPAIR REPORT · 2.0.14 · schema 1
+Kết quả: WAV tổng đã xuất thành công · cần duyệt ý nghĩa lời sửa
+Nguồn: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 6.srt
+SHA256 nguồn: 88FDD77C73859B097E31637AAA74323426ECFCF4513D45FBD81379E852FBFB3F
+Model sửa lời: Qwen3-4B-Instruct-2507 Q4_K_M · offline · nguồn model không phải Qwen3-TTS
+SHA256 model AI: 3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597; runtime llama.cpp b12019
+Giọng A: U:26e931bd135b45f1bc86fb795e11f54d; giọng B: không bật
+Timeline: V15.6 theo chặng; tốc độ gốc 1.000x; giới hạn đặt 0.900–1.250x; căn nhẹ=False
+Kiểm tra câu ngắn: True. Không coi lỗi TTS/model/CUDA là lỗi lời.
+Đề xuất đạt chỉ xác nhận phép đo thử. Phải xuất WAV tổng để xác nhận toàn bài; hơi thở/nghỉ tại ranh giới có thể khác phép thử riêng.
+AI có thể làm thay đổi sắc thái/ý; kiểm tra ngữ nghĩa tự động chỉ là bộ lọc số/tên và cấu trúc, cần duyệt nội dung. Không có bảo đảm giữ nghĩa 100%.
+WAV tổng: C:\Users\Admin\Downloads\VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET\van 6.wav
+
+Đơn vị 1 · cue 1,2,3,4 · giọng A · 00:00:00,000 → 00:00:14,400 · khung 14.400s
+Trạng thái: Đạt · giữ nguyên
+Gốc #1: Would you hang a giant ham upstairs to avoid a luxury price?
+Gốc #2: Vance thought twelve thousand dollars for Spanish ham was outrageous.
+Gốc #3: Instead of buying expensive slices, he imagined making one himself.
+Gốc #4: And somehow, his ordinary attic became part of that plan.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 15.341s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 1.065x (+6.53% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 2 · cue 5,6,7,8 · giọng A · 00:00:14,400 → 00:00:28,800 · khung 14.400s
+Trạng thái: Đã chấp nhận
+Gốc #5: First, he ignored the glamorous gourmet shop displays entirely.
+Gốc #6: He headed to the local market with a very different budget.
+Gốc #7: The enormous pork leg he carried home looked almost unreal.
+Gốc #8: But Vance knew buying it was just the beginning.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 12.551s; sau căn đo 13.921s; đích thử 14.400s; tốc độ 0.900x (-10.00% so với gốc); đuôi/room 0.479s; Thiếu 0.479s sau khi căn; giới hạn 0.90–1.25. Cần thêm lời hoặc đổi neo.
+Lần AI 1 · GPU Vulkan · đã xác nhận offload lớp model (không phải CUDA TTS) · ĐÃ CHẤP NHẬN
+Sửa #5: First, he completely ignored the flashy gourmet shop displays.
+Sửa #6: He headed to the local market with a much tighter budget.
+Sửa #7: The enormous pork leg he carried home seemed almost unbelievable.
+Sửa #8: But Vance knew buying it was just the first step.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo lời sửa: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.564s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 0.940x (-6.02% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+Lần AI 2 · GPU Vulkan · đã xác nhận offload lớp model (không phải CUDA TTS) · chưa áp dụng
+Sửa #5: First, he completely ignored the flashy gourmet shop displays.
+Sửa #6: He headed to the local market with a much tighter budget.
+Sửa #7: The enormous pork leg he carried home seemed almost unbelievable.
+Sửa #8: But Vance knew buying it was just the beginning, and the real work had only started.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo lời sửa: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 15.715s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 1.091x (+9.13% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 3 · cue 9,10,11,12 · giọng A · 00:00:28,800 → 00:00:43,200 · khung 14.400s
+Trạng thái: Đạt · giữ nguyên
+Gốc #9: He weighed the massive cut, already imagining the final result.
+Gốc #10: Soon the kitchen counter looked more like an unusual experiment.
+Gốc #11: The mountain of salt alone made the whole project look absurd.
+Gốc #12: Still, his grocery receipt was nothing like the boutique price.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.305s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 0.993x (-0.66% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 4 · cue 13,14,15,16 · giọng A · 00:00:43,200 → 00:00:57,600 · khung 14.400s
+Trạng thái: Đạt · giữ nguyên
+Gốc #13: Then a bright red wooden chest appeared in the backyard.
+Gốc #14: Neighbors probably had questions, but Vance wasn't giving explanations.
+Gốc #15: Days passed, and the yard slowly changed with the seasons.
+Gốc #16: After three long weeks, he finally opened the strange chest.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.760s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 0.956x (-4.44% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 5 · cue 17,18,19,20 · giọng A · 00:00:57,600 → 00:01:12,000 · khung 14.400s
+Trạng thái: Đạt · giữ nguyên
+Gốc #17: What emerged looked surprisingly different from the meat he started with.
+Gốc #18: Vance and his friend could barely lift the enormous leg.
+Gốc #19: But the strangest part of his experiment was still ahead.
+Gốc #20: He carried that giant ham upstairs into his attic.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.011s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 0.901x (-9.87% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 6 · cue 21,22,23,24 · giọng A · 00:01:12,000 → 00:01:26,400 · khung 14.400s
+Trạng thái: Đạt · giữ nguyên
+Gốc #21: The empty room suddenly had a very unusual new resident.
+Gốc #22: Even Vance had to laugh at his bizarre home setup.
+Gốc #23: He hoped this space could resemble an old European curing cellar.
+Gốc #24: But months of waiting would test his patience more than anything.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.574s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 0.943x (-5.73% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 7 · cue 25,26,27,28 · giọng A · 00:01:26,400 → 00:01:40,800 · khung 14.400s
+Trạng thái: Đạt · giữ nguyên
+Gốc #25: A giant piece of meat hanging upstairs looked risky to outsiders.
+Gốc #26: And a homemade setup is no guarantee that food stays safe.
+Gốc #27: Still, Vance kept returning to check on his unusual project.
+Gốc #28: The hanging ham gradually took on an almost cake-like white coating.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 14.619s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 1.013x (+1.32% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 8 · cue 29,30,31,32 · giọng A · 00:01:40,800 → 00:01:55,200 · khung 14.400s
+Trạng thái: Đã chấp nhận
+Gốc #29: After more waiting, the moment of truth finally arrived.
+Gốc #30: Vance inspected the ham with the focus of a nervous contestant.
+Gốc #31: He seemed convinced the enormous gamble had finally worked.
+Gốc #32: So he carried his prize downstairs for the big reveal.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 12.864s; sau căn đo 14.272s; đích thử 14.400s; tốc độ 0.900x (-10.00% so với gốc); đuôi/room 0.128s; Thiếu 0.128s sau khi căn; giới hạn 0.90–1.25. Cần thêm lời hoặc đổi neo.
+Lần AI 1 · GPU Vulkan · đã xác nhận offload lớp model (không phải CUDA TTS) · chưa áp dụng
+Sửa #29: After more waiting, the moment of truth finally arrived, and the ham began to glow faintly, like it had come to life.
+Sửa #30: Vance inspected the ham with the focus of a nervous contestant, his breath catching with every glance.
+Sửa #31: He seemed convinced the enormous gamble had finally worked, the transformation too perfect to ignore.
+Sửa #32: So he carried his prize downstairs for the big reveal, heart pounding with anticipation.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo lời sửa: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 23.855s; sau căn đo 19.094s; đích thử 14.400s; tốc độ 1.250x (+25.00% so với gốc); đuôi/room 0.000s; Dư 4.693s sau khi căn; giới hạn 0.90–1.25. Cần rút gọn lời hoặc đổi neo.
+Lần AI 2 · GPU Vulkan · đã xác nhận offload lớp model (không phải CUDA TTS) · ĐÃ CHẤP NHẬN
+Sửa #29: After more waiting, the moment of truth finally arrived.
+Sửa #30: Vance inspected the ham with the focus of a nervous contestant, his eyes scanning every detail.
+Sửa #31: He seemed convinced the enormous gamble had finally worked, the change unmistakable.
+Sửa #32: So he carried his prize downstairs for the big reveal.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo lời sửa: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 16.501s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 1.146x (+14.59% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 9 · cue 33,34,35,36 · giọng A · 00:01:55,200 → 00:02:09,600 · khung 14.400s
+Trạng thái: Đạt · giữ nguyên
+Gốc #33: The giant leg took center stage on its wooden stand.
+Gốc #34: Almost two months of waiting had led to this moment.
+Gốc #35: The first exposed slice showed a surprisingly deep red color.
+Gốc #36: It looked remarkably similar to the ham behind gourmet counters.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.231s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 0.917x (-8.33% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 10 · cue 37,38,39,40 · giọng A · 00:02:09,600 → 00:02:24,000 · khung 14.400s
+Trạng thái: Đạt · giữ nguyên
+Gốc #37: Vance shaved off thin ribbons as everyone watched closely.
+Gốc #38: Then he finally tasted the result of his long experiment.
+Gốc #39: His reaction suggested he loved the rich, salty flavor.
+Gốc #40: A little cheese and a crunchy cracker completed his tasting plate.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.2 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.236s; sau căn đo 14.400s; đích thử 14.400s; tốc độ 0.918x (-8.22% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Đơn vị 11 · cue 41,42,43,44 · giọng A · 00:02:24,000 → 00:02:37,991 · khung 13.991s
+Trạng thái: Đạt · giữ nguyên
+Gốc #41: Then came the final question: how much had he spent?
+Gốc #42: Vance counted about three hundred fifty dollars for the project.
+Gốc #43: Against that boutique price tag, the difference looked enormous.
+Gốc #44: But would you trust a homemade attic ham? That's the debate.
+Engine giọng: Chatterbox / chatter_nano / speaker -1 / mẫu SHA256 94B73AEBA7A160B5BE3FD3CA64C69C1F7F08E89B4733E23963E4D9380F92CE8A; thiết bị TTS đã báo: NVIDIA GeForce RTX 2070 · VRAM dùng 3.3 / 8.0 GB
+Đo gốc: giọng Steven hảley / U:26e931bd135b45f1bc86fb795e11f54d; TTS và nghỉ trước căn 13.146s; sau căn đo 13.991s; đích thử 13.991s; tốc độ 0.940x (-6.04% so với gốc); đuôi/room 0.000s; Đạt khung chặng
+
+Không suy ra thời lượng từng cue trong chặng bằng tỷ lệ toàn chặng. Không thay đổi timeline, vai nói hoặc file SRT nguồn.

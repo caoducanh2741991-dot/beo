@@ -1,0 +1,115 @@
+V15 2.0.15 · ĐỐI CHIẾU LỜI CUỐI ĐÃ DÙNG TẠO WAV
+DỊCH VIỆT: CHƯA DỊCH — chưa tích hợp dịch offline đã kiểm chứng; không tạo bản dịch giả.
+Mốc dưới đây là TIMELINE SRT NGUỒN; chưa có mốc WAV riêng từng cue sau căn chặng.
+
+#1 | 00:00:00,000 --> 00:00:03,400 | Giọng A
+EN: He bought a six-foot bologna log. His plan was even bigger.
+VI: [CHƯA DỊCH]
+
+#2 | 00:00:03,400 --> 00:00:06,800 | Giọng A
+EN: Vance wanted to beat the price of ordinary store sandwiches.
+VI: [CHƯA DỊCH]
+
+#3 | 00:00:06,800 --> 00:00:10,200 | Giọng A
+EN: Buying that many packaged sandwiches would cost over twelve hundred dollars.
+VI: [CHƯA DỊCH]
+
+#4 | 00:00:10,200 --> 00:00:13,600 | Giọng A
+EN: His homemade version came to just three hundred thirty-two dollars.
+VI: [CHƯA DỊCH]
+
+#5 | 00:00:13,600 --> 00:00:17,000 | Giọng A
+EN: The enormous bologna looked more like a fence post than lunch.
+VI: [CHƯA DỊCH]
+
+#6 | 00:00:17,000 --> 00:00:20,400 | Giọng A
+EN: Suddenly, Vance's quiet kitchen looked like a busy sandwich shop.
+VI: [CHƯA DỊCH]
+
+#7 | 00:00:20,400 --> 00:00:23,800 | Giọng A
+EN: Store sandwiches often come with barely any fresh vegetables inside.
+VI: [CHƯA DỊCH]
+
+#8 | 00:00:23,800 --> 00:00:27,200 | Giọng A
+EN: Vance wanted every bite to feel like a proper meal.
+VI: [CHƯA DỊCH]
+
+#9 | 00:00:27,200 --> 00:00:30,600 | Giọng A
+EN: But plain meat and bread weren't going to impress anybody.
+VI: [CHƯA DỊCH]
+
+#10 | 00:00:30,600 --> 00:00:34,000 | Giọng A
+EN: Then his giant pot appeared, and the challenge got serious.
+VI: [CHƯA DỊCH]
+
+#11 | 00:00:34,000 --> 00:00:37,400 | Giọng A
+EN: Sweet onions slowly turned golden as the whole kitchen filled with aroma.
+VI: [CHƯA DỊCH]
+
+#12 | 00:00:37,400 --> 00:00:40,800 | Giọng A
+EN: Even Vance looked surprised by how delicious everything suddenly smelled.
+VI: [CHƯA DỊCH]
+
+#13 | 00:00:40,800 --> 00:00:44,200 | Giọng A
+EN: Next came a mountain of cheese that seemed impossible to finish.
+VI: [CHƯA DỊCH]
+
+#14 | 00:00:44,200 --> 00:00:47,600 | Giọng A
+EN: The deli slicer made his giant sandwich dream feel real.
+VI: [CHƯA DỊCH]
+
+#15 | 00:00:47,600 --> 00:00:51,000 | Giọng A
+EN: Then Vance revealed the ingredient nobody expected in this sandwich marathon.
+VI: [CHƯA DỊCH]
+
+#16 | 00:00:51,000 --> 00:00:54,400 | Giọng A
+EN: An unbelievable number of eggs covered the wide metal griddle.
+VI: [CHƯA DỊCH]
+
+#17 | 00:00:54,400 --> 00:00:57,800 | Giọng A
+EN: He laid out twenty-eight bread slices at once for the crowd.
+VI: [CHƯA DỊCH]
+
+#18 | 00:00:57,800 --> 00:01:01,200 | Giọng A
+EN: That tiny kitchen toaster never stood a chance against this plan.
+VI: [CHƯA DỊCH]
+
+#19 | 00:01:01,200 --> 00:01:04,600 | Giọng A
+EN: With the bread perfectly toasted, the real mountain began rising.
+VI: [CHƯA DỊCH]
+
+#20 | 00:01:04,600 --> 00:01:08,000 | Giọng A
+EN: Soon the dining table disappeared beneath an enormous wall of sandwiches.
+VI: [CHƯA DỊCH]
+
+#21 | 00:01:08,000 --> 00:01:11,400 | Giọng A
+EN: Hundreds of towering sandwiches stood in rows across the table.
+VI: [CHƯA DỊCH]
+
+#22 | 00:01:11,400 --> 00:01:14,900 | Giọng A
+EN: Each one held eggs, onions, cheese, and plenty of filling.
+VI: [CHƯA DỊCH]
+
+#23 | 00:01:14,900 --> 00:01:18,300 | Giọng A
+EN: But Vance wasn't making all this food for himself.
+VI: [CHƯA DỊCH]
+
+#24 | 00:01:18,300 --> 00:01:21,800 | Giọng A
+EN: After dark, yellow crates packed with sandwiches filled the station wagon.
+VI: [CHƯA DỊCH]
+
+#25 | 00:01:21,800 --> 00:01:25,200 | Giọng A
+EN: The real destination was a community room filled with children.
+VI: [CHƯA DỊCH]
+
+#26 | 00:01:25,200 --> 00:01:28,600 | Giọng A
+EN: One ordinary evening suddenly became a huge neighborhood dinner.
+VI: [CHƯA DỊCH]
+
+#27 | 00:01:28,600 --> 00:01:32,000 | Giọng A
+EN: The best part wasn't the massive pile of homemade sandwiches.
+VI: [CHƯA DỊCH]
+
+#28 | 00:01:32,000 --> 00:01:35,495 | Giọng A
+EN: It was watching everyone smile when they finally shared them.
+VI: [CHƯA DỊCH]
