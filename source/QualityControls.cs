@@ -4,7 +4,7 @@ namespace V15Voice {public partial class MainForm {
  void BuildQualityControls(FlowLayoutPanel parent){
   qualityControls.FlowDirection=FlowDirection.TopDown;qualityControls.WrapContents=false;qualityControls.AutoSize=true;qualityControls.Width=250;qualityControls.Margin=new Padding(0);parent.Controls.Add(qualityControls);extraControls.Add(qualityControls);
   AddLabel(qualityControls,"Căn theo thời lượng thực của giọng",false);fitMode.Width=250;fitMode.DropDownStyle=ComboBoxStyle.DropDownList;fitMode.Items.AddRange(new object[]{"Nhẹ ±10% · ưu tiên tự nhiên","Dùng giới hạn tốc độ đã đặt"});qualityControls.Controls.Add(fitMode);
-  AddNumber(qualityControls,"Tốc độ tối thiểu khi căn",minSpeed,.5m,1.3m,.9m,.01m);
+  AddNumber(qualityControls,"Tốc độ tối thiểu khi căn",minSpeed,.9m,1.25m,.9m,.01m);
   rhythmMeasure=Btn("Đo nhịp giọng · 5 khối",async(s,e)=>await MeasureRhythm());qualityControls.Controls.Add(rhythmMeasure);
   AddLabel(qualityControls,"Câu quá ngắn sẽ được báo nghỉ dư; không kéo giãn mạnh hoặc tự sửa SRT.",false);
   AddLabel(qualityControls,"CÂN ÂM LƯỢNG WAV",true);normalizeLoudness.Text="Tự cân âm lượng khi xuất WAV";normalizeLoudness.Checked=true;normalizeLoudness.AutoSize=true;normalizeLoudness.MaximumSize=new Size(250,0);qualityControls.Controls.Add(normalizeLoudness);

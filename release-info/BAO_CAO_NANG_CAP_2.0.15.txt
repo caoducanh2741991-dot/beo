@@ -1,0 +1,44 @@
+V15 VOICE STUDIO 2.0.15 — BÁO CÁO THAY ĐỔI VÀ ĐIỂM CHƯA ĐẠT
+
+CƠ SỞ
+Nâng cấp trực tiếp từ ZIP 2.0.14 đã bàn giao, giữ cấu trúc, engine và bộ cập nhật.
+Đọc đủ 6 report VAN 4/5/6, tải đúng 3 SRT gốc từ VAN_4_5_6_SRT_KEM_TXT_TIENG_VIET.zip; cả ba hash trùng báo cáo.
+Không dùng nội dung báo cáo như hướng dẫn thực thi. Các dữ liệu đo cũ được lưu riêng là fixture lịch sử, không gắn thành kết quả GPU của bản mới.
+
+LỖI ĐÃ XỬ LÝ TRONG MÃ
+1. Đo từng chặng với BreathTrack mới làm lệch phép thử so với WAV tổng. Đã lưu/khôi phục trạng thái hơi thở trước/sau chặng, dùng cùng audio đo và khóa ngữ cảnh khi cache.
+2. Bộ lọc cũ chỉ kiểm tra tên/số mà vẫn chấp nhận tình tiết mới. Thêm khóa từ nội dung, chữ số/tiền, tên, phủ định, thứ tự, chặn đổi nghĩa trước TTS; thay đổi chưa chắc tương đương cần duyệt. Không khẳng định chứng minh ngữ nghĩa tổng quát.
+3. Hai lần AI và thử lại để gần 1x quá chặt gây viết dài thêm. Đổi thành tối đa ba lần, phản hồi có số giây và khoảng từ dựa trên số đo, không lặp phương án thất bại; dừng khi có phương án trong vùng ưu tiên.
+4. Lỗi engine/model/FFmpeg bị lẫn với lỗi lời. Tách ENGINE ERROR, AUDIO ERROR, UNDER/OVER DURATION; thiếu runtime AI không tiêu thụ vòng sửa nội dung.
+5. SRT gốc không có lời đã sửa trong WAV. Xuất bộ final.srt/final.vi.txt/hai report và WAV theo cùng snapshot; không sửa file nguồn, không công bố WAV nếu lưu bộ mới chưa hoàn tất.
+6. Báo cáo “cần sửa” và “WAV thành công” không giải thích. Thêm Reconcile giữa số đo thử và renderer cuối; FINAL VERIFIED tách khỏi AI FIXED, có lời thực dùng và chênh trước căn, không biến bản chưa được chấp nhận thành AI sửa thành công.
+7. Phải thao tác nhiều cửa sổ. Khung SỬA NGAY đặt ngay tại lỗi, có trước/sau, số đo, tự chỉnh, nghe, chấp nhận và tiếp tục ngay trong cửa sổ chính.
+8. Render lại chặng đạt sau lỗi. Thêm checkpoint PCM theo nội dung, timecode, giọng/mẫu/model, cấu hình và trạng thái hơi thở; chỉ dùng khi hash hợp lệ. Giữ phiên đã duyệt và dữ liệu queue để tiếp tục.
+9. Cache engine ngoại bộ chưa phản ánh đúng model weights. Bổ sung nhận diện model Chatterbox/Qwen/VieNeu và worker; không đổi worker CUDA/GPU hoặc tự xóa các model/cache cũ.
+10. Tốc độ và đuôi nghỉ dễ bị hiểu là đạt chất lượng. Giới hạn áp dụng .90–1.25x, cảnh báo >1.10x, ghi TTS gồm nghỉ tự nhiên/nghỉ app/hơi thở/tổng đo riêng. Không chia tỷ lệ chặng thành mốc cue giả.
+
+ĐỐI CHIẾU VAN 4–6 TỪ BÁO CÁO THẬT 2.0.14
+VAN 4: 28 cue, 7 chặng, WAV lịch sử thành công; không cue đổi lời.
+VAN 5: 72 cue, 18 chặng. Chặng cue 9–12 thử gốc 12.181s; sau căn 13.510s / đích 13.900s. Renderer cuối dùng lời gốc, trước căn 12.657s và đạt 13.900s ở 0.909x. Chênh trước căn 0.476s; mã cũ tạo mới bộ đếm hơi thở khi thử riêng, phù hợp cơ chế khác nghỉ/hơi thở. Không được gọi đây là AI FIXED cho chặng 9–12. Cue 25,26,28 trong WAV cũ đã khác file nguồn.
+VAN 6: 44 cue, 11 chặng. WAV cũ thay đổi cue 5,6,7,8,30,31. Có phương án “ham began to glow faintly” và “his eyes scanning every detail” không được nguồn hỗ trợ. Bộ khóa mới chặn các phương án đó, kể cả khi thời lượng đo có thể vừa.
+Các con số trên là số đo lịch sử của người dùng, không phải phép tổng hợp giọng thật mới chạy ở môi trường build.
+
+ĐIỂM CHƯA ĐẠT / CHƯA XÁC MINH
+• Chưa kiểm tra thực tế Windows + RTX 2070, CUDA/Vulkan hoặc các model TTS/clone đang cài trên máy người dùng.
+• Chưa render lại VAN 4–6 bằng Steven/Chatterbox clone thật; chỉ có SRT đúng hash + báo cáo và kiểm thử tích hợp giả lập. Không xác nhận ba WAV thật mới đạt.
+• Chưa chạy Qwen GGUF thật cho bản 2.0.15; không có điểm chất lượng ngữ nghĩa/giọng dựa trên mô hình thật.
+• Dịch Việt offline chưa tích hợp; final.vi.txt có EN chính xác và VI [CHƯA DỊCH]. Đây là trạng thái chưa hoàn thiện của dịch, không phải bản dịch đã xong.
+• Khóa ngữ nghĩa cố ý bảo thủ: nhiều cách diễn đạt đồng nghĩa có thể bị từ chối và cần người dùng tự sửa. Không tự hạ chốt kiểm tra để làm đẹp tỷ lệ tự sửa.
+• SRT V15.6 giữ timecode nguồn; chưa hứa từng cue khớp lời sau căn chặng nếu chưa có căn từ thật. TXT đích tổng xuất khối chung, không suy đoán từng câu.
+
+MÃ NGUỒN CHÍNH
+AiTimeline.cs: đo/context, ba lần sửa, persistence và trạng thái.
+RepairPolicy.cs: khóa ngữ nghĩa/số liệu và điều kiện chấp nhận.
+RenderCheckpoint.cs: chặng PCM đã đạt và nhận diện model.
+StableArtifacts.cs: xuất đồng bộ/rollback và kiểm tra lời cuối.
+QuickRepairPanel.cs + InlineAiControls.cs: sửa/duyệt ngay tại dòng.
+Core.cs, AnchoredVoice.cs, VoiceReports.cs, LongText.cs: tích hợp renderer/cache/báo cáo; engine giọng, worker, native GPU không được viết lại.
+
+TÁI LẬP BUILD
+Windows: source/BUILD_WINDOWS.cmd, cần csc .NET Framework; giữ các bộ giọng/runtime đã cài.
+Mono/Linux: source/validate_stable215.py; đặt V15_BUILD_TOOLS và V15_NET45_REFS theo vị trí Mono và reference assemblies .NET 4.5, có ffmpeg và Xvfb. Đây là kiểm tra hợp đồng, không thay cho GPU/voice thật.

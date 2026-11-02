@@ -1,0 +1,31 @@
+PASS van 4: genuine original SRT hash equals both attached reports
+PASS van 4: stage plan and source cue order retained
+PASS van 4: synthetic full render leaves narration and every source timecode unchanged
+PASS van 4: comparison TXT matches final SRT and declares untranslated Vietnamese
+PASS van 4: exact full WAV duration and original source bytes preserved
+PASS van 4: repeated export reuses all stage PCM checkpoints and preserves previous output
+PASS van 5: genuine original SRT hash equals both attached reports
+PASS van 5: stage plan and source cue order retained
+PASS van 5: reject historical proposal with changed content words at cue 9
+PASS van 5: reject historical proposal with changed content words at cue 9
+PASS van 5: reject historical proposal with changed content words at cue 25
+PASS van 5: reject historical proposal with changed content words at cue 25
+PASS van 5: synthetic full render leaves narration and every source timecode unchanged
+PASS van 5: comparison TXT matches final SRT and declares untranslated Vietnamese
+PASS van 5: exact full WAV duration and original source bytes preserved
+PASS van 5: repeated export reuses all stage PCM checkpoints and preserves previous output
+PASS VAN5 9–12: historical probe/final difference is 0.476 seconds, not a successful AI repair
+PASS VAN5 9–12: stage completes and is measured in the synthetic integration run
+PASS van 6: genuine original SRT hash equals both attached reports
+PASS van 6: stage plan and source cue order retained
+PASS van 6: reject historical proposal with changed content words at cue 5
+PASS van 6: reject historical proposal with changed content words at cue 5
+PASS van 6: reject historical proposal with changed content words at cue 29
+PASS van 6: reject historical proposal with changed content words at cue 29
+PASS van 6: synthetic full render leaves narration and every source timecode unchanged
+PASS van 6: comparison TXT matches final SRT and declares untranslated Vietnamese
+PASS van 6: exact full WAV duration and original source bytes preserved
+PASS van 6: repeated export reuses all stage PCM checkpoints and preserves previous output
+PASS VAN6: old WAV changed six source cues; source-only edits cannot silently replace final subtitles
+TOTAL VAN REGRESSION 29 passed. Historical report audit + genuine SRT with SYNTHETIC TTS; not a real Chatterbox/Qwen/GPU rerender.
+Outputs: /tmp/V15 VAN synthetic 105754ff5017414aa87f76486bb0b566

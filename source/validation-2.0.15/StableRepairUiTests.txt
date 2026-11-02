@@ -1,0 +1,34 @@
+PASS New installation defaults to review before applying AI wording
+PASS A single SỬA NGAY action appears beside the error, not beside passing text
+PASS Review mode keeps original text until a measured proposal is explicitly accepted
+PASS Quick repair opens inside the main window, without an additional dialog
+PASS Quick repair exposes AI SỬA LẠI
+PASS Quick repair exposes TỰ CHỈNH SỬA
+PASS Quick repair exposes NGHE THỬ
+PASS Quick repair exposes CHẤP NHẬN
+PASS Quick repair exposes TIẾP TỤC RENDER
+PASS Original and actual measured proposal are shown separately
+PASS Selected cue, source timecode, target and measured delta are visible
+PASS Quick editor stays usable at {Width=1440, Height=960}
+QUICK {Width=1440, Height=960} panel={X=3,Y=299,Width=919,Height=334} child={X=4,Y=4,Width=911,Height=326} continue={X=445,Y=3,Width=137,Height=32}
+PASS Repair action is inside the visible editor: AI SỬA LẠI {Width=1440, Height=960}
+PASS Repair action is inside the visible editor: TỰ CHỈNH SỬA {Width=1440, Height=960}
+PASS Repair action is inside the visible editor: NGHE THỬ {Width=1440, Height=960}
+PASS Repair action is inside the visible editor: CHẤP NHẬN {Width=1440, Height=960}
+PASS Repair action is inside the visible editor: TIẾP TỤC RENDER {Width=1440, Height=960}
+PASS Quick editor stays usable at {Width=1100, Height=740}
+QUICK {Width=1100, Height=740} panel={X=3,Y=83,Width=579,Height=330} child={X=4,Y=4,Width=571,Height=322} continue={X=3,Y=41,Width=137,Height=32}
+PASS Repair action is inside the visible editor: AI SỬA LẠI {Width=1100, Height=740}
+PASS Repair action is inside the visible editor: TỰ CHỈNH SỬA {Width=1100, Height=740}
+PASS Repair action is inside the visible editor: NGHE THỬ {Width=1100, Height=740}
+PASS Repair action is inside the visible editor: CHẤP NHẬN {Width=1100, Height=740}
+PASS Repair action is inside the visible editor: TIẾP TỤC RENDER {Width=1100, Height=740}
+PASS Accept applies only the measured proposal shown in the quick editor
+PASS Accepted repair carries its history into the next render and has Undo
+PASS Undo at the row restores original narration without altering the source file
+PASS Self-editing is available directly inside the same panel
+PASS Quick-editor workflow leaves original SRT bytes untouched
+PASS Flexible timeline does not claim to repair a locked speech budget
+PASS UI and Windows executable both identify version 2.0.15
+TOTAL STABLE UI 30 passed. Mono/Linux with injected synthetic voice/rewriter.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

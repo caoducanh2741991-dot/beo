@@ -12,7 +12,7 @@ namespace V15Voice {
 public static class InlineAiRepair {
  public static bool TimingProblem(Cue c) {
   string s=c.Status??"";
-  return !c.Prose && (s.StartsWith("QUÁ",StringComparison.OrdinalIgnoreCase)||s.Contains("Dư ")||s.Contains("Thiếu ")||s.Contains("Cần sửa lời"));
+  return !c.Prose && (s.StartsWith("QUÁ",StringComparison.OrdinalIgnoreCase)||s.Contains("Dư ")||s.Contains("Thiếu ")||s.Contains("Cần sửa lời")||s.Contains("MANUAL REQUIRED")||s.Contains("REVIEW REQUIRED")||s.Contains("ENGINE ERROR")||s.Contains("AUDIO ERROR"));
  }
  public static AiRepairRow At(AiRepairSession p,int id) {
   return p.Rows.FirstOrDefault(r=>r.Stage.Cues.Any(c=>c.Id==id));
@@ -22,7 +22,7 @@ public static class InlineAiRepair {
  }
  public static void Apply(AiRepairSession p,List<Cue> cues,int id) {
   p.Validate();var row=At(p,id);if(row==null)throw new Exception("Không tìm thấy câu/chặng cần sửa.");
-  var chosen=row.Chosen;var words=chosen==null?row.Stage.Cues:chosen.Cues;
+  var chosen=row.Applied;var words=row.CurrentWords;
   var targets=words.Select(w=>new {Word=w,Cue=cues.FirstOrDefault(c=>c.Id==w.Id)}).ToList();
   if(targets.Any(t=>t.Cue==null||t.Cue.Start!=t.Word.Start||t.Cue.End!=t.Word.End||t.Cue.Speaker!=t.Word.Speaker||t.Cue.AnchorAfter!=t.Word.AnchorAfter))throw new Exception("Cấu trúc kịch bản đã đổi. Đo lại trước khi áp dụng.");
   foreach(var t in targets) {
@@ -44,7 +44,7 @@ public partial class MainForm {
   foreach(DataGridViewColumn c in grid.Columns)c.SortMode=DataGridViewColumnSortMode.NotSortable;
   grid.AutoSizeRowsMode=DataGridViewAutoSizeRowsMode.None;
   grid.CellContentClick+=async(s,e)=>{if(e.RowIndex>=0&&e.ColumnIndex==grid.Columns["aiFix"].Index&&!busy)await RepairInlineCue(e.RowIndex);};
-  grid.SizeChanged+=(s,e)=>ResizeInlineAiColumns();ResizeInlineAiColumns();
+  grid.SizeChanged+=(s,e)=>ResizeInlineAiColumns();ResizeInlineAiColumns();BuildQuickPanel();
  }
  void ResizeInlineAiColumns() {
   if(!grid.Columns.Contains("aiFix"))return;
@@ -77,9 +77,9 @@ public partial class MainForm {
    if(supported&&!busy) {
     if(row!=null&&row.Chosen!=null){action="Hoàn tác";tip="Khôi phục lời trước khi AI sửa cho câu/chặng này.";}
     else if(InlineAiRepair.TimingProblem(c)) {
-     action=row!=null&&row.Best!=null?"Áp dụng lại":row!=null&&row.Attempts.Count>=2?"Sửa tay":AnchoredMode?"AI sửa chặng":"AI sửa câu";
+     action="SỬA NGAY";
      tip=AnchoredMode?"Sửa và đo lại cả chặng chứa câu này; giữ mốc và giọng A/B.":"Sửa và đo lại riêng câu này; tự áp dụng khi đo đạt. Không cần bật AI trong thiết lập.";
-     if(action=="Sửa tay")tip="AI đã thử 2 lần chưa đạt. Bấm để sửa trực tiếp ô lời đọc, rồi tạo voice lại.";
+     if(action=="Sửa tay")tip="AI đã thử 3 lần chưa đạt. Bấm để sửa trực tiếp ô lời đọc, rồi tạo voice lại.";
      if(action=="Áp dụng lại")tip="Áp dụng lại đề xuất đã đo đạt trong phiên này; giữ mốc thời gian và các câu khác.";
     }
    }
@@ -102,7 +102,7 @@ public partial class MainForm {
  }
  void FocusFirstInlineError(){if(busy||!grid.Columns.Contains("aiFix"))return;int i=cues.FindIndex(InlineAiRepair.TimingProblem);if(i>=0&&i<grid.Rows.Count){grid.CurrentCell=grid.Rows[i].Cells["aiFix"];grid.FirstDisplayedScrollingRowIndex=i;}}
  bool InlineSettingsMatch(AiRepairSession p,VoiceSettings settings,string fingerprint) {
-  return InlineAiRepair.Matches(p,cues)&&p.Settings==settings.Xml().ToString()&&inlineAiFingerprint==fingerprint;
+  return InlineAiRepair.Matches(p,cues)&&AiRepairSession.SameSettings(p.Settings,settings.Xml().ToString())&&inlineAiFingerprint==fingerprint;
  }
  void InlineAiApplied(AiRepairSession p,int id) {
   p.Validate();p.Save();InlineAiRepair.Apply(p,cues,id);pendingAi=p;pendingAiSnapshot=AiRepairSession.SnapshotHash(cues);lastVoiceReport=p.Report;
@@ -110,39 +110,22 @@ public partial class MainForm {
   if(editingJob!=null){editingJob.Cues=cues;editingJob.State=JobState.Queued;editingJob.Error=editingJob.TimelineReport="";editingJob.Warning="Đã sửa tại dòng · cần xuất WAV tổng";editingJob.AiReport=p.Report;editingJob.AiSnapshot=pendingAiSnapshot;RefreshJobs();}
   Populate();SaveSession();
  }
- async Task RepairInlineCue(int index) {
-  if(busy||index<0||index>=cues.Count)return;
-  try {
-   ReadGrid();if(proseInput||mode.SelectedIndex==1){status.Text="Sửa tại dòng dùng SRT Khóa hoặc V15.6.";return;}
-   var c=cues[index];int id=c.Id;var settings=CaptureSettings();
-   var previous=InlineAiRepair.Matches(inlineAiSession,cues)?InlineAiRepair.At(inlineAiSession,id):null;
-   if(previous!=null&&previous.Chosen!=null){previous.Accepted=0;InlineAiApplied(inlineAiSession,id);if(inlineAiSession.Settings!=settings.Xml().ToString()){foreach(var member in previous.Stage.Cues){var restored=cues.First(x=>x.Id==member.Id);restored.Natural=restored.Actual=0;restored.Status="Chưa tạo";}Populate();}status.Text="Đã hoàn tác "+(AnchoredMode?"chặng chứa câu #":"câu #")+id+". File nguồn giữ nguyên.";return;}
-   var factory=AiFactory(settings);string fingerprint=AiVoiceFingerprint(settings,factory);
-   bool same=InlineSettingsMatch(inlineAiSession,settings,fingerprint);
-   if(!same){inlineAiSession=AiRepairSession.Open(sourcePath,cues,stateDir,settings,aiFixShort.Checked,fingerprint);inlineAiFingerprint=fingerprint;}
-   var row=InlineAiRepair.At(inlineAiSession,id);
-   if(row==null)throw new Exception("Không tìm thấy câu/chặng này.");
-   if(same&&row.Attempts.Count>=2&&row.Best==null){grid.CurrentCell=grid.Rows[index].Cells["text"];grid.BeginEdit(true);status.Text="AI đã thử 2 lần chưa đạt. Sửa lời ngay tại ô này rồi tạo voice lại.";return;}
-   SpeakerScript.ValidateRun(cues,TwoSpeakers);
-   if(!LocalAi.Ready(root)&&MessageBox.Show(this,"Cần cài gói AI khoảng 2,5 GB một lần. Sau đó sửa lời chạy offline. Cài ngay và sửa câu này?","Cài AI sửa lời",MessageBoxButtons.YesNo,MessageBoxIcon.Information)!=DialogResult.Yes)return;
-   await RunInlineAi(inlineAiSession,id,new LocalAi(root,settings.Device),factory);
-  } catch(Exception ex){status.Text="Chưa sửa được: "+ex.Message;RefreshInlineAi();}
- }
+ async Task RepairInlineCue(int index){if(busy||index<0||index>=cues.Count)return;try{ReadGrid();if(proseInput||mode.SelectedIndex==1){status.Text="Sửa tại dòng dùng SRT Khóa hoặc V15.6.";return;}var settings=CaptureSettings();var factory=AiFactory(settings);string fingerprint=AiVoiceFingerprint(settings,factory);if(InlineAiRepair.Matches(inlineAiSession,cues)){var previous=InlineAiRepair.At(inlineAiSession,cues[index].Id);if(previous!=null&&previous.Chosen!=null){previous.Accepted=0;previous.FinalVerified=false;InlineAiApplied(inlineAiSession,cues[index].Id);status.Text="Đã hoàn tác lời sửa tại dòng.";return;}}if(!InlineSettingsMatch(inlineAiSession,settings,fingerprint)){inlineAiSession=AiRepairSession.Open(sourcePath,cues,stateDir,settings,aiFixShort.Checked,fingerprint);inlineAiFingerprint=fingerprint;}ShowQuickRepair(inlineAiSession,cues[index].Id);}catch(Exception ex){status.Text=ex.Message;}await Task.FromResult(0);}
  async Task RunInlineAi(AiRepairSession p,int id,ITextRewriter rewriter,Func<string,KokoroEngine> factory) {
   if(busy)return;
   if(!InlineAiRepair.Matches(p,cues))throw new Exception("Kịch bản đã đổi. Chọn lại câu cần sửa.");
-  var selectedRow=InlineAiRepair.At(p,id);if(selectedRow==null)throw new Exception("Không tìm thấy câu cần sửa.");int priorAccepted=selectedRow.Accepted;
+  bool acceptAutomatically=aiMode.SelectedIndex==2;var selectedRow=InlineAiRepair.At(p,id);if(selectedRow==null)throw new Exception("Không tìm thấy câu cần sửa.");int priorAccepted=selectedRow.Accepted;
   inlineAiSession=p;inlineAiRunning=true;inlineAiCancelled=false;SetBusy(true);if(player!=null)player.Stop();progress.Value=0;
   Action<int,string> notify=(n,msg)=>{if(!IsDisposed)BeginInvoke((Action)(()=>{if(inlineAiRunning){progress.Value=Math.Max(0,Math.Min(100,n));status.Text="Câu #"+id+" · "+msg;}}));};
   try {
    if(rewriter is LocalAi&&!LocalAi.Ready(root))await Task.Run(()=>LocalAi.Setup(root,()=>inlineAiCancelled,msg=>notify(0,msg)));
-   await Task.Run(()=>AiTimeline.Run(p,rewriter,role=>{inlineAiEngine=factory(role);return inlineAiEngine;},()=>inlineAiCancelled,notify,true,true,id));
+   await Task.Run(()=>AiTimeline.Run(p,rewriter,role=>{inlineAiEngine=factory(role);return inlineAiEngine;},()=>inlineAiCancelled,notify,acceptAutomatically,true,id));
    if(inlineAiCancelled)throw new OperationCanceledException();
    var row=InlineAiRepair.At(p,id);InlineAiApplied(p,id);
-   status.Text=row.Chosen!=null?"Đã sửa "+(p.Anchored?"chặng chứa câu #":"câu #")+id+" và đo đạt. Bấm TẠO VOICE · WAV để xuất toàn bài; có thể Hoàn tác tại dòng.":row.Original!=null&&row.Original.Error.Length>0?"Lỗi bộ tạo giọng: "+row.Original.Error:row.Original!=null&&!row.Original.NeedsRepair?"Câu #"+id+" đã đo đạt, giữ nguyên lời.":"AI chưa tìm được bản vừa khung. Bấm Sửa tay tại dòng lỗi; xem báo cáo để biết chi tiết.";
+   status.Text=row.Chosen!=null?"Đã sửa "+(p.Anchored?"chặng chứa câu #":"câu #")+id+" và đo đạt. Bấm TẠO VOICE · WAV để xuất toàn bài; có thể Hoàn tác tại dòng.":row.Best!=null?"Có đề xuất đã đo đạt. Bấm CHẤP NHẬN rồi TIẾP TỤC RENDER.":row.Original!=null&&row.Original.Error.Length>0?"Lỗi bộ tạo giọng: "+row.Original.Error:row.Original!=null&&!row.Original.NeedsRepair?"Câu #"+id+" đã đo đạt, giữ nguyên lời.":"AI chưa tìm được bản vừa khung. Bấm Sửa tay tại dòng lỗi; xem báo cáo để biết chi tiết.";
   } catch(OperationCanceledException){selectedRow.Accepted=priorAccepted;p.Save();status.Text="Đã dừng sửa câu #"+id+". Lời đang dùng và file nguồn được giữ nguyên.";}
    catch(Exception ex){status.Text="Chưa sửa được câu #"+id+": "+ex.Message;}
-  finally {inlineAiEngine=null;inlineAiRunning=false;lastVoiceReport=p.Report;SetBusy(false);Populate();SaveSession();}
+  finally {inlineAiEngine=null;inlineAiRunning=false;lastVoiceReport=p.Report;SetBusy(false);Populate();SaveSession();RefreshQuickRepair();}
  }
 }
 }

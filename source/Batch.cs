@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace V15Voice {
 public enum JobState { Queued, ImportFailed, Running, Done, Failed, Cancelled }
 public sealed class BatchJob {
- public string AiReport="",AiSnapshot="";public int RepairMode=-1;public double TargetSeconds;public string ReportPath="";public string TimelineReport="",Warning="";public double AudioDuration;public bool DurationFinal;public string SourceHash="";
+ public AiRepairSession RepairSession;public string AiReport="",AiSnapshot="";public int RepairMode=-1;public double TargetSeconds;public string ReportPath="";public string TimelineReport="",Warning="";public double AudioDuration;public bool DurationFinal;public string SourceHash="";
  public string InputPath,Error="",OutputPath="";public bool Timed;
  public List<Cue> CheckpointCues;public List<Cue> Cues=new List<Cue>();public JobState State=JobState.Queued;
  public string Name {get{return Path.GetFileName(InputPath);}}
@@ -36,7 +36,8 @@ public static class BatchRunner {
    try {
     j.OutputPath=render(j,OutputFiles.Beside(j.InputPath),(p,message)=>progress(total==0?0:(finished*100+Math.Min(100,Math.Max(0,p)))/total,j.Name+" • "+message));
     j.State=JobState.Done;j.CheckpointCues=null;last=j.OutputPath;
-   }catch(OperationCanceledException){j.Cues=j.CheckpointCues;j.CheckpointCues=null;j.State=JobState.Cancelled;j.Error="Đã dừng theo yêu cầu.";break;}
+   }catch(OperationCanceledException){j.Cues=j.RepairSession==null?j.CheckpointCues:j.RepairSession.Effective();j.CheckpointCues=null;j.State=JobState.Cancelled;j.Error="Đã dừng theo yêu cầu.";break;}
+   catch(RepairPendingException e){j.Cues=e.Session.Effective();j.CheckpointCues=null;j.AiReport=e.Session.Report;j.AiSnapshot=AiRepairSession.SnapshotHash(j.Cues);j.State=JobState.Failed;j.Error="Chờ duyệt/sửa tại dòng: "+e.Message;}
    catch(Exception e){j.Cues=j.CheckpointCues;j.CheckpointCues=null;j.State=JobState.Failed;j.Error=e.Message;}
    finished++;progress(total==0?100:finished*100/total,j.Name+": "+j.Status);
   }

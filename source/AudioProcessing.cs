@@ -5,8 +5,8 @@ using System.Diagnostics;
 using System.Globalization;
 namespace V15Voice {
 public static class Tempo {
- public static double Minimum(RenderOptions o){return o.GentleFit?Math.Max(o.MinSpeed,o.BaseSpeed*.9):o.MinSpeed;}
- public static double Maximum(RenderOptions o){return o.GentleFit?Math.Min(o.MaxSpeed,o.BaseSpeed*1.1):o.MaxSpeed;}
+ public static double Minimum(RenderOptions o){return Math.Max(.90,o.GentleFit?Math.Max(o.MinSpeed,o.BaseSpeed*.9):o.MinSpeed);}
+ public static double Maximum(RenderOptions o){return Math.Min(1.25,o.GentleFit?Math.Min(o.MaxSpeed,o.BaseSpeed*1.1):o.MaxSpeed);}
  public static void Validate(RenderOptions o){foreach(double n in new[]{o.BaseSpeed,o.MinSpeed,o.MaxSpeed})if(Double.IsNaN(n)||Double.IsInfinity(n))throw new Exception("Giới hạn tốc độ không hợp lệ.");if(o.BaseSpeed<.8||o.BaseSpeed>1.3||o.MinSpeed<.5||o.MinSpeed>o.BaseSpeed||o.MaxSpeed<o.BaseSpeed||o.MaxSpeed>1.6)throw new Exception("Tốc độ: 0,50 ≤ tối thiểu ≤ gốc ≤ tối đa ≤ 1,60; tốc độ gốc 0,80–1,30.");}
  public static string Executable(string root){if(Environment.OSVersion.Platform!=PlatformID.Win32NT)return Environment.GetEnvironmentVariable("V15_FFMPEG")??"ffmpeg";string bundled=Path.Combine(root,"source","media","ffmpeg.exe");return File.Exists(bundled)?bundled:Path.Combine(root,"ai","ffmpeg.exe");}
  public static Wave Change(Wave original,double factor,string root,string work,Func<bool> cancel){

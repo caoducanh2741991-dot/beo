@@ -4,7 +4,7 @@ public static class AnchoredTests {
  static int count;static string root,work;
  static void Check(bool yes,string name){if(!yes)throw new Exception("FAIL "+name);Console.WriteLine("PASS "+name);count++;}
  static List<Cue> Cues(){return new List<Cue>{new Cue{Id=1,Start=0,End=2,Text="This is a longer sentence"},new Cue{Id=2,Start=2.1,End=5,Text="that continues across display cues"},new Cue{Id=3,Start=5.1,End=10,Text="and finishes naturally without fixed word limits."}};}
- static RenderOptions Options(){return new RenderOptions{Anchored=true,Locked=false,GentleFit=true,MinSpeed=.9,MaxSpeed=1.3,Breathing=BreathMode.None};}
+ static RenderOptions Options(){return new RenderOptions{CheckpointRoot=Path.Combine(work,"stage-cache-"+Guid.NewGuid().ToString("N")),Anchored=true,Locked=false,GentleFit=true,MinSpeed=.9,MaxSpeed=1.3,Breathing=BreathMode.None};}
  static string Render(string name,AnchorFake engine,RenderOptions options,List<Cue> cues=null){return Renderer.Render(cues??Cues(),engine,options,Path.Combine(work,name+".wav"),(p,m)=>{});}
  static bool Failed(Action action,string includes){try{action();return false;}catch(Exception e){return !(e is OperationCanceledException)&&e.Message.Contains(includes);}}
  static double Pitch(Wave w){int crossings=0;int a=2400,b=w.Samples.Length-2400;for(int i=a+1;i<b;i++)if(w.Samples[i-1]<0&&w.Samples[i]>=0)crossings++;return crossings/((b-a)/24000.0);}

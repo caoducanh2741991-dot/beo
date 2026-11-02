@@ -1,0 +1,1568 @@
+{
+  "cases": [
+    {
+      "name": "van 4",
+      "sha256": "d534f88a057dbf914c1a1d6548cf0d117b3195b934717197ac6b363ddab260a5",
+      "cues": [
+        {
+          "id": 1,
+          "timecode": "00:00:00,000 --> 00:00:03,400",
+          "text": "He bought a six-foot bologna log. His plan was even bigger."
+        },
+        {
+          "id": 2,
+          "timecode": "00:00:03,400 --> 00:00:06,800",
+          "text": "Vance wanted to beat the price of ordinary store sandwiches."
+        },
+        {
+          "id": 3,
+          "timecode": "00:00:06,800 --> 00:00:10,200",
+          "text": "Buying that many packaged sandwiches would cost over twelve hundred dollars."
+        },
+        {
+          "id": 4,
+          "timecode": "00:00:10,200 --> 00:00:13,600",
+          "text": "His homemade version came to just three hundred thirty-two dollars."
+        },
+        {
+          "id": 5,
+          "timecode": "00:00:13,600 --> 00:00:17,000",
+          "text": "The enormous bologna looked more like a fence post than lunch."
+        },
+        {
+          "id": 6,
+          "timecode": "00:00:17,000 --> 00:00:20,400",
+          "text": "Suddenly, Vance's quiet kitchen looked like a busy sandwich shop."
+        },
+        {
+          "id": 7,
+          "timecode": "00:00:20,400 --> 00:00:23,800",
+          "text": "Store sandwiches often come with barely any fresh vegetables inside."
+        },
+        {
+          "id": 8,
+          "timecode": "00:00:23,800 --> 00:00:27,200",
+          "text": "Vance wanted every bite to feel like a proper meal."
+        },
+        {
+          "id": 9,
+          "timecode": "00:00:27,200 --> 00:00:30,600",
+          "text": "But plain meat and bread weren't going to impress anybody."
+        },
+        {
+          "id": 10,
+          "timecode": "00:00:30,600 --> 00:00:34,000",
+          "text": "Then his giant pot appeared, and the challenge got serious."
+        },
+        {
+          "id": 11,
+          "timecode": "00:00:34,000 --> 00:00:37,400",
+          "text": "Sweet onions slowly turned golden as the whole kitchen filled with aroma."
+        },
+        {
+          "id": 12,
+          "timecode": "00:00:37,400 --> 00:00:40,800",
+          "text": "Even Vance looked surprised by how delicious everything suddenly smelled."
+        },
+        {
+          "id": 13,
+          "timecode": "00:00:40,800 --> 00:00:44,200",
+          "text": "Next came a mountain of cheese that seemed impossible to finish."
+        },
+        {
+          "id": 14,
+          "timecode": "00:00:44,200 --> 00:00:47,600",
+          "text": "The deli slicer made his giant sandwich dream feel real."
+        },
+        {
+          "id": 15,
+          "timecode": "00:00:47,600 --> 00:00:51,000",
+          "text": "Then Vance revealed the ingredient nobody expected in this sandwich marathon."
+        },
+        {
+          "id": 16,
+          "timecode": "00:00:51,000 --> 00:00:54,400",
+          "text": "An unbelievable number of eggs covered the wide metal griddle."
+        },
+        {
+          "id": 17,
+          "timecode": "00:00:54,400 --> 00:00:57,800",
+          "text": "He laid out twenty-eight bread slices at once for the crowd."
+        },
+        {
+          "id": 18,
+          "timecode": "00:00:57,800 --> 00:01:01,200",
+          "text": "That tiny kitchen toaster never stood a chance against this plan."
+        },
+        {
+          "id": 19,
+          "timecode": "00:01:01,200 --> 00:01:04,600",
+          "text": "With the bread perfectly toasted, the real mountain began rising."
+        },
+        {
+          "id": 20,
+          "timecode": "00:01:04,600 --> 00:01:08,000",
+          "text": "Soon the dining table disappeared beneath an enormous wall of sandwiches."
+        },
+        {
+          "id": 21,
+          "timecode": "00:01:08,000 --> 00:01:11,400",
+          "text": "Hundreds of towering sandwiches stood in rows across the table."
+        },
+        {
+          "id": 22,
+          "timecode": "00:01:11,400 --> 00:01:14,900",
+          "text": "Each one held eggs, onions, cheese, and plenty of filling."
+        },
+        {
+          "id": 23,
+          "timecode": "00:01:14,900 --> 00:01:18,300",
+          "text": "But Vance wasn't making all this food for himself."
+        },
+        {
+          "id": 24,
+          "timecode": "00:01:18,300 --> 00:01:21,800",
+          "text": "After dark, yellow crates packed with sandwiches filled the station wagon."
+        },
+        {
+          "id": 25,
+          "timecode": "00:01:21,800 --> 00:01:25,200",
+          "text": "The real destination was a community room filled with children."
+        },
+        {
+          "id": 26,
+          "timecode": "00:01:25,200 --> 00:01:28,600",
+          "text": "One ordinary evening suddenly became a huge neighborhood dinner."
+        },
+        {
+          "id": 27,
+          "timecode": "00:01:28,600 --> 00:01:32,000",
+          "text": "The best part wasn't the massive pile of homemade sandwiches."
+        },
+        {
+          "id": 28,
+          "timecode": "00:01:32,000 --> 00:01:35,495",
+          "text": "It was watching everyone smile when they finally shared them."
+        }
+      ],
+      "stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "probe_natural": 14.848,
+          "probe_after": 13.6,
+          "target": 13.6,
+          "final_natural": 14.848,
+          "final_after": 13.6,
+          "final_speed": 1.09,
+          "final_tts": 14.554,
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "probe_natural": 14.001,
+          "probe_after": 13.6,
+          "target": 13.6,
+          "final_natural": 14.033,
+          "final_after": 13.6,
+          "final_speed": 1.032,
+          "final_tts": 13.679,
+          "attempts": []
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "probe_natural": 14.105,
+          "probe_after": 13.6,
+          "target": 13.6,
+          "final_natural": 14.168,
+          "final_after": 13.6,
+          "final_speed": 1.04,
+          "final_tts": 13.801,
+          "attempts": []
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "probe_natural": 14.132,
+          "probe_after": 13.6,
+          "target": 13.6,
+          "final_natural": 14.258,
+          "final_after": 13.6,
+          "final_speed": 1.048,
+          "final_tts": 13.817,
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "probe_natural": 14.46,
+          "probe_after": 13.6,
+          "target": 13.6,
+          "final_natural": 14.471,
+          "final_after": 13.6,
+          "final_speed": 1.064,
+          "final_tts": 14.138,
+          "attempts": []
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "probe_natural": 13.85,
+          "probe_after": 13.8,
+          "target": 13.8,
+          "final_natural": 13.893,
+          "final_after": 13.8,
+          "final_speed": 1.007,
+          "final_tts": 13.559,
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "probe_natural": 14.27,
+          "probe_after": 13.695,
+          "target": 13.695,
+          "final_natural": 14.351,
+          "final_after": 13.695,
+          "final_speed": 1.048,
+          "final_tts": 13.962,
+          "attempts": []
+        }
+      ],
+      "old_wav_changed_ids": [],
+      "old_wav_success": true,
+      "evidence": "Attached 2.0.14 reports; these are historical measurements, not new TTS/GPU runs."
+    },
+    {
+      "name": "van 5",
+      "sha256": "7abd139b699b65dfe5c0cdfaed5d89e5d4c4bdbebdf8403bebd247e89c26d373",
+      "cues": [
+        {
+          "id": 1,
+          "timecode": "00:00:00,000 --> 00:00:03,500",
+          "text": "Could your old school lunch beat meals from nine other countries?"
+        },
+        {
+          "id": 2,
+          "timecode": "00:00:03,500 --> 00:00:07,000",
+          "text": "Vance brought two friends to settle that question once and for all."
+        },
+        {
+          "id": 3,
+          "timecode": "00:00:07,000 --> 00:00:10,400",
+          "text": "Ten different school lunch trays entered their homemade food showdown."
+        },
+        {
+          "id": 4,
+          "timecode": "00:00:10,400 --> 00:00:13,900",
+          "text": "And these three grown men were taking every bite seriously."
+        },
+        {
+          "id": 5,
+          "timecode": "00:00:13,900 --> 00:00:17,400",
+          "text": "Taste, nutrition, and fullness would decide the winning country."
+        },
+        {
+          "id": 6,
+          "timecode": "00:00:17,400 --> 00:00:20,900",
+          "text": "Only one tray could claim the title of school lunch champion."
+        },
+        {
+          "id": 7,
+          "timecode": "00:00:20,900 --> 00:00:24,300",
+          "text": "They started with an American tray priced at two fifty."
+        },
+        {
+          "id": 8,
+          "timecode": "00:00:24,300 --> 00:00:27,800",
+          "text": "It had a burger, fries, a donut, and a soda."
+        },
+        {
+          "id": 9,
+          "timecode": "00:00:27,800 --> 00:00:31,300",
+          "text": "A donut and soda for lunch? That sparked instant debate."
+        },
+        {
+          "id": 10,
+          "timecode": "00:00:31,300 --> 00:00:34,800",
+          "text": "Nobody could decide if this was lunch or a party."
+        },
+        {
+          "id": 11,
+          "timecode": "00:00:34,800 --> 00:00:38,200",
+          "text": "Vance loved the burger and fries more than he expected."
+        },
+        {
+          "id": 12,
+          "timecode": "00:00:38,200 --> 00:00:41,700",
+          "text": "Comfort food was clearly winning this first round on taste."
+        },
+        {
+          "id": 13,
+          "timecode": "00:00:41,700 --> 00:00:45,200",
+          "text": "Milo and Zack finished their trays and joined the judging."
+        },
+        {
+          "id": 14,
+          "timecode": "00:00:45,200 --> 00:00:48,700",
+          "text": "America scored well for flavor, but only four for health."
+        },
+        {
+          "id": 15,
+          "timecode": "00:00:48,700 --> 00:00:52,100",
+          "text": "Japan's tray changed the mood as soon as it appeared."
+        },
+        {
+          "id": 16,
+          "timecode": "00:00:52,100 --> 00:00:55,600",
+          "text": "Fish, vegetables, and fruit offered a completely different kind of lunch."
+        },
+        {
+          "id": 17,
+          "timecode": "00:00:55,600 --> 00:00:59,100",
+          "text": "The guys struggled with chopsticks, then washed everything down with milk."
+        },
+        {
+          "id": 18,
+          "timecode": "00:00:59,100 --> 00:01:02,600",
+          "text": "Japan walked away with seventy-one points on their scoreboard."
+        },
+        {
+          "id": 19,
+          "timecode": "00:01:02,600 --> 00:01:06,000",
+          "text": "Then India arrived with a price that surprised everyone."
+        },
+        {
+          "id": 20,
+          "timecode": "00:01:06,000 --> 00:01:09,500",
+          "text": "Warm lentils, vegetables, flatbread, and chai filled the colorful tray."
+        },
+        {
+          "id": 21,
+          "timecode": "00:01:09,500 --> 00:01:13,000",
+          "text": "They listed this hearty school meal at absolutely no charge."
+        },
+        {
+          "id": 22,
+          "timecode": "00:01:13,000 --> 00:01:16,500",
+          "text": "That alone impressed the judges before Italy even took the stage."
+        },
+        {
+          "id": 23,
+          "timecode": "00:01:16,500 --> 00:01:19,900",
+          "text": "Italy's tray looked more like dinner at a family restaurant."
+        },
+        {
+          "id": 24,
+          "timecode": "00:01:19,900 --> 00:01:23,400",
+          "text": "Pasta, pizza, salad, and grapes made everyone lean forward."
+        },
+        {
+          "id": 25,
+          "timecode": "00:01:23,400 --> 00:01:26,900",
+          "text": "Vance joked that he would never skip school for pizza."
+        },
+        {
+          "id": 26,
+          "timecode": "00:01:26,900 --> 00:01:30,400",
+          "text": "He looked ready to give the Italian tray a trophy."
+        },
+        {
+          "id": 27,
+          "timecode": "00:01:30,400 --> 00:01:33,800",
+          "text": "But first, the judges finally finished calculating India's total."
+        },
+        {
+          "id": 28,
+          "timecode": "00:01:33,800 --> 00:01:37,300",
+          "text": "India earned fifty points, with fullness helping its score."
+        },
+        {
+          "id": 29,
+          "timecode": "00:01:37,300 --> 00:01:40,800",
+          "text": "Italy still looked tempting, but its final score could wait."
+        },
+        {
+          "id": 30,
+          "timecode": "00:01:40,800 --> 00:01:44,300",
+          "text": "Now Ukraine brought a comforting, home-style tray to the table."
+        },
+        {
+          "id": 31,
+          "timecode": "00:01:44,300 --> 00:01:47,700",
+          "text": "Buckwheat and a savory cutlet were the stars of this meal."
+        },
+        {
+          "id": 32,
+          "timecode": "00:01:47,700 --> 00:01:51,200",
+          "text": "Cabbage salad, cheesy bread, and fruit compote rounded it out."
+        },
+        {
+          "id": 33,
+          "timecode": "00:01:51,200 --> 00:01:54,700",
+          "text": "It wasn't flashy, but the judges immediately understood its appeal."
+        },
+        {
+          "id": 34,
+          "timecode": "00:01:54,700 --> 00:01:58,200",
+          "text": "This was exactly the kind of meal that actually fills you."
+        },
+        {
+          "id": 35,
+          "timecode": "00:01:58,200 --> 00:02:01,600",
+          "text": "All three plates were cleared before anyone could say another word."
+        },
+        {
+          "id": 36,
+          "timecode": "00:02:01,600 --> 00:02:05,100",
+          "text": "Ukraine surged into the lead with seventy-five total points."
+        },
+        {
+          "id": 37,
+          "timecode": "00:02:05,100 --> 00:02:08,600",
+          "text": "Mexico arrived next, bringing an entirely different lunchtime energy."
+        },
+        {
+          "id": 38,
+          "timecode": "00:02:08,600 --> 00:02:12,100",
+          "text": "The tray paired a casserole with a generously filled taco."
+        },
+        {
+          "id": 39,
+          "timecode": "00:02:12,100 --> 00:02:15,600",
+          "text": "Chips, guacamole, and chocolate milk made the deal even sweeter."
+        },
+        {
+          "id": 40,
+          "timecode": "00:02:15,600 --> 00:02:19,100",
+          "text": "And the listed price was just one dollar for everything."
+        },
+        {
+          "id": 41,
+          "timecode": "00:02:19,100 --> 00:02:22,600",
+          "text": "Vance gave the flavor a perfect ten without hesitation."
+        },
+        {
+          "id": 42,
+          "timecode": "00:02:22,600 --> 00:02:26,100",
+          "text": "But nutrition pulled Mexico's overall score down to sixty."
+        },
+        {
+          "id": 43,
+          "timecode": "00:02:26,100 --> 00:02:29,600",
+          "text": "Brazil answered with one of the freshest looking trays yet."
+        },
+        {
+          "id": 44,
+          "timecode": "00:02:29,600 --> 00:02:33,100",
+          "text": "Seasoned grains, a green wrap, fruit, and mango juice stood out."
+        },
+        {
+          "id": 45,
+          "timecode": "00:02:33,100 --> 00:02:36,600",
+          "text": "That huge green wrap almost looked bigger than a textbook."
+        },
+        {
+          "id": 46,
+          "timecode": "00:02:36,600 --> 00:02:40,100",
+          "text": "The judges needed both hands just to hold each bite."
+        },
+        {
+          "id": 47,
+          "timecode": "00:02:40,100 --> 00:02:43,600",
+          "text": "Brazil scored a perfect thirty for their health category."
+        },
+        {
+          "id": 48,
+          "timecode": "00:02:43,600 --> 00:02:47,100",
+          "text": "That pushed its total to seventy-five, tying Ukraine."
+        },
+        {
+          "id": 49,
+          "timecode": "00:02:47,100 --> 00:02:50,600",
+          "text": "Next, China's colorful tray gave the judges even more choices."
+        },
+        {
+          "id": 50,
+          "timecode": "00:02:50,600 --> 00:02:54,100",
+          "text": "Rice, savory meat, and dumplings immediately caught everyone's attention."
+        },
+        {
+          "id": 51,
+          "timecode": "00:02:54,100 --> 00:02:57,600",
+          "text": "Braised greens, an egg, and orange slices completed the spread."
+        },
+        {
+          "id": 52,
+          "timecode": "00:02:57,600 --> 00:03:01,100",
+          "text": "Suddenly, this felt more like a weekend feast than school lunch."
+        },
+        {
+          "id": 53,
+          "timecode": "00:03:01,100 --> 00:03:04,600",
+          "text": "Their chopstick skills were shaky, but the dumplings disappeared fast."
+        },
+        {
+          "id": 54,
+          "timecode": "00:03:04,600 --> 00:03:08,100",
+          "text": "China collected sixty-nine points after everyone finished eating."
+        },
+        {
+          "id": 55,
+          "timecode": "00:03:08,100 --> 00:03:11,600",
+          "text": "Spain was next with a colorful Mediterranean-inspired lunch tray."
+        },
+        {
+          "id": 56,
+          "timecode": "00:03:11,600 --> 00:03:15,100",
+          "text": "Rice, cucumber salad, and fruit gave the meal a fresh look."
+        },
+        {
+          "id": 57,
+          "timecode": "00:03:15,100 --> 00:03:18,600",
+          "text": "That little foil drink pouch brought back everyone's childhood memories."
+        },
+        {
+          "id": 58,
+          "timecode": "00:03:18,600 --> 00:03:22,100",
+          "text": "Even the judges were smiling before the final scores appeared."
+        },
+        {
+          "id": 59,
+          "timecode": "00:03:22,100 --> 00:03:25,600",
+          "text": "Spain took the lead with an impressive seventy-six points."
+        },
+        {
+          "id": 60,
+          "timecode": "00:03:25,600 --> 00:03:29,100",
+          "text": "Only Turkey's tray and Italy's final score were still waiting."
+        },
+        {
+          "id": 61,
+          "timecode": "00:03:29,100 --> 00:03:32,600",
+          "text": "Turkey served up a lunch that looked restaurant-worthy."
+        },
+        {
+          "id": 62,
+          "timecode": "00:03:32,600 --> 00:03:36,100",
+          "text": "Grilled kebab, fresh herbs, and flatbread covered the tray."
+        },
+        {
+          "id": 63,
+          "timecode": "00:03:36,100 --> 00:03:39,600",
+          "text": "Then baklava arrived, making dessert feel like a bonus round."
+        },
+        {
+          "id": 64,
+          "timecode": "00:03:39,600 --> 00:03:43,100",
+          "text": "But the salted yogurt drink caught all three judges off guard."
+        },
+        {
+          "id": 65,
+          "timecode": "00:03:43,100 --> 00:03:46,600",
+          "text": "The grilled food earned praise, while that drink divided opinions."
+        },
+        {
+          "id": 66,
+          "timecode": "00:03:46,600 --> 00:03:50,100",
+          "text": "Nobody expected their first sip to taste quite that salty."
+        },
+        {
+          "id": 67,
+          "timecode": "00:03:50,100 --> 00:03:53,600",
+          "text": "A perfect fullness score still gave Turkey sixty-two points overall."
+        },
+        {
+          "id": 68,
+          "timecode": "00:03:53,600 --> 00:03:57,100",
+          "text": "And at last, everyone turned toward Italy's waiting scorecard."
+        },
+        {
+          "id": 69,
+          "timecode": "00:03:57,100 --> 00:04:00,600",
+          "text": "Its judges loved the combination of taste, nutrition, and satisfaction."
+        },
+        {
+          "id": 70,
+          "timecode": "00:04:00,600 --> 00:04:04,100",
+          "text": "Italy won their challenge with a massive eighty-six points."
+        },
+        {
+          "id": 71,
+          "timecode": "00:04:04,100 --> 00:04:07,600",
+          "text": "Apparently, a plate of pasta can make school seem exciting."
+        },
+        {
+          "id": 72,
+          "timecode": "00:04:07,600 --> 00:04:11,050",
+          "text": "At least that's what these three very hungry judges decided."
+        }
+      ],
+      "stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "probe_natural": 13.264,
+          "probe_after": 13.9,
+          "target": 13.9,
+          "final_natural": 13.264,
+          "final_after": 13.9,
+          "final_speed": 0.953,
+          "final_tts": 12.965,
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "probe_natural": 13.867,
+          "probe_after": 13.9,
+          "target": 13.9,
+          "final_natural": 13.895,
+          "final_after": 13.9,
+          "final_speed": 1.0,
+          "final_tts": 13.535,
+          "attempts": []
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "probe_natural": 12.181,
+          "probe_after": 13.51,
+          "target": 13.9,
+          "final_natural": 12.657,
+          "final_after": 13.9,
+          "final_speed": 0.909,
+          "final_tts": 11.887,
+          "attempts": [
+            {
+              "number": 1,
+              "accepted": false,
+              "cues": [
+                {
+                  "id": 9,
+                  "text": "A donut and soda for lunch? That sparked instant debate, and everyone was split on whether it was a meal or a celebration."
+                },
+                {
+                  "id": 10,
+                  "text": "Nobody could agree if it was lunch or a party, with some saying it was just too indulgent."
+                },
+                {
+                  "id": 11,
+                  "text": "Vance loved the burger and fries more than he expected, calling them the perfect comfort food."
+                },
+                {
+                  "id": 12,
+                  "text": "Comfort food was clearly winning this first round on taste, with the burger and fries taking the crown."
+                }
+              ],
+              "natural": 23.103
+            },
+            {
+              "number": 2,
+              "accepted": false,
+              "cues": [
+                {
+                  "id": 9,
+                  "text": "A donut and soda for lunch? That sparked instant debate."
+                },
+                {
+                  "id": 10,
+                  "text": "Nobody could decide if it was lunch or a party."
+                },
+                {
+                  "id": 11,
+                  "text": "Vance loved the burger and fries more than he expected."
+                },
+                {
+                  "id": 12,
+                  "text": "Comfort food was clearly winning this first round on taste."
+                }
+              ],
+              "natural": 12.248
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "probe_natural": 13.008,
+          "probe_after": 13.9,
+          "target": 13.9,
+          "final_natural": 13.015,
+          "final_after": 13.9,
+          "final_speed": 0.936,
+          "final_tts": 12.697,
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "probe_natural": 14.894,
+          "probe_after": 13.9,
+          "target": 13.9,
+          "final_natural": 14.922,
+          "final_after": 13.9,
+          "final_speed": 1.074,
+          "final_tts": 14.588,
+          "attempts": []
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "probe_natural": 14.44,
+          "probe_after": 13.9,
+          "target": 13.9,
+          "final_natural": 14.527,
+          "final_after": 13.9,
+          "final_speed": 1.043,
+          "final_tts": 14.139,
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "probe_natural": 12.437,
+          "probe_after": 13.795,
+          "target": 13.9,
+          "final_natural": 15.336,
+          "final_after": 13.9,
+          "final_speed": 1.103,
+          "final_tts": 14.936,
+          "attempts": [
+            {
+              "number": 1,
+              "accepted": false,
+              "cues": [
+                {
+                  "id": 25,
+                  "text": "Vance joked he'd never skip school for pizza, and it was clear he'd eat it all if given the chance."
+                },
+                {
+                  "id": 26,
+                  "text": "He was already thinking of awarding the Italian tray a trophy."
+                },
+                {
+                  "id": 27,
+                  "text": "But first, the judges finally finished calculating India's total."
+                },
+                {
+                  "id": 28,
+                  "text": "India earned fifty points, with fullness playing a big part in the score."
+                }
+              ],
+              "natural": 17.227
+            },
+            {
+              "number": 2,
+              "accepted": true,
+              "cues": [
+                {
+                  "id": 25,
+                  "text": "Vance joked he'd never skip school for pizza, and he'd eat every bit if he had to."
+                },
+                {
+                  "id": 26,
+                  "text": "He was already eyeing the Italian tray for a trophy."
+                },
+                {
+                  "id": 27,
+                  "text": "But first, the judges finally finished calculating India's total."
+                },
+                {
+                  "id": 28,
+                  "text": "India earned fifty points, with fullness helping push the score higher."
+                }
+              ],
+              "natural": 15.244
+            }
+          ]
+        },
+        {
+          "number": 8,
+          "ids": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "probe_natural": 13.498,
+          "probe_after": 13.9,
+          "target": 13.9,
+          "final_natural": 13.489,
+          "final_after": 13.9,
+          "final_speed": 0.97,
+          "final_tts": 13.201,
+          "attempts": []
+        },
+        {
+          "number": 9,
+          "ids": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "probe_natural": 14.766,
+          "probe_after": 13.9,
+          "target": 13.9,
+          "final_natural": 14.794,
+          "final_after": 13.9,
+          "final_speed": 1.064,
+          "final_tts": 14.455,
+          "attempts": []
+        },
+        {
+          "number": 10,
+          "ids": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "probe_natural": 14.469,
+          "probe_after": 14.0,
+          "target": 14.0,
+          "final_natural": 14.529,
+          "final_after": 14.0,
+          "final_speed": 1.038,
+          "final_tts": 14.163,
+          "attempts": []
+        },
+        {
+          "number": 11,
+          "ids": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "probe_natural": 13.823,
+          "probe_after": 14.0,
+          "target": 14.0,
+          "final_natural": 13.914,
+          "final_after": 14.0,
+          "final_speed": 0.994,
+          "final_tts": 13.505,
+          "attempts": []
+        },
+        {
+          "number": 12,
+          "ids": [
+            45,
+            46,
+            47,
+            48
+          ],
+          "probe_natural": 12.666,
+          "probe_after": 14.0,
+          "target": 14.0,
+          "final_natural": 12.685,
+          "final_after": 14.0,
+          "final_speed": 0.905,
+          "final_tts": 12.374,
+          "attempts": []
+        },
+        {
+          "number": 13,
+          "ids": [
+            49,
+            50,
+            51,
+            52
+          ],
+          "probe_natural": 15.623,
+          "probe_after": 14.0,
+          "target": 14.0,
+          "final_natural": 15.679,
+          "final_after": 14.0,
+          "final_speed": 1.12,
+          "final_tts": 15.321,
+          "attempts": []
+        },
+        {
+          "number": 14,
+          "ids": [
+            53,
+            54,
+            55,
+            56
+          ],
+          "probe_natural": 15.391,
+          "probe_after": 14.0,
+          "target": 14.0,
+          "final_natural": 15.454,
+          "final_after": 14.0,
+          "final_speed": 1.104,
+          "final_tts": 15.088,
+          "attempts": []
+        },
+        {
+          "number": 15,
+          "ids": [
+            57,
+            58,
+            59,
+            60
+          ],
+          "probe_natural": 14.742,
+          "probe_after": 14.0,
+          "target": 14.0,
+          "final_natural": 14.854,
+          "final_after": 14.0,
+          "final_speed": 1.061,
+          "final_tts": 14.45,
+          "attempts": []
+        },
+        {
+          "number": 16,
+          "ids": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "probe_natural": 14.301,
+          "probe_after": 14.0,
+          "target": 14.0,
+          "final_natural": 14.312,
+          "final_after": 14.0,
+          "final_speed": 1.022,
+          "final_tts": 14.006,
+          "attempts": []
+        },
+        {
+          "number": 17,
+          "ids": [
+            65,
+            66,
+            67,
+            68
+          ],
+          "probe_natural": 15.321,
+          "probe_after": 14.0,
+          "target": 14.0,
+          "final_natural": 15.367,
+          "final_after": 14.0,
+          "final_speed": 1.098,
+          "final_tts": 15.031,
+          "attempts": []
+        },
+        {
+          "number": 18,
+          "ids": [
+            69,
+            70,
+            71,
+            72
+          ],
+          "probe_natural": 14.017,
+          "probe_after": 13.95,
+          "target": 13.95,
+          "final_natural": 14.11,
+          "final_after": 13.95,
+          "final_speed": 1.01,
+          "final_tts": 13.729,
+          "attempts": []
+        }
+      ],
+      "old_wav_changed_ids": [
+        25,
+        26,
+        28
+      ],
+      "old_wav_success": true,
+      "evidence": "Attached 2.0.14 reports; these are historical measurements, not new TTS/GPU runs."
+    },
+    {
+      "name": "van 6",
+      "sha256": "88fdd77c73859b097e31637aaa74323426ecfcf4513d45fbd81379e852fbfb3f",
+      "cues": [
+        {
+          "id": 1,
+          "timecode": "00:00:00,000 --> 00:00:03,600",
+          "text": "Would you hang a giant ham upstairs to avoid a luxury price?"
+        },
+        {
+          "id": 2,
+          "timecode": "00:00:03,600 --> 00:00:07,200",
+          "text": "Vance thought twelve thousand dollars for Spanish ham was outrageous."
+        },
+        {
+          "id": 3,
+          "timecode": "00:00:07,200 --> 00:00:10,800",
+          "text": "Instead of buying expensive slices, he imagined making one himself."
+        },
+        {
+          "id": 4,
+          "timecode": "00:00:10,800 --> 00:00:14,400",
+          "text": "And somehow, his ordinary attic became part of that plan."
+        },
+        {
+          "id": 5,
+          "timecode": "00:00:14,400 --> 00:00:18,000",
+          "text": "First, he ignored the glamorous gourmet shop displays entirely."
+        },
+        {
+          "id": 6,
+          "timecode": "00:00:18,000 --> 00:00:21,600",
+          "text": "He headed to the local market with a very different budget."
+        },
+        {
+          "id": 7,
+          "timecode": "00:00:21,600 --> 00:00:25,200",
+          "text": "The enormous pork leg he carried home looked almost unreal."
+        },
+        {
+          "id": 8,
+          "timecode": "00:00:25,200 --> 00:00:28,800",
+          "text": "But Vance knew buying it was just the beginning."
+        },
+        {
+          "id": 9,
+          "timecode": "00:00:28,800 --> 00:00:32,400",
+          "text": "He weighed the massive cut, already imagining the final result."
+        },
+        {
+          "id": 10,
+          "timecode": "00:00:32,400 --> 00:00:36,000",
+          "text": "Soon the kitchen counter looked more like an unusual experiment."
+        },
+        {
+          "id": 11,
+          "timecode": "00:00:36,000 --> 00:00:39,600",
+          "text": "The mountain of salt alone made the whole project look absurd."
+        },
+        {
+          "id": 12,
+          "timecode": "00:00:39,600 --> 00:00:43,200",
+          "text": "Still, his grocery receipt was nothing like the boutique price."
+        },
+        {
+          "id": 13,
+          "timecode": "00:00:43,200 --> 00:00:46,800",
+          "text": "Then a bright red wooden chest appeared in the backyard."
+        },
+        {
+          "id": 14,
+          "timecode": "00:00:46,800 --> 00:00:50,400",
+          "text": "Neighbors probably had questions, but Vance wasn't giving explanations."
+        },
+        {
+          "id": 15,
+          "timecode": "00:00:50,400 --> 00:00:54,000",
+          "text": "Days passed, and the yard slowly changed with the seasons."
+        },
+        {
+          "id": 16,
+          "timecode": "00:00:54,000 --> 00:00:57,600",
+          "text": "After three long weeks, he finally opened the strange chest."
+        },
+        {
+          "id": 17,
+          "timecode": "00:00:57,600 --> 00:01:01,200",
+          "text": "What emerged looked surprisingly different from the meat he started with."
+        },
+        {
+          "id": 18,
+          "timecode": "00:01:01,200 --> 00:01:04,800",
+          "text": "Vance and his friend could barely lift the enormous leg."
+        },
+        {
+          "id": 19,
+          "timecode": "00:01:04,800 --> 00:01:08,400",
+          "text": "But the strangest part of his experiment was still ahead."
+        },
+        {
+          "id": 20,
+          "timecode": "00:01:08,400 --> 00:01:12,000",
+          "text": "He carried that giant ham upstairs into his attic."
+        },
+        {
+          "id": 21,
+          "timecode": "00:01:12,000 --> 00:01:15,600",
+          "text": "The empty room suddenly had a very unusual new resident."
+        },
+        {
+          "id": 22,
+          "timecode": "00:01:15,600 --> 00:01:19,200",
+          "text": "Even Vance had to laugh at his bizarre home setup."
+        },
+        {
+          "id": 23,
+          "timecode": "00:01:19,200 --> 00:01:22,800",
+          "text": "He hoped this space could resemble an old European curing cellar."
+        },
+        {
+          "id": 24,
+          "timecode": "00:01:22,800 --> 00:01:26,400",
+          "text": "But months of waiting would test his patience more than anything."
+        },
+        {
+          "id": 25,
+          "timecode": "00:01:26,400 --> 00:01:30,000",
+          "text": "A giant piece of meat hanging upstairs looked risky to outsiders."
+        },
+        {
+          "id": 26,
+          "timecode": "00:01:30,000 --> 00:01:33,600",
+          "text": "And a homemade setup is no guarantee that food stays safe."
+        },
+        {
+          "id": 27,
+          "timecode": "00:01:33,600 --> 00:01:37,200",
+          "text": "Still, Vance kept returning to check on his unusual project."
+        },
+        {
+          "id": 28,
+          "timecode": "00:01:37,200 --> 00:01:40,800",
+          "text": "The hanging ham gradually took on an almost cake-like white coating."
+        },
+        {
+          "id": 29,
+          "timecode": "00:01:40,800 --> 00:01:44,400",
+          "text": "After more waiting, the moment of truth finally arrived."
+        },
+        {
+          "id": 30,
+          "timecode": "00:01:44,400 --> 00:01:48,000",
+          "text": "Vance inspected the ham with the focus of a nervous contestant."
+        },
+        {
+          "id": 31,
+          "timecode": "00:01:48,000 --> 00:01:51,600",
+          "text": "He seemed convinced the enormous gamble had finally worked."
+        },
+        {
+          "id": 32,
+          "timecode": "00:01:51,600 --> 00:01:55,200",
+          "text": "So he carried his prize downstairs for the big reveal."
+        },
+        {
+          "id": 33,
+          "timecode": "00:01:55,200 --> 00:01:58,800",
+          "text": "The giant leg took center stage on its wooden stand."
+        },
+        {
+          "id": 34,
+          "timecode": "00:01:58,800 --> 00:02:02,400",
+          "text": "Almost two months of waiting had led to this moment."
+        },
+        {
+          "id": 35,
+          "timecode": "00:02:02,400 --> 00:02:06,000",
+          "text": "The first exposed slice showed a surprisingly deep red color."
+        },
+        {
+          "id": 36,
+          "timecode": "00:02:06,000 --> 00:02:09,600",
+          "text": "It looked remarkably similar to the ham behind gourmet counters."
+        },
+        {
+          "id": 37,
+          "timecode": "00:02:09,600 --> 00:02:13,200",
+          "text": "Vance shaved off thin ribbons as everyone watched closely."
+        },
+        {
+          "id": 38,
+          "timecode": "00:02:13,200 --> 00:02:16,800",
+          "text": "Then he finally tasted the result of his long experiment."
+        },
+        {
+          "id": 39,
+          "timecode": "00:02:16,800 --> 00:02:20,400",
+          "text": "His reaction suggested he loved the rich, salty flavor."
+        },
+        {
+          "id": 40,
+          "timecode": "00:02:20,400 --> 00:02:24,000",
+          "text": "A little cheese and a crunchy cracker completed his tasting plate."
+        },
+        {
+          "id": 41,
+          "timecode": "00:02:24,000 --> 00:02:27,500",
+          "text": "Then came the final question: how much had he spent?"
+        },
+        {
+          "id": 42,
+          "timecode": "00:02:27,500 --> 00:02:31,000",
+          "text": "Vance counted about three hundred fifty dollars for the project."
+        },
+        {
+          "id": 43,
+          "timecode": "00:02:31,000 --> 00:02:34,500",
+          "text": "Against that boutique price tag, the difference looked enormous."
+        },
+        {
+          "id": 44,
+          "timecode": "00:02:34,500 --> 00:02:37,991",
+          "text": "But would you trust a homemade attic ham? That's the debate."
+        }
+      ],
+      "stages": [
+        {
+          "number": 1,
+          "ids": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "probe_natural": 15.341,
+          "probe_after": 14.4,
+          "target": 14.4,
+          "final_natural": 15.341,
+          "final_after": 14.4,
+          "final_speed": 1.065,
+          "final_tts": 15.034,
+          "attempts": []
+        },
+        {
+          "number": 2,
+          "ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "probe_natural": 12.551,
+          "probe_after": 13.921,
+          "target": 14.4,
+          "final_natural": 13.61,
+          "final_after": 14.4,
+          "final_speed": 0.943,
+          "final_tts": 13.232,
+          "attempts": [
+            {
+              "number": 1,
+              "accepted": true,
+              "cues": [
+                {
+                  "id": 5,
+                  "text": "First, he completely ignored the flashy gourmet shop displays."
+                },
+                {
+                  "id": 6,
+                  "text": "He headed to the local market with a much tighter budget."
+                },
+                {
+                  "id": 7,
+                  "text": "The enormous pork leg he carried home seemed almost unbelievable."
+                },
+                {
+                  "id": 8,
+                  "text": "But Vance knew buying it was just the first step."
+                }
+              ],
+              "natural": 13.564
+            },
+            {
+              "number": 2,
+              "accepted": false,
+              "cues": [
+                {
+                  "id": 5,
+                  "text": "First, he completely ignored the flashy gourmet shop displays."
+                },
+                {
+                  "id": 6,
+                  "text": "He headed to the local market with a much tighter budget."
+                },
+                {
+                  "id": 7,
+                  "text": "The enormous pork leg he carried home seemed almost unbelievable."
+                },
+                {
+                  "id": 8,
+                  "text": "But Vance knew buying it was just the beginning, and the real work had only started."
+                }
+              ],
+              "natural": 15.715
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "probe_natural": 14.305,
+          "probe_after": 14.4,
+          "target": 14.4,
+          "final_natural": 14.398,
+          "final_after": 14.4,
+          "final_speed": 1.0,
+          "final_tts": 14.012,
+          "attempts": []
+        },
+        {
+          "number": 4,
+          "ids": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "probe_natural": 13.76,
+          "probe_after": 14.4,
+          "target": 14.4,
+          "final_natural": 13.866,
+          "final_after": 14.4,
+          "final_speed": 0.963,
+          "final_tts": 13.457,
+          "attempts": []
+        },
+        {
+          "number": 5,
+          "ids": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "probe_natural": 13.011,
+          "probe_after": 14.4,
+          "target": 14.4,
+          "final_natural": 13.014,
+          "final_after": 14.4,
+          "final_speed": 0.901,
+          "final_tts": 12.717,
+          "attempts": []
+        },
+        {
+          "number": 6,
+          "ids": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "probe_natural": 13.574,
+          "probe_after": 14.4,
+          "target": 14.4,
+          "final_natural": 13.624,
+          "final_after": 14.4,
+          "final_speed": 0.946,
+          "final_tts": 13.282,
+          "attempts": []
+        },
+        {
+          "number": 7,
+          "ids": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "probe_natural": 14.619,
+          "probe_after": 14.4,
+          "target": 14.4,
+          "final_natural": 14.719,
+          "final_after": 14.4,
+          "final_speed": 1.02,
+          "final_tts": 14.317,
+          "attempts": []
+        },
+        {
+          "number": 8,
+          "ids": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "probe_natural": 12.864,
+          "probe_after": 14.272,
+          "target": 14.4,
+          "final_natural": 16.615,
+          "final_after": 14.4,
+          "final_speed": 1.154,
+          "final_tts": 16.198,
+          "attempts": [
+            {
+              "number": 1,
+              "accepted": false,
+              "cues": [
+                {
+                  "id": 29,
+                  "text": "After more waiting, the moment of truth finally arrived, and the ham began to glow faintly, like it had come to life."
+                },
+                {
+                  "id": 30,
+                  "text": "Vance inspected the ham with the focus of a nervous contestant, his breath catching with every glance."
+                },
+                {
+                  "id": 31,
+                  "text": "He seemed convinced the enormous gamble had finally worked, the transformation too perfect to ignore."
+                },
+                {
+                  "id": 32,
+                  "text": "So he carried his prize downstairs for the big reveal, heart pounding with anticipation."
+                }
+              ],
+              "natural": 23.855
+            },
+            {
+              "number": 2,
+              "accepted": true,
+              "cues": [
+                {
+                  "id": 29,
+                  "text": "After more waiting, the moment of truth finally arrived."
+                },
+                {
+                  "id": 30,
+                  "text": "Vance inspected the ham with the focus of a nervous contestant, his eyes scanning every detail."
+                },
+                {
+                  "id": 31,
+                  "text": "He seemed convinced the enormous gamble had finally worked, the change unmistakable."
+                },
+                {
+                  "id": 32,
+                  "text": "So he carried his prize downstairs for the big reveal."
+                }
+              ],
+              "natural": 16.501
+            }
+          ]
+        },
+        {
+          "number": 9,
+          "ids": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "probe_natural": 13.231,
+          "probe_after": 14.4,
+          "target": 14.4,
+          "final_natural": 13.23,
+          "final_after": 14.4,
+          "final_speed": 0.917,
+          "final_tts": 12.922,
+          "attempts": []
+        },
+        {
+          "number": 10,
+          "ids": [
+            37,
+            38,
+            39,
+            40
+          ],
+          "probe_natural": 13.236,
+          "probe_after": 14.4,
+          "target": 14.4,
+          "final_natural": 13.277,
+          "final_after": 14.4,
+          "final_speed": 0.921,
+          "final_tts": 12.94,
+          "attempts": []
+        },
+        {
+          "number": 11,
+          "ids": [
+            41,
+            42,
+            43,
+            44
+          ],
+          "probe_natural": 13.146,
+          "probe_after": 13.991,
+          "target": 13.991,
+          "final_natural": 13.612,
+          "final_after": 13.991,
+          "final_speed": 0.973,
+          "final_tts": 12.851,
+          "attempts": []
+        }
+      ],
+      "old_wav_changed_ids": [
+        5,
+        6,
+        7,
+        8,
+        30,
+        31
+      ],
+      "old_wav_success": true,
+      "evidence": "Attached 2.0.14 reports; these are historical measurements, not new TTS/GPU runs."
+    }
+  ]
+}

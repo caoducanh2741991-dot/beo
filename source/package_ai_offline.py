@@ -1,20 +1,20 @@
 """Build an optional offline model+runtime update, without changing existing TTS data.
 
 The core updater already verifies every source/ file and supports ZIP64.
-This adds the pinned AI files to the same 2.0.14 core payload and splits the
+This adds the pinned AI files to the same 2.0.15 core payload and splits the
 result into SHA-checked parts for download. Rejoining does not install anything.
 """
 from pathlib import Path
 import hashlib,json,shutil,tempfile,zipfile,xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parent.parent
-OUT=ROOT.parent/'output-2.0.14'
+OUT=ROOT.parent/'output-2.0.15'
 DATA=Path('/tmp/v15-download213')
 MODEL_HASH='3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597'
 def sha(path):
     with path.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def main():
-    core=OUT/'V15VoiceStudio_2.0.14_Core_Update.zip'
+    core=OUT/'V15VoiceStudio_2.0.15_Core_Update.zip'
     assert core.exists()
     model=DATA/'Qwen3-4B-Instruct-2507-Q4_K_M.gguf'
     assert model.stat().st_size==2497281120 and sha(model)==MODEL_HASH
@@ -29,7 +29,7 @@ def main():
             # Completion is a single owned process; no CLI/server child lifetime.
             if name in ['llama-completion.exe','llama-completion-impl.dll','llama.dll','llama-common.dll','ggml.dll','ggml-base.dll','libomp.dll','ggml-vulkan.dll'] or name.startswith('ggml-cpu-') and name.endswith('.dll') or name.startswith('LICENSE'):
                 files[f'source/local-ai/runtime/{role}/{name}']=file
-    full=OUT/'V15VoiceStudio_2.0.14_AI_Offline_Update.zip'
+    full=OUT/'V15VoiceStudio_2.0.15_AI_Offline_Update.zip'
     with zipfile.ZipFile(core) as src:
         manifest=ET.fromstring(src.read('manifest.xml'))
         total=sum(int(x.get('size')) for x in manifest)
@@ -63,6 +63,6 @@ pause
 endlocal
 '''
     script=script.replace('ZIP_NAME',full.name).replace('ZIP_HASH',digest).replace('ZIP_LENGTH',str(full.stat().st_size)).replace('PART_COUNT',str(len(parts))).replace('PART_HASHES',','.join("'"+p['sha256']+"'" for p in parts)).replace('PART_SIZES',','.join(str(p['size']) for p in parts))
-    (OUT/'GHEP_AI_2.0.14.cmd').write_bytes(script.replace('\n','\r\n').encode('ascii'))
+    (OUT/'GHEP_AI_2.0.15.cmd').write_bytes(script.replace('\n','\r\n').encode('ascii'))
     print(json.dumps(metadata),flush=True)
 if __name__=='__main__':main()

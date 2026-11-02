@@ -170,14 +170,17 @@ public sealed class RenderOptions {
  public bool TwoVoices;public string VoiceAInfo="",VoiceBInfo="",VoiceAKey="",VoiceBKey="";
  public double TargetSeconds,TargetChange=.10;public string TargetRaw="";public TextTargetResult TargetResult;public VoiceReportContext ReportContext;public VoiceRenderReport RunReport;
  public Action<string> RepairSnapshot;
+ public List<AnchorStage> RepairStages;public double StageTts,StageInner,StageBetween,StageBreaths;public string CheckpointRoot="",ArtifactWorkFolder="";
  public bool Anchored;public AnchorReport AnchorResult;public Action<AnchorReport> AnchorChanged;public Func<string,List<AnchorUnit>,SubtitleDocument> AnchorAlignment;
  public bool Prose;public Action<ReadingProgress> ReadingChanged;public bool NormalizeLoudness,GentleFit;public double TargetLufs=-18;
- public bool Locked=true,SlowShort=true,JoinSentences=false;public double BaseSpeed=1,MaxSpeed=1.3,MinSpeed=.8,Gap=.15;
+ public bool Locked=true,SlowShort=true,JoinSentences=false;public double BaseSpeed=1,MaxSpeed=1.25,MinSpeed=.9,Gap=.15;
  public PunctuationMode Punctuation=PunctuationMode.Auto;public double CommaPause=.14,StopPause=.30,QuestionPause=.35,ParagraphPause=.50;
  public BreathMode Breathing=BreathMode.Auto;public string BreathPath;public double BreathLevel=.16;public int BreathEvery=3;
 }
 public enum BreathMode { Auto, Custom, None }
 public sealed class BreathTrack {
+ public BreathState State{get{return new BreathState{Sentences=sentences,Index=index,Last=last};}}
+ public void Restore(BreathState s){if(s!=null){sentences=s.Sentences;index=s.Index;last=s.Last;}}
  readonly List<Wave> samples=new List<Wave>();readonly RenderOptions options;int sentences,index;double last=-100;
  public BreathTrack(RenderOptions o,string root){
   options=o;if(o.Breathing==BreathMode.None)return;
@@ -218,12 +221,12 @@ public static class OutputFiles {
 }
 public static class Renderer {
  public static string Render(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress) {
-  VoiceRenderReport report=null,prior=engine.RunReport;o.RunReport=null;o.TargetResult=null;
-  if(o.ReportContext!=null)try{report=new VoiceRenderReport(cues,engine,o,output);o.RunReport=report;}catch(Exception e){engine.ReportActivity("Không khởi tạo được báo cáo: "+e.Message);}
-  engine.RunReport=report;
-  try{SpeakerScript.ValidateRun(cues,o.TwoVoices);string final=RenderCore(cues,engine,o,output,progress);if(o.AiRepair!=null){o.AiRepair.Output=final;o.AiRepair.Outcome="WAV tổng đã xuất thành công · cần duyệt ý nghĩa lời sửa";try{o.AiRepair.Save();}catch{}}if(report!=null)report.Finish("THÀNH CÔNG",final,null);return final;}
-  catch(Exception e){if(o.AiRepair!=null){o.AiRepair.Outcome=(e is OperationCanceledException?"Đã dừng WAV tổng":"WAV tổng chưa xuất: "+e.Message);try{o.AiRepair.Save();}catch{}}if(report!=null)report.Finish(e is OperationCanceledException?"ĐÃ DỪNG":"THẤT BẠI","",e);throw;}
-  finally{engine.RunReport=prior;}
+  VoiceRenderReport report=null,prior=engine.RunReport;string work=Path.Combine(Path.GetDirectoryName(Path.GetFullPath(output)),".v15_result_"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(work);o.ArtifactWorkFolder=work;o.RunReport=null;o.TargetResult=null;
+  try{if(o.AiRepair!=null){if(AiRepairSession.SnapshotHash(o.AiRepair.Effective())!=AiRepairSession.SnapshotHash(cues))throw new Exception("Lời phiên AI không trùng lời đang render.");o.RepairStages=o.AiRepair.Anchored?o.AiRepair.Rows.Select(r=>r.Stage).ToList():null;}
+   report=new VoiceRenderReport(cues,engine,o,output);o.RunReport=report;engine.RunReport=report;SpeakerScript.ValidateRun(cues,o.TwoVoices);string raw=RenderCore(cues,engine,o,Path.Combine(work,"voice.wav"),progress);if(engine.Cancelled)throw new OperationCanceledException();string final=StableArtifacts.Publish(raw,output,cues,o,report);progress(100,"FINAL VERIFIED · WAV + final.srt + final.vi.txt + báo cáo · "+final);return final;
+  }catch(Exception e){if(o.AiRepair!=null){foreach(var row in o.AiRepair.Rows)row.FinalVerified=false;o.AiRepair.Output="";o.AiRepair.Outcome=e is OperationCanceledException?"Đã dừng; giữ checkpoint":"Chưa xuất bộ đầu ra: "+e.Message;try{o.AiRepair.Save();}catch{}}
+   if(report!=null){try{string dir=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"V15VoiceStudio","reports");report.PathName=AiRepairSession.Unique(dir,Path.GetFileNameWithoutExtension(output)+".failed.voice-report",".txt");report.Finish(e is OperationCanceledException?"ĐÃ DỪNG":"THẤT BẠI","",e);}catch{}}throw;
+  }finally{engine.RunReport=prior;o.ArtifactWorkFolder="";try{Directory.Delete(work,true);}catch{}}
  }
  static string RenderCore(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress) {
   if(o.TargetSeconds!=0)return TextTargetVoice.Render(cues,engine,o,output,progress);if(o.Anchored)return AnchoredVoice.Render(cues,engine,o,output,progress);return RenderNatural(cues,engine,o,output,progress);

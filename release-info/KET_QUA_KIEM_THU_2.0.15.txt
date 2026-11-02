@@ -1,0 +1,74 @@
+V15 VOICE STUDIO 2.0.15 — KẾT QUẢ KIỂM THỬ BÀN GIAO
+Ngày: 31/10/2026 (UTC)
+
+MÔI TRƯỜNG VÀ PHẠM VI
+Build Windows PE x64, .NET Framework 4.5 bằng Mono C# compiler, giữ icon và assembly 2.0.15.0.
+Chạy kiểm thử C# trên Linux/Mono; giao diện chạy WinForms/Xvfb; bộ căn/ghép dùng FFmpeg thật.
+TTS, rewriter và thiết bị CUDA/Vulkan trong các kiểm thử bên dưới là fixture giả lập, không phải GPU vật lý hoặc giọng clone thật.
+Đọc đủ sáu báo cáo thật của VAN 4/5/6 và dùng SRT nguồn đúng SHA256; các số đo lịch sử được phân loại riêng.
+
+KẾT QUẢ CHẠY Ở MÔI TRƯỜNG BÀN GIAO
+17 bộ C#: 509 kiểm tra PASS, không có kiểm tra FAIL trong log của các bộ này.
+AnchoredTests: 65 PASS.
+AudioRepairTests: 45 PASS.
+BatchTests: 12 PASS.
+BreathStreamingTests: 8 PASS.
+CommunityVoiceTests: 20 PASS.
+LocalAiSafetyTests: 16 PASS.
+NativeGpuTests: 14 PASS.
+PunctuationTests: 20 PASS.
+StableRepairTests: 36 PASS.
+StableRepairUiTests: 30 PASS.
+StudioLayoutTests: 59 PASS.
+TextTargetTests: 37 PASS.
+TwoVoiceTests: 41 PASS.
+UpdaterTests: 21 PASS.
+VanRegressionTests: 29 PASS.
+VoiceDiagnosticTests: 26 PASS.
+VoiceReportTests: 30 PASS.
+
+GPU policy Python: 11 unittest OK (mô phỏng driver/RTX2070/CPU fallback).
+Worker UTF-8 protocol Python: 4 PASS (mô phỏng worker/device).
+Log đầy đủ nằm tại payload/source/validation-2.0.15 trong ZIP; script source/validate_stable215.py dựng và chạy 17 bộ C#.
+Hai script Python: source/test_gpu_policy.py và source/test_worker_probe.py.
+Hai ảnh giao diện thật qua Xvfb nằm tại GIAO_DIEN_2.0.15; đã kiểm tra nút trong khung ở 1440x960 và 1100x740.
+
+KIỂM TRA GÓI CẬP NHẬT
+Đã chạy StablePackageTests trên gói ZIP thật với hai trình cập nhật:
+- V15Updater 2.0.14.0 gốc: 5 PASS.
+- V15Updater 2.0.15.0 mới: 5 PASS.
+Mỗi lần kiểm tra dựng thư mục cài tạm với EXE 2.0.14 gốc rồi Apply ZIP thật. Đã xác nhận EXE lên 2.0.15.0, giữ nguyên model/runtime AI & TTS, reference clone, GPU DLL, giọng tùy chỉnh, file SRT và WAV; có source/QuickRepairPanel.cs, source/RepairPolicy.cs và hướng dẫn mới; không còn journal lỗi.
+Đây là kiểm tra transaction cài đặt qua Mono/Linux, chưa phải thao tác cài trên Windows thật.
+Tổng: 509 kiểm tra chức năng C# + 10 kiểm tra gói cập nhật C# + 11 unittest Python + 4 kiểm tra worker protocol = 534 kiểm tra đạt trong phạm vi trên.
+ZIP đã được đọc kiểm tra CRC và đối chiếu SHA256/kích thước của toàn bộ payload theo manifest; không kèm model/AI runtime hoặc voice_profiles.tsv fixture.
+
+CÁC KIỂM TRA CHÍNH ĐÃ ĐẠT TRONG PHẠM VI GIẢ LẬP
+- Chỉ sửa lỗi lời thiếu/dư; TTS/runtime/FFmpeg có trạng thái riêng.
+- Số giây thực, tối đa ba phương án AI, không đo lại lời trùng; chặn tình tiết/tên/số/phủ định/thứ tự bị đổi.
+- Bản chưa đo đạt không được chấp nhận; bản cần duyệt không tự áp dụng.
+- Đo cùng giọng A/B, ngữ cảnh hơi thở và khóa model; dừng ngắt được TTS đo đang chạy.
+- Checkpoint chặng đã đạt được dùng lại; thay lời/model/thiết lập hoặc ngữ cảnh phải xác nhận lại.
+- Bộ năm đầu ra thống nhất lời TTS; giữ timecode nguồn và byte file nguồn, không đè bộ đã có.
+- Lỗi xuất giữa chừng hoàn tác bộ mới; sửa nguồn trong khi render sẽ chặn công bố WAV.
+- Phân biệt AI FIXED/MANUAL FIXED/FINAL VERIFIED, giải thích số đo thử khác renderer cuối; đếm cue đã đổi.
+- Nút SỬA NGAY, khung sửa trong cửa sổ chính, đo/duyệt/hoàn tác và tiếp tục.
+
+VAN 4/5/6: DỮ LIỆU THẬT, TTS KIỂM THỬ GIẢ LẬP
+VAN 4: 28 cue, 7 chặng; tạo bộ WAV/SRT/TXT bằng voice fixture, giữ nguyên lời/mốc, lần sau dùng lại toàn bộ chặng.
+VAN 5: 72 cue, 18 chặng; chặng 9–12 chạy đạt với voice fixture. Xác nhận số đo lịch sử lệch trước căn 0.476s, WAV cũ đạt bằng lời gốc nên không tính AI FIXED tại chặng này.
+VAN 6: 44 cue, 11 chặng; chặn các phương án cũ thêm từ/tình tiết; render giữ nguyên lời với voice fixture.
+Cả ba: số khung PCM/tổng thời lượng và final.srt/EN trong final.vi.txt đã được so sánh tự động; không giả mốc WAV riêng từng cue của V15.6.
+Các WAV fixture chỉ là âm thanh kiểm thử. Không dùng chúng để nhận xét chất lượng giọng hoặc xác nhận render clone thật.
+
+CHƯA ĐẠT / CHƯA KIỂM THỬ THỰC TẾ
+1. Chưa chạy ứng dụng trên Windows vật lý + RTX 2070 8GB; chưa xác minh CUDA/Vulkan, bộ model và mẫu clone đã cài của người dùng.
+2. Chưa render lại VAN 4/5/6 bằng Steven/Chatterbox/Kokoro thật; chưa có ba WAV giọng thật mới để nghiệm thu.
+3. Chưa chạy Qwen GGUF thật trong phiên sửa mới; chưa có đánh giá nghe tự nhiên/ngữ nghĩa bằng model thật.
+4. Dịch Việt offline chưa tích hợp. final.vi.txt ghi [CHƯA DỊCH] rõ ràng, kèm EN đúng bản cuối; chưa phải bản dịch Anh–Việt hoàn chỉnh.
+5. Khóa từ/ngữ nghĩa bảo thủ có thể từ chối cả cách viết đồng nghĩa; cần người dùng sửa tay trong trường hợp này. Không có chứng minh tương đương nghĩa tổng quát.
+6. V15.6 giữ mốc SRT nguồn, không xác nhận mốc WAV từng cue nếu mới có đo theo chặng. TXT căn đích tổng xuất một khối khi chưa căn từ.
+
+LƯU Ý VỀ BỘ TEST CŨ
+Các test AI Timeline 2.0.14 giả định hai lần thử và cho phép diễn đạt tự do đã được thay bằng StableRepairTests/VanRegressionTests/StableRepairUiTests; không báo rằng các test kỳ vọng cũ đó đạt.
+Một số fixture mock thay Seconds mà không đổi identity model nay được cách ly checkpoint riêng theo tình huống. Kiểm tra report lưu lỗi đã cập nhật theo bộ đầu ra cùng thư mục và giao dịch mới.
+Các bộ test lịch sử còn trong source để tham khảo; chỉ các bộ có log và được liệt kê trên mới được tuyên bố đã chạy cho bản này.

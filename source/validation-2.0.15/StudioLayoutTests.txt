@@ -1,0 +1,75 @@
+PASS New icon is embedded and loaded by window
+PASS Four independent settings tabs
+PASS Opening TXT selects duration tab
+TARGET LABEL {X=8,Y=8,Width=323,Height=88} max={Width=323, Height=0} parent={Width=357, Height=116}
+languagePicker {X=0,Y=22,Width=189,Height=26} visible=True onscreen=True
+PASS Voice picker reachable languagePicker at {Width=1440, Height=960}
+family {X=0,Y=22,Width=386,Height=26} visible=True onscreen=True
+PASS Voice picker reachable family at {Width=1440, Height=960}
+styleFilter {X=0,Y=22,Width=189,Height=26} visible=True onscreen=True
+PASS Voice picker reachable styleFilter at {Width=1440, Height=960}
+voices {X=0,Y=22,Width=386,Height=26} visible=True onscreen=True
+PASS Voice picker reachable voices at {Width=1440, Height=960}
+PASS Full voice description remains accessible at {Width=1440, Height=960}
+PASS Settings viewport remains usable at {Width=1440, Height=960}
+PASS Primary actions visible at {Width=1440, Height=960}
+PASS No horizontal scrolling required: TXT & đích {Width=1440, Height=960}
+PASS Settings scroll never moves voice card: TXT & đích {Width=1440, Height=960}
+PASS No horizontal scrolling required: Căn SRT {Width=1440, Height=960}
+PASS Settings scroll never moves voice card: Căn SRT {Width=1440, Height=960}
+PASS No horizontal scrolling required: Ngắt nghỉ {Width=1440, Height=960}
+PASS Settings scroll never moves voice card: Ngắt nghỉ {Width=1440, Height=960}
+PASS No horizontal scrolling required: Hơi thở {Width=1440, Height=960}
+PASS Settings scroll never moves voice card: Hơi thở {Width=1440, Height=960}
+PASS Long diagnostics do not displace voice picker at {Width=1440, Height=960}
+PASS Diagnostic viewport stays bounded and scrolls at {Width=1440, Height=960}
+languagePicker {X=0,Y=22,Width=189,Height=26} visible=True onscreen=True
+PASS Voice picker reachable languagePicker at {Width=1280, Height=850}
+family {X=0,Y=22,Width=386,Height=26} visible=True onscreen=True
+PASS Voice picker reachable family at {Width=1280, Height=850}
+styleFilter {X=0,Y=22,Width=189,Height=26} visible=True onscreen=True
+PASS Voice picker reachable styleFilter at {Width=1280, Height=850}
+voices {X=0,Y=22,Width=386,Height=26} visible=True onscreen=True
+PASS Voice picker reachable voices at {Width=1280, Height=850}
+PASS Full voice description remains accessible at {Width=1280, Height=850}
+PASS Settings viewport remains usable at {Width=1280, Height=850}
+PASS Primary actions visible at {Width=1280, Height=850}
+PASS No horizontal scrolling required: TXT & đích {Width=1280, Height=850}
+PASS Settings scroll never moves voice card: TXT & đích {Width=1280, Height=850}
+PASS No horizontal scrolling required: Căn SRT {Width=1280, Height=850}
+PASS Settings scroll never moves voice card: Căn SRT {Width=1280, Height=850}
+PASS No horizontal scrolling required: Ngắt nghỉ {Width=1280, Height=850}
+PASS Settings scroll never moves voice card: Ngắt nghỉ {Width=1280, Height=850}
+PASS No horizontal scrolling required: Hơi thở {Width=1280, Height=850}
+PASS Settings scroll never moves voice card: Hơi thở {Width=1280, Height=850}
+PASS Long diagnostics do not displace voice picker at {Width=1280, Height=850}
+PASS Diagnostic viewport stays bounded and scrolls at {Width=1280, Height=850}
+languagePicker {X=0,Y=22,Width=189,Height=26} visible=True onscreen=True
+PASS Voice picker reachable languagePicker at {Width=1100, Height=740}
+family {X=0,Y=22,Width=386,Height=26} visible=True onscreen=True
+PASS Voice picker reachable family at {Width=1100, Height=740}
+styleFilter {X=0,Y=22,Width=189,Height=26} visible=True onscreen=True
+PASS Voice picker reachable styleFilter at {Width=1100, Height=740}
+voices {X=0,Y=22,Width=386,Height=26} visible=True onscreen=True
+PASS Voice picker reachable voices at {Width=1100, Height=740}
+PASS Full voice description remains accessible at {Width=1100, Height=740}
+PASS Settings viewport remains usable at {Width=1100, Height=740}
+PASS Primary actions visible at {Width=1100, Height=740}
+PASS No horizontal scrolling required: TXT & đích {Width=1100, Height=740}
+PASS Settings scroll never moves voice card: TXT & đích {Width=1100, Height=740}
+PASS No horizontal scrolling required: Căn SRT {Width=1100, Height=740}
+PASS Settings scroll never moves voice card: Căn SRT {Width=1100, Height=740}
+PASS No horizontal scrolling required: Ngắt nghỉ {Width=1100, Height=740}
+PASS Settings scroll never moves voice card: Ngắt nghỉ {Width=1100, Height=740}
+PASS No horizontal scrolling required: Hơi thở {Width=1100, Height=740}
+PASS Settings scroll never moves voice card: Hơi thở {Width=1100, Height=740}
+PASS Long diagnostics do not displace voice picker at {Width=1100, Height=740}
+PASS Diagnostic viewport stays bounded and scrolls at {Width=1100, Height=740}
+PASS Custom breath controls reachable in breath tab
+PASS Breath choice still reaches shared queue settings
+PASS All voice selectors disabled safely while rendering, stop remains enabled
+PASS Selectors unlock after rendering
+PASS V15.6 controls remain reachable in SRT tab
+TOTAL LAYOUT 59 passed.
+Could not set X locale modifiers
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

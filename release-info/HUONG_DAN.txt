@@ -1,51 +1,81 @@
-V15 VOICE STUDIO 2.0.14 — SỬA NGAY TẠI DÒNG LỖI
+V15 VOICE STUDIO 2.0.15 — AI REPAIR STABLE
 
-CẬP NHẬT
-Mở V15 đang cài → Công cụ & thiết lập → Cập nhật từ ZIP.
-Chọn V15VoiceStudio_2.0.14_Core_Update.zip. Mở lại và kiểm tra tiêu đề Offline 2.0.14.
-Đây là gói cập nhật app; cần bộ V15 đã cài đầy đủ giọng từ trước.
-Nếu đã cài gói AI offline ở 2.0.13 thì giữ nguyên, không cần tải lại model.
+1. CẬP NHẬT TỪ 2.0.14
+Mở app đang dùng → Công cụ & thiết lập → Cập nhật từ ZIP.
+Chọn V15VoiceStudio_2.0.15_Core_Update.zip. Mở lại đúng lối tắt và kiểm tra tiêu đề Offline 2.0.15.
+Đây là gói nâng cấp cho bộ V15 đã cài đủ giọng; không phải bộ cài full model TTS.
+Giữ bộ giọng, clone, GPU/CUDA/ONNX và gói AI đã cài. Không cần tải lại model AI nếu đã cài ở 2.0.13/2.0.14.
+Không cài lại gói AI Offline 2.0.13 chứa EXE cũ sau khi nâng cấp. Nếu thiếu AI, dùng Cài gói AI trong app.
+Mã nguồn đầy đủ nằm trong payload/source của ZIP; sau cài là thư mục source trong app.
 
-CÁCH DÙNG NHANH
-1. Mở SRT, chọn giọng rồi bấm TẠO VOICE · WAV như bình thường.
-2. Nếu câu không vừa thời gian, dòng lỗi có nút AI sửa câu ngay cạnh trạng thái.
-3. Bấm nút đó. App đo lời gốc, đề xuất cách diễn đạt khác, đọc lại và tự áp dụng khi đo đạt.
-4. Dòng sửa thành công chuyển xanh và có nút Hoàn tác. Dùng Nghe thử để nghe câu đang chọn.
-5. Sửa các dòng lỗi còn lại rồi bấm TẠO VOICE · WAV để ghép, kiểm tra và xuất toàn bài.
+2. CÁCH DÙNG ĐƠN GIẢN
+Mở SRT → chọn giọng/timeline → TẠO VOICE · WAV.
+App đo bằng giọng đã chọn, nhận biết thiếu/dư thời lượng và lưu chặng đã đạt.
+Nếu có phần cần duyệt hoặc chưa sửa được, bấm SỬA NGAY ngay cạnh dòng lỗi.
+Khung sửa mở trong cửa sổ chính, hiển thị cue/timecode, lời gốc, lời đề xuất, mục tiêu, số đo và chênh giây.
+AI SỬA LẠI: tạo phương án khác, tối đa 3 lần AI trong một phiên; không đo lại phương án trùng.
+TỰ CHỈNH SỬA: sửa ở ô bên phải, giữ các nhãn #số câu. CHẤP NHẬN sẽ đo lại trước khi áp dụng.
+NGHE THỬ: nghe âm thanh đã đo của bản đang xem.
+CHẤP NHẬN: chỉ áp dụng bản đã đo đạt; xác nhận duyệt lời của người dùng được ghi vào lịch sử.
+TIẾP TỤC RENDER: kiểm tra phần còn lại và ghép bộ đầu ra; sử dụng lại chặng/cache còn hợp lệ.
+HOÀN TÁC: khôi phục lời trước sửa của câu/chặng. Dòng sửa thành công cũng có nút hoàn tác.
+Khi cửa sổ nhỏ, khung sửa dùng toàn vùng bên trái. Bấm Danh sách để trở lại các dòng.
 
-KHÔNG CẦN TÌM THIẾT LẬP
-Nút tại dòng hoạt động cả khi AI tự động trong Công cụ & thiết lập đang Tắt.
-Nút AI nâng cao mở bảng so sánh, duyệt, xuất SRT và các tùy chọn cũ khi cần.
-Nếu chưa cài AI, lần đầu bấm sửa app hỏi cài gói khoảng 2,5 GB. Tải một lần, các lần sửa sau chạy offline.
+3. HAI CHẾ ĐỘ AI
+Công cụ & thiết lập → AI sửa lời offline:
+• Duyệt trước khi áp dụng: mặc định của cài mới. Đề xuất được đo nhưng không tự áp dụng.
+• Tự động sửa: chỉ tự áp dụng các biến đổi rất nhỏ qua khóa từ/ngữ nghĩa bảo thủ và được đo đạt.
+• Tắt: giữ luồng TTS hiện tại. Nút SỬA NGAY vẫn mở kiểm tra/sửa theo yêu cầu.
+Thiết lập Tắt đã lưu từ bản cũ được tôn trọng, không tự bật AI cho người đã chọn tắt.
+Nếu chưa có model AI, nút AI SỬA LẠI hướng dẫn cài khoảng 2,5 GB một lần. Sửa lời sau đó chạy offline.
+TTS thiếu model/GPU lỗi và lỗi FFmpeg/ghép âm thanh được ghi riêng; không dùng AI viết lại để che lỗi hệ thống.
 
-NÚT TẠI DÒNG
-AI sửa câu: sửa và đo lại riêng khối SRT đang lỗi.
-AI sửa chặng: dùng trong V15.6; sửa cả chặng chứa dòng được bấm, giữ mốc/neo và giọng A/B.
-Hoàn tác: khôi phục lời trước khi AI sửa cho câu/chặng đó.
-Áp dụng lại: dùng lại đề xuất đã đo đạt sau khi bạn hoàn tác, nếu thiết lập còn phù hợp.
-Sửa tay: sau tối đa 2 lần AI chưa đạt, bấm vào để sửa ngay ô lời đọc.
-Dòng đã đạt không có nút AI sửa. Không coi số từ >10 là bằng chứng lỗi timing.
+4. KHÓA NỘI DUNG
+Giữ nguyên ID, số cue, timecode, điểm neo, A/B và thứ tự lời.
+Chặn thay đổi từ nội dung, tên, số/số tiền, phủ định và trình tự. Không cho AI thêm sự kiện hoặc giải thích.
+Tự động chấp nhận chỉ giới hạn ở các cách viết tắt/mở rộng không mơ hồ khi chuỗi từ chuẩn hóa và dấu câu giữ nguyên.
+Thay đổi từ chức năng/nhấn mạnh hoặc dấu câu chưa đủ chắc chắn cần người dùng duyệt; thay đổi nội dung bị loại.
+Không có thuật toán ở bản này chứng minh mọi ngữ nghĩa tương đương 100%. Bộ khóa chủ động bảo thủ, có thể yêu cầu sửa tay nhiều hơn.
+Sửa tay là lời do người dùng chủ động nhập, vẫn phải đo TTS đạt và bấm CHẤP NHẬN; được báo cáo riêng với AI.
 
-KHI XUẤT WAV
-Lỗi chỉ do timeline được hiển thị tại dòng, không bật hộp báo lỗi dài che bảng.
-App chọn dòng lỗi đầu tiên để bạn xử lý. Lỗi model/GPU/FFmpeg vẫn có chẩn đoán riêng.
-TTS đã lưu đệm được dùng lại khi thiết lập phù hợp; xuất toàn bài vẫn kiểm tra tất cả câu/chặng và ghép WAV.
-Không xuất WAV cuối nếu vẫn có câu/chặng ngoài giới hạn. Không cắt lời để ép vừa khung.
+5. TIMELINE, HƠI THỞ VÀ TỐC ĐỘ
+SRT Khóa: sửa/đo từng cue. V15.6: sửa/đo cả chặng chứa cue được bấm.
+Ranh giới chặng được giữ cố định cho phiên, không bị chia lại chỉ vì AI đổi dấu câu.
+Phép thử và render dùng cùng trạng thái hơi thở giữa các chặng; audio/chặng đã đạt được kiểm tra hash và dùng lại.
+Chỉ căn trong giới hạn áp dụng 0.90–1.25x. Mặc định ưu tiên vùng 0.90–1.10x; trên 1.10x có cảnh báo chất lượng.
+Không đệm im lặng dài hoặc cắt lời để nhận đạt chặng. Hiệu chỉnh đuôi nhỏ theo bộ căn vẫn được ghi rõ.
+TTS gốc đã gồm khoảng nghỉ tự nhiên của model; báo cáo không giả tách số giây lời nói thuần.
+Không suy ra mốc WAV từng cue bằng tỷ lệ của cả chặng. SRT cuối theo V15.6 giữ timecode nguồn, chưa phải căn từ thật.
+TXT có đích tổng xuất SRT một khối chung nếu chưa có căn từ, tránh bịa mốc từng câu sau căn chung. A/B xem báo cáo render.
+SRT căn từ tùy chọn, nếu tạo thành công bằng chức năng phụ đề hiện có, nằm ở file .aligned.srt riêng.
 
-GIỮ DỮ LIỆU VÀ BÁO CÁO
-Không ghi đè file SRT nguồn. Lời được sửa trong kịch bản đang mở và hàng đợi tương ứng.
-Báo cáo .ai-repair-report.txt ghi lời gốc/sửa, số đo, lịch sử và kết quả từng lần thử.
-Báo cáo WAV tổng đính kèm lịch sử AI khi còn khớp kịch bản.
-Đổi nguồn, lời, giọng hoặc thiết lập làm thay đổi phép đo thì app không dùng nhầm phiên sửa cũ.
-Giữ các bộ giọng, gói GPU/CUDA, mẫu giọng riêng và gói model AI đang cài.
+6. BỘ ĐẦU RA ĐỒNG BỘ
+filename.wav
+filename.final.srt
+filename.final.vi.txt
+filename.ai-repair-report.txt
+filename.voice-report.txt
+Các file dùng cùng một stem. Nếu tên đã có, tạo cả bộ filename (2)...; không ghi đè file gốc hoặc WAV/báo cáo cũ.
+WAV chỉ xuất hiện sau khi SRT/TXT/hai báo cáo đã sẵn sàng. Lỗi lưu giữa chừng được hoàn tác cho bộ mới.
+final.srt là đúng lời dùng gửi vào TTS, gồm thay đổi đã chấp nhận. App kiểm tra nội dung các đơn vị render khớp file cuối.
+Đây là đối chiếu yêu cầu TTS và PCM/timeline, không phải kiểm chứng từng âm bằng ASR.
+final.vi.txt có số cue, timecode và EN khớp SRT cuối. VI ghi [CHƯA DỊCH] vì chưa tích hợp dịch offline đã kiểm chứng. Không có bản dịch giả.
+Hai báo cáo ghi số cue thay đổi so với file nguồn, lịch sử sửa và số đo thực tế. File gốc được giữ nguyên.
 
-PHẠM VI
-Nút sửa tại dòng hỗ trợ SRT Khóa và V15.6. TXT và SRT linh hoạt vẫn tạo voice theo luồng hiện có.
-AI sửa cách diễn đạt để vừa thời lượng; vẫn cần đọc/nghe lại để kiểm tra ý nghĩa, hook và quan hệ nhân quả.
-Qwen là model sửa văn bản. Giọng đọc vẫn là giọng bạn đã chọn, ví dụ Adam Kokoro.
+7. TRẠNG THÁI VÀ TIẾP TỤC
+PASS: lời hiện tại đo đạt.
+AI FIXED / MANUAL FIXED: lời sửa đã được đo đạt, đã chấp nhận; chưa đồng nghĩa WAV tổng đã xuất.
+REVIEW REQUIRED: có đề xuất đo đạt nhưng chưa được duyệt.
+MANUAL REQUIRED: chưa có bản đạt; cần tự chỉnh/đổi cách viết, không tự đổi nghĩa để ép khung.
+ENGINE ERROR / AUDIO ERROR: lỗi TTS/AI runtime hoặc căn/ghép âm thanh; sửa cấu hình tương ứng.
+FINAL VERIFIED: renderer cuối và bộ file đồng bộ đã được xác nhận.
+Dừng tác vụ giữ phiên sửa và checkpoint chặng. Chỉnh câu rồi tiếp tục; chặng/giọng/thiết lập không bị ảnh hưởng được dùng lại.
+Đổi lời, mẫu giọng, model, tốc độ, ngắt nghỉ hoặc dữ liệu hơi thở làm ảnh hưởng khóa đo sẽ được kiểm tra lại.
+Bản 2.0.15 không nhập lại các phê duyệt AI cũ thiếu khóa ngữ nghĩa của 2.0.14. File cache cũ không bị xóa chủ động; model ngoại bộ có khóa model chặt hơn nên có thể cần đo lại lần đầu.
 
-KIỂM THỬ BẢN 2.0.14
-Đã biên dịch EXE Windows x64 nhắm .NET Framework 4.5.
-Kiểm tra hành vi và giao diện bằng Mono/Linux/Xvfb với TTS và bộ viết lại giả lập để xác nhận luồng thao tác.
-Có kiểm tra sửa riêng câu/chặng, giữ câu khác, A/B, hoàn tác, dừng, giới hạn thử, bảo toàn SRT và xuất WAV đúng thời lượng.
-Chưa chạy bản mới trên Windows hoặc RTX 2070 vật lý; không khẳng định đã thử GPU trên máy người dùng.
+8. MỨC KIỂM CHỨNG BÀN GIAO
+Đã build EXE Windows x64 nhắm .NET Framework 4.5 và kiểm tra hợp đồng bằng Mono/Linux/Xvfb, FFmpeg thật, TTS/rewriter giả lập.
+Có SRT VAN 4–6 đúng SHA256 với 6 báo cáo gửi kèm. Đã kiểm tra lịch sử, chặn các phương án thêm tình tiết và chạy nguồn SRT qua engine giả lập.
+Chưa render lại giọng clone Steven/Chatterbox thật: môi trường không có model/mẫu clone và không có RTX 2070 vật lý.
+Chưa kiểm chứng chất lượng giọng thật, Qwen thật cho bản mới, CUDA/Vulkan trên Windows hay dịch offline. Không coi kiểm thử giả lập là các kiểm thử đó.
+Đọc KET_QUA_KIEM_THU_2.0.15.txt và BAO_CAO_NANG_CAP_2.0.15.txt trong ZIP để xem mục đã đạt/chưa đạt.
