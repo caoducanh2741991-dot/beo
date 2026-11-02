@@ -1,0 +1,11 @@
+Vietnamese voice engine: VieNeu-TTS v3 Turbo / SDK 3.8.3
+Author: Phạm Nguyễn Ngọc Bảo and contributors
+https://github.com/pnnbao97/VieNeu-TTS
+https://huggingface.co/pnnbao-ump/VieNeu-TTS-v3-Turbo
+License: Apache-2.0. Model and preset voice usage governed by upstream notices.
+Codec: OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano, Apache-2.0.
+https://huggingface.co/OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano
+Phonemizer: sea-g2p, see installed package license.
+The V15 ZIP contains the adapter and installer, not model weights or CUDA.
+The installer retains the upstream packages and their license metadata.
+Stars in V15 mean upstream featured voices, not an independent listening score.

@@ -124,7 +124,7 @@ public sealed class Wave {
   short[] output=new short[last-first+1];Array.Copy(Samples,first,output,0,output.Length);return new Wave{Rate=Rate,Samples=output};
  }
 }
-public enum EngineKind { Kokoro, LibriTTS, Kitten, Piper, Qwen, Chatterbox }
+public enum EngineKind { Kokoro, LibriTTS, Kitten, Piper, Qwen, Chatterbox, VieNeu }
 public class KokoroEngine : IDisposable {
  public SpeechCache PreviewCache;public SpeechArchive Archive;
  public Wave GetSpeech(string text,double speed,string output){if(Cancelled)throw new OperationCanceledException();var cached=Archive==null?null:Archive.Get(this,text,speed);if(cached!=null)return cached;if(Archive==null||!Archive.Refresh)cached=PreviewCache==null?null:PreviewCache.Get(this,text,speed);if(cached!=null){if(Archive!=null)Archive.Put(this,text,speed,cached);return cached;}var wave=Generate(text,speed,output);if(PreviewCache!=null)PreviewCache.Put(this,text,speed,wave);if(Archive!=null)Archive.Put(this,text,speed,wave);return wave;}
@@ -138,7 +138,7 @@ public class KokoroEngine : IDisposable {
  public string VoiceFolder {get{return Path.Combine(Root,Kind==EngineKind.Kokoro?"model":Kind==EngineKind.LibriTTS?"libritts":Kind==EngineKind.Kitten?"kitten":ModelFolder);}}
  public string ModelFile {get{return Path.Combine(VoiceFolder,Kind==EngineKind.LibriTTS?"en_US-libritts_r-medium.onnx":"model.onnx");}}
  public virtual void CheckFiles(){
-  if(Kind==EngineKind.Qwen||Kind==EngineKind.Chatterbox){ExternalSpeech.Check(this);return;}
+  if(Kind==EngineKind.Qwen||Kind==EngineKind.Chatterbox||Kind==EngineKind.VieNeu){ExternalSpeech.Check(this);return;}
   if(Kind==EngineKind.Piper&&ModelFolder!="piper_john"&&ModelFolder!="piper_kristin")throw new Exception("Bộ giọng Piper chưa được cài hoặc không được hỗ trợ.");
   var required=new List<string>{Executable,ModelFile,Path.Combine(VoiceFolder,"tokens.txt")};
   if(Kind==EngineKind.Kokoro||Kind==EngineKind.Kitten)required.Add(Path.Combine(VoiceFolder,"voices.bin"));
@@ -150,7 +150,7 @@ public class KokoroEngine : IDisposable {
  public static string Q(string s){var b=new StringBuilder("\"");int slashes=0;foreach(char c in s){if(c=='\\'){slashes++;continue;}if(c=='\"')b.Append('\\',slashes*2+1);else b.Append('\\',slashes);b.Append(c);slashes=0;}b.Append('\\',slashes*2);b.Append('"');return b.ToString();}
  public virtual Wave Generate(string text,double speed,string output) {
   if(Cancelled)throw new OperationCanceledException();
-  if(Kind==EngineKind.Qwen||Kind==EngineKind.Chatterbox){if(external==null)external=new ExternalSpeech(this);return external.Generate(text,speed,output);}
+  if(Kind==EngineKind.Qwen||Kind==EngineKind.Chatterbox||Kind==EngineKind.VieNeu){if(external==null)external=new ExternalSpeech(this);return external.Generate(text,speed,output);}
   string model=VoiceFolder;
   string args="--debug=0 --num-threads="+Threads+" --sid="+Speaker+" --speed="+speed.ToString("0.000",CultureInfo.InvariantCulture)+" --output-filename="+Q(output)+" ";
   if(Kind==EngineKind.Kokoro)args+="--kokoro-model="+Q(ModelFile)+" --kokoro-voices="+Q(Path.Combine(model,"voices.bin"))+" --kokoro-tokens="+Q(Path.Combine(model,"tokens.txt"))+" --kokoro-data-dir="+Q(Path.Combine(model,"espeak-ng-data"))+" --kokoro-lexicon="+Q(Path.Combine(model,"lexicon-us-en.txt"))+" ";

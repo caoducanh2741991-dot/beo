@@ -1,1 +1,0 @@
-PASS all 4 identical manifests; 42 files match original verified dependency bundle

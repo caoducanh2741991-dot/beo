@@ -1,5 +1,0 @@
-PASS ZIP CRC, unique entries, version, all payload SHA-256 hashes, bootstrap/payload updater parity
-PASS from-1.4.0-folder all 126 payload files match; CPU/GPU/models/voice/queue/settings/SRT/WAV retained; no unfinished transaction
-PASS from-1.4.1-zip all 126 payload files match; CPU/GPU/models/voice/queue/settings/SRT/WAV retained; no unfinished transaction
-PASS from-1.4.1-installed-updater all 126 payload files match; CPU/GPU/models/voice/queue/settings/SRT/WAV retained; no unfinished transaction
-PASS packaged app SHA-256 834d1f913c2da7914064251300b043cc0892a44779620f96f0f731d7cb7bd6f7

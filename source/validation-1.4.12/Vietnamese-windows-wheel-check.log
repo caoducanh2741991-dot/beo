@@ -1,0 +1,46 @@
+Collecting huggingface_hub==0.36.2 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 1))
+  Using cached huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+Collecting kaldi-native-fbank==1.22.3 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 2))
+  Downloading kaldi_native_fbank-1.22.3-cp312-cp312-win_amd64.whl.metadata (3.4 kB)
+Collecting librosa==0.11.0 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 3))
+  Using cached librosa-0.11.0-py3-none-any.whl.metadata (8.7 kB)
+Collecting numpy==2.1.3 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 4))
+  Downloading numpy-2.1.3-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Collecting onnxruntime==1.23.2 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 5))
+  Downloading onnxruntime-1.23.2-cp312-cp312-win_amd64.whl.metadata (5.3 kB)
+Collecting PyYAML==6.0.3 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 6))
+  Downloading pyyaml-6.0.3-cp312-cp312-win_amd64.whl.metadata (2.4 kB)
+Collecting sea-g2p==0.9.1 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 7))
+  Downloading sea_g2p-0.9.1-cp310-abi3-win_amd64.whl.metadata (11 kB)
+Collecting soundfile==0.14.0 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 8))
+  Downloading soundfile-0.14.0-py2.py3-none-win_amd64.whl.metadata (18 kB)
+Collecting soxr==1.1.0 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 9))
+  Downloading soxr-1.1.0-cp312-abi3-win_amd64.whl.metadata (5.8 kB)
+Collecting tokenizers==0.22.2 (from -r V15VoiceStudio-1.4.12/source/vi/requirements-vi.txt (line 10))
+  Downloading tokenizers-0.22.2-cp39-abi3-win_amd64.whl.metadata (7.4 kB)
+Using cached huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+Downloading kaldi_native_fbank-1.22.3-cp312-cp312-win_amd64.whl (308 kB)
+Using cached librosa-0.11.0-py3-none-any.whl (260 kB)
+Downloading numpy-2.1.3-cp312-cp312-win_amd64.whl (12.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 44.7 MB/s eta 0:00:00
+Downloading onnxruntime-1.23.2-cp312-cp312-win_amd64.whl (13.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.5/13.5 MB 50.8 MB/s eta 0:00:00
+Downloading pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)
+Downloading sea_g2p-0.9.1-cp310-abi3-win_amd64.whl (27.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 27.5/27.5 MB 44.6 MB/s eta 0:00:00
+Downloading soundfile-0.14.0-py2.py3-none-win_amd64.whl (1.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 45.4 MB/s eta 0:00:00
+Downloading soxr-1.1.0-cp312-abi3-win_amd64.whl (174 kB)
+Downloading tokenizers-0.22.2-cp39-abi3-win_amd64.whl (2.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 28.4 MB/s eta 0:00:00
+Saved ./validation-vi/windows-wheels/huggingface_hub-0.36.2-py3-none-any.whl
+Saved ./validation-vi/windows-wheels/kaldi_native_fbank-1.22.3-cp312-cp312-win_amd64.whl
+Saved ./validation-vi/windows-wheels/librosa-0.11.0-py3-none-any.whl
+Saved ./validation-vi/windows-wheels/numpy-2.1.3-cp312-cp312-win_amd64.whl
+Saved ./validation-vi/windows-wheels/onnxruntime-1.23.2-cp312-cp312-win_amd64.whl
+Saved ./validation-vi/windows-wheels/pyyaml-6.0.3-cp312-cp312-win_amd64.whl
+Saved ./validation-vi/windows-wheels/sea_g2p-0.9.1-cp310-abi3-win_amd64.whl
+Saved ./validation-vi/windows-wheels/soundfile-0.14.0-py2.py3-none-win_amd64.whl
+Saved ./validation-vi/windows-wheels/soxr-1.1.0-cp312-abi3-win_amd64.whl
+Saved ./validation-vi/windows-wheels/tokenizers-0.22.2-cp39-abi3-win_amd64.whl
+Successfully downloaded huggingface_hub kaldi-native-fbank librosa numpy onnxruntime PyYAML sea-g2p soundfile soxr tokenizers

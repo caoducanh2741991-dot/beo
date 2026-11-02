@@ -1,7 +1,0 @@
-PASS real media result fresh-video.xml: 83 cues, preserve, measured word metadata, adjacent SRT export and round-trip
-PASS real media result refined-video.xml: 84 cues, preserve, measured word metadata, adjacent SRT export and round-trip
-PASS real media result fresh-short.xml: 6 cues, preserve, measured word metadata, adjacent SRT export and round-trip
-PASS real media result delayed.xml: 2 cues, preserve, measured word metadata, adjacent SRT export and round-trip
-PASS real media result refined-clean-short.xml: 8 cues, clean, measured word metadata, adjacent SRT export and round-trip
-PASS real media result quality-large-short.xml: 6 cues, preserve, measured word metadata, adjacent SRT export and round-trip
-TOTAL REAL RESULT 6 passed.

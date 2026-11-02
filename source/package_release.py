@@ -1,4 +1,4 @@
-"""Package the compiled 1.4.11 binaries and sources; never include model data."""
+"""Package the compiled 1.4.12 binaries and sources; never include model data."""
 from pathlib import Path
 import hashlib
 import shutil
@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "1.4.11"
+VERSION = "1.4.12"
 
 def main():
     payload = ROOT / "payload"
@@ -19,7 +19,7 @@ def main():
     for source, destination in (("ai_worker.py", "worker.py"), ("gpu_policy.py", "gpu_policy.py")):
         shutil.copyfile(ROOT / "source" / source, payload / "ai" / destination)
     shutil.copytree(ROOT / "source", payload / "source", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-    shutil.copytree(ROOT / "validation", payload / "source" / "validation-1.4.11", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
+    shutil.copytree(ROOT / "validation", payload / "source" / "validation-1.4.12", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
     guide = ROOT / ("HUONG_DAN_" + VERSION + ".txt")
     shutil.copyfile(guide, payload / guide.name)
     manifest = ET.Element("update", product="V15VoiceStudio", version=VERSION, kind="core", space=str(96 * 1024 * 1024))

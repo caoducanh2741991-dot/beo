@@ -1,9 +1,0 @@
-PASS oom restarts a fresh CPU worker exactly once
-PASS oom visibly reports CPU fallback
-PASS startup restarts a fresh CPU worker exactly once
-PASS startup visibly reports CPU fallback
-PASS unrelated retains actionable error
-PASS unrelated does not silently fall back or retry model errors
-PASS forced retains actionable error
-PASS forced does not silently fall back or retry model errors
-TOTAL GPU FALLBACK 8 passed.

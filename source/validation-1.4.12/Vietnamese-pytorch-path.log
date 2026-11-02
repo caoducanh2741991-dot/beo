@@ -1,0 +1,2 @@
+PYTORCH_CPU_LOAD_SECONDS 7.12
+PASS actual PyTorch model and codec on CPU with FP32, preset and clone, networking blocked. CUDA hardware not tested.

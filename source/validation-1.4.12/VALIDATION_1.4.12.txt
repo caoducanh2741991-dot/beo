@@ -1,0 +1,13 @@
+Validation 1.4.12
+Build: Windows x64 .NET Framework 4.5 references; executed Mono/Linux.
+Actual model: VieNeu SDK 3.8.3, ONNX FP32 CPU; PyTorch 2.8.0 CPU FP32 + MOSS codec.
+Vietnamese Python unit tests: 8 passed.
+Vietnamese UI checks: 20 passed.
+Real Vietnamese integration: 14 passed (actual SRT, TXT, mixed queue, MP3/MP4 references, clone WAV, source preservation, explicit GPU-without-CUDA error).
+Offline preset/clone selftest: passed with socket connect/DNS blocked by Python audit hook.
+Actual PyTorch model/codec: preset and clone synthesis passed on CPU with networking blocked. This exercises model loading/architecture but does NOT validate CUDA hardware.
+All direct CPU dependency wheels and their dependency closure resolved for Windows x64 CPython 3.12.
+Legacy core/queue/breath/punctuation/anchored/native-routing/updater tests and six UI suites passed; see logs.
+34 baseline source/ASR files and the legacy Renderer body are byte-for-byte unchanged.
+Physical Windows GUI/installer, CUDA 12.8, and RTX 2070 VRAM/speed have NOT been tested in this environment.
+No claim of subjective voice-clone similarity or word-level Vietnamese ASR accuracy.

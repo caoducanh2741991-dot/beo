@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parent.parent
 SOURCE=ROOT/'source';TOOLS=Path('/tmp/v15-tools')
 ENV=dict(os.environ,MONO_CFG_DIR=str(TOOLS/'etc'),MONO_PATH=str(TOOLS/'usr/lib/mono/4.5')+':'+str(ROOT),LD_LIBRARY_PATH=str(TOOLS/'usr/lib')+':'+str(TOOLS/'usr/lib/x86_64-linux-gnu'))
 MONO=str(TOOLS/'usr/bin/mono');MCS=str(TOOLS/'usr/lib/mono/4.5/mcs.exe')
-APP='App.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs AudioFinishing.cs VoiceRhythm.cs QualityControls.cs LongText.cs LongTextControls.cs MediaSupport.cs AnchoredVoice.cs AnchoredControls.cs Subtitles.cs SubtitleControls.cs'.split()
+APP='App.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs AudioFinishing.cs VoiceRhythm.cs QualityControls.cs LongText.cs LongTextControls.cs MediaSupport.cs AnchoredVoice.cs AnchoredControls.cs Vietnamese.cs VietnameseVoices.cs Subtitles.cs SubtitleControls.cs'.split()
 REF_DIR=Path(os.environ.get('V15_NET45_REFS','/tmp/v15-net45/reference/build/.NETFramework/v4.5'))
 REFS=['-nostdlib','-noconfig']+['-r:'+str(REF_DIR/(n+'.dll')) for n in ['mscorlib','System','System.Core','System.Xml','System.Xml.Linq','System.Drawing','System.Windows.Forms']]
 VALID=ROOT/'validation';VALID.mkdir(exist_ok=True)

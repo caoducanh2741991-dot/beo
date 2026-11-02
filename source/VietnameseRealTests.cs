@@ -1,0 +1,21 @@
+using System;using System.IO;using System.Linq;using System.Collections.Generic;using V15Voice;
+public static class VietnameseRealTests {
+ static int count;static void Check(bool yes,string text){if(!yes)throw new Exception(text);Console.WriteLine("PASS "+text);count++;}
+ static KokoroEngine Engine(string root,string reference=""){return new KokoroEngine{Root=root,Kind=EngineKind.VieNeu,ModelFolder="vieneu_v3",VoiceName="Hải Đăng",DeviceMode="cpu",ReferencePath=reference,Threads=4};}
+ public static int Main(string[] args){try{
+ string root=AppDomain.CurrentDomain.BaseDirectory,folder=args[0];Directory.CreateDirectory(folder);string source=Path.Combine(folder,"Kịch bản mẫu.srt");string text="1\n00:00:00,000 --> 00:00:08,000\nXin chào bạn. Đây là câu chuyện về một chuyến đi.\n\n2\n00:00:08,000 --> 00:00:16,000\nNgày hai mươi bốn tháng mười, chúng tôi trở về nhà.\n";File.WriteAllText(source,text);string hash=StateFiles.Hash(source);
+ using(var e=Engine(root)){
+ var cues=Scripts.ParseSrt(text);var o=new RenderOptions{Locked=true,BaseSpeed=1,MinSpeed=.9,MaxSpeed=1.3,SlowShort=false,Breathing=BreathMode.None,NormalizeLoudness=true};string wav=Renderer.Render(cues,e,o,Path.ChangeExtension(source,"wav"),(p,m)=>{});var w=Wave.Read(wav);Check(w.Rate==24000&&w.Samples.Length==384000,"Real Vietnamese SRT renders 16 seconds at exact source timeline");Check(w.Samples.Any(s=>Math.Abs((int)s)>500),"WAV contains non-silent speech");Check(StateFiles.Hash(source)==hash,"Vietnamese SRT source remains unchanged");Check(e.DeviceInfo.StartsWith("CPU"),"Actual device reported as CPU rather than claiming CUDA");
+ string txt=Path.Combine(folder,"Văn bản.txt");File.WriteAllText(txt,"Một buổi sáng, cô ấy mở cửa và nhìn thấy một món quà.\n\nKhông ai biết người gửi là ai.");var jobs=new List<BatchJob>{BatchJob.Load(txt),BatchJob.Load(source)};jobs[1].State=JobState.Done;jobs[1].OutputPath=wav;
+ string result=BatchRunner.Run(jobs,true,()=>e.Cancelled,(j,path,notify)=>{var opts=new RenderOptions{BaseSpeed=1,MinSpeed=.9,MaxSpeed=1.3,NormalizeLoudness=true,Breathing=BreathMode.None};AnchoredVoice.ConfigureBatch(opts,j.Timed,0,0);return Renderer.Render(j.Cues,e,opts,path,notify);},(p,m)=>{});
+ Check(jobs.All(j=>j.State==JobState.Done),"Mixed Vietnamese TXT/SRT queue completes and skips finished SRT");Check(File.Exists(Path.ChangeExtension(txt,"wav"))&&Path.GetDirectoryName(result)==folder,"Queue WAV saved beside Unicode input filename");Check(jobs[0].Cues.Any(c=>c.Actual>0),"TXT records actual voice duration");
+ }
+ string mp4=Path.Combine(folder,"Mẫu tham chiếu.mp4"),mp3=Path.ChangeExtension(mp4,"mp3");var command=new System.Diagnostics.ProcessStartInfo("ffmpeg","-v error -y -i "+KokoroEngine.Q(Path.ChangeExtension(source,"wav"))+" -t 7 -c:a aac "+KokoroEngine.Q(mp4)){UseShellExecute=false};using(var p=System.Diagnostics.Process.Start(command)){p.WaitForExit();Check(p.ExitCode==0,"Build real MP4 reference fixture");}command.Arguments="-v error -y -i "+KokoroEngine.Q(mp4)+" -c:a libmp3lame "+KokoroEngine.Q(mp3);using(var p=System.Diagnostics.Process.Start(command)){p.WaitForExit();Check(p.ExitCode==0,"Build real MP3 reference fixture");}
+ foreach(string input in new[]{mp4,mp3}){
+ string reference=Path.Combine(folder,Path.GetExtension(input).Substring(1)+"-reference.wav");var w=UserVoices.Import(root,input,reference,0,6,()=>false,true);Check(w.Duration>=5.9&&w.Duration<=6.1,"Import "+Path.GetExtension(input)+" to six-second Vietnamese reference");
+ using(var e=Engine(root,reference)){string output=Path.Combine(folder,Path.GetExtension(input).Substring(1)+"-clone.wav");var cloned=e.Generate("Cảm ơn bạn đã lắng nghe câu chuyện này.",1,output);Check(cloned.Duration>.5&&cloned.Rate==24000,"Real cloned speech from "+Path.GetExtension(input)+" creates valid WAV");}
+ }
+ using(var e=Engine(root)){e.DeviceMode="gpu";bool rejected=false;try{e.Generate("Đây là câu thử.",1,Path.Combine(folder,"no-gpu.wav"));}catch(Exception error){rejected=error.Message.Contains("CUDA")||error.Message.Contains("GPU");}Check(rejected&&!File.Exists(Path.Combine(folder,"no-gpu.wav")),"GPU-required mode fails clearly when this test host has no CUDA");}
+ Console.WriteLine("TOTAL VI REAL "+count+" passed.");return 0;
+ }catch(Exception e){Console.WriteLine(e);return 1;}}
+}

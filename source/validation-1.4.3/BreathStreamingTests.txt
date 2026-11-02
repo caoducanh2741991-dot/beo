@@ -1,9 +1,0 @@
-PASS Streaming Auto breath is sparse and occurs after the third sentence
-PASS Streaming breath keeps all locked source times and final duration
-PASS Synthetic breath fixture is written into the allowed silent space
-PASS Locked inter-cue gap remains silent after breath insertion
-PASS Custom breath frequency and no trailing breath survive streaming
-PASS Flexible timeline reserves the complete breath without clipping
-PASS Off mode inserts no breath
-PASS Only final WAVs are published with synthetic breath fixtures
-TOTAL BREATH STREAMING 8 passed.
