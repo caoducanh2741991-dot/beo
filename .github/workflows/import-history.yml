@@ -1,0 +1,40 @@
+name: Import preserved project history
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    if: github.repository == 'caoducanh2741991-dot/beo' && (github.event_name == 'workflow_dispatch' || github.event.release.tag_name == 'archive-import')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BOOTSTRAP_SHA: ${{ github.sha }}
+    steps:
+      - name: Verify and import the preserved Git bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release download archive-import --repo "$GITHUB_REPOSITORY" --pattern 'BEO_Voice_Studio_Source_History.bundle' --dir "$RUNNER_TEMP/beo-archive"
+          cd "$RUNNER_TEMP/beo-archive"
+          echo 'f799622d8315791c2ddac2434ca8ce70cb77af25dab040cbb1c78e7f7eea6668  BEO_Voice_Studio_Source_History.bundle' | sha256sum --check -
+          git init imported
+          cd imported
+          git bundle verify ../BEO_Voice_Studio_Source_History.bundle
+          git fetch ../BEO_Voice_Studio_Source_History.bundle 'refs/heads/main:refs/heads/main' 'refs/tags/*:refs/tags/*'
+          test "$(git rev-parse refs/heads/main)" = '7deba2faccb36cb5cb177338359c35014f6a6085'
+          test "$(git tag --list 'v*' | wc -l | tr -d ' ')" = '36'
+          git fsck --full
+          gh auth setup-git
+          git remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          current="$(git ls-remote origin refs/heads/main | cut -f1)"
+          if test "$current" != '7deba2faccb36cb5cb177338359c35014f6a6085'; then
+            test "$current" = "$BOOTSTRAP_SHA"
+            git push --force-with-lease="refs/heads/main:$BOOTSTRAP_SHA" origin refs/heads/main:refs/heads/main
+          fi
+          git push origin --tags
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = '7deba2faccb36cb5cb177338359c35014f6a6085'
+          echo 'Imported 36 packaged source versions and complete project handoff.' >> "$GITHUB_STEP_SUMMARY"
