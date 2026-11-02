@@ -1,63 +1,72 @@
-V15 VOICE STUDIO 1.4.4 — SỬA GIỌNG SAO CHÉP VÀ PHỤC HỒI KHI AI TREO
+V15 VOICE STUDIO 1.4.5 — CÂN ÂM LƯỢNG, CĂN NHỊP VÀ MẪU MP4
 
-CÀI CẬP NHẬT
-Nếu đang dùng 1.4.3.1: dừng tác vụ đang chạy, vào Công cụ & thiết lập >
-Cập nhật từ ZIP > chọn V15VoiceStudio_1.4.4_Update.zip.
-Khi app mở lại, kiểm tra tiêu đề và tab Công cụ đều ghi 1.4.4.
-Nếu công cụ cập nhật cũ gặp lỗi Contains(Char), giải nén toàn bộ ZIP 1.4.4
-vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục V15 đang cài
-có V15VoiceStudio.exe cùng ai/runtime và ai/models.
-Giữ model, giọng riêng, thiết lập và gói GPU đã cài. Không cần tải lại model/GPU.
+CẬP NHẬT TỪ ZIP
+1. Dừng tác vụ đang chạy. Trong app: Công cụ & thiết lập > Cập nhật từ ZIP.
+2. Chọn V15VoiceStudio_1.4.5_Update.zip. App đóng để cập nhật rồi mở lại.
+3. Kiểm tra tiêu đề cửa sổ và tab Công cụ & thiết lập đều ghi 1.4.5.
+Nếu công cụ cập nhật cũ lỗi: giải nén TOÀN BỘ ZIP vào một thư mục mới,
+chạy CAP_NHAT.cmd, chọn đúng thư mục app hiện có V15VoiceStudio.exe.
+Không lấy riêng EXE trong payload để chạy thay cho bản đang cài.
+Gói này chỉ cập nhật chương trình; giữ nguyên model, gói GPU, giọng riêng,
+danh sách giọng, thiết lập và hàng đợi. Không cần tải lại GPU hay model.
 
-PHẦN SỬA GIỌNG SAO CHÉP
-• Qwen sử dụng cấu hình sinh có lấy mẫu, điều chỉnh theo từng lần thử, thay
-  cho chế độ cố định cũ. Mỗi cụm lời thử tối đa 3 lần khi âm thanh bất thường.
-• Cụm lời dài được chia nhỏ, giữ đủ từ theo thứ tự. Giới hạn token/thời lượng
-  dựa trên độ dài lời. Âm thanh chạm giới hạn không được nhận như câu đã hoàn tất.
-• Từ chối âm thanh trống, im lặng, NaN/Inf hoặc dài bất thường; tạo lại bằng
-  seed và cấu hình khác. Lỗi model/mẫu tham chiếu được báo đúng nguyên nhân.
-• Chặn giới hạn thời gian tại bộ sinh token của Qwen và tại tiến trình bên ngoài.
-  Tiến trình treo hoặc dừng bất thường được khởi động lại tối đa 1 lần để thử lại
-  câu hiện tại. Thời gian CPU/GPU khác nhau và không bị kéo dài bởi trạng thái giả.
-• Khi file vẫn thất bại, tiến trình cũ được dọn; hàng đợi tiếp tục file kế tiếp
-  bằng tiến trình sạch. Không xuất WAV tổng còn thiếu câu hoặc chồng timeline.
-• Auto chuyển sang CPU khi có lỗi CUDA được nhận diện. GPU bắt buộc sẽ báo lỗi
-  thay vì tự chuyển CPU. Hủy tác vụ không kích hoạt thử lại hoặc khởi động lại.
-• Bỏ điều kiện từ chối chỉ vì thư viện ONNX Runtime đã được một phụ thuộc nạp.
-  Đây không phải bằng chứng quá trình tổng hợp Qwen đang chạy sai thiết bị.
+CÂN ÂM LƯỢNG WAV
+Trong tab Tạo voice, kéo bảng thiết lập bên phải xuống mục CÂN ÂM LƯỢNG WAV.
+Mặc định bật, đích -18 LUFS; có thể chọn -24 đến -14 LUFS hoặc tắt để giữ mức gốc.
+App đo toàn bộ WAV rồi cân âm lượng ở bước cuối, với đỉnh mục tiêu -1 dBTP.
+Đây là bước xử lý âm thanh bổ sung nên sẽ mất thêm thời gian sau khi đọc xong các khối.
+Giữ nguyên tổng số mẫu âm thanh, thời lượng và vị trí các khối; không đổi cao độ.
+Với âm thanh có động học cực lớn, mức đích LUFS có thể chỉ đạt gần đúng để tránh vỡ tiếng.
+Không tự cân mẫu tham chiếu theo LUFS; mẫu nhập chỉ giảm mức nếu đỉnh có nguy cơ quá lớn.
 
-KHI ĐANG CHẠY
-Thanh trạng thái hiển thị tên WAV đích, khối SRT, timecode, cụm lời, lần thử,
-thiết bị và số giây đã chờ. Trong một lần sinh, thời gian vẫn cập nhật mỗi 2 giây.
-“Lần 2/3” hoặc “khởi động lại” nghĩa là app đang phục hồi, không bỏ qua câu.
-Tổng thời gian một câu có thể dài hơn khi phải thử lại; CPU thường chậm hơn GPU.
-Nếu muốn dừng, dùng Dừng tác vụ. Khi đã dừng mới chạy lại hoặc cập nhật.
+MỖI GIỌNG CÓ TỐC ĐỘ ĐỌC KHÁC NHAU
+SRT chỉ quy định khoảng thời gian, không bảo đảm mọi giọng đọc cùng lời sẽ vừa khung.
+Chọn giọng và tốc độ gốc trước. Bấm “Đo nhịp giọng · 5 khối” để nghe máy đo thực tế
+trên tối đa 5 khối rải đều trong SRT, thay vì chỉ ước lượng từ số chữ.
+Bảng kết quả nêu thời lượng đọc, khung SRT và tốc độ cần thiết; không tự sửa lời/timecode.
+Khi render, app tiếp tục đo từng khối nên báo cáo 5 khối không bảo đảm cả file đều khớp.
+Các câu đã đo/nghe thử được dùng lại khi cùng giọng, mẫu tham chiếu, lời và tốc độ.
+Bộ nhớ tạm giới hạn 60 giây âm thanh / 32 đoạn, chỉ trong phiên đang mở; có thể bị loại
+khi đầy. Không có cam kết mọi lần render tiếp theo đều nhanh hơn.
 
-NẾU FILE VẪN LỖI
-Di chuột lên ô Kết quả / lỗi trong hàng đợi để xem đầy đủ thông báo.
-Lỗi AI ghi rõ file, khối SRT, timecode và thiết bị; nhật ký nằm trong:
-%LOCALAPPDATA%\V15VoiceStudio\logs\ai-errors.log
-Nhật ký nằm trong dữ liệu ứng dụng; kết quả cạnh SRT/TXT vẫn chỉ là WAV.
-Bạn có thể gửi thông báo đầy đủ và khối SRT gây lỗi để kiểm tra đúng trường hợp.
+HAI CHẾ ĐỘ CĂN TỐC ĐỘ
+• Nhẹ ±10%: mặc định. Tự tăng/giảm nhẹ quanh tốc độ gốc trong giới hạn hiện có.
+  Ví dụ tốc độ gốc 1.00 thì phạm vi tối đa 0.90–1.10; 1.20 thì khoảng 1.08–1.32
+  nếu giới hạn tối đa đã đặt cho phép. Phạm vi thực tế được ghi trong bảng đo nhịp.
+• Dùng giới hạn tốc độ đã đặt: cho chỉnh tốc độ tối thiểu/tối đa rõ ràng.
+  Có thể cho phép căn mạnh hơn nhưng cần nghe kiểm tra độ tự nhiên.
+Tích “Làm chậm câu ngắn” để cho phép giảm tốc; áp dụng cả ngắt nghỉ Auto và Tùy chỉnh.
+Câu vẫn quá ngắn sẽ được ghi “nghỉ dư” trong bảng, giữ khoảng im lặng còn lại.
+Câu vẫn quá dài sau khi đạt giới hạn sẽ báo lỗi, không xuất WAV tổng thiếu/cắt lời.
+Muốn câu ngắn kín hơn mà vẫn tự nhiên: sửa lời hoặc timecode có chủ đích ở kịch bản.
+App không tự viết thêm chữ hoặc xê dịch timecode khi đang khóa SRT.
+Ngắt nghỉ tùy chỉnh giảm phần nghỉ chèn thêm khi thiếu khung rồi mới tăng tốc.
+Thời gian nghỉ thực tế còn phụ thuộc khoảng ngắt vốn có trong giọng và mức căn tốc độ.
 
-MẪU GIỌNG
-Nên dùng mẫu 10–15 giây, một người nói rõ, ít nhiễu/nhạc và không bị cắt giữa từ.
-Chấp nhận tham chiếu 3–30 giây; công cụ nhập mẫu của app vẫn chọn đoạn ngắn.
-Nếu nhập bản chép lời mẫu, nội dung phải khớp đúng đoạn được chọn. Nếu chưa có
-bản khớp, để trống để dùng đặc trưng người nói; chất lượng giống giọng có thể khác.
+LẤY MẪU TỪ MP4 NGAY TRONG APP
+Tab “Sao chép giọng MP3 / WAV / MP4” > Chọn mẫu. Hỗ trợ thêm M4A.
+Chọn vị trí bắt đầu (giây), độ dài 6–20 giây; thường dùng 10–15 giây lời rõ.
+Bấm “Nghe đoạn đang chọn” để kiểm tra đoạn cắt trước khi lưu thành giọng riêng.
+Nhập tên/phong cách/ghi chú. Nếu có bản chép lời, phải khớp đúng đoạn đã chọn;
+không có bản khớp thì để trống. App không tự nhận dạng lời từ video.
+Xác nhận quyền sử dụng mẫu rồi bấm LƯU GIỌNG RIÊNG.
+App lấy track âm thanh đầu tiên, bỏ hình, chuyển thành WAV mono 24 kHz/16-bit
+và lưu trong dữ liệu giọng riêng. File MP4 gốc được giữ nguyên.
+Không tự tách nhạc hay nhiều người nói: hãy chọn đoạn chỉ có giọng cần sao chép.
+Đoạn gần cuối không đủ thời lượng sẽ báo lỗi để chọn lại; mẫu im lặng bị từ chối.
+Nhập lỗi/hủy không phá mẫu đã có. Giới hạn MP4 1 GB; âm thanh 200 MB.
 
-GIỮ NGUYÊN CÁCH XUẤT VÀ CĂN SRT
-Nhận nhiều SRT/TXT, xử lý lần lượt, WAV nằm cạnh file gốc và không ghi đè WAV cũ.
-Khóa SRT giữ mốc, giảm khoảng nghỉ thêm rồi tăng tốc trong giới hạn đã đặt.
-Ngắt nghỉ và hơi thở dùng chung Tạo voice / Hàng đợi. Gói ONNX 1.4.3 dành cho
-Kokoro/LibriTTS/Kitten/Piper; Qwen/Chatterbox tiếp tục dùng gói CUDA124 đã cài.
+DÙNG CHUNG VỚI HÀNG ĐỢI
+Giọng, tốc độ, căn nhịp, âm lượng, ngắt nghỉ và hơi thở dùng chung giữa Tạo voice
+và Hàng đợi nhiều file. Dòng tóm tắt ở hàng đợi hiển thị thiết lập đang áp dụng.
+Chỉ xuất WAV cạnh SRT/TXT gốc. Nếu đã có WAV cùng tên, app tạo tên mới, không ghi đè.
+Giữ toàn bộ cơ chế phục hồi giọng sao chép của 1.4.4; không thay GPU, model hay CUDA.
 
-KIỂM CHỨNG VÀ GIỚI HẠN
-Đã thử model Qwen 0.6B thật trên CPU ở hai chế độ sao chép: có bản chép lời
-và chỉ đặc trưng người nói. Mẫu lời thử được nhận dạng tiếng nói để đối chiếu.
-Đã kiểm tra chuỗi C# > Python > Qwen > WAV, timeline khóa, và các ca lỗi mô phỏng:
-âm thanh sai, treo, dừng tiến trình, CUDA, hủy tác vụ, lỗi ở khối 10 rồi chạy file sau.
-EXE biên dịch theo bộ tham chiếu .NET Framework 4.5 của Microsoft, giữ sửa lỗi updater.
-Chưa thử trực tiếp Windows/RTX 2070, chưa có mẫu ADAM và file Reno của người dùng
-để tái hiện đúng nội dung riêng. App không tích hợp ASR kiểm duyệt mọi câu khi chạy;
-kiểm tra tự động khi render tập trung định dạng, thời lượng và tín hiệu âm thanh.
+KIỂM CHỨNG
+Đã kiểm tra bằng FFmpeg thật trên WAV ADAM/EXCITER và MP4 VANZAI được cung cấp:
+cân về khoảng -18 LUFS, đỉnh -1 dBTP, giữ nguyên độ dài; nhập đoạn MP4 đúng thời lượng.
+Đã kiểm tra căn tốc độ/khóa SRT, bộ nhớ câu đo, giao diện, lỗi/hủy/không ghi đè,
+các hồi quy giọng sao chép và cập nhật từ các phiên bản trước.
+EXE biên dịch với bộ tham chiếu .NET Framework 4.5 của Microsoft.
+Môi trường kiểm tra Mono/Linux; chưa chạy trực tiếp Windows/RTX 2070 trong lần này.
+Không tích hợp ASR để tự kiểm duyệt từng từ. Phần tổng hợp AI/GPU giữ nguyên từ 1.4.4.

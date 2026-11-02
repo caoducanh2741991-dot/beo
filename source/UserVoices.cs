@@ -14,12 +14,18 @@ public static class UserVoices {
  }
  public static void Save(string state,VoiceProfile profile){string folder=Path.Combine(state,"user_voices");var all=Load(state);all.RemoveAll(v=>v.Key==profile.Key);all.Add(profile);var xml=new XElement("voices");foreach(var p in all)xml.Add(new XElement("voice",new XAttribute("id",p.Key.Substring(2)),new XAttribute("name",p.Name),new XAttribute("gender",p.Gender),new XAttribute("engine",p.Kind.ToString()),new XAttribute("transcript",p.ReferenceText??""),new XAttribute("styles",p.Styles),new XAttribute("description",p.Description)));StateFiles.Write(Path.Combine(folder,"voices.xml"),xml);}
  public static Wave Import(string root,string source,string target,double start,double length,Func<bool> cancelled){
-  string ext=Path.GetExtension(source).ToLowerInvariant();if(ext!=".mp3"&&ext!=".wav")throw new Exception("Chọn mẫu MP3 hoặc WAV.");if(new FileInfo(source).Length>200*1024*1024)throw new Exception("Mẫu tối đa 200 MB.");
-  Directory.CreateDirectory(Path.GetDirectoryName(target));string exe=Environment.OSVersion.Platform==PlatformID.Win32NT?Path.Combine(root,"ai","ffmpeg.exe"):"ffmpeg";var ci=System.Globalization.CultureInfo.InvariantCulture;
-  string args="-nostdin -v error -y -ss "+start.ToString("0.000",ci)+" -i "+KokoroEngine.Q(source)+" -t "+length.ToString("0.000",ci)+" -ac 1 -ar 24000 -c:a pcm_s16le "+KokoroEngine.Q(target);
-  string error="";try{using(var p=new Process{StartInfo=new ProcessStartInfo(exe,args){UseShellExecute=false,CreateNoWindow=true,RedirectStandardError=true}}){p.ErrorDataReceived+=(s,e)=>{if(e.Data!=null&&error.Length<4000)error+=e.Data;};p.Start();p.BeginErrorReadLine();while(!p.WaitForExit(100)){if(cancelled()){p.Kill();throw new OperationCanceledException();}}p.WaitForExit();if(cancelled())throw new OperationCanceledException();if(p.ExitCode!=0)throw new Exception("Không đọc được mẫu âm thanh: "+error);}
-   var wave=Wave.Read(target);if(wave.Duration<6)throw new Exception("Cần ít nhất 6 giây mẫu ở vị trí đã chọn. Nên dùng 10–15 giây lời đọc rõ.");double rms=Math.Sqrt(wave.Samples.Average(s=>(double)s*s));if(rms<50)throw new Exception("Mẫu quá nhỏ hoặc gần như im lặng. Chọn đoạn có lời đọc rõ.");return wave;
-  }catch{try{File.Delete(target);}catch{}throw;}
+  string ext=Path.GetExtension(source).ToLowerInvariant();if(ext!=".mp3"&&ext!=".wav"&&ext!=".mp4"&&ext!=".m4a")throw new Exception("Chọn mẫu MP3, WAV, MP4 hoặc M4A.");
+  if(Double.IsNaN(start)||Double.IsInfinity(start)||start<0||Double.IsNaN(length)||Double.IsInfinity(length)||length<6||length>20)throw new Exception("Chọn đoạn mẫu dài 6–20 giây và vị trí bắt đầu hợp lệ.");
+  if(new FileInfo(source).Length>(ext==".mp4"?1024L:200L)*1024*1024)throw new Exception("File quá lớn: MP4 tối đa 1 GB, âm thanh tối đa 200 MB.");
+  target=Path.GetFullPath(target);Directory.CreateDirectory(Path.GetDirectoryName(target));string stem=Path.Combine(Path.GetDirectoryName(target),".v15_sample_"+Guid.NewGuid().ToString("N")),raw=stem+".float.wav",pcm=stem+".wav";var ci=System.Globalization.CultureInfo.InvariantCulture;
+  try{
+   AudioProcess.Run(root,"-v error -y -ss "+start.ToString("0.000",ci)+" -i "+KokoroEngine.Q(source)+" -t "+length.ToString("0.000",ci)+" -map 0:a:0 -vn -ac 1 -ar 24000 -c:a pcm_f32le "+KokoroEngine.Q(raw),cancelled);
+   var stats=FinalAudio.Measure(root,raw,cancelled);double gain=Double.IsInfinity(stats.TruePeak)?0:Math.Min(0,-1-stats.TruePeak);
+   AudioProcess.Run(root,"-v error -y -i "+KokoroEngine.Q(raw)+" -af volume="+gain.ToString("0.000000",ci)+"dB -ac 1 -ar 24000 -c:a pcm_s16le "+KokoroEngine.Q(pcm),cancelled);
+   var wave=Wave.Read(pcm);if(wave.Duration<length-.1)throw new Exception("Không đủ "+length.ToString("0.0",ci)+" giây ở vị trí đã chọn. Hãy giảm thời lượng hoặc chọn đoạn sớm hơn.");
+   double rms=Math.Sqrt(wave.Samples.Average(x=>(double)x*x));if(rms<50)throw new Exception("Mẫu quá nhỏ hoặc gần như im lặng. Chọn đoạn có lời đọc rõ.");
+   if(cancelled())throw new OperationCanceledException();if(File.Exists(target))File.Replace(pcm,target,null);else File.Move(pcm,target);return wave;
+  }finally{try{File.Delete(raw);}catch{}try{File.Delete(pcm);}catch{}}
  }
 }
 }

@@ -7,6 +7,6 @@ namespace V15Voice {public partial class MainForm {
   punctuationMode.SelectedIndexChanged+=(s,e)=>{punctuationSettings.Visible=punctuationMode.SelectedIndex==1;if(stateLoaded){UpdateShared();SaveSession();}};punctuationMode.SelectedIndex=0;
   foreach(var number in new[]{commaPause,stopPause,questionPause,paragraphPause})number.ValueChanged+=(s,e)=>{if(stateLoaded){UpdateShared();SaveSession();}};AddLabel(panel,"Dùng chung hàng đợi. Khóa SRT: rút nghỉ trước khi tăng tốc; giữ nguyên mốc. Hơi thở cài riêng.",false);
  }
- RenderOptions PacingOptions(){return new RenderOptions{Punctuation=(PunctuationMode)Math.Max(0,punctuationMode.SelectedIndex),CommaPause=(double)commaPause.Value,StopPause=(double)stopPause.Value,QuestionPause=(double)questionPause.Value,ParagraphPause=(double)paragraphPause.Value};}
+ RenderOptions PacingOptions(){return new RenderOptions{NormalizeLoudness=normalizeLoudness.Checked,TargetLufs=(double)targetLufs.Value,GentleFit=fitMode.SelectedIndex==0,MinSpeed=(double)minSpeed.Value,Punctuation=(PunctuationMode)Math.Max(0,punctuationMode.SelectedIndex),CommaPause=(double)commaPause.Value,StopPause=(double)stopPause.Value,QuestionPause=(double)questionPause.Value,ParagraphPause=(double)paragraphPause.Value};}
  void AddPacing(RenderOptions o){var p=PacingOptions();o.Punctuation=p.Punctuation;o.CommaPause=p.CommaPause;o.StopPause=p.StopPause;o.QuestionPause=p.QuestionPause;o.ParagraphPause=p.ParagraphPause;Punctuation.Validate(o);}
 }}

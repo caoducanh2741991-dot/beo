@@ -5,25 +5,29 @@ using System.Diagnostics;
 using System.Globalization;
 namespace V15Voice {
 public static class Tempo {
+ public static double Minimum(RenderOptions o){return o.GentleFit?Math.Max(o.MinSpeed,o.BaseSpeed*.9):o.MinSpeed;}
+ public static double Maximum(RenderOptions o){return o.GentleFit?Math.Min(o.MaxSpeed,o.BaseSpeed*1.1):o.MaxSpeed;}
+ public static void Validate(RenderOptions o){foreach(double n in new[]{o.BaseSpeed,o.MinSpeed,o.MaxSpeed})if(Double.IsNaN(n)||Double.IsInfinity(n))throw new Exception("Giới hạn tốc độ không hợp lệ.");if(o.BaseSpeed<.8||o.BaseSpeed>1.3||o.MinSpeed<.5||o.MinSpeed>o.BaseSpeed||o.MaxSpeed<o.BaseSpeed||o.MaxSpeed>1.6)throw new Exception("Tốc độ: 0,50 ≤ tối thiểu ≤ gốc ≤ tối đa ≤ 1,60; tốc độ gốc 0,80–1,30.");}
  public static string Executable(string root){return Environment.OSVersion.Platform==PlatformID.Win32NT?Path.Combine(root,"ai","ffmpeg.exe"):(Environment.GetEnvironmentVariable("V15_FFMPEG")??"ffmpeg");}
  public static Wave Change(Wave original,double factor,string root,string work,Func<bool> cancel){
   if(Math.Abs(factor-1)<.00001)return original;
-  if(factor<.5||factor>2)throw new Exception("Tỷ lệ đổi tốc độ nằm ngoài phạm vi hỗ trợ.");
+  if(factor<.25||factor>2)throw new Exception("Tỷ lệ đổi tốc độ nằm ngoài phạm vi hỗ trợ.");
   string input=Path.Combine(work,"tempo-in.wav"),output=Path.Combine(work,"tempo-out.wav");original.Write(input);
-  var si=new ProcessStartInfo(Executable(root),"-nostdin -v error -y -i "+KokoroEngine.Q(input)+" -af atempo="+factor.ToString("0.000000",CultureInfo.InvariantCulture)+" -ac 1 -ar 24000 -c:a pcm_s16le "+KokoroEngine.Q(output)){UseShellExecute=false,CreateNoWindow=true,RedirectStandardError=true,RedirectStandardOutput=true};
+  string filter=factor<.5?"atempo=0.5,atempo="+(factor*2).ToString("0.000000",CultureInfo.InvariantCulture):"atempo="+factor.ToString("0.000000",CultureInfo.InvariantCulture);
+  var si=new ProcessStartInfo(Executable(root),"-nostdin -v error -y -i "+KokoroEngine.Q(input)+" -af "+filter+" -ac 1 -ar 24000 -c:a pcm_s16le "+KokoroEngine.Q(output)){UseShellExecute=false,CreateNoWindow=true,RedirectStandardError=true,RedirectStandardOutput=true};
   string error="";using(var p=new Process{StartInfo=si}){p.ErrorDataReceived+=(s,e)=>{if(e.Data!=null&&error.Length<4000)error+=e.Data+"\n";};p.OutputDataReceived+=(s,e)=>{};p.Start();p.BeginErrorReadLine();p.BeginOutputReadLine();var timer=Stopwatch.StartNew();
    while(!p.WaitForExit(100)){if(cancel()||timer.Elapsed.TotalMinutes>2){try{p.Kill();}catch{}if(cancel())throw new OperationCanceledException();throw new Exception("Đổi tốc độ chờ quá lâu.");}}
    p.WaitForExit();if(cancel())throw new OperationCanceledException();if(p.ExitCode!=0)throw new Exception("Không thể đổi tốc độ: "+error);
   }return Wave.Read(output).TrimEdges();
  }
  public static Wave Fit(Wave source,Cue cue,RenderOptions options,string root,string work,Func<bool> cancel){
-  double available=cue.Duration-.025;double selected=options.BaseSpeed;Wave result=source;bool fast=source.Duration>available;
-  if(fast)selected=Math.Min(options.MaxSpeed,Math.Max(options.BaseSpeed,options.BaseSpeed*source.Duration/available*1.01));
-  else if(options.SlowShort&&source.Duration/available<.9)selected=Math.Max(options.MinSpeed,Math.Min(options.BaseSpeed,options.BaseSpeed*source.Duration/available*1.01));
+  Validate(options);double available=Math.Max(.04,cue.Duration-.025),minimum=Minimum(options),maximum=Maximum(options);double selected=options.BaseSpeed;Wave result=source;bool fast=source.Duration>available;
+  if(fast)selected=Math.Min(maximum,Math.Max(options.BaseSpeed,options.BaseSpeed*source.Duration/available*1.01));
+  else if(options.SlowShort&&source.Duration/available<.9)selected=Math.Max(minimum,Math.Min(options.BaseSpeed,options.BaseSpeed*source.Duration/available*1.01));
   if(Math.Abs(selected-options.BaseSpeed)>.001)result=Change(source,selected/options.BaseSpeed,root,work,cancel);
   // Retry only from the original waveform; never compound stretch artifacts.
-  for(int retry=0;result.Duration>available&&selected<options.MaxSpeed-.00001&&retry<3;retry++){
-   selected=Math.Min(options.MaxSpeed,Math.Max(selected+.01,selected*result.Duration/available*1.01));result=Change(source,selected/options.BaseSpeed,root,work,cancel);
+  for(int retry=0;result.Duration>available&&selected<maximum-.00001&&retry<3;retry++){
+   selected=Math.Min(maximum,Math.Max(selected+.01,selected*result.Duration/available*1.01));result=Change(source,selected/options.BaseSpeed,root,work,cancel);
   }
   cue.Speed=selected;cue.Actual=result.Duration;return result;
  }
