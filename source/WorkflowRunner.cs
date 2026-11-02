@@ -16,6 +16,7 @@ public static class WorkflowRunner {
   Func<List<Cue>,RenderOptions,string,KokoroEngine,Action<int,string>,List<Cue>> prepare,
   Action<int,string> progress,Exception inputFailure=null){
   if(mode!=1&&mode!=2)throw new ArgumentOutOfRangeException("mode");
+  mode=1;prepare=null;o.Translator=null; // Lite: no language model, even for old saved mode 2.
   o.Performance=new RenderPerformance();using(o.Performance.Activate()){
   bool prepared=false;var result=new WorkflowResult();o.WorkflowMode=mode;o.WorkflowBundle=null;o.WorkflowOriginal=VoiceRenderReport.Snapshot(input);o.AiRepair=null;o.AiReportPath="";o.RepairStages=null;o.JoinSentences=false;o.Translation=null;o.RunReport=null;o.AnchorResult=null;o.TargetResult=null;
   string source=o.ReportContext==null?"":o.ReportContext.SourcePath;var words=VoiceRenderReport.Snapshot(input);

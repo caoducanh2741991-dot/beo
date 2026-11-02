@@ -1,4 +1,4 @@
-"""Package the compiled 4.1.1 binaries and sources; include new community data once; keep installed runtimes and other models."""
+"""Package the compiled 4.1.2 binaries and sources; include new community data once; keep installed runtimes and other models."""
 from pathlib import Path
 import hashlib
 import shutil
@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "4.1.1"
+VERSION = "4.1.2"
 WITH_COMMUNITY = "--with-community" in sys.argv
 
 def main():
@@ -29,16 +29,16 @@ def main():
             ignored.update({"model", "runtime", "downloads"})
         return ignored
     shutil.copytree(ROOT / "source", payload / "source", ignore=source_ignore)
-    shutil.copytree(ROOT / "validation", payload / "source" / "validation-4.1.1", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
+    shutil.copytree(ROOT / "validation", payload / "source" / "validation-4.1.2", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
     guide = ROOT / ("HUONG_DAN_" + VERSION + ".txt")
     shutil.copyfile(guide, payload / guide.name)
-    manifest = ET.Element("update", product="V15VoiceStudio", version="4.1.1", kind="core", space=str(3 * sum(p.stat().st_size for p in payload.rglob("*") if p.is_file()) + 128 * 1024 * 1024))
+    manifest = ET.Element("update", product="V15VoiceStudio", version="4.1.2", kind="core", space=str(3 * sum(p.stat().st_size for p in payload.rglob("*") if p.is_file()) + 128 * 1024 * 1024))
     assert not list((payload / "source").glob("Creator*.cs")), "Removed Creator code must not ship"
     for file in sorted(p for p in payload.rglob("*") if p.is_file()):
         ET.SubElement(manifest, "file", path=file.relative_to(payload).as_posix(), size=str(file.stat().st_size), sha256=hashlib.sha256(file.read_bytes()).hexdigest())
     output = ROOT.parent / ("output-" + VERSION)
     output.mkdir(exist_ok=True)
-    package = output / ("BEO_Voice_Studio_" + VERSION + ("_Update.zip" if WITH_COMMUNITY else "_Render_Fix_Update.zip"))
+    package = output / ("BEO_Voice_Studio_" + VERSION + ("_Update.zip" if WITH_COMMUNITY else "_Lite_Core_Update.zip"))
     build_folder = Path(tempfile.mkdtemp(prefix="beo-release-411-"))
     built = build_folder / package.name
     with zipfile.ZipFile(built, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=1) as archive:
@@ -47,10 +47,10 @@ def main():
         archive.write(ROOT / "V15Updater.exe", "BEO_Update.exe")
         archive.write(ROOT / "source" / "CAP_NHAT.cmd", "CAP_NHAT.cmd")
         archive.write(guide, "HUONG_DAN.txt")
-        for name in ["BAO_CAO_NANG_CAP_4.1.1.txt", "KET_QUA_KIEM_THU_4.1.1.txt"]:
+        for name in ["BAO_CAO_NANG_CAP_4.1.2.txt", "KET_QUA_KIEM_THU_4.1.2.txt"]:
             if (ROOT / name).exists(): archive.write(ROOT / name, name)
         for image in sorted((ROOT / "validation").glob("beo-*.png")):
-            archive.write(image, "GIAO_DIEN_4.1.1/" + image.name)
+            archive.write(image, "GIAO_DIEN_4.1.2/" + image.name)
         for file in sorted(p for p in payload.rglob("*") if p.is_file()):
             archive.write(file, file.relative_to(ROOT).as_posix())
     shutil.copyfile(built, package)
