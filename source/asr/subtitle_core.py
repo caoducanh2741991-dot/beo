@@ -4,6 +4,7 @@ import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from subtitle_quality import terminal,norm
+from subtitle_phrases import boundary_rules
 
 
 def stamp(seconds):
@@ -11,11 +12,14 @@ def stamp(seconds):
     return f'{n//3600000:02}:{n//60000%60:02}:{n//1000%60:02},{n%1000:03}'
 
 
-def wrap(text,width=42):
+def wrap(text,width=42,avoid=None):
     w=text.split()
     if len(text)<=width or len(w)<2:return text
     choices=[(i,len(' '.join(w[:i])),len(' '.join(w[i:]))) for i in range(1,len(w))]
-    i,_,_=min(choices,key=lambda c:max(0,c[1]-width)*10+max(0,c[2]-width)*10+abs(c[1]-c[2]))
+    legal=[c for c in choices if c[1]<=width and c[2]<=width]
+    safe=[c for c in legal if not avoid or c[0] not in avoid]
+    choices=safe or legal or choices
+    i,_,_=min(choices,key=lambda c:max(0,c[1]-width)*10+max(0,c[2]-width)*10+(12 if avoid and c[0] in avoid else 0)+abs(c[1]-c[2]))
     return ' '.join(w[:i])+'\n'+' '.join(w[i:])
 
 
@@ -103,6 +107,13 @@ WEAK_END=set("a an the to of in on at for with and or but if because as my his h
 
 
 def split_group(group,width,maxchars,maxseconds):
+    unsafe=boundary_rules(group);blocked=set()
+    for first in range(len(group)):
+        if first in unsafe:continue
+        last=first+1
+        while last in unsafe:last+=1
+        atom=group[first:last];phrase=' '.join(w['word'] for w in atom)
+        if len(phrase)<=maxchars and atom[-1]['end']-atom[0]['start']<=maxseconds and all(len(l)<=width for l in wrap(phrase,width).splitlines()):blocked.update(range(first+1,last))
     # Dynamic programming chooses boundaries using both neighbouring phrases.
     n=len(group);cost=[float('inf')]*(n+1);back=[None]*(n+1);cost[0]=0
     for i in range(n):
@@ -112,15 +123,18 @@ def split_group(group,width,maxchars,maxseconds):
             text+=(' ' if text else '')+group[j-1]['word'];elapsed=group[j-1]['end']-group[i]['start']
             lines=wrap(text,width).splitlines();fits=len(text)<=maxchars and elapsed<=maxseconds and all(len(l)<=width for l in lines)
             if not fits and j>i+1:break
+            if j<n and j in blocked:continue
             # A measured shared-time unit or an unbreakable word must survive.
-            penalty=4.0+max(0,1.05-elapsed)*30+max(0,len(text)/max(.05,elapsed)-25)*1.5
-            if len(text)/max(.05,elapsed)>25:penalty+=5
+            penalty=4.0+max(0,1.05-elapsed)*30+max(0,len(text)/max(.05,elapsed)-25)*2.5
+            if len(text)/max(.05,elapsed)>25:penalty+=10
+            if elapsed<1:penalty+=20
             if not fits:penalty+=100
             last=group[j-1]['word'];lastnorm=norm(last)
             if j<n:
                 if terminal(last):penalty-=3.5
                 elif last.endswith((',', ';', ':')):penalty-=1.8
                 if lastnorm in WEAK_END:penalty+=6
+                if j in unsafe:penalty+=12
                 gap=group[j]['start']-group[j-1]['end'];penalty-=min(2,max(0,gap)*4)
             # Prefer keeping a sentence together, but merge tiny sentence tails.
             penalty+=sum(2.5 for w in group[i:j-1] if terminal(w['word']))
@@ -147,7 +161,8 @@ def assemble(words,duration,compact=False):
         for piece in split_group(group,width,maxchars,maxseconds):
             text=' '.join(w['word'] for w in piece);start,end=piece[0]['start'],piece[-1]['end']
             flags=sorted(set(f for w in piece for f in w.get('flags',[])));info=sorted(set(f for w in piece for f in w.get('info',[])))
-            wrapped=wrap(text,width)
+            flattened=[dict(word=t) for w in piece for t in w['word'].split()]
+            wrapped=wrap(text,width,avoid=boundary_rules(flattened))
             if len(text)/max(.01,end-start)>25:flags.append('Chữ chạy nhanh; cần nghe kiểm tra')
             if end-start<.8:flags.append('Khối dưới 0,8 giây; cần kiểm tra')
             if len(text)>maxchars or end-start>maxseconds or any(len(l)>width for l in wrapped.splitlines()):flags.append('Khối dùng mốc chung dài; cần kiểm tra cách chia')
@@ -156,7 +171,7 @@ def assemble(words,duration,compact=False):
 
 
 def write_result(path,cues,words,duration,device,model,audit=None):
-    x=ET.Element('subtitles',version='1.4.8',pipeline='v148-verified-1',duration=str(duration),device=device,model=model)
+    x=ET.Element('subtitles',version='1.4.9',pipeline='v149-verified-1',duration=str(duration),device=device,model=model)
     for c in cues:ET.SubElement(x,'cue',start=str(c['start']),end=str(c['end']),note='; '.join(c.get('flags',[])),info='; '.join(c.get('info',[]))).text=c['text']
     log=ET.SubElement(x,'audit')
     for entry in audit or []:ET.SubElement(log,'change',**{k:str(v) for k,v in entry.items()})

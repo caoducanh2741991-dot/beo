@@ -1,0 +1,42 @@
+{
+  "cues": 87,
+  "words": 1047,
+  "short": 0,
+  "fast": 3,
+  "long_lines": 0,
+  "pending": 39,
+  "changes": [
+    {
+      "tag": "delete",
+      "old": [
+        "the"
+      ],
+      "new": []
+    },
+    {
+      "tag": "delete",
+      "old": [
+        "he's"
+      ],
+      "new": []
+    }
+  ],
+  "phrases": {
+    "smelled like vomit": true,
+    "throws it": true,
+    "being gone": true
+  },
+  "audit": [
+    {
+      "kind": "duplicate",
+      "start": "184.26299999999998",
+      "removed": "the"
+    },
+    {
+      "kind": "duplicate",
+      "start": "193.159",
+      "removed": "he's"
+    }
+  ],
+  "delayed_first": 2.498
+}

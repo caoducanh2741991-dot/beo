@@ -1,0 +1,20 @@
+PASS Subtitle page attached
+PASS Subtitle page selectable
+PASS Two model options
+PASS ASR device independent from voice device
+PASS TXT disables SRT bounds
+PASS TXT to SRT sample unlocks bounds without preview
+PASS TXT to SRT import unlocks bounds
+PASS Editing disabled during task
+PASS Global stop enabled
+PASS Many files accepted and duplicates skipped
+PASS Queue continues after failed middle file
+PASS Existing SRT preserved in batch
+PASS Actual timeline preserved in review
+PASS Rerun skips completed files
+PASS Edited text saved and flagged
+PASS Stop cancels without partial SRT
+PASS Controls restored after stop
+PASS Review grid has usable height
+TOTAL SUBTITLE UI 18 passed.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

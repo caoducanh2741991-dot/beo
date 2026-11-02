@@ -66,9 +66,9 @@ class QualityTests(unittest.TestCase):
  def test_invalid_or_old_cache_is_ignored(self):
   with tempfile.TemporaryDirectory() as d:
    p=Path(d)/'cache.json'
-   for value in ['broken',json.dumps(self.segments('An old cached sentence.')),json.dumps(dict(schema='v148-verified-1',segments=[dict(text='bad')]))]:
+   for value in ['broken',json.dumps(self.segments('An old cached sentence.')),json.dumps(dict(schema='v149-verified-1',segments=[dict(text='bad')]))]:
     p.write_text(value);self.assertIsNone(read_cache(p))
-   valid=self.segments('A verified sentence.');p.write_text(json.dumps(dict(schema='v148-verified-1',segments=valid)));self.assertEqual(read_cache(p),valid)
+   valid=self.segments('A verified sentence.');p.write_text(json.dumps(dict(schema='v149-verified-1',segments=valid)));self.assertEqual(read_cache(p),valid)
  def test_local_alignment_retry(self):
   raw=self.words('A little word here.');bad=[dict(w,score=.8) for w in raw];bad[1]=dict(word='little',score=.05,start=.3,end=.3)
   def align(a,b,text):return [dict(w,score=.8,start=w['start']-a,end=w['end']-a) for w in raw if w['word'] in text.split()]

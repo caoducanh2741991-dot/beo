@@ -22,7 +22,7 @@ def progress(n,text):
 
 
 def decode(ffmpeg,media,target,track=0):
-    cmd=[ffmpeg,'-nostdin','-v','error','-y','-copyts','-start_at_zero','-i',str(media),'-map',f'0:a:{track}',
+    cmd=[ffmpeg,'-nostdin','-v','error','-y','-protocol_whitelist','file,pipe','-copyts','-start_at_zero','-i',str(media),'-map',f'0:a:{track}',
          '-vn','-t','7201','-ac','1','-af','aresample=16000:async=1:first_pts=0','-ar','16000','-c:a','pcm_s16le',str(target)]
     r=subprocess.run(cmd,capture_output=True,creationflags=0x08000000 if os.name=='nt' else 0)
     if r.returncode:raise RuntimeError('Không đọc được luồng âm thanh. Kiểm tra file và số luồng tiếng. '+r.stderr.decode('utf-8','replace')[-2000:])
@@ -38,6 +38,9 @@ def dependencies():
         if os.name=='nt':
             global dll_handle
             dll_handle=os.add_dll_directory(lib)
+    import onnxruntime
+    onnxruntime.disable_telemetry_events()
+    sys.addaudithook(lambda event,args: (_ for _ in ()).throw(PermissionError('Bộ phụ đề chạy offline; kết nối mạng bị chặn.')) if event in ('socket.connect','socket.getaddrinfo') else None)
     import torch,torchaudio,ctranslate2
     import whisperx.alignment
     torch.set_num_threads(max(1,min(8,(os.cpu_count() or 4)-1)))
@@ -83,12 +86,19 @@ def transcribe(audio,path,device):
             for w in words:w['flags'].append('Đoạn nhận dạng yếu; cần nghe lại')
         segments.append(dict(start=s.start,end=s.end,text=s.text.strip(),words=words))
         progress(15+38*min(1,s.end/max(1,info.duration)),f'Nhận dạng {s.end:.1f}s / {info.duration:.1f}s')
-    def recognize(start,end):
+    segments=verify_loaded(audio,segments,model)
+    del model;gc.collect();return segments
+
+
+def verify_loaded(audio,segments,model):
+    def recognize(start,end,continuous=False):
         clip=audio[max(0,int(start*16000)):min(len(audio),int(end*16000))]
-        result,_=model.transcribe(clip,language='en',task='transcribe',beam_size=5,word_timestamps=True,vad_filter=False,condition_on_previous_text=False,temperature=0)
+        result,_=model.transcribe(clip,language='en',task='transcribe',beam_size=5,word_timestamps=True,vad_filter=False,condition_on_previous_text=continuous,temperature=0)
         words=[]
         for segment in result:
             for w in segment.words or []:words.append(dict(word=w.word.strip(),start=w.start+start,end=w.end+start,flags=[]))
+        if os.environ.get('V15_ASR_QA_TRACE'):
+            with open(os.environ['V15_ASR_QA_TRACE'],'a',encoding='utf-8') as log:log.write(json.dumps(dict(start=start,end=end,continuous=continuous,words=words),ensure_ascii=False)+'\n')
         return words
     def punctuate():
         result,_=model.transcribe(audio,language='en',beam_size=5,word_timestamps=True,vad_filter=True,condition_on_previous_text=True,temperature=0)
@@ -98,9 +108,9 @@ def transcribe(audio,path,device):
             words.extend(dict(word=w.word.strip(),start=w.start,end=w.end) for w in segment.words or [])
         return words
     progress(54,'Rà từ lặp, dấu câu và đoạn nhận dạng yếu…')
-    segments,audit=verify_segments(segments,len(audio)/16000,recognize,lambda n,total,message:progress(54+int(14*n/max(1,total)),message),punctuate=punctuate)
+    segments,audit=verify_segments(segments,len(audio)/16000,recognize,lambda n,total,message:progress(54+int(14*n/max(1,total)),message),punctuate=punctuate,contextual=lambda start,end:recognize(start,end,True))
     if segments:segments[0]['audit']=audit
-    del model;gc.collect();return segments
+    return segments
 
 
 def retry_weak_alignment(aligned,expected,fallback,base_start,audio,align_clip):
@@ -207,7 +217,7 @@ def read_cache(path):
     if path is None or not path.is_file() or path.stat().st_size>64*1024*1024:return None
     try:
         data=json.loads(path.read_text(encoding='utf-8'))
-        if not isinstance(data,dict) or data.get('schema')!='v148-verified-1':return None
+        if not isinstance(data,dict) or data.get('schema')!='v149-verified-1':return None
         segments=data.get('segments')
         if not isinstance(segments,list) or not segments:return None
         for segment in segments:
@@ -223,11 +233,11 @@ def fingerprint(media,model,track):
     h=hashlib.sha256()
     with open(media,'rb') as f:
         for chunk in iter(lambda:f.read(1024*1024),b''):h.update(chunk)
-    h.update(f'v148-verified-1:{model}:en:track{track}'.encode());return h.hexdigest()
+    h.update(f'v149-verified-1:{model}:en:track{track}'.encode());return h.hexdigest()
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('command',choices=['run','align','probe','preview']);p.add_argument('--home',required=True)
+    p=argparse.ArgumentParser();p.add_argument('command',choices=['run','align','refine','probe','preview']);p.add_argument('--home',required=True)
     for arg in ['input','output','cache','draft','reference']:p.add_argument('--'+arg)
     p.add_argument('--ffmpeg',default='ffmpeg');p.add_argument('--model',default='large-v3');p.add_argument('--device',choices=['auto','gpu','cpu'],default='auto');p.add_argument('--track',type=int,default=0);p.add_argument('--compact',action='store_true');p.add_argument('--start',type=float,default=0);p.add_argument('--end',type=float,default=5)
     args=p.parse_args();home=Path(args.home)
@@ -247,7 +257,10 @@ def main():
         cuda=False
     device='cuda' if cuda and args.device!='cpu' else 'cpu'
     if args.device=='gpu' and not cuda:raise RuntimeError('Bộ phụ đề chưa dùng được CUDA. Chọn Auto/CPU hoặc kiểm tra driver NVIDIA.')
-    if args.command=='probe':progress(100,'Đã kiểm tra thư viện và dữ liệu · '+(torch.cuda.get_device_name(0) if device=='cuda' else 'CPU')+' · '+args.model);return
+    if args.command=='probe':
+        from subtitle_phrases import tagger
+        tagger()
+        progress(100,'Đã kiểm tra thư viện và dữ liệu · '+(torch.cuda.get_device_name(0) if device=='cuda' else 'CPU')+' · '+args.model);return
     progress(2,'Kiểm tra âm thanh và bộ nhớ đệm…')
     with tempfile.TemporaryDirectory(prefix='v15-subtitle-') as tmp:
         wav=Path(tmp)/'source.wav';decode(args.ffmpeg,args.input,wav,args.track)
@@ -256,10 +269,28 @@ def main():
             duration=f.getnframes()/16000
             if duration>7200:raise ValueError('Mỗi file phụ đề tối đa 2 giờ; hãy chia file dài hơn trước.')
             audio=np.frombuffer(f.readframes(f.getnframes()),dtype='<i2').astype('float32')/32768
-        if args.command=='align':
+        if args.command in ('align','refine'):
             doc=ET.parse(args.draft).getroot();segments=[dict(start=float(c.get('start')),end=float(c.get('end')),text=' '.join((c.text or '').split())) for c in doc.findall('cue')]
             if any(s['start']<0 or s['end']<=s['start'] or s['end']>duration+.05 or not s['text'] for s in segments):raise ValueError('Mốc hoặc lời sửa không hợp lệ.')
             segments=merge_alignment_windows(segments)
+            if args.command=='refine':
+                progress(8,'Đo lại mốc lời hiện có trước khi rà lỗi…')
+                try:measured=align_segments(audio,segments,home,device)
+                except Exception as e:
+                    if args.device!='auto' or device!='cuda' or not gpu_error(e):raise
+                    gc.collect();torch.cuda.empty_cache();device='cpu';measured=align_segments(audio,segments,home,device)
+                for i,segment in enumerate(segments):segment['words']=[dict(word=w['word'],start=w.get('start'),end=w.get('end'),flags=[]) for w in measured if w.get('segment_id')==i]
+                oldaudit=[dict(c.attrib) for c in doc.findall('audit/change')]
+                from faster_whisper import WhisperModel
+                def verify(device):
+                    model=WhisperModel(str(path),device=device,compute_type='int8_float16' if device=='cuda' else 'int8',cpu_threads=max(1,min(8,(os.cpu_count() or 4)-1)),local_files_only=True)
+                    try:return verify_loaded(audio,segments,model)
+                    finally:del model;gc.collect()
+                try:segments=verify(device)
+                except Exception as e:
+                    if args.device!='auto' or device!='cuda' or not gpu_error(e):raise
+                    gc.collect();torch.cuda.empty_cache();device='cpu';segments=verify(device)
+                if segments:segments[0]['audit']=oldaudit+segments[0].get('audit',[])
         else:
             cache=Path(args.cache)/(fingerprint(args.input,args.model,args.track)+'.json') if args.cache else None
             segments=read_cache(cache)
@@ -271,7 +302,7 @@ def main():
                     gc.collect();torch.cuda.empty_cache();device='cpu';progress(12,'CUDA gặp lỗi; nhận dạng lại bằng CPU…');segments=transcribe(audio,path,device)
                 if cache:
                     try:
-                        cache.parent.mkdir(parents=True,exist_ok=True);t=cache.with_suffix('.partial.json');t.write_text(json.dumps(dict(schema='v148-verified-1',segments=segments),ensure_ascii=False),encoding='utf-8');t.replace(cache)
+                        cache.parent.mkdir(parents=True,exist_ok=True);t=cache.with_suffix('.partial.json');t.write_text(json.dumps(dict(schema='v149-verified-1',segments=segments),ensure_ascii=False),encoding='utf-8');t.replace(cache)
                     except OSError:progress(69,'Không lưu được bộ nhớ đệm; vẫn tiếp tục căn và xuất phụ đề…')
             if args.reference:segments=use_reference(segments,Path(args.reference).read_text(encoding='utf-8-sig'))
         segments=merge_alignment_windows(segments)

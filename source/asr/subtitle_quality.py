@@ -97,6 +97,21 @@ def deletion_votes(original,alternative):
     return votes
 
 
+def candidate_evidence(original,alternative,lo,hi):
+    """Adjacent local anchors verify a deletion; unrelated nearby edits do not veto it."""
+    a=[norm(w['word']) for w in original];b=[norm(w['word']) for w in alternative]
+    for leftsize in (3,2):
+        for rightsize in (3,2):
+            if lo<leftsize or len(a)-hi<rightsize:continue
+            left,right=a[lo-leftsize:lo],a[hi:hi+rightsize]
+            for start in range(len(b)-leftsize-rightsize+1):
+                pivot=start+leftsize
+                if b[start:pivot]!=left or b[pivot:pivot+rightsize]!=right:continue
+                differences=[abs(x-y) for x,y in [(original[lo-1].get('end'),alternative[pivot-1].get('end')),(original[hi].get('start'),alternative[pivot].get('start'))] if x is not None and y is not None]
+                if not differences or max(differences)<=1.2:return True
+    return False
+
+
 def transfer_punctuation(original,alternative):
     a=[norm(w['word']) for w in original];b=[norm(w['word']) for w in alternative]
     sm=difflib.SequenceMatcher(None,a,b,autojunk=False)
@@ -120,7 +135,7 @@ def transfer_punctuation(original,alternative):
     return changed
 
 
-def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punctuate=None):
+def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punctuate=None,contextual=None):
     """recognize(start,end) returns measured word dictionaries from that audio clip."""
     segments=copy.deepcopy(segments);words=[]
     for s in segments:
@@ -141,26 +156,47 @@ def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punc
         original=words[lo:hi]
         left=original[0].get('start') or 0;right=original[-1].get('end') or end
         alt=[w for w in alternative if (w.get('end') or 0)>left-.15 and (w.get('start') or 0)<right+.15]
-        votes=deletion_votes(original,alt);hypotheses.append((lo,hi,alt,{lo+i for i in votes}))
+        votes=deletion_votes(original,alt);hypotheses.append((lo,hi,alt,{lo+i for i in votes},start,end))
     removed=set();audit=[]
     for a,b in candidates(words):
-        supporting=[h for h in hypotheses if a>=h[0] and b<=h[1] and all(i in h[3] for i in range(a,b))]
-        confirmed=False
-        if supporting:
-            start=max(0,(words[max(0,a-6)].get('start') or 0)-.7);end=min(audio_duration,(words[min(len(words)-1,b+6)].get('end') or audio_duration)+.7)
-            if end-start<=18:
-                # A second, narrower context must independently agree.
-                alt=recognize(start,end);ids=[i for i,w in enumerate(words) if w.get('start') is not None and w['start']>=start and (w.get('end') or 0)<=end]
+        covering=[h for h in hypotheses if a>=h[0] and b<=h[1]]
+        supporting=[h for h in covering if candidate_evidence(words[h[0]:h[1]],h[2],a-h[0],b-h[0])]
+        positive={(round(h[4],3),round(h[5],3)) for h in supporting}
+        seen={(round(h[4],3),round(h[5],3)) for h in covering}
+        for before,after in [(6,6),(10,4),(3,10)]:
+            if len(positive)>=2:break
+            start=max(0,measured_position(words,max(0,a-before))-.7)
+            end=min(audio_duration,(words[min(len(words)-1,b+after)].get('end') or measured_position(words,min(len(words)-1,b+after)))+.7)
+            key=(round(start,3),round(end,3))
+            if key in seen or not .2<end-start<=28:continue
+            seen.add(key);notify(len(windows),len(windows),f'Kiểm tra lại từ lặp {measured_position(words,a):.1f}s · cửa sổ {len(seen)}')
+            alt=recognize(start,end)
+            ids=[i for i,w in enumerate(words) if w.get('start') is not None and w['start']>=start and (w.get('end') or 0)<=end]
+            if ids:
+                lo,hi=min(ids),max(ids)+1
+                if lo<=a and b<=hi and candidate_evidence(words[lo:hi],alt,a-lo,b-lo):positive.add(key)
+        if len(positive)<2 and contextual is not None:
+            for before,after in [(25,20),(35,8)]:
+                if len(positive)>=2:break
+                center=measured_position(words,a);start=max(0,center-before);end=min(audio_duration,center+after)
+                key=(round(start,3),round(end,3))
+                if key in seen:continue
+                seen.add(key);notify(len(windows),len(windows),f'Đối chiếu ngữ cảnh rộng từ lặp {center:.1f}s')
+                alt=contextual(start,end)
+                ids=[i for i,w in enumerate(words) if w.get('start') is not None and w['start']>=start and (w.get('end') or 0)<=end]
                 if ids:
-                    lo,hi=min(ids),max(ids)+1;votes=deletion_votes(words[lo:hi],alt)
-                    confirmed=all(i-lo in votes for i in range(a,b))
+                    lo,hi=min(ids),max(ids)+1
+                    if lo<=a and b<=hi and candidate_evidence(words[lo:hi],alt,a-lo,b-lo):positive.add(key)
+        confirmed=len(positive)>=2
         if confirmed:
             removed.update(range(a,b));owner=max(0,a-1)
-            words[owner].setdefault('info',[]).append('Đã bỏ từ lặp qua hai cửa sổ âm thanh')
+            words[owner].setdefault('info',[]).append(f'Đã bỏ từ lặp: {len(positive)}/{len(seen)} cửa sổ âm thanh xác nhận')
             audit.append(dict(kind='duplicate',start=words[a].get('start'),removed=' '.join(w['word'] for w in words[a:b])))
         else:
-            for w in words[a:b]:w.setdefault('flags',[]).append('Từ / cụm lặp chưa được hai lượt xác nhận; cần nghe lại')
-    for lo,hi,alt,votes in hypotheses:
+            for w in words[a:b]:
+                w.setdefault('flags',[]).append('Từ / cụm lặp chưa được hai lượt xác nhận; cần nghe lại')
+                w.setdefault('info',[]).append(f'Đã kiểm tra lặp: {len(positive)}/{len(seen)} cửa sổ xác nhận; giữ nguyên lời')
+    for lo,hi,alt,votes,*_ in hypotheses:
         transfer_punctuation([words[i] for i in range(lo,hi) if i not in removed],alt)
     kept=[w for i,w in enumerate(words) if i not in removed]
     # Local recognition can lose punctuation in rapid narration. A continuous,
