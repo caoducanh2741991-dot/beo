@@ -1,7 +1,0 @@
-PASS Multipart ONNX files reassemble in manifest order and verify SHA256
-PASS Missing part rejected before any file is staged
-PASS Missing-part failure leaves no partial library
-PASS Native addon cannot overwrite worker or escape isolated engine folder
-PASS Bad per-piece SHA256 is rejected
-PASS Addon commit preserves original CPU and Torch CUDA runtime
-TOTAL ONNX UPDATER 6 passed.

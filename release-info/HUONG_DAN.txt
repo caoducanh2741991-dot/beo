@@ -1,61 +1,50 @@
-V15 VOICE STUDIO 2.0.16 — AI REPAIR RECOVERY & STABLE RENDER
+V15 VOICE STUDIO 2.0.17 — HAI CHẾ ĐỘ, CHẠY TỰ ĐỘNG
+Ngày 01/11/2026
 
-TRẠNG THÁI BÀN GIAO
-Bản build 2.0.16 chờ nghiệm thu trên Windows/RTX2070 và giọng clone thực tế. Xem kết quả đã chạy và điểm chưa đạt trong báo cáo đi kèm.
+CÁCH DÙNG
+1. Mở SRT/TXT hoặc thêm các file vào hàng đợi.
+2. Chọn CHẾ ĐỘ 1 hoặc CHẾ ĐỘ 2 ở ngay trên bảng kịch bản.
+3. Chọn giọng, một/hai giọng và cấu hình timeline như trước.
+4. Bấm CHẠY TỰ ĐỘNG. Khi xong, bấm Mở kết quả hoặc Mở báo cáo file.
+Studio và hàng đợi dùng cùng lựa chọn chế độ. Có nút Dừng khi cần hủy tác vụ.
 
-CẬP NHẬT
-Dùng gói Core Update cho bộ V15 2.0.15 đã cài đủ giọng. Trong app: Công cụ & thiết lập → Cập nhật từ ZIP → chọn gói 2.0.16. Mở lại đúng lối tắt, kiểm tra tiêu đề/assembly 2.0.16.0.
-Gói này chứa hai EXE Windows x64, source, hướng dẫn và kết quả kiểm thử; không chứa lại model TTS/clone/GPU hoặc GGUF 2.5GB. Giữ các dữ liệu đã cài.
-Dùng lại Qwen3-4B-Instruct-2507 Q4_K_M và llama.cpp b12019 của bộ AI hiện tại. Nếu thiếu, dùng chức năng cài gói AI trong app. Không cài gói AI 2.0.13 chứa app EXE cũ đè lên 2.0.16.
-Không sửa file SRT gốc. Cả bộ xuất mới dùng cùng stem; nếu đã có một thành viên, dùng stem (2), (3)... cho toàn bộ bộ mới.
-
-SỬA TRONG ỨNG DỤNG
-1. Nhập SRT, chọn giọng A/B, V15.6 hoặc SRT Khóa, rồi tạo voice/batch như trước.
-2. App đo TTS thật theo giọng, model, speed, hơi thở và nghỉ đang chọn. Chặng đo đạt được lưu PCM với checksum và ngữ cảnh. Số từ chỉ là gợi ý cho AI, không thay số đo.
-3. Khi còn chặng chưa đạt, job chuyển NEEDS_REVIEW. Bảng file và bảng câu có SỬA NGAY; dòng nêu cue/chặng, thiếu/dư giây. Không cần mở TXT ngoài app.
-4. Bấm SỬA NGAY để thấy toàn bộ câu trong chặng, lời gốc/đề xuất, timecode, đích, TTS trước/sau căn, chênh lệch, mã nguyên nhân và chiến lược đã thử.
-5. AI SỬA KHÁC đổi chiến lược; TỰ SỬA mở ô lời; ĐO LẠI dùng đúng voice; NGHE THỬ nghe audio đã đo. Giữ các nhãn #số câu và thứ tự.
-6. CHẤP NHẬN chỉ áp dụng bản đang xem đã đo đạt. Bản cần duyệt nghĩa không được tự áp dụng. TIẾP TỤC RENDER dùng lại các PCM/checkpoint hợp lệ; không bỏ qua chặng lỗi.
-7. Có thể Dừng tác vụ, chỉnh tại câu rồi tiếp tục. Đóng/mở lại app vẫn giữ queue, phiên sửa và PCM đã lưu. Đổi lời/giọng/mẫu/model/nhịp hoặc ngữ cảnh hơi thở sẽ xác nhận lại phần bị ảnh hưởng.
-
-CHÍNH SÁCH BATCH
-Mặc định tiếp tục job khác khi một job NEEDS_REVIEW. Chọn “Tạm dừng khi cần duyệt” trong thanh công cụ batch để dừng ở job cần sửa; lựa chọn được lưu cho lần mở sau.
-Chặng cần duyệt không làm cả batch báo lỗi tạo voice. Lỗi TTS/GPU/model vẫn là ENGINE_ERROR, lỗi audio/xuất là RENDER_FAILED, có chẩn đoán riêng.
-
-CÁC TẦNG SỬA
-A: đo đúng âm thanh và ngữ cảnh hiện tại.
-B: căn tốc độ, ưu tiên 0.90–1.10x, giới hạn kỹ thuật 0.90–1.25x; trên 1.10x có cảnh báo.
-C: chỉ chỉnh các khoảng zero do app chèn giữa các đơn vị đã biết. Tối đa 0.08s/vị trí, 0.24s/chặng và 2% tổng. Không sửa lời, hơi thở hay im lặng native của model; không đệm dài ở đuôi. Đo lại và chỉ giữ nếu đạt.
-D: sửa tối thiểu, ưu tiên một cue; chiến lược lần sau khác lần trước. Tối đa ba phương án AI mới; hai lần không sinh nội dung mới sẽ chuyển cần duyệt sớm.
-E: render/đo bằng cùng giọng; bản chưa đo đạt không được chấp nhận.
-F: giữ PCM đã đạt và chuyển sửa tại chỗ. Không ghép WAV thiếu chặng rồi báo thành công.
-
-KHÓA NGỮ NGHĨA
-Giữ cấu trúc cue/timecode/A-B/neo; kiểm tra số và tiền cả dạng chữ, tên riêng, phủ định, hành động và thứ tự. Đồng nghĩa hẹp/cách viết tắt có thể tự qua; cấu trúc/diễn đạt khác không bị khóa toàn bộ, được giữ làm đề xuất cần duyệt.
-Đề xuất mới đáng ngờ được Qwen đối chiếu nghĩa khi dùng provider offline thật; model nói đổi sự kiện thì bị chặn. Bản chưa chắc tương đương luôn SEMANTIC_REVIEW_REQUIRED, kể cả khi đủ thời lượng.
-Máy không bảo đảm tương đương ngữ nghĩa 100%. Sửa tay là quyết định chủ động của người dùng và được ghi riêng.
-Các mã tách biệt: NO_NEW_TEXT, DUPLICATE_PROPOSAL, JSON_INVALID, SEMANTIC_BLOCKED, SEMANTIC_REVIEW_REQUIRED, MEASURED_TIMING_FAIL, ENGINE_ERROR.
-
-DỊCH VIỆT OFFLINE
-Sau khi có audio hợp lệ, giải phóng các worker TTS nặng. Nếu cạnh SRT có filename_Tieng_Viet.txt hoặc filename.vi.txt dạng số câu | timecode, EN:, VI:, app chỉ tái sử dụng câu Việt khi ID, timecode và EN trùng lời cuối. Lời AI đã đổi không được lấy nhầm bản Việt cũ. Phần còn thiếu/sai được Qwen đã cài dịch hoặc sửa theo cue. Tác vụ chạy tuần tự, không tải thêm model dịch vào VRAM cùng lúc.
-Kiểm tra ID/thứ tự, câu rỗng/chép tiếng Anh/placeholder, số liệu, tiền và đối chiếu nghĩa bằng Qwen. Câu lỗi được dịch lại riêng theo phản hồi, có giới hạn. Bản dịch hợp lệ lưu cache theo EN cuối/model; đổi lời phải dịch lại phần liên quan.
-TXT có nội dung Việt thực: câu nguồn còn khớp được tái sử dụng sau kiểm tra; câu cần thiết được model sinh/sửa. Không dùng [CHƯA DỊCH] để nhận là hoàn tất. Chất lượng đối chiếu tự động không thay cho việc đọc lại tên/thuật ngữ/sắc thái. Qwen4B đã có ca dịch riêng từ sai trong thử nghiệm; nếu kiểm tra không đạt thì giữ TRANSLATION_INCOMPLETE, không ép nhận dịch xong. Các file Việt đối chiếu sẵn có cũng phải qua kiểm tra; không tự tin theo tên file.
-Nếu thiếu model, dịch lỗi hoặc kiểm tra chưa đạt: xuất trạng thái TRANSLATION_INCOMPLETE rõ ràng. WAV đã kiểm tra có thể được giữ, nhưng cả bộ chưa hoàn thiện. Chạy lại sau khi sửa cấu hình sẽ dùng PCM và phần dịch đã đạt.
-
-BỘ FILE ĐẦU RA
-filename.wav
-filename.final.srt
-filename.final.vi.txt
-filename.ai-repair-report.txt
+CHẾ ĐỘ 1 — CHẠY THEO FILE, KHÔNG TỰ SỬA
+App đọc lại lời file gốc để tránh dùng nhầm lời sửa còn lưu ở lần chạy trước. Không gọi AI sửa hoặc AI dịch. TTS, căn tốc độ, hơi thở và ngắt nghỉ dùng cấu hình hiện tại.
+Sau mỗi file đã chạy, dù đạt, chưa vừa khung, lỗi engine hay bị dừng: xuất đúng MỘT báo cáo:
 filename.voice-report.txt
-TXT có #cue, timecode, EN đúng lời dùng tạo voice và VI tương ứng; phần dịch thiếu được nêu cụ thể cùng trạng thái chưa hoàn thiện. Không âm thầm nhận là dịch xong.
-Báo cáo tách “WAV: FINAL_VERIFIED” và trạng thái bản dịch/bộ đầu ra. TRANSLATION_INCOMPLETE không bị che bởi WAV thành công.
-SRT V15.6 giữ mốc nguồn; chưa có forced alignment thì không gán thời lượng chặng thành mốc audio đo riêng từng cue. SRT theo từ tùy chọn nằm ở .aligned.srt. TXT căn đích tổng vẫn xuất một khối nếu chưa có căn từ.
+Nếu đạt, vẫn có filename.wav và filename.final.srt để sử dụng. Nếu chưa đạt, không công bố WAV tổng lỗi.
+
+CHẾ ĐỘ 2 — AI TỰ ĐỘNG SỬA
+App tự đo → phát hiện lệch thời lượng → thử sửa lời → đo lại bằng đúng giọng → tự áp dụng bản đạt, qua kiểm tra nghĩa → ghép WAV.
+Không có bước chờ bấm AI sửa khác, Đo lại, Chấp nhận hay Tiếp tục render. Các nút sửa/duyệt cũ đã gỡ khỏi luồng chính. Một file chưa sửa đạt không chặn các file khác.
+Nếu một đề xuất chưa đủ chắc về nghĩa, app thử chiến lược tiếp theo trong giới hạn ba phương án. Không tự chấp nhận tình tiết mới hoặc bản chưa đo đạt. Nếu vẫn chưa đạt, file kết thúc NEEDS_REVIEW/ENGINE_ERROR/RENDER_FAILED và có báo cáo, không bật cửa sổ duyệt.
+Sau mỗi file đã chạy, luôn xuất đúng HAI báo cáo:
+1. filename.ai-before-after-report.txt
+   Báo cáo đầy đủ: câu gốc, câu thực dùng, timecode, đo trước/sau, tốc độ, thời lượng thiếu/dư, các phương án bị loại, nguyên nhân và stack trace cần thiết.
+2. filename.ai-changes-en-vi.txt
+   Bản kiểm tra nhanh: CHỈ các câu thực sự đã sửa và áp dụng; số câu, timecode, EN gốc, EN đã dùng, VI đối chiếu tương ứng. Đề xuất bị loại không được tính là câu đã sửa.
+Nếu không có câu cần sửa, báo cáo ngắn ghi rõ 0 câu đã sửa và không gọi AI dịch toàn bộ kịch bản. Nếu có câu đã sửa, chỉ dịch những câu đó.
+Nếu dịch không đạt, vẫn ghi TRANSLATION_INCOMPLETE; không tạo bản Việt giả. WAV có thể đã đạt, nhưng phần đối chiếu chưa hoàn thiện. Khi chỉ mới đo chặng và chưa xuất WAV tổng, cả hai báo cáo đều ghi rõ điều đó.
+
+SỐ FILE
+Số một/hai ở trên là SỐ BÁO CÁO TRÊN MỖI FILE ĐẦU VÀO, không tính file nguồn, WAV, SRT kết quả hoặc SRT căn từ tùy chọn.
+Luồng chính không xuất thêm filename.final.vi.txt hay báo cáo AI/Voice rời theo bộ năm file của bản cũ. Nội dung đối chiếu Việt nằm ngay trong báo cáo ngắn của chế độ 2.
+Mỗi lần chạy lại dùng chung stem mới, ví dụ filename (2), để giữ nguyên kết quả lần trước. Không ghi đè SRT/TXT gốc.
+Các log và checkpoint nội bộ vẫn được lưu cho chẩn đoán/khôi phục; không phải báo cáo bàn giao thêm cạnh file đầu vào.
+
+GIỌNG, TIMELINE VÀ CACHE
+Giữ các engine/giọng đã cài, voice clone, một/hai giọng, hơi thở, ngắt nghỉ, cân âm và cache. Giới hạn tốc độ kỹ thuật 0.90–1.25x; trên 1.10x có cảnh báo chất lượng.
+AI sửa thời lượng ở SRT Khóa và V15.6 như hệ thống hiện tại. TXT tự nhiên không có khung cố định nên không tự viết lại; TXT căn đích và SRT linh hoạt vẫn dùng cơ chế căn hiện có. Không tuyên bố đã bổ sung bộ viết lại TXT theo đích mới.
+SRT V15.6 giữ mốc nguồn; số đo theo chặng không được chia tỷ lệ để gán mốc WAV từng cue. Căn từ tùy chọn vẫn cần bộ alignment đã cài.
+Đổi lựa chọn báo cáo không làm mất phép đo/PCM tương thích. Chặng cũ không đủ ngữ cảnh/giọng hoặc checksum không hợp lệ phải được đo lại.
+
+CÀI / CẬP NHẬT TỪ 2.0.16
+Trong bản đang cài: Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.17_Core_Update.zip. Mở lại app và kiểm tra phiên bản 2.0.17.
+Gói Core có EXE và mã nguồn; giữ các model TTS/GPU/mẫu clone đã cài. Không chứa lại GGUF 2.5GB hoặc model giọng.
+Chế độ 1 không cần AI. Chế độ 2 dùng lại Qwen3-4B đã cài; nếu thiếu, vào Công cụ & thiết lập → Cài / kiểm tra gói AI offline. Chạy render không tự bật hộp thoại yêu cầu cài hay duyệt lời.
+Thiết lập cũ “duyệt trước” được chuyển về chế độ 1 an toàn; thiết lập tự sửa cũ được giữ ở chế độ 2. Lựa chọn mới được lưu cho lần mở tiếp theo.
 
 KIỂM THỬ VÀ GIỚI HẠN
-Xem KET_QUA_KIEM_THU_2.0.16.txt: tách rõ Qwen CPU thật, báo cáo Windows cũ, TTS/thiết bị giả lập và các mục chưa nghiệm thu.
-Không có GPU vật lý RTX2070 hoặc mẫu/model Steven trong môi trường build, nên chưa xác nhận render clone thật trên máy người dùng. Cần thử VAN4–6 bằng giọng đã cài và kiểm tra cả năm file trước khi nghiệm thu trên Windows.
-Build lại trên Windows bằng source/BUILD_WINDOWS.cmd. Test hợp đồng trên Mono/Linux: source/validate_recovery216.py (cần Mono/.NET4.5 refs, FFmpeg, Xvfb). Test Qwen thật: RealQwen216Tests, cần đúng GGUF/runtime đã cài. Không coi mock GPU là GPU thật.
-
-A/B CŨ
-Ghép bản A/B đã chọn cũng tạo đủ bộ WAV/SRT/TXT/báo cáo, dựa trên lời của audio đã chọn. Trạng thái bản dịch được hiển thị trong cửa sổ A/B và hàng đợi. V15.6 không dùng đệm đuôi để nhận đạt; take cũ dùng đệm phải đo lại. Khóa SRT có thể giữ nghỉ cuối cue nhỏ, tối đa0.75s và20% cue, được ghi riêng là khoảng nghỉ chứ không phải thời lượng lời nói.
+Xem KET_QUA_KIEM_THU_2.0.17.txt. EXE Windows x64 được build thật và chạy kiểm quy trình trên Mono/Linux/Xvfb với FFmpeg thật. Các bài speech/AI dùng fixture có kiểm soát; kiểm UI gồm các lỗi thiếu engine thực tế.
+Chưa nghiệm thu Windows vật lý, RTX2070, Chatterbox/Steven clone và các model riêng của người dùng. Không coi kiểm GPU giả lập là GPU thật. Không bảo đảm bộ kiểm nghĩa/dịch tương đương100%.
+Build trên Windows: source/BUILD_WINDOWS.cmd. Kiểm hợp đồng: source/validate217.py. Các UI test cũ về nút duyệt/sửa giữ trong source để tham khảo, không phải giao diện của hai chế độ mới.

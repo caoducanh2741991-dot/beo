@@ -1,1 +1,0 @@
-Windows x64 .NET Framework 4.5 build succeeded. App 2.0.14.0. Mono/Linux compiler; no physical Windows/GPU claim.

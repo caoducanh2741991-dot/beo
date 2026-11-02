@@ -1,0 +1,30 @@
+PASS Actual WinForms executable reports version 2.0.17
+PASS Studio and batch each expose exactly two workflow choices
+PASS Clean installation starts in the non-rewriting file mode
+PASS Selecting unattended AI in Studio also selects it for batch
+PASS Selecting file-only batch mode also disables rewrite in Studio
+PASS Manual repair columns are removed from the normal workflow
+PASS No redundant repair/approval/resume buttons remain on the app screens
+PASS File preview cannot silently alter source words or timecodes
+PASS Mode selector and all three main actions fit at {Width=1440, Height=960}
+PASS Voice selectors remain visible at {Width=1440, Height=960}
+PASS Mode selector and all three main actions fit at {Width=1100, Height=740}
+PASS Voice selectors remain visible at {Width=1100, Height=740}
+PASS The run screen contains one stop action, without a duplicate footer stop
+PASS Work locks both mode selectors and keeps stop available
+PASS Actual Studio failure in mode 1 writes exactly one report
+PASS Failed automatic run returns without opening a modal dialog
+PASS Results remain accessible even when only an error report was produced
+PASS Actual UI run preserves original source bytes
+PASS Actual unattended Studio failure writes exactly the two selected reports
+PASS Unattended mode never opens or constructs a manual approval panel
+PASS Mode 2 tells the user its exact report count
+PASS Saved settings preserve the unattended mode without a review state
+PASS Applying a non-rewriting preset cannot leave the hidden AI setting enabled
+PASS Batch creates exactly two reports for both an invalid input and a later engine failure
+PASS Every processed batch row exposes both existing report paths
+PASS Batch completes automatically with no pause-for-review control
+PASS Existing two-voice routing remains available
+PASS Voice clone and voice library pages are retained
+TOTAL WORKFLOW UI217 28 PASS. Real EXE under Mono/Xvfb, intentional missing-engine failures; no physical Windows/GPU or real TTS claim.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

@@ -8,9 +8,9 @@ public static class StablePackageTests {
   using(var z=ZipFile.OpenRead(baseline))using(var src=z.GetEntry("payload/V15VoiceStudio.exe").Open())using(var dst=File.Create(Path.Combine(dir,"V15VoiceStudio.exe")))src.CopyTo(dst);
   var preserve=new Dictionary<string,string>();foreach(string name in new[]{"ai/runtime/python.exe","ai/models/voice/test.bin","voice_profiles.tsv","references/Adam.wav","source/local-ai/model/qwen3-4b.gguf","source/local-ai/runtime/cpu/llama-completion.exe","engine/gpu/onnxruntime.dll","story.srt","story.wav"}){string p=Path.Combine(dir,name);Directory.CreateDirectory(Path.GetDirectoryName(p));File.WriteAllText(p,"preserve214:"+name);preserve[p]=Hash(p);}
   var assembly=Assembly.LoadFrom(updater);var apply=assembly.GetType("V15Update.UpdateEngine").GetMethod("Apply");apply.Invoke(null,new object[]{package,dir,new Action<string>(s=>{})});
-  Check(FileVersionInfo.GetVersionInfo(Path.Combine(dir,"V15VoiceStudio.exe")).FileVersion=="2.0.16.0","Actual updater upgrades 2.0.15 app to 2.0.16");
+  Check(FileVersionInfo.GetVersionInfo(Path.Combine(dir,"V15VoiceStudio.exe")).FileVersion=="2.0.17.0","Actual updater upgrades 2.0.16 app to 2.0.17");
   Check(preserve.All(x=>Hash(x.Key)==x.Value),"Upgrade preserves installed TTS, AI model/runtime, custom reference, GPU, SRT and WAV");
-  Check(File.Exists(Path.Combine(dir,"source/RepairRecovery.cs"))&&File.Exists(Path.Combine(dir,"source/RepairPolicy.cs"))&&File.ReadAllText(Path.Combine(dir,"HUONG_DAN_2.0.16.txt")).Contains("SỬA NGAY"),"Installed package contains new implementation and matching guide");
+  Check(File.Exists(Path.Combine(dir,"source/WorkflowRunner.cs"))&&File.Exists(Path.Combine(dir,"source/WorkflowControls.cs"))&&File.ReadAllText(Path.Combine(dir,"HUONG_DAN_2.0.17.txt")).Contains("CHẾ ĐỘ 2"),"Installed package contains new implementation and matching guide");
   Check(!File.Exists(Path.Combine(dir,".v15-update-journal.xml")),"Successful upgrade has no incomplete transaction journal");
   using(var z=ZipFile.OpenRead(package))Check(!z.Entries.Any(e=>e.FullName.Contains("source/local-ai/model/")||e.FullName.StartsWith("payload/ai/models/")),"Core update does not bundle or replace installed voice or AI models");
   Console.WriteLine("TOTAL STABLE PACKAGE "+n+" passed with updater "+assembly.GetName().Version+". Mono/Linux fixture install.");return 0;

@@ -1,0 +1,25 @@
+V15 2.0.17 — TWO MODES / SIMPLE AUTO
+Ngày 01/11/2026
+
+Nâng cấp trực tiếp từ gói 2.0.16 đã bàn giao, không dựng lại TTS/engine.
+
+ĐÃ ĐỔI
+- Hai lựa chọn chạy đồng bộ giữa Studio và batch: theo file không sửa; AI tự sửa không chờ duyệt.
+- Bỏ nút AI nâng cao, A/B sửa câu, sửa/đo/chấp nhận/tiếp tục theo bước khỏi luồng chạy chính; bỏ nút Dừng trùng ở footer khi đang ở màn hình chạy.
+- Chế độ 1 tải lời nguồn thật và bỏ lịch sử AI khỏi lần chạy; không gọi model viết lại hoặc dịch.
+- Chế độ 2 tự chạy và kết thúc bằng hai báo cáo, kể cả thất bại. Đề xuất chưa chắc về nghĩa được thử chiến lược khác trong giới hạn cũ, không tự đổi thành “đã sửa”.
+- Chỉ dịch các cue đã thay đổi, giảm việc dịch lại/phê duyệt các đoạn không liên quan. Báo cáo ngắn có EN gốc, EN đã dùng và VI thực để đối chiếu.
+- Báo cáo thất bại/hủy/nguồn lỗi dùng cùng chính sách một/hai file; diagnostic nội bộ không rơi thêm thành báo cáo cạnh nguồn.
+- Xuất bộ kết quả bằng giao dịch: có lỗi giữa chừng thì gỡ phần chưa hoàn chỉnh; không để WAV lỗi rồi ghi thành công. Giữ các lần xuất trước bằng stem (2), (3)...
+- Ánh xạ lời đã sửa sang cue TTS cuối trước khi xác nhận WAV, giữ lời gốc riêng cho so sánh trước/sau.
+- Cài đặt/queue lưu lựa chọn chế độ và cả đường dẫn báo cáo ngắn. Chuyển chế độ không vô hiệu hóa PCM đã đo khi giọng/cấu hình còn khớp; không nhập cache AI cũ thuộc chính sách không tương thích.
+
+GIỮ LẠI
+Giọng/engine đã cài, voice clone, một/hai giọng, TXT/SRT, batch, WAV, timeline/tốc độ, hơi thở/ngắt nghỉ/cân âm, các mô hình và bộ chạy đã cài. Các công cụ giọng/thiết lập chuyên sâu vẫn có trang riêng.
+
+PHẠM VI AI
+Không tự bật hộp thoại chấp nhận. Không đảm bảo model luôn tìm được câu khớp và giữ nghĩa; khi không có kết quả đủ an toàn thì tự kết thúc bằng trạng thái chưa đạt và báo cáo. Không tăng số lần thử để giả sửa thành công.
+Bản này đổi quy trình/giao diện/báo cáo; không tuyên bố viết lại mới cho TXT căn đích hoặc SRT linh hoạt, hay bảo đảm dịch/khóa nghĩa100%.
+
+BẰNG CHỨNG
+Xem kết quả kiểm thử kèm theo, source/validate217.py và source/validation-2.0.17. Tách rõ kiểm phần mềm/giả lập và các mục phần cứng/giọng thực chưa nghiệm thu.

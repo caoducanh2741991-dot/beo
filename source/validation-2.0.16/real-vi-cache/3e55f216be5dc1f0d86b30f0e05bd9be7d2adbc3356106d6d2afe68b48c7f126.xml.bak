@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<translation key="3e55f216be5dc1f0d86b30f0e05bd9be7d2adbc3356106d6d2afe68b48c7f126" model="Qwen3-4B-Instruct-2507 Q4_K_M" verificationPolicy="vi216-semantic-v1" verification="structure+numbers+model; not a proof of equivalence">
-  <cue id="1">Anh ấy đã mua một đoạn bologna dài sáu feet. Kế hoạch của anh ấy còn lớn hơn nữa.</cue>
-  <cue id="2">Vance muốn hạ giá so với các loại bánh sandwich ở cửa hàng thường thấy.</cue>
-  <cue id="3">Việc mua nhiều như vậy các bánh sandwich đóng gói sẽ tốn hơn mười hai trăm đô la.</cue>
-  <cue id="4">Phiên bản tự làm của anh ấy chỉ tốn ba trăm ba mươi hai đô la.</cue>
-  <cue id="5">Đoạn bologna khổng lồ đó trông giống như một cọc rào hơn là bữa ăn trưa.</cue>
-  <cue id="6">Tức thì, căn bếp yên tĩnh của Vance trông như một cửa hàng sandwich đông đúc.</cue>
-</translation>

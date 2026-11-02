@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parent.parent
 SOURCE=ROOT/'source';TOOLS=Path(os.environ.get('V15_BUILD_TOOLS','/tmp/v15-tools'))
 ENV=dict(os.environ,MONO_CFG_DIR=str(TOOLS/'etc'),MONO_PATH=str(TOOLS/'usr/lib/mono/4.5')+':'+str(ROOT),LD_LIBRARY_PATH=str(TOOLS/'usr/lib')+':'+str(TOOLS/'usr/lib/x86_64-linux-gnu'))
 MONO=str(TOOLS/'usr/bin/mono');MCS=str(TOOLS/'usr/lib/mono/4.5/mcs.exe')
-APP='BilingualSource.cs OfflineTranslation.cs NaturalPauseRepair.cs RepairRecovery.cs RepairPolicy.cs RenderCheckpoint.cs StableArtifacts.cs QuickRepairPanel.cs InlineAiControls.cs LocalAi.cs AiTimeline.cs AiTimelineControls.cs TwoVoices.cs TwoVoiceControls.cs CommunityVoices.cs AudioRepair.cs AudioRepairControls.cs App.cs StudioLayout.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs AudioFinishing.cs VoiceRhythm.cs QualityControls.cs LongText.cs LongTextControls.cs TextTargetVoice.cs TextTargetControls.cs TextTargetReports.cs MediaSupport.cs AnchoredVoice.cs AnchoredControls.cs Vietnamese.cs VietnameseVoices.cs VoiceReports.cs VoiceReportDiagnostics.cs VoiceReportControls.cs Subtitles.cs SubtitleControls.cs'.split()
+APP='WorkflowReports.cs WorkflowRunner.cs WorkflowControls.cs BilingualSource.cs OfflineTranslation.cs NaturalPauseRepair.cs RepairRecovery.cs RepairPolicy.cs RenderCheckpoint.cs StableArtifacts.cs QuickRepairPanel.cs InlineAiControls.cs LocalAi.cs AiTimeline.cs AiTimelineControls.cs TwoVoices.cs TwoVoiceControls.cs CommunityVoices.cs AudioRepair.cs AudioRepairControls.cs App.cs StudioLayout.cs Core.cs Batch.cs VoiceCatalog.cs ProjectState.cs UserVoices.cs ExternalSpeech.cs Enhancements.cs AudioProcessing.cs DeviceAndUpdates.cs NativeGpu.cs Punctuation.cs PacingControls.cs AudioFinishing.cs VoiceRhythm.cs QualityControls.cs LongText.cs LongTextControls.cs TextTargetVoice.cs TextTargetControls.cs TextTargetReports.cs MediaSupport.cs AnchoredVoice.cs AnchoredControls.cs Vietnamese.cs VietnameseVoices.cs VoiceReports.cs VoiceReportDiagnostics.cs VoiceReportControls.cs Subtitles.cs SubtitleControls.cs'.split()
 REF_DIR=Path(os.environ.get('V15_NET45_REFS','/tmp/v15-net45/reference/build/.NETFramework/v4.5'))
 REFS=['-nostdlib','-noconfig']+['-r:'+str(REF_DIR/(n+'.dll')) for n in ['mscorlib','System','System.Core','System.Xml','System.Xml.Linq','System.Drawing','System.Windows.Forms','System.Runtime.Serialization','System.IO.Compression','System.IO.Compression.FileSystem']]
 VALID=ROOT/'validation';VALID.mkdir(exist_ok=True)
@@ -90,5 +90,5 @@ def main():
  ui(['TwoVoiceUiTests'])
  print('VALIDATION COMPLETE (Mono/Linux; physical Windows GPU not tested)',flush=True)
 if __name__=='__main__':
- from validate_recovery216 import main as stable_main
+ from validate217 import main as stable_main
  stable_main()

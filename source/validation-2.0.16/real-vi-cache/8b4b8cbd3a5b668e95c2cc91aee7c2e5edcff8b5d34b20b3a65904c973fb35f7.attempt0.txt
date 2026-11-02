@@ -1,1 +1,0 @@
-{"cues":[{"id":25,"text":"Điểm đến thực sự là một phòng cộng đồng đầy trẻ em."},{"id":26,"text":"Một buổi tối bình thường đột nhiên trở thành bữa tiệc khu phố lớn lao."},{"id":27,"text":"Điểm tuyệt vời nhất không phải là đống bánh mì tự làm khổng lồ."},{"id":28,"text":"Mà là việc thấy mọi người nở nụ cười khi cuối cùng họ chia sẻ chúng."}]}

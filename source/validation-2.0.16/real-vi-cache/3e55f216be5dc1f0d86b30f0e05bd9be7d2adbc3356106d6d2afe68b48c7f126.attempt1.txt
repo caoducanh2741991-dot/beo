@@ -1,3 +1,0 @@
-{"cues":[{"id":1,"text":"Anh ấy mua một đoạn bologna dài sáu feet. Kế hoạch của anh ấy còn lớn hơn nữa."},{"id":2,"text":"Vance muốn hạ giá so với những chiếc bánh sandwich bình thường ở cửa hàng."},{"id":3,"text":"Việc mua nhiều như vậy những chiếc bánh sandwich đóng gói sẽ tốn hơn mười hai trăm đô la."},{"id":4,"text":"Phiên bản tự làm của anh ấy chỉ tốn ba trăm ba mươi hai đô la."},{"id":5,"text":"Đoạn bologna khổng lồ ấy trông giống một cọc rào hơn là bữa ăn trưa."},{"id":6,"text":"Tức thì, căn bếp yên lặng của Vance trông như một cửa hàng sandwich đông đúc."}]} [end of text]
-
-

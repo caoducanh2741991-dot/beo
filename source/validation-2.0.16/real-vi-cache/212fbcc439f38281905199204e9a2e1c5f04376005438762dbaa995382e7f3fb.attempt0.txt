@@ -1,3 +1,0 @@
-{"cues":[{"id":19,"text":"Sau đó, Ấn Độ xuất hiện với một mức giá khiến mọi người đều ngạc nhiên."},{"id":20,"text":"Các loại đậu ấm, rau củ, bánh phẳng và trà chai được bày đầy trên đĩa màu sắc."},{"id":21,"text":"Họ liệt kê bữa ăn trường học đầy đủ này với mức phí hoàn toàn là không có."},{"id":22,"text":"Điều đó đã khiến các nhà đánh giá ấn tượng trước khi Ý thậm chí bước lên sân khấu."},{"id":23,"text":"Đĩa của Ý trông giống như bữa ăn tại một nhà hàng gia đình."},{"id":24,"text":"Phở, pizza, salad và nho khiến mọi người đều nghiêng người lại."}]} [end of text]
-
-

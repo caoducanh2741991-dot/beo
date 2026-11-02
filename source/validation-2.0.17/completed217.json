@@ -1,0 +1,39 @@
+{
+  "version": "2.0.17.0",
+  "finished_utc": "2026-11-01T05:13:46.064597+00:00",
+  "counts": {
+    "Workflow217Tests": 47,
+    "Recovery216Tests": 42,
+    "Sync216Tests": 27,
+    "BatchTests": 12,
+    "TwoVoiceTests": 41,
+    "VoiceReportTests": 30,
+    "PunctuationTests": 20,
+    "BreathStreamingTests": 8,
+    "TextTargetTests": 37,
+    "AudioRepairTests": 45,
+    "CommunityVoiceTests": 20,
+    "VoiceDiagnosticTests": 26,
+    "LocalAiSafetyTests": 16,
+    "AnchoredTests": 65,
+    "NativeGpuTests": 15,
+    "UpdaterTests": 21,
+    "Recovery216Tests-reopen": 8,
+    "WorkflowUi217Tests": 28
+  },
+  "CSharp_total": 508,
+  "python_gpu_policy": 11,
+  "python_worker_probe": 4,
+  "binary_sha256": {
+    "V15VoiceStudio.exe": "245c821e3505fd397b8acd350baaecb40d90ccce1e1e1abda85eee1ee87648ee",
+    "V15Updater.exe": "239b1a2060967bfe559f4dd22f0bec4fc314fb61c47ff2f88adacd337765fcfb"
+  },
+  "environment": "Mono/Linux, Xvfb and real FFmpeg; synthetic TTS/AI fixtures; missing-engine UI cases",
+  "physical_Windows_or_GPU_or_real_clone_tested": false,
+  "final_extended_workflow_test_utc": "2026-11-01T05:26:14.251387+00:00",
+  "package_update_checks": {
+    "updater2_0_16": 5,
+    "updater2_0_17": 5,
+    "environment": "Mono/Linux fixture install"
+  }
+}

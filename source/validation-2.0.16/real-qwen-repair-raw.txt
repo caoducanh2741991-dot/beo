@@ -1,3 +1,0 @@
-{"cues":[{"id":5,"text":"First, he ignored the glamorous gourmet shop displays entirely, and instead focused on the local market."},{"id":6,"text":"He headed to the local market with a very different budget."},{"id":7,"text":"The enormous pork leg he carried home looked almost unreal."},{"id":8,"text":"But Vance knew buying it was just the beginning."}]} [end of text]
-
-

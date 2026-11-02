@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<translation key="32c31bba2307f4f2b64c12e3024d98eb38d9487332bc30c4d4e43bbc7cc2d45e" model="Qwen3-4B-Instruct-2507 Q4_K_M" verificationPolicy="vi216-semantic-v1" verification="structure+numbers+model; not a proof of equivalence">
-  <cue id="1">Lunch của trường cũ của anh có thể cạnh tranh với các bữa ăn từ chín quốc gia khác không?</cue>
-  <cue id="2">Vance đã mang hai người bạn đến để giải quyết câu hỏi đó một cách tuyệt đối.</cue>
-  <cue id="3">Mười khay bữa ăn trường học khác nhau tham gia cuộc đối đầu với thực phẩm tự làm của họ.</cue>
-  <cue id="4">Và ba người đàn ông lớn tuổi này đang ăn từng miếng một cách nghiêm túc.</cue>
-  <cue id="5">Mùi vị, dinh dưỡng và cảm giác no sẽ quyết định quốc gia chiến thắng.</cue>
-  <cue id="6">Chỉ một khay mới có thể giành được danh hiệu là bữa ăn trường học xuất sắc.</cue>
-</translation>

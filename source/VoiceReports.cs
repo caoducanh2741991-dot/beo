@@ -35,7 +35,7 @@ public sealed partial class VoiceRenderReport {
   if(options.Anchored)try{PlanStages(AnchoredVoice.StableStages(Snapshot(input),options.RepairStages));}catch{}
   string basis=String.IsNullOrEmpty(context.SourcePath)?output:context.SourcePath;
   string stem;try{stem=System.IO.Path.GetFileNameWithoutExtension(basis);if(String.IsNullOrEmpty(stem))stem="kich_ban";}catch{stem="kich_ban";}
-  var folders=new List<string>();try{folders.Add(String.IsNullOrEmpty(options.ArtifactWorkFolder)?System.IO.Path.GetDirectoryName(System.IO.Path.GetFullPath(basis)):options.ArtifactWorkFolder);}catch{}
+  var folders=new List<string>();if(options.WorkflowMode==0)try{folders.Add(String.IsNullOrEmpty(options.ArtifactWorkFolder)?System.IO.Path.GetDirectoryName(System.IO.Path.GetFullPath(basis)):options.ArtifactWorkFolder);}catch{}
   folders.Add(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"V15VoiceStudio","reports"));
   foreach(string folder in folders)try{Directory.CreateDirectory(folder);for(int i=0;i<10000;i++){string name=System.IO.Path.Combine(folder,stem+".voice-report"+(i==0?"":" ("+(i+1)+")")+".txt");FileStream stream;try{stream=new FileStream(name,FileMode.CreateNew,FileAccess.Write,FileShare.Read);}catch(IOException){if(File.Exists(name)||Directory.Exists(name))continue;throw;}try{using(stream){PathName=name;byte[] text=Encoding.UTF8.GetBytes(Build());stream.Write(text,0,text.Length);}break;}catch{PathName="";try{File.Delete(name);}catch{}throw;}}if(PathName.Length>0)break;}catch(Exception e){SaveWarning="Chưa ghi báo cáo cạnh nguồn: "+e.Message;}
   if(PathName.Length==0)SaveWarning="Không lưu được báo cáo. "+SaveWarning;Notify();

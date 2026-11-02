@@ -1,0 +1,69 @@
+V15 VOICE STUDIO 2.0.17 — KẾT QUẢ KIỂM THỬ
+Ngày 01/11/2026
+
+BẢN BUILD VÀ MÔI TRƯỜNG
+Đã build V15VoiceStudio.exe và V15Updater.exe Windows x64/.NET Framework4.5, version2.0.17.0. EXE chạy trên Mono/Linux; giao diện WinForms được kiểm bằng Xvfb, xử lý audio dùng FFmpeg thật.
+Không có máy Windows vật lý, RTX2070, Steven/Chatterbox clone hay các model riêng của người dùng để nghiệm thu giọng thật.
+
+KẾT QUẢ MÃ VÀ GIAO DIỆN
+508 kiểm tra C# PASS trong 18 log.
+Workflow217Tests: 47 PASS.
+Recovery216Tests: 42 PASS.
+Sync216Tests: 27 PASS.
+BatchTests: 12 PASS.
+TwoVoiceTests: 41 PASS.
+VoiceReportTests: 30 PASS.
+PunctuationTests: 20 PASS.
+BreathStreamingTests: 8 PASS.
+TextTargetTests: 37 PASS.
+AudioRepairTests: 45 PASS.
+CommunityVoiceTests: 20 PASS.
+VoiceDiagnosticTests: 26 PASS.
+LocalAiSafetyTests: 16 PASS.
+AnchoredTests: 65 PASS.
+NativeGpuTests: 15 PASS.
+UpdaterTests: 21 PASS.
+Recovery216Tests-reopen: 8 PASS.
+WorkflowUi217Tests: 28 PASS.
+Python:11 kiểm tra chính sách GPU và4 kiểm tra giao tiếp worker PASS; đây là giả lập driver/thiết bị, không phải chạy RTX2070 thật.
+
+HAI CHẾ ĐỘ VÀ SỐ BÁO CÁO
+Mode1: thành công, lệch thời lượng, lỗi engine, hủy và file nhập sai đều kiểm đúng1 báo cáo ở mỗi lượt chạy. Không gọi rewriter/translator. Lời gốc được tải lại, không dùng nhầm draft/câu AI của lần trước.
+Mode2: thành công, không có câu cần sửa, AI trùng, đề xuất thêm tình tiết, thiếu an toàn nghĩa, lỗi dịch, lỗi engine, hủy và nguồn sai đều kiểm đúng2 báo cáo. Không mở panel/cửa sổ chấp nhận, không yêu cầu tiếp tục bằng tay.
+Đề xuất đo đạt nhưng chưa đủ chắc về nghĩa được thử chiến lược tiếp theo; phương án an toàn đã đo mới được tự nhận. Phương án bị loại không bị đếm thành “đã sửa”.
+Báo cáo ngắn kiểm EN gốc / EN đã dùng / VI fixture đầy đủ chỉ ở cue đã sửa. Cue không đổi không bị gửi lại cho dịch. Lỗi dịch giữ TRANSLATION_INCOMPLETE, không tạo VI giả.
+WAV/SRT thành công dùng đúng lời của TTS; lỗi công bố giữa hai báo cáo được rollback, không để bộ file dở. Mỗi lượt mới giữ nguyên kết quả cũ bằng stem mới.
+Bản đo/PCM tương thích không bị mất chỉ vì chuyển lựa chọn chế độ; queue giữ được cả đường dẫn báo cáo ngắn.
+
+VAN4, VAN5, VAN6 — NGUỒN THẬT, GIỌNG FIXTURE
+Dùng nguyên ba SRT gốc từ gói2.0.16; không thay lời/timecode để làm test đỗ.
+VAN4:7/7 chặng trong cả Mode1 vàMode2; một/hai báo cáo đúng; final.srt trùng lời/mốc nguồn.
+VAN5:18/18 chặng trong cả hai mode theo cùng bài tích hợp; không gọi dịch cả72 cue khi không có cue bị đổi.
+VAN6:11/11 chặng của ca bình thường qua cả hai mode.
+Ca VAN6 thiếu ở cue5–8: tạo audio tổng hợp có thời lượng kiểm soát, không khẳng định tái tạo chính xác sóng Steven lịch sử. AI fixture trả nguyên văn: dừng sau hai chiến lược, không lặp TTS bản trùng, NEEDS_REVIEW và đúng2 báo cáo;10 chặng đã đo đạt được giữ. Timecode14.400→28.800s được ghi đúng.
+Bài phục hồi2.0.16 chạy trong tiến trình mới tiếp tục kiểm cache/PCM/chỉnh tay lõi; UI sửa tay cũ không còn là luồng sản phẩm2.0.17.
+
+GIAO DIỆN THẬT
+28 kiểm tra trên EXE mới: hai lựa chọn đồng bộ giữa Studio/batch, ba hành động chính vừa cửa sổ1440x960 và1100x740, giữ chọn giọng/một-hai giọng/clone/library; không có nút sửa-duyệt dư thừa hoặc stop trùng trên màn hình chạy.
+Chạy UI với engine/model cố tình thiếu: Mode1 vẫn ghi1 report, Mode2 ghi2, batch gồm file nhập sai và file thiếu engine vẫn tạo báo cáo đúng và không có modal chờ duyệt.
+Ảnh đi kèm là ảnh giao diện trong kiểm thử, catalogue mẫu; không phải bằng chứng render giọng Steven thành công.
+
+HỒI QUY
+Các kiểm tra một/hai giọng, quản lý clone/model key, cache, giới hạn/căn tốc độ, hơi thở/ngắt nghỉ/cân âm, timeline, báo cáo, atomic publish và updater đều chạy ở mức hợp đồng phần mềm.
+Hash8 module giọng/worker/GPU/âm thanh không đổi so với gói2.0.16 được ghi trong preserved-voice-modules217.json.
+Các UI test cũ đòi nút SỬA NGAY/duyệt không được tính là kiểm giao diện2.0.17, vì các nút đó được chủ động bỏ theo yêu cầu mới.
+
+KIỂM GÓI CẬP NHẬT
+Đã chạy cập nhật ZIP bằng UpdateEngine2.0.16.0 và2.0.17.0 vào bản cài fixture2.0.16:5/5 +5/5 PASS. Giữ nguyên model/runtime TTS/AI, profile, mẫu clone, GPU DLL, SRT/WAV; EXE thành2.0.17.0; không còn journal dở.
+CRC ZIP và size/SHA256 từng tệp manifest được kiểm sau lần đóng gói cuối. Đây là cài fixture trên Mono/Linux, không phải bộ cài đã chạy trên Windows vật lý.
+
+CHƯA NGHIỆM THU / GIỚI HẠN
+- Chưa chạy app trên Windows vật lý, RTX2070 hoặc đo/render với giọng Steven/clone/model thật của người dùng. Các bài TTS/AI/dịch trong lượt nâng cấp này là fixture, không phải inference Qwen hay engine giọng thật mới.
+- Chưa có forced alignment/ASR mới xác nhận từng từ âm thanh. Kiểm đồng bộ là lời gửi TTS/metadata PCM đã chọn và file cuối. Không gán tỷ lệ chặng thành mốc audio từng cue.
+- Model có thể không tìm được câu sửa an toàn hoặc không dịch đạt. App kết thúc tự động bằng trạng thái chưa hoàn thiện/báo cáo, không ép nhận thành công.
+- Chỉ dịch các câu đã sửa cho report nhanh; không còn xuất bản Việt toàn bộ kịch bản ở luồng hai chế độ mới. AI viết lại TXT căn đích/SRT linh hoạt không được bổ sung trong đợt giao diện/báo cáo này.
+
+TÁI LẬP
+source/BUILD_WINDOWS.cmd: build trên Windows/.NET Framework.
+source/validate217.py: build/kiểm hợp đồng trên Mono, .NET4.5 refs, FFmpeg và Xvfb.
+Log và JSON tổng kết: source/validation-2.0.17. Xem completed217.json cho hash EXE và số kiểm tra.

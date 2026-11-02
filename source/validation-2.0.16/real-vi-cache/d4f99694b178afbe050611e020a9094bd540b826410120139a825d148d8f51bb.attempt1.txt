@@ -1,3 +1,0 @@
-{"cues":[{"id":7,"text":"Các cửa hàng bán bánh mì thường chỉ có rất ít rau củ tươi bên trong."},{"id":8,"text":"Vance muốn mỗi miếng ăn đều có cảm giác như một bữa ăn đúng nghĩa."},{"id":9,"text":"Nhưng thịt và bánh mì đơn giản sẽ không làm ai cảm thấy ấn tượng."},{"id":10,"text":"Sau đó chiếc nồi khổng lồ xuất hiện, và thách thức trở nên nghiêm túc."},{"id":11,"text":"Các hành tây ngọt chuyển sang màu vàng từ từ khi cả căn bếp tràn ngập mùi thơm."},{"id":12,"text":"Ngay cả Vance cũng ngạc nhiên trước mùi thơm đột ngột trở nên ngon miệng của mọi thứ."}]} [end of text]
-
-

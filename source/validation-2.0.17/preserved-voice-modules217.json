@@ -1,0 +1,42 @@
+[
+  {
+    "file": "ai_worker.py",
+    "sha256": "277309b6f7c5cf1d8a9d9c572f55cfc067a40fc871d9bb316c2d5debd3bcc8ee",
+    "unchanged_from_2_0_16": true
+  },
+  {
+    "file": "gpu_policy.py",
+    "sha256": "4a31d5a873e125cb450dd0988722a7ac50b71d22dff42b1bd1f368d1e7eeb005",
+    "unchanged_from_2_0_16": true
+  },
+  {
+    "file": "NativeGpu.cs",
+    "sha256": "4e5229d7ff432bf321d5106788062757fa18e403c94c9b50f8bb95f185dd2147",
+    "unchanged_from_2_0_16": true
+  },
+  {
+    "file": "ExternalSpeech.cs",
+    "sha256": "8e3c42f9de8bc39728553d63c420b41454fb1c64900cbf6c69c488a2c466c587",
+    "unchanged_from_2_0_16": true
+  },
+  {
+    "file": "TwoVoices.cs",
+    "sha256": "7aab5b763312a74aa278c1e2ef472ca6f3a0247f5f1df7355eb693a3567413b4",
+    "unchanged_from_2_0_16": true
+  },
+  {
+    "file": "Punctuation.cs",
+    "sha256": "173e0af37d19254a199f08951cbdc46c3580200a034e1a2732d5de849c4c0ff6",
+    "unchanged_from_2_0_16": true
+  },
+  {
+    "file": "AudioProcessing.cs",
+    "sha256": "8435fcc532cbe6009101d169ab91a874371862f295019d4868411b959007b47f",
+    "unchanged_from_2_0_16": true
+  },
+  {
+    "file": "AudioFinishing.cs",
+    "sha256": "04c9b4f33d05f874fea75e1ddf2a39c004276647023611a9695d6c5e31544bc7",
+    "unchanged_from_2_0_16": true
+  }
+]

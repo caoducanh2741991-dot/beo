@@ -1,2 +1,0 @@
-van 6 100% Dịch Việt hoàn tất; đã kiểm tra cấu trúc, số liệu và đối chiếu nghĩa bằng model. Cần đọc lại khi sử dụng.
-PASS offline EN-VI completion (aligned source + real Qwen CPU): van 6 44/44 cues, structure/numeric/model verification; not a TTS/GPU test.

@@ -8,11 +8,11 @@ using System.Collections.Generic;
 namespace V15Voice {
 public enum JobState { Queued, ImportFailed, Running, Done, Failed, Cancelled, NeedsReview, TranslationIncomplete }
 public sealed class BatchJob {
- public AiRepairSession RepairSession;public string AiReport="",AiSnapshot="";public int RepairMode=-1;public double TargetSeconds;public string ReportPath="";public string TimelineReport="",Warning="";public double AudioDuration;public bool DurationFinal;public string SourceHash="";
+ public int WorkflowMode;public string ShortReportPath="";public AiRepairSession RepairSession;public string AiReport="",AiSnapshot="";public int RepairMode=-1;public double TargetSeconds;public string ReportPath="";public string TimelineReport="",Warning="";public double AudioDuration;public bool DurationFinal;public string SourceHash="";
  public string FailureCode="",StackTrace="";public string InputPath,Error="",OutputPath="";public bool Timed;
  public List<Cue> CheckpointCues;public List<Cue> Cues=new List<Cue>();public JobState State=JobState.Queued;
  public string Name {get{return Path.GetFileName(InputPath);}}
- public string Status {get{switch(State){case JobState.ImportFailed:return "Lỗi nhập file";case JobState.Running:return "Đang chạy";case JobState.Done:return String.IsNullOrEmpty(Warning)?"Hoàn tất":"WAV xong · cần duyệt";case JobState.NeedsReview:return "NEEDS_REVIEW · SỬA NGAY";case JobState.TranslationIncomplete:return "TRANSLATION_INCOMPLETE";case JobState.Failed:return (FailureCode.Length>0?FailureCode+" · ":"")+"Lỗi tạo voice";case JobState.Cancelled:return "Đã dừng";default:return "Đang chờ";}}}
+ public string Status {get{switch(State){case JobState.ImportFailed:return "Lỗi nhập file";case JobState.Running:return "Đang chạy";case JobState.Done:return String.IsNullOrEmpty(Warning)?"Hoàn tất":"WAV xong · cần duyệt";case JobState.NeedsReview:return "Chưa sửa đạt · xem báo cáo";case JobState.TranslationIncomplete:return "TRANSLATION_INCOMPLETE";case JobState.Failed:return (FailureCode.Length>0?FailureCode+" · ":"")+"Lỗi tạo voice";case JobState.Cancelled:return "Đã dừng";default:return "Đang chờ";}}}
  public static BatchJob Load(string path){
   var j=new BatchJob{InputPath=Path.GetFullPath(path)};
   try {
