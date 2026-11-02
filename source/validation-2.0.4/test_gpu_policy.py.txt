@@ -11,6 +11,6 @@ test_recoverable_errors_are_specific (__main__.DeviceTests.test_recoverable_erro
 test_rtx2070_auto (__main__.DeviceTests.test_rtx2070_auto) ... ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 0.090s
+Ran 11 tests in 0.093s
 
 OK

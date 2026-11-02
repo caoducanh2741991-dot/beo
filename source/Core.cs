@@ -161,7 +161,7 @@ public class KokoroEngine : IDisposable {
  }
 }
 public sealed class RenderOptions {
- public VoiceReportContext ReportContext;public VoiceRenderReport RunReport;
+ public double TargetSeconds,TargetChange=.10;public string TargetRaw="";public TextTargetResult TargetResult;public VoiceReportContext ReportContext;public VoiceRenderReport RunReport;
  public bool Anchored;public AnchorReport AnchorResult;public Action<AnchorReport> AnchorChanged;public Func<string,List<AnchorUnit>,SubtitleDocument> AnchorAlignment;
  public bool Prose;public Action<ReadingProgress> ReadingChanged;public bool NormalizeLoudness,GentleFit;public double TargetLufs=-18;
  public bool Locked=true,SlowShort=true,JoinSentences=false;public double BaseSpeed=1,MaxSpeed=1.3,MinSpeed=.8,Gap=.15;
@@ -210,7 +210,7 @@ public static class OutputFiles {
 }
 public static class Renderer {
  public static string Render(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress) {
-  VoiceRenderReport report=null,prior=engine.RunReport;o.RunReport=null;
+  VoiceRenderReport report=null,prior=engine.RunReport;o.RunReport=null;o.TargetResult=null;
   if(o.ReportContext!=null)try{report=new VoiceRenderReport(cues,engine,o,output);o.RunReport=report;}catch(Exception e){engine.ReportActivity("Không khởi tạo được báo cáo: "+e.Message);}
   engine.RunReport=report;
   try{string final=RenderCore(cues,engine,o,output,progress);if(report!=null)report.Finish("THÀNH CÔNG",final,null);return final;}
@@ -218,7 +218,9 @@ public static class Renderer {
   finally{engine.RunReport=prior;}
  }
  static string RenderCore(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress) {
-  if(o.Anchored)return AnchoredVoice.Render(cues,engine,o,output,progress);
+  if(o.TargetSeconds!=0)return TextTargetVoice.Render(cues,engine,o,output,progress);if(o.Anchored)return AnchoredVoice.Render(cues,engine,o,output,progress);return RenderNatural(cues,engine,o,output,progress);
+ }
+ internal static string RenderNatural(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress){
   if(o.RunReport!=null)o.RunReport.Step("INPUT","Kiểm tra lời và timeline");if(o.Prose)LongText.Validate(cues);else Scripts.Validate(cues);if(o.RunReport!=null)o.RunReport.Step("MODEL","Kiểm tra model/runtime/mẫu giọng");engine.CheckFiles();if(o.RunReport!=null)o.RunReport.Step("INPUT","Kiểm tra thiết lập và đường dẫn xuất");Tempo.Validate(o);FinalAudio.Validate(o);
   if(o.BaseSpeed<.8||o.BaseSpeed>1.3||o.MaxSpeed<o.BaseSpeed||o.MaxSpeed>1.6)throw new Exception("Tốc độ tối đa phải lớn hơn hoặc bằng tốc độ gốc (giới hạn 1,60).");
   if(!String.Equals(Path.GetExtension(output),".wav",StringComparison.OrdinalIgnoreCase))throw new Exception("Kết quả phải là file WAV.");

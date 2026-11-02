@@ -1,7 +1,7 @@
 PASS All six pages exist immediately after construction, before showing the form
 PASS Startup tab order is Studio, queue, library, tools, cloning, guide
 PASS Every registered page is attached to the same TabControl
-PASS Title and EXE assembly both identify 2.0.3
+PASS Title and EXE assembly both identify 2.0.4
 PASS All six tabs remain registered after native handle creation
 PASS Tab 0 can be selected and displays its page
 PASS Tab 1 can be selected and displays its page
@@ -45,5 +45,5 @@ PASS After render, natural controls enabled without enabling SRT lock
 PASS TXT timing card is fully visible within Studio
 PASS Timing card remains fixed when voice/settings panel is scrolled
 PASS Latest edited TXT can be restored after reopening
-TOTAL UI 2.0.3 47 passed.
+TOTAL UI 2.0.4 47 passed.
 Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

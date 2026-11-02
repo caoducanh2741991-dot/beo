@@ -1,4 +1,0 @@
-test_clone_generation.py PASS
-test_clone_worker_protocol.py PASS
-ExternalCloneTests TOTAL EXTERNAL CLONE 26 passed.
-CLONE REGRESSION COMPLETE (failure injection; not physical GPU/Windows testing)

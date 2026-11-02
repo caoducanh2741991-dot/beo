@@ -1,0 +1,45 @@
+V15 VOICE STUDIO 2.0.4 — TXT THEO THỜI LƯỢNG ĐÍCH
+
+CẬP NHẬT
+Trong app: Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.4_Update.zip. Chờ mở lại và kiểm tra phiên bản 2.0.4.
+Nếu không mở được mục cập nhật: giải nén TOÀN BỘ ZIP vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục app đang dùng. Không lấy riêng EXE.
+Dùng lại các giọng/model/runtime/GPU đang cài; không cần tải lại model. Giữ gói tiếng Việt và các sửa lỗi từ các bản trước.
+
+LUỒNG DÙNG VỚI CHAT TẠO KỊCH BẢN
+1. Gửi cho chat nội dung, thời lượng đích, giọng và tốc độ gốc; kèm báo cáo đã đo nếu có. Chat viết lời gần thời lượng mong muốn.
+2. Lấy TXT chỉ chứa lời đọc, không gồm timecode/chú thích không muốn đọc. Mở TXT hoặc dán văn bản ở tab Tạo voice.
+3. Chọn đúng giọng và tốc độ gốc. Trong ĐỌC VĂN BẢN DÀI, tích Căn TXT theo thời lượng đích.
+4. Nhập đích: 45 hoặc 45s hoặc 00:45; 01:30 = 90 giây; cũng nhận hh:mm:ss và phần nghìn giây bằng dấu chấm/phẩy. Phạm vi 1 giây đến 6 giờ.
+5. Mặc định Căn TXT tối đa ±10%. Giới hạn thực sự là giao giữa mức này và các giới hạn tốc độ/căn nhịp đang đặt. Có thể đặt mức TXT từ ±1% đến ±25%; dùng mức nhỏ để ưu tiên nhịp tự nhiên.
+6. Bấm TẠO VOICE XUẤT. App đọc giọng gốc, đo tổng lời/nghỉ/hơi thở, căn toàn bài, đo lại rồi xuất WAV nếu đạt.
+7. Nếu thiếu/dư nhiều, app báo số giây sau lần căn cuối và chưa xuất WAV đích. Gửi .voice-report.txt cho chat sửa đúng nội dung rồi render lại.
+
+ĐỌC CẢNH BÁO
+Trước render, app chỉ ước lượng. Khi chưa có số đo, số từ/tốc độ đọc sơ bộ không phải quy chuẩn cho mọi giọng/ngôn ngữ. Có thể bấm Nghe thử & ước lượng TXT để đọc mẫu bằng đúng giọng; thời lượng đo mẫu vẫn là dự kiến cho toàn bài.
+Sau khi đo đủ toàn bài, phần bên phải hiển thị voice gốc, đích, tốc độ và số giây dư/thiếu. Đổi đích cho cùng lời/giọng có thể dùng lại audio TTS đã lưu; không phải tổng hợp lại mọi câu nếu bộ đệm còn hợp lệ.
+App không tự viết thêm lời, cắt lời, nới giới hạn tốc độ hoặc đệm khoảng lặng dài. Chỉ bù sai số cuối tối đa 20 ms; phần cắt đuôi phải được kiểm tra là im lặng.
+Không hứa chất lượng giọng chỉ từ tỷ lệ tốc độ. Nghe lại WAV để kiểm tra phát âm, hơi thở và nhịp kể.
+
+HÀNG ĐỢI NHIỀU FILE
+- Thêm nhiều file như trước. Chọn một TXT → Đặt đích TXT, hoặc bấm đúp ô Đích TXT của dòng đó.
+- Nhập thời lượng riêng cho file này. Để trống = đọc tự nhiên. Không tự lấy đích đang gõ ở tab Tạo voice cho toàn bộ hàng đợi.
+- Giọng, tốc độ gốc, giới hạn tốc độ, mức căn TXT tối đa, hơi thở và cân âm vẫn dùng chung.
+- Cột Đích TXT cho biết đích riêng, Tự nhiên hoặc SRT nguồn. File không vừa khung có báo cáo; hàng đợi tiếp tục file sau.
+- Xem/sửa một TXT trong hàng đợi sẽ nạp đích của nó vào tab Tạo voice. Bỏ tích Căn TXT... đưa riêng file đó về tự nhiên.
+- Đổi đích của file đã xong đưa file về Đang chờ; WAV cũ không bị xóa. Giữ Bỏ qua file đã xong nếu chỉ muốn chạy các file chưa hoàn tất.
+- Đích từng file được lưu khi mở lại hàng đợi. Khi sửa nội dung nguồn của TXT, đích vẫn được giữ nhưng trạng thái hoàn tất cũ được bỏ để cần tạo bản mới.
+
+TXT TỰ NHIÊN VÀ SRT
+Bỏ tích Căn TXT... để đọc tự nhiên như bản trước. Mở nguồn khác không tự mang theo đích của file trước; bài TXT gần nhất khôi phục từ phiên làm việc giữ đích của chính bài đó.
+SRT tiếp tục dùng timeline nguồn/điểm neo; không áp một tổng thời lượng TXT lên SRT. Nếu cần bám nhiều cảnh hoặc sự kiện, dùng SRT và V15.6/Khóa SRT phù hợp.
+TXT đích chỉ căn tổng thời lượng. Các cột Đầu trước căn/Cuối trước căn là mốc audio gốc đã đo trước khi đổi tốc độ toàn bài; chưa phải mốc từng câu trong WAV cuối.
+
+KẾT QUẢ VÀ BÁO CÁO
+Chỉ xuất WAV, mặc định cạnh TXT nguồn; kịch bản dán chọn nơi lưu WAV. Giữ file cũ bằng tên có số thứ tự khi trùng.
+Tự lưu báo cáo .voice-report.txt cạnh nguồn cho cả thành công/lỗi/dừng. Bản 2.0.4 dùng schema 3: có đích TXT, giới hạn áp dụng, audio gốc, tốc độ ước tính trước giới hạn, từng lần căn, số giây thiếu/dư, bù đuôi và đường dẫn WAV thực sự.
+Giữ chẩn đoán bước lỗi/mã lỗi từ 2.0.3. TTS lỗi chưa có số đo khác với audio đã tạo được nhưng không vừa đích. Không suy ra mốc từng câu sau căn bằng tỷ lệ.
+Nút Mở báo cáo lần chạy / Mở báo cáo file giữ nguyên. Nếu không ghi được cạnh nguồn, báo cáo thử lưu tại %LOCALAPPDATA%\V15VoiceStudio\reports và app thông báo cảnh báo.
+
+PHẠM VI KIỂM THỬ
+Đã kiểm tra căn TXT thành công, quá dài/quá ngắn, giới hạn/tốc độ gốc khác 1.0, dùng lại cache, hủy/lỗi, nguồn bất biến, giữ file cũ, hàng đợi hỗn hợp và lưu/khôi phục đích. Kiểm tra GUI, báo cáo và updater; WAV các chế độ cũ khớp byte với 2.0.3 trong các bài thử đại diện.
+Môi trường Linux/Mono với .NET Framework 4.5 references, TTS mô phỏng và FFmpeg thật. Chưa thử trực tiếp Windows/RTX 2070 của bạn hoặc đánh giá chất lượng model thật trong lần này.
