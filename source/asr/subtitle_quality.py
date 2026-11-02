@@ -31,7 +31,11 @@ def map_words(text,raw):
         good=[p for p in parts if p.get('start') is not None and p.get('end') is not None]
         flags=list(dict.fromkeys(f for p in parts for f in p.get('flags',[])))
         if not compatible:flags.append('Lời và mốc từ ASR chưa khớp; cần căn lại')
-        words.append(dict(word=token,start=min((p['start'] for p in good),default=None),end=max((p['end'] for p in good),default=None),flags=flags,info=[]))
+        sources={p.get('timing_source','asr') for p in parts}
+        row=dict(word=token,start=min((p['start'] for p in good),default=None),end=max((p['end'] for p in good),default=None),flags=flags,info=[],timing_source=next(iter(sources)) if len(sources)==1 else 'unknown')
+        anchors=[p for p in parts if p.get('asr_start') is not None and p.get('asr_end') is not None]
+        if anchors:row.update(asr_start=min(p['asr_start'] for p in anchors),asr_end=max(p['asr_end'] for p in anchors))
+        words.append(row)
         position=end
     return words
 
@@ -135,8 +139,9 @@ def transfer_punctuation(original,alternative):
     return changed
 
 
-def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punctuate=None,contextual=None):
+def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punctuate=None,contextual=None,repetition_policy='preserve'):
     """recognize(start,end) returns measured word dictionaries from that audio clip."""
+    if repetition_policy not in {'preserve','clean'}:raise ValueError('Chế độ từ lặp không hợp lệ.')
     segments=copy.deepcopy(segments);words=[]
     for s in segments:
         ws=map_words(s['text'],s.get('words',[]))
@@ -144,7 +149,9 @@ def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punc
     cursor=0
     for si,s in enumerate(segments):
         for _ in s['text'].split():words[cursor]['segment']=si;cursor+=1
-    windows=selected_windows(words,audio_duration);hypotheses=[]
+    # Preservation is lexical: do not ask a second recognizer to normalize
+    # spontaneous speech and then mistake its normalization for ground truth.
+    windows=selected_windows(words,audio_duration) if repetition_policy=='clean' else [];hypotheses=[]
     for n,(start,end) in enumerate(windows):
         notify(n,len(windows),f'Đối chiếu âm thanh {start:.1f}–{end:.1f}s')
         alternative=recognize(start,end)
@@ -159,12 +166,20 @@ def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punc
         votes=deletion_votes(original,alt);hypotheses.append((lo,hi,alt,{lo+i for i in votes},start,end))
     removed=set();audit=[]
     for a,b in candidates(words):
+        exact_copy=a>=b-a and [norm(w['word']) for w in words[a-(b-a):a]]==[norm(w['word']) for w in words[a:b]]
+        if repetition_policy=='preserve' or not exact_copy:
+            for w in words[a:b]:
+                w.setdefault('flags',[]).append('Từ lặp / nói vấp có thể được nói thật; cần nghe lại')
+                w.setdefault('info',[]).append('Giữ nguyên lời nhận dạng; không tự xóa lời nói vấp hoặc khởi đầu lại')
+            continue
         covering=[h for h in hypotheses if a>=h[0] and b<=h[1]]
         supporting=[h for h in covering if candidate_evidence(words[h[0]:h[1]],h[2],a-h[0],b-h[0])]
+        contradictory=[h for h in covering if candidate_evidence(words[h[0]:h[1]],h[2],a-h[0],a-h[0])]
         positive={(round(h[4],3),round(h[5],3)) for h in supporting}
+        retained={(round(h[4],3),round(h[5],3)) for h in contradictory}
         seen={(round(h[4],3),round(h[5],3)) for h in covering}
         for before,after in [(6,6),(10,4),(3,10)]:
-            if len(positive)>=2:break
+            if len(positive)>=2 or retained:break
             start=max(0,measured_position(words,max(0,a-before))-.7)
             end=min(audio_duration,(words[min(len(words)-1,b+after)].get('end') or measured_position(words,min(len(words)-1,b+after)))+.7)
             key=(round(start,3),round(end,3))
@@ -174,8 +189,10 @@ def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punc
             ids=[i for i,w in enumerate(words) if w.get('start') is not None and w['start']>=start and (w.get('end') or 0)<=end]
             if ids:
                 lo,hi=min(ids),max(ids)+1
-                if lo<=a and b<=hi and candidate_evidence(words[lo:hi],alt,a-lo,b-lo):positive.add(key)
-        if len(positive)<2 and contextual is not None:
+                if lo<=a and b<=hi:
+                    if candidate_evidence(words[lo:hi],alt,a-lo,b-lo):positive.add(key)
+                    if candidate_evidence(words[lo:hi],alt,a-lo,a-lo):retained.add(key)
+        if len(positive)<2 and not retained and contextual is not None:
             for before,after in [(25,20),(35,8)]:
                 if len(positive)>=2:break
                 center=measured_position(words,a);start=max(0,center-before);end=min(audio_duration,center+after)
@@ -186,16 +203,18 @@ def verify_segments(segments,audio_duration,recognize,notify=lambda *a:None,punc
                 ids=[i for i,w in enumerate(words) if w.get('start') is not None and w['start']>=start and (w.get('end') or 0)<=end]
                 if ids:
                     lo,hi=min(ids),max(ids)+1
-                    if lo<=a and b<=hi and candidate_evidence(words[lo:hi],alt,a-lo,b-lo):positive.add(key)
-        confirmed=len(positive)>=2
+                    if lo<=a and b<=hi:
+                        if candidate_evidence(words[lo:hi],alt,a-lo,b-lo):positive.add(key)
+                        if candidate_evidence(words[lo:hi],alt,a-lo,a-lo):retained.add(key)
+        confirmed=len(positive)>=2 and not retained
         if confirmed:
             removed.update(range(a,b));owner=max(0,a-1)
             words[owner].setdefault('info',[]).append(f'Đã bỏ từ lặp: {len(positive)}/{len(seen)} cửa sổ âm thanh xác nhận')
-            audit.append(dict(kind='duplicate',start=words[a].get('start'),removed=' '.join(w['word'] for w in words[a:b])))
+            audit.append(dict(kind='duplicate',policy='clean',start=words[a].get('start'),removed=' '.join(w['word'] for w in words[a:b]),support=len(positive),contradictions=0))
         else:
             for w in words[a:b]:
-                w.setdefault('flags',[]).append('Từ / cụm lặp chưa được hai lượt xác nhận; cần nghe lại')
-                w.setdefault('info',[]).append(f'Đã kiểm tra lặp: {len(positive)}/{len(seen)} cửa sổ xác nhận; giữ nguyên lời')
+                w.setdefault('flags',[]).append('Từ / cụm lặp còn bất đồng; cần nghe lại')
+                w.setdefault('info',[]).append(f'Đã kiểm tra lặp: {len(positive)}/{len(seen)} cửa sổ làm gọn, {len(retained)} cửa sổ giữ lặp; giữ nguyên lời')
     for lo,hi,alt,votes,*_ in hypotheses:
         transfer_punctuation([words[i] for i in range(lo,hi) if i not in removed],alt)
     kept=[w for i,w in enumerate(words) if i not in removed]

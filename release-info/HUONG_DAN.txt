@@ -1,37 +1,39 @@
-V15 VOICE STUDIO 1.4.9 — HOÀN THIỆN RÀ LỖI VÀ CHIA CỤM PHỤ ĐỀ
+V15 VOICE STUDIO 1.4.10 — GIỮ LỜI NÓI, CHIA CỤM VÀ RÀ MỐC CUỐI
 
 CẬP NHẬT
-Trong app hiện tại: Công cụ & thiết lập → Cập nhật từ ZIP → chọn nguyên V15VoiceStudio_1.4.9_Update.zip. Giữ đúng thư mục app đang dùng. Mở lại phải hiện Offline 1.4.9 và Công cụ & thiết lập 1.4.9.
-Không cần gỡ app, tải lại giọng hoặc cài lại CUDA.
-Nếu dùng thủ công: giải nén vào thư mục tạm, chạy CAP_NHAT.cmd và chọn đúng thư mục app. Không chạy EXE trong payload như một bản cài riêng.
+Trong app đang dùng: Công cụ & thiết lập → Cập nhật từ ZIP → chọn nguyên V15VoiceStudio_1.4.10_Update.zip. Giữ đúng thư mục app hiện tại. Mở lại phải thấy “Offline 1.4.10” và “Công cụ & thiết lập 1.4.10”.
+Không cần gỡ cài đặt, tải lại giọng hoặc cài lại CUDA.
+Nếu cập nhật thủ công: giải nén vào thư mục tạm, chạy CAP_NHAT.cmd rồi chọn đúng thư mục app đã cài. EXE trong payload không phải bản cài độc lập.
 
-XỬ LÝ KẾT QUẢ 1.4.8 ĐÃ CÓ
-1. Mở tab MP4 / MP3 → SRT, chọn dòng video đang có kết quả cũ.
-2. Bấm “Rà lỗi / chia lại”. App đo lại mốc của lời hiện có, đối chiếu các chỗ lặp với âm thanh gốc rồi chia khối lại.
-3. File mới vẫn nằm cạnh video/âm thanh gốc. Nếu đã có tên.srt và tên_2.srt, app tạo tên_3.srt, không ghi đè kết quả cũ.
-Không cần bấm nhận dạng toàn bộ từ đầu chỉ để sửa kết quả đã có. Hàng đợi và các dự án phụ đề cũ được giữ để xem và rà lại.
+LỰA CHỌN MỚI TRONG TAB MP4 / MP3 → SRT
+• “Giữ từ lặp / nói vấp · mặc định”: giữ nguyên các từ của lượt nhận dạng chính. Các chỗ có thể là nói vấp hoặc lặp thật được ghi chú để nghe lại. Hai lượt nhận dạng cùng làm mượt một câu không còn là lý do tự xóa lời ở chế độ này.
+• “Làm gọn từ lặp · có đối chiếu”: chỉ xem xét các bản sao từ/cụm giống hệt nhau, cần ít nhất hai cửa sổ âm thanh ủng hộ. Nếu có cửa sổ đủ ngữ cảnh giữ lại cụm lặp, app giữ nguyên và báo cần nghe lại. Đây là chế độ làm gọn có chủ đích, không phải chứng nhận bản chép nguyên văn.
+• Các cấu trúc khởi đầu lại như “because he's he realizes” được giữ để duyệt trong cả hai chế độ. Had had, really really, very very tiếp tục được bảo vệ.
+Lựa chọn áp dụng cho cả tạo SRT mới và “Rà lỗi / chia lại”, được lưu khi đóng app. Đổi lựa chọn sẽ làm app nhận biết cần chạy lại; không lấy nhầm kết quả làm gọn làm bản giữ lời.
+Giữ từ lặp không có nghĩa mô hình nhận dạng chắc chắn nghe được mọi từ. Từ đã bị bỏ trong bản SRT cũ không được tự chèn lại vào lời bạn đã sửa.
 
-CÁC SỬA ĐỔI
-• Xác nhận lặp bằng từ trước/sau sát chỗ nghi lỗi và mốc âm thanh; một khác biệt ngoài cụm không còn làm bỏ sót toàn bộ chỗ lặp.
-• Khi lượt đầu chưa xác nhận, vẫn thử thêm cửa sổ ngắn khác. Trường hợp khó được đối chiếu thêm bằng ngữ cảnh rộng có liên tục lời trước đó.
-• Chỉ tự bỏ khi ít nhất hai cửa sổ âm thanh khác nhau cùng xác nhận. Không đủ bằng chứng thì giữ lời, tô vàng và ghi số lượt xác nhận.
-• Giữ các lặp ngữ pháp/nhấn mạnh như had had, really really, very very. Không thay từ khác, tên riêng hoặc ý câu theo lượt nhận dạng đối chiếu.
-• Bộ nhận diện từ loại tiếng Anh được đóng gói sẵn để giữ cụm động từ, tân ngữ, giới từ và cụm danh từ khi giới hạn khối cho phép. Ví dụ: smelled like vomit; throws it in gear; being gone.
-• Ưu tiên cách chia tránh khối dưới 1 giây và chữ quá nhanh. Cụm rất dài hoặc đoạn nguồn quá gấp vẫn được đánh dấu để duyệt, không bỏ lời hay bịa thời gian để làm hết cảnh báo.
-• Giữ hai dòng và giới hạn chữ của từng bố cục; ưu tiên ngắt dòng ngoài cụm nghĩa khi có cách bố trí phù hợp.
-• Mô hình chia cụm nhỏ đi kèm ZIP, không tải thêm khi chạy. Dùng “Kiểm tra bộ phụ đề” để kiểm tra cả phần này.
-• Tắt telemetry của ONNX Runtime; worker chặn kết nối Python ra mạng; bước đọc media chỉ cho phép giao thức file/pipe. Bộ cài riêng vẫn có thể tải dữ liệu khi người dùng bấm Cài bộ phụ đề.
+CHIA CỤM
+Bổ sung các liên kết chủ ngữ–động từ, động từ–hành động tiếp theo, đại từ quan hệ và cụm nơi chốn. Ví dụ: he begins walking; Frankie had gone; Frankie looks; the rest of the way; how he got there; then there were.
+Cân bằng cụm nghĩa, thời lượng và tốc độ đọc; giữ tối đa hai dòng theo bố cục. Không dùng một cụm dài làm khối quá dày chỉ vì muốn giữ mọi liên kết ngữ pháp. Khi giới hạn buộc phải chia ở chỗ chưa tốt, app ghi chú ranh giới cần duyệt.
+Không sửa lời hoặc kéo mốc sang lời tiếp theo để làm hết cảnh báo chữ chạy nhanh. Đoạn nguồn nói quá gấp vẫn có thể cần duyệt.
 
-DUYỆT KẾT QUẢ
-Vàng: còn cần nghe hoặc kiểm tra. Xanh nhạt: đã tự xử lý hoặc được bạn duyệt.
-“Đã xuất · cần duyệt (N)” nghĩa là có SRT nhưng còn N khối cần xem. Chọn khối, nghe gốc rồi bấm “Đã nghe / duyệt khối”. Sửa lời hoặc mốc sẽ hủy duyệt của khối đó.
-Khi bạn sửa thủ công, bấm Xuất SRT hoặc Căn lại lời đã sửa để xuất bản mới. “Căn lại” giữ lời sửa; “Rà lỗi / chia lại” có thêm bước kiểm tra lặp và dấu câu theo âm thanh.
-Cache và kết quả cũ không được đánh dấu như đã xử lý bằng 1.4.9. Đổi model/bố cục/TXT cũng làm app nhận biết cần chạy lại.
+MỐC KẾT THÚC
+Chỉ rút một đuôi từ bị kéo dài khi khoảng lặng trong PCM gốc và mốc nhận dạng ASR độc lập cùng ủng hộ. Nếu còn tiếng nói, nền âm thanh quá rõ, thiếu mốc độc lập hoặc hai bộ căn bất đồng, app giữ mốc đo và ghi chú để nghe lại.
+“Rà lỗi / chia lại” đối chiếu mốc với nhận dạng từ âm thanh, giữ nguyên lời đã sửa; có thể dùng lại mốc nhận dạng đã lưu đúng video/model để tiết kiệm thời gian. Lần chưa có dữ liệu này có thể lâu hơn do cần nhận dạng đối chiếu.
+Không gọi hai lần căn CTC là hai nguồn độc lập. Nhật ký mốc ghi riêng mốc ASR và mốc đuôi trước khi rút nếu có điều chỉnh.
 
-PHẠM VI GIỮ NGUYÊN
-TTS vẫn xuất WAV cạnh SRT/TXT. Không thay model giọng, Qwen/Chatterbox runtime, gói CUDA, GPU ONNX, giọng sao chép, danh mục giọng hay cấu hình GPU đang chạy tốt.
-Phụ đề vẫn hỗ trợ tiếng Anh, nhiều file chạy lần lượt, mỗi file tối đa 2 giờ, xuất SRT cạnh nguồn. Bấm Dừng tác vụ để hủy; bản SRT đã hoàn tất được giữ.
+DÙNG VỚI KẾT QUẢ ĐÃ CÓ
+1. Chọn dòng video có kết quả cũ trong hàng đợi MP4 / MP3 → SRT.
+2. Chọn cách xử lý từ lặp; khuyến nghị giữ mặc định.
+3. Bấm “Rà lỗi / chia lại”. File SRT mới vẫn nằm cạnh nguồn, tự thêm hậu tố nếu tên đã tồn tại.
+Nếu muốn nhận dạng toàn bộ lại, dùng “Tạo SRT hàng đợi”. Dữ liệu cũ không được mang dấu đã xử lý bằng 1.4.10 chỉ vì mở hoặc lưu lại.
+Để sửa chữ sau khi nghe: sửa trong bảng → “Căn lại lời đã sửa”. Tác vụ này giữ lời sửa, không tự làm gọn từ lặp.
+Vàng: cần nghe/kiểm tra. “Đã nghe / duyệt khối” xác nhận bạn đã xem; sửa chữ hoặc mốc sẽ hủy xác nhận cũ.
+
+GIỌNG VÀ GPU
+Tạo voice vẫn xuất WAV cạnh SRT/TXT. Giữ model, giọng sao chép, thư viện giọng, runtime Qwen/Chatterbox, CUDA và cấu hình GPU hiện có. ZIP không đóng gói lại các bộ giọng lớn.
+Bộ phụ đề tiếp tục chạy offline sau khi cài dữ liệu. Không tải mô hình chia cụm khi chạy; mô hình nhỏ này đi kèm ZIP. Cài dữ liệu là thao tác riêng khi bạn chủ động chọn.
 
 KIỂM THỬ VÀ GIỚI HẠN
-Đã kiểm thử các lỗi người dùng báo trên MP4 và SRT _2 thật, bằng model cục bộ và chặn mạng ở cấp tiến trình kiểm thử. Không diễn giải kết quả này thành chứng nhận chính xác 100% cho mọi video.
-Giao diện/logic được thử bằng Mono/Linux, biên dịch Windows x64 với bộ tham chiếu .NET Framework 4.5. Chưa có kiểm thử trên máy Windows/RTX 2070 vật lý. Chi tiết và số liệu có trong source/VALIDATION_1.4.9.md.
+Bản cập nhật được kiểm tra với video Wild Night Out đã gửi và chính SRT 89 khối của 1.4.9, đồng thời kiểm tra luồng tạo mới, rà lại, lựa chọn từ lặp, hàng đợi và trình cập nhật. Chi tiết kết quả ở source/VALIDATION_1.4.10.md.
+Kiểm thử âm thanh bằng mô hình cục bộ trên CPU; giao diện/logic bằng Mono/Linux và bộ tham chiếu .NET Framework 4.5 cho Windows x64. Chưa kiểm thử trực tiếp trên Windows/RTX 2070 vật lý. Không có cam kết chép đúng 100% mọi từ hoặc mọi video.

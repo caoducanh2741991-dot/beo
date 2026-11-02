@@ -104,6 +104,10 @@ def timing_units(words,duration):
 
 
 WEAK_END=set("a an the to of in on at for with and or but if because as my his her their our your its i he she it they we you is was were are has have had will would could should this that these those".split())
+GRAMMAR_COST=18
+DENSITY_COST=4
+DENSITY_FIXED=80
+SENTENCE_CROSS=3
 
 
 def split_group(group,width,maxchars,maxseconds):
@@ -113,7 +117,8 @@ def split_group(group,width,maxchars,maxseconds):
         last=first+1
         while last in unsafe:last+=1
         atom=group[first:last];phrase=' '.join(w['word'] for w in atom)
-        if len(phrase)<=maxchars and atom[-1]['end']-atom[0]['start']<=maxseconds and all(len(l)<=width for l in wrap(phrase,width).splitlines()):blocked.update(range(first+1,last))
+        elapsed=atom[-1]['end']-atom[0]['start']
+        if len(phrase)<=maxchars and elapsed<=maxseconds and len(phrase)/max(.01,elapsed)<=25 and all(len(l)<=width for l in wrap(phrase,width).splitlines()):blocked.update(range(first+1,last))
     # Dynamic programming chooses boundaries using both neighbouring phrases.
     n=len(group);cost=[float('inf')]*(n+1);back=[None]*(n+1);cost[0]=0
     for i in range(n):
@@ -125,19 +130,19 @@ def split_group(group,width,maxchars,maxseconds):
             if not fits and j>i+1:break
             if j<n and j in blocked:continue
             # A measured shared-time unit or an unbreakable word must survive.
-            penalty=4.0+max(0,1.05-elapsed)*30+max(0,len(text)/max(.05,elapsed)-25)*2.5
-            if len(text)/max(.05,elapsed)>25:penalty+=10
+            penalty=4.0+max(0,1.05-elapsed)*30+max(0,len(text)/max(.05,elapsed)-25)*DENSITY_COST
+            if len(text)/max(.05,elapsed)>25:penalty+=DENSITY_FIXED
             if elapsed<1:penalty+=20
             if not fits:penalty+=100
             last=group[j-1]['word'];lastnorm=norm(last)
             if j<n:
                 if terminal(last):penalty-=3.5
                 elif last.endswith((',', ';', ':')):penalty-=1.8
-                if lastnorm in WEAK_END:penalty+=6
-                if j in unsafe:penalty+=12
+                if lastnorm in WEAK_END:penalty+=15
+                if j in unsafe:penalty+=GRAMMAR_COST
                 gap=group[j]['start']-group[j-1]['end'];penalty-=min(2,max(0,gap)*4)
             # Prefer keeping a sentence together, but merge tiny sentence tails.
-            penalty+=sum(2.5 for w in group[i:j-1] if terminal(w['word']))
+            penalty+=sum(SENTENCE_CROSS for w in group[i:j-1] if terminal(w['word']))
             candidate=cost[i]+penalty
             if candidate<cost[j]:cost[j]=candidate;back[j]=i
     pieces=[];j=n
@@ -158,7 +163,8 @@ def assemble(words,duration,compact=False):
     if current:groups.append(current)
     cues=[]
     for group in groups:
-        for piece in split_group(group,width,maxchars,maxseconds):
+        pieces=split_group(group,width,maxchars,maxseconds);unsafe=boundary_rules(group);offset=0
+        for piece in pieces:
             text=' '.join(w['word'] for w in piece);start,end=piece[0]['start'],piece[-1]['end']
             flags=sorted(set(f for w in piece for f in w.get('flags',[])));info=sorted(set(f for w in piece for f in w.get('info',[])))
             flattened=[dict(word=t) for w in piece for t in w['word'].split()]
@@ -166,12 +172,16 @@ def assemble(words,duration,compact=False):
             if len(text)/max(.01,end-start)>25:flags.append('Chữ chạy nhanh; cần nghe kiểm tra')
             if end-start<.8:flags.append('Khối dưới 0,8 giây; cần kiểm tra')
             if len(text)>maxchars or end-start>maxseconds or any(len(l)>width for l in wrapped.splitlines()):flags.append('Khối dùng mốc chung dài; cần kiểm tra cách chia')
+            offset+=len(piece)
+            if offset<len(group) and offset in unsafe:
+                flags.append('Cụm nghĩa bị chia do giới hạn khối; cần kiểm tra')
+                info.append('Ranh giới cần duyệt: '+unsafe[offset])
             cues.append(dict(start=start,end=end,text=wrapped,flags=flags,info=info))
     return cues
 
 
-def write_result(path,cues,words,duration,device,model,audit=None):
-    x=ET.Element('subtitles',version='1.4.9',pipeline='v149-verified-1',duration=str(duration),device=device,model=model)
+def write_result(path,cues,words,duration,device,model,audit=None,repetition_policy='preserve'):
+    x=ET.Element('subtitles',version='1.4.10',pipeline='v1410-speech-1',duration=str(duration),device=device,model=model,repetitions=repetition_policy)
     for c in cues:ET.SubElement(x,'cue',start=str(c['start']),end=str(c['end']),note='; '.join(c.get('flags',[])),info='; '.join(c.get('info',[]))).text=c['text']
     log=ET.SubElement(x,'audit')
     for entry in audit or []:ET.SubElement(log,'change',**{k:str(v) for k,v in entry.items()})
@@ -180,5 +190,7 @@ def write_result(path,cues,words,duration,device,model,audit=None):
         attrs=dict(note='; '.join(w.get('flags',[])))
         if interval(w.get('start'),w.get('end'),duration):attrs.update(start=str(w['start']),end=str(w['end']))
         else:attrs['timing']='unresolved'
+        for name in ('asr_start','asr_end','ctc_end_before'):
+            if finite(w.get(name)) is not None:attrs[name]=str(w[name])
         ET.SubElement(xs,'word',**attrs).text=w['word']
     p=Path(path);tmp=p.with_suffix('.partial.xml');ET.ElementTree(x).write(tmp,encoding='utf-8',xml_declaration=True);tmp.replace(p)
