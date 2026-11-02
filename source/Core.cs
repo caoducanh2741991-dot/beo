@@ -70,7 +70,7 @@ public static class Scripts {
  }
  public static void Validate(List<Cue> cues) {
   if(cues.Count==0) throw new Exception("Chưa có lời đọc.");
-  if(cues.Count>MaxCues) throw new Exception("Kịch bản có "+cues.Count+" khối; bản 1.4.1 hỗ trợ tối đa 20.000 khối mỗi file.");
+  if(cues.Count>MaxCues) throw new Exception("Kịch bản có "+cues.Count+" khối; ứng dụng hỗ trợ tối đa 20.000 khối mỗi file.");
   for(int i=0;i<cues.Count;i++) {
    Cue c=cues[i]; c.Id=i+1;
    if(String.IsNullOrWhiteSpace(c.Text)) throw new Exception("Khối "+c.Id+" chưa có lời.");
@@ -126,7 +126,7 @@ public sealed class Wave {
 }
 public enum EngineKind { Kokoro, LibriTTS, Kitten, Piper, Qwen, Chatterbox }
 public class KokoroEngine : IDisposable {
- public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged;ExternalSpeech external;
+ internal bool NativeForcedCpu;internal string NativeFallbackReason;public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged;ExternalSpeech external;
  public void ReportDevice(string text){DeviceInfo=text;if(DeviceChanged!=null)DeviceChanged(text);}
  public void Dispose(){if(external!=null){external.Dispose();external=null;}}
  public string Root; public int Speaker=3,Threads=2; public EngineKind Kind=EngineKind.Kokoro;public string ModelFolder="";public bool Libri {get{return Kind==EngineKind.LibriTTS;}set{Kind=value?EngineKind.LibriTTS:EngineKind.Kokoro;}} public volatile bool Cancelled; private Process running;
@@ -154,20 +154,12 @@ public class KokoroEngine : IDisposable {
   else if(Kind==EngineKind.Kitten)args+="--kitten-model="+Q(ModelFile)+" --kitten-voices="+Q(Path.Combine(model,"voices.bin"))+" --kitten-tokens="+Q(Path.Combine(model,"tokens.txt"))+" --kitten-data-dir="+Q(Path.Combine(model,"espeak-ng-data"))+" ";
   else args+="--vits-noise-scale-w=0 --vits-model="+Q(ModelFile)+" --vits-tokens="+Q(Path.Combine(model,"tokens.txt"))+" --vits-data-dir="+Q(Path.Combine(model,"espeak-ng-data"))+" ";
   args+=Q(text);
-  var info=new ProcessStartInfo(Executable,args){UseShellExecute=false,CreateNoWindow=true,RedirectStandardError=true,RedirectStandardOutput=true,WorkingDirectory=Root};
-  string err="",stdout="";
-  using(var p=new Process{StartInfo=info}) {
-   running=p; p.ErrorDataReceived+=(s,e)=>{if(e.Data!=null && err.Length<12000)err+=e.Data+"\n";};p.OutputDataReceived+=(s,e)=>{if(e.Data!=null && stdout.Length<12000)stdout+=e.Data+"\n";};
-   p.Start();p.BeginErrorReadLine();p.BeginOutputReadLine();
-   while(!p.WaitForExit(100)){if(Cancelled){try{p.Kill();}catch{}throw new OperationCanceledException();}}
-   p.WaitForExit();running=null;if(Cancelled)throw new OperationCanceledException();
-   if(p.ExitCode!=0 || !File.Exists(output))throw new Exception("Bộ đọc offline gặp lỗi: "+err+stdout);
-  }
-  return Wave.Read(output).TrimEdges();
+  return NativeGpu.Generate(this,args,output);
  }
 }
 public sealed class RenderOptions {
  public bool Locked=true,SlowShort=true,JoinSentences=false;public double BaseSpeed=1,MaxSpeed=1.3,MinSpeed=.8,Gap=.15;
+ public PunctuationMode Punctuation=PunctuationMode.Auto;public double CommaPause=.14,StopPause=.30,QuestionPause=.35,ParagraphPause=.50;
  public BreathMode Breathing=BreathMode.Auto;public string BreathPath;public double BreathLevel=.16;public int BreathEvery=3;
 }
 public enum BreathMode { Auto, Custom, None }
@@ -225,11 +217,12 @@ public static class Renderer {
     for(int i=0;i<cues.Count;i++){
      if(engine.Cancelled)throw new OperationCanceledException();
      var c=cues[i];progress(i*90/cues.Count,"Đọc câu "+(i+1)+"/"+cues.Count);
-     Wave wav=engine.Generate(c.Text,o.BaseSpeed,Path.Combine(work,"cue.wav")).Resample(rate);c.Natural=wav.Duration;c.Speed=o.BaseSpeed;c.AudioPath=null;
+     var paced=Punctuation.Generate(engine,c.Text,o.BaseSpeed,o,Path.Combine(work,"cue.wav"));Wave wav=paced.Join();c.Natural=wav.Duration;c.Speed=o.BaseSpeed;c.AudioPath=null;
+     double boundary=i<cues.Count-1?Punctuation.After(c.Text,o):0;double reserve=o.Locked&&i<cues.Count-1?Math.Min(Math.Max(0,c.Duration-.08),Math.Max(0,boundary-Math.Max(0,cues[i+1].Start-c.End))):0;
      if(o.Locked){
-      wav=Tempo.Fit(wav,c,o,engine.Root,work,()=>engine.Cancelled);
-      if(wav.Duration>c.Duration){c.Status="QUÁ DÀI: +"+(wav.Duration-c.Duration).ToString("0.000")+"s tại tốc độ "+c.Speed.ToString("0.00")+" (tối đa "+o.MaxSpeed.ToString("0.00")+")";failed=true;continue;}
-      c.Status="Khớp timeline"+(c.Speed>o.BaseSpeed+.001?" · tự tăng tốc "+c.Speed.ToString("0.00"):"");
+      wav=Punctuation.Fit(paced,c,o,engine.Root,work,()=>engine.Cancelled,ref reserve);
+      if(wav.Duration>c.Duration-reserve){c.Status="QUÁ DÀI: +"+(wav.Duration-(c.Duration-reserve)).ToString("0.000")+"s tại tốc độ "+c.Speed.ToString("0.00")+" (tối đa "+o.MaxSpeed.ToString("0.00")+")";failed=true;continue;}
+      c.Status="Khớp timeline"+(o.Punctuation==PunctuationMode.Custom?" · nghỉ dấu câu":"")+(c.Speed>o.BaseSpeed+.001?" · tự tăng tốc "+c.Speed.ToString("0.00"):"");
      }else{c.Start=cursor;c.End=c.Start+wav.Duration;c.Actual=wav.Duration;c.Status="Timeline theo voice";}
      if(c.End>Scripts.MaxSeconds)throw new Exception("WAV dài hơn 6 giờ; hãy chia kịch bản.");
      writer.At(c.Start,wav);
@@ -237,7 +230,7 @@ public static class Renderer {
      Wave breath=i<cues.Count-1?track.After(c,rate,room):null;
      if(breath!=null&&o.Locked&&Math.Round(c.Start*rate)+wav.Samples.Length+Math.Round(.04*rate)+breath.Samples.Length+Math.Ceiling(.04*rate)>Math.Round(cues[i+1].Start*rate))breath=null;
      if(breath!=null){track.Inserted(c);c.Status+=" · hơi thở";var scaled=new short[breath.Samples.Length];track.Mix(breath,wav,scaled,0);writer.At(c.Start+wav.Duration+.04,new Wave{Rate=rate,Samples=scaled});}
-     if(!o.Locked)cursor=c.End+Math.Max(o.Gap,breath==null?0:breath.Duration+.08);
+     if(!o.Locked)cursor=c.End+Math.Max(Math.Max(o.Gap,boundary),breath==null?0:breath.Duration+.08);
     }
     if(failed){var bad=cues.Where(c=>c.Status.StartsWith("QUÁ")).ToList();throw new Exception("Có "+bad.Count+" câu vẫn vượt timeline sau khi tăng đến giới hạn. Chưa xuất WAV.\r\n"+String.Join("\r\n",bad.Take(12).Select(c=>"Câu "+c.Id+": "+c.Status))+"\r\nGiảm lời hoặc điều chỉnh giới hạn tốc độ / timeline.");}
     progress(95,"Hoàn tất WAV · kiểm tra độ dài");writer.Finish(cues.Last().End);

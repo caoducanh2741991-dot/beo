@@ -1,0 +1,265 @@
+{
+  "product": "V15 native ONNX CUDA pack",
+  "app_minimum": "1.4.3",
+  "hardware_tested": false,
+  "cuda": "12.8 Update 1",
+  "cudnn": "9.8.0.87",
+  "recommended_windows_driver_minimum": "572.61",
+  "sources": [
+    {
+      "name": "Microsoft Visual C++ Redistributable x64",
+      "url": "https://aka.ms/vs/17/release/vc_redist.x64.exe",
+      "sha256": "cc0ff0eb1dc3f5188ae6300faef32bf5beeba4bdd6e8e445a9184072096b713b"
+    },
+    {
+      "name": "nvidia-cublas-cu12",
+      "version": "12.8.4.1",
+      "url": "https://files.pythonhosted.org/packages/70/61/7d7b3c70186fb651d0fbd35b01dbfc8e755f69fd58f817f3d0f642df20c3/nvidia_cublas_cu12-12.8.4.1-py3-none-win_amd64.whl",
+      "sha256": "47e9b82132fa8d2b4944e708049229601448aaad7e6f296f630f2d1a32de35af"
+    },
+    {
+      "name": "nvidia-cuda-nvrtc-cu12",
+      "version": "12.8.93",
+      "url": "https://files.pythonhosted.org/packages/45/51/52a3d84baa2136cc8df15500ad731d74d3a1114d4c123e043cb608d4a32b/nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-win_amd64.whl",
+      "sha256": "7a4b6b2904850fe78e0bd179c4b655c404d4bb799ef03ddc60804247099ae909"
+    },
+    {
+      "name": "nvidia-cuda-runtime-cu12",
+      "version": "12.8.90",
+      "url": "https://files.pythonhosted.org/packages/30/a5/a515b7600ad361ea14bfa13fb4d6687abf500adc270f19e89849c0590492/nvidia_cuda_runtime_cu12-12.8.90-py3-none-win_amd64.whl",
+      "sha256": "c0c6027f01505bfed6c3b21ec546f69c687689aad5f1a377554bc6ca4aa993a8"
+    },
+    {
+      "name": "nvidia-cudnn-cu12",
+      "version": "9.8.0.87",
+      "url": "https://files.pythonhosted.org/packages/39/6a/5e9910b2b2c9dcddee9aaef372b3db0f08b9f7eaf1d462f859461a79caf9/nvidia_cudnn_cu12-9.8.0.87-py3-none-win_amd64.whl",
+      "sha256": "b4b5cfddc32aa4180f9d390ee99e9a9f55a89e7087329b41aba4319327e22466"
+    },
+    {
+      "name": "nvidia-cufft-cu12",
+      "version": "11.3.3.83",
+      "url": "https://files.pythonhosted.org/packages/7d/ec/ce1629f1e478bb5ccd208986b5f9e0316a78538dd6ab1d0484f012f8e2a1/nvidia_cufft_cu12-11.3.3.83-py3-none-win_amd64.whl",
+      "sha256": "7a64a98ef2a7c47f905aaf8931b69a3a43f27c55530c698bb2ed7c75c0b42cb7"
+    },
+    {
+      "name": "nvidia-nvjitlink-cu12",
+      "version": "12.8.93",
+      "url": "https://files.pythonhosted.org/packages/ed/d7/34f02dad2e30c31b10a51f6b04e025e5dd60e5f936af9045a9b858a05383/nvidia_nvjitlink_cu12-12.8.93-py3-none-win_amd64.whl",
+      "sha256": "bd93fbeeee850917903583587f4fc3a4eafa022e34572251368238ab5e6bd67f"
+    },
+    {
+      "name": "sherpa-onnx",
+      "version": "1.13.8",
+      "onnxruntime": "1.28.2",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.8/sherpa-onnx-v1.13.8-cuda-12.x-cudnn-9.x-onnxruntime1.28.2-win-x64-cuda.tar.bz2",
+      "sha256": "066c5b54dbafaa1388001a9c9837ac1374dbba6d6678f193ca06aa0d8e94d8c3"
+    }
+  ],
+  "files": [
+    {
+      "name": "LICENSE-Microsoft-Visual-Cpp.rtf",
+      "bytes": 9235,
+      "sha256": "8099dc3cf9502c335da829e5c755948a12e3e6de490eb492a99deb673d883d8b"
+    },
+    {
+      "name": "LICENSE-nvidia-cublas-cu12.txt",
+      "bytes": 59262,
+      "sha256": "ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd"
+    },
+    {
+      "name": "LICENSE-nvidia-cuda-nvrtc-cu12.txt",
+      "bytes": 59262,
+      "sha256": "ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd"
+    },
+    {
+      "name": "LICENSE-nvidia-cuda-runtime-cu12.txt",
+      "bytes": 59262,
+      "sha256": "ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd"
+    },
+    {
+      "name": "LICENSE-nvidia-cudnn-cu12.txt",
+      "bytes": 18174,
+      "sha256": "49cf79bdb35734b52fe6203013b3bd759f81e998cd32aa2c65c51db9a88c61d2"
+    },
+    {
+      "name": "LICENSE-nvidia-cufft-cu12.txt",
+      "bytes": 59262,
+      "sha256": "ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd"
+    },
+    {
+      "name": "LICENSE-nvidia-nvjitlink-cu12.txt",
+      "bytes": 59262,
+      "sha256": "ad6f5853fba0ca0d159d0f58d49ae49830c2f8c93f7a92648b9ce90adb4c6ccd"
+    },
+    {
+      "name": "LICENSE-onnxruntime.txt",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "name": "LICENSE-sherpa-onnx.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "name": "concrt140.dll",
+      "bytes": 324208,
+      "sha256": "2405355f0a58067b258f8df33c327e3a3d716eaac5a3a5aebb757842d85bd376"
+    },
+    {
+      "name": "cublas64_12.dll",
+      "bytes": 113716224,
+      "sha256": "9513540e4ec4c51ee9e7304138c2cc255c29a8c181f9e80c38efa25738becd99"
+    },
+    {
+      "name": "cublasLt64_12.dll",
+      "bytes": 674667520,
+      "sha256": "b199d1ff892a81b7fd3d57ba1781549609b41500b36008fef326038393ad46c7"
+    },
+    {
+      "name": "cudart64_12.dll",
+      "bytes": 573952,
+      "sha256": "c2c9a9c22a9bcba90e261825968836787b331038047a26770cffb7a583c28344"
+    },
+    {
+      "name": "cudnn64_9.dll",
+      "bytes": 265760,
+      "sha256": "0edb24306db36121137a3150ac55015aee174d4582d5b807bd3220180a7a57db"
+    },
+    {
+      "name": "cudnn_adv64_9.dll",
+      "bytes": 253583928,
+      "sha256": "631af1130b27b4d14683c7da690dddec8e25ffe3097d498fbba7129faba1601c"
+    },
+    {
+      "name": "cudnn_cnn64_9.dll",
+      "bytes": 4262456,
+      "sha256": "68c9f6bf98a5620a0bb0519c3997800ef2c7cb8979f17a60afcf82d341629c73"
+    },
+    {
+      "name": "cudnn_engines_precompiled64_9.dll",
+      "bytes": 548927544,
+      "sha256": "59e71b3adae62186d3336ccbda6d0c8b14a3a0ef21694757e2b32e84fa840152"
+    },
+    {
+      "name": "cudnn_engines_runtime_compiled64_9.dll",
+      "bytes": 25217568,
+      "sha256": "8671c24fc0debbd99c3dca57bfdf657f4c9490e2a009f641cfc2fcf7a1256180"
+    },
+    {
+      "name": "cudnn_graph64_9.dll",
+      "bytes": 2239520,
+      "sha256": "22c21907fb2108259cb25738156f4459c12c0a001715bbb6d5aafac150060e85"
+    },
+    {
+      "name": "cudnn_heuristic64_9.dll",
+      "bytes": 55919648,
+      "sha256": "5378e50729665245fa5abe89c729b782de686675e9bd6319cda1a3165d9492e6"
+    },
+    {
+      "name": "cudnn_ops64_9.dll",
+      "bytes": 116958752,
+      "sha256": "080c2bb37e9d1fdd585cdd53fdbb23c0478b99610a19f8bba512b596b1e302fe"
+    },
+    {
+      "name": "cufft64_11.dll",
+      "bytes": 276121600,
+      "sha256": "f4fea9227b14843894ad5436725f9638b172171142c95291fc6ae7a493248221"
+    },
+    {
+      "name": "msvcp140.dll",
+      "bytes": 557728,
+      "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9"
+    },
+    {
+      "name": "msvcp140_1.dll",
+      "bytes": 35952,
+      "sha256": "bfad5aef4c63a669e3c140655cdfdf395b6c979b400a447bd5dcb65ed8826c3d"
+    },
+    {
+      "name": "msvcp140_2.dll",
+      "bytes": 280200,
+      "sha256": "3ea06f0ee098b4823cb79599df3780e7f23cce52c19aac31d2a0d47efe33a5e9"
+    },
+    {
+      "name": "msvcp140_atomic_wait.dll",
+      "bytes": 50304,
+      "sha256": "640b2aefced484d0368eea5bdd06addd0658a3a70a49256e560d6923b404a479"
+    },
+    {
+      "name": "msvcp140_codecvt_ids.dll",
+      "bytes": 31872,
+      "sha256": "f2069a52880ec885ee7f0511186100eb7fada0411a2b4948fafea7735b878a18"
+    },
+    {
+      "name": "nvJitLink_120_0.dll",
+      "bytes": 77860352,
+      "sha256": "959d3cb44527ec884db8dc20772520b584dbe7d622d11b0530e6326417078b3e"
+    },
+    {
+      "name": "nvrtc-builtins64_128.dll",
+      "bytes": 6356480,
+      "sha256": "a7afa2a40cbd3f922a33d8bf71c13cb26ca707c7016a9bc5fcde36759ba668f5"
+    },
+    {
+      "name": "nvrtc64_120_0.alt.dll",
+      "bytes": 86794240,
+      "sha256": "5464ea01b079d78042374dc7819684910c8e9d5c63000e2d2d5aa02298ecf2ae"
+    },
+    {
+      "name": "nvrtc64_120_0.dll",
+      "bytes": 86728192,
+      "sha256": "02d2d7ef4690bf1a55dda1d3ac94c86ce8d16920071c87bcd3e70e94ef346e93"
+    },
+    {
+      "name": "onnxruntime.dll",
+      "bytes": 16283448,
+      "sha256": "f202b5c9b0025993996d60f5b528cdb92ad12aa9b709b12a8089bb3403da30bd"
+    },
+    {
+      "name": "onnxruntime_providers_cuda.dll",
+      "bytes": 496742712,
+      "sha256": "0204055e745b092b0d946558b914b61aa395a9fa41fc6e082904c1441de3ef4d"
+    },
+    {
+      "name": "onnxruntime_providers_shared.dll",
+      "bytes": 21816,
+      "sha256": "f55a8a6216a63c5678f0ccca531403fd34e7325e0b43c771e134a3898c3e5120"
+    },
+    {
+      "name": "sherpa-onnx-offline-tts.exe",
+      "bytes": 2768896,
+      "sha256": "fa066cfe83b2206a614e1be36dff14f3850e6b6e86e16720d68aef7d7b8610b0"
+    },
+    {
+      "name": "vcamp140.dll",
+      "bytes": 418944,
+      "sha256": "52af68f35476bd03d7b97752b01bef358ffdda568d150057d6ce809f77c4f704"
+    },
+    {
+      "name": "vccorlib140.dll",
+      "bytes": 352384,
+      "sha256": "19839407c3fdbc824e5bce189bf68ddf8097f12ec28b757797ffa0415c144ddd"
+    },
+    {
+      "name": "vcomp140.dll",
+      "bytes": 193152,
+      "sha256": "55aba23cdcd6484fbb06f4155b8ca75adfce7a881f10afd0c49457165e677164"
+    },
+    {
+      "name": "vcruntime140.dll",
+      "bytes": 124544,
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+    },
+    {
+      "name": "vcruntime140_1.dll",
+      "bytes": 49792,
+      "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f"
+    },
+    {
+      "name": "vcruntime140_threads.dll",
+      "bytes": 38528,
+      "sha256": "219915cf20822f34d5e7c1fdd4e21ae7f3396881096c51036225fb8f84b47afa"
+    }
+  ]
+}

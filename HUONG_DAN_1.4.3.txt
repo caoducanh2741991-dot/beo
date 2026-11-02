@@ -1,0 +1,69 @@
+V15 VOICE STUDIO 1.4.3 — CẬP NHẬT ZIP
+
+1. CẬP NHẬT APP
+Trong bản đang cài, vào Công cụ & thiết lập > Cập nhật từ ZIP, chọn
+V15VoiceStudio_1.4.3_Update.zip. Chờ công cụ hoàn tất và mở lại app.
+Nếu bản cũ chưa có nút cập nhật: giải nén ZIP này sang thư mục tạm,
+chạy CAP_NHAT.cmd và chọn đúng thư mục đang cài có ai/runtime và ai/models.
+Kiểm tra tiêu đề app và tab Công cụ & thiết lập đều ghi 1.4.3.
+Không cần cài lại EXE lớn. Giữ thư mục model, runtime và dữ liệu giọng đã cài.
+
+2. GPU CHO MỌI NGUỒN GIỌNG
+Công cụ & thiết lập 1.4.3 > Thiết bị chạy voice:
+• Auto: ưu tiên GPU khi đã có gói tương ứng và driver hoạt động.
+  Nếu GPU ONNX lỗi, tạo lại câu bằng CPU và giữ CPU cho tác vụ hiện tại.
+• NVIDIA GPU: bắt buộc CUDA; báo lỗi khi không chạy được, không âm thầm nhận CPU.
+• CPU: chạy bằng thư viện CPU có sẵn.
+Thiết lập này áp dụng cho Tạo voice, nghe thử, so sánh và hàng đợi.
+
+Kokoro / LibriTTS / Kitten / Piper:
+Tải đủ V15_ONNX_GPU_1.4.3_01.zip đến 04.zip, đặt cạnh nhau.
+Cập nhật APP lên 1.4.3 trước. Sau đó Cập nhật từ ZIP, chọn phần 01.
+Không cần tự giải nén các phần GPU. Cần khoảng 8 GB trống khi cài gói này.
+Gói ONNX được cài riêng trong engine/gpu, không thay thư viện CPU hoặc Torch.
+Gói đóng kèm CUDA 12.8 và cuDNN 9.8. Khuyến nghị driver NVIDIA 572.61 trở lên.
+Sau khi cài, app chạy offline; không cần tự cài CUDA Toolkit.
+
+Qwen / Chatterbox:
+Tiếp tục dùng gói V15_GPU_CUDA124 gồm 8 phần đã cung cấp ở bản trước.
+Nếu đã cài gói này thì không cần tải hoặc cài lại.
+Gói GPU ONNX không thay thế gói CUDA124 của hai nguồn này.
+
+Kiểm tra GPU / VRAM kiểm tra Torch CUDA và báo tình trạng cài gói ONNX.
+Chọn một giọng ở Tạo voice rồi bấm Thử giọng đang chọn trên GPU để tạo
+một câu thử thực tế bằng CUDA, xem trạng thái thành công hoặc nguyên nhân lỗi.
+RTX 2070 8 GB: chạy lần lượt, mỗi lần một model. Gói dùng CUDA 12 để hỗ trợ Turing.
+Một số toán tử vẫn có thể chạy CPU; chọn GPU không bảo đảm mọi giọng nhanh hơn CPU.
+Bản này chưa được thử trực tiếp trên Windows và GPU vật lý của người dùng.
+
+3. NGẮT NGHỈ THEO DẤU CÂU
+Tạo voice > cuộn bảng thiết lập bên phải > 03 Ngắt nghỉ theo dấu câu.
+• Auto: giữ văn bản nguyên câu, để model tự quyết định nhịp tự nhiên.
+• Tùy chỉnh: đặt thời gian nghỉ, từ 0 đến 1,50 giây:
+  Dấu phẩy: mặc định 0,14 giây.
+  Dấu chấm / chấm phẩy / hai chấm: 0,30 giây.
+  Dấu hỏi / cảm thán: 0,35 giây.
+  Xuống đoạn trong một khối: 0,50 giây.
+Khoảng lặng sẵn ở đầu/cuối đoạn được trừ vào khoảng nghỉ thêm.
+Số thập phân, hàng nghìn và các viết tắt thông dụng không bị tách ở dấu chấm/phẩy.
+Tùy chỉnh tạo từng cụm riêng; nên dùng Auto nếu muốn giữ ngữ điệu liền mạch nhất.
+Tùy chỉnh giữ nhịp câu ngắn ở tốc độ gốc; tùy chọn làm chậm câu ngắn chỉ áp dụng
+trong Auto, để không kéo dài các khoảng nghỉ đã đặt.
+
+Khóa SRT: giữ nguyên mốc gốc. Khi câu không đủ chỗ, rút khoảng nghỉ thêm trước,
+rồi tăng tốc trong giới hạn đã chọn. Nếu vẫn dài, báo câu lỗi và không xuất WAV sai.
+Timeline linh hoạt: khoảng nghỉ cuối câu dùng giá trị lớn hơn giữa khoảng nghỉ
+timeline, dấu câu và hơi thở; không cộng chồng cả ba khoảng nghỉ.
+Thiết lập dấu câu được lưu cùng preset/phiên và dùng chung cho hàng đợi nhiều file.
+
+4. HƠI THỞ VÀ KẾT QUẢ
+04 Hơi thở vẫn có Auto / Tùy chọn / Không dùng; là mục riêng với ngắt nghỉ dấu câu.
+Hơi thở và ngắt nghỉ áp dụng chung cho cả Tạo voice và Hàng đợi nhiều file.
+Chỉ xuất WAV cạnh SRT/TXT gốc. Nếu trùng tên, thêm số, không ghi đè WAV đã có.
+File dán trực tiếp cần chọn nơi lưu WAV. Nhiều file xử lý lần lượt trong hàng đợi.
+Giới hạn mỗi file: 20.000 khối, 6 giờ. 1 khối là một mục SRT có mốc bắt đầu/kết thúc.
+
+5. PHẠM VI BẢN NÀY
+Sửa phần kiểm tra GPU trả chuỗi mã hóa; thêm GPU ONNX và ngắt nghỉ dấu câu.
+Chức năng sao chép giọng được giữ nguyên. Lỗi render giọng sao chép được tạm gác
+theo yêu cầu; bản 1.4.3 không tuyên bố đã sửa hoặc kiểm chứng lỗi đó.

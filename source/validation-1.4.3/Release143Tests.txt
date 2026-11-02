@@ -1,0 +1,6 @@
+PASS ZIP CRC, unique entries, version, all payload SHA-256 hashes, bootstrap/payload updater parity
+PASS from-1.4.0-folder all 155 payload files match; CPU/GPU/models/voice/queue/settings/SRT/WAV retained; no unfinished transaction
+PASS from-1.4.2-zip all 155 payload files match; CPU/GPU/models/voice/queue/settings/SRT/WAV retained; no unfinished transaction
+PASS from-1.4.2-installed-updater all 155 payload files match; CPU/GPU/models/voice/queue/settings/SRT/WAV retained; no unfinished transaction
+PASS downgrade to 1.4.2 rejected before replacing current app
+PASS packaged app SHA-256 62a0f607c0f2cbac92b8c9b620e7e5218313a70804065f54ba60d41fc4e7f5e0

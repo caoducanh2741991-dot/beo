@@ -12,8 +12,8 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
-[assembly: System.Reflection.AssemblyVersion("1.4.2.0")]
-[assembly: System.Reflection.AssemblyFileVersion("1.4.2.0")]
+[assembly: System.Reflection.AssemblyVersion("1.4.3.0")]
+[assembly: System.Reflection.AssemblyFileVersion("1.4.3.0")]
 
 namespace V15Update {
 public static class UpdateEngine {
@@ -43,6 +43,19 @@ public static class UpdateEngine {
    var seen=new HashSet<string>(StringComparer.OrdinalIgnoreCase);foreach(var f in manifest.Elements("file")){string path=A(f,"path");if(!AllowedCore(path)||!seen.Add(path))throw new Exception("Tệp không được phép hoặc trùng tên: "+path);string dest=Safe(stage,path),entry="payload/"+path;
     if(Directory.Exists(package)){using(var s=File.OpenRead(Safe(package,entry)))CopyChecked(s,dest,Size(f),A(f,"sha256"));}else using(var zip=ZipFile.OpenRead(package)){var e=zip.GetEntry(entry);if(e==null)throw new Exception("ZIP thiếu "+entry);using(var s=e.Open())CopyChecked(s,dest,Size(f),A(f,"sha256"));}result.Add(path);
    }if(!result.Contains("V15VoiceStudio.exe")||!result.Contains("V15Updater.exe"))throw new Exception("Gói cập nhật thiếu ứng dụng.");
+  }else if(kind=="onnx"){
+   string folder=Directory.Exists(package)?package:Path.GetDirectoryName(Path.GetFullPath(package));var seen=new HashSet<string>(StringComparer.OrdinalIgnoreCase);var rows=manifest.Elements("file").ToList();
+   if(rows.Count<4||rows.Count>128)throw new Exception("Gói ONNX không đủ thư viện hoặc có quá nhiều tệp.");
+   foreach(var f in rows){string path=A(f,"path");string name=path.StartsWith("engine/gpu/")?path.Substring(11):"";
+    if(name==""||name.Contains('/')||!(name.EndsWith(".dll",StringComparison.OrdinalIgnoreCase)||name=="sherpa-onnx-offline-tts.exe"||name=="info.json"||name.StartsWith("LICENSE-"))||!seen.Add(path))throw new Exception("Tệp GPU ONNX không hợp lệ hoặc trùng: "+path);Safe(stage,path);
+    var pieces=f.Elements("piece").ToList();if(pieces.Count==0||pieces.Count>256)throw new Exception("Tệp ONNX thiếu dữ liệu.");
+    foreach(var p in pieces){string arc=A(p,"archive");if(Path.GetFileName(arc)!=arc||!arc.StartsWith("V15_ONNX_GPU_1.4.3_")||!arc.EndsWith(".zip"))throw new Exception("Tên phần ONNX không hợp lệ.");if(!File.Exists(Safe(folder,arc)))throw new Exception("Thiếu "+arc+". Đặt đủ 4 ZIP ONNX trong cùng thư mục.");}
+   }
+   foreach(string name in new[]{"sherpa-onnx-offline-tts.exe","onnxruntime.dll","onnxruntime_providers_cuda.dll","onnxruntime_providers_shared.dll"})if(!seen.Contains("engine/gpu/"+name))throw new Exception("Thiếu thư viện ONNX bắt buộc: "+name);
+   int index=0;foreach(var f in rows){string dest=Safe(stage,A(f,"path"));Directory.CreateDirectory(Path.GetDirectoryName(dest));notify("Kiểm tra và ghép GPU ONNX "+(++index)+" / "+rows.Count+": "+Path.GetFileName(dest));long total=0;
+    using(var output=File.Create(dest))foreach(var p in f.Elements("piece")){string temp=Safe(stage,".onnx-piece.tmp");using(var z=ZipFile.OpenRead(Safe(folder,A(p,"archive")))){var entry=z.GetEntry(A(p,"entry"));if(entry==null)throw new Exception("Phần ONNX thiếu dữ liệu: "+A(p,"archive"));try{using(var input=entry.Open())CopyChecked(input,temp,Size(p),A(p,"sha256"));}catch(Exception e){throw new Exception("Hỏng "+A(p,"archive")+": "+e.Message,e);}using(var input=File.OpenRead(temp))input.CopyTo(output);File.Delete(temp);total+=Size(p);if(total>Size(f))throw new Exception("Tệp ONNX dài hơn khai báo.");}}
+    if(total!=Size(f)||!Hash(dest).Equals(A(f,"sha256"),StringComparison.OrdinalIgnoreCase))throw new Exception("Sai SHA-256 thư viện ONNX: "+Path.GetFileName(dest));result.Add(A(f,"path"));
+   }
   }else if(kind=="gpu"){
    string folder=Directory.Exists(package)?package:Path.GetDirectoryName(Path.GetFullPath(package));var seen=new HashSet<string>(StringComparer.OrdinalIgnoreCase);
    var wheels=manifest.Elements("wheel").ToList();if(wheels.Count!=2)throw new Exception("Gói GPU cần đủ torch và torchaudio.");
@@ -88,6 +101,7 @@ public static class UpdateEngine {
    var header=Manifest(package);long space;if(!Int64.TryParse(A(header,"space"),out space)||space<0)throw new Exception("Gói thiếu thông tin dung lượng.");
    var drive=new DriveInfo(Path.GetPathRoot(target));if(drive.AvailableFreeSpace<space)throw new Exception("Cần thêm "+Math.Ceiling(space/1073741824.0)+" GB trống trên ổ cập nhật.");
    if(A(header,"kind")=="gpu"){Version version;string text=FileVersionInfo.GetVersionInfo(app).FileVersion;if(!Version.TryParse(text,out version)||version<new Version(1,4,1,0))throw new Exception("Cập nhật ZIP ứng dụng 1.4.1 trước, sau đó thêm gói GPU.");}
+   if(A(header,"kind")=="onnx"&&baseVersion<new Version(1,4,3,0))throw new Exception("Cập nhật ZIP ứng dụng 1.4.3 trước, sau đó cài gói GPU ONNX.");
    string stage=Path.Combine(target,".v15-stage-"+Guid.NewGuid().ToString("N"));
    try{Directory.CreateDirectory(stage);File.WriteAllText(Path.Combine(stage,".v15-owner"),"V15VoiceStudio");notify("Kiểm tra gói cập nhật…");var files=Stage(package,stage,notify);notify("Đang sao lưu và thay tệp. Vui lòng chờ…");if(A(header,"kind")=="core"){
      Version installed,next,expected;if(!Version.TryParse(FileVersionInfo.GetVersionInfo(app).FileVersion,out installed)||!Version.TryParse(FileVersionInfo.GetVersionInfo(Path.Combine(stage,"V15VoiceStudio.exe")).FileVersion,out next)||!Version.TryParse(A(header,"version"),out expected))throw new Exception("Không đọc được phiên bản EXE trong ZIP.");
@@ -100,7 +114,7 @@ public static class UpdateEngine {
 }
 public class UpdateForm:Form {
  readonly Label label=new Label();readonly Button start=new Button();readonly TextBox package=new TextBox(),target=new TextBox();bool running;readonly bool restart;readonly int parent;
- public UpdateForm(string initialPackage,string initialTarget,bool reopen,int parentId){restart=reopen;parent=parentId;Text="V15 · Cập nhật ZIP 1.4.2";Size=new Size(740,340);MinimumSize=Size;StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);var layout=new FlowLayoutPanel{Dock=DockStyle.Fill,Padding=new Padding(18),FlowDirection=FlowDirection.TopDown,WrapContents=false};Controls.Add(layout);
+ public UpdateForm(string initialPackage,string initialTarget,bool reopen,int parentId){restart=reopen;parent=parentId;Text="V15 · Cập nhật ZIP 1.4.3";Size=new Size(740,340);MinimumSize=Size;StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);var layout=new FlowLayoutPanel{Dock=DockStyle.Fill,Padding=new Padding(18),FlowDirection=FlowDirection.TopDown,WrapContents=false};Controls.Add(layout);
   layout.Controls.Add(new Label{Text="CẬP NHẬT V15 TỪ ZIP · giữ model, WAV và giọng riêng",AutoSize=true});package.Width=670;package.ReadOnly=true;package.Text=initialPackage;layout.Controls.Add(package);var pick=new Button{Text="Chọn ZIP cập nhật",AutoSize=true};pick.Click+=(s,e)=>{using(var d=new OpenFileDialog{Filter="V15 ZIP|*.zip"})if(d.ShowDialog()==DialogResult.OK)package.Text=d.FileName;};layout.Controls.Add(pick);target.Width=670;target.ReadOnly=true;target.Text=initialTarget;layout.Controls.Add(target);var folder=new Button{Text="Chọn thư mục V15 đã cài",AutoSize=true};folder.Click+=(s,e)=>{using(var d=new FolderBrowserDialog{SelectedPath=target.Text})if(d.ShowDialog()==DialogResult.OK)target.Text=d.SelectedPath;};layout.Controls.Add(folder);start.Text="CẬP NHẬT";start.AutoSize=true;layout.Controls.Add(start);label.MaximumSize=new Size(660,0);label.AutoSize=true;layout.Controls.Add(label);
   start.Click+=async(s,e)=>{if(running)return;running=true;start.Enabled=pick.Enabled=folder.Enabled=false;string src=package.Text,dest=target.Text;try{await Task.Run(()=>{if(parent>0)try{var p=Process.GetProcessById(parent);if(!p.WaitForExit(30000))throw new Exception("App chưa đóng. Đóng app rồi thử lại.");}catch(ArgumentException){}UpdateEngine.Apply(src,dest,message=>BeginInvoke((Action)(()=>label.Text=message)));});label.Text="Cập nhật hoàn tất. Mở V15VoiceStudio.exe tại thư mục vừa chọn.";if(restart){Process.Start(Path.Combine(dest,"V15VoiceStudio.exe"));running=false;Close();}}catch(Exception ex){label.Text="Chưa cập nhật: "+ex.Message;MessageBox.Show(this,label.Text,"V15",MessageBoxButtons.OK,MessageBoxIcon.Warning);}finally{running=false;if(!IsDisposed)start.Enabled=pick.Enabled=folder.Enabled=true;}};
   FormClosing+=(s,e)=>{if(running){e.Cancel=true;label.Text="Đang cập nhật. Vui lòng chờ để bảo toàn dữ liệu.";}};

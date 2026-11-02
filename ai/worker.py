@@ -13,6 +13,7 @@ import sys
 import tempfile
 import traceback
 
+PROTOCOL_OUT = sys.stdout
 ROOT = Path(__file__).resolve().parent
 # Embedded Python on Windows uses an isolated ._pth; add our own module directory explicitly.
 sys.path.insert(0, str(ROOT))
@@ -38,7 +39,7 @@ def dec(s):
 
 
 def emit(kind, value=""):
-    print("V15_" + kind + "\t" + base64.b64encode(value.encode("utf-8")).decode("ascii"), flush=True)
+    print("V15_" + kind + "\t" + base64.b64encode(value.encode("utf-8")).decode("ascii"), file=PROTOCOL_OUT, flush=True)
 
 
 def split_text(text):

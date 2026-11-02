@@ -1,0 +1,50 @@
+PASS Multipart ONNX files reassemble in manifest order and verify SHA256
+PASS Missing part rejected before any file is staged
+PASS Missing-part failure leaves no partial library
+PASS Native addon cannot overwrite worker or escape isolated engine folder
+PASS Bad per-piece SHA256 is rejected
+PASS Addon commit preserves original CPU and Torch CUDA runtime
+Kiểm tra và ghép GPU ONNX 1 / 42: LICENSE-Microsoft-Visual-Cpp.rtf
+Kiểm tra và ghép GPU ONNX 2 / 42: LICENSE-nvidia-cublas-cu12.txt
+Kiểm tra và ghép GPU ONNX 3 / 42: LICENSE-nvidia-cuda-nvrtc-cu12.txt
+Kiểm tra và ghép GPU ONNX 4 / 42: LICENSE-nvidia-cuda-runtime-cu12.txt
+Kiểm tra và ghép GPU ONNX 5 / 42: LICENSE-nvidia-cudnn-cu12.txt
+Kiểm tra và ghép GPU ONNX 6 / 42: LICENSE-nvidia-cufft-cu12.txt
+Kiểm tra và ghép GPU ONNX 7 / 42: LICENSE-nvidia-nvjitlink-cu12.txt
+Kiểm tra và ghép GPU ONNX 8 / 42: LICENSE-onnxruntime.txt
+Kiểm tra và ghép GPU ONNX 9 / 42: LICENSE-sherpa-onnx.txt
+Kiểm tra và ghép GPU ONNX 10 / 42: concrt140.dll
+Kiểm tra và ghép GPU ONNX 11 / 42: cublas64_12.dll
+Kiểm tra và ghép GPU ONNX 12 / 42: cublasLt64_12.dll
+Kiểm tra và ghép GPU ONNX 13 / 42: cudart64_12.dll
+Kiểm tra và ghép GPU ONNX 14 / 42: cudnn64_9.dll
+Kiểm tra và ghép GPU ONNX 15 / 42: cudnn_adv64_9.dll
+Kiểm tra và ghép GPU ONNX 16 / 42: cudnn_cnn64_9.dll
+Kiểm tra và ghép GPU ONNX 17 / 42: cudnn_engines_precompiled64_9.dll
+Kiểm tra và ghép GPU ONNX 18 / 42: cudnn_engines_runtime_compiled64_9.dll
+Kiểm tra và ghép GPU ONNX 19 / 42: cudnn_graph64_9.dll
+Kiểm tra và ghép GPU ONNX 20 / 42: cudnn_heuristic64_9.dll
+Kiểm tra và ghép GPU ONNX 21 / 42: cudnn_ops64_9.dll
+Kiểm tra và ghép GPU ONNX 22 / 42: cufft64_11.dll
+Kiểm tra và ghép GPU ONNX 23 / 42: info.json
+Kiểm tra và ghép GPU ONNX 24 / 42: msvcp140.dll
+Kiểm tra và ghép GPU ONNX 25 / 42: msvcp140_1.dll
+Kiểm tra và ghép GPU ONNX 26 / 42: msvcp140_2.dll
+Kiểm tra và ghép GPU ONNX 27 / 42: msvcp140_atomic_wait.dll
+Kiểm tra và ghép GPU ONNX 28 / 42: msvcp140_codecvt_ids.dll
+Kiểm tra và ghép GPU ONNX 29 / 42: nvJitLink_120_0.dll
+Kiểm tra và ghép GPU ONNX 30 / 42: nvrtc-builtins64_128.dll
+Kiểm tra và ghép GPU ONNX 31 / 42: nvrtc64_120_0.alt.dll
+Kiểm tra và ghép GPU ONNX 32 / 42: nvrtc64_120_0.dll
+Kiểm tra và ghép GPU ONNX 33 / 42: onnxruntime.dll
+Kiểm tra và ghép GPU ONNX 34 / 42: onnxruntime_providers_cuda.dll
+Kiểm tra và ghép GPU ONNX 35 / 42: onnxruntime_providers_shared.dll
+Kiểm tra và ghép GPU ONNX 36 / 42: sherpa-onnx-offline-tts.exe
+Kiểm tra và ghép GPU ONNX 37 / 42: vcamp140.dll
+Kiểm tra và ghép GPU ONNX 38 / 42: vccorlib140.dll
+Kiểm tra và ghép GPU ONNX 39 / 42: vcomp140.dll
+Kiểm tra và ghép GPU ONNX 40 / 42: vcruntime140.dll
+Kiểm tra và ghép GPU ONNX 41 / 42: vcruntime140_1.dll
+Kiểm tra và ghép GPU ONNX 42 / 42: vcruntime140_threads.dll
+PASS All actual packaged native DLLs reassemble to original verified SHA256
+TOTAL ONNX UPDATER 7 passed.
