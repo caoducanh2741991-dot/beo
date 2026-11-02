@@ -1,0 +1,53 @@
+BÉO VOICE STUDIO 4.1.1 — RENDER FIX
+VÁ TRỰC TIẾP BẢN 4.1.0 · 02/11/2026
+
+PHẢN HỒI CẦN XỬ LÝ
+Anh báo tốc độ chậm hơn các bản trước. Số đo UI/cache trong báo cáo
+4.1.0 không đủ kết luận tốc độ TTS đầu–cuối. Môi trường này chưa có báo
+cáo lần chạy chậm trên máy anh hoặc RTX2070 thực, nên chưa thể gán một
+nguyên nhân duy nhất cho chính lần chạy đó.
+
+CÁC CÔNG VIỆC THỪA ĐÃ XÁC NHẬN TRONG MÃ VÀ ĐƯỢC VÁ
+1. AiTimeline.Run tạo factory engine và Dispose sau mỗi phép đo. Với
+   worker ngoài, điều này nạp lại model qua các chặng dù cùng giọng.
+   Bản vá giữ một lease giọng cho các phép đo liên tiếp; giải phóng khi
+   chuyển vai, gọi model ngôn ngữ, dừng, lỗi hoặc kết thúc.
+2. SRT khóa có PCM đã đo/căn nhưng renderer cuối vẫn gọi Punctuation.Fit
+   một lần nữa. Bản vá đối chiếu lời, profile, timecode, giới hạn và hash
+   rồi dùng đúng PCM đã đo. WAV vẫn phải qua kiểm tra đầu ra.
+3. Chạy lại chế độ theo file trước đây chủ yếu dùng lại TTS trước căn,
+   vẫn cần atempo. Bản vá lưu checkpoint PCM đã căn cho từng cue khóa.
+   Việc ghi chạy trong một luồng I/O có hàng đợi tối đa hai mục, dữ liệu
+   cue/giọng được chụp trước khi hàng đợi chuyển sang câu tiếp theo.
+   Chờ ghi hoàn tất trước khi render trả về; lỗi cache không che lỗi WAV.
+4. Thông báo % có thể dẫn đến ghi lại toàn bộ XML của cả batch nhiều
+   lần. Bản vá giới hạn checkpoint chỉ đổi % khoảng 5 giây/lần; thay đổi
+   trạng thái/nguồn/đầu ra/dấu cấu hình vẫn lưu ngay.
+5. ETA tách từ lại nhiều kịch bản qua các nhịp UI. Trọng số văn bản được
+   dùng lại khi snapshot chưa đổi; chỉ phục vụ ước lượng thời gian.
+
+THÊM CHẨN ĐOÁN NGAY TRONG BÁO CÁO CŨ
+Thời gian AI_PREPARE, TTS_SYNTHESIS, ATEMPO_PROCESS, RENDER_PCM,
+CUE_CHECKPOINT_IO; số lần tổng hợp, mở tiến trình, dùng raw cache và PCM
+đã căn. Dữ liệu này giúp phân biệt chậm vì TTS/nạp model, AI, FFmpeg hay
+ghi kết quả. Không sinh báo cáo thứ ba hoặc thêm nút cần thao tác.
+
+GIỮ CHỨC NĂNG VÀ DỮ LIỆU
+- Chế độ 1 giữ lời và có một báo cáo; chế độ 2 có hai báo cáo, bản ngắn
+  chỉ câu đã đổi Anh–Việt. Thiếu dịch vẫn TRANSLATION_INCOMPLETE.
+- Không đổi prompt/chính sách nghĩa, tốc độ mặc định, giới hạn kỹ thuật,
+  timecode hay lời gốc để làm nhanh. Không thêm im lặng giả đạt.
+- Dùng lại cache/chặng V15.6 và dữ liệu đã có khi còn tương thích.
+- Giữ giọng, clone, hai vai, runtime và bộ GPU đã cài. Không cài model mới.
+- Giữ gợi ý giọng nhẹ, nhập thư mục và giao diện của 4.1.0; Creator vẫn gỡ.
+
+GIỚI HẠN
+Kokoro vẫn tổng hợp mới bằng CLI hiện có, chưa có worker ONNX thường
+trú. Không coi số đo fixture là thời gian render thật trên RTX2070.
+Chạy lạnh theo file còn phụ thuộc model, ổ đĩa và GPU/CPU thực; checkpoint
+cần một phần ghi đĩa bổ sung để lượt chạy/tiếp tục sau dùng lại được PCM.
+
+BÀN GIAO
+ZIP chứa EXE Windows x64 đã build, source, BUILD_WINDOWS.cmd, hướng dẫn
+cập nhật và log kiểm thử. KET_QUA_KIEM_THU_4.1.1.txt ghi số đo pipeline
+đầy đủ, các lượt chạy lạnh/ấm và những điểm chưa kiểm chứng.

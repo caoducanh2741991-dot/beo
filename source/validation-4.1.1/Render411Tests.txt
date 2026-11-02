@@ -1,0 +1,36 @@
+PASS Cold locked SRT still publishes verified PCM with one report
+PASS Performance instrumentation creates no extra report in mode 1
+PASS Cold path measures eight real fixture TTS requests and actual FFmpeg fitting
+PASS Warm locked output reuses fitted PCM without repeating TTS or atempo
+PASS Warm and cold locked outputs contain exactly identical WAV bytes
+PASS The existing report exposes measured timings and actual fitted-cue reuse
+PASS A matching locked-cue checkpoint is usable after hash/geometry/profile checks
+PASS Changed wording cannot reuse old fitted PCM
+PASS Changed following timecode invalidates a locked checkpoint
+PASS Changing the voice invalidates fitted-cue reuse
+PASS Changing fitting limits invalidates fitted-cue reuse
+PASS Explicit audio refresh bypasses fitted-cue reuse too
+PASS Corrupted fitted audio fails full PCM hash validation
+PASS A corrupted checkpoint is rebuilt from valid source audio, preserving the original WAV bytes
+PASS Rebuilding one corrupt cue keeps the other seven fitted checkpoints
+PASS Mode 2 remains unattended with exactly its two reports
+PASS Eight passing AI measurements use one actual external worker process
+PASS Final locked WAV uses every matching AI-measured PCM instead of regenerating/refitting it
+PASS PCM reuse preserves every source word and confirms each final cue
+PASS The shared measuring worker is disposed before finishing the job
+PASS Cached custom-pause audio does not invent an unrecorded post-pause-compression duration
+PASS Timings and bilingual changes report distinguish reuse from AI wording changes
+PASS Legacy measured sessions can be reused without new on-disk cue checkpoints
+PASS A measurement still needing repair can never become accepted cached output
+PASS Non-finite cached timing metadata is rejected
+PASS The previous role is released before the next role obtains a worker
+PASS The previous role is released before the next role obtains a worker
+PASS Contiguous A/A/B/B uses two worker lifetimes and keeps all four measurements
+PASS Both roles are released after measurement
+PASS Repeated AI output stops after distinct strategies and the worker was released before every model call
+PASS No TTS worker leaks after an unsuccessful repair
+PASS Cancellation disposes the warm worker and retains the already verified first cue
+PASS Deferred PCM I/O snapshots the voice, cue and fitting data before the next cue can mutate them
+PASS Cache I/O failures remain nonfatal and disposal drains later successful writes
+PASS Cached ETA word weights update when the source snapshot changes
+TOTAL RENDER411 35 PASS. Real external processes and FFmpeg; synthetic speech, no Windows/GPU speed claim.

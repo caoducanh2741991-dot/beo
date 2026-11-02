@@ -1,0 +1,13 @@
+PASS Native form loads the intended 4.1.1 assembly
+PASS Queue test imports a real source through the native form
+PASS The app run options actually enable fitted locked-cue reuse
+PASS A burst of real progress updates does not repeatedly serialize every script in the queue
+PASS Throttling persistence does not drop the current in-memory percent
+PASS Elapsed checkpoint interval persists the newest progress without a blocking wait
+PASS Periodic checkpoint contains the actual latest saved progress
+PASS A job state change saves immediately even inside the throttle interval
+PASS Completed render configuration is written with the state transition
+PASS A late configuration fingerprint assignment cannot be lost behind an unchanged percent
+PASS Progress and persistence optimizations never rewrite source words
+TOTAL RENDER411 UI 11 PASS. Actual WinForms and queue XML; no GPU inference.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

@@ -42,7 +42,7 @@ public sealed class ExternalSpeech : IDisposable {
   int epoch=Interlocked.Increment(ref workerEpoch);var started=new Process{StartInfo=pi};process=started;
   started.OutputDataReceived+=(s,e)=>{if(e.Data==null||!e.Data.StartsWith("V15_"))return;lock(replies){if(epoch!=workerEpoch)return;replies.Enqueue(e.Data);}try{signal.Set();}catch(ObjectDisposedException){};};
   started.ErrorDataReceived+=(s,e)=>{if(e.Data!=null)lock(replies){if(epoch!=workerEpoch)return;errors+=e.Data+"\n";if(errors.Length>6000)errors=errors.Substring(errors.Length-6000);}};
-  started.Start();AttachJob();started.StandardInput.AutoFlush=true;started.BeginOutputReadLine();started.BeginErrorReadLine();Activity("Đang nạp model và mẫu giọng");
+  started.Start();if(RenderPerformance.Current!=null)RenderPerformance.Current.Count("EXTERNAL_WORKER_STARTED");AttachJob();started.StandardInput.AutoFlush=true;started.BeginOutputReadLine();started.BeginErrorReadLine();Activity("Đang nạp model và mẫu giọng");
   string result=Wait(startupTimeoutMs);if(!result.StartsWith("V15_READY\t"))Throw(result);owner.ReportDevice((forceCpu?"CPU dự phòng sau lỗi GPU · ":"")+Decode(result.Split('\t')[1]));
  }
  public static int GenerationTimeoutMilliseconds(string text,bool cpu){int words=Math.Max(1,(text??"").Split(new[]{' ','\t','\r','\n'},StringSplitOptions.RemoveEmptyEntries).Length),segments=(words+23)/24;long attempt=Math.Max(cpu?90000:45000,words*(cpu?12000L:4000L)+segments*(cpu?45000L:20000L));return (int)Math.Min(cpu?1800000L:600000L,(cpu?120000L:90000L)+3*attempt);}

@@ -1,129 +1,115 @@
-BÉO VOICE STUDIO 4.1.0 — FAST VOICE
-BẢN NÂNG CẤP KIỂM THỬ · 02/11/2026
+BÉO VOICE STUDIO 4.1.1 — RENDER FIX
+VÁ ĐƯỜNG RENDER TỪ 4.1.0 · 02/11/2026
 
-MỤC TIÊU
-Giảm thời gian xử lý phụ và bớt thao tác chạy nhiều kịch bản. Giữ nguyên
-tốc độ đọc, lời nguồn, kiểm tra timeline và hai chế độ báo cáo voice.
-Đã gỡ trang Creator, chức năng đóng gói clip/MP4 và biên nhận Creator
-trong luồng xuất WAV. Chức năng lấy SRT từ video của bản gốc vẫn giữ.
+BẢN VÁ NÀY TẬP TRUNG VÀO ĐÂU
+Sửa việc tạo/đóng engine đo từng chặng, căn lại audio đã đo đạt, và xử lý
+tiến độ hàng đợi tốn CPU/ghi đĩa. Không thay đổi lời, tốc độ đọc mặc định,
+giới hạn tốc độ hoặc tiêu chuẩn giữ nghĩa để đổi lấy thời gian xử lý.
+Số đo UI/cache của bản 4.1.0 không chứng minh tốc độ TTS đầu–cuối.
 
-CẬP NHẬT APP ĐANG CÀI
-1. Lưu công việc và đóng app đang chạy.
-2. Giải nén BEO_Voice_Studio_4.1.0_Fast_Voice_Update.zip vào thư mục riêng.
-3. Chạy CAP_NHAT.cmd hoặc BEO_Update.exe trong thư mục vừa giải nén.
-4. Chọn ZIP/thư mục cập nhật và đúng thư mục app đã cài đầy đủ. Bấm
-   CẬP NHẬT. Không chọn một thư mục mới chưa có bộ giọng/runtime.
-5. Mở V15VoiceStudio.exe trong thư mục app. Tiêu đề là BÉO Voice Studio
-   4.1.0. Tên EXE nền và thư mục dữ liệu V15 giữ để tương thích bản cũ.
+CẬP NHẬT
+1. Đóng BÉO Voice Studio đang chạy sau khi tác vụ đã dừng.
+2. Giải nén BEO_Voice_Studio_4.1.1_Render_Fix_Update.zip vào thư mục riêng.
+3. Chạy CAP_NHAT.cmd hoặc BEO_Update.exe.
+4. Chọn gói cập nhật và đúng thư mục app hiện có model/runtime. Bấm
+   CẬP NHẬT. Sau đó mở V15VoiceStudio.exe tại thư mục đã cài.
+5. Kiểm tra tiêu đề BÉO Voice Studio 4.1.1.
 
-Đây là core update, không kèm tải lại model nhiều GB. Bộ giọng, mẫu clone,
-runtime, GPU và file của anh được giữ theo cơ chế cập nhật hiện có.
-Các tệp Creator từng xuất được giữ. Tệp hỗ trợ Creator cũ có thể còn trên
-ổ đĩa nhưng không được gọi bởi app 4.1. Không cần xóa dữ liệu bằng tay.
-Mã nguồn đã chỉnh sửa nằm trong payload/source của ZIP, hoặc source
-trong thư mục app sau cập nhật. Có sẵn EXE Windows x64 đã biên dịch.
+ZIP chứa EXE Windows x64 đã build, mã nguồn đầy đủ trong payload/source,
+hướng dẫn và kết quả kiểm thử. Đây là core update, cần app đã cài bộ giọng.
+Tên EXE nền vẫn là V15VoiceStudio.exe để giữ tương thích bản cũ.
+Không cài lại model, không xóa giọng clone, cache cũ, kịch bản hoặc WAV.
+Dữ liệu queue và dấu cấu hình 4.1.0 vẫn đọc được; không buộc chạy lại
+tất cả file đã hoàn thành chỉ vì đổi số phiên bản.
 
-CHẠY NHIỀU FILE ÍT THAO TÁC
-1. Vào Hàng đợi voice → + Thư mục SRT, hoặc kéo một thư mục vào app.
-   App quét SRT trong cả thư mục con. TXT vẫn dùng nút thêm file riêng.
-2. File trùng đường dẫn được bỏ qua. Tự bỏ filename.final.srt,
-   filename.aligned.srt và thư mục dữ liệu đầu ra để tránh chạy lại kết quả.
-   Nếu chủ động thêm từng file final.srt, app vẫn cho dùng làm nguồn mới.
-   Tối đa 500 file trong một hàng đợi. File hỏng vẫn hiện lỗi riêng.
-3. Chọn bộ cấu hình đã lưu → Áp dụng ngay tại cột phải. Dùng Lưu để
-   lưu cấu hình hiện tại. Cấu hình/giọng hiện tại áp dụng chung lượt chạy,
-   không tự đổi sang một giọng khác cho từng file.
-4. Chọn chế độ 1 hoặc 2. Giữ Bỏ qua file đã hoàn thành nếu muốn tiếp tục
-   công việc. Chọn ▾ có Chọn tất cả / Chọn file chưa đạt / Bỏ chọn tất cả.
-5. Bấm CHẠY ... FILE. Theo dõi cột %, trạng thái và thời gian dự kiến xong.
-   ETA thay đổi khi model nạp lần đầu hoặc AI phải thử lời sửa; đây là
-   ước lượng từ tiến độ thực, không cam kết giờ hoàn thành chính xác.
-6. Chọn dòng cần xem → Mở kết quả. Một file chưa sửa đạt không hủy các
-   file khác. Các checkpoint và cache tương thích vẫn được giữ.
+CÁC SỬA ĐỔI THỰC TẾ
+1. AI Repair giữ một engine đo qua các chặng liên tiếp cùng giọng.
+   Khi đổi vai nói, chạy model viết lại/kiểm nghĩa hoặc kết thúc/dừng,
+   engine được giải phóng. Tránh giữ đồng thời nhiều model trên GPU 8 GB.
+   Các engine có worker ngoài được dùng lại tiến trình trong lượt đo.
+2. SRT khóa: lần xuất cuối dùng lại PCM AI đã đo/căn đạt khi lời, cue,
+   giọng, cấu hình, thời lượng và hash audio đều khớp. Không tổng hợp
+   hoặc gọi atempo lại cho chính PCM đó.
+3. SRT khóa ở chế độ theo file có checkpoint PCM sau căn riêng từng cue.
+   Chạy lại hoặc tiếp tục dùng cue còn hợp lệ, chỉ tạo lại cue cần thiết.
+   Cache mới nằm trong dữ liệu ứng dụng/stage-checkpoints/locked-cues.
+   Đổi lời, mốc, giọng, mẫu clone hoặc giới hạn căn làm cache hết hiệu lực.
+   Cache hỏng bị loại; WAV vẫn phải qua kiểm tra và khớp final.srt.
+   Việc ghi PCM được xếp vào một luồng I/O riêng, hàng đợi tối đa 2 mục;
+   không nạp thêm model. Luồng được chờ ghi xong trước khi render trả về.
+4. Giảm việc ghi lại toàn bộ queue XML ở mỗi thay đổi %. Tiến độ hiển
+   thị vẫn cập nhật; trạng thái công việc/đầu ra/cấu hình đổi được lưu
+   ngay, checkpoint chỉ thay đổi % được giới hạn khoảng 5 giây/lần.
+   Audio checkpoint đã đo vẫn lưu riêng, không thay bằng một con số %.
+5. ETA dùng lại trọng số văn bản khi snapshot không đổi; không tách từ
+   lại toàn bộ các kịch bản trên mỗi nhịp cập nhật màn hình.
 
-Khi tất cả file được chọn đã hoàn thành, nút đổi thành KIỂM TRA ... FILE.
-Bấm để kiểm tra lại nguồn/cấu hình/bộ đầu ra. File còn hợp lệ được bỏ qua;
-file đã đổi hoặc thiếu đầu ra sẽ chạy lại, tận dụng cache còn hợp lệ.
-Lần đầu sau nâng cấp, trạng thái hoàn thành cũ thiếu dấu cấu hình sẽ được
-xác nhận lại; cache audio tương thích không bị xóa.
+KOKORO / ADAM
+Giữ đường Kokoro ONNX đang cài. Lần tổng hợp mới vẫn dùng CLI hiện có;
+bản này chưa thêm worker ONNX thường trú. Lợi ích trực tiếp là tránh
+tổng hợp/căn lại PCM đã đo đạt và giảm chi phí hàng đợi khi chạy nhiều
+file. Không khẳng định lần render lạnh đầu tiên của mọi file đều nhanh
+hơn hay đưa hệ số tăng tốc RTX2070 khi chưa đo trên máy anh.
 
-GỢI Ý GIỌNG KHI NHẬP NGUYÊN LIỆU
-- Nhập SRT/TXT trong Studio hoặc chọn một dòng hàng đợi: app hiện tối đa
-  3 giọng phù hợp theo ngôn ngữ, nhóm nội dung và metadata bộ giọng.
-- Ưu tiên giọng đã có đủ tệp cần thiết và giọng anh đang chọn. Giọng thiếu
-  thành phần ghi cần cài và không cho áp dụng từ nút gợi ý.
-- Bấm tên giọng để chọn. Bấm Nghe thử theo cách hiện có trước khi render
-  cả loạt. Việc chọn giọng không thay đổi câu chữ.
-- Gợi ý chỉ đọc một phần kịch bản có giới hạn và kiểm tra tệp; KHÔNG chạy
-  thử nhiều giọng, gọi Qwen hay nạp thêm model khi anh thả file vào app.
-- Nhãn chưa đo nghĩa là chưa biết chất âm hay thời lượng TTS thực tế.
-  Đây là xếp hạng metadata, không phải điểm chất lượng âm học hay bảo đảm
-  giọng tốt nhất. Không chọn giới tính người kể theo giới tính nhân vật.
-- Kịch bản tiếng Việt chỉ gợi ý nhóm giọng Việt đang hỗ trợ. Thư viện
-  giọng không có metadata đầy đủ sẽ có gợi ý ít chính xác hơn.
+CÁCH DÙNG
+- Nhập SRT/TXT hoặc thư mục SRT như bản 4.1.0. Gợi ý giọng vẫn là metadata
+  nhẹ, không tự gọi TTS hay nạp model khi nhập file.
+- Chọn giọng và cấu hình anh thực sự cần. Adam/Kokoro một giọng vẫn dùng
+  quy trình cũ; không cần đổi tốc độ đọc để dùng tối ưu mới.
+- CHẾ ĐỘ 1 giữ lời nguồn, không gọi AI sửa/dịch. Mỗi file kết thúc có
+  đúng 1 filename.voice-report.txt, dù đạt hay lỗi.
+- CHẾ ĐỘ 2 tự đo/sửa khi cần. Mỗi file kết thúc có đúng 2 báo cáo:
+  filename.ai-before-after-report.txt và filename.ai-changes-en-vi.txt.
+  Báo cáo ngắn chỉ chứa câu đã đổi cùng bản đối chiếu Anh–Việt.
+- Giữ Bỏ qua file đã hoàn thành nếu tiếp tục batch. File chưa đạt không
+  hủy các file khác. SRT nguồn luôn giữ nguyên.
+- Nếu cần chạy lại một file, chọn file và chạy/kiểm tra như trước.
+  PCM còn đúng cấu hình tự được dùng lại; không cần xóa cache.
 
-CHẾ ĐỘ 1 — CHẠY THEO FILE, KHÔNG TỰ SỬA
-Không gọi AI viết lại hoặc dịch. Kết thúc mỗi file, dù đạt hay lỗi:
-  filename.voice-report.txt — đúng 1 báo cáo.
-Nếu render đạt, có thêm WAV và filename.final.srt giữ đúng lời nguồn.
-Không âm thầm xuất WAV chưa đạt để đánh dấu hoàn thành.
+ĐỌC BÁO CÁO TỐC ĐỘ
+Trong báo cáo hiện có thêm THỜI GIAN XỬ LÝ THỰC CỦA LẦN NÀY:
+  AI_PREPARE: lượt đo/sửa trước xuất; gồm cả TTS/căn trong bước này.
+  TTS_SYNTHESIS: thời gian yêu cầu tổng hợp, gồm cả lúc nạp model.
+  ATEMPO_PROCESS: thời gian ghi/đổi tốc độ/đọc lại audio bằng FFmpeg.
+  RENDER_PCM: lượt ghép/căn audio cuối, gồm cân âm nếu đang bật.
+  CUE_CHECKPOINT_IO: thời gian ghi PCM checkpoint; có thể chạy chồng với
+  tổng hợp/căn cue kế tiếp, không cộng thẳng vào tổng thời gian.
+  TTS_REQUEST: số yêu cầu tổng hợp mới.
+  EXTERNAL_WORKER_STARTED / ONNX_PROCESS_STARTED: số tiến trình đã mở.
+  TTS_NATURAL_CACHE / TTS_PREVIEW_CACHE: lượt dùng audio trước căn.
+  AI_MEASURED_PCM / LOCKED_CHECKPOINT: lượt dùng PCM đã đo/căn.
 
-CHẾ ĐỘ 2 — AI TỰ SỬA, HOÀN TOÀN TỰ ĐỘNG
-Đo bằng giọng đang dùng → căn tốc độ/ngắt nghỉ trong giới hạn → sửa nhỏ
-khi cần → đo lại → chỉ nhận phương án đủ điều kiện → xuất kết quả.
-Kết thúc mỗi file có đúng 2 báo cáo:
-  filename.ai-before-after-report.txt — diễn biến đo và sửa trước/sau.
-  filename.ai-changes-en-vi.txt — chỉ câu thực sự đã đổi, EN gốc,
-  EN đã dùng và bản Việt đối chiếu. Không có câu đổi: ghi ĐÃ SỬA: 0.
-Không sinh thêm báo cáo voice thứ ba hay TXT dịch toàn bộ kịch bản.
-Nếu dịch câu đã sửa không đủ: TRANSLATION_INCOMPLETE, không coi toàn bộ
-bộ kết quả đã hoàn thiện. Phương án không đo đạt/đáng ngờ về nghĩa không
-được tự áp dụng. NEEDS_REVIEW được ghi rõ, các file khác vẫn tiếp tục.
+Các bước có thể lồng nhau, không cộng các con số để suy ra tổng.
+Tổng ghi trong báo cáo đo đến lúc tạo báo cáo, chưa gồm công bố bộ file
+cuối. Thiết bị phải xem bằng chứng engine báo; có cache không có nghĩa
+là GPU vừa tổng hợp câu đó. Không suy số giây âm thanh từ số từ.
 
-AI tự viết lại lời hiện dùng cho SRT khóa và V15.6. TXT tự nhiên, TXT có
-đích và SRT linh hoạt vẫn giữ phạm vi hỗ trợ của bản cũ; không tự nhận
-đã có tính năng AI viết lại cho các kiểu này.
+Nếu vẫn thấy chậm, dùng Mở kết quả để lấy báo cáo của chính lần chạy
+vừa xong. Báo cáo này cho biết thời gian nằm ở TTS/nạp model, AI, căn
+âm thanh hay lượt xuất cuối, thay vì chỉ nhìn % hoặc tốc độ giao diện.
 
-TĂNG TỐC ĐƯỢC THỰC HIỆN Ở ĐÂU
-1. Thông báo tiến độ nền được gom; bảng hàng đợi cập nhật ô thay đổi,
-   không xóa/tạo lại toàn bộ dòng ở mỗi thông báo. % và ETA vẫn theo
-   dữ liệu thật; log/checkpoint không bị thay bằng dữ liệu ước đoán.
-2. Tránh quét/sắp xếp cả thư mục cache ở mỗi lần tạo engine ngắn hạn.
-   Bảo trì lại sau khoảng 30 giây hoặc sau 32 MiB audio mới. Khóa và
-   xác thực PCM/cache hiện tại vẫn giữ.
-3. Trong batch, giữ worker TTS ngoài giữa các file khi không cần nhường
-   model cho dịch. Khi cần dịch hoặc kết thúc lượt chạy, worker được
-   giải phóng. Chuyển hai giọng vẫn dùng cơ chế quản lý model hiện có.
-4. Chỉ gợi ý giọng bằng metadata. Không tự render ba bản mẫu sau import.
+CÁC QUY TẮC VẪN GIỮ
+- Giới hạn kỹ thuật 0,90–1,25x, ưu tiên 0,90–1,10x và cảnh báo khi gấp.
+- Không thêm im lặng dài, bỏ lỗi hoặc giảm kiểm tra nghĩa để báo đạt.
+- Chỉ nhận lời sửa đã đo đạt và qua chính sách nghĩa hiện tại.
+- WAV/final.srt trùng lời đã dùng; thiếu bản Việt vẫn báo
+  TRANSLATION_INCOMPLETE. Số lượng báo cáo của mỗi chế độ không đổi.
+- V15.6 giữ cache chặng hiện có. Không có forced alignment mới.
+- AI tự viết lại vẫn dành cho SRT khóa/V15.6; không bổ sung viết lại
+  TXT hoặc SRT linh hoạt trong bản vá tốc độ này.
 
-Giữ worker áp dụng cho engine có worker Python ngoài, chẳng hạn các
-engine Chatterbox/Qwen được hỗ trợ. Kokoro ONNX CLI hiện vẫn tạo tiến
-trình theo yêu cầu tổng hợp; bản này chưa chuyển sang worker ONNX thường
-trú. Không cam kết mọi engine đều tăng tốc như nhau.
-Không đổi tốc độ lời đọc để làm nhanh thời gian tính toán. Vẫn ưu tiên
-0,90–1,10x, giới hạn kỹ thuật 0,90–1,25x và cảnh báo chất lượng hiện có.
-Không thêm im lặng dài hay bỏ kiểm tra để báo render đạt.
+KIỂM THỬ VÀ GIỚI HẠN
+Đọc KET_QUA_KIEM_THU_4.1.1.txt để xem số đo đầy đủ và hạn chế.
+EXE Windows x64 .NET 4.5 được build và chạy trên Mono/Linux/Xvfb, dùng
+FFmpeg thật, file PCM thật, tiến trình TTS fixture. Chưa có Windows vật
+lý, RTX2070 hoặc model/giọng thực của anh trong môi trường kiểm thử này.
+Các số đo pipeline dùng giọng tổng hợp kiểm thử và độ trễ nạp giả lập,
+không phải hệ số tăng tốc TTS thật trên GPU.
 
-TIẾP TỤC VÀ TÍNH ĐÚNG CỦA KẾT QUẢ
-Nguồn, cấu hình, mẫu giọng/hơi thở và bộ đầu ra được đối chiếu trước khi
-bỏ qua file hoàn thành. Thiếu báo cáo thứ hai của chế độ 2 cũng phải
-kiểm tra lại. Bản này không thêm hash chống sửa toàn bộ WAV đã xuất;
-hệ thống xác thực PCM/checkpoint trong luồng render được giữ như trước.
-SRT cuối dùng lời đã đưa vào TTS, SRT gốc được giữ nguyên. Timecode cue
-là mốc nguồn; không có forced alignment mới để coi là số đo từng cue.
-Kiểm tra nghĩa vẫn có giới hạn; cần nghe/đọc lại nội dung quan trọng.
-
-PHẠM VI KIỂM THỬ
-Đã build EXE Windows x64 .NET 4.5, chạy WinForms thật trên Mono/Xvfb và
-FFmpeg thật. TTS/AI/clone trong kiểm thử là fixture, có thử tiến trình
-worker thật nhưng không nạp model giọng thật. Xem KET_QUA_KIEM_THU_4.1.0.txt.
-Chưa thử Windows vật lý, RTX2070 8 GB, model/giọng clone thực của anh.
-Số đo tối ưu là phần UI/cache, không phải tốc độ render toàn bài trên GPU.
-
-BUILD VÀ TÁI CHẠY CHO NGƯỜI PHÁT TRIỂN
-Windows: source/BUILD_WINDOWS.cmd, cần .NET Framework 4.5 trở lên.
-Kiểm thử: source/validate410.py; đặt V15_BUILD_TOOLS và V15_NET45_REFS
-theo môi trường Mono, có FFmpeg/Xvfb. Chạy trong bản sao build riêng,
-không chạy script kiểm thử tại thư mục đang chứa model của người dùng.
-Đo trước/sau: source/benchmark410.py <đường-dẫn-EXE-4.0.0>.
-Đóng gói: source/package_release.py.
+CHO NGƯỜI PHÁT TRIỂN
+BUILD_WINDOWS.cmd để build. validate411.py chạy các hợp đồng/hồi quy,
+benchmark411.py EXE_3.1 EXE_4.1 so sánh cùng pipeline. Thiết lập
+V15_BUILD_TOOLS và V15_NET45_REFS theo môi trường Mono của người kiểm
+thử. UI test dùng app tạm riêng, không thay tệp model của bản đang cài.
+RenderOptions.ReuseLockedAudio được app bật khi chạy; mặc định của
+tích hợp code bên ngoài vẫn giữ hành vi cũ nếu không bật cờ này.

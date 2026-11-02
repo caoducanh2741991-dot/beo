@@ -20,7 +20,7 @@ public sealed class RenderProgress {
  public static string FinishTime(double seconds){var local=DateTime.Now.AddSeconds(Math.Min(315360000,Math.Max(0,seconds)));return local.ToString(local.Date==DateTime.Now.Date?"HH:mm":"dd/MM HH:mm");}
  public static double? QueueRemaining(IEnumerable<BatchJob> input){var jobs=input.ToList();var active=jobs.FirstOrDefault(j=>j.State==JobState.Running);if(active==null)return null;var snapshot=active.Progress.Read();if(!snapshot.RemainingSeconds.HasValue)return null;
   // Other files are scaled by input work size, not treated as measured audio.
-  double whole=snapshot.ElapsedSeconds+snapshot.RemainingSeconds.Value,words=Math.Max(1,active.Cues.Sum(c=>c.Words));return snapshot.RemainingSeconds+jobs.Skip(jobs.IndexOf(active)+1).Where(j=>j.State!=JobState.Done&&j.Selected).Sum(j=>whole*Math.Max(1,j.Cues.Sum(c=>c.Words))/words);
+  double whole=snapshot.ElapsedSeconds+snapshot.RemainingSeconds.Value,words=active.EstimatedWorkWords;return snapshot.RemainingSeconds+jobs.Skip(jobs.IndexOf(active)+1).Where(j=>j.State!=JobState.Done&&j.Selected).Sum(j=>whole*j.EstimatedWorkWords/words);
  }
 }
 }

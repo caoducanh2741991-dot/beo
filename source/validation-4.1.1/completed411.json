@@ -1,0 +1,42 @@
+{
+  "version": "4.1.1.0",
+  "finished_utc": "2026-11-02T12:19:23.059966+00:00",
+  "counts": {
+    "Reno300Tests": 62,
+    "Acoustic300Tests": 11,
+    "RenderProgressTests": 30,
+    "Workflow217Tests": 47,
+    "Recovery216Tests": 42,
+    "Sync216Tests": 27,
+    "BatchTests": 12,
+    "TwoVoiceTests": 41,
+    "VoiceReportTests": 30,
+    "PunctuationTests": 20,
+    "BreathStreamingTests": 8,
+    "TextTargetTests": 37,
+    "AudioRepairTests": 45,
+    "CommunityVoiceTests": 20,
+    "VoiceDiagnosticTests": 26,
+    "LocalAiSafetyTests": 16,
+    "AnchoredTests": 65,
+    "NativeGpuTests": 15,
+    "UpdaterTests": 21,
+    "FastVoiceTests": 35,
+    "Render411Tests": 35,
+    "FastVoiceUiTests": 24,
+    "BeoUiTests": 51,
+    "Render411UiTests": 11,
+    "Render411ReopenTests": 3,
+    "Reno300Tests-reopen": 3,
+    "Recovery216Tests-reopen": 8
+  },
+  "CSharp_total": 745,
+  "python_gpu_policy": 11,
+  "python_worker_probe": 4,
+  "binary_sha256": {
+    "V15VoiceStudio.exe": "797c15b418346e6900004a7d1934695bb06cf4e2ea930adedfe6fbc0965cec66",
+    "V15Updater.exe": "7ba1aa57c1d0cc0ff7c4259e8b0fdb0912f6d649eeb7b870598825a5e7934e75"
+  },
+  "environment": "Mono/Linux; actual FFmpeg, WinForms/Xvfb, file hashes and external processes; synthetic speech/AI, no real GPU/model inference",
+  "physical_Windows_or_GPU_or_real_clone_tested": false
+}

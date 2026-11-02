@@ -1,0 +1,432 @@
+{
+  "3.1.0": {
+    "binary_sha256": "229d21fb19b2811527e2d7ee8badcc0f958f07f1595860a7c687d21b17e559f9",
+    "runs": [
+      {
+        "run": 0,
+        "mode": 1,
+        "warm": false,
+        "ms": 1351.811,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 0,
+        "mode": 1,
+        "warm": true,
+        "ms": 772.766,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 0,
+        "mode": 2,
+        "warm": false,
+        "ms": 3646.104,
+        "worker_starts": 8,
+        "tts_requests": 8,
+        "ffmpeg_processes": 16,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 0,
+        "mode": 2,
+        "warm": true,
+        "ms": 1303.051,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 1,
+        "mode": 1,
+        "warm": false,
+        "ms": 1374.912,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 1,
+        "mode": 1,
+        "warm": true,
+        "ms": 799.908,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 1,
+        "mode": 2,
+        "warm": false,
+        "ms": 3617.024,
+        "worker_starts": 8,
+        "tts_requests": 8,
+        "ffmpeg_processes": 16,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 1,
+        "mode": 2,
+        "warm": true,
+        "ms": 1342.019,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 2,
+        "mode": 1,
+        "warm": false,
+        "ms": 1248.274,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 2,
+        "mode": 1,
+        "warm": true,
+        "ms": 784.609,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 2,
+        "mode": 2,
+        "warm": false,
+        "ms": 3661.77,
+        "worker_starts": 8,
+        "tts_requests": 8,
+        "ffmpeg_processes": 16,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 2,
+        "mode": 2,
+        "warm": true,
+        "ms": 1311.199,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      }
+    ],
+    "medians": {
+      "1_cold": 1351.811,
+      "1_warm": 784.609,
+      "2_cold": 3646.104,
+      "2_warm": 1311.199
+    }
+  },
+  "4.1.0": {
+    "binary_sha256": "59657c1652beda7889852bc0d865fbb1aa8dbdd0910910542457c30ccfa4cda0",
+    "runs": [
+      {
+        "run": 0,
+        "mode": 1,
+        "warm": false,
+        "ms": 1131.121,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 0,
+        "mode": 1,
+        "warm": true,
+        "ms": 683.706,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 0,
+        "mode": 2,
+        "warm": false,
+        "ms": 3432.907,
+        "worker_starts": 8,
+        "tts_requests": 8,
+        "ffmpeg_processes": 16,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 0,
+        "mode": 2,
+        "warm": true,
+        "ms": 1281.824,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 1,
+        "mode": 1,
+        "warm": false,
+        "ms": 1243.929,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 1,
+        "mode": 1,
+        "warm": true,
+        "ms": 626.139,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 1,
+        "mode": 2,
+        "warm": false,
+        "ms": 3358.164,
+        "worker_starts": 8,
+        "tts_requests": 8,
+        "ffmpeg_processes": 16,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 1,
+        "mode": 2,
+        "warm": true,
+        "ms": 1157.567,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 2,
+        "mode": 1,
+        "warm": false,
+        "ms": 1192.173,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 2,
+        "mode": 1,
+        "warm": true,
+        "ms": 664.001,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 2,
+        "mode": 2,
+        "warm": false,
+        "ms": 3502.57,
+        "worker_starts": 8,
+        "tts_requests": 8,
+        "ffmpeg_processes": 16,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 2,
+        "mode": 2,
+        "warm": true,
+        "ms": 1180.761,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      }
+    ],
+    "medians": {
+      "1_cold": 1192.173,
+      "1_warm": 664.001,
+      "2_cold": 3432.907,
+      "2_warm": 1180.761
+    }
+  },
+  "4.1.1": {
+    "binary_sha256": "797c15b418346e6900004a7d1934695bb06cf4e2ea930adedfe6fbc0965cec66",
+    "runs": [
+      {
+        "run": 0,
+        "mode": 1,
+        "warm": false,
+        "ms": 1144.788,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 0,
+        "mode": 1,
+        "warm": true,
+        "ms": 62.152,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 0,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 0,
+        "mode": 2,
+        "warm": false,
+        "ms": 1574.234,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 0,
+        "mode": 2,
+        "warm": true,
+        "ms": 540.132,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 0,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 1,
+        "mode": 1,
+        "warm": false,
+        "ms": 1223.641,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 1,
+        "mode": 1,
+        "warm": true,
+        "ms": 57.224,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 0,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 1,
+        "mode": 2,
+        "warm": false,
+        "ms": 1673.048,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 1,
+        "mode": 2,
+        "warm": true,
+        "ms": 577.684,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 0,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 2,
+        "mode": 1,
+        "warm": false,
+        "ms": 1329.251,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 2,
+        "mode": 1,
+        "warm": true,
+        "ms": 61.814,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 0,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 1
+      },
+      {
+        "run": 2,
+        "mode": 2,
+        "warm": false,
+        "ms": 1713.487,
+        "worker_starts": 1,
+        "tts_requests": 8,
+        "ffmpeg_processes": 8,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      },
+      {
+        "run": 2,
+        "mode": 2,
+        "warm": true,
+        "ms": 610.619,
+        "worker_starts": 0,
+        "tts_requests": 0,
+        "ffmpeg_processes": 0,
+        "wav_sha256": "E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C",
+        "reports": 2
+      }
+    ],
+    "medians": {
+      "1_cold": 1223.641,
+      "1_warm": 61.814,
+      "2_cold": 1673.048,
+      "2_warm": 577.684
+    }
+  },
+  "scope": "Mono/Linux, actual full workflow and FFmpeg, eight locked cues; synthetic Chatterbox-like Python worker with 150 ms artificial startup delay; 3 runs per version/mode/cache state. Not real TTS/model or RTX/Windows speed."
+}

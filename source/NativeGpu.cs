@@ -17,7 +17,7 @@ public static class NativeGpu {
    using(var p=new Process{StartInfo=info}){
     DataReceivedEventHandler read=(s,x)=>{if(x.Data==null)return;lock(gate){if(FellBack(x.Data))fallback=true;errors.AppendLine(x.Data);if(errors.Length>16000)errors.Remove(0,errors.Length-16000);}};
     p.ErrorDataReceived+=read;p.OutputDataReceived+=read;
-    try{p.Start();p.BeginErrorReadLine();p.BeginOutputReadLine();var timer=Stopwatch.StartNew();while(!p.WaitForExit(100)){if(e.Cancelled||timer.Elapsed.TotalMinutes>10){try{p.Kill();}catch{}if(e.Cancelled)throw new OperationCanceledException();throw new Exception("Bộ đọc ONNX chờ quá 10 phút.");}}p.WaitForExit();code=p.ExitCode;}catch(OperationCanceledException){throw;}catch(Exception x){failure=x;}
+    try{p.Start();if(RenderPerformance.Current!=null)RenderPerformance.Current.Count("ONNX_PROCESS_STARTED");p.BeginErrorReadLine();p.BeginOutputReadLine();var timer=Stopwatch.StartNew();while(!p.WaitForExit(100)){if(e.Cancelled||timer.Elapsed.TotalMinutes>10){try{p.Kill();}catch{}if(e.Cancelled)throw new OperationCanceledException();throw new Exception("Bộ đọc ONNX chờ quá 10 phút.");}}p.WaitForExit();code=p.ExitCode;}catch(OperationCanceledException){throw;}catch(Exception x){failure=x;}
    }
    if(e.Cancelled)throw new OperationCanceledException();string message;lock(gate)message=errors.ToString();
    if(failure==null&&code==0&&File.Exists(output)&&!fallback){var w=Wave.Read(output).TrimEdges();e.ReportDevice(gpu?"NVIDIA CUDA · "+e.Kind+" · đã tạo WAV (một số toán tử có thể dùng CPU)":"CPU · "+e.Kind+(e.DeviceMode=="auto"?" · "+reason:" · đã chọn thủ công"));return w;}

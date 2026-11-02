@@ -16,6 +16,7 @@ public static class WorkflowRunner {
   Func<List<Cue>,RenderOptions,string,KokoroEngine,Action<int,string>,List<Cue>> prepare,
   Action<int,string> progress,Exception inputFailure=null){
   if(mode!=1&&mode!=2)throw new ArgumentOutOfRangeException("mode");
+  o.Performance=new RenderPerformance();using(o.Performance.Activate()){
   bool prepared=false;var result=new WorkflowResult();o.WorkflowMode=mode;o.WorkflowBundle=null;o.WorkflowOriginal=VoiceRenderReport.Snapshot(input);o.AiRepair=null;o.AiReportPath="";o.RepairStages=null;o.JoinSentences=false;o.Translation=null;o.RunReport=null;o.AnchorResult=null;o.TargetResult=null;
   string source=o.ReportContext==null?"":o.ReportContext.SourcePath;var words=VoiceRenderReport.Snapshot(input);
   try{
@@ -23,7 +24,7 @@ public static class WorkflowRunner {
    string hash;words=SourceWords(source,input,out hash);o.WorkflowSourceHash=result.SourceHash=hash;o.WorkflowOriginal=VoiceRenderReport.Snapshot(words);if(words.Any(c=>c.Prose)){o.Prose=true;o.Locked=o.Anchored=false;}if(o.ReportContext!=null)o.ReportContext.SourceCues=VoiceRenderReport.Snapshot(words);
    if(engine.Cancelled)throw new OperationCanceledException();
    if(mode==2&&prepare!=null&&!o.Prose&&(o.Locked||o.Anchored)){
-    prepared=true;words=prepare(words,o,source,engine,(value,message)=>progress(Math.Max(0,Math.Min(48,value*48/100)),message));if(o.AiRepair!=null&&!o.AiRepair.Ready){
+    prepared=true;using(o.Performance.Time("AI_PREPARE"))words=prepare(words,o,source,engine,(value,message)=>progress(Math.Max(0,Math.Min(48,value*48/100)),message));if(o.AiRepair!=null&&!o.AiRepair.Ready){
      RepairRecovery.Record(o,words,engine,output);string code=o.AiRepair.Rows.Any(r=>r.BaseStatus=="ENGINE_ERROR")?"ENGINE_ERROR":o.AiRepair.Rows.Any(r=>r.BaseStatus=="RENDER_FAILED")?"RENDER_FAILED":"NEEDS_REVIEW";
      engine.ReleaseModels();o.Translation=WorkflowReports.Translate(o,words,()=>engine.Cancelled,(value,message)=>progress(49,message));
      result.Bundle=WorkflowReports.Publish(null,output,words,o,o.RunReport,code);result.Cues=VoiceRenderReport.Snapshot(words);result.Status=code;return result;
@@ -39,6 +40,7 @@ public static class WorkflowRunner {
    // Never invoke a language model after the user has cancelled.
    if(mode==2&&!(e is OperationCanceledException)&&WorkflowReports.Changed(o,words).Count>0&&o.Translation==null){try{engine.ReleaseModels();o.Translation=WorkflowReports.Translate(o,words,()=>engine.Cancelled,(value,message)=>progress(49,message));}catch(OperationCanceledException){code="CANCELLED";}}
    result.Bundle=WorkflowReports.Publish(null,output,words,o,o.RunReport,code,e);result.Status=code;return result;
+  }
   }
  }
 

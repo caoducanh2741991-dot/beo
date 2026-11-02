@@ -128,7 +128,14 @@ public sealed class Wave {
 public enum EngineKind { Kokoro, LibriTTS, Kitten, Piper, Qwen, Chatterbox, VieNeu, Rvc }
 public class KokoroEngine : IDisposable {
  public SpeechCache PreviewCache;public SpeechArchive Archive;public VoiceRenderReport RunReport;
- public virtual Wave GetSpeech(string text,double speed,string output){if(Cancelled)throw new OperationCanceledException();var cached=Archive==null?null:Archive.Get(this,text,speed);if(cached!=null){if(RunReport!=null)RunReport.Origin(true);return cached;}if(Archive==null||!Archive.Refresh)cached=PreviewCache==null?null:PreviewCache.Get(this,text,speed);if(cached!=null){if(RunReport!=null)RunReport.Origin(true);if(Archive!=null)Archive.Put(this,text,speed,cached);return cached;}if(RunReport!=null)RunReport.Origin(false);var wave=Generate(text,speed,output);if(PreviewCache!=null)PreviewCache.Put(this,text,speed,wave);if(Archive!=null)Archive.Put(this,text,speed,wave);return wave;}
+ public virtual Wave GetSpeech(string text,double speed,string output){
+  if(Cancelled)throw new OperationCanceledException();var perf=RenderPerformance.Current;var cached=Archive==null?null:Archive.Get(this,text,speed);
+  if(cached!=null){if(RunReport!=null)RunReport.Origin(true);if(perf!=null)perf.Count("TTS_NATURAL_CACHE");return cached;}
+  if(Archive==null||!Archive.Refresh)cached=PreviewCache==null?null:PreviewCache.Get(this,text,speed);
+  if(cached!=null){if(RunReport!=null)RunReport.Origin(true);if(perf!=null)perf.Count("TTS_PREVIEW_CACHE");if(Archive!=null)Archive.Put(this,text,speed,cached);return cached;}
+  if(RunReport!=null)RunReport.Origin(false);if(perf!=null)perf.Count("TTS_REQUEST");Wave wave;using(perf==null?null:perf.Time("TTS_SYNTHESIS"))wave=Generate(text,speed,output);
+  if(PreviewCache!=null)PreviewCache.Put(this,text,speed,wave);if(Archive!=null)Archive.Put(this,text,speed,wave);return wave;
+ }
  internal bool NativeForcedCpu;internal string NativeFallbackReason;public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged,ActivityChanged;public string RenderContext="";ExternalSpeech external;RvcSpeech rvc;
  public void ReportActivity(string text){if(ActivityChanged!=null)ActivityChanged(text);}
  public void ReportDevice(string text){DeviceInfo=text;if(RunReport!=null)RunReport.Device(text);if(DeviceChanged!=null)DeviceChanged(text);}
@@ -166,6 +173,7 @@ public class KokoroEngine : IDisposable {
  }
 }
 public sealed class RenderOptions {
+ public bool ReuseLockedAudio;public RenderPerformance Performance;
  public bool KeepModelWarmInBatch;
  public int WorkflowMode;public string WorkflowSourceHash="";public List<Cue> WorkflowOriginal;public WorkflowBundle WorkflowBundle;
  public AiRepairSession AiRepair;public string AiReportPath="";
@@ -225,7 +233,7 @@ public static class Renderer {
  public static string Render(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress) {
   VoiceRenderReport report=null,prior=engine.RunReport;string work=Path.Combine(Path.GetDirectoryName(Path.GetFullPath(output)),".v15_result_"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(work);o.ArtifactWorkFolder=work;o.RunReport=null;o.TargetResult=null;o.Translation=null;
   try{if(o.AiRepair!=null){if(AiRepairSession.SnapshotHash(o.AiRepair.Effective())!=AiRepairSession.SnapshotHash(cues))throw new Exception("Lời phiên AI không trùng lời đang render.");o.RepairStages=o.AiRepair.Anchored?o.AiRepair.Rows.Select(r=>r.Stage).ToList():null;}
-   report=new VoiceRenderReport(cues,engine,o,output);o.RunReport=report;engine.RunReport=report;SpeakerScript.ValidateRun(cues,o.TwoVoices);string raw=RenderCore(cues,engine,o,Path.Combine(work,"voice.wav"),progress);if(engine.Cancelled)throw new OperationCanceledException();var finalCues=StableArtifacts.FinalCues(cues,o,FinalAudio.PcmFrames(raw)/24000.0);if(!o.KeepModelWarmInBatch||o.WorkflowMode==0||(o.WorkflowMode==2&&WorkflowReports.Changed(o,finalCues).Count>0))engine.ReleaseModels();report.Step("TRANSLATE","Dịch Việt offline; WAV chưa được công bố");o.Translation=o.WorkflowMode>0?WorkflowReports.Translate(o,finalCues,()=>engine.Cancelled,(p,msg)=>progress(95+p/20,msg)):OfflineTranslation.Run(finalCues,o.Translator,String.IsNullOrEmpty(o.TranslationCacheRoot)?Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"V15VoiceStudio","translation-cache"):o.TranslationCacheRoot,()=>engine.Cancelled,(p,msg)=>progress(95+p/20,msg),o.ReportContext==null?"":o.ReportContext.SourcePath);if(engine.Cancelled)throw new OperationCanceledException();string final=StableArtifacts.Publish(raw,output,cues,o,report);progress(100,(o.WorkflowMode>0?o.WorkflowBundle.Status:o.Translation.Complete?"FINAL_VERIFIED · WAV/SRT/TXT hoàn chỉnh":"TRANSLATION_INCOMPLETE · WAV đạt, bộ file chưa hoàn thiện")+" · "+final);return final;
+   report=new VoiceRenderReport(cues,engine,o,output);o.RunReport=report;engine.RunReport=report;SpeakerScript.ValidateRun(cues,o.TwoVoices);string raw;using(o.Performance==null?null:o.Performance.Time("RENDER_PCM"))raw=RenderCore(cues,engine,o,Path.Combine(work,"voice.wav"),progress);if(engine.Cancelled)throw new OperationCanceledException();var finalCues=StableArtifacts.FinalCues(cues,o,FinalAudio.PcmFrames(raw)/24000.0);if(!o.KeepModelWarmInBatch||o.WorkflowMode==0||(o.WorkflowMode==2&&WorkflowReports.Changed(o,finalCues).Count>0))engine.ReleaseModels();report.Step("TRANSLATE","Dịch Việt offline; WAV chưa được công bố");o.Translation=o.WorkflowMode>0?WorkflowReports.Translate(o,finalCues,()=>engine.Cancelled,(p,msg)=>progress(95+p/20,msg)):OfflineTranslation.Run(finalCues,o.Translator,String.IsNullOrEmpty(o.TranslationCacheRoot)?Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"V15VoiceStudio","translation-cache"):o.TranslationCacheRoot,()=>engine.Cancelled,(p,msg)=>progress(95+p/20,msg),o.ReportContext==null?"":o.ReportContext.SourcePath);if(engine.Cancelled)throw new OperationCanceledException();string final=StableArtifacts.Publish(raw,output,cues,o,report);progress(100,(o.WorkflowMode>0?o.WorkflowBundle.Status:o.Translation.Complete?"FINAL_VERIFIED · WAV/SRT/TXT hoàn chỉnh":"TRANSLATION_INCOMPLETE · WAV đạt, bộ file chưa hoàn thiện")+" · "+final);return final;
   }catch(Exception e){if(o.AiRepair!=null){foreach(var row in o.AiRepair.Rows)row.FinalVerified=false;o.AiRepair.Output="";o.AiRepair.Outcome=e is OperationCanceledException?"Đã dừng; giữ checkpoint":"Chưa xuất bộ đầu ra: "+e.Message;try{o.AiRepair.Save();}catch{}}
    if(report!=null){try{string dir=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"V15VoiceStudio","reports");report.PathName=AiRepairSession.Unique(dir,Path.GetFileNameWithoutExtension(output)+".failed.voice-report",".txt");report.Finish(e is OperationCanceledException?"ĐÃ DỪNG":"THẤT BẠI","",e);e.Data["V15Status"]=RenderStatus.Normalize(report.FailureCode);}catch{}}throw;
   }finally{engine.RunReport=prior;o.ArtifactWorkFolder="";try{Directory.Delete(work,true);}catch{}}
@@ -240,7 +248,7 @@ public static class Renderer {
   output=Path.GetFullPath(output);string parent=Path.GetDirectoryName(output);
   if(!Directory.Exists(parent))throw new DirectoryNotFoundException("Không tìm thấy thư mục nguồn: "+parent);
   string temporary=Path.Combine(parent,".v15_"+Guid.NewGuid().ToString("N")+".tmp"),work=Path.Combine(Path.GetTempPath(),"V15_work_"+Guid.NewGuid().ToString("N"));
-  bool failed=false;double cursor=0,minimumCursor=0;var meter=o.Prose?new ReadingMeter(cues,o.BaseSpeed):null;Cue previousCue=null;const int rate=24000;string previousContext=engine.RenderContext;
+  bool failed=false;double cursor=0,minimumCursor=0;var meter=o.Prose?new ReadingMeter(cues,o.BaseSpeed):null;Cue previousCue=null;CueCheckpointWriter cueWrites=null;const int rate=24000;string previousContext=engine.RenderContext;
   try {
    if(o.RunReport!=null)o.RunReport.Step("SETUP","Chuẩn bị thư mục và hơi thở");Directory.CreateDirectory(work);var track=new BreathTrack(o,engine.Root);
    if(o.RunReport!=null)o.RunReport.Step("ASSEMBLE","Mở WAV trung gian");using(var writer=new StreamingWave(temporary,rate)){
@@ -248,11 +256,15 @@ public static class Renderer {
      if(engine.Cancelled)throw new OperationCanceledException();
      var c=cues[i];engine.SelectSpeaker(SpeakerScript.Role(c));if(o.RunReport!=null)o.RunReport.BeginUnit(c.Text);engine.RenderContext=Path.GetFileName(output)+" · khối "+c.Id+"/"+cues.Count+" ["+Scripts.Stamp(c.Start)+"–"+Scripts.Stamp(c.End)+"]";progress(i*90/cues.Count,"Đọc câu "+(i+1)+"/"+cues.Count);
      if(o.Prose&&!String.IsNullOrEmpty(c.VoiceLock)){if(c.VoiceLock!=LongText.Signature(engine,o,c)||engine.Archive==null||LongText.Parts(c,o).Any(text=>!engine.Archive.Has(engine,text,o.BaseSpeed)))throw new Exception("Đoạn "+c.Id+" đã khóa nhưng thiết lập hoặc âm thanh đã thay đổi. Mở khóa đoạn trước khi tạo lại.");}
-     if(o.RunReport!=null)o.RunReport.Step("TTS","Yêu cầu tổng hợp / lấy audio TTS");var paced=Punctuation.Generate(engine,c.Text,o.BaseSpeed,o,Path.Combine(work,"cue.wav"));if(o.RunReport!=null)o.RunReport.Step("ASSEMBLE","Ghép lời với nghỉ trong câu");Wave wav=paced.Join();if(o.RunReport!=null)o.RunReport.Natural(paced,wav.Duration);c.Natural=wav.Duration;c.Speed=o.BaseSpeed;c.AudioPath=null;
      double boundary=i<cues.Count-1?Punctuation.After(c.Text,o):0;double reserve=o.Locked&&i<cues.Count-1?Math.Min(Math.Max(0,c.Duration-.08),Math.Max(0,boundary-Math.Max(0,cues[i+1].Start-c.End))):0;
+     var cached=o.Locked?LockedCueReuse.Read(c,i+1<cues.Count?cues[i+1]:null,engine,o,reserve):null;PacedSpeech paced=null;Wave natural=null,wav;
+     if(cached!=null){wav=cached.Audio;c.Natural=cached.Natural.Duration;c.Speed=cached.Speed;c.Actual=wav.Duration;reserve=cached.Reserve;if(o.RunReport!=null){o.RunReport.Step("CACHE","Dùng PCM cue đã đo đạt và kiểm tra hash");o.RunReport.CachedLockedCue(cached,c);}if(o.Performance!=null)o.Performance.Count(cached.Origin);}
+     else{if(o.RunReport!=null)o.RunReport.Step("TTS","Yêu cầu tổng hợp / lấy audio TTS");paced=Punctuation.Generate(engine,c.Text,o.BaseSpeed,o,Path.Combine(work,"cue.wav"));if(o.RunReport!=null)o.RunReport.Step("ASSEMBLE","Ghép lời với nghỉ trong câu");wav=natural=paced.Join();if(o.RunReport!=null)o.RunReport.Natural(paced,wav.Duration);c.Natural=wav.Duration;c.Speed=o.BaseSpeed;}
+     c.AudioPath=null;
      if(o.Locked){
-      if(o.RunReport!=null)o.RunReport.Step("FIT","Chỉnh nghỉ và căn tốc độ câu");wav=Punctuation.Fit(paced,c,o,engine.Root,work,()=>engine.Cancelled,ref reserve);
+      if(cached==null){if(o.RunReport!=null)o.RunReport.Step("FIT","Chỉnh nghỉ và căn tốc độ câu");wav=Punctuation.Fit(paced,c,o,engine.Root,work,()=>engine.Cancelled,ref reserve);}
       if(wav.Duration>c.Duration-reserve){c.Status="QUÁ DÀI: +"+(wav.Duration-(c.Duration-reserve)).ToString("0.000")+"s tại tốc độ "+c.Speed.ToString("0.00")+" (tối đa "+Tempo.Maximum(o).ToString("0.00")+")";failed=true;if(o.RunReport!=null)o.RunReport.UnitDone(c,wav,false);continue;}
+      if(cached==null)try{var save=LockedCueReuse.PrepareWrite(c,i+1<cues.Count?cues[i+1]:null,engine,o,natural,wav,paced.SpeechSeconds,paced.PauseSeconds,reserve);if(save!=null){if(cueWrites==null)cueWrites=new CueCheckpointWriter(engine.ReportActivity);cueWrites.Add(save);}}catch(Exception ex){engine.ReportActivity("Không lưu được PCM cue; WAV vẫn được kiểm tra bình thường: "+ex.Message);}
       c.Status=VoiceRhythm.Status(c,o)+(o.Punctuation==PunctuationMode.Custom?" · nghỉ dấu câu":"");
      }else{if(o.Prose&&previousCue!=null){cursor=Math.Max(Math.Max(previousCue.End,minimumCursor),cursor-Math.Min(Math.Max(0,cursor-previousCue.End),Punctuation.EdgeSilence(wav,true)));}c.Start=cursor;c.End=c.Start+wav.Duration;c.Actual=wav.Duration;c.Status="Timeline theo voice";}
      if(c.End>Scripts.MaxSeconds)throw new Exception("WAV dài hơn 6 giờ; hãy chia kịch bản.");
@@ -275,7 +287,7 @@ public static class Renderer {
    if(o.NormalizeLoudness){if(o.RunReport!=null)o.RunReport.Step("NORMALIZE","Đo và cân âm lượng WAV");string normalized=Path.Combine(work,"normalized.wav");FinalAudio.Normalize(engine.Root,temporary,normalized,(long)Math.Round(cues.Last().End*rate),o.TargetLufs,()=>engine.Cancelled,m=>progress(97,m));File.Copy(normalized,temporary,true);}
    if(engine.Cancelled)throw new OperationCanceledException();
    if(o.RunReport!=null)o.RunReport.Step("PUBLISH","Lưu WAV cuối cạnh nguồn");string final=OutputFiles.Publish(temporary,output);if(meter!=null&&o.ReadingChanged!=null)o.ReadingChanged(meter.Snapshot("WAV đã xuất",true));progress(100,"Hoàn tất: "+Path.GetFileName(final));return final;
-  }finally{engine.RenderContext=previousContext;try{if(File.Exists(temporary))File.Delete(temporary);}catch{}try{if(Directory.Exists(work))Directory.Delete(work,true);}catch{}foreach(var c in cues)c.AudioPath=null;}
+  }finally{if(cueWrites!=null)cueWrites.Dispose();engine.RenderContext=previousContext;try{if(File.Exists(temporary))File.Delete(temporary);}catch{}try{if(Directory.Exists(work))Directory.Delete(work,true);}catch{}foreach(var c in cues)c.AudioPath=null;}
  }
 }
 }

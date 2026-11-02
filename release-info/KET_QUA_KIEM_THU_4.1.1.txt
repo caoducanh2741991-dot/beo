@@ -1,0 +1,144 @@
+BÉO VOICE STUDIO 4.1.1 — RENDER FIX
+KẾT QUẢ KIỂM THỬ VÀ SO SÁNH PIPELINE · 02/11/2026
+
+KẾT LUẬN ĐÃ KIỂM CHỨNG
+Đã vá đường render thực, build EXE Windows x64 .NET 4.5 và chạy các bộ
+kiểm tra: 745 C# và 15 Python PASS. Có UI WinForms thật, FFmpeg
+thật, audio PCM/checkpoint thật và tiến trình worker thật dùng giọng
+tổng hợp fixture. Chưa chạy model giọng hoặc Windows/RTX2070 thực.
+
+PHẢN HỒI TỐC ĐỘ TRÊN MÁY ANH
+Chưa có báo cáo của chính lần chạy chậm trên máy anh để kết luận nguyên
+nhân duy nhất. So sánh mã 3.1/4.1 cho thấy nhiều bước TTS/AI vẫn giống
+nhau. Số đo UI/cache của 4.1.0 không đủ để tuyên bố render nhanh hơn.
+Bản này sửa các công việc lặp đã xác nhận và thêm thời gian trong báo
+cáo hiện có để lần chạy thật có thể phân biệt TTS, AI, căn và I/O.
+
+CÁCH ĐO PIPELINE
+Cùng tám cue khóa, giữ nguyên lời/timecode/cấu hình. Mỗi phiên bản chạy
+ba lần độc lập; mỗi lần gồm chế độ 1 và 2, lượt lạnh và lượt thứ hai đã
+có cache. Ghi lại thời gian WorkflowRunner.Run, số tiến trình TTS/FFmpeg,
+số yêu cầu tổng hợp, hash WAV và số báo cáo. Lấy trung vị ba lần.
+Worker là Python sinh sóng kiểm thử 3 giây, có chờ 150 ms giả lập chi
+phí khởi động. Không dùng nhãn Chatterbox fixture để coi là model thật.
+FFmpeg thực dùng atempo; không thay lời hoặc dùng số từ làm thời lượng.
+
+THỜI GIAN ĐO ĐƯỢC — GIÂY
+Trường hợp: bản 3.1.0 | bản 4.1.0 | bản 4.1.1
+Chế độ 1, lần lạnh: 1.352 | 1.192 | 1.224
+Chế độ 1, chạy lại có cache: 0.785 | 0.664 | 0.062
+Chế độ 2, lần lạnh: 3.646 | 3.433 | 1.673
+Chế độ 2, chạy lại có cache: 1.311 | 1.181 | 0.578
+
+SỐ LƯỢT THỰC TẾ TRONG MỘT LẦN ĐO
+Mỗi phiên bản cho số lượt như nhau trong cả ba lần lặp:
+Chế độ 1 lạnh: cả bản cũ/mới 1 worker, 8 yêu cầu TTS, 8 FFmpeg.
+Chế độ 1 có cache: bản cũ 0 TTS nhưng vẫn 8 FFmpeg; mới 0 TTS/0 FFmpeg.
+Chế độ 2 lạnh: bản cũ 8 worker, 8 TTS, 16 FFmpeg; mới 1 worker, 8 TTS,
+8 FFmpeg. Không mô tả sai rằng bản cũ nhất thiết tổng hợp TTS hai lần.
+Chế độ 2 có cache: bản cũ vẫn 8 FFmpeg, bản mới 0 FFmpeg; cả hai 0 TTS.
+
+Dữ liệu đầu ra: mọi lượt, mọi phiên bản đều cho cùng SHA-256 WAV:
+E394D6968D170556DEC8CAB3B2AA68060FD80E9E834DE23D48B90091F7EA154C
+Mọi file final.srt khớp tuyệt đối lời và timecode nguồn trong bài đo.
+Đã kiểm tra đúng 1/2 báo cáo theo chế độ. Không có câu sửa nên báo cáo
+ngắn chế độ 2 ghi ĐÃ SỬA: 0; không sinh bản dịch giả.
+
+KHÔNG SUY DIỄN SỐ ĐO
+Đây là so sánh full pipeline trên fixture, chưa phải tốc độ TTS thật
+trên RTX2070, cũng chưa là phép đo riêng Adam/Kokoro thật. Phần trăm
+hoặc hệ số trên fixture không dùng để hứa số phút render trên máy anh.
+Kokoro vẫn gọi CLI cho mỗi phần cần tổng hợp mới; chưa có ONNX worker
+thường trú. Lần lạnh chế độ theo file không được hứa nhanh hơn ở mọi
+máy/ổ đĩa. Có thêm checkpoint I/O để lượt sau dùng lại được PCM.
+
+CÁC BẢN VÁ ĐÃ KIỂM TRA
+- Giữ một engine đo theo vai liên tiếp; nhường model trước gọi AI.
+- Dừng/lỗi/đổi vai không rò worker; không giữ hai model giọng đồng thời.
+- PCM AI đo đạt được dùng khi khóa đúng lời/profile/geometry/hash.
+- Cache cue hỏng bị bỏ và chỉ cue đó được căn lại, bảy cue khác giữ.
+- Tắt/đổi giọng, lời, mốc kế tiếp, cấu hình làm cache hết hiệu lực.
+- Metadata NaN hoặc measurement còn cần sửa không được dùng như đạt.
+- I/O checkpoint chụp dữ liệu cue/giọng trước khi xử lý nền, hàng đợi
+  tối đa 2 mục, chờ drain khi render trả về; lỗi cache không làm giả WAV.
+- Fresh process sau khi mở lại dùng đủ tám PCM, không TTS/atempo lại,
+  và WAV vẫn trùng byte bản lạnh.
+- Throttle ghi queue không mất % đang hiển thị; đến hạn lưu được % thật.
+- Đổi trạng thái/dấu cấu hình lưu ngay, không đợi đủ 5 giây.
+- ETA dùng trọng số snapshot, không ảnh hưởng quyết định căn audio.
+
+HỒI QUY
+VAN4/5/6 giữ các SRT nguồn thật trong bộ fixture. Kiểm tra lần này dùng
+PCM tổng hợp hoặc replay số đo cũ có ghi nguồn; không phải render mới
+bằng giọng thật trên RTX2070. VAN4 7 chặng, VAN5 18 chặng, VAN6 11 chặng
+trong các ca đã có. Cue5–8 VAN6, phản hồi AI trùng, kiểm tra nghĩa, dịch
+thiếu, hai giọng, cache, GPU fallback và khôi phục vẫn qua các hợp đồng.
+Các bài clone/GPU dùng mô phỏng điều kiện; không chứng minh chất lượng
+clone hay thông lượng GPU thực. Chính sách nghĩa/số lần thử không đổi.
+
+SỐ KIỂM TRA C# ĐÃ ĐẠT
+Reno300Tests: 62
+Acoustic300Tests: 11
+RenderProgressTests: 30
+Workflow217Tests: 47
+Recovery216Tests: 42
+Sync216Tests: 27
+BatchTests: 12
+TwoVoiceTests: 41
+VoiceReportTests: 30
+PunctuationTests: 20
+BreathStreamingTests: 8
+TextTargetTests: 37
+AudioRepairTests: 45
+CommunityVoiceTests: 20
+VoiceDiagnosticTests: 26
+LocalAiSafetyTests: 16
+AnchoredTests: 65
+NativeGpuTests: 15
+UpdaterTests: 21
+FastVoiceTests: 35
+Render411Tests: 35
+FastVoiceUiTests: 24
+BeoUiTests: 51
+Render411UiTests: 11
+Render411ReopenTests: 3
+Reno300Tests-reopen: 3
+Recovery216Tests-reopen: 8
+
+Python: gpu_policy 11; worker probe 4.
+
+BINARY CHÍNH XÁC CỦA KẾT QUẢ TRÊN
+V15VoiceStudio.exe
+797c15b418346e6900004a7d1934695bb06cf4e2ea930adedfe6fbc0965cec66
+V15Updater.exe
+7ba1aa57c1d0cc0ff7c4259e8b0fdb0912f6d649eeb7b870598825a5e7934e75
+
+KIỂM TRA GÓI CẬP NHẬT
+PASS: CRC ZIP, manifest đúng kích thước/SHA-256, tên tệp không trùng,
+PE x64 không bị cắt, mã nguồn đúng bản app đã build/kiểm thử/đo pipeline.
+28 kiểm tra cài đặt PASS: 7 điều kiện × 4 updater 2.0.17, 3.1.0, 4.1.0,
+4.1.1 trong môi trường cài mô phỏng bằng Mono/Linux. Giữ byte các tệp
+fixture đại diện runtime/model/mẫu giọng/GPU/SRT/WAV và bỏ mã Creator.
+Đối chiếu ai_worker.py, gpu_policy.py, TwoVoices.cs, Punctuation.cs,
+AudioFinishing.cs, RepairPolicy.cs, RepairLanguage.cs và FFmpeg audio
+không đổi byte so với gói 4.1.0. NativeGpu/ExternalSpeech chỉ thêm đếm
+khởi động tiến trình; cấu hình provider/timeout/fallback giữ như cũ.
+Kiểm tra cài đặt fixture không thay thế việc cài/chạy trên Windows thật.
+
+GIỚI HẠN CÒN LẠI
+- Chưa tái hiện trực tiếp độ chậm được anh báo trên Windows/RTX2070.
+- Chưa đo model Kokoro/Chatterbox/Qwen/clone thực trong môi trường này.
+- Chưa thêm ONNX worker thường trú hoặc tổng hợp nhiều giọng song song.
+- Chưa thêm AI viết lại TXT/SRT linh hoạt, forced alignment hay video.
+- Không tự coi lỗi dịch hoặc lỗi engine là thành công để làm nhanh.
+
+CÁCH KIỂM TRA TRÊN MÁY ANH
+Cập nhật theo HUONG_DAN_4.1.1.txt, giữ giọng và cấu hình thực đang dùng.
+Chạy cùng một SRT, mở báo cáo và xem TTS_SYNTHESIS, AI_PREPARE,
+ATEMPO_PROCESS, RENDER_PCM, CUE_CHECKPOINT_IO và bằng chứng GPU/CPU.
+So sánh cùng trạng thái lạnh/có cache; không so một bản đã có PCM với
+một bản phải tổng hợp mới. Thời gian các bước lồng nhau không cộng thẳng.
+
+BÀN GIAO
+EXE, mã nguồn, guide và log trong ZIP. Không cần cài lại model/runtime.
+Thông số giọng và hai chế độ báo cáo được giữ như bản đang dùng.

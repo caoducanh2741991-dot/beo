@@ -12,13 +12,14 @@ public static class Tempo {
  public static Wave Change(Wave original,double factor,string root,string work,Func<bool> cancel){
   if(Math.Abs(factor-1)<.00001)return original;
   if(factor<.25||factor>2)throw new Exception("Tỷ lệ đổi tốc độ nằm ngoài phạm vi hỗ trợ.");
+  var perf=RenderPerformance.Current;using(perf==null?null:perf.Time("ATEMPO_PROCESS")){if(perf!=null)perf.Count("ATEMPO_REQUEST");
   string input=Path.Combine(work,"tempo-in.wav"),output=Path.Combine(work,"tempo-out.wav");original.Write(input);
   string filter=factor<.5?"atempo=0.5,atempo="+(factor*2).ToString("0.000000",CultureInfo.InvariantCulture):"atempo="+factor.ToString("0.000000",CultureInfo.InvariantCulture);
   var si=new ProcessStartInfo(Executable(root),"-nostdin -v error -y -i "+KokoroEngine.Q(input)+" -af "+filter+" -ac 1 -ar 24000 -c:a pcm_s16le "+KokoroEngine.Q(output)){UseShellExecute=false,CreateNoWindow=true,RedirectStandardError=true,RedirectStandardOutput=true};
   string error="";using(var p=new Process{StartInfo=si}){p.ErrorDataReceived+=(s,e)=>{if(e.Data!=null&&error.Length<4000)error+=e.Data+"\n";};p.OutputDataReceived+=(s,e)=>{};p.Start();p.BeginErrorReadLine();p.BeginOutputReadLine();var timer=Stopwatch.StartNew();
    while(!p.WaitForExit(100)){if(cancel()||timer.Elapsed.TotalMinutes>2){try{p.Kill();}catch{}if(cancel())throw new OperationCanceledException();throw new Exception("Đổi tốc độ chờ quá lâu.");}}
    p.WaitForExit();if(cancel())throw new OperationCanceledException();if(p.ExitCode!=0){var ex=new Exception("Không thể đổi tốc độ: "+error);ex.Data["ProcessExitCode"]=p.ExitCode;ex.Data["Process"]=si.FileName;ex.Data["CapturedStderr"]=error;throw ex;}
-  }return Wave.Read(output).TrimEdges();
+  }return Wave.Read(output).TrimEdges();}
  }
  public static Wave Fit(Wave source,Cue cue,RenderOptions options,string root,string work,Func<bool> cancel){
   Validate(options);double available=Math.Max(.04,cue.Duration-.025),minimum=Minimum(options),maximum=Maximum(options);double selected=options.BaseSpeed;Wave result=source;bool fast=source.Duration>available;if(options.RunReport!=null)options.RunReport.FitBudget(source.Duration,available);if(options.RunReport!=null)options.RunReport.Attempt(options.BaseSpeed,source.Duration,available,"Đầu vào trước đổi tốc độ (đã chỉnh khoảng nghỉ nếu có)");
