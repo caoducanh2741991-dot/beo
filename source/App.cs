@@ -11,8 +11,8 @@ using System.Media;
 using System.Diagnostics;
 using System.Reflection;
 
-[assembly: AssemblyVersion("1.4.1.0")]
-[assembly: AssemblyFileVersion("1.4.1.0")]
+[assembly: AssemblyVersion("1.4.2.0")]
+[assembly: AssemblyFileVersion("1.4.2.0")]
 namespace V15Voice {
 public class VoiceItem {
  public int Id; public string Name,Key; public override string ToString(){return Name;}
@@ -34,12 +34,14 @@ public partial class MainForm:Form {
   if(File.Exists(Path.Combine(stateDir,"favorites.txt")))favorites=new HashSet<string>(File.ReadAllLines(Path.Combine(stateDir,"favorites.txt")));
   catalog=new VoiceCatalog(Path.Combine(root,"voice_profiles.tsv"),Path.Combine(stateDir,"voice_notes.tsv"));
   foreach(var own in UserVoices.Load(stateDir))catalog.Add(own);
-  Text="V15 Voice Studio · Offline 1.4.1";MinimumSize=new Size(1100,740);Size=new Size(1280,850);StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);BackColor=Color.FromArgb(244,247,251);
+  Text="V15 Voice Studio · Offline 1.4.2";MinimumSize=new Size(1100,740);Size=new Size(1280,850);StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);BackColor=Color.FromArgb(244,247,251);
   var shell=new TableLayoutPanel{Dock=DockStyle.Fill,RowCount=3,ColumnCount=1,Padding=new Padding(20)};
   shell.RowStyles.Add(new RowStyle(SizeType.Absolute,82));shell.RowStyles.Add(new RowStyle(SizeType.Percent,100));shell.RowStyles.Add(new RowStyle(SizeType.Absolute,52));Controls.Add(shell);
   var header=new Panel{Dock=DockStyle.Fill};header.Controls.Add(new Label{Text="V15 VOICE STUDIO",Font=new Font("Segoe UI",22,FontStyle.Bold),ForeColor=navy,AutoSize=true,Location=new Point(0,0)});
   header.Controls.Add(new Label{Text="OFFLINE  •  Danh sách giọng tuyển chọn • Lọc theo phong cách  •  SRT / TXT → WAV cạnh file gốc",AutoSize=true,ForeColor=muted,Location=new Point(3,45)});shell.Controls.Add(header,0,0);
-  tabs.Dock=DockStyle.Fill;shell.Controls.Add(tabs,0,1);BuildStudio();BuildBatch();BuildLibrary();BuildGuide();LoadEnhancements();
+  // Add pages in display order. Framework TabPages.Insert can lose pages
+  // before the native TabControl handle exists (dotnet/winforms#3686).
+  tabs.Dock=DockStyle.Fill;shell.Controls.Add(tabs,0,1);BuildStudio();BuildBatch();BuildLibrary();LoadEnhancements();BuildGuide();
   var foot=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=3,RowCount=1};foot.ColumnStyles.Add(new ColumnStyle(SizeType.Percent,100));foot.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute,125));foot.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute,220));
   status.Text="Sẵn sàng • Xử lý trên máy, không gửi kịch bản lên mạng";status.Dock=DockStyle.Fill;status.TextAlign=ContentAlignment.MiddleLeft;status.ForeColor=muted;progress.Dock=DockStyle.Fill;progress.Margin=new Padding(0,16,0,12);globalCancel=Btn("Dừng tác vụ",(s,e)=>{if(active!=null)active.Cancel();});globalCancel.Enabled=false;globalCancel.Margin=new Padding(0,7,8,0);foot.Controls.Add(status,0,0);foot.Controls.Add(globalCancel,1,0);foot.Controls.Add(progress,2,0);shell.Controls.Add(foot,0,2);
   AllowDrop=true;DragEnter+=(s,e)=>{if(!busy&&e.Data.GetDataPresent(DataFormats.FileDrop))e.Effect=DragDropEffects.Copy;};DragDrop+=(s,e)=>{var p=(string[])e.Data.GetData(DataFormats.FileDrop);if(p.Length>1)AddFiles(p);else if(p.Length==1)LoadFile(p[0]);};

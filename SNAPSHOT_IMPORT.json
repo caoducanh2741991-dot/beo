@@ -1,23 +1,23 @@
 {
-  "version": "1.4.1",
+  "version": "1.4.2",
   "kind": "imported-packaged-snapshot",
   "note": "Imported now from an existing packaged release. This is not the original development commit history.",
   "original_assets": [
     {
-      "name": "V15VoiceStudio_1.4.1_Update.zip",
-      "bytes": 392114,
-      "sha256": "f375bf6bdfac3254e70ae35cf8f4b07cc7fca95a5ca674562a172b7cc87d8e25",
+      "name": "V15VoiceStudio_1.4.2_Update.zip",
+      "bytes": 401392,
+      "sha256": "263225c18ffd60006ce0fd9574a7ceb1b60f0cd635236d346f048c89b4e28105",
       "validation": "ZIP_CRC_OK"
     }
   ],
-  "assembled_archive_sha256": "f375bf6bdfac3254e70ae35cf8f4b07cc7fca95a5ca674562a172b7cc87d8e25",
+  "assembled_archive_sha256": "263225c18ffd60006ce0fd9574a7ceb1b60f0cd635236d346f048c89b4e28105",
   "excluded_installed_components": [],
   "mapped_files": [
     {
       "archive_path": "manifest.xml",
       "repository_path": "release-info/manifest.xml",
-      "bytes": 15699,
-      "sha256": "0df19fbbae6bbcd7d5122e9df6b4aad16fa01ffb7bf1885052115c69c93e722a"
+      "bytes": 16930,
+      "sha256": "5ae5f2ae90b3926f14423261080dfb7bd6cd5643d22521c8c28fa1d1ba502ef6"
     },
     {
       "archive_path": "CAP_NHAT.cmd",
@@ -28,26 +28,26 @@
     {
       "archive_path": "HUONG_DAN.txt",
       "repository_path": "release-info/HUONG_DAN.txt",
-      "bytes": 4763,
-      "sha256": "79fcc627ab97809475bbd672e2e6fbb6db7bae052b2618aa23061115f6df39fc"
+      "bytes": 3488,
+      "sha256": "89df68276760cdcb7e9c2ad6296bd48b341caeaa03ba9abdc35c1ff6cd4518e5"
     },
     {
-      "archive_path": "payload/HUONG_DAN_1.4.1.txt",
-      "repository_path": "HUONG_DAN_1.4.1.txt",
-      "bytes": 4763,
-      "sha256": "79fcc627ab97809475bbd672e2e6fbb6db7bae052b2618aa23061115f6df39fc"
+      "archive_path": "payload/HUONG_DAN_1.4.2.txt",
+      "repository_path": "HUONG_DAN_1.4.2.txt",
+      "bytes": 3488,
+      "sha256": "89df68276760cdcb7e9c2ad6296bd48b341caeaa03ba9abdc35c1ff6cd4518e5"
     },
     {
       "archive_path": "payload/V15Updater.exe",
       "repository_path": "V15Updater.exe",
       "bytes": 27136,
-      "sha256": "b9ebe5269b1edb642bf5f19dcfb6b570bde38838fd22be3a2d4b16e7ac804b3a"
+      "sha256": "3d7d3229b8bec4439356fc7802d21d6f28c92f62f8c82f8a7dad8a620a984922"
     },
     {
       "archive_path": "payload/V15VoiceStudio.exe",
       "repository_path": "V15VoiceStudio.exe",
       "bytes": 133632,
-      "sha256": "9a5850037e3f22bd8f5ede8edc433541476fc84f1e8c26bc393aa5e9f2fbd3b6"
+      "sha256": "834d1f913c2da7914064251300b043cc0892a44779620f96f0f731d7cb7bd6f7"
     },
     {
       "archive_path": "payload/ai/gpu_policy.py",
@@ -76,8 +76,8 @@
     {
       "archive_path": "payload/source/App.cs",
       "repository_path": "source/App.cs",
-      "bytes": 38908,
-      "sha256": "31628656235eed224f99f45a4dae595787bed131a904a9f9919d6d67130fc0b9"
+      "bytes": 39054,
+      "sha256": "00c663aa16ef5dc0a90dcb60bfec1e39aca483f70fe99f433fbe0bc13646fed1"
     },
     {
       "archive_path": "payload/source/AudioProcessing.cs",
@@ -148,8 +148,8 @@
     {
       "archive_path": "payload/source/Enhancements.cs",
       "repository_path": "source/Enhancements.cs",
-      "bytes": 21287,
-      "sha256": "6d55d97f90f17c6e3b357bd5d2ec191fa347cb0035c123879cbf7e4910947d7c"
+      "bytes": 21237,
+      "sha256": "b669cfb90d241471d71d2e81ba327ec266c066c59d43c5e49982628fa6bbae51"
     },
     {
       "archive_path": "payload/source/ExternalSpeech.cs",
@@ -200,6 +200,12 @@
       "sha256": "6e65300688fe550d6bb7e2d0bba01808329e7ea395eb12aa1310a9cbb453c79e"
     },
     {
+      "archive_path": "payload/source/Release142Tests.py",
+      "repository_path": "source/Release142Tests.py",
+      "bytes": 4320,
+      "sha256": "8b97a538e01c26e12b350776ea051472a3cc6d787792ca28491c6e8e472c584e"
+    },
+    {
       "archive_path": "payload/source/Tests-1.4.0.txt",
       "repository_path": "source/Tests-1.4.0.txt",
       "bytes": 1050,
@@ -216,6 +222,12 @@
       "repository_path": "source/Ui141Tests.cs",
       "bytes": 3079,
       "sha256": "a05d1853f194ff30e3bc2085e82349c156c9f3caaf706aa346ccc1181bd69e16"
+    },
+    {
+      "archive_path": "payload/source/Ui142Tests.cs",
+      "repository_path": "source/Ui142Tests.cs",
+      "bytes": 4975,
+      "sha256": "9fb4364e8823817965cbfeab58bd7ac429139217b371a3b8c4d74390616cb1fc"
     },
     {
       "archive_path": "payload/source/UiFeatureTests-1.4.0.txt",
@@ -251,7 +263,7 @@
       "archive_path": "payload/source/Updater.cs",
       "repository_path": "source/Updater.cs",
       "bytes": 18147,
-      "sha256": "569bfcf2bd691bbe9ed520f915b7d78ebd29b0b315c1c71e63e9e154532eb515"
+      "sha256": "e571ca5a14e7d217c8b7c229971cf8f3a500c8cc4fd3c96dea1405797bdc68ae"
     },
     {
       "archive_path": "payload/source/UpdaterTests.cs",
@@ -282,6 +294,12 @@
       "repository_path": "source/VALIDATION_1.4.1.txt",
       "bytes": 1582,
       "sha256": "8af47984378b826340cd22ee186a2d2806c73074931f2ad018092fb70d16be78"
+    },
+    {
+      "archive_path": "payload/source/VALIDATION_1.4.2.txt",
+      "repository_path": "source/VALIDATION_1.4.2.txt",
+      "bytes": 1744,
+      "sha256": "b3cdede5aba00e40b005cd78b4bba500466c4a2d2dbcbccef2a9ca4f35450ba7"
     },
     {
       "archive_path": "payload/source/VoiceCatalog.cs",
@@ -396,6 +414,12 @@
       "repository_path": "source/package-integrity-1.4.0.txt",
       "bytes": 3,
       "sha256": "a12b7cb43c9d9134b5bb1b35e9096b66775d9e92e7611d1cc92b02edd6782a87"
+    },
+    {
+      "archive_path": "payload/source/package_release.py",
+      "repository_path": "source/package_release.py",
+      "bytes": 2178,
+      "sha256": "2e9d672e473ae5356eda7875c6ce54dc0c3dbedc26bc1d53a4492ebc46c832d3"
     },
     {
       "archive_path": "payload/source/research/KOKORO_VOICES.md",
@@ -700,8 +724,8 @@
     {
       "archive_path": "payload/source/validation-1.4.1/GpuPolicyTests.txt",
       "repository_path": "source/validation-1.4.1/GpuPolicyTests.txt",
-      "bytes": 1273,
-      "sha256": "e5271095694f55691800fbacd37803ec2157fcf8f7b90e4e5aba0d20b084e6f9"
+      "bytes": 1153,
+      "sha256": "f6c14170eba99abfa762b6f8b9a88c270c474a5af6bf483d9f0ac60f31ad54bc"
     },
     {
       "archive_path": "payload/source/validation-1.4.1/Tests.txt",
@@ -730,6 +754,36 @@
     {
       "archive_path": "payload/source/validation-1.4.1/UpdaterTests.txt",
       "repository_path": "source/validation-1.4.1/UpdaterTests.txt",
+      "bytes": 1200,
+      "sha256": "99e2ac259e64c93a55905e6fe615ac690364d21495ab21cab0949e414143172f"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.2/142-InstalledUiTests.txt",
+      "repository_path": "source/validation-1.4.2/142-InstalledUiTests.txt",
+      "bytes": 1477,
+      "sha256": "343aa4c94a901750acce7db28464537d988ae822cfd856a3ec937b019c4705bc"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.2/142-ReleaseTests.txt",
+      "repository_path": "source/validation-1.4.2/142-ReleaseTests.txt",
+      "bytes": 595,
+      "sha256": "4f12c7b78e2170ff0305cb413b61bd1735bf907c5e8144b8869ede9c47942da6"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.2/142-Ui142Tests.txt",
+      "repository_path": "source/validation-1.4.2/142-Ui142Tests.txt",
+      "bytes": 1477,
+      "sha256": "343aa4c94a901750acce7db28464537d988ae822cfd856a3ec937b019c4705bc"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.2/142-UiTests.txt",
+      "repository_path": "source/validation-1.4.2/142-UiTests.txt",
+      "bytes": 1462,
+      "sha256": "cda35b80b14ab6d0e2987020f5e1b59cdad3acebc8da345514a6f60203fd32ec"
+    },
+    {
+      "archive_path": "payload/source/validation-1.4.2/142-UpdaterTests.txt",
+      "repository_path": "source/validation-1.4.2/142-UpdaterTests.txt",
       "bytes": 1200,
       "sha256": "99e2ac259e64c93a55905e6fe615ac690364d21495ab21cab0949e414143172f"
     },

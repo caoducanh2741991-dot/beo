@@ -1,0 +1,31 @@
+V15 Voice Studio 1.4.2 — validation scope
+
+Change: startup now appends all six tabs in display order, including Tools
+and Voice Cloning before Guide. Removes the two startup TabPages.Insert
+calls affected by the .NET Framework handle-creation bug documented at:
+https://github.com/dotnet/winforms/issues/3686
+
+App and updater file/assembly versions and window labels: 1.4.2.0 / 1.4.2.
+No audio synthesis, GPU policy, model, queue or breath-processing change.
+
+Compiled managed x64 EXEs against .NET Framework 4.5 APIs with Mono mcs.
+UI tests run on Linux through Mono/Xvfb, NOT native Windows.
+Ui142Tests: 23 checks, including six pages immediately after construction,
+startup order, page attachment, selecting every page, Tools and Cloning
+control visibility, shared GPU settings, session restoration and recreating
+the TabControl handle without losing pages or selections.
+UiTests: 23 existing regression checks for import/queue/catalog/breath settings.
+UpdaterTests: 21 existing checks for hashes, allowed paths, preservation,
+transaction rollback and interrupted-update recovery.
+
+The previous 1.4.1 tests remain historical evidence and are explicitly named.
+Native Windows and physical NVIDIA GPU execution were not available.
+No GPU speed/VRAM or native-Windows execution result is claimed.
+
+
+Release142Tests: ZIP CRC/unique entries and every manifest hash verified.
+Actual updater applied the release onto genuine 1.4.0 and 1.4.1 EXE
+fixtures with simulated model/runtime/user files; every protected fixture
+remained byte-identical. The installed 1.4.1 updater also accepted the new
+1.4.2 ZIP. All target payloads matched, and no stage/backup/journal remained.
+Ui142Tests also passed against the EXE installed through the ZIP updater.

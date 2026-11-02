@@ -1,60 +1,48 @@
-﻿V15 VOICE STUDIO 1.4.1 — CẬP NHẬT ZIP + NVIDIA GPU
+V15 VOICE STUDIO 1.4.2 — SỬA LỖI THIẾU TAB TRÊN WINDOWS
 
-A. CẬP NHẬT ỨNG DỤNG (LÀM TRƯỚC)
-1. Máy cần có bản V15 1.4 đã cài đầy đủ. Không cần tải lại model / 15 phần dữ liệu cũ.
-2. Tải V15VoiceStudio_1.4.1_Update.zip, GIẢI NÉN TOÀN BỘ vào một thư mục riêng.
-3. Đóng V15. Trong thư mục vừa giải nén, chạy CAP_NHAT.cmd.
-4. Chọn đúng thư mục app hiện đang dùng, có V15VoiceStudio.exe và thư mục ai.
-   Ví dụ D:\V15_1.4. Không chọn thư mục chứa bộ tải về.
-5. Bấm CẬP NHẬT, chờ thông báo hoàn tất rồi mở V15VoiceStudio.exe trong thư mục
-   đích đó. Thanh tiêu đề phải hiện Offline 1.4.1.
-6. Các lần sau có thể vào Công cụ, thiết lập 1.4.1 > Cập nhật từ ZIP.
+CÁCH CẬP NHẬT KHI BẢN HIỆN TẠI KHÔNG CÓ TAB CÔNG CỤ
+1. Đóng V15 Voice Studio.
+2. Giải nén TOÀN BỘ V15VoiceStudio_1.4.2_Update.zip vào một thư mục riêng.
+3. Trong thư mục vừa giải nén, chạy CAP_NHAT.cmd.
+4. Bấm “Chọn thư mục V15 đã cài”. Chọn thư mục chứa V15VoiceStudio.exe
+   bạn đang sử dụng, cùng thư mục ai. Không chọn thư mục bộ tải về / giải nén.
+   Có thể nhấp phải shortcut V15 trên Desktop > Open file location để tìm.
+5. Bấm CẬP NHẬT và chờ thông báo hoàn tất.
+6. Mở V15VoiceStudio.exe trong thư mục vừa cập nhật. Thanh tiêu đề phải hiện
+   “V15 Voice Studio · Offline 1.4.2”. Có đủ 6 tab theo thứ tự:
+   Tạo voice / Hàng đợi nhiều file / Thư viện & phong cách giọng /
+   Công cụ & thiết lập 1.4.2 / Sao chép giọng MP3 / WAV / Hướng dẫn.
 
-B. THÊM GPU CHO RTX 2070 8 GB (MỘT LẦN)
-1. Tải ĐỦ V15_GPU_CUDA124_01.zip đến V15_GPU_CUDA124_08.zip, giữ nguyên tên
-   và để tất cả trong CÙNG MỘT THƯ MỤC. Không cần giải nén các ZIP GPU.
-2. Mở app 1.4.1 > Công cụ, thiết lập 1.4.1 > Cập nhật từ ZIP.
-3. Chọn V15_GPU_CUDA124_01.zip. Công cụ tự đọc các phần 02–08, kiểm tra,
-   ghép và cài thư viện. App lưu phiên, đóng rồi mở lại khi thành công.
-4. Tổng tải GPU khoảng 2,54 GB. Thư viện GPU sau giải nén khoảng 4,67 GB;
-   cần ít nhất 8 GB TRỐNG tại ổ cài để thực hiện cập nhật. Thời gian cài phụ
-   thuộc ổ đĩa. Giữ các ZIP đến khi nhận thông báo hoàn tất.
-5. Trong Công cụ, chọn Auto hoặc NVIDIA GPU, bấm Kiểm tra GPU / VRAM.
-   Thành công sẽ hiện tên card, VRAM và “kiểm tra tính toán CUDA đạt”.
-6. GPU áp dụng cho Qwen3-TTS, Chatterbox và giọng sao chép của hai nguồn này,
-   dùng chung Tạo voice / Hàng đợi / So sánh. Kokoro, Libri, Kitten, Piper vẫn CPU.
-7. Chọn Auto để thử GPU, chuyển CPU khi CUDA không sẵn sàng hoặc gặp lỗi GPU
-   được nhận diện. Chọn NVIDIA GPU để báo lỗi rõ thay vì tự chuyển CPU.
-8. Cần driver NVIDIA tương thích CUDA 12.4. Không cần cài Python hoặc CUDA
-   Toolkit riêng. Sau khi cài xong, tạo âm thanh hoàn toàn offline.
-9. Qwen trên RTX 2070 dùng FP32 để ưu tiên ổn định; không ép FP16 / BF16.
-   Mỗi lần chỉ nạp một model; hàng đợi chạy lần lượt và giữ model giữa các file.
+BẢN VÁ NÀY SỬA GÌ?
+- Sửa cách khởi tạo tab trên .NET Framework Windows: thêm theo đúng thứ tự,
+  tránh lỗi Insert khi phần điều khiển giao diện chưa có handle.
+- Khôi phục đường truy cập thiết lập GPU, kiểm tra GPU / VRAM, cập nhật ZIP,
+  so sánh giọng, bộ thiết lập và phần sao chép giọng MP3 / WAV.
+- Ứng dụng và công cụ cập nhật hiển thị số phiên bản 1.4.2.
 
-C. CĂN TIMELINE VÀ FILE DÀI
-- Với Khóa SRT, câu vượt khung được tăng tốc vừa đủ trong giới hạn đang chọn.
-  Ví dụ tốc độ gốc 1,00 và tối đa 1,30: chỉ câu cần thiết được tăng tới tối đa 1,30.
-- Đổi tốc độ bằng atempo để giữ cao độ; kiểm tra thời lượng sau khi chỉnh.
-  Nếu vẫn không vừa, báo câu / thời gian vượt / giới hạn tốc độ. Không cắt lời,
-  không đè câu sau, không xuất WAV chưa đạt.
-- Hỗ trợ tối đa 20.000 khối và 6 giờ mỗi file. Đã kiểm tra nhập / render
-  5.001 khối bằng âm thanh thử, giao diện nhập 3.001 khối.
-- WAV được ghi từng đoạn, không giữ toàn bộ âm thanh trong RAM. Chỉ WAV cuối
-  cùng nằm cạnh SRT/TXT gốc; trùng tên sẽ thêm (2), (3)...
-- Hơi thở Auto / Tùy chọn / Không dùng và căn tốc độ dùng chung cả hai tab.
-- Nhập file SRT/TXT lỗi sẽ xóa bảng mẫu đang hiển thị để tránh xuất nhầm kịch bản.
-- MP3/WAV mẫu nhập tại Sao chép giọng MP3 / WAV; chọn 10–15 giây lời rõ.
+DỮ LIỆU VÀ GPU
+- Dùng cho bản 1.4 hoặc 1.4.1 đã cài đầy đủ; không cần gỡ cài đặt.
+- ZIP chỉ có tệp ứng dụng, mã nguồn và hướng dẫn. Giữ model, runtime CPU/GPU,
+  WAV, kịch bản, thiết lập, hàng đợi, mẫu và giọng riêng của bạn.
+- Nếu đã cài gói GPU CUDA124 thành công, không cần tải hoặc cài lại gói GPU.
+- Nếu chưa cài gói GPU: dùng bộ V15_GPU_CUDA124_01.zip đến _08.zip đã phát
+  hành. Đặt đủ 8 ZIP cùng thư mục, giữ nguyên tên, không giải nén các ZIP GPU.
+  Vào Công cụ & thiết lập 1.4.2 > Cập nhật từ ZIP > chọn phần 01.
+- Sau đó chọn Auto hoặc NVIDIA GPU > Kiểm tra GPU / VRAM. Chỉ thông báo
+  kiểm tra tính toán CUDA đạt mới xác nhận GPU hoạt động trong runtime này.
+- Gói GPU cần ít nhất 8 GB trống khi cài; driver NVIDIA tương thích CUDA 12.4.
+  Không cần cài riêng Python hay CUDA Toolkit. GPU dùng cho Qwen3-TTS,
+  Chatterbox và các giọng sao chép tương ứng. Các nguồn nhẹ vẫn dùng CPU.
+- Hơi thở và thiết bị dùng chung Tạo voice / Hàng đợi nhiều file.
+- Các lần cập nhật tiếp theo có thể chọn ZIP trực tiếp từ tab Công cụ.
 
-D. BẢO TOÀN VÀ KIỂM THỬ
-- ZIP cập nhật chỉ thay tệp thuộc ứng dụng; giữ model, kịch bản, WAV,
-  thiết lập, hàng đợi và mẫu giọng riêng.
-- Công cụ kiểm tra SHA-256 trước khi thay, sao lưu tệp cũ và khôi phục khi lỗi.
-  Nếu máy tắt giữa cập nhật, đóng app và chạy lại CAP_NHAT.cmd, chọn cùng
-  thư mục để khôi phục rồi thực hiện lại.
-- Đã thử logic SRT/WAV, đổi tốc độ bằng FFmpeg thật, WAV ghi từng đoạn,
-  giao diện Mono/Xvfb, lỗi GPU giả lập và khôi phục cập nhật.
-- Đã ghép / đối chiếu SHA-256 và giải nén toàn bộ 8 ZIP GPU: 11.080 tệp,
-  4.668.019.393 byte, từ torch 2.6.0+cu124 và torchaudio 2.6.0+cu124 chính thức.
-- Chưa chạy trực tiếp bộ cập nhật trên Windows hoặc tổng hợp bằng RTX 2070
-  thật trong môi trường kiểm thử này. Chưa có số đo tốc độ / VRAM thực tế
-  cho máy của bạn. Dùng nút Kiểm tra GPU / VRAM rồi nghe thử một câu trước.
-- Nguồn thư viện: https://docs.pytorch.org/get-started/previous-versions/
+KIỂM THỬ VÀ KHÔI PHỤC
+- Đã kiểm tra giao diện bằng Mono/Xvfb trên Linux: đủ 6 tab trước/sau khi mở,
+  chuyển từng tab, nội dung Tools / Cloning hiển thị, và tạo lại handle.
+- Đã kiểm tra cài ZIP bằng công cụ cập nhật lên thư mục thử có EXE bản cũ,
+  đối chiếu SHA-256 và giữ nguyên các tệp dữ liệu mẫu.
+- Chưa chạy trực tiếp bản vá trên Windows hoặc card RTX 2070 thật ở môi
+  trường kiểm thử này. Kiểm tra thanh tiêu đề và đủ 6 tab sau khi cập nhật.
+- Công cụ kiểm tra SHA-256, sao lưu và khôi phục khi cập nhật lỗi. Nếu bị tắt
+  máy giữa chừng, đóng app rồi chạy lại CAP_NHAT.cmd, chọn cùng thư mục.
+
