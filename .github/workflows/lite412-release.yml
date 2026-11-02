@@ -45,10 +45,15 @@ jobs:
         run: python3 source/validate412lite.py
       - name: Package and verify actual update installs
         run: python3 source/publish412lite.py
+      - name: Stage verified core package
+        shell: bash
+        run: |
+          mkdir -p dist-lite
+          cp ../output-4.1.2/BEO_Voice_Studio_4.1.2_Lite_Core_Update.zip dist-lite/
       - name: Upload verified core package
         uses: actions/upload-artifact@v7
         with:
-          path: ../output-4.1.2/BEO_Voice_Studio_4.1.2_Lite_Core_Update.zip
+          path: dist-lite/BEO_Voice_Studio_4.1.2_Lite_Core_Update.zip
           archive: false
           if-no-files-found: error
           retention-days: 30
@@ -63,6 +68,10 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: BEO-Lite-4.1.2-Evidence
-          path: dist-lite/
+          path: |
+            dist-lite/*.txt
+            dist-lite/*.json
+            dist-lite/*.exe
+            dist-lite/validation/
           if-no-files-found: error
           retention-days: 30
