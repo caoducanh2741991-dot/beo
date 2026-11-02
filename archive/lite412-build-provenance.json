@@ -1,0 +1,29 @@
+{
+  "version": "4.1.2",
+  "edition": "Lite",
+  "source_commit": "84b94721ae2edd6e408c43c5c799236b41e50b3d",
+  "workflow_commit": "b41dd456cdb45a65e3d5224f329dfa69f716e71f",
+  "workflow_run_url": "https://github.com/caoducanh2741991-dot/beo/actions/runs/41490667624",
+  "workflow_permissions": "contents: read; workflow_dispatch only; no pushes or release publication",
+  "package": {
+    "filename": "BEO_Voice_Studio_4.1.2_Lite_Core_Update.zip",
+    "bytes": 17984172,
+    "sha256": "492312def9c02fd69a78f736ca0929fd89d38b4d83b925b828277500d7aefd9b",
+    "artifact_id": 13163393307
+  },
+  "evidence": {
+    "filename": "BEO-Lite-4.1.2-Evidence.zip",
+    "bytes": 732530,
+    "sha256": "0021f65f5198d002458b7893df9a71c9f24646373db2fca28057e7cdb81280b4",
+    "artifact_id": 13163812910
+  },
+  "checks": {
+    "CSharp": 438,
+    "Python": 15,
+    "update_installs": 18
+  },
+  "environment": "Mono/Linux, WinForms/Xvfb and FFmpeg/processes; synthetic TTS/GPU providers",
+  "real_windows_rtx2070_clone_tested": false,
+  "fresh_full_installer_ready": false,
+  "missing": "V15VoiceStudio_1.4_Data.7z.001 through .015"
+}

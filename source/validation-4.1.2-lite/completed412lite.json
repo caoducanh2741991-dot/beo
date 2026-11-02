@@ -1,0 +1,34 @@
+{
+  "version": "4.1.2.0",
+  "edition": "Lite",
+  "finished_utc": "2026-11-02T17:24:03.757921+00:00",
+  "counts": {
+    "BatchTests": 12,
+    "TwoVoiceTests": 41,
+    "VoiceReportTests": 30,
+    "PunctuationTests": 20,
+    "BreathStreamingTests": 8,
+    "TextTargetTests": 37,
+    "AudioRepairTests": 45,
+    "CommunityVoiceTests": 20,
+    "VoiceDiagnosticTests": 26,
+    "AnchoredTests": 65,
+    "NativeGpuTests": 15,
+    "UpdaterTests": 21,
+    "FastVoiceTests": 35,
+    "Lite412Tests": 24,
+    "Lite412UiTests": 28,
+    "Lite412QueueUiTests": 11
+  },
+  "CSharp_total": 438,
+  "python_gpu_policy": 11,
+  "python_worker_probe": 4,
+  "binary_sha256": {
+    "V15VoiceStudio.exe": "edf76a5dc7fcf080af66c77b84ff82dd5a259d6a10a6dcc2eb89e00ace6ece53",
+    "V15Updater.exe": "0fbafe9d31af88b24b949102c14ec3345165d8c04868a83b8903188622d05c35"
+  },
+  "environment": "Mono/Linux, real FFmpeg/processes and WinForms/Xvfb, synthetic speech/GPU providers",
+  "real_windows_gpu_voice_clone_tested": false,
+  "fresh_full_installer_ready": false,
+  "missing_base_data": "V15VoiceStudio_1.4_Data.7z.001 through .015 not available"
+}

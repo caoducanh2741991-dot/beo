@@ -1,0 +1,13 @@
+BÉO VOICE STUDIO LITE 4.1.2 — KIỂM THỬ
+
+C# PASS: 438. Python PASS: 15. Kiểm tra cài cập nhật: 18.
+Mono/Linux, WinForms/Xvfb và FFmpeg/process thật; TTS/GPU là fixture.
+Không có thử nghiệm Windows vật lý, RTX 2070 hoặc clone/model thật.
+Đọc nguyên file; không gọi sửa/dịch; một báo cáo cả thành công/lỗi.
+SRT/voice trùng lời; giữ timeline; cache warm không gọi lại TTS và WAV giữ byte.
+Job AI cũ chuyển về nguồn; job theo file đã đạt giữ tiến độ/cache.
+UI không còn nút AI tự sửa hoặc cài LLM; giữ clone, engine, một/hai giọng.
+GÓI CORE — CHƯA CÓ BỘ CÀI FULL MÁY TRẮNG. Thiếu 15 phần dữ liệu nền.
+
+V15VoiceStudio.exe SHA256: edf76a5dc7fcf080af66c77b84ff82dd5a259d6a10a6dcc2eb89e00ace6ece53
+V15Updater.exe SHA256: 0fbafe9d31af88b24b949102c14ec3345165d8c04868a83b8903188622d05c35

@@ -1,0 +1,46 @@
+PASS Locked SRT uses one cue per repair interval
+PASS Empty serialized candidates restore as null
+PASS A measures real audio then fits within maximum speed
+PASS Short B retains explicit bounded tail silence
+PASS A and B audio files remain independent
+PASS Speech end and tail distinguish padded window duration
+PASS Selected cue keeps original ID in trial and report
+PASS Trial report is written without final output
+PASS Trial never replaces adopted/background audio
+PASS Matching selected voice and words validates B
+PASS Editing words invalidates stale B
+PASS Switching voice invalidates stale B
+PASS Changing pauses invalidates old comparison
+PASS Disabling slowdown cannot turn a long artificial tail into a successful repair
+PASS Overflow candidate remains listenable but cannot be merged
+PASS Merge rejects overflow without publishing WAV
+PASS Auto-created background intervals preserve absolute cue IDs
+PASS Merge produces exact source total frames including gaps and lead silence
+PASS Adoption uses exact B; only two missing background parts synthesize
+PASS Merged selected interval is the exact listened B waveform
+PASS Leading source silence remains intact
+PASS Final report records mixed voices, original text and per-stage metrics
+PASS Source SRT is never overwritten
+PASS Chosen voice, text, candidates and output survive reopen
+PASS Publishing repair keeps previous complete WAV
+PASS Other successful parts and samples stay unchanged without normalization
+PASS Edited text retains source timecodes in separate effective SRT
+PASS Corrupt adopted audio is rejected without silently replacing chosen take
+PASS Failed merge preserves last published WAV and text snapshot
+PASS V15.6 repair scope exposes whole grouped stage
+PASS V15.6 renders the full announced group while editing only selected cue
+PASS Grouped adoption retains total timeline and other cue words
+PASS Grouped adoption preserves source cue IDs
+PASS Normal render snapshot captures all measured PCM windows
+PASS Captured baseline merges without regenerating other sentences
+PASS Missing background cache regenerates only missing interval
+PASS Cancellation is reported and does not apply trial
+PASS Cancelled trial has a report
+PASS TTS error propagates for visible retry
+PASS Synthesis failure is included in report
+PASS Whole-file normalization preserves duration and is disclosed in report
+PASS Externally changed source cannot receive old edits
+PASS Changed-source merge writes failure report
+PASS Failed or cancelled operations leave no intermediate merge/work files
+PASS Queue persists actual V15.6 render mode for A/B scope after reopening
+TOTAL AUDIO REPAIR 45 passed.

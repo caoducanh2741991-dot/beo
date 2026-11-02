@@ -1,0 +1,30 @@
+PASS Creator/video packaging page is absent; the original seven voice/subtitle pages remain
+PASS Creator export and WAV receipt code are removed from the compiled app
+PASS Batch exposes folder import and quick selection beside existing file import
+PASS Native async folder import loads two source scripts and opens the existing batch page
+PASS Native folder import excludes generated SRT without changing source text
+PASS Import immediately shows named voice recommendations and explicitly says they are unmeasured
+PASS Import and recommendation never execute the available synthetic TTS executable
+PASS A suggested installed voice can be applied with one click
+PASS Applying a voice recommendation does not rewrite the script
+PASS A single imported source also gets automatic suggestions in Studio
+PASS Choose unfinished selects failed/pending work while leaving completed files unchecked
+PASS Select all restores the whole batch in one action
+PASS Unselect all is available without deleting queue data
+PASS Ten thousand render events update the actual queue without rebuilding any rows
+PASS Coalesced progress preserves the final percent and most recent status
+PASS Batch actions and percentage table fit {Width=1440, Height=960} font 0
+PASS Batch actions and percentage table fit {Width=1440, Height=960} font 2
+PASS Batch actions and percentage table fit {Width=1100, Height=740} font 0
+PASS Batch actions and percentage table fit {Width=1100, Height=740} font 2
+PASS Completed selected files can still be revalidated after a source/configuration/output change
+PASS Saved voice configurations are accessible directly from the batch sidebar
+PASS Rendering disables voice suggestion actions without hiding the recommendations
+PASS The shared stop action also cancels folder scanning/preflight
+PASS Lite retains only the source-file workflow
+PASS Lite exposes no rewrite or language-model installation buttons
+PASS Lite removes the inline AI repair column
+PASS Old UI mode requests cannot re-enable automatic repair
+PASS Window identifies the Lite build
+TOTAL LITE412 UI 28 PASS · real WinForms on Mono/Xvfb; no GPU inference
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

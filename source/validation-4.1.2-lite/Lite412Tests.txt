@@ -1,0 +1,25 @@
+PASS Lite binary has its own 4.1.2 version
+PASS A restored mode-2 request completes as a real source-only render
+PASS Neither rewrite nor translation callback executes
+PASS Original words reach the voice pipeline unchanged
+PASS Final SRT words match the actual render input
+PASS Locked source timecodes are unchanged
+PASS Input file bytes are preserved
+PASS Lite publishes exactly one report per source
+PASS Report identifies Lite and no AI report is produced
+PASS Speech engine still synthesizes all four original cues
+PASS Warm checkpoint render produces the same WAV bytes
+PASS Validated locked PCM is reused without repeating TTS
+PASS Legacy AI settings normalize safely while keeping two-voice settings
+PASS Old AI jobs are queued as a fresh source-only task
+PASS Old rewritten words and AI cache identity cannot leak into Lite
+PASS Completed source-only jobs remain valid after restart
+PASS Invalid source ends with one truthful report and no WAV
+PASS Missing speech model is reported as an engine failure without AI attempts
+PASS Lite never advertises a language model as installed
+PASS Language-model setup is unavailable
+PASS Language-model downloading is unavailable
+PASS Language-model inference is unavailable
+PASS Removed model operations cannot create files or launch a worker
+PASS TTS worker is released after rendering
+TOTAL LITE412 24 PASS · real processes/FFmpeg, synthetic speech; no physical Windows/GPU/model inference

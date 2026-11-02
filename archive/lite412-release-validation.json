@@ -1,0 +1,12 @@
+{
+  "version": "4.1.2",
+  "edition": "Lite",
+  "CRC_manifest_source_binary_identity": "PASS",
+  "package_sha256": "492312def9c02fd69a78f736ca0929fd89d38b4d83b925b828277500d7aefd9b",
+  "package_bytes": 17984172,
+  "CSharp_checks": 438,
+  "Python_checks": 15,
+  "update_install_checks": 18,
+  "real_windows_gpu_voice_tested": false,
+  "fresh_full_installer_ready": false
+}
