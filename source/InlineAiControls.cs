@@ -39,12 +39,7 @@ public partial class MainForm {
  volatile bool inlineAiCancelled;volatile KokoroEngine inlineAiEngine;bool inlineAiRunning,inlineAiFitting;
 
  void BuildInlineAi() {
-  grid.Columns.Add(new DataGridViewTextBoxColumn{Name="aiFix",HeaderText="Sửa ngay",ReadOnly=true,Width=122,SortMode=DataGridViewColumnSortMode.NotSortable});
-  grid.Columns["aiFix"].DisplayIndex=grid.Columns["qa"].DisplayIndex+1;
-  foreach(DataGridViewColumn c in grid.Columns)c.SortMode=DataGridViewColumnSortMode.NotSortable;
-  grid.AutoSizeRowsMode=DataGridViewAutoSizeRowsMode.None;
-  grid.CellContentClick+=async(s,e)=>{if(e.RowIndex>=0&&e.ColumnIndex==grid.Columns["aiFix"].Index&&!busy)await RepairInlineCue(e.RowIndex);};
-  grid.SizeChanged+=(s,e)=>ResizeInlineAiColumns();ResizeInlineAiColumns();BuildQuickPanel();
+  // Lite has no AI repair column, inline callback or repair dialog.
  }
  void ResizeInlineAiColumns() {
   if(!grid.Columns.Contains("aiFix"))return;

@@ -34,7 +34,7 @@ public static class WorkflowReports {
   return TranslationReady(o,final)?"FINAL_VERIFIED":"TRANSLATION_INCOMPLETE";
  }
  static string Source(RenderOptions o){return o.ReportContext==null?"":o.ReportContext.SourcePath;}
- static string Header(RenderOptions o,string status,bool wave){return "BÉO VOICE STUDIO 4.1.1\r\nCHẾ ĐỘ "+o.WorkflowMode+(o.WorkflowMode==1?" — CHẠY THEO FILE, KHÔNG SỬA LỜI":" — AI TỰ ĐỘNG SỬA")+"\r\nNguồn: "+Source(o)+"\r\nKết quả công việc: "+status+"\r\nWAV: "+(wave?"FINAL_VERIFIED — đã tạo và kiểm tra":"CHƯA XUẤT — không có WAV tổng đạt của lần này")+"\r\n";}
+ static string Header(RenderOptions o,string status,bool wave){return "BÉO VOICE STUDIO LITE 4.1.2\r\nCHẾ ĐỘ "+o.WorkflowMode+(o.WorkflowMode==1?" — CHẠY THEO FILE, KHÔNG SỬA LỜI":" — AI TỰ ĐỘNG SỬA")+"\r\nNguồn: "+Source(o)+"\r\nKết quả công việc: "+status+"\r\nWAV: "+(wave?"FINAL_VERIFIED — đã tạo và kiểm tra":"CHƯA XUẤT — không có WAV tổng đạt của lần này")+"\r\n";}
  static string Detailed(RenderOptions o,List<Cue> final,VoiceRenderReport report,string status,bool wave,Exception error){
   var b=new StringBuilder(Header(o,status,wave));var changed=Changed(o,final);
   b.AppendLine("Số câu thay đổi lời thực sự áp dụng: "+changed.Count);
@@ -75,6 +75,7 @@ public static class WorkflowReports {
   b.AppendLine();b.AppendLine("Bản Việt dùng để đối chiếu nhanh; cần đọc lại thuật ngữ và sắc thái. Chưa có forced alignment riêng từng cue.");return b.ToString();
  }
  public static WorkflowBundle Publish(string raw,string requested,List<Cue> final,RenderOptions o,VoiceRenderReport report,string failure="",Exception error=null,Action<int> fault=null){
+  o.WorkflowMode=1;o.Translator=null;
   bool wave=!String.IsNullOrEmpty(raw);if(o.WorkflowMode!=1&&o.WorkflowMode!=2)throw new InvalidOperationException("Chọn một trong hai chế độ chạy.");
   if(wave){if(!String.IsNullOrEmpty(o.WorkflowSourceHash)&&StateFiles.Hash(Source(o))!=o.WorkflowSourceHash)throw new IOException("SOURCE_CHANGED: file gốc thay đổi trong lúc chạy.");StableArtifacts.VerifyWords(final,report);report.VerifySourceUnchanged();if(o.AiRepair!=null)o.AiRepair.Validate();
    if(o.WorkflowMode==1&&!SameWords(o.WorkflowOriginal??final,final))throw new IOException("SOURCE_WORDS_CHANGED: chế độ 1 không được thay lời.");

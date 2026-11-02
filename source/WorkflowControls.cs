@@ -2,17 +2,12 @@ using System;using System.IO;using System.Linq;using System.Drawing;using System
 namespace V15Voice {public partial class MainForm {
  ComboBox workflowStudio,workflowBatch;Label workflowStudioHint,workflowBatchHint;bool workflowSync;
  void RefreshWorkflowStop(){if(globalCancel==null)return;bool primary=tabs.SelectedIndex==0||tabs.SelectedTab==batchPage;globalCancel.Visible=!primary;var foot=globalCancel.Parent as TableLayoutPanel;if(foot!=null)foot.ColumnStyles[1].Width=primary?0:125;}
- int WorkflowChoice{get{return workflowStudio!=null&&workflowStudio.SelectedIndex==1?2:1;}}
+ int WorkflowChoice{get{return 1;}}
  Control WorkflowSelector(bool queued){
   if(queued)return BeoWorkflowSelector();
-  var panel=new TableLayoutPanel{Dock=DockStyle.Fill,ColumnCount=1,RowCount=3,Margin=Padding.Empty};
-  panel.RowStyles.Add(new RowStyle(SizeType.Absolute,22));panel.RowStyles.Add(new RowStyle(SizeType.Absolute,36));panel.RowStyles.Add(new RowStyle(SizeType.Percent,100));
-  panel.Controls.Add(new Label{Text="CHẾ ĐỘ CHẠY",Font=new Font("Segoe UI",10,FontStyle.Bold),ForeColor=navy,Dock=DockStyle.Fill},0,0);
-  var pick=new ComboBox{DropDownStyle=ComboBoxStyle.DropDownList,Dock=DockStyle.Fill,Font=new Font("Segoe UI",11),Name=queued?"workflowBatch":"workflowStudio",AccessibleName="Hai chế độ chạy tự động"};
-  pick.Items.AddRange(new object[]{"1 · Chạy theo file — không tự sửa","2 · AI tự sửa — hoàn toàn tự động"});
-  var hint=new Label{Dock=DockStyle.Fill,ForeColor=muted,Font=new Font("Segoe UI",9),Padding=new Padding(0,3,0,0)};panel.Controls.Add(pick,0,1);panel.Controls.Add(hint,0,2);
-  if(queued){workflowBatch=pick;workflowBatchHint=hint;}else{workflowStudio=pick;workflowStudioHint=hint;}
-  extraControls.Add(pick);pick.SelectedIndexChanged+=(s,e)=>{if(!workflowSync)ApplyWorkflowChoice(pick.SelectedIndex+1);};pick.SelectedIndex=0;RefreshWorkflowHints();return panel;
+  workflowStudio=new ComboBox{Name="workflowStudio",Visible=false};workflowStudio.Items.Add("Theo file");workflowStudio.SelectedIndex=0;
+  workflowStudioHint=new Label{Name="liteSourceMode",Dock=DockStyle.Fill,ForeColor=muted,Text="LITE · ĐỌC THEO FILE\r\nGiữ nguyên lời · Mỗi file một báo cáo",Font=new Font("Segoe UI",11,FontStyle.Bold),Padding=new Padding(0,5,0,0)};
+  return workflowStudioHint;
  }
  void BuildWorkflowStudio(){
   var left=(TableLayoutPanel)grid.Parent;left.Controls.Remove(info);left.RowStyles[1].Height=132;
@@ -23,7 +18,7 @@ namespace V15Voice {public partial class MainForm {
  }
  void ResizeWorkflowGrid(){bool small=grid.ClientSize.Width<740;grid.Columns["words"].Visible=!small&&!AnchoredMode;grid.Columns["id"].Visible=grid.ClientSize.Width>=600;grid.Columns["start"].Width=grid.Columns["end"].Width=small?90:100;grid.Columns["qa"].Width=small?110:150;grid.Columns["text"].MinimumWidth=small?120:160;grid.Columns["anchor"].Width=small?65:90;if(grid.Columns.Contains("speaker"))grid.Columns["speaker"].Width=small?52:70;}
  void ApplyWorkflowChoice(int selected){
-  if(workflowSync)return;workflowSync=true;try{int index=selected==2?1:0;if(workflowStudio!=null)workflowStudio.SelectedIndex=index;if(workflowBatch!=null)workflowBatch.SelectedIndex=index;if(aiMode.Items.Count>=3)aiMode.SelectedIndex=index==1?2:0;aiFixShort.Checked=true;pauseBatchReview.Checked=false;RefreshWorkflowHints();RefreshBeoModes();}finally{workflowSync=false;}
+  if(workflowSync)return;workflowSync=true;try{selected=1;int index=0;if(workflowStudio!=null)workflowStudio.SelectedIndex=index;if(workflowBatch!=null)workflowBatch.SelectedIndex=index;if(aiMode.Items.Count>=3)aiMode.SelectedIndex=index==1?2:0;aiFixShort.Checked=true;pauseBatchReview.Checked=false;RefreshWorkflowHints();RefreshBeoModes();}finally{workflowSync=false;}
   if(stateLoaded&&!restoring){if(selected==1&&!busy&&!String.IsNullOrEmpty(sourcePath))try{cues=WorkflowRunner.SourceWords(sourcePath,cues);Populate();}catch(Exception ex){status.Text=ex.Message;}UpdateShared();SaveSession();}
  }
  void RefreshWorkflowHints(){
@@ -31,14 +26,10 @@ namespace V15Voice {public partial class MainForm {
   if(workflowStudioHint!=null)workflowStudioHint.Text=text;if(workflowBatchHint!=null)workflowBatchHint.Text=text;
  }
  void BuildWorkflowTools(FlowLayoutPanel parent){
-  // Legacy fields remain for saved settings/cache compatibility; there is no
-  // third user-facing 'approve' mode and no repair dialog in the run path.
-  aiMode.Items.AddRange(new object[]{"Tắt","Duyệt cũ","Tự động"});aiMode.SelectedIndex=0;aiFixShort.Checked=true;
-  AddLabel(parent,"AI OFFLINE CHO CHẾ ĐỘ 2",true);
-  parent.Controls.Add(Btn("Cài / kiểm tra gói AI offline",async(s,e)=>{if(busy)return;active=new KokoroEngine{Root=root};var owner=active;try{SetBusy(true);await Task.Run(()=>LocalAi.Setup(root,()=>owner.Cancelled,m=>{if(!IsDisposed)BeginInvoke((Action)(()=>status.Text=m));}));status.Text="Gói AI đã sẵn sàng cho chế độ 2.";}catch(OperationCanceledException){status.Text="Đã dừng cài AI.";}catch(Exception ex){status.Text="Chưa cài được AI: "+ex.Message;}finally{owner.Dispose();active=null;SetBusy(false);}}));
-  AddLabel(parent,"Chế độ 1 không gọi AI. Chế độ 2 chỉ tự nhận lời đã đo đạt và qua kiểm tra nghĩa; phần chưa đạt được ghi vào báo cáo, không chờ nút duyệt.",false);
-  if(!beoBatchReady){if(batchMode.Parent!=null)batchMode.Parent.Controls.Remove(batchMode);AddLabel(parent,"QUY TẮC TIMELINE CỦA HÀNG ĐỢI",true);batchMode.Width=320;parent.Controls.Add(batchMode);extraControls.Add(batchMode);}
-
+  aiMode.Items.AddRange(new object[]{"Tắt","Duyệt cũ","Tự động"});aiMode.SelectedIndex=0;aiFixShort.Checked=false;
+  AddLabel(parent,"BÉO VOICE STUDIO LITE",true);
+  AddLabel(parent,"Đọc nguyên lời TXT/SRT. Lỗi thời lượng được ghi trong báo cáo. Không tải model sửa lời hoặc tự dịch.",false);
+  if(!beoBatchReady){if(batchMode.Parent!=null)batchMode.Parent.Controls.Remove(batchMode);AddLabel(parent,"TIMELINE HÀNG ĐỢI",true);parent.Controls.Add(batchMode);extraControls.Add(batchMode);}
  }
  void SetWorkflowJob(BatchJob job,WorkflowResult result,RenderOptions options){
   if(result.SourceHash.Length>0)job.SourceHash=result.SourceHash;job.Cues=VoiceRenderReport.Snapshot(result.Cues);job.OutputPath=result.Bundle.Wave;job.ReportPath=result.Bundle.Primary;job.ShortReportPath=result.Bundle.Changes;job.WorkflowMode=options.WorkflowMode;

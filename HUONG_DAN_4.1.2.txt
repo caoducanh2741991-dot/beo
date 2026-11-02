@@ -1,0 +1,34 @@
+BÉO VOICE STUDIO LITE 4.1.2 — KHÔNG AI TỰ SỬA
+
+Đọc nguyên lời TXT/SRT. Không tự viết lại, kiểm tra nghĩa bằng LLM hoặc
+dịch câu đã sửa. Đã bỏ nút/chế độ AI tự sửa và tải model sửa lời.
+Không cần model Qwen3-4B 2.497.281.120 byte hoặc runtime llama.cpp.
+Qwen3-TTS/Chatterbox là engine tạo giọng riêng; engine đã cài, voice clone,
+một/hai giọng, cache, hơi thở, nghỉ, cân âm, tiến độ và ETA vẫn được giữ.
+
+Nhập TXT/SRT → chọn giọng/thiết bị/timeline → nghe thử → CHẠY.
+Mỗi file có đúng một filename.voice-report.txt khi kết thúc, kể cả khi lỗi.
+Render đạt có WAV/final.srt trùng lời TTS. Lệch thời lượng thì báo rõ;
+không thêm lời hoặc im lặng dài để báo đạt. Giới hạn tốc độ 0,90–1,25x.
+Sửa file nguồn rồi chạy lại; audio cache còn hợp lệ được dùng lại.
+Thiết lập AI cũ bị tắt. Job AI cũ xếp lại từ nguyên lời nguồn, giữ WAV cũ.
+Kết quả theo file đã đạt và còn hợp lệ tiếp tục được giữ.
+
+MÁY ĐÃ CÓ BỘ GIỌNG: giải nén ZIP Lite core, đóng app và chạy BEO_Update.exe
+hoặc CAP_NHAT.cmd. Chọn đúng thư mục app đã cài. Runtime/model TTS và
+dữ liệu clone riêng được giữ. Các model LLM cũ không bị bộ cập nhật tự xóa.
+
+MÁY MỚI HOÀN TOÀN:
+ĐÂY LÀ GÓI CORE, CHƯA PHẢI BỘ CÀI FULL MÁY TRẮNG.
+Vẫn cần model/runtime TTS. Bộ cài nền 1.4 yêu cầu 15 phần
+V15VoiceStudio_1.4_Data.7z.001 đến .015, khoảng 6 GB tải về.
+Chưa tìm thấy các phần này trong các tệp hiện truy cập được.
+Bỏ model sửa lời 2,5 GB không thay thế dữ liệu Kokoro/Chatterbox/Qwen3-TTS.
+Cần phục hồi bộ dữ liệu nền hoặc thư mục app đầy đủ trước khi làm bộ cài mới.
+
+KIỂM THỬ:
+Đã build .NET Framework 4.5 x64. Xem báo cáo kèm gói và validation JSON.
+Kiểm thử dùng Mono/Linux, WinForms/Xvfb, FFmpeg/process thật, TTS/GPU fixture.
+Chưa chạy Windows vật lý, RTX 2070 hoặc model giọng/clone thật.
+Không tuyên bố TTS nhanh hơn chế độ theo file của 4.1.1 từ các số đo giả lập.
+
