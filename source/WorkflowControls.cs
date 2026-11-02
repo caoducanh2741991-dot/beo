@@ -57,19 +57,19 @@ namespace V15Voice {public partial class MainForm {
    ReadGrid();if(requested.Length==0)using(var d=new SaveFileDialog{Filter="WAV|*.wav",FileName="kich_ban.wav",Title="Nơi lưu kết quả",OverwritePrompt=false}){if(d.ShowDialog()!=DialogResult.OK)return;requested=d.FileName;}
    o=Options();o.WorkflowMode=WorkflowChoice;o.ReportContext=ReportContext(sourcePath,cues,editingJob);var settings=CaptureSettings();var prepare=WorkflowChoice==2?AutoAiPreparation(settings):null;o.Translator=WorkflowChoice==2?new LocalAi(root,settings.Device):null;
    active=RunEngine(cues);var owner=active;SetBusy(true);if(player!=null)player.Stop();progress.Value=0;
-   beoStudioProgress.Begin();var result=await Task.Run(()=>WorkflowRunner.Run(cues,owner,o,requested,o.WorkflowMode,prepare,(n,m)=>{beoStudioProgress.Update(n,m);if(!IsDisposed)BeginInvoke((Action)(()=>{progress.Value=Math.Max(0,Math.Min(100,n));status.Text=m;}));}));
-   beoStudioProgress.Finish(result.Status=="FINAL_VERIFIED");cues=result.Cues;lastVoiceReport=result.Bundle.Primary;lastOutput=result.Bundle.Wave;pendingAi=o.AiRepair;pendingAiSnapshot=AiRepairSession.SnapshotHash(cues);
+   fastUi.Clear();beoStudioProgress.Begin();var result=await Task.Run(()=>WorkflowRunner.Run(cues,owner,o,requested,o.WorkflowMode,prepare,(n,m)=>{beoStudioProgress.Update(n,m);PublishRenderUi(n,m);}));
+   FlushRenderUi();beoStudioProgress.Finish(result.Status=="FINAL_VERIFIED");cues=result.Cues;lastVoiceReport=result.Bundle.Primary;lastOutput=result.Bundle.Wave;pendingAi=o.AiRepair;pendingAiSnapshot=AiRepairSession.SnapshotHash(cues);
    if(editingJob!=null)SetWorkflowJob(editingJob,result,o);openOutput.Enabled=File.Exists(result.Bundle.Primary);
    if(result.Rendered)waveform=new FileInfo(lastOutput).Length<=32*1024*1024?Wave.Read(lastOutput):null;
    else waveform=null;wavePanel.Invalidate();status.Text=result.Status+" · "+result.Bundle.Reports.Length+" báo cáo · "+Path.GetFileName(result.Bundle.Primary);
   }catch(Exception error){try{if(requested.Length>0){var r=WorkflowPreflightFailure(requested,cues,error,editingJob);status.Text=r.Status+" · báo cáo: "+r.Bundle.Primary;}else status.Text=error.Message;}catch(Exception writeError){status.Text="Không xuất được báo cáo: "+writeError.Message+" · lỗi tác vụ: "+error.Message;}}
-  finally{if(active!=null)active.Dispose();active=null;SetBusy(false);CaptureTargetResult(o);Populate();RefreshJobs();SaveSession();}
+  finally{fastUi.Clear();if(active!=null)active.Dispose();active=null;SetBusy(false);CaptureTargetResult(o);Populate();RefreshJobs();SaveSession();}
  }
  async Task RunWorkflowBatch(){
   try{
    var selectedJobs=jobs.Where(j=>j.Selected).ToList();if(selectedJobs.Count==0){status.Text="Thêm/chọn file SRT/TXT trước khi chạy.";return;}beoActiveJobs=selectedJobs;
    foreach(var old in selectedJobs.Where(j=>j.State==JobState.Done&&j.WorkflowMode!=WorkflowChoice)){old.State=JobState.Queued;old.Progress.Restore(0,0,false);}
-   var o=OptionsForRun(false);o.WorkflowMode=WorkflowChoice;var settings=CaptureSettings();var prepare=WorkflowChoice==2?AutoAiPreparation(settings):null;o.Translator=WorkflowChoice==2?new LocalAi(root,settings.Device):null;
+   var o=OptionsForRun(false);o.WorkflowMode=WorkflowChoice;o.KeepModelWarmInBatch=true;var settings=CaptureSettings();string batchKey=BatchRunKey(settings);batchUtilityCancelled=false;fastUi.Clear();SetBusy(true);await Task.Run(()=>{foreach(var j in selectedJobs){if(batchUtilityCancelled)throw new OperationCanceledException();BatchValidity.Refresh(j,BatchValidity.Key(batchKey,j));}});var prepare=WorkflowChoice==2?AutoAiPreparation(settings):null;o.Translator=WorkflowChoice==2?new LocalAi(root,settings.Device):null;
    active=RunEngine(selectedJobs.Where(j=>j.State!=JobState.ImportFailed).SelectMany(j=>j.Cues).ToList());var owner=active;bool skip=skipFinished.Checked;int chosenTimeline=batchMode.SelectedIndex,selectedTimeline=mode.SelectedIndex;
    var contexts=jobs.ToDictionary(j=>j,j=>ReportContext(j.InputPath,j.Cues,j));SetBusy(true);if(player!=null)player.Stop();
    // Invalid inputs also receive exactly the selected report set.
@@ -77,10 +77,10 @@ namespace V15Voice {public partial class MainForm {
    lastOutput=await Task.Run(()=>BatchRunner.Run(selectedJobs,skip,()=>owner.Cancelled,(job,path,notify)=>{
     if(job.FailureCode=="INPUT_ERROR"&&job.Cues.Count==0){job.State=JobState.Failed;return "";}
     AnchoredVoice.ConfigureBatch(o,job.Timed,chosenTimeline,selectedTimeline);o.TargetSeconds=job.Timed?0:job.TargetSeconds;o.TargetRaw=o.TargetSeconds>0?Scripts.Stamp(o.TargetSeconds):"";o.ReportContext=contexts[job];o.ReadingChanged=r=>{job.AudioDuration=r.AudioSeconds;job.DurationFinal=r.Final;};
-    var result=WorkflowRunner.Run(job.Cues,owner,o,path,o.WorkflowMode,prepare,notify);SetWorkflowJob(job,result,o);if(result.Status=="CANCELLED"){job.CheckpointCues=VoiceRenderReport.Snapshot(result.Cues);throw new OperationCanceledException();}return result.Bundle.Wave;
-   },(n,m)=>{if(!IsDisposed)BeginInvoke((Action)(()=>{status.Text=m;RefreshJobs();RefreshBeoProgress();}));},false));
-   openOutput.Enabled=!String.IsNullOrEmpty(lastOutput)||jobs.Any(j=>File.Exists(j.ReportPath));status.Text=(owner.Cancelled?"Đã dừng":"Đã kết thúc tự động")+" · "+jobs.Count(j=>j.State==JobState.Done)+" đạt · "+jobs.Count(j=>j.State==JobState.NeedsReview)+" chưa sửa đạt · "+jobs.Count(j=>j.State==JobState.Failed||j.State==JobState.ImportFailed)+" lỗi · "+jobs.Count(j=>j.State==JobState.TranslationIncomplete)+" thiếu bản Việt.";
-  }catch(Exception error){foreach(var job in jobs.Where(j=>!(skipFinished.Checked&&j.State==JobState.Done)))try{WorkflowPreflightFailure(OutputFiles.Beside(job.InputPath),job.Cues,error,job);}catch{}status.Text="Không chạy được hàng đợi: "+error.Message;}
-  finally{if(active!=null)active.Dispose();active=null;SetBusy(false);if(editingJob!=null)cues=editingJob.Cues;Populate();RefreshJobs();SaveSession();}
+    var result=WorkflowRunner.Run(job.Cues,owner,o,path,o.WorkflowMode,prepare,notify);SetWorkflowJob(job,result,o);if(job.State==JobState.Done)job.RunSettingsKey=BatchValidity.Key(batchKey,job);if(result.Status=="CANCELLED"){job.CheckpointCues=VoiceRenderReport.Snapshot(result.Cues);throw new OperationCanceledException();}return result.Bundle.Wave;
+   },(n,m)=>{PublishRenderUi(n,m);},false));
+   FlushRenderUi();openOutput.Enabled=!String.IsNullOrEmpty(lastOutput)||jobs.Any(j=>File.Exists(j.ReportPath));status.Text=(owner.Cancelled?"Đã dừng":"Đã kết thúc tự động")+" · "+jobs.Count(j=>j.State==JobState.Done)+" đạt · "+jobs.Count(j=>j.State==JobState.NeedsReview)+" chưa sửa đạt · "+jobs.Count(j=>j.State==JobState.Failed||j.State==JobState.ImportFailed)+" lỗi · "+jobs.Count(j=>j.State==JobState.TranslationIncomplete)+" thiếu bản Việt.";
+  }catch(Exception error){foreach(var job in jobs.Where(j=>j.Selected&&!(skipFinished.Checked&&j.State==JobState.Done)))try{WorkflowPreflightFailure(OutputFiles.Beside(job.InputPath),job.Cues,error,job);}catch{}status.Text="Không chạy được hàng đợi: "+error.Message;}
+  finally{fastUi.Clear();if(active!=null)active.Dispose();active=null;SetBusy(false);if(editingJob!=null)cues=editingJob.Cues;Populate();RefreshJobs();SaveSession();}
  }
 }}

@@ -1,125 +1,129 @@
-BÉO VOICE STUDIO 4.0.0 — CREATOR
-BẢN NÂNG CẤP KIỂM THỬ · ngày 01/11/2026
+BÉO VOICE STUDIO 4.1.0 — FAST VOICE
+BẢN NÂNG CẤP KIỂM THỬ · 02/11/2026
 
-DÀNH CHO QUY TRÌNH LÀM CLIP
-Video → SRT → voice → kiểm tra → gói dựng hoặc MP4.
-Trang Creator được thêm vào app đang có. TTS, clone giọng, hai giọng,
-AI Repair và hàng đợi voice vẫn dùng các module cũ.
+MỤC TIÊU
+Giảm thời gian xử lý phụ và bớt thao tác chạy nhiều kịch bản. Giữ nguyên
+tốc độ đọc, lời nguồn, kiểm tra timeline và hai chế độ báo cáo voice.
+Đã gỡ trang Creator, chức năng đóng gói clip/MP4 và biên nhận Creator
+trong luồng xuất WAV. Chức năng lấy SRT từ video của bản gốc vẫn giữ.
 
-CẬP NHẬT TỪ 3.1.0 / 3.0 / 2.0.17
+CẬP NHẬT APP ĐANG CÀI
 1. Lưu công việc và đóng app đang chạy.
-2. Giải nén ZIP cập nhật vào một thư mục riêng.
+2. Giải nén BEO_Voice_Studio_4.1.0_Fast_Voice_Update.zip vào thư mục riêng.
 3. Chạy CAP_NHAT.cmd hoặc BEO_Update.exe trong thư mục vừa giải nén.
-4. Chọn ZIP/thư mục cập nhật và thư mục cài BÉO/V15 hiện có, rồi CẬP NHẬT.
-5. Mở app trong thư mục đã cài. Tiêu đề hiển thị BÉO Voice Studio 4.0.0.
-Tên executable nền vẫn là V15VoiceStudio.exe để giữ tương thích cập nhật,
-lối tắt và cache. Model, mẫu clone, giọng riêng và runtime cũ được giữ.
-Đây là core update, cần bản app đã có các bộ giọng/runtime được cài trước.
-Mã nguồn đầy đủ nằm trong payload/source của ZIP, hoặc source sau cập nhật.
+4. Chọn ZIP/thư mục cập nhật và đúng thư mục app đã cài đầy đủ. Bấm
+   CẬP NHẬT. Không chọn một thư mục mới chưa có bộ giọng/runtime.
+5. Mở V15VoiceStudio.exe trong thư mục app. Tiêu đề là BÉO Voice Studio
+   4.1.0. Tên EXE nền và thư mục dữ liệu V15 giữ để tương thích bản cũ.
 
-BẮT ĐẦU VỚI CREATOR
-1. Mở Creator → Thêm video, hoặc kéo video vào khi trang Creator đang mở.
-   Có thể thêm nhiều clip. App tìm filename.srt, filename.wav,
-   filename.final.srt cạnh video theo đúng tên gốc.
-2. Dùng Gắn file / dự án để chọn WAV, SRT cuối hoặc SRT nguồn ở nơi khác.
-   Có thể lấy kết quả từ dòng đang chọn trong Hàng đợi voice.
-   Mục Tạo voice từ SRT nguồn đưa về trang voice hiện tại.
-3. Bấm Kiểm tra clip: xem kích thước/FPS, thời lượng hình và PCM WAV,
-   chênh lệch, timecode nguồn, phụ đề đọc nhanh/dài và bằng chứng đồng bộ.
-4. Tùy chọn xuất:
-   - Gói dựng (mặc định): giữ video gốc + WAV rời + SRT để dựng tiếp.
-   - MP4 ghép voice: thay audio bằng voice, tùy chọn trộn audio gốc.
-   - Dịch đủ EN–VI: dùng Qwen offline đang cài, có cache/kiểm tra.
-     Nếu chưa có model/runtime, lỗi dịch được báo TRANSLATION_INCOMPLETE;
-     clip đó không nhận gói hoàn tất. Có thể chủ động bỏ yêu cầu Việt để
-     xuất bộ không kèm bản dịch, được ghi VI_NOT_REQUESTED.
-   - In phụ đề: chữ trắng/viền tối, tối đa hai dòng; câu dài bị báo để
-     chia SRT trước, không tự bỏ chữ hoặc viết lại lời voice.
-   - Thêm viền dọc: xuất 1080×1920, giữ trọn hình; không tự crop nội dung.
-   - Audio gốc: mặc định tắt. Khi bật trộn 0–30%, gồm cả lời thoại/nhạc
-     có sẵn; app không tự tách riêng ambience/SFX.
-   - Caption/hashtag: bản nháp do người dùng biên tập, lưu theo clip.
-5. Tick clip cần chạy → XUẤT GÓI ĐƯỢC CHỌN. Một clip lỗi không chặn clip
-   khác. Dừng tác vụ dùng nút chung; chờ tiến trình dừng rồi đóng app.
-6. Mở kết quả. Mỗi lần công bố có thư mục riêng, giữ tên file bên trong;
-   lần cũ được giữ. ZIP bên trong phẳng, không chứa thư mục con.
+Đây là core update, không kèm tải lại model nhiều GB. Bộ giọng, mẫu clone,
+runtime, GPU và file của anh được giữ theo cơ chế cập nhật hiện có.
+Các tệp Creator từng xuất được giữ. Tệp hỗ trợ Creator cũ có thể còn trên
+ổ đĩa nhưng không được gọi bởi app 4.1. Không cần xóa dữ liệu bằng tay.
+Mã nguồn đã chỉnh sửa nằm trong payload/source của ZIP, hoặc source
+trong thư mục app sau cập nhật. Có sẵn EXE Windows x64 đã biên dịch.
 
-ĐẦU RA CREATOR
-filename.mp4 (hoặc phần mở rộng video gốc trong Gói dựng)
-filename.wav
-filename.final.srt
-filename.final.vi.txt — khi đã yêu cầu và dịch đủ
-filename.caption.txt — chỉ khi có bản nháp
-filename.creator.xml — dữ liệu nguồn, hash, loại gói và trạng thái riêng
-filename.creator.zip — toàn bộ các file trên và báo cáo voice hợp lệ
+CHẠY NHIỀU FILE ÍT THAO TÁC
+1. Vào Hàng đợi voice → + Thư mục SRT, hoặc kéo một thư mục vào app.
+   App quét SRT trong cả thư mục con. TXT vẫn dùng nút thêm file riêng.
+2. File trùng đường dẫn được bỏ qua. Tự bỏ filename.final.srt,
+   filename.aligned.srt và thư mục dữ liệu đầu ra để tránh chạy lại kết quả.
+   Nếu chủ động thêm từng file final.srt, app vẫn cho dùng làm nguồn mới.
+   Tối đa 500 file trong một hàng đợi. File hỏng vẫn hiện lỗi riêng.
+3. Chọn bộ cấu hình đã lưu → Áp dụng ngay tại cột phải. Dùng Lưu để
+   lưu cấu hình hiện tại. Cấu hình/giọng hiện tại áp dụng chung lượt chạy,
+   không tự đổi sang một giọng khác cho từng file.
+4. Chọn chế độ 1 hoặc 2. Giữ Bỏ qua file đã hoàn thành nếu muốn tiếp tục
+   công việc. Chọn ▾ có Chọn tất cả / Chọn file chưa đạt / Bỏ chọn tất cả.
+5. Bấm CHẠY ... FILE. Theo dõi cột %, trạng thái và thời gian dự kiến xong.
+   ETA thay đổi khi model nạp lần đầu hoặc AI phải thử lời sửa; đây là
+   ước lượng từ tiến độ thực, không cam kết giờ hoàn thành chính xác.
+6. Chọn dòng cần xem → Mở kết quả. Một file chưa sửa đạt không hủy các
+   file khác. Các checkpoint và cache tương thích vẫn được giữ.
 
-Nếu WAV có biên nhận render 4.0, gói sao chép đúng bộ báo cáo của lần đó:
-CHẾ ĐỘ 1 — theo file, không sửa lời: đúng 1 filename.voice-report.txt.
-CHẾ ĐỘ 2 — AI tự sửa: đúng 2 file filename.ai-before-after-report.txt và
-filename.ai-changes-en-vi.txt. Không thêm báo cáo voice thứ ba.
-Dịch đầy đủ trong Creator là bước đối chiếu clip riêng, không thay đổi
-quy tắc 1/2 báo cáo hay lời của hai chế độ render voice.
-WAV nhập ngoài thiếu báo cáo gốc sẽ không được tạo báo cáo TTS giả.
+Khi tất cả file được chọn đã hoàn thành, nút đổi thành KIỂM TRA ... FILE.
+Bấm để kiểm tra lại nguồn/cấu hình/bộ đầu ra. File còn hợp lệ được bỏ qua;
+file đã đổi hoặc thiếu đầu ra sẽ chạy lại, tận dụng cache còn hợp lệ.
+Lần đầu sau nâng cấp, trạng thái hoàn thành cũ thiếu dấu cấu hình sẽ được
+xác nhận lại; cache audio tương thích không bị xóa.
 
-ĐỒNG BỘ VÀ KIỂM TRA
-- Bằng chứng của render 4.0 lưu trong dữ liệu app, gắn đúng đường dẫn/lần
-  xuất, hash WAV, hash SRT, lời TTS và báo cáo. Hai lần render có WAV byte
-  giống nhau vẫn giữ đúng nguồn báo cáo. Không tạo file báo cáo phụ cạnh SRT.
-- WAV từ bản cũ/đã chuyển sang đường dẫn khác có thể chưa có biên nhận.
-  Hãy nghe/đối chiếu và tick xác nhận cặp nhập ngoài, hoặc render lại bằng
-  4.0. Khi tự xác nhận, trạng thái là USER_REVIEWED, không phải TTS chứng minh.
-- Xác nhận thủ công hết hiệu lực khi WAV hoặc SRT đổi byte.
-- SRT đã khác biên nhận của WAV sẽ bị chặn; tick thủ công không bỏ qua được.
-- Lệch WAV/video quá 0,150s hoặc SRT vượt video bị chặn để kiểm tra nguồn.
-  MP4 chỉ có thể căn đuôi audio trong giới hạn nhỏ đã công bố này, không
-  tăng tốc video/voice, loop hình hoặc chèn khoảng lặng dài.
-- Kiểm tra >60s chỉ là cảnh báo thời lượng. Không kéo dài clip để làm đạt.
-- Cột timecode là mốc SRT, không phải số đo âm thanh riêng từng cue.
-  Không có karaoke hay forced alignment mới trong bản này.
-- Bản Việt kiểm tra cấu trúc, số liệu và đối chiếu nghĩa bằng model;
-  vẫn cần đọc lại tên riêng, thuật ngữ và sắc thái.
-- Các ô kỹ thuật không xác nhận tính nguyên gốc, quyền sử dụng hay đủ
-  điều kiện Creator Rewards. Người dùng cần kiểm tra phần này trên TikTok.
+GỢI Ý GIỌNG KHI NHẬP NGUYÊN LIỆU
+- Nhập SRT/TXT trong Studio hoặc chọn một dòng hàng đợi: app hiện tối đa
+  3 giọng phù hợp theo ngôn ngữ, nhóm nội dung và metadata bộ giọng.
+- Ưu tiên giọng đã có đủ tệp cần thiết và giọng anh đang chọn. Giọng thiếu
+  thành phần ghi cần cài và không cho áp dụng từ nút gợi ý.
+- Bấm tên giọng để chọn. Bấm Nghe thử theo cách hiện có trước khi render
+  cả loạt. Việc chọn giọng không thay đổi câu chữ.
+- Gợi ý chỉ đọc một phần kịch bản có giới hạn và kiểm tra tệp; KHÔNG chạy
+  thử nhiều giọng, gọi Qwen hay nạp thêm model khi anh thả file vào app.
+- Nhãn chưa đo nghĩa là chưa biết chất âm hay thời lượng TTS thực tế.
+  Đây là xếp hạng metadata, không phải điểm chất lượng âm học hay bảo đảm
+  giọng tốt nhất. Không chọn giới tính người kể theo giới tính nhân vật.
+- Kịch bản tiếng Việt chỉ gợi ý nhóm giọng Việt đang hỗ trợ. Thư viện
+  giọng không có metadata đầy đủ sẽ có gợi ý ít chính xác hơn.
 
-TIẾP TỤC / KHÔI PHỤC
-Dự án, đường dẫn, tùy chọn và bản dịch khớp snapshot được lưu tự động.
-Mở lại và bấm xuất: gói đạt chỉ được dùng lại nếu input/options, ZIP và các
-file đầu ra vẫn đúng hash. Clip đang làm dở được chạy lại từ đầu phần
-đóng gói của chính clip đó; các gói đã xong và cache voice không mất.
-Bản này không tiếp tục mã hóa video từ một frame dở dang. ETA cũ sau
-khởi động lại bị bỏ; % chỉ đạt 100 khi đã công bố bộ file hoàn chỉnh.
+CHẾ ĐỘ 1 — CHẠY THEO FILE, KHÔNG TỰ SỬA
+Không gọi AI viết lại hoặc dịch. Kết thúc mỗi file, dù đạt hay lỗi:
+  filename.voice-report.txt — đúng 1 báo cáo.
+Nếu render đạt, có thêm WAV và filename.final.srt giữ đúng lời nguồn.
+Không âm thầm xuất WAV chưa đạt để đánh dấu hoàn thành.
 
-THÀNH PHẦN MP4 TRÊN WINDOWS
-FFmpeg audio đang kèm app vẫn giữ nguyên. Gói dựng đã thử với đúng tập
-thành phần này và không đòi bộ video đầy đủ.
-MP4 cần FFmpeg Windows static có AAC encoder và MP4 muxer; in chữ/đổi
-khung cần libx264, libass/ass, scale/pad. Lấy bản từ nguồn tin cậy; trang
-của dự án FFmpeg: https://ffmpeg.org/download.html
-Trong Creator chọn Thành phần video → ffmpeg.exe. App kiểm tra khả năng
-và chạy lại bản sao trong thư mục riêng trước khi thay thành phần video.
-Thiếu codec được báo trước khi gọi Qwen dịch. Không thay FFmpeg audio,
-không tải model/video runtime tự động khi bấm xuất.
-Bộ FFmpeg video Windows đầy đủ KHÔNG được kèm trong ZIP core update này.
-Mã hóa hình dùng CPU; giữ H264 nguyên luồng khi không in chữ/đổi khung.
-MP4 cuối được probe và giải mã toàn bộ để kiểm tra, không chỉ kiểm độ dài.
+CHẾ ĐỘ 2 — AI TỰ SỬA, HOÀN TOÀN TỰ ĐỘNG
+Đo bằng giọng đang dùng → căn tốc độ/ngắt nghỉ trong giới hạn → sửa nhỏ
+khi cần → đo lại → chỉ nhận phương án đủ điều kiện → xuất kết quả.
+Kết thúc mỗi file có đúng 2 báo cáo:
+  filename.ai-before-after-report.txt — diễn biến đo và sửa trước/sau.
+  filename.ai-changes-en-vi.txt — chỉ câu thực sự đã đổi, EN gốc,
+  EN đã dùng và bản Việt đối chiếu. Không có câu đổi: ghi ĐÃ SỬA: 0.
+Không sinh thêm báo cáo voice thứ ba hay TXT dịch toàn bộ kịch bản.
+Nếu dịch câu đã sửa không đủ: TRANSLATION_INCOMPLETE, không coi toàn bộ
+bộ kết quả đã hoàn thiện. Phương án không đo đạt/đáng ngờ về nghĩa không
+được tự áp dụng. NEEDS_REVIEW được ghi rõ, các file khác vẫn tiếp tục.
 
-GIỚI HẠN KIỂM THỬ / PHÁT HÀNH
-EXE Windows x64 .NET 4.5 đã build; chạy WinForms trên Mono/Linux/Xvfb.
-FFmpeg MP4 thật; video tổng hợp, TTS/dịch/AI dùng fixture.
-Chưa xác nhận Windows vật lý, RTX2070, voice clone và Qwen thật.
-Vì vậy bản Creator 4.0 này là bản kiểm thử trên máy người dùng, chưa tuyên
-bố ổn định toàn bộ trên Windows. Dùng KET_QUA_KIEM_THU_4.0.0.txt để đối chiếu.
-Chức năng AI viết lại TXT đích/SRT linh hoạt và AI biên tập hook toàn bài
-chưa được thêm. Bộ sửa timeline an toàn của 3.1 vẫn giữ nguyên.
+AI tự viết lại lời hiện dùng cho SRT khóa và V15.6. TXT tự nhiên, TXT có
+đích và SRT linh hoạt vẫn giữ phạm vi hỗ trợ của bản cũ; không tự nhận
+đã có tính năng AI viết lại cho các kiểu này.
 
-NGUỒN QUY TẮC THAM KHẢO · kiểm tra ngày 01/11/2026
-https://developers.tiktok.com/docs/en/content-posting-api-media-transfer-guide
-https://newsroom.tiktok.com/introducing-the-new-creator-rewards-program
-Đây là tham chiếu cảnh báo, không tích hợp đăng bài hay xác nhận tài khoản.
+TĂNG TỐC ĐƯỢC THỰC HIỆN Ở ĐÂU
+1. Thông báo tiến độ nền được gom; bảng hàng đợi cập nhật ô thay đổi,
+   không xóa/tạo lại toàn bộ dòng ở mỗi thông báo. % và ETA vẫn theo
+   dữ liệu thật; log/checkpoint không bị thay bằng dữ liệu ước đoán.
+2. Tránh quét/sắp xếp cả thư mục cache ở mỗi lần tạo engine ngắn hạn.
+   Bảo trì lại sau khoảng 30 giây hoặc sau 32 MiB audio mới. Khóa và
+   xác thực PCM/cache hiện tại vẫn giữ.
+3. Trong batch, giữ worker TTS ngoài giữa các file khi không cần nhường
+   model cho dịch. Khi cần dịch hoặc kết thúc lượt chạy, worker được
+   giải phóng. Chuyển hai giọng vẫn dùng cơ chế quản lý model hiện có.
+4. Chỉ gợi ý giọng bằng metadata. Không tự render ba bản mẫu sau import.
 
-BUILD / TÁI CHẠY
-Windows: source/BUILD_WINDOWS.cmd.
-Kiểm thử tự động: source/validate400.py, thiết lập V15_BUILD_TOOLS và
-V15_NET45_REFS theo môi trường Mono. Ca component dùng bản FFmpeg Linux
-build bằng các switch audio trong source/media/BUILD_FFMPEG.txt, đặt tại
-build_tools/creator-audio-components/ffmpeg-8.1.3/ffmpeg cạnh thư mục dự án.
+Giữ worker áp dụng cho engine có worker Python ngoài, chẳng hạn các
+engine Chatterbox/Qwen được hỗ trợ. Kokoro ONNX CLI hiện vẫn tạo tiến
+trình theo yêu cầu tổng hợp; bản này chưa chuyển sang worker ONNX thường
+trú. Không cam kết mọi engine đều tăng tốc như nhau.
+Không đổi tốc độ lời đọc để làm nhanh thời gian tính toán. Vẫn ưu tiên
+0,90–1,10x, giới hạn kỹ thuật 0,90–1,25x và cảnh báo chất lượng hiện có.
+Không thêm im lặng dài hay bỏ kiểm tra để báo render đạt.
+
+TIẾP TỤC VÀ TÍNH ĐÚNG CỦA KẾT QUẢ
+Nguồn, cấu hình, mẫu giọng/hơi thở và bộ đầu ra được đối chiếu trước khi
+bỏ qua file hoàn thành. Thiếu báo cáo thứ hai của chế độ 2 cũng phải
+kiểm tra lại. Bản này không thêm hash chống sửa toàn bộ WAV đã xuất;
+hệ thống xác thực PCM/checkpoint trong luồng render được giữ như trước.
+SRT cuối dùng lời đã đưa vào TTS, SRT gốc được giữ nguyên. Timecode cue
+là mốc nguồn; không có forced alignment mới để coi là số đo từng cue.
+Kiểm tra nghĩa vẫn có giới hạn; cần nghe/đọc lại nội dung quan trọng.
+
+PHẠM VI KIỂM THỬ
+Đã build EXE Windows x64 .NET 4.5, chạy WinForms thật trên Mono/Xvfb và
+FFmpeg thật. TTS/AI/clone trong kiểm thử là fixture, có thử tiến trình
+worker thật nhưng không nạp model giọng thật. Xem KET_QUA_KIEM_THU_4.1.0.txt.
+Chưa thử Windows vật lý, RTX2070 8 GB, model/giọng clone thực của anh.
+Số đo tối ưu là phần UI/cache, không phải tốc độ render toàn bài trên GPU.
+
+BUILD VÀ TÁI CHẠY CHO NGƯỜI PHÁT TRIỂN
+Windows: source/BUILD_WINDOWS.cmd, cần .NET Framework 4.5 trở lên.
+Kiểm thử: source/validate410.py; đặt V15_BUILD_TOOLS và V15_NET45_REFS
+theo môi trường Mono, có FFmpeg/Xvfb. Chạy trong bản sao build riêng,
+không chạy script kiểm thử tại thư mục đang chứa model của người dùng.
+Đo trước/sau: source/benchmark410.py <đường-dẫn-EXE-4.0.0>.
+Đóng gói: source/package_release.py.

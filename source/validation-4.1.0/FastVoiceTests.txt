@@ -1,0 +1,36 @@
+PASS Ten thousand worker updates coalesce to the latest complete UI state
+PASS Draining updates does not create repeat callbacks or a UI queue backlog
+PASS A finished/cancelled run clears pending updates before the next run
+PASS Folder import recursively finds source SRT files with identical names in different directories
+PASS Folder import skips generated final/aligned SRT and report TXT rather than rendering outputs again
+PASS Repeated folders and explicit paths never duplicate a queue entry
+PASS Existing queue paths are excluded when importing a folder again
+PASS Explicit file import can intentionally use a final SRT as new source
+PASS Folder import respects remaining queue capacity
+PASS Folder import supports cancellation before any source queue mutation
+PASS Invalid files remain visible as individual import failures
+PASS English narration preserves the selected Adam preference and excludes Vietnamese-only voices
+PASS A female protagonist does not force narrator gender or claim a measured voice result
+PASS Recommendation readiness is shared by engine/model group without loading TTS
+PASS Script topic matches existing voice style metadata with an explicit reason
+PASS Psychology script prioritizes a voice tagged for the matching content
+PASS Installed suitable voices are offered before missing model packs
+PASS Vietnamese input uses Vietnamese voice candidates
+PASS Empty imports do not produce invented voice recommendations
+PASS Unchanged completed input/configuration/output remains skippable
+PASS Changing voice/render configuration invalidates completed-file skipping
+PASS A missing WAV is rerendered instead of silently skipped as complete
+PASS Edited source words are reloaded and completed status is invalidated
+PASS Render configuration fingerprint survives queue restart
+PASS An old saved Creator page opens the batch queue after removal
+PASS Corrupt saved page indices remain bounded to existing pages
+PASS Missing mode-2 bilingual changes report cannot be skipped as a complete output set
+PASS Repeated engine construction avoids repeated cache directory scans
+PASS Cache maintenance is retriggered after substantial new audio writes
+PASS Failed maintenance can be retried without a stale success marker
+PASS Warm batch file 0 publishes actual fixture PCM and its normal one-report bundle
+PASS Warm batch file 1 publishes actual fixture PCM and its normal one-report bundle
+PASS Actual external worker process is reused across two files without changing TTS requests
+PASS Legacy/nonbatch mode still releases external workers after each render
+PASS A warm batch worker is actually stopped before changed-cue translation and verification
+TOTAL FAST VOICE 35 PASS · real file import/process/FFmpeg; synthetic TTS worker, no RTX or model claims

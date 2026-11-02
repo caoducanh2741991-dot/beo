@@ -9,7 +9,7 @@ namespace V15Voice {
 public enum JobState { Queued, ImportFailed, Running, Done, Failed, Cancelled, NeedsReview, TranslationIncomplete }
 public sealed class BatchJob {
  public bool Selected=true;public readonly RenderProgress Progress;public BatchJob():this(null){}public BatchJob(RenderProgress progress){Progress=progress??new RenderProgress();}
- public int WorkflowMode;public string ShortReportPath="";public AiRepairSession RepairSession;public string AiReport="",AiSnapshot="";public int RepairMode=-1;public double TargetSeconds;public string ReportPath="";public string TimelineReport="",Warning="";public double AudioDuration;public bool DurationFinal;public string SourceHash="";
+ public string RunSettingsKey="";public int WorkflowMode;public string ShortReportPath="";public AiRepairSession RepairSession;public string AiReport="",AiSnapshot="";public int RepairMode=-1;public double TargetSeconds;public string ReportPath="";public string TimelineReport="",Warning="";public double AudioDuration;public bool DurationFinal;public string SourceHash="";
  public string FailureCode="",StackTrace="";public string InputPath,Error="",OutputPath="";public bool Timed;
  public List<Cue> CheckpointCues;public List<Cue> Cues=new List<Cue>();public JobState State=JobState.Queued;
  public string Name {get{return Path.GetFileName(InputPath);}}

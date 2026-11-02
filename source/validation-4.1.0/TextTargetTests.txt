@@ -1,0 +1,38 @@
+PASS Parse seconds with optional unit
+PASS Parse mm:ss, hh:mm:ss and fractional seconds
+PASS Blank queue target means natural TXT
+PASS Reject invalid target 
+PASS Reject invalid target 0
+PASS Reject invalid target -1
+PASS Reject invalid target NaN
+PASS Reject invalid target 00:60
+PASS Reject invalid target 00:60:00
+PASS Reject invalid target 06:00:01
+PASS Reject invalid target 45.0001
+PASS Successful normalized WAV has exact requested PCM duration
+PASS Synthesize each sentence once then fit measured audio
+PASS Default whole-TXT fit remains within ten percent and tiny tail correction
+PASS TXT source bytes stay unchanged
+PASS Whole-file fit never fabricates final per-sentence times
+PASS Detailed report includes target, measurements, trials and actual final path
+PASS Natural prepass never claims final target output completed
+PASS Too-long script fails with measured overflow and no final WAV
+PASS Overflow retains unconstrained required speed and prompt-edit direction
+PASS Too-short script is reported instead of padding long silence
+PASS Speed estimate/fitting respects non-1.0 base speed
+PASS Gentle-fit bounds intersect target cap
+PASS Explicit user speed bounds remain authoritative
+PASS Changing target reuses cached natural voice instead of rerunning TTS
+PASS Missing model remains a model error with requested target recorded
+PASS TTS failure is not misclassified as target overflow
+PASS Cancel during whole-TXT fit does not publish partial output
+PASS Target option cannot silently alter SRT mode
+PASS Invalid target fails before synthesis
+PASS Repeated run preserves old WAV and report
+PASS Target intermediate folders are cleaned after success, failure and cancellation
+PASS Mixed queue continues after target failure and preserves natural/SRT modes
+PASS Per-file queue target does not leak into SRT duration
+PASS Queue targets persist independently across reload
+PASS Editing source content retains its requested target while invalidating old completion
+PASS Target speed cap persists with safe default for old settings
+TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target 28d61a4133e84546974a075f63688d4a

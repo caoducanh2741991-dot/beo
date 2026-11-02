@@ -1,0 +1,40 @@
+{
+  "version": "4.1.0.0",
+  "finished_utc": "2026-11-02T02:32:37.777040+00:00",
+  "counts": {
+    "Reno300Tests": 62,
+    "Acoustic300Tests": 11,
+    "RenderProgressTests": 30,
+    "Workflow217Tests": 47,
+    "Recovery216Tests": 42,
+    "Sync216Tests": 27,
+    "BatchTests": 12,
+    "TwoVoiceTests": 41,
+    "VoiceReportTests": 30,
+    "PunctuationTests": 20,
+    "BreathStreamingTests": 8,
+    "TextTargetTests": 37,
+    "AudioRepairTests": 45,
+    "CommunityVoiceTests": 20,
+    "VoiceDiagnosticTests": 26,
+    "LocalAiSafetyTests": 16,
+    "AnchoredTests": 65,
+    "NativeGpuTests": 15,
+    "UpdaterTests": 21,
+    "FastVoiceTests": 35,
+    "FastVoiceUiTests": 24,
+    "Reno300Tests-reopen": 3,
+    "Recovery216Tests-reopen": 8,
+    "BeoUiTests": 51
+  },
+  "CSharp_total": 696,
+  "python_gpu_policy": 11,
+  "python_worker_probe": 4,
+  "binary_sha256": {
+    "V15VoiceStudio.exe": "59657c1652beda7889852bc0d865fbb1aa8dbdd0910910542457c30ccfa4cda0",
+    "V15Updater.exe": "6d0b7cb486e818cbe7342d00dce437d105fe90ff63e6768e4866d6302d4e6806"
+  },
+  "environment": "Mono/Linux, actual WinForms/Xvfb and real FFmpeg; synthetic TTS/AI and process fixtures; no native Windows or GPU inference",
+  "physical_Windows_or_GPU_or_real_clone_tested": false,
+  "validation_note": "Core and recovery passed on this exact binary; UI and Python completed after clearing known leftover test-only readiness fixtures. No app rebuild between these checks."
+}

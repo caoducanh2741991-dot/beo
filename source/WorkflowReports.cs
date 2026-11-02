@@ -34,7 +34,7 @@ public static class WorkflowReports {
   return TranslationReady(o,final)?"FINAL_VERIFIED":"TRANSLATION_INCOMPLETE";
  }
  static string Source(RenderOptions o){return o.ReportContext==null?"":o.ReportContext.SourcePath;}
- static string Header(RenderOptions o,string status,bool wave){return "BÉO VOICE STUDIO 4.0.0\r\nCHẾ ĐỘ "+o.WorkflowMode+(o.WorkflowMode==1?" — CHẠY THEO FILE, KHÔNG SỬA LỜI":" — AI TỰ ĐỘNG SỬA")+"\r\nNguồn: "+Source(o)+"\r\nKết quả công việc: "+status+"\r\nWAV: "+(wave?"FINAL_VERIFIED — đã tạo và kiểm tra":"CHƯA XUẤT — không có WAV tổng đạt của lần này")+"\r\n";}
+ static string Header(RenderOptions o,string status,bool wave){return "BÉO VOICE STUDIO 4.1.0\r\nCHẾ ĐỘ "+o.WorkflowMode+(o.WorkflowMode==1?" — CHẠY THEO FILE, KHÔNG SỬA LỜI":" — AI TỰ ĐỘNG SỬA")+"\r\nNguồn: "+Source(o)+"\r\nKết quả công việc: "+status+"\r\nWAV: "+(wave?"FINAL_VERIFIED — đã tạo và kiểm tra":"CHƯA XUẤT — không có WAV tổng đạt của lần này")+"\r\n";}
  static string Detailed(RenderOptions o,List<Cue> final,VoiceRenderReport report,string status,bool wave,Exception error){
   var b=new StringBuilder(Header(o,status,wave));var changed=Changed(o,final);
   b.AppendLine("Số câu thay đổi lời thực sự áp dụng: "+changed.Count);
@@ -99,7 +99,7 @@ public static class WorkflowReports {
     }
     for(int i=0;i<paths.Count;i++){File.Move(paths[i],targets[i]);created.Add(targets[i]);if(fault!=null)fault(created.Count);}
     o.WorkflowBundle=bundle;if(o.AiRepair!=null)o.AiRepair.Save();if(report!=null){report.PathName=bundle.Primary;report.ArtifactPublished();}
-    if(o.AnchorResult!=null&&wave)o.AnchorResult.Wav=bundle.Wave;if(o.TargetResult!=null&&wave)o.TargetResult.Wav=bundle.Wave;if(wave)try{CreatorReceipt.Record(bundle,report,o);}catch(Exception ex){if(report!=null)report.Step("CREATOR_RECEIPT", "Chưa lưu được biên nhận lời TTS: "+ex.Message);}return bundle;
+    if(o.AnchorResult!=null&&wave)o.AnchorResult.Wav=bundle.Wave;if(o.TargetResult!=null&&wave)o.TargetResult.Wav=bundle.Wave;return bundle;
    }}catch{foreach(string p in created)try{File.Delete(p);}catch{}throw;}finally{try{if(Directory.Exists(work))Directory.Delete(work,true);}catch{}try{File.Delete(lockPath);}catch{}}
   }
   throw new IOException("Không chọn được tên bộ kết quả.");

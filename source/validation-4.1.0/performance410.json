@@ -1,0 +1,89 @@
+{
+  "baseline": {
+    "assembly_sha256": "d60ef3594d4a8fa29a43e224620e51fb807b9520601db8f0fd01a61d6f3a0120",
+    "ui": [
+      {
+        "ms": 1192.78,
+        "updates": 200,
+        "files": 80,
+        "queue_rebuilds": 200
+      },
+      {
+        "ms": 1087.492,
+        "updates": 200,
+        "files": 80,
+        "queue_rebuilds": 200
+      },
+      {
+        "ms": 1108.755,
+        "updates": 200,
+        "files": 80,
+        "queue_rebuilds": 200
+      }
+    ],
+    "cache": [
+      {
+        "ms": 926.604,
+        "constructors": 60,
+        "files": 2000
+      },
+      {
+        "ms": 899.678,
+        "constructors": 60,
+        "files": 2000
+      },
+      {
+        "ms": 834.387,
+        "constructors": 60,
+        "files": 2000
+      }
+    ],
+    "version": "4.0.0.0",
+    "median_ui_ms": 1108.755,
+    "median_cache_ms": 899.678
+  },
+  "updated": {
+    "assembly_sha256": "59657c1652beda7889852bc0d865fbb1aa8dbdd0910910542457c30ccfa4cda0",
+    "ui": [
+      {
+        "ms": 12.597,
+        "updates": 200,
+        "files": 80,
+        "queue_rebuilds": 0
+      },
+      {
+        "ms": 12.844,
+        "updates": 200,
+        "files": 80,
+        "queue_rebuilds": 0
+      },
+      {
+        "ms": 15.661,
+        "updates": 200,
+        "files": 80,
+        "queue_rebuilds": 0
+      }
+    ],
+    "cache": [
+      {
+        "ms": 75.319,
+        "constructors": 60,
+        "files": 2000
+      },
+      {
+        "ms": 72.806,
+        "constructors": 60,
+        "files": 2000
+      },
+      {
+        "ms": 89.286,
+        "constructors": 60,
+        "files": 2000
+      }
+    ],
+    "version": "4.1.0.0",
+    "median_ui_ms": 12.844,
+    "median_cache_ms": 75.319
+  },
+  "scope": "Mono/Linux/Xvfb; actual UI/cache filesystem microbenchmarks, 3 runs each; not end-to-end TTS or RTX inference. Separate warm-worker integration uses synthetic Python TTS."
+}
