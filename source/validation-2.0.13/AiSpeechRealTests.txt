@@ -1,0 +1,15 @@
+0 Đo / kiểm tra 1 / 2 · giọng A
+0 AI đang đề xuất sửa lời · CPU…
+50 Đo / kiểm tra 2 / 2 · giọng A
+100 Đã đo / đề xuất · chưa tự áp dụng
+PASS Every original unit is measured with actual native Adam Kokoro
+ROW 1 ORIGINAL 4.2885 Dư 0.602s tại giới hạn căn
+AI 1 John stood there a long time as the door finally opened. ::  :: Đạt giới hạn khung cue 3.19304166666667s
+ROW 2 ORIGINAL 2.41370833333333 Đạt giới hạn khung cue
+PASS Long real narration triggers actual Qwen rewrite, not a word-count-only rule
+PASS Qwen candidate passes actual Adam speech timing within allowed speeds
+PASS Real proposal waits for approval
+PASS Final full SRT renders exactly 6.8 seconds using the accepted correction
+PASS Ordinary final voice report includes actual per-cue measures and full rewrite history
+PASS Real end-to-end workflow preserves original SRT bytes
+TOTAL REAL AI SPEECH 7 passed in 49.4s. CPU/Linux; no semantic score or physical GPU claim. /tmp/V15 Qwen Adam real 873f901a0783491197cda048455ffebe

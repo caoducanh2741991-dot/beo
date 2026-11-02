@@ -1,0 +1,31 @@
+Tests TOTAL: 13 passed. Output: /tmp/v15_tests_d24b09c3feca4352b13161fb178e711d
+BatchTests TOTAL BATCH: 12 passed.
+BreathStreamingTests TOTAL BREATH STREAMING 8 passed.
+PunctuationTests TOTAL PUNCTUATION 20 passed.
+NativeGpuTests TOTAL NATIVE GPU 14 passed.
+Update141Tests TOTAL 1.4.1 17 passed.
+UpdaterTests TOTAL UPDATER 21 passed.
+OnnxUpdaterTests TOTAL ONNX UPDATER 6 passed.
+SubtitleTests TOTAL SUBTITLES 17 passed.
+AnchoredTests TOTAL ANCHORED 65 passed.
+Traceback (most recent call last):
+  File "/workspace/scratch/90ca2bf1b089/V15VoiceStudio-2.0.13/source/run_validation.py", line 88, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/scratch/90ca2bf1b089/V15VoiceStudio-2.0.13/source/run_validation.py", line 73, in main
+    for job in concurrent.futures.as_completed(jobs):job.result()
+                                                     ^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/90ca2bf1b089/V15VoiceStudio-2.0.13/source/run_validation.py", line 22, in run
+    if r.returncode:raise RuntimeError(name+'\n'+r.stdout+r.stderr)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: FeatureTests
+Cannot open assembly '/workspace/scratch/90ca2bf1b089/V15VoiceStudio-2.0.13/FeatureTests.exe': File does not contain a valid CIL image.
+

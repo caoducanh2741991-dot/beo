@@ -1,0 +1,64 @@
+V15 VOICE STUDIO 2.0.13 · QA PHÁT HÀNH
+
+PHẠM VI
+AI offline sửa SRT Khóa/V15.6, giữ geometry/ID/vai nói; đề xuất/duyệt/hoàn tác/tự sửa có giới hạn; đo bằng TTS thật trước/sau; cache và khôi phục; tích hợp nút Tạo voice và hàng đợi; báo cáo đầy đủ.
+TXT tự nhiên/TXT đích/SRT linh hoạt vẫn theo luồng hiện có, chưa tự sửa TXT bằng AI.
+Model Qwen3-4B-Instruct-2507 Q4_K_M; llama.cpp b12019 completion CPU/Vulkan riêng. Không thay CUDA TTS. Model/hash/giấy phép trong source/local-ai/PROVENANCE.json.
+
+MÔI TRƯỜNG VÀ GIỚI HẠN
+Windows .NET Framework 4.5 x64 app/updater được biên dịch, thử bằng Mono/Linux/Xvfb. Có chạy Qwen thật + Adam Kokoro thật bằng CPU. Không có Windows/RTX 2070 vật lý, không khẳng định CUDA/Vulkan thực tế đã chạy trên máy người dùng.
+Điểm đạt kiểm thử timing không phải điểm ngữ nghĩa hoặc bảo đảm mọi câu đều tự sửa được. Duyệt nội dung vẫn cần thiết.
+
+KẾT QUẢ THỬ THẬT
+Một câu Adam gốc khoảng 4,289s trong khung 3,300s vẫn dư sau căn; Qwen viết lại, Adam đo khoảng 3,195s ở tốc độ gốc. Câu đã đạt giữ nguyên. Sau chấp nhận, renderer thông thường xuất WAV tổng đúng 6,800s (163.200 mẫu/24 kHz), nguồn SRT giữ nguyên, báo cáo có lịch sử AI.
+Đường suy luận Qwen + TTS cũng qua khi chặn socket/connect/sendto/sendmsg ở mức syscall (AiSpeechOfflineTests). Test này không bao gồm bước tải gói AI.
+Tạo voice trên giao diện và hàng đợi đã chạy thật, có giữ WAV cũ, báo cáo riêng từng file và mở khóa giao diện sau tác vụ.
+
+CÁC NHÓM KIỂM TRA
+Tests: TOTAL: 13 passed. Output: /tmp/v15_tests_d24b09c3feca4352b13161fb178e711d
+BatchTests: TOTAL BATCH: 12 passed.
+FeatureTests: TOTAL 20 passed
+BreathStreamingTests: TOTAL BREATH STREAMING 8 passed.
+PunctuationTests: TOTAL PUNCTUATION 20 passed.
+Update141Tests: TOTAL 1.4.1 17 passed.
+SubtitleTests: TOTAL SUBTITLES 17 passed.
+UpdaterTests: TOTAL UPDATER 21 passed.
+OnnxUpdaterTests: TOTAL ONNX UPDATER 6 passed.
+AnchoredTests: TOTAL ANCHORED 65 passed.
+NativeGpuTests: TOTAL NATIVE GPU 14 passed.
+Ui1411Tests: TOTAL UI 2.0.13 48 passed.
+AnchoredUiTests: TOTAL ANCHORED UI 28 passed.
+SubtitleUiTests: TOTAL SUBTITLE UI 18 passed.
+SubtitleQualityUiTests: TOTAL QUALITY UI 13 passed.
+SubtitleRefineUiTests: TOTAL REFINE UI 7 passed.
+SubtitleSpeechUiTests: TOTAL SPEECH UI 14 passed.
+VoiceReportTests: TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo efe28e9e45b841bd95ea28ef2584b478
+VoiceDiagnosticTests: TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics 921fa6efca0e4c8e984a38a6eb3837de
+TextTargetTests: TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target 8cbea02ab7694ae080d236c6a2a29840
+AudioRepairTests: TOTAL AUDIO REPAIR 45 passed.
+CommunityVoiceTests: TOTAL COMMUNITY 20 passed.
+VoiceReportUiTests: TOTAL REPORT UI 18 passed.
+TextTargetUiTests: TOTAL TXT TARGET UI 22 passed.
+StudioLayoutTests: TOTAL LAYOUT 59 passed.
+AudioRepairUiTests: TOTAL AUDIO REPAIR UI 25 passed.
+CommunityVoiceUiTests: TOTAL COMMUNITY UI 13 passed.
+TwoVoiceTests: TOTAL TWO VOICE 41 passed. Fixtures: /tmp/V15 hai giọng 5fe33f20c52b4b53bdf8c0092fe8efa3
+TwoVoiceUiTests: TOTAL TWO VOICE UI 28 passed.
+AiTimelineTests: TOTAL AI TIMELINE 36 passed. Fixtures: /tmp/V15 AI timeline 05fd69e0b6b6489daa27ab634b948b26
+AiTimelineUiTests: TOTAL AI UI 17 passed.
+LocalAiSafetyTests: TOTAL LOCAL AI SAFETY 16 passed.
+AiRealTests: TOTAL REAL AI 5 passed in 41.9s (actual 4B model, synthetic voice timing; not a semantic quality score). /tmp/V15 real AI fdd5779e612149af82ef15919b1ee3b3
+AiSpeechRealTests: TOTAL REAL AI SPEECH 7 passed in 49.4s. CPU/Linux; no semantic score or physical GPU claim. /tmp/V15 Qwen Adam real 873f901a0783491197cda048455ffebe
+AiExportUiRealTests: TOTAL REAL AI EXPORT UI 8 passed. CPU/Linux, real Qwen + Adam; physical Windows/GPU not tested. /tmp/V15 GUI AI real cf4b75c331dd4779b711259eaeb4d710
+
+Tổng assertion đếm được (không cộng các lần chạy lại hoặc test offline lặp): 794
+
+GÓI CẬP NHẬT
+Kiểm tra CRC/SHA256 payload, phiên bản app/updater, nâng cấp bằng updater cũ/mới theo ZIP/thư mục, bảo toàn bộ giọng, reference riêng, catalog, CUDA/ONNX, model/runtime AI đã cài, SRT và WAV. Gói offline bổ sung model có SHA256 cố định cùng bộ chạy từ nguồn đã xác minh.
+Core ZIP loại model/runtime/downloads AI lớn. Gói AI offline đi riêng, chỉ cần cài một lần.
+
+CÁC CHỐT
+Hai lần sửa tối đa mỗi đơn vị; bản đo đạt ưu tiên tốc độ gần gốc. Không viết lại do lỗi TTS/model/CUDA/FFmpeg. Không dùng 0 giây thay phép đo chưa có. Giữ lời gốc để hoàn tác. Không xuất WAV tổng nếu renderer còn lỗi timeline.
+Tên/số liệu/geometry có bộ lọc nhưng không chứng minh giữ nghĩa 100%. Cần duyệt hook, hành động, kết quả và quan hệ nhân quả.
+Ngắt nghỉ/hơi thở ranh giới của toàn bài có thể khác phép thử riêng; bản tổng luôn được kiểm tra lại.
+Gói AI dùng CPU hoặc Vulkan; xác nhận offload trước khi ghi đã chạy GPU. Hai model lớn được chạy tuần tự, audio cache phù hợp được giữ lại.

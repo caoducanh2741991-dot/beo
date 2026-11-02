@@ -1,0 +1,14 @@
+PASS SRT parse CRLF and 150ms gap
+PASS SRT roundtrip words and exact milliseconds
+PASS Reject overlapping cues
+PASS Reject invalid minutes
+PASS Reject missing separator instead of reading timestamps
+PASS TXT splitting preserves every word
+PASS TXT V15 word budget
+PASS Timed TXT parse
+PASS Reject mixed timed/untimed overlaps
+PASS Windows quote escaping
+PASS Windows trailing backslash quoting
+PASS WAV PCM exact roundtrip
+PASS Breath sample rate conversion
+TOTAL: 13 passed. Output: /tmp/v15_tests_d24b09c3feca4352b13161fb178e711d

@@ -28,6 +28,7 @@ public sealed class TwoVoiceEngine:KokoroEngine {
  public override Wave GetSpeech(string text,double speed,string output){if(Cancelled)throw new OperationCanceledException();if(current==null)SelectSpeaker("A");current.Archive=Archive;current.PreviewCache=PreviewCache;current.RunReport=RunReport;current.RenderContext=RenderContext;current.DeviceChanged=x=>ReportDevice("Giọng "+role+" · "+current.VoiceName+": "+x);current.ActivityChanged=ReportActivity;return current.GetSpeech(text,speed,output);}
  public override Wave Generate(string text,double speed,string output){return GetSpeech(text,speed,output);}
  public override void Cancel(){base.Cancel();a.Cancel();b.Cancel();}
+ public override void ReleaseModels(){a.ReleaseModels();b.ReleaseModels();}
  public override void Dispose(){if(disposed)return;disposed=true;a.Dispose();b.Dispose();base.Dispose();}
 }
 }

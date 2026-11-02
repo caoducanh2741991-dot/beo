@@ -1,0 +1,18 @@
+PASS XML retains leading silence and internal gaps
+PASS Review notes and device survive reopening
+PASS Unicode names retained and existing SRT never overwritten
+PASS SRT retains measured timestamps
+PASS Source media unchanged
+PASS Rounding carries correctly
+PASS Timestamp editing parses exact milliseconds
+PASS Invalid minute rejected
+PASS Overlapping cue rejected
+PASS Out of duration cue rejected
+PASS NaN rejected
+PASS Missing speech rejected
+PASS Embedded SRT delimiter rejected
+PASS External XML entities rejected
+PASS Worker progress delivered
+PASS Worker failure surfaced
+PASS Stop terminates worker promptly
+TOTAL SUBTITLES 17 passed.

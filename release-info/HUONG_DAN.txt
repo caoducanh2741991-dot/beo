@@ -1,43 +1,51 @@
-V15 VOICE STUDIO 2.0.12 · HAI GIỌNG TRONG MỘT WAV
+V15 VOICE STUDIO 2.0.13 · AI SỬA LỜI OFFLINE
 
-CÀI ĐẶT
-Mở V15 đang dùng → Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.12_Core_Update.zip.
-Đợi hoàn tất, mở đúng lối tắt và kiểm tra tiêu đề Offline 2.0.12.
-Cách khác: giải nén ZIP, chạy CAP_NHAT.cmd và chọn đúng thư mục V15 hiện đang cài.
-Đây là ZIP cập nhật lõi, không phải bộ EXE cài full. Giữ các model, giọng riêng và gói GPU đã cài. Nếu chưa có một model, cần cài model trước khi dùng giọng đó.
+CẬP NHẬT APP
+Mở bản V15 đang cài → Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.13_Core_Update.zip.
+Mở lại đúng lối tắt và kiểm tra tiêu đề Offline 2.0.13.
+ZIP lõi không chứa model Qwen lớn và không thay model voice, giọng riêng, catalog hoặc gói GPU đang cài. Đây là bản cập nhật, không phải bộ EXE cài full toàn bộ giọng.
 
-TẠO HAI GIỌNG
-1. Mở SRT/TXT hoặc dán kịch bản. Chọn “2 giọng · A / B” tại Giọng đọc.
-2. Chọn nguồn/giọng A bằng bộ chọn hiện có. Chọn B ở bộ “Giọng B · tất cả nguồn / giọng riêng”.
-   B có giọng có sẵn, giọng riêng, tiếng Việt và Adam RVC nếu máy đã có dữ liệu tương ứng. Tên nguồn/engine được ghi trong danh sách. “Chi tiết giọng B” mở đặc điểm/phong cách. Không có thêm model mới trong ZIP này.
-3. Nếu file có [A] / [B], app tự bật hai giọng và nhận vai. Không tự thay lựa chọn A/B đã lưu.
-   Nếu file không có nhãn, các câu mặc định A. Sửa cột Giọng; Ctrl/Shift chọn nhiều dòng rồi Gán A / Gán B. “Xen kẽ A–B” chỉ khi bạn chủ động bấm; app không ép đối thoại luôn luân phiên.
-4. Nghe thử câu đang chọn sử dụng đúng giọng được gán. Bấm TẠO VOICE để tạo một WAV chung.
-5. WAV và báo cáo nằm cạnh SRT/TXT nguồn. Lần tạo tiếp theo có tên mới; giữ WAV cũ và giữ nguyên kịch bản gốc.
-   “Lưu kịch bản A/B…” xuất bản có nhãn với tên mới, để giữ phân vai khi mở lại; không ghi vào file nguồn đang mở.
+CÀI GÓI AI MỘT LẦN
+Cách thuận tiện: mở SRT, bấm AI sửa timeline → Cài gói AI. App tải model Qwen3-4B-Instruct-2507 Q4_K_M khoảng 2,5 GB và bộ chạy CPU/GPU riêng. Kiểm tra kích thước/SHA256 trước khi dùng. Chỉ cần Internet khi tải; sửa lời chạy trên máy, không dùng API key, không gửi kịch bản/mẫu giọng lên dịch vụ AI.
+Cách cài offline: tải đủ các phần V15VoiceStudio_2.0.13_AI_Offline_Update.zip.001… cùng GHEP_AI_2.0.13.cmd vào một thư mục. Chạy CMD để kiểm tra từng phần và ghép ZIP; sau đó chọn ZIP vừa ghép trong Công cụ & thiết lập → Cập nhật từ ZIP. Gói này gồm app 2.0.13 + model sửa lời + bộ chạy AI, vẫn cần các bộ giọng TTS đã cài trước đó.
+Chỉ tải gói AI lớn một lần. Các bản cập nhật lõi tiếp theo giữ gói này.
+Model phải đúng Qwen3-4B-Instruct-2507 Q4_K_M, SHA256 3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597. Menu Thêm → Nhập model GGUF có thể nhận file đã tải; bộ chạy CPU/GPU vẫn cần được cài kèm.
 
-QUY CHUẨN KỊCH BẢN
-SRT: mỗi cue một nhãn viết hoa ở đầu lời: [A] lời hoặc [B] lời. Một người mỗi cue, nhãn một lần nếu lời xuống dòng. Khi đã dùng nhãn, phải gắn nhãn cho mọi cue. Không dùng A:, B:, [a], [C] hoặc hai nhãn trong cùng cue.
-TXT: mỗi lượt một dòng bắt đầu [A] / [B]. Một lượt có thể nhiều câu; app chia đoạn nhưng giữ cùng người nói. TXT để render chỉ chứa lời cần đọc, không header kỹ thuật hoặc bản dịch không muốn đọc.
-Nhãn không được đọc, không tính vào số từ. Nếu bật một giọng trong khi kịch bản có B, app yêu cầu bật lại hai giọng, tránh đọc nhầm toàn bộ bằng A.
-Chế độ một giọng vẫn dùng như cũ. [A]/[B] là vai nói, độc lập chế độ kịch bản A/B/C của prompt.
+DÙNG CHẾ ĐỘ ĐỀ XUẤT
+1. Chọn SRT, giọng A/B, tốc độ, ngắt nghỉ và hơi thở như bình thường. Chọn Khóa SRT hoặc V15.6.
+2. Bấm AI sửa timeline ở hàng nút mở file; hoặc mở file được chọn từ hàng đợi bằng nút cùng tên.
+3. Bấm Đo & đề xuất. App đo giọng thật, giữ phần đã đạt; chỉ gọi AI cho phần không vừa khung hoặc câu quá ngắn nếu bạn bật tùy chọn đó.
+4. Xem bảng và lời gốc/lời đề xuất. Nghe gốc là audio trước căn; nghe đề xuất là bản đã căn của đề xuất.
+5. Bấm Chấp nhận phần chọn. Có thể Hoàn tác hoặc vào Thêm → Chấp nhận tất cả bản đạt.
+6. Áp dụng vào kịch bản để tiếp tục sửa trong bảng chính, hoặc Áp dụng & tạo WAV để tạo và kiểm tra toàn bài. File SRT nguồn giữ nguyên.
+“Xuất SRT đã sửa” lưu vào thư mục V15_AI_SRT_<thời điểm> cạnh nguồn, giữ tên SRT gốc. Các bản xuất khác nhau có thư mục riêng; không ghi đè nguồn.
 
-TIMELINE, NGẮT NGHỈ VÀ HÀNG ĐỢI
-Khóa SRT: đo từng câu bằng giọng được gán; tự căn trong giới hạn hiện có; giữ mốc nguồn. Vượt giới hạn thì báo lỗi, không cắt lời hoặc xuất WAV thiếu câu.
-Linh hoạt/TXT: ghép lần lượt âm thanh thực tế của từng giọng và khoảng nghỉ. Ước lượng TXT thống kê riêng A/B; trước khi có mẫu một giọng thì vẫn là ước lượng sơ bộ.
-V15.6: kết thúc chặng ở mỗi điểm đổi người nói để bảo vệ lượt A/B. Các câu liên tiếp cùng vai vẫn có thể ghép thành chặng. Lượt rất ngắn/ít lời có thể không vừa khung trong giới hạn; sửa lời hoặc neo. Không tự giảm tốc xuống ngoài giới hạn bạn đặt.
-TXT có thời lượng đích: tổng hợp đúng từng vai rồi căn WAV chung trong giới hạn TXT. Báo cáo giữ mốc trước căn; không suy diễn mốc cuối từng câu từ tỷ lệ toàn file.
-Tốc độ gốc, giới hạn, ngắt nghỉ, hơi thở Auto / Tùy chọn / Không dùng và cân âm lượng dùng chung cả hai giọng và cả hàng đợi. Các mẫu hơi thở app là bộ dùng chung, không phải hơi thở riêng được sao chép từ từng người.
-Hàng đợi: thêm nhiều SRT/TXT; tất cả dùng ánh xạ A/B hiển thị tại bảng thông tin. File không nhãn dùng A. Nhãn mỗi file và thay đổi trong “Sửa file đang chọn” được lưu khi mở lại. Khi chuyển sang cặp giọng khác phải kiểm tra ánh xạ trước khi chạy.
-Đổi giọng có model lớn: app nhả model trước khi nạp giọng tiếp theo để tránh giữ hai model lớn cùng lúc. Giữ âm thanh cache theo danh tính giọng; lượt tiếp cùng giọng vẫn có thể dùng lại. Đổi qua lại giữa model lớn có thể chờ nạp lại.
-Đoạn TXT đã khóa âm thanh cần mở khóa trước khi đổi người nói/thiết lập.
+CHẾ ĐỘ DÙNG CHUNG CHO STUDIO VÀ HÀNG ĐỢI
+Vào Công cụ & thiết lập → AI sửa lời offline:
+• Tắt: tạo voice/căn tốc độ theo cách hiện có. Đây là mặc định khi nâng cấp từ phiên cũ.
+• Đề xuất: sử dụng nút AI sửa timeline để xem và duyệt lời trước khi áp dụng.
+• Tự sửa có giới hạn: khi Tạo voice/Chạy hàng đợi, app đo phần gốc, tự gọi AI cho phần cần sửa, tạo thử lại và tự chấp nhận bản đo đạt. Vẫn cần nghe và duyệt ý nghĩa của kết quả.
+“Đề xuất sửa cả câu quá ngắn” dùng số đo phần thời gian còn dư, không dùng một số từ cố định áp dụng cho mọi giọng.
+Tối đa hai lần AI mỗi đơn vị trong một phiên. Nếu bản đầu vừa nhưng còn cách tốc độ gốc quá 4%, app có thể thử lần hai để tìm bản gần tốc độ gốc hơn. Bản đã chấp nhận/đã đo đạt được lưu để tiếp tục; không tự tăng vòng thử vô hạn. Menu Thêm → Đặt lại phần đang chọn là thao tác chủ động để đo/thử lại từ đầu.
 
-BÁO CÁO
-Báo cáo luôn ghi thành công/thất bại/dừng, ánh xạ A/B, tên/mã giọng/engine từng đơn vị đã chạy, thời lượng trước/sau căn nếu đã đo, tốc độ và lý do lỗi.
-Chặng V15.6 và TXT căn toàn file: không có mốc từng câu sau căn nếu chưa đo riêng. Không lấy thời lượng toàn chặng chia theo tỷ lệ để nhận là số đo từng câu.
-Có thể gửi báo cáo cho chat viết prompt để chỉnh độ dài lời theo từng giọng.
-“A/B · sửa câu” cũ là công cụ so sánh/thay một giọng của kịch bản một giọng, độc lập chế độ hai người nói. Với bản hai giọng, sửa Lời đọc/cột Giọng và tạo lại WAV; cache phù hợp được dùng lại. Không mở công cụ cũ trên nền hai giọng để tránh ghép sai người nói.
+PHẠM VI VÀ CÁC CHỐT KIỂM TRA
+AI của bản này xử lý SRT Khóa từng cue hoặc V15.6 theo chặng. TXT tự nhiên, TXT có đích tổng và SRT linh hoạt vẫn sử dụng luồng tạo voice hiện tại; chưa tự viết lại TXT bằng AI trong bản này.
+V15.6 sửa theo chặng thật, tách chặng khi đổi người nói. Giữ số cue, thứ tự, timecode, neo và vai A/B. Không đổi độ dài video, không tự cắt lời và không tự nới giới hạn tốc độ.
+Lỗi model, thiếu file, CUDA, bộ chạy TTS hoặc FFmpeg được ghi riêng, không coi đó là lý do để AI viết lại kịch bản.
+AI được yêu cầu giữ cốt truyện, nhân vật, hành động, kết quả, số liệu và ngôn ngữ; app kiểm tra cấu trúc, số liệu và tên riêng có thể phát hiện. Bộ kiểm tra này không chứng minh nghĩa được giữ 100%. Cần đọc lại lời sửa, đặc biệt hook, thông tin và quan hệ nguyên nhân/kết quả.
+Đề xuất đo đạt là kết quả thử riêng. WAV tổng được kiểm tra lại vì hơi thở/ngắt nghỉ ở ranh giới có thể khác. Nếu còn phần không vừa, app báo lỗi và chưa xuất WAV cuối; báo cáo vẫn được lưu.
 
-KIỂM TRA
-Kiểm tra nhãn, chia câu, phân vai, cache riêng, timeline cố định/linh hoạt/V15.6/TXT đích, báo cáo lỗi/dừng, hàng đợi, lưu/mở lại, giao diện ba kích thước, cập nhật bảo toàn dữ liệu.
-Có chạy model thật bằng CPU trên Linux; không có Windows/RTX 2070 vật lý ở môi trường này. Không khẳng định đã thử CUDA thực tế trên máy của bạn. Bản vá RMVPE CUDA 2.0.11 được giữ nguyên.
+DỮ LIỆU, TIẾP TỤC VÀ BÁO CÁO
+Giọng gốc, mẫu giọng riêng, nguồn SRT và WAV cũ được giữ nguyên. WAV mới và báo cáo nằm cạnh file nguồn theo quy tắc hiện có.
+Âm thanh TTS được cache theo giọng, mẫu tham chiếu, lời và tốc độ. Tiếp tục phiên AI giữ các số đo/đề xuất hợp lệ; đổi nguồn, giọng, mẫu, model, tốc độ/ngắt nghỉ/hơi thở sẽ tạo phiên khác để không dùng nhầm số đo.
+Báo cáo .ai-repair-report.txt ghi lời gốc/sửa, từng lần thử, giọng/engine, thời lượng trước/sau, tốc độ tăng/giảm, thiết bị đã xác nhận, trạng thái chấp nhận và lỗi. Các phần chưa đo được ghi chưa đo, không dùng 0 giây thay cho phép đo chưa có.
+Khi xuất WAV, báo cáo voice-report của lần đó chứa lịch sử AI liên quan. Có thể gửi báo cáo này cho chat viết prompt để phân tích. Không suy ra số đo từng cue sau căn từ tỷ lệ toàn chặng.
+
+THIẾT BỊ AI VÀ THIẾT BỊ GIỌNG
+Bộ sửa lời dùng llama.cpp b12019, CPU hoặc GPU Vulkan riêng. Đây không phải Qwen3-TTS. Gói Vulkan không thay CUDA/ONNX của giọng đang cài.
+Model voice được nhả trước khi chạy AI sửa lời, rồi nạp lại khi đo/đọc; dùng tuần tự để giảm việc giữ hai model lớn cùng lúc trên GPU 8 GB. Cache audio phù hợp vẫn được dùng lại.
+Chọn Auto để thử GPU AI rồi dự phòng CPU khi cần; chọn GPU sẽ báo nếu chưa xác nhận GPU hoạt động. App chỉ ghi GPU AI khi có xác nhận offload lớp model trong lần suy luận đó. Chưa có xác nhận thì không tự ghi đã chạy GPU.
+
+KIỂM THỬ
+Có kiểm thử model Qwen 4B và Adam Kokoro thật trên CPU, qua phép thử riêng, nút Tạo voice và hàng đợi; có chạy đường suy luận khi chặn syscall mạng. Kiểm tra hoàn tác, khôi phục, SHA256, ZIP sai đường dẫn, dừng tác vụ, giới hạn vòng sửa, cache A/B, báo cáo và giao diện.
+Môi trường kiểm tra là Linux/Mono/Xvfb, không có Windows hoặc RTX 2070 vật lý. Không khẳng định đã chạy GPU thực tế trên máy của bạn. Kết quả thử timing không phải điểm chất lượng ngữ nghĩa hoặc bảo đảm mọi kịch bản đều sửa tự động thành công.

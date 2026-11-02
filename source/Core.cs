@@ -132,7 +132,8 @@ public class KokoroEngine : IDisposable {
  internal bool NativeForcedCpu;internal string NativeFallbackReason;public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged,ActivityChanged;public string RenderContext="";ExternalSpeech external;RvcSpeech rvc;
  public void ReportActivity(string text){if(ActivityChanged!=null)ActivityChanged(text);}
  public void ReportDevice(string text){DeviceInfo=text;if(RunReport!=null)RunReport.Device(text);if(DeviceChanged!=null)DeviceChanged(text);}
- public virtual void Dispose(){if(rvc!=null){rvc.Dispose();rvc=null;}if(external!=null){external.Dispose();external=null;}}
+ public virtual void Dispose(){ReleaseModels();}
+ public virtual void ReleaseModels(){if(rvc!=null){rvc.Dispose();rvc=null;}if(external!=null){external.Dispose();external=null;}}
  public string Root; public int Speaker=3,Threads=2; public EngineKind Kind=EngineKind.Kokoro;public string ModelFolder="";public bool Libri {get{return Kind==EngineKind.LibriTTS;}set{Kind=value?EngineKind.LibriTTS:EngineKind.Kokoro;}} public volatile bool Cancelled; private Process running;
  public string Executable {get{return Path.Combine(Root,"engine",Environment.OSVersion.Platform==PlatformID.Win32NT?"sherpa-onnx-offline-tts.exe":"sherpa-onnx-offline-tts");}}
  public virtual void Cancel(){Cancelled=true;if(rvc!=null)rvc.Cancel();if(external!=null)external.Cancel();try{if(running!=null&&!running.HasExited)running.Kill();}catch{}}
@@ -165,6 +166,7 @@ public class KokoroEngine : IDisposable {
  }
 }
 public sealed class RenderOptions {
+ public AiRepairSession AiRepair;public string AiReportPath="";
  public bool TwoVoices;public string VoiceAInfo="",VoiceBInfo="",VoiceAKey="",VoiceBKey="";
  public double TargetSeconds,TargetChange=.10;public string TargetRaw="";public TextTargetResult TargetResult;public VoiceReportContext ReportContext;public VoiceRenderReport RunReport;
  public Action<string> RepairSnapshot;
@@ -219,8 +221,8 @@ public static class Renderer {
   VoiceRenderReport report=null,prior=engine.RunReport;o.RunReport=null;o.TargetResult=null;
   if(o.ReportContext!=null)try{report=new VoiceRenderReport(cues,engine,o,output);o.RunReport=report;}catch(Exception e){engine.ReportActivity("Không khởi tạo được báo cáo: "+e.Message);}
   engine.RunReport=report;
-  try{SpeakerScript.ValidateRun(cues,o.TwoVoices);string final=RenderCore(cues,engine,o,output,progress);if(report!=null)report.Finish("THÀNH CÔNG",final,null);return final;}
-  catch(Exception e){if(report!=null)report.Finish(e is OperationCanceledException?"ĐÃ DỪNG":"THẤT BẠI","",e);throw;}
+  try{SpeakerScript.ValidateRun(cues,o.TwoVoices);string final=RenderCore(cues,engine,o,output,progress);if(o.AiRepair!=null){o.AiRepair.Output=final;o.AiRepair.Outcome="WAV tổng đã xuất thành công · cần duyệt ý nghĩa lời sửa";try{o.AiRepair.Save();}catch{}}if(report!=null)report.Finish("THÀNH CÔNG",final,null);return final;}
+  catch(Exception e){if(o.AiRepair!=null){o.AiRepair.Outcome=(e is OperationCanceledException?"Đã dừng WAV tổng":"WAV tổng chưa xuất: "+e.Message);try{o.AiRepair.Save();}catch{}}if(report!=null)report.Finish(e is OperationCanceledException?"ĐÃ DỪNG":"THẤT BẠI","",e);throw;}
   finally{engine.RunReport=prior;}
  }
  static string RenderCore(List<Cue> cues,KokoroEngine engine,RenderOptions o,string output,Action<int,string> progress) {
