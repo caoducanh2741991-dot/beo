@@ -1,64 +1,32 @@
-V15 VOICE STUDIO 2.0.6 — VIDEO, DUYỆT CHẤT LƯỢNG VÀ SỬA RIÊNG CHẶNG
+V15 VOICE STUDIO 2.0.7 — NHẬP FILE VÀ GHÉP VIDEO DỄ HƠN
 
 CẬP NHẬT
-Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.6_Update.zip. Mở lại thấy Offline 2.0.6.
-Hoặc giải nén TOÀN BỘ ZIP vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục app đang dùng.
-Đây là cập nhật lõi, dùng lại các model, giọng, GPU và gói Việt hiện có. Không phải bộ cài đầy đủ model cho máy trắng.
+Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.7_Update.zip.
+Mở lại kiểm tra tiêu đề Offline 2.0.7. Đây là bản cập nhật lõi, dùng giọng / model / GPU hiện có.
 
-VỊ TRÍ CHỨC NĂNG MỚI
-Tab chính “Video · duyệt & sửa” có 4 mục: 1–2 Hàng đợi, 3 Chất lượng, 4 Duyệt video, 5 Sửa chặng.
-Dùng chung danh sách SRT với Hàng đợi nhiều file, dùng giọng và thiết lập ở Tạo voice.
-TXT vẫn sử dụng luồng Tạo voice / Hàng đợi cũ. Công cụ video mới đọc SRT có timeline, chia chặng theo V15.6.
-Chặng không nhất thiết là một cue: nhiều cue được gộp thành chặng theo dấu câu / khoảng nghỉ / neo đã đặt. Không đoán cảnh từ hình ảnh.
-Muốn đặt neo chặng thủ công: Hàng đợi nhiều file → Xem/sửa file → chọn V15.6 ở Căn SRT → tích Khóa cuối chặng tại cue cần giữ. Trở lại Video · duyệt & sửa → Mở/làm mới hàng đợi. Đổi cách chia chặng sẽ vô hiệu bản sửa/chặng đệm cũ để tránh áp dụng sai vị trí.
+THAO TÁC NHANH
+1. Video · duyệt & sửa → 1–2 Hàng đợi → “1 · Thêm SRT + video”.
+Có thể chọn nhiều file hoặc kéo thả; thêm video trước cũng hiện ngay ở bảng VIDEO bên phải.
+2. Nếu chưa ghép: chọn SRT bên trái + video bên phải → “2 · Ghép hai file đã chọn”. Khác tên vẫn ghép được. Nhấp đúp video cũng ghép với SRT đang chọn.
+3. Chọn giọng ở Tạo voice → “3 · Tạo voice tất cả SRT”. Nút này xử lý tất cả SRT của khu vực mới; bộ lọc chỉ để xem.
+4. Chọn SRT → Nghe / kiểm tra → chọn chặng để nghe cùng video hoặc sửa lời.
 
-BƯỚC 1 — NHẬP VÀ GHÉP FILE
-Thêm SRT và Thêm video; có thể kéo thả nhiều SRT/MP4 vào cửa sổ khi đang chọn tab Video · duyệt & sửa.
-Tự ghép khi tên gốc trùng nhau. Ưu tiên file cùng thư mục; nếu nhiều video cùng tên không xác định được, để chưa ghép và dùng Ghép video thủ công.
-Video chỉ dùng tham chiếu để xem/nghe; không bị sửa, không xuất MP4. Không có video vẫn tạo và sửa WAV được.
-Chọn giọng / tốc độ / ngắt nghỉ / hơi thở / cân âm ở Tạo voice trước khi chạy. Trên tab mới có ghi giọng của lần đo, phân biệt với giọng đang chọn.
+TỰ GHÉP
+Tự ghép tên gốc trùng, ưu tiên cùng thư mục; trùng nhiều video thì chọn thủ công.
+Thêm đúng 1 SRT + 1 video cùng một lần: tự ghép khác tên nếu SRT chưa có video. Không tự đổi video đã ghép.
+Nhiều file khác tên: app để bạn chọn cặp, không đoán thứ tự. Video chưa ghép luôn hiện ở bảng phải.
+“Chọn video từ máy…” là cách ghép trực tiếp cho SRT đang chọn.
+“Bỏ video đã chọn” chỉ bỏ video chưa ghép khỏi danh sách, không xóa file trên máy.
 
-BƯỚC 2 — TẠO VOICE & KIỂM TRA
-Bấm Tạo voice & kiểm tra ở Hàng đợi trong tab mới. Chạy lần lượt tất cả SRT của khu vực này; bộ lọc chỉ phục vụ xem.
-Chặng lỗi không chặn việc kiểm tra chặng khác hoặc file sau, trừ khi bạn Dừng tác vụ.
-Chặng thành công, ứng viên không vừa khung và kết quả đo được lưu trên máy để duyệt và dùng lại. Nếu model/TTS lỗi trước khi có audio, bảng ghi chưa đo; không mặc định là lời quá dài.
-Chặng dư/thiếu được căn trong giới hạn tốc độ đã chọn. Nếu vẫn dư hoặc còn thiếu hơn 1,5 giây thì chưa xuất WAV tổng cho file đó.
-Riêng thiếu tối đa 1,5 giây sau khi căn: giữ nghỉ cuối để bảo vệ mốc và đánh dấu cần nghe duyệt. Không tự kéo giọng ra ngoài giới hạn, không cắt lời.
-Hơi thở của luồng mới tính riêng trong từng chặng để việc sửa một chặng không thay đổi hơi thở chặng khác.
+LỖI NHẬP
+Hộp chọn file tương thích, không tự thêm đuôi .mp4; có bộ lọc Tất cả file. Giữ kiểm tra file thực sự tồn tại.
+File không tìm thấy / thư mục / đuôi không hỗ trợ / SRT không hợp lệ được ghi rõ ở vùng thông báo dưới nút; rê chuột để xem toàn bộ.
+Danh sách video giữ cả file đã mất hoặc di chuyển, đánh dấu đỏ để bạn chọn lại, không âm thầm bỏ qua.
+Nếu Windows vẫn báo không tồn tại trước khi đóng hộp chọn: kiểm tra đường dẫn và đuôi thật trong Explorer. Không cam kết sửa mọi lỗi hệ thống chỉ bằng đổi hộp chọn file.
 
-BƯỚC 3 — DUYỆT CHẤT LƯỢNG
-Chọn file → Xem chất lượng. Có lọc file cần xử lý / đã có WAV và lọc chặng cần sửa / cần nghe lại / đã đạt.
-Mỗi dòng có timeline nguồn, voice gốc, thời lượng sau căn trước phần nghỉ đệm, tốc độ, nghỉ cuối và trạng thái.
-“Cần nghe lại” cũng có thể do chặng dài tự chia thiếu neo hoặc khoảng nghỉ giữa chặng. Không phải mọi khoảng nghỉ đều là lỗi.
-Đã nghe · duyệt nghỉ chỉ ghi nhận chặng đã đo đạt; không biến chặng tràn thành đạt.
+CÁC CHỨC NĂNG KHÁC
+Giữ quy trình đo chặng, tạo thử A/B, sửa nhóm và báo cáo của 2.0.6. Video chỉ để tham chiếu; đầu ra WAV và báo cáo cạnh SRT. SRT nguồn được giữ nguyên.
+Bộ phát nhúng vẫn cần Windows Media Player Legacy và codec phù hợp. GPU/model hiện có được dùng lại.
 
-BƯỚC 4 — NGHE CÙNG VIDEO
-Chọn chặng → Nghe cùng video. Chọn Nghe voice mới hoặc Nghe âm gốc rồi Phát/Tạm dừng.
-Có lặp chặng, lùi 2 giây, kéo vị trí trong vùng chặng, âm lượng và chuyển file trước/sau theo danh sách đang lọc.
-Voice mới tắt âm video gốc. Vùng lặp có thể kéo tới hết audio ứng viên tràn để nghe đoạn vượt mốc; mốc nguồn vẫn hiển thị cố định.
-Waveform là audio chặng trước cân âm tổng. Phụ đề hiển thị lời toàn chặng, không phải căn từng từ.
-Đồng bộ dựa trên vị trí bộ phát; có cơ chế sửa trôi. Không cam kết chính xác từng khung hình hoặc phục vụ như phần mềm dựng phim.
-Bộ phát nhúng dùng thành phần Windows Media Player Legacy. Nếu Windows thiếu thành phần này / Media Feature Pack hoặc codec không hỗ trợ, app báo lỗi. Có thể vẫn nghe audio A/B và sửa chặng riêng; cần bật thành phần phát media để xem nhúng. Đây không phải gói CUDA.
-
-BƯỚC 5 — SỬA VÀ NGHE A/B
-Sửa chặng → nhập lời vào B, giữ nguyên mốc nguồn → Tạo thử chặng → Nghe B và Nghe A để đối chiếu.
-Tạo thử có báo cáo riêng, chưa thay audio đang dùng và chưa xuất WAV tổng. Chưa đạt khung vẫn có ứng viên để nghe, nhưng không được coi là bản đạt.
-Đổi lời sau lần thử thì phải tạo thử lại để Nghe B đúng nội dung. Không tự đoán thời lượng từ số từ.
-Tạo thử yêu cầu đọc lại lời bằng TTS, kể cả khi không đổi từ. Bản A được giữ riêng. Sau khi Lưu bản sửa, bước ghép dùng đúng audio B đã đo/nghe, không âm thầm tạo một bản khác.
-Lưu bản sửa đưa chặng vào nhóm cần chạy lại. Lưu & chặng lỗi tiếp đi tới chặng lỗi chưa lưu tiếp theo, kể cả ở file khác.
-Bản nháp được lưu khi gõ. Nguồn SRT không bị ghi đè. Lưu SRT bản sửa… là thao tác tùy chọn: xuất bản khác, mỗi chặng là một block với nguyên đầu/cuối chặng; không phải phụ đề căn theo từng từ.
-Thay giọng, mẫu tham chiếu hoặc giới hạn sau khi đo: dùng Nạp thiết lập lần đo trước khi so sánh/sửa riêng. Hoặc chạy Tạo voice & kiểm tra để đo lại toàn bộ với thiết lập mới.
-
-BƯỚC 6 — CHẠY NHÓM ĐÃ SỬA VÀ GHÉP WAV
-Trở về 1–2 Hàng đợi → Chạy lại các chặng đã sửa. Chỉ xử lý những file có bản sửa đã lưu.
-Dùng lại audio chặng hợp lệ, kiểm tra SHA256 và số mẫu; audio mất/hỏng sẽ được tạo lại. File đã đạt không thuộc nhóm sửa được giữ nguyên.
-Chỉ ghép WAV tổng khi tất cả chặng của file đạt khung. File còn chặng lỗi vẫn có báo cáo và dữ liệu để sửa tiếp.
-Nếu bật cân âm tổng, mức âm của toàn bài có thể đổi. “Giữ audio chặng” là giữ dữ liệu chặng đệm / nội dung / mốc; không cam kết toàn bộ mẫu của WAV cuối giống bản cũ sau cân âm.
-Nghe WAV tổng → Mở kết quả / Mở báo cáo. WAV và báo cáo nằm cạnh SRT, các WAV/báo cáo trước được giữ bằng tên kế tiếp khi cần.
-Bản sửa, ghép video, audio chặng và trạng thái duyệt lưu trong %LOCALAPPDATA%\V15VoiceStudio\creator. Không xóa thư mục này nếu muốn tiếp tục dự án đang sửa. Audio chặng có thể chiếm nhiều đĩa khi làm nhiều dự án.
-Nếu SRT nguồn bị sửa ở bên ngoài, app không dùng lại bản sửa/chặng cũ trên timeline mới; nhập/làm mới và đo lại.
-
-GIỚI HẠN KIỂM TRA
-Đã kiểm tra tự động trên Mono/Linux, FFmpeg thật và TTS giả lập; có kiểm tra ghép WAV đúng số mẫu, giữ hash chặng, lỗi/dừng, báo cáo, lưu/mở lại, ghép file và thao tác GUI.
-Đồng bộ bộ phát đã kiểm tra qua mô phỏng cổng phát. Chưa chạy trực tiếp ActiveX/codec Windows hoặc tổng hợp trên RTX 2070 thật trong bản phát hành này.
-Tài liệu bộ phát: https://learn.microsoft.com/en-us/previous-versions/windows/desktop/wmp/controls-currentposition
+KIỂM TRA
+Kiểm tra GUI trên Mono/Linux, TTS giả lập và FFmpeg thật; chưa thử trực tiếp Windows ActiveX/RTX 2070.

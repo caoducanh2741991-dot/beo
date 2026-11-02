@@ -1,0 +1,32 @@
+V15 VOICE STUDIO 2.0.7 — NHẬP FILE VÀ GHÉP VIDEO DỄ HƠN
+
+CẬP NHẬT
+Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.7_Update.zip.
+Mở lại kiểm tra tiêu đề Offline 2.0.7. Đây là bản cập nhật lõi, dùng giọng / model / GPU hiện có.
+
+THAO TÁC NHANH
+1. Video · duyệt & sửa → 1–2 Hàng đợi → “1 · Thêm SRT + video”.
+Có thể chọn nhiều file hoặc kéo thả; thêm video trước cũng hiện ngay ở bảng VIDEO bên phải.
+2. Nếu chưa ghép: chọn SRT bên trái + video bên phải → “2 · Ghép hai file đã chọn”. Khác tên vẫn ghép được. Nhấp đúp video cũng ghép với SRT đang chọn.
+3. Chọn giọng ở Tạo voice → “3 · Tạo voice tất cả SRT”. Nút này xử lý tất cả SRT của khu vực mới; bộ lọc chỉ để xem.
+4. Chọn SRT → Nghe / kiểm tra → chọn chặng để nghe cùng video hoặc sửa lời.
+
+TỰ GHÉP
+Tự ghép tên gốc trùng, ưu tiên cùng thư mục; trùng nhiều video thì chọn thủ công.
+Thêm đúng 1 SRT + 1 video cùng một lần: tự ghép khác tên nếu SRT chưa có video. Không tự đổi video đã ghép.
+Nhiều file khác tên: app để bạn chọn cặp, không đoán thứ tự. Video chưa ghép luôn hiện ở bảng phải.
+“Chọn video từ máy…” là cách ghép trực tiếp cho SRT đang chọn.
+“Bỏ video đã chọn” chỉ bỏ video chưa ghép khỏi danh sách, không xóa file trên máy.
+
+LỖI NHẬP
+Hộp chọn file tương thích, không tự thêm đuôi .mp4; có bộ lọc Tất cả file. Giữ kiểm tra file thực sự tồn tại.
+File không tìm thấy / thư mục / đuôi không hỗ trợ / SRT không hợp lệ được ghi rõ ở vùng thông báo dưới nút; rê chuột để xem toàn bộ.
+Danh sách video giữ cả file đã mất hoặc di chuyển, đánh dấu đỏ để bạn chọn lại, không âm thầm bỏ qua.
+Nếu Windows vẫn báo không tồn tại trước khi đóng hộp chọn: kiểm tra đường dẫn và đuôi thật trong Explorer. Không cam kết sửa mọi lỗi hệ thống chỉ bằng đổi hộp chọn file.
+
+CÁC CHỨC NĂNG KHÁC
+Giữ quy trình đo chặng, tạo thử A/B, sửa nhóm và báo cáo của 2.0.6. Video chỉ để tham chiếu; đầu ra WAV và báo cáo cạnh SRT. SRT nguồn được giữ nguyên.
+Bộ phát nhúng vẫn cần Windows Media Player Legacy và codec phù hợp. GPU/model hiện có được dùng lại.
+
+KIỂM TRA
+Kiểm tra GUI trên Mono/Linux, TTS giả lập và FFmpeg thật; chưa thử trực tiếp Windows ActiveX/RTX 2070.

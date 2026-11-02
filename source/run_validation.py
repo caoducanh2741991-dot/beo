@@ -62,7 +62,7 @@ def main():
  subprocess.run([MONO,MCS,'-target:winexe','-win32icon:'+str(SOURCE/'assets/V15VoiceStudio.ico'),'-resource:'+str(SOURCE/'assets/V15VoiceStudio.ico')+',V15VoiceStudio.Icon','-platform:x64','-out:'+str(ROOT/'V15Updater.exe')]+REFS+['-r:'+str(REF_DIR/'System.IO.Compression.dll'),'-r:'+str(REF_DIR/'System.IO.Compression.FileSystem.dll'),str(SOURCE/'Updater.cs')],env=ENV,check=True)
  specs={'AnchoredTests':['AnchoredTests.cs'],'AnchoredUiTests':['AnchoredUiTests.cs'],'Tests':['Tests.cs'],'BatchTests':['BatchTests.cs'],'FeatureTests':['FeatureTests.cs'],'Update141Tests':['Update141Tests.cs'],'Update145Tests':['Update141Tests.cs','Update145Tests.cs'],'Update146Tests':['Update146Tests.cs'],'BreathStreamingTests':['Update141Tests.cs','BreathStreamingTests.cs'],'PunctuationTests':['PunctuationTests.cs'],'NativeGpuTests':['NativeGpuTests.cs'],'UiTests':['UiTests.cs'],'Ui1411Tests':['Ui1411Tests.cs'],'SubtitleQualityUiTests':['SubtitleQualityUiTests.cs'],'SubtitleRefineUiTests':['SubtitleRefineUiTests.cs'],'SubtitleSpeechUiTests':['SubtitleSpeechUiTests.cs'],'SubtitleTests':['SubtitleTests.cs'],'SubtitleUiTests':['SubtitleUiTests.cs']}
  for name,files in specs.items():compile(name,files,main=name,app=True)
- for name in ['VoiceReportTests','VoiceReportUiTests','VoiceDiagnosticTests','TextTargetTests','TextTargetUiTests','StudioLayoutTests','CreatorTests','CreatorUiTests']:compile(name,[name+'.cs'],main=name,app=True)
+ for name in ['VoiceReportTests','VoiceReportUiTests','VoiceDiagnosticTests','TextTargetTests','TextTargetUiTests','StudioLayoutTests','CreatorTests','CreatorUiTests','CreatorImportUiTests']:compile(name,[name+'.cs'],main=name,app=True)
  compile('UpdaterTests',['Updater.cs','UpdaterTests.cs'],main='UpdaterTests')
  compile('OnnxUpdaterTests',['Updater.cs','OnnxUpdaterTests.cs'],main='OnnxUpdaterTests')
  non_ui=[k for k in specs if not k.startswith('Ui') and k not in ['AnchoredUiTests','SubtitleUiTests','SubtitleQualityUiTests','SubtitleRefineUiTests','SubtitleSpeechUiTests','Update145Tests','Update146Tests']]+['UpdaterTests','OnnxUpdaterTests']
@@ -79,6 +79,6 @@ def main():
  run('VoiceDiagnosticTests',timeout=180)
  run('TextTargetTests',timeout=180)
  run('CreatorTests',timeout=180)
- ui(['VoiceReportUiTests','TextTargetUiTests','StudioLayoutTests','CreatorUiTests'])
+ ui(['VoiceReportUiTests','TextTargetUiTests','StudioLayoutTests','CreatorUiTests','CreatorImportUiTests'])
  print('VALIDATION COMPLETE (Mono/Linux; physical Windows GPU not tested)',flush=True)
 if __name__=='__main__':main()

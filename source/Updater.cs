@@ -13,8 +13,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 [assembly: System.Runtime.Versioning.TargetFramework(".NETFramework,Version=v4.5", FrameworkDisplayName=".NET Framework 4.5")]
-[assembly: System.Reflection.AssemblyVersion("2.0.6.0")]
-[assembly: System.Reflection.AssemblyFileVersion("2.0.6.0")]
+[assembly: System.Reflection.AssemblyVersion("2.0.7.0")]
+[assembly: System.Reflection.AssemblyFileVersion("2.0.7.0")]
 
 namespace V15Update {
 public static class UpdateEngine {
@@ -115,7 +115,7 @@ public static class UpdateEngine {
 }
 public class UpdateForm:Form {
  readonly Label label=new Label();readonly Button start=new Button();readonly TextBox package=new TextBox(),target=new TextBox();bool running;readonly bool restart;readonly int parent;
- public UpdateForm(string initialPackage,string initialTarget,bool reopen,int parentId){using(var stream=System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("V15VoiceStudio.Icon")){if(stream!=null)using(var icon=new Icon(stream)){Icon=(Icon)icon.Clone();}}restart=reopen;parent=parentId;Text="V15 · Cập nhật ZIP 2.0.6";Size=new Size(740,340);MinimumSize=Size;StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);var layout=new FlowLayoutPanel{Dock=DockStyle.Fill,Padding=new Padding(18),FlowDirection=FlowDirection.TopDown,WrapContents=false};Controls.Add(layout);
+ public UpdateForm(string initialPackage,string initialTarget,bool reopen,int parentId){using(var stream=System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("V15VoiceStudio.Icon")){if(stream!=null)using(var icon=new Icon(stream)){Icon=(Icon)icon.Clone();}}restart=reopen;parent=parentId;Text="V15 · Cập nhật ZIP 2.0.7";Size=new Size(740,340);MinimumSize=Size;StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);var layout=new FlowLayoutPanel{Dock=DockStyle.Fill,Padding=new Padding(18),FlowDirection=FlowDirection.TopDown,WrapContents=false};Controls.Add(layout);
   layout.Controls.Add(new Label{Text="CẬP NHẬT V15 TỪ ZIP · giữ model, WAV và giọng riêng",AutoSize=true});package.Width=670;package.ReadOnly=true;package.Text=initialPackage;layout.Controls.Add(package);var pick=new Button{Text="Chọn ZIP cập nhật",AutoSize=true};pick.Click+=(s,e)=>{using(var d=new OpenFileDialog{Filter="V15 ZIP|*.zip"})if(d.ShowDialog()==DialogResult.OK)package.Text=d.FileName;};layout.Controls.Add(pick);target.Width=670;target.ReadOnly=true;target.Text=initialTarget;layout.Controls.Add(target);var folder=new Button{Text="Chọn thư mục V15 đã cài",AutoSize=true};folder.Click+=(s,e)=>{using(var d=new FolderBrowserDialog{SelectedPath=target.Text})if(d.ShowDialog()==DialogResult.OK)target.Text=d.SelectedPath;};layout.Controls.Add(folder);start.Text="CẬP NHẬT";start.AutoSize=true;layout.Controls.Add(start);label.MaximumSize=new Size(660,0);label.AutoSize=true;layout.Controls.Add(label);
   start.Click+=async(s,e)=>{if(running)return;running=true;start.Enabled=pick.Enabled=folder.Enabled=false;string src=package.Text,dest=target.Text;try{await Task.Run(()=>{if(parent>0)try{var p=Process.GetProcessById(parent);if(!p.WaitForExit(30000))throw new Exception("App chưa đóng. Đóng app rồi thử lại.");}catch(ArgumentException){}UpdateEngine.Apply(src,dest,message=>BeginInvoke((Action)(()=>label.Text=message)));});label.Text="Cập nhật hoàn tất. Mở V15VoiceStudio.exe tại thư mục vừa chọn.";if(restart){Process.Start(Path.Combine(dest,"V15VoiceStudio.exe"));running=false;Close();}}catch(Exception ex){label.Text="Chưa cập nhật: "+ex.Message;MessageBox.Show(this,label.Text,"V15",MessageBoxButtons.OK,MessageBoxIcon.Warning);}finally{running=false;if(!IsDisposed)start.Enabled=pick.Enabled=folder.Enabled=true;}};
   FormClosing+=(s,e)=>{if(running){e.Cancel=true;label.Text="Đang cập nhật. Vui lòng chờ để bảo toàn dữ liệu.";}};
