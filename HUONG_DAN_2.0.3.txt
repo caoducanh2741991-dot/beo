@@ -1,0 +1,48 @@
+V15 VOICE STUDIO 2.0.3 — BÁO CÁO CHẨN ĐOÁN QUY TRÌNH
+
+CẬP NHẬT
+1. App hiện tại → Công cụ & thiết lập → Cập nhật từ ZIP.
+2. Chọn V15VoiceStudio_2.0.3_Update.zip. Chờ mở lại, kiểm tra tiêu đề cửa sổ và tab Công cụ đều ghi 2.0.3.
+3. Nếu không mở được mục cập nhật: giải nén TOÀN BỘ ZIP vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục app đang dùng. Không lấy riêng EXE.
+Giữ model/runtime, gói GPU, giọng sao chép, thiết lập và kết quả cũ. Không cần tải lại model. Giữ các sửa lỗi cài tiếng Việt 183/1314 từ 2.0.1.
+
+CÁCH LẤY BÁO CÁO
+Mỗi lần thử xuất SRT/TXT có báo cáo TXT, dù thành công, lỗi hay dừng. Tên: tenfile.voice-report.txt cạnh file nguồn; chạy lại thêm (2), (3)... để giữ bản cũ.
+Tab Tạo voice → Mở báo cáo lần chạy. Tab Hàng đợi → chọn file → Mở báo cáo file.
+Hàng đợi có báo cáo riêng cho file được thử chạy hoặc lỗi nhập. File còn chờ khi dừng và file hoàn tất được bỏ qua không có báo cáo mới.
+Nếu không ghi được cạnh nguồn, app thử %LOCALAPPDATA%\V15VoiceStudio\reports và báo cảnh báo. Nếu không nơi nào ghi được, app thông báo lỗi lưu báo cáo, không tự chặn một WAV hợp lệ.
+
+THÔNG TIN MỚI · SCHEMA 2
+- Ghi bước xảy ra lỗi: kiểm tra đầu vào/model, TTS, căn tốc độ, ghép âm, kiểm tra WAV, cân âm hoặc lưu WAV cuối.
+- Mã kết quả do app định nghĩa được ghi riêng với loại ngoại lệ, HResult, mã Win32 và mã thoát tiến trình khi có xác nhận. Không tự suy đoán mã thoát khi chưa biết.
+- Giữ chuỗi ngoại lệ và thông báo nguyên nhân; thu nhật ký lỗi tiến trình, cả lần lỗi có thử lại/dự phòng. Bộ đệm tiến trình có giới hạn và có thể thiếu dòng bất đồng bộ cuối; không coi là nhật ký vô hạn.
+- Lập danh sách toàn bộ chặng V15.6 ngay khi có thể phân tích timeline: đạt / lỗi / dừng / chưa chạy, kèm lời toàn chặng. Chặng chưa chạy không có số đo giả.
+- Tách thành phần trước căn: audio TTS gốc, nghỉ app trong đơn vị, nghỉ app giữa các đơn vị, hơi thở và tổng sau ghép. Audio TTS gốc vẫn bao gồm nghỉ tự nhiên của model; app chưa tách được thời lượng phát âm thuần.
+- Ghi tốc độ ƯỚC TÍNH trước giới hạn, đích căn thực tế, các tốc độ đã thử và thiếu/dư ở lần thử cuối. Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn, không phải bảo đảm sẽ vừa khung.
+- Với câu khóa SRT, đích căn phản ánh phần dự phòng nghỉ và biên căn hiện có. Với chặng V15.6, toàn bộ lời/nghỉ/hơi thở được đổi tốc độ chung; không có ngân sách lời riêng cố định bằng cách trừ tùy ý các số trước căn.
+- Với TXT tự nhiên, không tạo ra tốc độ cần thiết giả từ timeline dự kiến.
+
+ĐỌC KẾT QUẢ
+TTS_FAILED: lỗi lúc yêu cầu hoặc đọc audio TTS. Nếu chưa đo được audio, chưa có căn cứ kết luận cần rút ngắn kịch bản.
+TIMELINE_MISMATCH: đã có audio ứng viên nhưng không vừa timeline trong giới hạn. Xem lời, chặng, số thiếu/dư và lịch sử tốc độ để sửa.
+MODEL_PREFLIGHT_FAILED: lỗi kiểm tra model/runtime/mẫu giọng trước tổng hợp.
+TEMPO_PROCESS_FAILED: lỗi trong bước xử lý tốc độ, khác với một audio đã căn xong nhưng vẫn dài/ngắn.
+AUDIO_ASSEMBLY_FAILED / NORMALIZATION_FAILED / WAV_VALIDATION_FAILED / WAV_PUBLISH_FAILED: lỗi ghép, cân âm, kiểm tra WAV hoặc lưu kết quả. Không tự yêu cầu chat cắt lời từ những lỗi này.
+INPUT_OR_SETUP_FAILED: lỗi đầu vào/thiết lập/chuẩn bị; đọc bước và thông báo gốc.
+CANCELLED: người dùng dừng hoặc tác vụ bị hủy; giữ các số đo đã có.
+SUCCESS: tác vụ xuất WAV thành công. Có thể vẫn có chẩn đoán lần lỗi đã hồi phục hoặc cảnh báo SRT phụ; không đánh đồng với lỗi cuối.
+Chặng đạt chưa có nghĩa WAV cuối đã xuất: nếu bước cân âm/lưu file lỗi, báo cáo vẫn thể hiện phần âm thanh ứng viên đã hoàn thành.
+Kết quả được chọn có thể thuộc lần thử tốt nhất khác với lần thử cuối. Báo cáo giữ cả hai, không thay thế số này bằng số kia.
+
+GIỚI HẠN ĐO
+V15.6 giữ mốc chặng và tổng thời lượng; không bảo đảm mốc riêng mọi cue bên trong chặng. Mốc câu sau căn chưa đo riêng vẫn ghi rõ chưa xác định. Không chia đều hoặc dùng tỷ lệ chặng để giả làm mốc đã đo.
+Sau đổi tốc độ, chỉ đo tổng audio; không phân bổ thời lượng sau căn thành các số đo lời/nghỉ/hơi thở giả.
+Khi app bị tắt đột ngột, báo cáo có thể chỉ còn phần tiến trình đã ghi; báo cáo hoàn chỉnh có dòng BÁO CÁO ĐÃ KẾT THÚC.
+Báo cáo chứa kịch bản, ghi chú giọng, tên/mã kiểm tra mẫu và có thể có đường dẫn trong lỗi gốc. Không đính kèm âm thanh tham chiếu.
+
+GỬI CHO CHAT TẠO PROMPT
+Gửi file .voice-report.txt, yêu cầu phân biệt lỗi TTS/app với không vừa timeline; chỉ hiệu chuẩn bằng phần đã đo; giữ các đoạn đã đạt; sửa cục bộ chặng không khớp, giữ nội dung và điểm neo. Render lại bản sửa để xác nhận.
+
+PHẠM VI BẢN NÀY
+Nâng báo cáo; giữ thuật toán render, model, tốc độ/giới hạn, timeline, hơi thở và GPU hiện tại. Không thêm ASR tiếng Việt.
+Kiểm thử Linux/Mono, tham chiếu .NET Framework 4.5, FFmpeg thật và TTS mô phỏng. Có kiểm tra byte WAV giữa 2.0.2/2.0.3 và subprocess lỗi/thử lại, GUI/hàng đợi, ZIP updater. Chưa thử trực tiếp Windows/RTX 2070 hoặc đánh giá chất lượng giọng model thật trong lần này.

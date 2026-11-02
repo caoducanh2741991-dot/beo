@@ -21,7 +21,7 @@ public static class NativeGpu {
    }
    if(e.Cancelled)throw new OperationCanceledException();string message;lock(gate)message=errors.ToString();
    if(failure==null&&code==0&&File.Exists(output)&&!fallback){var w=Wave.Read(output).TrimEdges();e.ReportDevice(gpu?"NVIDIA CUDA · "+e.Kind+" · đã tạo WAV (một số toán tử có thể dùng CPU)":"CPU · "+e.Kind+(e.DeviceMode=="auto"?" · "+reason:" · đã chọn thủ công"));return w;}
-   if(gpu&&e.DeviceMode=="auto"&&attempt==0){reason="GPU ONNX lỗi, dùng CPU dự phòng";e.NativeForcedCpu=true;e.NativeFallbackReason=reason;e.ReportDevice(reason);gpu=false;continue;}
+   if(e.RunReport!=null)e.RunReport.ProcessFailure(gpu?"ONNX CUDA":"ONNX CPU",failure==null?(int?)code:null,message,failure,gpu&&e.DeviceMode=="auto"&&attempt==0);if(gpu&&e.DeviceMode=="auto"&&attempt==0){reason="GPU ONNX lỗi, dùng CPU dự phòng";e.NativeForcedCpu=true;e.NativeFallbackReason=reason;e.ReportDevice(reason);gpu=false;continue;}
    if(File.Exists(output))File.Delete(output);throw new Exception((gpu?"Không thể tạo giọng bằng CUDA. ":"Bộ đọc ONNX gặp lỗi. ")+(fallback?"Engine chuyển về CPU; chế độ bắt buộc GPU từ chối kết quả này. ":"")+"Mã tiến trình 0x"+code.ToString("X8")+". "+(failure==null?message:failure.Message));
   }throw new Exception("Không tạo được âm thanh ONNX.");
  }

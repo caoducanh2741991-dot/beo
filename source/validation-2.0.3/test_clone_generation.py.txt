@@ -1,0 +1,23 @@
+test_bad_sample_rate (__main__.GenerationTests.test_bad_sample_rate) ... ok
+test_cuda_failure_delegates_to_parent (__main__.GenerationTests.test_cuda_failure_delegates_to_parent) ... ok
+test_custom_voice_retry (__main__.GenerationTests.test_custom_voice_retry) ... ok
+test_deadline_reaches_inner_talker_even_if_outer_drops_kwargs (__main__.GenerationTests.test_deadline_reaches_inner_talker_even_if_outer_drops_kwargs) ... ok
+test_empty_retried (__main__.GenerationTests.test_empty_retried) ... ok
+test_exhausts_at_three (__main__.GenerationTests.test_exhausts_at_three) ... ok
+test_infinity_retried (__main__.GenerationTests.test_infinity_retried) ... ok
+test_internal_parts_have_finite_bounded_budget (__main__.GenerationTests.test_internal_parts_have_finite_bounded_budget) ... ok
+test_long_then_valid (__main__.GenerationTests.test_long_then_valid) ... ok
+test_model_exception_not_hidden (__main__.GenerationTests.test_model_exception_not_hidden) ... ok
+test_nan_retried (__main__.GenerationTests.test_nan_retried) ... ok
+test_new_worker_offset_changes_seeds (__main__.GenerationTests.test_new_worker_offset_changes_seeds) ... ok
+test_short_retried (__main__.GenerationTests.test_short_retried) ... ok
+test_short_sentence_not_fragmented_into_single_words (__main__.GenerationTests.test_short_sentence_not_fragmented_into_single_words) ... ok
+test_silence_retried (__main__.GenerationTests.test_silence_retried) ... ok
+test_text_split_preserves_words_and_budget (__main__.GenerationTests.test_text_split_preserves_words_and_budget) ... ok
+test_token_ceiling_not_published (__main__.GenerationTests.test_token_ceiling_not_published) ... ok
+test_valid_first_attempt (__main__.GenerationTests.test_valid_first_attempt) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.065s
+
+OK

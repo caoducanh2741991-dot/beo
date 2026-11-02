@@ -9,7 +9,7 @@ using V15Voice;
 
 public static class Ui1411Tests {
  static int count, code;
- static readonly string[] Names={"Tạo voice","Hàng đợi nhiều file","Thư viện & phong cách giọng","Công cụ & thiết lập 2.0.2","Sao chép giọng MP3 / WAV / MP4","MP4 / MP3 → SRT","Hướng dẫn"};
+ static readonly string[] Names={"Tạo voice","Hàng đợi nhiều file","Thư viện & phong cách giọng","Công cụ & thiết lập 2.0.3","Sao chép giọng MP3 / WAV / MP4","MP4 / MP3 → SRT","Hướng dẫn"};
  static object Field(object o,string name){return o.GetType().GetField(name,BindingFlags.Instance|BindingFlags.NonPublic).GetValue(o);}
  static object Call(object o,string name,params object[] args){return o.GetType().GetMethod(name,BindingFlags.Instance|BindingFlags.NonPublic).Invoke(o,args);}
  static void Check(bool value,string name){if(!value)throw new Exception("FAIL "+name);Console.WriteLine("PASS "+name);count++;}
@@ -25,7 +25,7 @@ public static class Ui1411Tests {
    var timer=new Timer{Interval=350};int step=0;
    timer.Tick+=(a,b)=>{try{
     if(step==0){
-     Check(f.Text.EndsWith("2.0.2")&&f.GetType().Assembly.GetName().Version==new Version(2,0,2,0),"Title and EXE assembly both identify 2.0.2");
+     Check(f.Text.EndsWith("2.0.3")&&f.GetType().Assembly.GetName().Version==new Version(2,0,3,0),"Title and EXE assembly both identify 2.0.3");
      Check(tabs.TabCount==7&&Ordered(tabs),"All six tabs remain registered after native handle creation");
      for(int i=0;i<7;i++){tabs.SelectedIndex=i;Check(tabs.SelectedTab==tabs.TabPages[i]&&tabs.TabPages[i].Visible,"Tab "+i+" can be selected and displays its page");}
      tabs.SelectedIndex=3;
@@ -75,7 +75,7 @@ public static class Ui1411Tests {
      var card=prose.RectangleToScreen(prose.ClientRectangle);var studio=tabs.TabPages[0].RectangleToScreen(tabs.TabPages[0].ClientRectangle);Check(card.Top>=studio.Top&&card.Bottom<=studio.Bottom,"TXT timing card is fully visible within Studio");
      var body=(ScrollableControl)((FlowLayoutPanel)Field(f,"qualityControls")).Parent;body.AutoScrollPosition=new Point(0,5000);Application.DoEvents();Check(prose.RectangleToScreen(prose.ClientRectangle).Location==card.Location,"Timing card remains fixed when voice/settings panel is scrolled");
      Call(f,"SaveProseProject");Check((bool)Call(f,"RestoreProseProject"),"Latest edited TXT can be restored after reopening");Capture(f,"v15_146_prose");
-     timer.Stop();Console.WriteLine("TOTAL UI 2.0.2 "+count+" passed.");f.Close();
+     timer.Stop();Console.WriteLine("TOTAL UI 2.0.3 "+count+" passed.");f.Close();
     }step++;
    }catch(Exception ex){timer.Stop();Console.WriteLine(ex);code=1;f.Close();}};
    timer.Start();

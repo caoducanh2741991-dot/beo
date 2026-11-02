@@ -52,7 +52,7 @@ public sealed class ExternalSpeech : IDisposable {
   if(line!=null){if(line.StartsWith("V15_STATUS\t")){Activity(Decode(line.Substring(11)));}else return line;}
   var running=process;
   if(running==null)throw new IOException("Tiến trình AI đã đóng.");
-  if(running.HasExited){running.WaitForExit();lock(replies){if(replies.Count>0)continue;}throw new IOException("Tiến trình AI đã dừng (mã "+running.ExitCode+"). "+errors);}
+  if(running.HasExited){running.WaitForExit();lock(replies){if(replies.Count>0)continue;}var ex=new IOException("Tiến trình AI đã dừng (mã "+running.ExitCode+"). "+errors);ex.Data["ProcessExitCode"]=running.ExitCode;throw ex;}
   if(timer.ElapsedMilliseconds>=timeout)throw new TimeoutException("Tiến trình AI không hoàn tất trong "+(timeout/1000)+" giây. Thiết bị: "+(String.IsNullOrEmpty(owner.DeviceInfo)?(forceCpu?"CPU":owner.DeviceMode):owner.DeviceInfo));
   if(timer.ElapsedMilliseconds/1000>=pulse+2){pulse=timer.ElapsedMilliseconds/1000;owner.ReportActivity((String.IsNullOrEmpty(owner.RenderContext)?"":owner.RenderContext+" · ")+lastActivity+" · "+pulse+"s / "+(timeout/1000)+"s");}
   signal.WaitOne(100);
@@ -68,7 +68,7 @@ public sealed class ExternalSpeech : IDisposable {
    if(owner.Cancelled||e is OperationCanceledException){StopWorker();throw new OperationCanceledException();}
    bool fallback=owner.DeviceMode=="auto"&&!forceCpu&&e.Message.Contains("GPU_FALLBACK:");bool restart=(e is TimeoutException||e is IOException)&&restarts<1;string diagnostic="";
    if(round>=2||(!fallback&&!restart))diagnostic=LogFailure(e);
-   previousError=e.Message;StopWorker();seedOffset++;
+   if(owner.RunReport!=null)owner.RunReport.ProcessFailure("AI worker",e.Data.Contains("ProcessExitCode")?(int?)Convert.ToInt32(e.Data["ProcessExitCode"]):null,errors,e,round<2&&(fallback||restart));previousError=e.Message;StopWorker();seedOffset++;
    if(round<2&&fallback){forceCpu=true;owner.ReportDevice("CPU dự phòng sau lỗi GPU");Activity("GPU gặp lỗi · nạp lại model trên CPU và tạo lại câu hiện tại");continue;}
    if(round<2&&restart){restarts++;Activity("AI không phản hồi · khởi động lại và thử lại câu hiện tại (1/1)");continue;}
    string context=String.IsNullOrEmpty(owner.RenderContext)?"Tạo giọng":owner.RenderContext;

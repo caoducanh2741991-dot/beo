@@ -26,8 +26,8 @@ public static class Punctuation {
   for(int i=0;i<plan.Count;i++){if(e.Cancelled)throw new OperationCanceledException();p.Parts.Add(e.GetSpeech(plan[i].Text,speed,output).Resample(24000));if(i<plan.Count-1)p.Pauses.Add(Math.Max(0,plan[i].Pause-EdgeSilence(p.Parts[i],false)));}for(int i=0;i<p.Pauses.Count;i++)p.Pauses[i]=Math.Max(0,p.Pauses[i]-EdgeSilence(p.Parts[i+1],true));return p;
  }
  public static Wave Fit(PacedSpeech p,Cue cue,RenderOptions o,string root,string work,Func<bool> cancel,ref double reserve){double scale=1,available=Math.Max(.04,cue.Duration-.025);if(o.Punctuation==PunctuationMode.Custom&&p.PauseSeconds+reserve>0&&p.SpeechSeconds+p.PauseSeconds+reserve>available){scale=Math.Max(0,Math.Min(1,(available-p.SpeechSeconds)/(p.PauseSeconds+reserve)));reserve*=scale;}
-  if(o.RunReport!=null)o.RunReport.Pacing(scale,reserve);
-  var budget=new Cue{Id=cue.Id,Start=cue.Start,End=cue.End-reserve,Text=cue.Text};var options=new RenderOptions{BaseSpeed=o.BaseSpeed,MaxSpeed=o.MaxSpeed,MinSpeed=o.MinSpeed,SlowShort=o.SlowShort,GentleFit=o.GentleFit,RunReport=o.RunReport};var w=Tempo.Fit(p.Join(scale),budget,options,root,work,cancel);cue.Speed=budget.Speed;cue.Actual=w.Duration;return w;
+  var joined=p.Join(scale);if(o.RunReport!=null)o.RunReport.Pacing(scale,reserve,joined.Duration);
+  var budget=new Cue{Id=cue.Id,Start=cue.Start,End=cue.End-reserve,Text=cue.Text};var options=new RenderOptions{BaseSpeed=o.BaseSpeed,MaxSpeed=o.MaxSpeed,MinSpeed=o.MinSpeed,SlowShort=o.SlowShort,GentleFit=o.GentleFit,RunReport=o.RunReport};var w=Tempo.Fit(joined,budget,options,root,work,cancel);cue.Speed=budget.Speed;cue.Actual=w.Duration;return w;
  }
 }
 }

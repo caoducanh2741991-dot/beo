@@ -17,11 +17,11 @@ public static class Tempo {
   var si=new ProcessStartInfo(Executable(root),"-nostdin -v error -y -i "+KokoroEngine.Q(input)+" -af "+filter+" -ac 1 -ar 24000 -c:a pcm_s16le "+KokoroEngine.Q(output)){UseShellExecute=false,CreateNoWindow=true,RedirectStandardError=true,RedirectStandardOutput=true};
   string error="";using(var p=new Process{StartInfo=si}){p.ErrorDataReceived+=(s,e)=>{if(e.Data!=null&&error.Length<4000)error+=e.Data+"\n";};p.OutputDataReceived+=(s,e)=>{};p.Start();p.BeginErrorReadLine();p.BeginOutputReadLine();var timer=Stopwatch.StartNew();
    while(!p.WaitForExit(100)){if(cancel()||timer.Elapsed.TotalMinutes>2){try{p.Kill();}catch{}if(cancel())throw new OperationCanceledException();throw new Exception("Đổi tốc độ chờ quá lâu.");}}
-   p.WaitForExit();if(cancel())throw new OperationCanceledException();if(p.ExitCode!=0)throw new Exception("Không thể đổi tốc độ: "+error);
+   p.WaitForExit();if(cancel())throw new OperationCanceledException();if(p.ExitCode!=0){var ex=new Exception("Không thể đổi tốc độ: "+error);ex.Data["ProcessExitCode"]=p.ExitCode;ex.Data["Process"]=si.FileName;ex.Data["CapturedStderr"]=error;throw ex;}
   }return Wave.Read(output).TrimEdges();
  }
  public static Wave Fit(Wave source,Cue cue,RenderOptions options,string root,string work,Func<bool> cancel){
-  Validate(options);double available=Math.Max(.04,cue.Duration-.025),minimum=Minimum(options),maximum=Maximum(options);double selected=options.BaseSpeed;Wave result=source;bool fast=source.Duration>available;if(options.RunReport!=null)options.RunReport.Attempt(options.BaseSpeed,source.Duration,available,"Đầu vào trước đổi tốc độ (đã chỉnh khoảng nghỉ nếu có)");
+  Validate(options);double available=Math.Max(.04,cue.Duration-.025),minimum=Minimum(options),maximum=Maximum(options);double selected=options.BaseSpeed;Wave result=source;bool fast=source.Duration>available;if(options.RunReport!=null)options.RunReport.FitBudget(source.Duration,available);if(options.RunReport!=null)options.RunReport.Attempt(options.BaseSpeed,source.Duration,available,"Đầu vào trước đổi tốc độ (đã chỉnh khoảng nghỉ nếu có)");
   if(fast)selected=Math.Min(maximum,Math.Max(options.BaseSpeed,options.BaseSpeed*source.Duration/available*1.01));
   else if(options.SlowShort&&source.Duration/available<.9)selected=Math.Max(minimum,Math.Min(options.BaseSpeed,options.BaseSpeed*source.Duration/available*1.01));
   if(Math.Abs(selected-options.BaseSpeed)>.001){result=Change(source,selected/options.BaseSpeed,root,work,cancel);if(options.RunReport!=null)options.RunReport.Attempt(selected,result.Duration,available,"Đã đo sau atempo");}

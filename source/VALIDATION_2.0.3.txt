@@ -1,0 +1,17 @@
+V15 Voice Studio 2.0.3 validation
+
+Change: schema 2 report diagnostics, upfront stage planning, pre-fit measured audio components, unclamped mathematical speed estimates, actual final-attempt residuals, error phase/app category and full captured exception chain. Worker/ONNX retries retain their diagnostic events without changing retry/device policy. FFmpeg failures add process metadata to the existing exception. No model/renderer algorithm change is intended.
+
+26 diagnostic assertions passed with deterministic TTS and real FFmpeg: TTS failure/current scope, nested exception/HResult/Win32/process code, completed/failed/pending full stage plan, no synthetic zero for unmeasured units, cancellation, model preflight, over/under-budget stage estimates outside configured limits, last measured attempt, PCM component conservation, separate explicit pauses/breaths, no fabricated final grouped-unit timestamps, actual failed tempo/normalizer subprocess exit 27 with stderr, overlap assembly failure, output publication failure with report preserved, recovered worker success, TXT with no invented target and legacy post-pause-compression fit budget.
+
+30 previous report assertions passed. 18 GUI report assertions passed, including single export/model error, early grid validation, queue import failure/raw input, anchored pending plan on preflight error, persisted per-file paths and unlocked controls.
+
+Full core/queue/breath/punctuation/anchored/subtitle/updater regression runner and six existing UI suites passed. Python GPU policy/probe passed. Existing clone generation policy and actual Python worker protocol fixture tests passed. 26 parent-worker lifecycle assertions passed, including actual crash exit 9 recorded before recovery, retained timeout/CPU-fallback diagnostics, bounded retries and cancellation without surviving worker subprocesses. The worker model is simulated; no real CUDA inference or model download in these tests.
+
+Compatibility comparison compiled the same deterministic audio harness against released 2.0.2 and current 2.0.3. Exact SHA256 matches for normalized locked SRT, natural TXT and anchored SRT with custom punctuation/breaths. See audio-compatibility.log. Reporting did not change audio bytes in those representative cases.
+
+Python workers, GPU policy, Vietnamese pack implementation/configuration/installers and model pins remain byte-identical to 2.0.2. C# external/native process adapters only add report diagnostics; FFmpeg wrappers only add diagnostic metadata to existing error paths. Source/payload comparison log accompanies validation.
+
+Release203Tests.py verifies final ZIP CRC/payload hashes, 2.0.3 manifest/exe versions, both installed 2.0.2 and new updater applying ZIP/folder inputs, preservation of 12 model/runtime/catalog/voice/settings/queue/source/output/report fixtures, cleanup, downgrade refusal and .NET Framework API scan. Run after package_release.py.
+
+Environment: Linux/Mono, Windows x64 binaries compiled against official .NET Framework 4.5 references. Real FFmpeg with deterministic waveforms; GUI under Xvfb. Physical Windows + RTX 2070 CUDA and subjective clone quality were not tested. Reports do not infer final per-cue timings from stage ratios. Captured process stderr is bounded and may omit the final asynchronous lines; exception type, inner chain and available native codes are retained separately.

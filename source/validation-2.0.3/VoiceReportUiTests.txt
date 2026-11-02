@@ -3,15 +3,18 @@ PASS Queue exposes selected-file report button
 PASS Source metadata is snapshotted before later mutations
 PASS Single export creates automatic report even when model is missing
 PASS Failure report includes voice notes and complete source content
+PASS UI missing-model export reports model phase/code
 PASS Missing-model report does not pretend WAV succeeded
 PASS Invalid grid options/input before Renderer also produce an error report
+PASS UI pre-render validation reports input phase/code
 PASS Error reporting leaves source file unchanged
 PASS Every attempted or import-failed queue file gets its own report
 PASS Unparseable input is included verbatim in import-failure report
 PASS A failed file does not stop other queued files being reported
 PASS TXT report never treats draft duration as a measured source timeline
 PASS Queue table displays report path for successful report saves
+PASS Queue preflight failure retains full anchored plan
 PASS Report paths persist for valid and import-failed jobs across reload
 PASS Report failures restore UI controls
-TOTAL REPORT UI 15 passed.
+TOTAL REPORT UI 18 passed.
 Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme
