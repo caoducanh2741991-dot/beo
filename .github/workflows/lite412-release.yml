@@ -1,0 +1,68 @@
+name: Validate Lite 4.1.2 (manual, read only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: beo-lite412-release
+  cancel-in-progress: false
+jobs:
+  validate-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      V15_BUILD_TOOLS: /
+      V15_NET45_REFS: /usr/lib/mono/4.5-api
+    steps:
+      - name: Read the exact source revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh auth setup-git
+          git clone --branch lite-4.1.2 --single-branch "https://github.com/$GITHUB_REPOSITORY.git" "$GITHUB_WORKSPACE"
+          cd "$GITHUB_WORKSPACE"
+          git checkout --detach "$(git rev-parse HEAD)"
+      - name: Install build and test tools
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y mono-devel libgdiplus xvfb x11-xkb-utils ffmpeg fonts-liberation fonts-dejavu-core
+      - name: Restore the verified baseline updater fixture
+        shell: bash
+        run: |
+          mkdir -p "$GITHUB_WORKSPACE/../github-release-input" "$GITHUB_WORKSPACE/../github-beo-voice-studio"
+          gh release download v4.1.1 --repo "$GITHUB_REPOSITORY" --pattern BEO_Voice_Studio_4.1.1_Render_Fix_Update.zip --dir "$GITHUB_WORKSPACE/../github-release-input"
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,zipfile,os
+          root=Path(os.environ['GITHUB_WORKSPACE']).parent
+          p=root/'github-release-input/BEO_Voice_Studio_4.1.1_Render_Fix_Update.zip'
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='03507ba3dd8f4e73217c7f4a82c1099a13e31f6f67abfcc0c3c4e96b347108ce'
+          with zipfile.ZipFile(p) as z:(root/'github-beo-voice-studio/V15Updater.exe').write_bytes(z.read('payload/V15Updater.exe'))
+          PY
+      - name: Build and run meaningful TTS and UI regression tests
+        run: python3 source/validate412lite.py
+      - name: Package and verify actual update installs
+        run: python3 source/publish412lite.py
+      - name: Upload verified core package
+        uses: actions/upload-artifact@v7
+        with:
+          path: ../output-4.1.2/BEO_Voice_Studio_4.1.2_Lite_Core_Update.zip
+          archive: false
+          if-no-files-found: error
+          retention-days: 30
+      - name: Prepare validation evidence
+        shell: bash
+        run: |
+          mkdir -p dist-lite
+          cp ../output-4.1.2/*.txt ../output-4.1.2/*.json dist-lite/
+          cp V15VoiceStudio.exe V15Updater.exe dist-lite/
+          cp -r validation dist-lite/validation
+      - name: Upload validation evidence
+        uses: actions/upload-artifact@v7
+        with:
+          name: BEO-Lite-4.1.2-Evidence
+          path: dist-lite/
+          if-no-files-found: error
+          retention-days: 30
