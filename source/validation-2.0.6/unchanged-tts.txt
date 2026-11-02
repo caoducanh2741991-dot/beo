@@ -1,0 +1,12 @@
+307 baseline source files byte-identical.
+Legacy TTS, GPU, TXT target, normalization and Vietnamese engines unchanged.
+Changed files:
+AnchoredVoice.cs
+App.cs
+BUILD_WINDOWS.cmd
+Enhancements.cs
+SubtitleControls.cs
+Ui1411Tests.cs
+Updater.cs
+package_release.py
+run_validation.py

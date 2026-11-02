@@ -1,40 +1,64 @@
-V15 VOICE STUDIO 2.0.5 — GIAO DIỆN CHỌN GIỌNG MỚI
+V15 VOICE STUDIO 2.0.6 — VIDEO, DUYỆT CHẤT LƯỢNG VÀ SỬA RIÊNG CHẶNG
 
 CẬP NHẬT
-Trong app: Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.5_Update.zip. Chờ mở lại và kiểm tra tiêu đề Offline 2.0.5.
-Nếu không mở được mục cập nhật: giải nén TOÀN BỘ ZIP vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục app đang dùng. Không lấy riêng EXE.
-Dùng lại các giọng/model/runtime/GPU đang cài; không cần tải lại model hoặc gói Việt. Giữ nguyên các dữ liệu cá nhân, hàng đợi, bản đọc đệm và báo cáo cũ.
+Công cụ & thiết lập → Cập nhật từ ZIP → chọn V15VoiceStudio_2.0.6_Update.zip. Mở lại thấy Offline 2.0.6.
+Hoặc giải nén TOÀN BỘ ZIP vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục app đang dùng.
+Đây là cập nhật lõi, dùng lại các model, giọng, GPU và gói Việt hiện có. Không phải bộ cài đầy đủ model cho máy trắng.
 
-BỐ CỤC MỚI
-- Khung GIỌNG ĐỌC cố định ở trên bên phải: ngôn ngữ, phong cách, nguồn giọng, giọng đang sử dụng, đặc điểm và dấu ★ như trước.
-- Khi cửa sổ thấp, mô tả ngắn thu gọn để dành chỗ cho cài đặt; bấm Chi tiết giọng để xem đầy đủ đặc điểm/phong cách.
-- Nghe thử: tạo mẫu từ câu đang chọn. Mẫu có sẵn: nghe mẫu được đóng gói nếu có. Yêu thích: thêm/bỏ giọng đang chọn.
-- TXT & đích: thời lượng dự kiến, đích TXT và mức co giãn, thông báo sau render, tạo lại/bản đọc trước/khóa đoạn, đo thử và mở báo cáo lần chạy. Khi chưa mở TXT, tab này hướng dẫn cách nhập.
-- Căn SRT: chế độ timeline, tốc độ đọc gốc, khoảng nghỉ timeline linh hoạt, giới hạn căn, đo nhịp, cân âm lượng và tùy chọn V15.6. Tốc độ gốc, cân âm lượng và giới hạn căn cũng áp dụng cho TXT.
-- Ngắt nghỉ: Auto hoặc thời gian nghỉ tùy chỉnh theo dấu câu.
-- Hơi thở: Auto / Tùy chọn / Không dùng. Hơi thở và ngắt nghỉ vẫn dùng chung cho hàng đợi.
-- Mỗi tab cuộn riêng. Các thông báo dài cuộn trong khung riêng, không đẩy phần chọn giọng xuống dưới.
-- Thanh TẠO VOICE · WAV / Dừng / Voice tổng / dừng nghe / Mở kết quả cố định bên dưới, trải toàn chiều ngang.
-- Icon mới hình sóng âm, dùng cho EXE và cửa sổ ứng dụng. Nếu Windows vẫn lưu ảnh icon cũ ở shortcut đã ghim, đóng/mở lại app; có thể bỏ ghim rồi ghim lại shortcut app đúng thư mục vừa cập nhật.
+VỊ TRÍ CHỨC NĂNG MỚI
+Tab chính “Video · duyệt & sửa” có 4 mục: 1–2 Hàng đợi, 3 Chất lượng, 4 Duyệt video, 5 Sửa chặng.
+Dùng chung danh sách SRT với Hàng đợi nhiều file, dùng giọng và thiết lập ở Tạo voice.
+TXT vẫn sử dụng luồng Tạo voice / Hàng đợi cũ. Công cụ video mới đọc SRT có timeline, chia chặng theo V15.6.
+Chặng không nhất thiết là một cue: nhiều cue được gộp thành chặng theo dấu câu / khoảng nghỉ / neo đã đặt. Không đoán cảnh từ hình ảnh.
+Muốn đặt neo chặng thủ công: Hàng đợi nhiều file → Xem/sửa file → chọn V15.6 ở Căn SRT → tích Khóa cuối chặng tại cue cần giữ. Trở lại Video · duyệt & sửa → Mở/làm mới hàng đợi. Đổi cách chia chặng sẽ vô hiệu bản sửa/chặng đệm cũ để tránh áp dụng sai vị trí.
 
-TXT THEO THỜI LƯỢNG ĐÍCH
-1. Nhờ chat viết lời gần thời lượng đích; cung cấp giọng/tốc độ và báo cáo đo nếu đã có.
-2. Mở TXT chỉ chứa lời đọc, hoặc dán văn bản không timecode.
-3. Chọn giọng ở khung GIỌNG ĐỌC. Tốc độ gốc nằm trong tab Căn SRT.
-4. Vào TXT & đích → tích Căn TXT theo thời lượng đích, nhập giây / mm:ss / hh:mm:ss. Ví dụ 45 hoặc 45s hoặc 00:45; 01:30 = 90 giây. Nhận phần nghìn bằng dấu chấm/phẩy; phạm vi 1 giây–6 giờ.
-5. Căn tối đa mặc định ±10%, có thể đặt ±1–25%. Giới hạn thực sự là giao với các giới hạn tốc độ đang chọn.
-6. Bấm TẠO VOICE · WAV. App đo audio gốc, căn trong giới hạn, đo lại rồi xuất WAV nếu đạt. Ước lượng trước render không phải thời lượng chính xác.
-7. Nếu quá dài/ngắn, xem thông báo và .voice-report.txt rồi gửi chat sửa lời. Không cắt lời hoặc tự đệm im lặng dài để ép đủ đích.
-8. Đổi đích cùng lời/giọng có thể dùng lại audio đã lưu nếu bộ đệm còn hợp lệ.
+BƯỚC 1 — NHẬP VÀ GHÉP FILE
+Thêm SRT và Thêm video; có thể kéo thả nhiều SRT/MP4 vào cửa sổ khi đang chọn tab Video · duyệt & sửa.
+Tự ghép khi tên gốc trùng nhau. Ưu tiên file cùng thư mục; nếu nhiều video cùng tên không xác định được, để chưa ghép và dùng Ghép video thủ công.
+Video chỉ dùng tham chiếu để xem/nghe; không bị sửa, không xuất MP4. Không có video vẫn tạo và sửa WAV được.
+Chọn giọng / tốc độ / ngắt nghỉ / hơi thở / cân âm ở Tạo voice trước khi chạy. Trên tab mới có ghi giọng của lần đo, phân biệt với giọng đang chọn.
 
-HÀNG ĐỢI
-Mỗi TXT đặt đích riêng bằng Đặt đích TXT hoặc bấm đúp ô Đích TXT. Để trống = tự nhiên. Không lấy đích đang gõ ở Studio cho toàn bộ hàng đợi. SRT dùng timeline nguồn.
-Giọng, tốc độ gốc, mức căn tối đa, hơi thở và cân âm vẫn dùng chung. File lỗi có báo cáo và hàng đợi tiếp tục file sau.
+BƯỚC 2 — TẠO VOICE & KIỂM TRA
+Bấm Tạo voice & kiểm tra ở Hàng đợi trong tab mới. Chạy lần lượt tất cả SRT của khu vực này; bộ lọc chỉ phục vụ xem.
+Chặng lỗi không chặn việc kiểm tra chặng khác hoặc file sau, trừ khi bạn Dừng tác vụ.
+Chặng thành công, ứng viên không vừa khung và kết quả đo được lưu trên máy để duyệt và dùng lại. Nếu model/TTS lỗi trước khi có audio, bảng ghi chưa đo; không mặc định là lời quá dài.
+Chặng dư/thiếu được căn trong giới hạn tốc độ đã chọn. Nếu vẫn dư hoặc còn thiếu hơn 1,5 giây thì chưa xuất WAV tổng cho file đó.
+Riêng thiếu tối đa 1,5 giây sau khi căn: giữ nghỉ cuối để bảo vệ mốc và đánh dấu cần nghe duyệt. Không tự kéo giọng ra ngoài giới hạn, không cắt lời.
+Hơi thở của luồng mới tính riêng trong từng chặng để việc sửa một chặng không thay đổi hơi thở chặng khác.
 
-ĐẦU RA & BÁO CÁO
-Chỉ xuất WAV bên cạnh SRT/TXT nguồn. Khi không có file nguồn, app hỏi nơi lưu như trước.
-Mỗi lần thử tạo voice có báo cáo .voice-report.txt, kể cả thành công, lỗi và dừng. Giữ các báo cáo cũ. Báo cáo chứa giọng, thiết lập, lời và mốc nguồn, số đo thực tế, tốc độ căn và chi tiết lỗi.
-Ở TXT căn toàn bài, mốc từng đoạn trong bảng/báo cáo là mốc trước căn, không phải timeline cuối giả định bằng cách nhân tỷ lệ.
+BƯỚC 3 — DUYỆT CHẤT LƯỢNG
+Chọn file → Xem chất lượng. Có lọc file cần xử lý / đã có WAV và lọc chặng cần sửa / cần nghe lại / đã đạt.
+Mỗi dòng có timeline nguồn, voice gốc, thời lượng sau căn trước phần nghỉ đệm, tốc độ, nghỉ cuối và trạng thái.
+“Cần nghe lại” cũng có thể do chặng dài tự chia thiếu neo hoặc khoảng nghỉ giữa chặng. Không phải mọi khoảng nghỉ đều là lỗi.
+Đã nghe · duyệt nghỉ chỉ ghi nhận chặng đã đo đạt; không biến chặng tràn thành đạt.
 
-KIỂM TRA PHÁT HÀNH
-Có kiểm tra tự động .NET/Mono trên Linux, giao diện ở nhiều kích thước, TTS giả lập kết hợp FFmpeg thật, báo cáo và cập nhật ZIP. Chưa kiểm tra trực tiếp bản này trên Windows / RTX 2070 của người dùng.
+BƯỚC 4 — NGHE CÙNG VIDEO
+Chọn chặng → Nghe cùng video. Chọn Nghe voice mới hoặc Nghe âm gốc rồi Phát/Tạm dừng.
+Có lặp chặng, lùi 2 giây, kéo vị trí trong vùng chặng, âm lượng và chuyển file trước/sau theo danh sách đang lọc.
+Voice mới tắt âm video gốc. Vùng lặp có thể kéo tới hết audio ứng viên tràn để nghe đoạn vượt mốc; mốc nguồn vẫn hiển thị cố định.
+Waveform là audio chặng trước cân âm tổng. Phụ đề hiển thị lời toàn chặng, không phải căn từng từ.
+Đồng bộ dựa trên vị trí bộ phát; có cơ chế sửa trôi. Không cam kết chính xác từng khung hình hoặc phục vụ như phần mềm dựng phim.
+Bộ phát nhúng dùng thành phần Windows Media Player Legacy. Nếu Windows thiếu thành phần này / Media Feature Pack hoặc codec không hỗ trợ, app báo lỗi. Có thể vẫn nghe audio A/B và sửa chặng riêng; cần bật thành phần phát media để xem nhúng. Đây không phải gói CUDA.
+
+BƯỚC 5 — SỬA VÀ NGHE A/B
+Sửa chặng → nhập lời vào B, giữ nguyên mốc nguồn → Tạo thử chặng → Nghe B và Nghe A để đối chiếu.
+Tạo thử có báo cáo riêng, chưa thay audio đang dùng và chưa xuất WAV tổng. Chưa đạt khung vẫn có ứng viên để nghe, nhưng không được coi là bản đạt.
+Đổi lời sau lần thử thì phải tạo thử lại để Nghe B đúng nội dung. Không tự đoán thời lượng từ số từ.
+Tạo thử yêu cầu đọc lại lời bằng TTS, kể cả khi không đổi từ. Bản A được giữ riêng. Sau khi Lưu bản sửa, bước ghép dùng đúng audio B đã đo/nghe, không âm thầm tạo một bản khác.
+Lưu bản sửa đưa chặng vào nhóm cần chạy lại. Lưu & chặng lỗi tiếp đi tới chặng lỗi chưa lưu tiếp theo, kể cả ở file khác.
+Bản nháp được lưu khi gõ. Nguồn SRT không bị ghi đè. Lưu SRT bản sửa… là thao tác tùy chọn: xuất bản khác, mỗi chặng là một block với nguyên đầu/cuối chặng; không phải phụ đề căn theo từng từ.
+Thay giọng, mẫu tham chiếu hoặc giới hạn sau khi đo: dùng Nạp thiết lập lần đo trước khi so sánh/sửa riêng. Hoặc chạy Tạo voice & kiểm tra để đo lại toàn bộ với thiết lập mới.
+
+BƯỚC 6 — CHẠY NHÓM ĐÃ SỬA VÀ GHÉP WAV
+Trở về 1–2 Hàng đợi → Chạy lại các chặng đã sửa. Chỉ xử lý những file có bản sửa đã lưu.
+Dùng lại audio chặng hợp lệ, kiểm tra SHA256 và số mẫu; audio mất/hỏng sẽ được tạo lại. File đã đạt không thuộc nhóm sửa được giữ nguyên.
+Chỉ ghép WAV tổng khi tất cả chặng của file đạt khung. File còn chặng lỗi vẫn có báo cáo và dữ liệu để sửa tiếp.
+Nếu bật cân âm tổng, mức âm của toàn bài có thể đổi. “Giữ audio chặng” là giữ dữ liệu chặng đệm / nội dung / mốc; không cam kết toàn bộ mẫu của WAV cuối giống bản cũ sau cân âm.
+Nghe WAV tổng → Mở kết quả / Mở báo cáo. WAV và báo cáo nằm cạnh SRT, các WAV/báo cáo trước được giữ bằng tên kế tiếp khi cần.
+Bản sửa, ghép video, audio chặng và trạng thái duyệt lưu trong %LOCALAPPDATA%\V15VoiceStudio\creator. Không xóa thư mục này nếu muốn tiếp tục dự án đang sửa. Audio chặng có thể chiếm nhiều đĩa khi làm nhiều dự án.
+Nếu SRT nguồn bị sửa ở bên ngoài, app không dùng lại bản sửa/chặng cũ trên timeline mới; nhập/làm mới và đo lại.
+
+GIỚI HẠN KIỂM TRA
+Đã kiểm tra tự động trên Mono/Linux, FFmpeg thật và TTS giả lập; có kiểm tra ghép WAV đúng số mẫu, giữ hash chặng, lỗi/dừng, báo cáo, lưu/mở lại, ghép file và thao tác GUI.
+Đồng bộ bộ phát đã kiểm tra qua mô phỏng cổng phát. Chưa chạy trực tiếp ActiveX/codec Windows hoặc tổng hợp trên RTX 2070 thật trong bản phát hành này.
+Tài liệu bộ phát: https://learn.microsoft.com/en-us/previous-versions/windows/desktop/wmp/controls-currentposition

@@ -1,0 +1,12 @@
+V15 Voice Studio 2.0.6 release QA
+Environment: Mono/Linux, .NET Framework 4.5 reference assemblies, Xvfb and real FFmpeg. TTS uses deterministic synthetic engines; no physical NVIDIA/Windows inference claim.
+
+Full baseline regression suite passed in regressions206.log: legacy core/batch/GPU/subtitle/anchored/voice report/TXT target tests and UI checks.
+Final creator core: 37 checks, including exact PCM duration, byte-preserved untouched stages, failed/successful/cancel reports, persisted drafts/review, source/signature invalidation, corruption detection, pairing ambiguity, transport synchronization/loop/pause, trial A/B separation, same-text new takes and adoption of exact B audio without more TTS.
+Final creator UI: 24 checks, using synthetic native executable and real FFmpeg: import/pair, queue continuation, result synchronization, file and stage filters, visible video/editor panels, trial/adopt, repair-group reassembly, unchanged passed file, original SRT preservation, review flags and control lock/unlock.
+Existing final studio UI: 48 checks; fixed voice layout: 59 checks. Final navigation screens checked at default and minimum window sizes.
+All source models/AI GPU workers and legacy core rendering code remain unchanged; AnchoredVoice.ReadStage was made internal for the new isolated creator pipeline. SubtitleControls only adds routing of dropped files within the new workspace.
+
+MEDIA LIMITATION: Native Windows Media Player ActiveX/installed codecs have NOT been run in this Linux environment. The transport logic is tested through an injectable fake player; this is not equivalent to a real Windows playback test. Missing player/component errors are surfaced in the application. Guide describes Windows Media Player Legacy prerequisite, approximate synchronization and lack of frame-level guarantees.
+
+Archive release tests verify all SHA256 hashes, Windows GUI EXEs/icons/version, .NET Framework API compatibility, upgrades with installed 2.0.5 updater and new updater, ZIP/folder install modes, model/GPU/voice/queue/stage-project preservation, and downgrade protection.

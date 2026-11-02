@@ -1,0 +1,28 @@
+Tests TOTAL: 13 passed. Output: /tmp/v15_tests_12c8830cf3704041a6ec955922a64a49
+BatchTests TOTAL BATCH: 12 passed.
+FeatureTests TOTAL 20 passed
+BreathStreamingTests TOTAL BREATH STREAMING 8 passed.
+PunctuationTests TOTAL PUNCTUATION 20 passed.
+Update141Tests TOTAL 1.4.1 17 passed.
+NativeGpuTests TOTAL NATIVE GPU 14 passed.
+UpdaterTests TOTAL UPDATER 21 passed.
+OnnxUpdaterTests TOTAL ONNX UPDATER 6 passed.
+AnchoredTests TOTAL ANCHORED 65 passed.
+SubtitleTests TOTAL SUBTITLES 17 passed.
+test_gpu_policy.py PASS
+test_worker_probe.py PASS
+Ui1411Tests TOTAL UI 2.0.6 48 passed.
+AnchoredUiTests TOTAL ANCHORED UI 28 passed.
+SubtitleUiTests TOTAL SUBTITLE UI 18 passed.
+SubtitleQualityUiTests TOTAL QUALITY UI 13 passed.
+SubtitleRefineUiTests TOTAL REFINE UI 7 passed.
+SubtitleSpeechUiTests TOTAL SPEECH UI 14 passed.
+VoiceReportTests TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo b47d4f4e0eb24de1b06f7a2e11aa88a3
+VoiceDiagnosticTests TOTAL VOICE DIAGNOSTICS 26 passed. Fixtures: /tmp/V15 diagnostics 8fe8a9292ee04b829ebc37d0ccb59713
+TextTargetTests TOTAL TXT TARGET 37 passed. Fixtures: /tmp/V15 TXT target d344373961864fce9ac9428a63144f08
+CreatorTests TOTAL CREATOR 32 passed.
+VoiceReportUiTests TOTAL REPORT UI 18 passed.
+TextTargetUiTests TOTAL TXT TARGET UI 22 passed.
+StudioLayoutTests TOTAL LAYOUT 59 passed.
+CreatorUiTests TOTAL CREATOR UI 20 passed.
+VALIDATION COMPLETE (Mono/Linux; physical Windows GPU not tested)
