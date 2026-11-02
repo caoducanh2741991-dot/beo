@@ -1,9 +1,10 @@
 {
-  "version": "3.0.0.0",
-  "finished_utc": "2026-11-01T07:17:43.148764+00:00",
+  "version": "3.1.0.0",
+  "finished_utc": "2026-11-01T11:47:42.570326+00:00",
   "counts": {
     "Reno300Tests": 62,
     "Acoustic300Tests": 11,
+    "RenderProgressTests": 30,
     "Workflow217Tests": 47,
     "Recovery216Tests": 42,
     "Sync216Tests": 27,
@@ -22,14 +23,14 @@
     "UpdaterTests": 21,
     "Reno300Tests-reopen": 3,
     "Recovery216Tests-reopen": 8,
-    "WorkflowUi300Tests": 28
+    "BeoUiTests": 51
   },
-  "CSharp_total": 584,
+  "CSharp_total": 637,
   "python_gpu_policy": 11,
   "python_worker_probe": 4,
   "binary_sha256": {
-    "V15VoiceStudio.exe": "457712fa96687c35367331e03905592c23ebdf8167dbf534e75d1f9c4adfa403",
-    "V15Updater.exe": "ecbd8551d11aaeef1add029a1b6de57ed3e799ec5e48c769e9eddda06467a73c"
+    "V15VoiceStudio.exe": "229d21fb19b2811527e2d7ee8badcc0f958f07f1595860a7c687d21b17e559f9",
+    "V15Updater.exe": "1532e032945b5da3ecf7b4140bce31b7ca3433ec4402b074e06a8e6c55de5eb1"
   },
   "environment": "Mono/Linux, Xvfb and real FFmpeg; synthetic TTS/AI fixtures; missing-engine UI cases",
   "physical_Windows_or_GPU_or_real_clone_tested": false

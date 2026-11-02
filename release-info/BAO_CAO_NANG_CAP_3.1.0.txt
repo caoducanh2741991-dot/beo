@@ -1,0 +1,38 @@
+BÉO VOICE STUDIO 3.1.0 — THAY ĐỔI
+Ngày: 01/11/2026 (Asia/Saigon)
+
+Nâng trực tiếp từ 3.0.0, áp dụng mẫu Hàng đợi đã được chọn.
+
+GIAO DIỆN VÀ TÊN APP
+- Tên cửa sổ, đầu trang, EXE ProductName/Description, báo cáo và công cụ cập nhật
+  đổi thành BÉO Voice Studio. Phiên bản 3.1.0.0.
+- Hàng đợi làm màn hình đầu; cấu hình chung bên phải, đồng bộ lựa chọn giọng,
+  nguồn giọng, A/B, thiết bị, hơi thở và timeline với các thành phần đang có.
+- Chọn file bằng checkbox hoặc phím Space; nút chạy hiển thị số file sẽ chạy.
+- Năm chủ đề, ba cỡ chữ; lưu lựa chọn độc lập với cấu hình voice/cache.
+- Nút và thanh tiến độ được vẽ theo chủ đề. Điều hướng gọn, giữ các trang hiện có.
+- Bố cục tự gọn ở chiều cao thấp; đã kiểm tra 1440x960 và 1100x740, chữ 100/125%.
+
+TIẾN ĐỘ VÀ ETA
+- Cột Hoàn thành (%) có số và thanh tiến độ thực cho mỗi file.
+- Cột Dự kiến xong có giờ ước lượng và thời gian còn lại; thiếu dữ liệu ghi rõ.
+- Có phần trăm chung và thời gian dự kiến của hàng đợi.
+- Tính từ elapsed time và tiến triển thực; không giả thời lượng TTS bằng số từ.
+- Quy đổi các giai đoạn AI chuẩn bị/render thành tiến độ liên tục.
+- Callback không được tự xác nhận 100% trước khi kết quả thực được công bố.
+- Dừng/lỗi/cần xem lại không nhận 100%; ngừng ETA cũ khi không còn tiến triển.
+- Lưu phần trăm và lựa chọn file qua phiên, tính lại ETA khi chạy tiếp.
+
+TƯƠNG THÍCH
+- Giữ 2 chế độ, báo cáo 1/2 file, WAV/SRT đồng bộ, AI Repair/khóa nghĩa của 3.0.
+- Giữ nguyên 8 module worker/TTS/GPU/audio nền theo byte hash.
+- Giữ các ID/thư mục dữ liệu và tên tệp khởi động để updater, model, cache,
+  giọng riêng và lối tắt hiện có tiếp tục dùng được; tên hiển thị đã đổi.
+- Gói cập nhật dùng cùng cơ chế xác minh/transaction; có mã nguồn và log.
+
+GIỚI HẠN
+ETA là ước lượng, có thể thay đổi mạnh khi nạp model, sửa AI, dịch hoặc dùng cache.
+Kiểm thử ở đây dùng Mono/Linux/Xvfb, đồng hồ điều khiển được và TTS giả lập với
+FFmpeg thật. Chưa xác nhận trên Windows vật lý, RTX2070, Steven hoặc Qwen thật.
+Không lấy số kiểm tra giao diện/ETA để khẳng định chất lượng giọng hoặc mọi file
+Reno/VAN đều sẽ render đạt với model thật trên máy người dùng.

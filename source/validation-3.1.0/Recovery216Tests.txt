@@ -40,5 +40,5 @@ PASS Verb stems do not silently erase tense when admitting a lexical synonym
 PASS Combining a safe synonym with changed punctuation still requires semantic review
 PASS Historical 2.0.14 accepted wording is not automatically trusted as semantically safe
 PASS Historical candidate is freshly measured using the current fixture voice, not its old PASS; real Steven measurement remains unavailable
-ROOT /tmp/V15 recovery216 e659284a91b1497a8e57dd989c7d0cd0
+ROOT /tmp/V15 recovery216 a57a15fab3b14061b9e05c15a16723d1
 TOTAL RECOVERY 42 PASS; synthetic TTS/rewriter + real FFmpeg. Run reopen in a separate process.

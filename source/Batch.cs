@@ -8,6 +8,7 @@ using System.Collections.Generic;
 namespace V15Voice {
 public enum JobState { Queued, ImportFailed, Running, Done, Failed, Cancelled, NeedsReview, TranslationIncomplete }
 public sealed class BatchJob {
+ public bool Selected=true;public readonly RenderProgress Progress;public BatchJob():this(null){}public BatchJob(RenderProgress progress){Progress=progress??new RenderProgress();}
  public int WorkflowMode;public string ShortReportPath="";public AiRepairSession RepairSession;public string AiReport="",AiSnapshot="";public int RepairMode=-1;public double TargetSeconds;public string ReportPath="";public string TimelineReport="",Warning="";public double AudioDuration;public bool DurationFinal;public string SourceHash="";
  public string FailureCode="",StackTrace="";public string InputPath,Error="",OutputPath="";public bool Timed;
  public List<Cue> CheckpointCues;public List<Cue> Cues=new List<Cue>();public JobState State=JobState.Queued;
@@ -27,18 +28,20 @@ public sealed class BatchJob {
 public static class BatchRunner {
  public static string Run(List<BatchJob> jobs,bool skipDone,Func<bool> cancelled,Func<BatchJob,string,Action<int,string>,string> render,Action<int,string> progress,bool pauseForReview=false){
   if(jobs.Count==0)throw new Exception("Hàng đợi chưa có file.");
-  int total=jobs.Count(j=>!(skipDone&&j.State==JobState.Done)),finished=0;string last="";
+  int total=jobs.Count(j=>j.Selected&&!(skipDone&&j.State==JobState.Done)),finished=0;string last="";
   foreach(var j in jobs){
+   if(!j.Selected)continue;
    if(skipDone&&j.State==JobState.Done){if(File.Exists(j.OutputPath))last=j.OutputPath;continue;}
    if(cancelled())break;
    if(j.State==JobState.ImportFailed){finished++;progress(total==0?0:finished*100/total,j.Name+": lỗi nhập file");continue;}
-   j.CheckpointCues=j.Cues.Select(c=>new Cue{Id=c.Id,Start=c.Start,End=c.End,Text=c.Text,Speaker=c.Speaker,Prose=c.Prose,ParagraphEnd=c.ParagraphEnd,AnchorAfter=c.AnchorAfter,VoiceLock=c.VoiceLock}).ToList();j.State=JobState.Running;j.FailureCode=j.StackTrace="";j.Warning=j.TimelineReport=j.Error="";j.OutputPath="";progress(total==0?0:finished*100/total,j.Name+": bắt đầu");
+   j.CheckpointCues=j.Cues.Select(c=>new Cue{Id=c.Id,Start=c.Start,End=c.End,Text=c.Text,Speaker=c.Speaker,Prose=c.Prose,ParagraphEnd=c.ParagraphEnd,AnchorAfter=c.AnchorAfter,VoiceLock=c.VoiceLock}).ToList();j.State=JobState.Running;j.Progress.Begin();j.FailureCode=j.StackTrace="";j.Warning=j.TimelineReport=j.Error="";j.OutputPath="";progress(total==0?0:finished*100/total,j.Name+": bắt đầu");
    try {
-    j.OutputPath=render(j,OutputFiles.Beside(j.InputPath),(p,message)=>progress(total==0?0:(finished*100+Math.Min(100,Math.Max(0,p)))/total,j.Name+" • "+message));
+    j.OutputPath=render(j,OutputFiles.Beside(j.InputPath),(p,message)=>{j.Progress.Update(p,message);progress(total==0?0:(finished*100+Math.Min(100,Math.Max(0,p)))/total,j.Name+" • "+message);});
     if(j.State==JobState.NeedsReview||j.State==JobState.Failed){j.CheckpointCues=null;if(pauseForReview)break;}else{if(String.IsNullOrEmpty(j.OutputPath)||!File.Exists(j.OutputPath))throw new IOException("RENDER_FAILED: renderer chưa trả file WAV hợp lệ.");j.State=j.State==JobState.TranslationIncomplete?JobState.TranslationIncomplete:JobState.Done;j.CheckpointCues=null;last=j.OutputPath;}
    }catch(OperationCanceledException){j.Cues=j.RepairSession==null?j.CheckpointCues:j.RepairSession.Effective();j.CheckpointCues=null;j.State=JobState.Cancelled;j.Error="Đã dừng theo yêu cầu.";break;}
    catch(RepairPendingException e){RepairRecovery.Hold(j,e.Session);j.StackTrace=e.ToString();if(pauseForReview)break;}
    catch(Exception e){j.Cues=j.RepairSession==null?j.CheckpointCues:j.RepairSession.Effective();if(j.RepairSession!=null){j.AiReport=j.RepairSession.Report;j.AiSnapshot=AiRepairSession.SnapshotHash(j.Cues);}j.CheckpointCues=null;j.State=JobState.Failed;j.FailureCode=e.Data.Contains("V15Status")?Convert.ToString(e.Data["V15Status"]):"RENDER_FAILED";j.StackTrace=e.ToString();j.Error=e.Message;}
+   finally{j.Progress.Finish(j.State==JobState.Done);}
    finished++;progress(total==0?100:finished*100/total,j.Name+": "+j.Status);
   }
   return last;

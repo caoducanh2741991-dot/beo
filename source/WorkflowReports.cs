@@ -34,7 +34,7 @@ public static class WorkflowReports {
   return TranslationReady(o,final)?"FINAL_VERIFIED":"TRANSLATION_INCOMPLETE";
  }
  static string Source(RenderOptions o){return o.ReportContext==null?"":o.ReportContext.SourcePath;}
- static string Header(RenderOptions o,string status,bool wave){return "V15 VOICE STUDIO 3.0.0\r\nCHẾ ĐỘ "+o.WorkflowMode+(o.WorkflowMode==1?" — CHẠY THEO FILE, KHÔNG SỬA LỜI":" — AI TỰ ĐỘNG SỬA")+"\r\nNguồn: "+Source(o)+"\r\nKết quả công việc: "+status+"\r\nWAV: "+(wave?"FINAL_VERIFIED — đã tạo và kiểm tra":"CHƯA XUẤT — không có WAV tổng đạt của lần này")+"\r\n";}
+ static string Header(RenderOptions o,string status,bool wave){return "BÉO VOICE STUDIO 3.1.0\r\nCHẾ ĐỘ "+o.WorkflowMode+(o.WorkflowMode==1?" — CHẠY THEO FILE, KHÔNG SỬA LỜI":" — AI TỰ ĐỘNG SỬA")+"\r\nNguồn: "+Source(o)+"\r\nKết quả công việc: "+status+"\r\nWAV: "+(wave?"FINAL_VERIFIED — đã tạo và kiểm tra":"CHƯA XUẤT — không có WAV tổng đạt của lần này")+"\r\n";}
  static string Detailed(RenderOptions o,List<Cue> final,VoiceRenderReport report,string status,bool wave,Exception error){
   var b=new StringBuilder(Header(o,status,wave));var changed=Changed(o,final);
   b.AppendLine("Số câu thay đổi lời thực sự áp dụng: "+changed.Count);

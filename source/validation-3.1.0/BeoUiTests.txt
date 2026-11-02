@@ -1,0 +1,53 @@
+PASS Actual app title and version are BÉO Voice Studio 3.1.0
+PASS Clean startup opens the selected queue layout
+PASS Visible header carries the new brand
+PASS Theme and font choices are present
+PASS Queue has completion, estimated finish and file-selection columns
+PASS Completion uses a real progress bar cell, not a fake static label
+PASS Queue mode cards update the shared actual workflow
+PASS File-only mode can be restored without a third mode
+PASS Imported files are selected by default
+PASS Primary action shows the number of files that will run
+PASS Unchecked files are excluded from the run count
+PASS Live queue cells show actual progress and avoid a premature ETA
+PASS Theme 0 reaches the queue and text colors
+PASS Theme 1 reaches the queue and text colors
+PASS Theme 2 reaches the queue and text colors
+PASS Theme 3 reaches the queue and text colors
+PASS Theme 4 reaches the queue and text colors
+PASS Changing themes does not compound font scaling
+PASS Font can return exactly to its original size
+PASS Theme/font and both mode cards fit {Width=1440, Height=960} scale 0
+PASS All three run actions fit {Width=1440, Height=960} scale 0
+PASS File table has usable height at {Width=1440, Height=960} scale 0
+PASS Progress and selection cells retain the intended types after refreshing rows
+PASS Progress and ETA stay visible at {Width=1440, Height=960} scale 0
+PASS Theme/font and both mode cards fit {Width=1440, Height=960} scale 2
+PASS All three run actions fit {Width=1440, Height=960} scale 2
+PASS File table has usable height at {Width=1440, Height=960} scale 2
+PASS Progress and selection cells retain the intended types after refreshing rows
+PASS Progress and ETA stay visible at {Width=1440, Height=960} scale 2
+PASS Theme/font and both mode cards fit {Width=1100, Height=740} scale 0
+PASS All three run actions fit {Width=1100, Height=740} scale 0
+PASS File table has usable height at {Width=1100, Height=740} scale 0
+PASS Progress and selection cells retain the intended types after refreshing rows
+PASS Progress and ETA stay visible at {Width=1100, Height=740} scale 0
+PASS Theme/font and both mode cards fit {Width=1100, Height=740} scale 2
+PASS All three run actions fit {Width=1100, Height=740} scale 2
+PASS File table has usable height at {Width=1100, Height=740} scale 2
+PASS Progress and selection cells retain the intended types after refreshing rows
+PASS Progress and ETA stay visible at {Width=1100, Height=740} scale 2
+PASS Voice clone and existing voice library remain accessible
+PASS Two-voice routing remains available
+PASS Real ETA cell displays an approximate finish time and remaining duration from a deterministic processing clock
+PASS Queue footer and file row agree on the live measured completion and estimated deadline
+PASS Active rendering keeps stop enabled and run/configuration locked
+PASS Running locks editable controls while preserving readable theme labels and scrolling
+PASS File-selection checkbox supports the keyboard space key
+PASS Keyboard selection can return the queue to one selected file
+PASS Actual queue execution processes selected files only, writing one report in file mode
+PASS A genuine missing-engine failure never displays completed 100%
+PASS Failure returns to the same window without extra repair dialogs
+PASS Theme and font preferences are persisted independently of voice settings
+TOTAL BEO UI 51 PASS. Real WinForms on Mono/Xvfb; intentional missing-engine run, no physical Windows/GPU claim.
+Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

@@ -1,6 +1,7 @@
-PASS Actual updater upgrades 2.0.17 app to 3.0.0
+PASS Actual updater upgrades existing app to BÉO Voice Studio 3.1.0
+PASS Installed EXE properties carry the new product name
 PASS Upgrade preserves installed TTS, AI model/runtime, custom reference, GPU, SRT and WAV
 PASS Installed package contains new implementation and matching guide
 PASS Successful upgrade has no incomplete transaction journal
 PASS Core update does not bundle or replace installed voice or AI models
-TOTAL STABLE PACKAGE 5 passed with updater 2.0.17.0. Mono/Linux fixture install.
+TOTAL STABLE PACKAGE 6 passed with updater 3.1.0.0. Mono/Linux fixture install.

@@ -1,0 +1,89 @@
+BÉO VOICE STUDIO 3.1.0 — HƯỚNG DẪN CẬP NHẬT
+Ngày: 01/11/2026 (Asia/Saigon)
+
+CẬP NHẬT TỪ 3.0.0 HOẶC 2.0.17
+1. Lưu công việc và dừng render đang chạy.
+2. Dùng chức năng cập nhật ZIP trong app để chọn
+   BEO_Voice_Studio_3.1.0_Core_Update.zip và thư mục ứng dụng đã cài.
+   Hoặc giải nén gói vào thư mục riêng, mở BEO_Update.exe ở gốc gói,
+   chọn file ZIP và đúng thư mục ứng dụng hiện có.
+3. Mở lại ứng dụng; tiêu đề và thông tin sản phẩm là BÉO Voice Studio 3.1.0.
+
+Tên file V15VoiceStudio.exe, khóa cài đặt và thư mục dữ liệu V15VoiceStudio
+được giữ để các lối tắt, model, mẫu giọng và cache hiện có tiếp tục dùng được.
+Trên Windows, app bổ sung mục BÉO Voice Studio trong Start menu và cập nhật
+tên hiển thị ở thông tin cài đặt nếu khóa cài đặt hiện hữu cho phép.
+File EXE, mã nguồn và log kiểm thử đều có trong gói cập nhật.
+
+GIAO DIỆN HÀNG ĐỢI — MẪU ĐÃ CHỌN
+Màn hình chính mở ở Hàng đợi. Cấu hình chung nằm bên phải, đồng bộ với
+Tạo voice: chọn giọng/nguồn giọng, một hoặc hai giọng, thiết bị và hơi thở.
+Timeline hàng đợi vẫn có các lựa chọn theo file, khóa SRT, linh hoạt và V15.6.
+
+Thêm SRT/TXT → tick các file muốn chạy → chọn chế độ → CHẠY N FILE.
+Các file bỏ tick được giữ trong danh sách và không bị render.
+Có thể dùng phím Space tại ô Chọn để bật/tắt file. Nhấp đúp dòng để xem
+kịch bản. Menu Quản lý có xóa file, đặt đích TXT và mở báo cáo.
+Ba nút chính: CHẠY N FILE, DỪNG, MỞ KẾT QUẢ.
+Các trang Tạo voice, Thư viện giọng, Thiết lập, Clone giọng, MP4/SRT và
+Hướng dẫn vẫn được giữ lại.
+
+TÙY CHỌN GIAO DIỆN
+Chủ đề: Theo Windows, Sáng tinh gọn, Tối than chì, Kem ấm, Xanh đại dương.
+Cỡ chữ: 100%, 110%, 125%. Lựa chọn màu, chữ và trang mở gần nhất được lưu
+riêng tại appearance.xml, không đổi giọng, tốc độ TTS hoặc cấu hình render.
+Ở cửa sổ thấp, bố cục tự gọn lại để giữ bảng file và các nút chạy luôn hiện.
+Bảng cấu hình bên phải có thể cuộn để tới các thiết lập phía dưới.
+
+THEO DÕI PHẦN TRĂM VÀ GIỜ XONG
+Mỗi file có:
+- Hoàn thành (%): số và thanh tiến độ lấy từ quá trình xử lý thực.
+- Dự kiến xong: ~HH:mm và thời gian còn lại; qua ngày thì có thêm ngày/tháng.
+- Trạng thái: chờ, đang chạy, hoàn tất, cần xem lại, lỗi hoặc thiếu bản dịch.
+
+Chưa đủ số đo tốc độ sẽ hiện “Đang ước lượng”. File chưa đến lượt hiện
+“Chờ tới lượt”. Ước lượng cập nhật theo thời gian đã chạy và mức tiến triển;
+bước kéo dài không có tiến độ mới sẽ tạm bỏ dự đoán cũ. File lỗi/dừng giữ
+phần trăm đã xử lý và không tiếp tục đếm giờ xong.
+
+Góc dưới có phần trăm chung cho các file được chọn và dự kiến xong hàng đợi.
+Phần trăm chung lấy trung bình tiến độ file; ETA dùng tốc độ xử lý đã quan sát
+và quy mô lời của các file còn lại để ước lượng. ETA không phải thời lượng
+TTS đo được và không dùng để quyết định câu đã vừa timeline hay chưa.
+Nạp model, thay giọng, AI sửa, dịch và cache có thể làm thời gian dự kiến đổi.
+
+100% chỉ được xác nhận khi công việc đã hoàn tất và bộ kết quả được công bố.
+WAV đạt nhưng dịch chưa đủ vẫn TRANSLATION_INCOMPLETE; công việc chưa được
+coi là hoàn tất đầy đủ. Cần xem lại lời/engine lỗi/đã dừng không nhận 100%.
+
+Hai giai đoạn đo/sửa AI và render cuối được quy đổi thành tiến độ liên tục,
+không nhảy từ 100% về 0% khi bắt đầu giai đoạn kế tiếp.
+Mở lại app giữ lựa chọn file và mức tiến độ đã lưu; giờ xong cũ không được
+đem dùng lại. Lần chạy tiếp tính ETA mới theo công việc thực và checkpoint.
+
+CHẾ ĐỘ 1 — CHẠY THEO FILE
+Giữ lời nguồn, không gọi AI sửa hoặc dịch. Mỗi file đúng 1 báo cáo:
+  filename.voice-report.txt
+Đạt thì có WAV và filename.final.srt. Lỗi/dừng vẫn xuất báo cáo.
+
+CHẾ ĐỘ 2 — AI TỰ SỬA
+Tự đo, sửa nhỏ, kiểm tra nghĩa, đo lại và tiếp tục khi đạt. Mỗi file đúng 2 báo cáo:
+  filename.ai-before-after-report.txt
+  filename.ai-changes-en-vi.txt
+Báo cáo ngắn chỉ chứa câu đã thực sự áp dụng: EN gốc, EN đã dùng và VI đối chiếu.
+Không thêm nút sửa/duyệt/resume vào luồng tự động. Các giới hạn thời lượng,
+ngữ nghĩa, dịch thuật và checkpoint của bản 3.0 vẫn được giữ.
+AI đổi lời theo khung dùng cho SRT khóa và V15.6; TXT tự nhiên/SRT linh hoạt
+vẫn giữ lời. TXT có đích chưa được tự viết lại trong bản này.
+
+BẢO TOÀN DỮ LIỆU
+Giữ nguồn SRT/TXT, timecode, model/runtime, mẫu clone, thư viện giọng và cache.
+Bộ kết quả mới có cùng tên chung; nếu trùng tên sẽ thêm (2), (3)...
+SRT cuối khớp dữ liệu lời gửi TTS. Timecode SRT khóa/V15.6 là mốc nguồn,
+không được gọi là mốc audio đo riêng từng cue nếu chưa chạy căn từ riêng.
+
+KIỂM THỬ VÀ MÃ NGUỒN
+Xem KET_QUA_KIEM_THU_3.1.0.txt để phân biệt kiểm tra thật trên Mono/FFmpeg,
+kiểm thử đồng hồ ETA, fixture TTS và các phần chưa thử trên Windows/RTX2070.
+Mã nguồn: payload/source trong ZIP; source sau khi cài.
+Build Windows: source/BUILD_WINDOWS.cmd. Test entry: source/validate310.py.

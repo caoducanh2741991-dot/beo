@@ -13,8 +13,10 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 [assembly: System.Runtime.Versioning.TargetFramework(".NETFramework,Version=v4.5", FrameworkDisplayName=".NET Framework 4.5")]
-[assembly: System.Reflection.AssemblyVersion("3.0.0.0")]
-[assembly: System.Reflection.AssemblyFileVersion("3.0.0.0")]
+[assembly: System.Reflection.AssemblyTitle("BÉO Voice Studio Update")]
+[assembly: System.Reflection.AssemblyProduct("BÉO Voice Studio")]
+[assembly: System.Reflection.AssemblyVersion("3.1.0.0")]
+[assembly: System.Reflection.AssemblyFileVersion("3.1.0.0")]
 
 namespace V15Update {
 public static class UpdateEngine {
@@ -92,9 +94,9 @@ public static class UpdateEngine {
   try{Directory.Delete(backup,true);}catch{}
  }
  public static void Apply(string package,string target,Action<string> notify){
-  target=Path.GetFullPath(target);string app=Path.Combine(target,"V15VoiceStudio.exe");if(!File.Exists(Path.Combine(target,"ai","runtime","python.exe"))||!Directory.Exists(Path.Combine(target,"ai","models")))throw new Exception("Chọn đúng thư mục đã cài V15 1.4 đầy đủ, có V15VoiceStudio.exe và thư mục ai.");
+  target=Path.GetFullPath(target);string app=Path.Combine(target,"V15VoiceStudio.exe");if(!File.Exists(Path.Combine(target,"ai","runtime","python.exe"))||!Directory.Exists(Path.Combine(target,"ai","models")))throw new Exception("Chọn đúng thư mục ứng dụng đã cài đầy đủ, có V15VoiceStudio.exe và thư mục ai.");
   using(var updateLock=new FileStream(Path.Combine(target,".v15-update.lock"),FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.None)){
-   try{if(File.Exists(app))using(var check=new FileStream(app,FileMode.Open,FileAccess.ReadWrite,FileShare.None)){} }catch{throw new Exception("Đóng V15 Voice Studio trước khi cập nhật.");}
+   try{if(File.Exists(app))using(var check=new FileStream(app,FileMode.Open,FileAccess.ReadWrite,FileShare.None)){} }catch{throw new Exception("Đóng BÉO Voice Studio trước khi cập nhật.");}
    Recover(target);
    if(!File.Exists(app))throw new Exception("Không tìm thấy app sau khi khôi phục; chọn đúng thư mục cài.");
    Version baseVersion;if(!Version.TryParse(FileVersionInfo.GetVersionInfo(app).FileVersion,out baseVersion)||baseVersion<new Version(1,4,0,0))throw new Exception("Bạn đang chọn thư mục bản cũ hơn 1.4. Hãy chọn bản 1.4 đã cài đầy đủ.");
@@ -108,16 +110,16 @@ public static class UpdateEngine {
      Version installed,next,expected;if(!Version.TryParse(FileVersionInfo.GetVersionInfo(app).FileVersion,out installed)||!Version.TryParse(FileVersionInfo.GetVersionInfo(Path.Combine(stage,"V15VoiceStudio.exe")).FileVersion,out next)||!Version.TryParse(A(header,"version"),out expected))throw new Exception("Không đọc được phiên bản EXE trong ZIP.");
      if(next<installed||next.Major!=expected.Major||next.Minor!=expected.Minor||next.Build!=expected.Build)throw new Exception("Phiên bản trong ZIP không khớp hoặc cũ hơn app đang cài.");
     }Commit(stage,target,files,notify);
-    if(Environment.OSVersion.Platform==PlatformID.Win32NT){try{using(var key=Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Uninstall\V15VoiceStudio")){key.SetValue("DisplayVersion",FileVersionInfo.GetVersionInfo(app).FileVersion);key.SetValue("InstallLocation",target);key.SetValue("DisplayIcon",app);}}catch{}}
+    if(Environment.OSVersion.Platform==PlatformID.Win32NT){try{using(var key=Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Uninstall\V15VoiceStudio")){key.SetValue("DisplayName","BÉO Voice Studio");key.SetValue("DisplayVersion",FileVersionInfo.GetVersionInfo(app).FileVersion);key.SetValue("InstallLocation",target);key.SetValue("DisplayIcon",app);}}catch{}}
    }finally{if(Directory.Exists(stage))try{Directory.Delete(stage,true);}catch{}}
   }
  }
 }
 public class UpdateForm:Form {
  readonly Label label=new Label();readonly Button start=new Button();readonly TextBox package=new TextBox(),target=new TextBox();bool running;readonly bool restart;readonly int parent;
- public UpdateForm(string initialPackage,string initialTarget,bool reopen,int parentId){using(var stream=System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("V15VoiceStudio.Icon")){if(stream!=null)using(var icon=new Icon(stream)){Icon=(Icon)icon.Clone();}}restart=reopen;parent=parentId;Text="V15 · Cập nhật ZIP 3.0.0";Size=new Size(740,340);MinimumSize=Size;StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);var layout=new FlowLayoutPanel{Dock=DockStyle.Fill,Padding=new Padding(18),FlowDirection=FlowDirection.TopDown,WrapContents=false};Controls.Add(layout);
-  layout.Controls.Add(new Label{Text="CẬP NHẬT V15 TỪ ZIP · giữ model, WAV và giọng riêng",AutoSize=true});package.Width=670;package.ReadOnly=true;package.Text=initialPackage;layout.Controls.Add(package);var pick=new Button{Text="Chọn ZIP cập nhật",AutoSize=true};pick.Click+=(s,e)=>{using(var d=new OpenFileDialog{Filter="V15 ZIP|*.zip"})if(d.ShowDialog()==DialogResult.OK)package.Text=d.FileName;};layout.Controls.Add(pick);target.Width=670;target.ReadOnly=true;target.Text=initialTarget;layout.Controls.Add(target);var folder=new Button{Text="Chọn thư mục V15 đã cài",AutoSize=true};folder.Click+=(s,e)=>{using(var d=new FolderBrowserDialog{SelectedPath=target.Text})if(d.ShowDialog()==DialogResult.OK)target.Text=d.SelectedPath;};layout.Controls.Add(folder);start.Text="CẬP NHẬT";start.AutoSize=true;layout.Controls.Add(start);label.MaximumSize=new Size(660,0);label.AutoSize=true;layout.Controls.Add(label);
-  start.Click+=async(s,e)=>{if(running)return;running=true;start.Enabled=pick.Enabled=folder.Enabled=false;string src=package.Text,dest=target.Text;try{await Task.Run(()=>{if(parent>0)try{var p=Process.GetProcessById(parent);if(!p.WaitForExit(30000))throw new Exception("App chưa đóng. Đóng app rồi thử lại.");}catch(ArgumentException){}UpdateEngine.Apply(src,dest,message=>BeginInvoke((Action)(()=>label.Text=message)));});label.Text="Cập nhật hoàn tất. Mở V15VoiceStudio.exe tại thư mục vừa chọn.";if(restart){Process.Start(Path.Combine(dest,"V15VoiceStudio.exe"));running=false;Close();}}catch(Exception ex){label.Text="Chưa cập nhật: "+ex.Message;MessageBox.Show(this,label.Text,"V15",MessageBoxButtons.OK,MessageBoxIcon.Warning);}finally{running=false;if(!IsDisposed)start.Enabled=pick.Enabled=folder.Enabled=true;}};
+ public UpdateForm(string initialPackage,string initialTarget,bool reopen,int parentId){using(var stream=System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("V15VoiceStudio.Icon")){if(stream!=null)using(var icon=new Icon(stream)){Icon=(Icon)icon.Clone();}}restart=reopen;parent=parentId;Text="BÉO Voice Studio · Cập nhật ZIP 3.1.0";Size=new Size(740,340);MinimumSize=Size;StartPosition=FormStartPosition.CenterScreen;Font=new Font("Segoe UI",10);var layout=new FlowLayoutPanel{Dock=DockStyle.Fill,Padding=new Padding(18),FlowDirection=FlowDirection.TopDown,WrapContents=false};Controls.Add(layout);
+  layout.Controls.Add(new Label{Text="CẬP NHẬT BÉO VOICE STUDIO TỪ ZIP · giữ model, WAV và giọng riêng",AutoSize=true});package.Width=670;package.ReadOnly=true;package.Text=initialPackage;layout.Controls.Add(package);var pick=new Button{Text="Chọn ZIP cập nhật",AutoSize=true};pick.Click+=(s,e)=>{using(var d=new OpenFileDialog{Filter="V15 ZIP|*.zip"})if(d.ShowDialog()==DialogResult.OK)package.Text=d.FileName;};layout.Controls.Add(pick);target.Width=670;target.ReadOnly=true;target.Text=initialTarget;layout.Controls.Add(target);var folder=new Button{Text="Chọn thư mục V15 đã cài",AutoSize=true};folder.Click+=(s,e)=>{using(var d=new FolderBrowserDialog{SelectedPath=target.Text})if(d.ShowDialog()==DialogResult.OK)target.Text=d.SelectedPath;};layout.Controls.Add(folder);start.Text="CẬP NHẬT";start.AutoSize=true;layout.Controls.Add(start);label.MaximumSize=new Size(660,0);label.AutoSize=true;layout.Controls.Add(label);
+  start.Click+=async(s,e)=>{if(running)return;running=true;start.Enabled=pick.Enabled=folder.Enabled=false;string src=package.Text,dest=target.Text;try{await Task.Run(()=>{if(parent>0)try{var p=Process.GetProcessById(parent);if(!p.WaitForExit(30000))throw new Exception("App chưa đóng. Đóng app rồi thử lại.");}catch(ArgumentException){}UpdateEngine.Apply(src,dest,message=>BeginInvoke((Action)(()=>label.Text=message)));});label.Text="Cập nhật hoàn tất. Mở V15VoiceStudio.exe tại thư mục vừa chọn.";if(restart){Process.Start(Path.Combine(dest,"V15VoiceStudio.exe"));running=false;Close();}}catch(Exception ex){label.Text="Chưa cập nhật: "+ex.Message;MessageBox.Show(this,label.Text,"BÉO Voice Studio",MessageBoxButtons.OK,MessageBoxIcon.Warning);}finally{running=false;if(!IsDisposed)start.Enabled=pick.Enabled=folder.Enabled=true;}};
   FormClosing+=(s,e)=>{if(running){e.Cancel=true;label.Text="Đang cập nhật. Vui lòng chờ để bảo toàn dữ liệu.";}};
   if(parent>0)Shown+=(s,e)=>start.PerformClick();
  }

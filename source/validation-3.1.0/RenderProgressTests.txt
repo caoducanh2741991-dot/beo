@@ -1,0 +1,31 @@
+PASS Start/model loading has no fabricated deadline
+PASS One short progress sample is insufficient for an ETA
+PASS ETA uses measured elapsed processing time and observed work progress
+PASS An estimated finish is explicitly marked approximate
+PASS Percent never moves backward across phases
+PASS A long stalled step invalidates an obsolete deadline
+PASS A new measured advance refreshes the estimate
+PASS A progress callback cannot claim final 100% before verified completion
+PASS Failure or cancellation freezes progress and clears the live ETA
+PASS A new execution recalculates progress instead of retaining a stale deadline
+PASS Only successful completion records 100% and a real finish timestamp
+PASS Queue ETA includes selected future retries, excludes previous failures/completed/unchecked jobs, and scales input work only as an estimate
+PASS Restart preserves file selection and measured progress, but never reuses a stale ETA
+PASS Theme/font/layout preferences round-trip independently of voice settings
+PASS Corrupt or unsupported appearance values fall back to supported values
+PASS Readable foreground/background pairs exist for light
+PASS Readable foreground/background pairs exist for dark
+PASS Readable foreground/background pairs exist for warm
+PASS Readable foreground/background pairs exist for ocean
+PASS Readable foreground/background pairs exist for system
+PASS Core batch runner also protects unchecked files
+PASS A job requiring review is never marked completed 100%
+PASS Mode 1 exposes 100 only after the actual WAV bundle exists
+PASS Mode 1 actual fixture render reaches verified completion
+PASS Mode 1 progress stays monotonic from preparation through final rendering
+PASS Mode 1 keeps its report count with the new application brand
+PASS Mode 2 exposes 100 only after the actual WAV bundle exists
+PASS Mode 2 actual fixture render reaches verified completion
+PASS Mode 2 progress stays monotonic from preparation through final rendering
+PASS Mode 2 keeps its report count with the new application brand
+TOTAL RENDER PROGRESS 30 PASS. Deterministic clock, real persistence and fixture TTS with actual FFmpeg.

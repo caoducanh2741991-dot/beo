@@ -1,0 +1,102 @@
+BÉO VOICE STUDIO 3.1.0 — KẾT QUẢ KIỂM THỬ
+Ngày: 01/11/2026 (Asia/Saigon)
+
+PHẠM VI ĐÃ CHẠY
+Windows PE32+ GUI x64 .NET Framework 4.5: app và updater đã được build.
+EXE chạy trên Mono/Linux; WinForms thật trên Xvfb; xử lý audio bằng FFmpeg thật.
+TTS/AI/dịch trong bộ hồi quy là fixture/provider giả lập, không phải phép đo
+mới bằng Steven hoặc RTX2070. Các phép thử ETA dùng đồng hồ kiểm soát được.
+
+TỔNG C# ĐẠT: 637 kiểm tra trong 22 lượt/bộ.
+  Reno300Tests: 62 PASS
+  Acoustic300Tests: 11 PASS
+  RenderProgressTests: 30 PASS
+  Workflow217Tests: 47 PASS
+  Recovery216Tests: 42 PASS
+  Sync216Tests: 27 PASS
+  BatchTests: 12 PASS
+  TwoVoiceTests: 41 PASS
+  VoiceReportTests: 30 PASS
+  PunctuationTests: 20 PASS
+  BreathStreamingTests: 8 PASS
+  TextTargetTests: 37 PASS
+  AudioRepairTests: 45 PASS
+  CommunityVoiceTests: 20 PASS
+  VoiceDiagnosticTests: 26 PASS
+  LocalAiSafetyTests: 16 PASS
+  AnchoredTests: 65 PASS
+  NativeGpuTests: 15 PASS
+  UpdaterTests: 21 PASS
+  Reno300Tests-reopen: 3 PASS
+  Recovery216Tests-reopen: 8 PASS
+  BeoUiTests: 51 PASS
+
+PYTHON: 15 PASS (gpu_policy 11, worker_probe 4).
+
+GIAO DIỆN — 51 PASS
+- Tên cửa sổ/đầu trang BÉO Voice Studio; phiên bản 3.1.0.0.
+- Màn hình Hàng đợi, hai chế độ dùng chung trạng thái với Tạo voice.
+- Checkbox chọn file; file bỏ tick không bị render; phím Space bật/tắt đúng một lần.
+- Cột phần trăm có cell/thanh tiến độ thật, không bị lệch sang cột ETA.
+- Có ô giờ xong ước lượng và thời gian còn lại; hàng đợi và từng file nhất quán.
+- Năm chủ đề/ba cỡ chữ; đổi màu không cộng dồn mức phóng chữ.
+- Bảng file và ba nút chính hiển thị ở 1440x960, 1100x740, cỡ chữ 100/125%.
+- Giữ clone giọng, thư viện giọng và chọn hai giọng.
+- Ca UI thiếu engine thật chỉ tạo báo cáo cho file được chọn, không popup sửa.
+- File lỗi không bị đánh dấu 100%; tùy chọn màu/chữ được lưu riêng.
+Ảnh beo-progress-eta-demo là giao diện EXE thật với đồng hồ/dữ liệu kiểm thử,
+được gắn nhãn MINH HỌA TIẾN ĐỘ, không phải một bản render Reno bằng model thật.
+
+TIẾN ĐỘ / ETA — 30 PASS
+- Lúc khởi động hoặc thiếu mẫu tốc độ, không tạo deadline giả.
+- ETA từ elapsed time và mức tiến triển; có dấu ~ và thời gian còn lại.
+- Không lùi phần trăm khi giai đoạn kế tiếp bắt đầu lại progress cục bộ.
+- Callback không thể công bố 100 trước khi bộ WAV thực tồn tại.
+- Dừng/lỗi đóng băng tiến độ, hủy ETA cũ; bước trì trệ làm ETA hết hiệu lực.
+- Hàng đợi tính các file chọn còn lại, bỏ các file trước/đã xong/bỏ chọn.
+- Lưu phần trăm và chọn file qua lần mở; ETA cũ không được tái sử dụng.
+- Đồng hồ điều khiển được giúp kiểm tra công thức mà không phải ngủ/chờ GPU.
+- Chạy pipeline với audio fixture và FFmpeg thật, xác nhận tiến độ đơn điệu
+  và báo cáo đúng 1/2 file cho hai chế độ.
+
+HỒI QUY RENDER / AI REPAIR
+Giữ bộ kiểm thử Reno, VAN4/5/6, checkpoint mở lại ở tiến trình riêng, TXT đích,
+hai giọng, hơi thở, ngắt nghỉ, cache và GPU routing với fixture.
+Reno replay giữ các số đo từ báo cáo 2.0.17; không phải audio mới của Steven.
+VAN4/VAN5 ca giả lập tiếp tục đủ 7/7 và 18/18 chặng; VAN6 ca lỗi cue5-8 giữ
+các chặng đã đạt và kết thúc an toàn. SRT và dữ liệu lời TTS tiếp tục đối chiếu.
+Tất cả những ca này đã chạy lại trên assembly 3.1.0; log 3.0 không được tính
+thành kết quả thực thi 3.1.0.
+
+TƯƠNG THÍCH MODULE
+So sánh byte hash với 3.0.0: 8/8 module worker/TTS/GPU/audio nền giữ nguyên.
+  ai_worker.py
+  gpu_policy.py
+  NativeGpu.cs
+  ExternalSpeech.cs
+  TwoVoices.cs
+  Punctuation.cs
+  AudioProcessing.cs
+  AudioFinishing.cs
+
+GÓI CẬP NHẬT
+PASS: 18 kiểm tra trong 3 lượt cài cập nhật độc lập trên Mono/Linux.
+Updater 2.0.17 áp dụng lên cài đặt thử 2.0.17; updater 3.0.0 và 3.1.0 áp dụng
+lên cài đặt thử 3.0.0. Xác nhận phiên bản 3.1.0.0 và ProductName mới, đủ mã
+nguồn/hướng dẫn, không journal dở; hash model/runtime/mẫu clone/GPU/SRT/WAV
+được giữ nguyên. Chưa xác nhận thao tác cập nhật trên Windows vật lý.
+
+SHA256 CỦA BINARY ĐÃ CHẠY
+V15VoiceStudio.exe: 229d21fb19b2811527e2d7ee8badcc0f958f07f1595860a7c687d21b17e559f9
+V15Updater.exe: 1532e032945b5da3ecf7b4140bce31b7ca3433ec4402b074e06a8e6c55de5eb1
+
+PHẦN CHƯA XÁC NHẬN
+- Windows vật lý, registry/Start menu trên Windows thật.
+- GPU RTX2070, mẫu Steven, model clone và Qwen thật trong lượt nâng cấp này.
+- Thời gian ETA chính xác trên mọi engine/cấu hình: ETA luôn là ước lượng,
+  đặc biệt lúc nạp model, đổi giọng, AI sửa/dịch hoặc đọc cache.
+- AI viết lại TXT theo đích và SRT linh hoạt vẫn ngoài phạm vi nâng cấp này.
+
+Mã nguồn: payload/source trong ZIP; source sau cập nhật.
+Build Windows: source/BUILD_WINDOWS.cmd. Validation: source/validate310.py.
+Log chi tiết: source/validation-3.1.0 trong gói phát hành.

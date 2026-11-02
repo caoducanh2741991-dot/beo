@@ -61,4 +61,4 @@ PASS Canonical status mapping: TTS_FAILED
 PASS Canonical status mapping: AUDIO_ASSEMBLY_FAILED
 PASS Canonical status mapping: TRANSLATION_INCOMPLETE
 TOTAL RENO300 62 PASS. Report replay plus synthetic TTS/translation with actual FFmpeg; no new Steven/RTX measurement.
-Outputs: /tmp/Reno300 41b779569cd74ca2af8d5f3a513c2af9
+Outputs: /tmp/Reno300 8c41050c81d24d06b715b5b447094c56
