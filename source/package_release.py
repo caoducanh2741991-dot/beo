@@ -1,4 +1,4 @@
-"""Package the compiled 2.0.10 binaries and sources; include new community data once; keep installed runtimes and other models."""
+"""Package the compiled 2.0.11 binaries and sources; include new community data once; keep installed runtimes and other models."""
 from pathlib import Path
 import hashlib
 import shutil
@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2.0.10"
+VERSION = "2.0.11"
 WITH_COMMUNITY = "--with-community" in sys.argv
 
 def main():
@@ -27,10 +27,10 @@ def main():
             ignored.update({"weights", "deps", "sample.wav"})
         return ignored
     shutil.copytree(ROOT / "source", payload / "source", ignore=source_ignore)
-    shutil.copytree(ROOT / "validation", payload / "source" / "validation-2.0.10", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
+    shutil.copytree(ROOT / "validation", payload / "source" / "validation-2.0.11", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
     guide = ROOT / ("HUONG_DAN_" + VERSION + ".txt")
     shutil.copyfile(guide, payload / guide.name)
-    manifest = ET.Element("update", product="V15VoiceStudio", version="2.0.10", kind="core", space=str(3 * sum(p.stat().st_size for p in payload.rglob("*") if p.is_file()) + 128 * 1024 * 1024))
+    manifest = ET.Element("update", product="V15VoiceStudio", version="2.0.11", kind="core", space=str(3 * sum(p.stat().st_size for p in payload.rglob("*") if p.is_file()) + 128 * 1024 * 1024))
     assert not list((payload / "source").glob("Creator*.cs")), "Removed video feature must not ship"
     for file in sorted(p for p in payload.rglob("*") if p.is_file()):
         ET.SubElement(manifest, "file", path=file.relative_to(payload).as_posix(), size=str(file.stat().st_size), sha256=hashlib.sha256(file.read_bytes()).hexdigest())

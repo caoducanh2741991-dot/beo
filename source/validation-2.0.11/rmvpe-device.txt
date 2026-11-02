@@ -1,0 +1,15 @@
+test_01_original_cuda_failure_reproduced (__main__.DeviceRegression.test_01_original_cuda_failure_reproduced) ... ok
+test_02_cuda_zero_constructor_passes_without_configs (__main__.DeviceRegression.test_02_cuda_zero_constructor_passes_without_configs) ... ok
+test_03_requested_cuda_index_is_preserved (__main__.DeviceRegression.test_03_requested_cuda_index_is_preserved) ... ok
+test_04_cuda_without_index_means_zero (__main__.DeviceRegression.test_04_cuda_without_index_means_zero) ... ok
+test_05_cpu_remains_float32 (__main__.DeviceRegression.test_05_cpu_remains_float32) ... ok
+test_06_explicit_half_remains_explicit_on_cuda (__main__.DeviceRegression.test_06_explicit_half_remains_explicit_on_cuda) ... ok
+test_07_missing_device_fails_before_checkpoint_load (__main__.DeviceRegression.test_07_missing_device_fails_before_checkpoint_load) ... ok
+test_08_unsupported_backend_fails_before_load (__main__.DeviceRegression.test_08_unsupported_backend_fails_before_load) ... ok
+test_09_no_webui_config_import_remains (__main__.DeviceRegression.test_09_no_webui_config_import_remains) ... ok
+test_10_local_packages_win_over_installed_name_collisions (__main__.DeviceRegression.test_10_local_packages_win_over_installed_name_collisions) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.017s
+
+OK

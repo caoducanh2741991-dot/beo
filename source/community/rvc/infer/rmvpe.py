@@ -484,26 +484,20 @@ class MelSpectrogram(torch.nn.Module):
 class RMVPE:
     def __init__(self, model_path, is_half, device=None):
         self.resample_kernel = {}
-        self.resample_kernel = {}
         if isinstance(is_half, str):
             is_half = is_half.lower() == "true"
+        # V15 selects device/precision once in gpu_policy. Do not import the
+        # upstream WebUI's configs package or silently choose another device.
         if device is None:
-            from configs.config import infer_device, infer_dtype
-
-            device = str(infer_device)
-            is_half = infer_dtype == torch.float16
-        elif str(device).startswith("cuda"):
-            from configs.config import get_device_dtype_sm
-
-            parsed_device = torch.device(device)
-            device_index = parsed_device.index
-            if device_index is None:
-                device_index = torch.cuda.current_device()
-            selected_device, selected_dtype, _, _ = get_device_dtype_sm(device_index)
-            device = str(selected_device)
-            is_half = selected_dtype == torch.float16
-        else:
+            raise ValueError("V15 RMVPE requires an explicitly selected device")
+        parsed_device = torch.device(device)
+        if parsed_device.type == "cpu":
+            device = "cpu"
             is_half = False
+        elif parsed_device.type == "cuda":
+            device = "cuda:" + str(0 if parsed_device.index is None else parsed_device.index)
+        else:
+            raise ValueError("V15 RMVPE supports CPU or NVIDIA CUDA only")
         self.is_half = is_half
         self.device = device
         self.mel_extractor = MelSpectrogram(
@@ -523,7 +517,7 @@ class RMVPE:
 
             def get_default_model():
                 model = E2E(4, 1, (2, 2))
-                ckpt = torch.load(model_path, map_location="cpu")
+                ckpt = torch.load(model_path, map_location="cpu", weights_only=True)
                 model.load_state_dict(ckpt)
                 model.eval()
                 if is_half:

@@ -83,7 +83,7 @@ def run():
         from types import SimpleNamespace
         device, info = select_device(torch, a.device)
         ACTIVE_DEVICE = device
-        info += " · HuBERT/RVC/RMVPE: " + ("CUDA" if device.startswith("cuda") else "CPU") + "; index: CPU"
+        info += " · RVC runtime 2.0.11 · HuBERT/RVC/RMVPE: " + ("CUDA" if device.startswith("cuda") else "CPU") + "; index: CPU"
         torch.set_num_threads(max(1, min(4, a.threads)))
         torch.set_num_interop_threads(1)
         faiss.omp_set_num_threads(max(1, min(4, a.threads)))

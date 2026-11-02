@@ -1,0 +1,24 @@
+V15 Voice Studio 2.0.11 · targeted Adam RVC GPU startup fix
+
+ROOT CAUSE
+RMVPE in 2.0.10 imported configs.config.get_device_dtype_sm only for explicit CUDA. The upstream WebUI configs package is absent in V15. CPU tests did not visit that branch.
+Original constructor reproduced ModuleNotFoundError: configs before CUDA allocation or checkpoint access.
+
+FIX
+RMVPE receives explicit device and requested precision from the V15 worker and does not import WebUI configs or re-select hardware. CPU stays float32. CUDA index and caller precision are retained; current worker requests float32. Checkpoint load explicitly uses weights_only=True.
+Local infer/module/tools package declarations avoid unrelated installed package names taking precedence. Device reports include RVC runtime 2.0.11 to identify the loaded worker.
+No changes to model weights, index, FAISS, existing GPU policy, voice catalogue, private clone samples, SRT fitting, WAV output or queue algorithms.
+
+TESTS
+10 regression checks: reproduce old CUDA failure; execute patched CUDA constructor with mocked allocations; preserve cuda:2; default cuda to index 0; CPU float32; explicit CUDA half; missing/unsupported device failures before checkpoint access; no configs import; local packages win against conflicting installed names.
+Actual model CPU pipeline: native Kokoro Michael → HuBERT/RVC/RMVPE + original index → preview, exact SRT frame counts, measured speed bounds, natural TXT, A/B trial and merge: 9 passed.
+Real conversion cancellation and cleanup: 2 passed.
+Real worker protocol error isolation and offline connections: 3 passed.
+Existing core/UI suites passed on Mono/.NET4.5/Xvfb. Individual counts are in validation-summary211.txt.
+
+LIMITS
+No physical NVIDIA GPU or native Windows execution is available here. CUDA constructor branch testing mocks tensor allocations and is not evidence of CUDA kernel execution. No new speaker similarity claim or quality rating.
+
+PACKAGE
+Small core ZIP for an existing 2.0.10 installation with Adam data. Excludes all community weights, dependency binaries, catalogue replacements and GPU/runtime data. User does not need the previous 708 MB download again.
+Release integrity/upgrade matrix results are added with the final release note.

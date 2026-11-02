@@ -6,3 +6,5 @@ Only inference synthesizer and RMVPE modules; no WebUI, no training.
 V15 changes: RMVPE-only worker, local-only checkpoint loading with weights_only=True, network disabled, persistent index cache, protect=0.33, index_rate=0.75, bounded chunks, FP32 inference, CUDA graph disabled.
 Pipeline raises on index failure; no silent no-index fallback.
 FAISS 1.11.0 cp311/cp312 Windows wheels extracted in deps; upstream wheel license metadata included.
+
+V15 2.0.11 fix: RMVPE requires explicit CPU/CUDA device supplied by the V15 worker, respects caller precision on CUDA, keeps CPU float32, and never imports the upstream WebUI configs module. Checkpoint torch.load uses weights_only=True explicitly. Local infer/module/tools __init__.py files prevent unrelated installed packages from taking precedence.

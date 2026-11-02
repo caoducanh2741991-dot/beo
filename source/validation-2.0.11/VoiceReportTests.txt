@@ -28,4 +28,4 @@ PASS Legacy sentence joining retains original cue mapping in report
 PASS Interrupted-process journal retains measured progress without claiming completion
 PASS Mixed failure/success batch emits independent per-file reports
 PASS Batch checkpoint rollback does not erase the failed attempt report
-TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo 6ddd8ff3156940028617ec5b19baf0f9
+TOTAL VOICE REPORT 30 passed. Reports fixture folder: /tmp/V15 báo cáo e7a2836779ae4aa482429e24f9f6804a
