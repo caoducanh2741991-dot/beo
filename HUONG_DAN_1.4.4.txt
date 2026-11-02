@@ -1,0 +1,63 @@
+V15 VOICE STUDIO 1.4.4 — SỬA GIỌNG SAO CHÉP VÀ PHỤC HỒI KHI AI TREO
+
+CÀI CẬP NHẬT
+Nếu đang dùng 1.4.3.1: dừng tác vụ đang chạy, vào Công cụ & thiết lập >
+Cập nhật từ ZIP > chọn V15VoiceStudio_1.4.4_Update.zip.
+Khi app mở lại, kiểm tra tiêu đề và tab Công cụ đều ghi 1.4.4.
+Nếu công cụ cập nhật cũ gặp lỗi Contains(Char), giải nén toàn bộ ZIP 1.4.4
+vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục V15 đang cài
+có V15VoiceStudio.exe cùng ai/runtime và ai/models.
+Giữ model, giọng riêng, thiết lập và gói GPU đã cài. Không cần tải lại model/GPU.
+
+PHẦN SỬA GIỌNG SAO CHÉP
+• Qwen sử dụng cấu hình sinh có lấy mẫu, điều chỉnh theo từng lần thử, thay
+  cho chế độ cố định cũ. Mỗi cụm lời thử tối đa 3 lần khi âm thanh bất thường.
+• Cụm lời dài được chia nhỏ, giữ đủ từ theo thứ tự. Giới hạn token/thời lượng
+  dựa trên độ dài lời. Âm thanh chạm giới hạn không được nhận như câu đã hoàn tất.
+• Từ chối âm thanh trống, im lặng, NaN/Inf hoặc dài bất thường; tạo lại bằng
+  seed và cấu hình khác. Lỗi model/mẫu tham chiếu được báo đúng nguyên nhân.
+• Chặn giới hạn thời gian tại bộ sinh token của Qwen và tại tiến trình bên ngoài.
+  Tiến trình treo hoặc dừng bất thường được khởi động lại tối đa 1 lần để thử lại
+  câu hiện tại. Thời gian CPU/GPU khác nhau và không bị kéo dài bởi trạng thái giả.
+• Khi file vẫn thất bại, tiến trình cũ được dọn; hàng đợi tiếp tục file kế tiếp
+  bằng tiến trình sạch. Không xuất WAV tổng còn thiếu câu hoặc chồng timeline.
+• Auto chuyển sang CPU khi có lỗi CUDA được nhận diện. GPU bắt buộc sẽ báo lỗi
+  thay vì tự chuyển CPU. Hủy tác vụ không kích hoạt thử lại hoặc khởi động lại.
+• Bỏ điều kiện từ chối chỉ vì thư viện ONNX Runtime đã được một phụ thuộc nạp.
+  Đây không phải bằng chứng quá trình tổng hợp Qwen đang chạy sai thiết bị.
+
+KHI ĐANG CHẠY
+Thanh trạng thái hiển thị tên WAV đích, khối SRT, timecode, cụm lời, lần thử,
+thiết bị và số giây đã chờ. Trong một lần sinh, thời gian vẫn cập nhật mỗi 2 giây.
+“Lần 2/3” hoặc “khởi động lại” nghĩa là app đang phục hồi, không bỏ qua câu.
+Tổng thời gian một câu có thể dài hơn khi phải thử lại; CPU thường chậm hơn GPU.
+Nếu muốn dừng, dùng Dừng tác vụ. Khi đã dừng mới chạy lại hoặc cập nhật.
+
+NẾU FILE VẪN LỖI
+Di chuột lên ô Kết quả / lỗi trong hàng đợi để xem đầy đủ thông báo.
+Lỗi AI ghi rõ file, khối SRT, timecode và thiết bị; nhật ký nằm trong:
+%LOCALAPPDATA%\V15VoiceStudio\logs\ai-errors.log
+Nhật ký nằm trong dữ liệu ứng dụng; kết quả cạnh SRT/TXT vẫn chỉ là WAV.
+Bạn có thể gửi thông báo đầy đủ và khối SRT gây lỗi để kiểm tra đúng trường hợp.
+
+MẪU GIỌNG
+Nên dùng mẫu 10–15 giây, một người nói rõ, ít nhiễu/nhạc và không bị cắt giữa từ.
+Chấp nhận tham chiếu 3–30 giây; công cụ nhập mẫu của app vẫn chọn đoạn ngắn.
+Nếu nhập bản chép lời mẫu, nội dung phải khớp đúng đoạn được chọn. Nếu chưa có
+bản khớp, để trống để dùng đặc trưng người nói; chất lượng giống giọng có thể khác.
+
+GIỮ NGUYÊN CÁCH XUẤT VÀ CĂN SRT
+Nhận nhiều SRT/TXT, xử lý lần lượt, WAV nằm cạnh file gốc và không ghi đè WAV cũ.
+Khóa SRT giữ mốc, giảm khoảng nghỉ thêm rồi tăng tốc trong giới hạn đã đặt.
+Ngắt nghỉ và hơi thở dùng chung Tạo voice / Hàng đợi. Gói ONNX 1.4.3 dành cho
+Kokoro/LibriTTS/Kitten/Piper; Qwen/Chatterbox tiếp tục dùng gói CUDA124 đã cài.
+
+KIỂM CHỨNG VÀ GIỚI HẠN
+Đã thử model Qwen 0.6B thật trên CPU ở hai chế độ sao chép: có bản chép lời
+và chỉ đặc trưng người nói. Mẫu lời thử được nhận dạng tiếng nói để đối chiếu.
+Đã kiểm tra chuỗi C# > Python > Qwen > WAV, timeline khóa, và các ca lỗi mô phỏng:
+âm thanh sai, treo, dừng tiến trình, CUDA, hủy tác vụ, lỗi ở khối 10 rồi chạy file sau.
+EXE biên dịch theo bộ tham chiếu .NET Framework 4.5 của Microsoft, giữ sửa lỗi updater.
+Chưa thử trực tiếp Windows/RTX 2070, chưa có mẫu ADAM và file Reno của người dùng
+để tái hiện đúng nội dung riêng. App không tích hợp ASR kiểm duyệt mọi câu khi chạy;
+kiểm tra tự động khi render tập trung định dạng, thời lượng và tín hiệu âm thanh.

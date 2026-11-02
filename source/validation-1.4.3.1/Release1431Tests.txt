@@ -1,7 +1,0 @@
-PASS repair ZIP CRC, hashes, Windows bootstrap line endings and identical bootstrap/payload updater
-PASS 1.4.0 folder repair through extracted new updater; all payload hashes match and all 11 user/model/runtime fixtures preserved
-PASS 1.4.0 zip repair through extracted new updater; all payload hashes match and all 11 user/model/runtime fixtures preserved
-PASS 1.4.3 folder repair through extracted new updater; all payload hashes match and all 11 user/model/runtime fixtures preserved
-PASS 1.4.3 zip repair through extracted new updater; all payload hashes match and all 11 user/model/runtime fixtures preserved
-PASS downgrade to original 1.4.3 is rejected without replacing current app
-PASS release 1.4.3.1; Mono behavior tests and Microsoft .NET Framework 4.5 reference compilation; physical Windows not tested

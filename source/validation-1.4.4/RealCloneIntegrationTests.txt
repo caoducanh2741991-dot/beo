@@ -1,0 +1,42 @@
+RENDER 0 Đọc câu 1/1
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng · 0s / 600s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng · 2s / 600s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng · CPU · đã chọn thủ công
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng · CPU · đã chọn thủ công · 4s / 600s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng · CPU · đã chọn thủ công · 6s / 600s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng · CPU · đã chọn thủ công · 8s / 600s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng · CPU · đã chọn thủ công · 10s / 600s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang nạp model và mẫu giọng · CPU · đã chọn thủ công · 12s / 600s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang tổng hợp giọng · CPU · đã chọn thủ công
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang tổng hợp giọng · CPU · đã chọn thủ công · 0s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 2s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 4s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 6s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 8s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 10s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 12s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 14s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 16s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 18s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 20s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 22s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 24s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 26s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 28s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Cụm 1/1 · Sinh cụm lời · lần thử 1/3 · CPU · đã chọn thủ công · 30s / 543s
+ACTIVITY real_clone_locked.wav · khối 1/1 [00:00:00,000–00:00:12,000] · Đang kiểm tra và chuẩn hóa WAV · CPU · đã chọn thủ công
+RENDER 95 Hoàn tất WAV · kiểm tra độ dài
+RENDER 100 Hoàn tất: real_clone_locked (2).wav
+PASS real Qwen 0.6B x-vector clone via production C# process bridge, PCM mono 24k, exact 12s locked WAV, unchanged SRT, voiced audio 3.352s, CPU · đã chọn thủ công
+OUTPUT /tmp/v15-real-ai/real_clone_locked (2).wav
+RENDER 0 Đọc câu 1/1
+ACTIVITY real_clone_tight.wav · khối 1/1 [00:00:00,000–00:00:03,300] · Đang tổng hợp giọng · CPU · đã chọn thủ công
+ACTIVITY real_clone_tight.wav · khối 1/1 [00:00:00,000–00:00:03,300] · Đang tổng hợp giọng · CPU · đã chọn thủ công · 0s / 543s
+ACTIVITY real_clone_tight.wav · khối 1/1 [00:00:00,000–00:00:03,300] · Dùng lại âm thanh hợp lệ để đổi tốc độ · CPU · đã chọn thủ công
+ACTIVITY real_clone_tight.wav · khối 1/1 [00:00:00,000–00:00:03,300] · Đang kiểm tra và chuẩn hóa WAV · CPU · đã chọn thủ công
+RENDER 95 Hoàn tất WAV · kiểm tra độ dài
+RENDER 100 Hoàn tất: real_clone_tight.wav
+PASS same accepted clone fits a locked 3.300s cue using bounded tempo adjustment; speed 1.034; SRT text/timecodes unchanged
+TIGHT_OUTPUT /tmp/v15-real-ai/real_clone_tight.wav

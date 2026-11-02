@@ -1,90 +1,63 @@
-V15 VOICE STUDIO 1.4.3.1 — BẢN SỬA CÔNG CỤ CẬP NHẬT WINDOWS
+V15 VOICE STUDIO 1.4.4 — SỬA GIỌNG SAO CHÉP VÀ PHỤC HỒI KHI AI TREO
 
-Khắc phục: Method not found: Boolean System.String.Contains(Char).
-Bản cũ tham chiếu API không có trong .NET Framework trên Windows. Bản này
-biên dịch lại APP và UPDATER bằng bộ tham chiếu .NET Framework 4.5 của Microsoft.
+CÀI CẬP NHẬT
+Nếu đang dùng 1.4.3.1: dừng tác vụ đang chạy, vào Công cụ & thiết lập >
+Cập nhật từ ZIP > chọn V15VoiceStudio_1.4.4_Update.zip.
+Khi app mở lại, kiểm tra tiêu đề và tab Công cụ đều ghi 1.4.4.
+Nếu công cụ cập nhật cũ gặp lỗi Contains(Char), giải nén toàn bộ ZIP 1.4.4
+vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục V15 đang cài
+có V15VoiceStudio.exe cùng ai/runtime và ai/models.
+Giữ model, giọng riêng, thiết lập và gói GPU đã cài. Không cần tải lại model/GPU.
 
-CÁCH CÀI BẢN SỬA LẦN NÀY:
-1. Đóng app V15 và cửa sổ cập nhật cũ.
-2. Giải nén toàn bộ V15VoiceStudio_1.4.3.1_Update.zip vào MỘT THƯ MỤC MỚI.
-   Không giải nén chồng vào gói cập nhật cũ, không giải nén vào thư mục app đã cài.
-3. Mở thư mục mới, chạy CAP_NHAT.cmd. Công cụ mới phải hiển thị 1.4.3.1.
-4. Chọn đúng thư mục V15 đang cài, có V15VoiceStudio.exe, ai/runtime và ai/models.
-5. Bấm CẬP NHẬT. Khi mở lại, app hiển thị 1.4.3.1.
+PHẦN SỬA GIỌNG SAO CHÉP
+• Qwen sử dụng cấu hình sinh có lấy mẫu, điều chỉnh theo từng lần thử, thay
+  cho chế độ cố định cũ. Mỗi cụm lời thử tối đa 3 lần khi âm thanh bất thường.
+• Cụm lời dài được chia nhỏ, giữ đủ từ theo thứ tự. Giới hạn token/thời lượng
+  dựa trên độ dài lời. Âm thanh chạm giới hạn không được nhận như câu đã hoàn tất.
+• Từ chối âm thanh trống, im lặng, NaN/Inf hoặc dài bất thường; tạo lại bằng
+  seed và cấu hình khác. Lỗi model/mẫu tham chiếu được báo đúng nguyên nhân.
+• Chặn giới hạn thời gian tại bộ sinh token của Qwen và tại tiến trình bên ngoài.
+  Tiến trình treo hoặc dừng bất thường được khởi động lại tối đa 1 lần để thử lại
+  câu hiện tại. Thời gian CPU/GPU khác nhau và không bị kéo dài bởi trạng thái giả.
+• Khi file vẫn thất bại, tiến trình cũ được dọn; hàng đợi tiếp tục file kế tiếp
+  bằng tiến trình sạch. Không xuất WAV tổng còn thiếu câu hoặc chồng timeline.
+• Auto chuyển sang CPU khi có lỗi CUDA được nhận diện. GPU bắt buộc sẽ báo lỗi
+  thay vì tự chuyển CPU. Hủy tác vụ không kích hoạt thử lại hoặc khởi động lại.
+• Bỏ điều kiện từ chối chỉ vì thư viện ONNX Runtime đã được một phụ thuộc nạp.
+  Đây không phải bằng chứng quá trình tổng hợp Qwen đang chạy sai thiết bị.
 
-Không dùng nút cập nhật của app cũ để cài bản sửa lần này: nút đó gọi updater cũ.
-Không cần tải lại 4 phần GPU ONNX. Khi đã lên 1.4.3.1, cài gói GPU ONNX 1.4.3
-bằng nút Cập nhật từ ZIP nếu chưa cài. Model, giọng riêng và WAV được giữ nguyên.
-Phạm vi: sửa tương thích bộ cập nhật; lỗi render giọng sao chép vẫn được tạm gác.
+KHI ĐANG CHẠY
+Thanh trạng thái hiển thị tên WAV đích, khối SRT, timecode, cụm lời, lần thử,
+thiết bị và số giây đã chờ. Trong một lần sinh, thời gian vẫn cập nhật mỗi 2 giây.
+“Lần 2/3” hoặc “khởi động lại” nghĩa là app đang phục hồi, không bỏ qua câu.
+Tổng thời gian một câu có thể dài hơn khi phải thử lại; CPU thường chậm hơn GPU.
+Nếu muốn dừng, dùng Dừng tác vụ. Khi đã dừng mới chạy lại hoặc cập nhật.
 
-HƯỚNG DẪN TÍNH NĂNG GIỮ TỪ BẢN 1.4.3:
+NẾU FILE VẪN LỖI
+Di chuột lên ô Kết quả / lỗi trong hàng đợi để xem đầy đủ thông báo.
+Lỗi AI ghi rõ file, khối SRT, timecode và thiết bị; nhật ký nằm trong:
+%LOCALAPPDATA%\V15VoiceStudio\logs\ai-errors.log
+Nhật ký nằm trong dữ liệu ứng dụng; kết quả cạnh SRT/TXT vẫn chỉ là WAV.
+Bạn có thể gửi thông báo đầy đủ và khối SRT gây lỗi để kiểm tra đúng trường hợp.
 
-V15 VOICE STUDIO 1.4.3 — CẬP NHẬT ZIP
+MẪU GIỌNG
+Nên dùng mẫu 10–15 giây, một người nói rõ, ít nhiễu/nhạc và không bị cắt giữa từ.
+Chấp nhận tham chiếu 3–30 giây; công cụ nhập mẫu của app vẫn chọn đoạn ngắn.
+Nếu nhập bản chép lời mẫu, nội dung phải khớp đúng đoạn được chọn. Nếu chưa có
+bản khớp, để trống để dùng đặc trưng người nói; chất lượng giống giọng có thể khác.
 
-1. CẬP NHẬT APP
-Trong bản đang cài, vào Công cụ & thiết lập > Cập nhật từ ZIP, chọn
-V15VoiceStudio_1.4.3_Update.zip. Chờ công cụ hoàn tất và mở lại app.
-Nếu bản cũ chưa có nút cập nhật: giải nén ZIP này sang thư mục tạm,
-chạy CAP_NHAT.cmd và chọn đúng thư mục đang cài có ai/runtime và ai/models.
-Kiểm tra tiêu đề app và tab Công cụ & thiết lập đều ghi 1.4.3.
-Không cần cài lại EXE lớn. Giữ thư mục model, runtime và dữ liệu giọng đã cài.
+GIỮ NGUYÊN CÁCH XUẤT VÀ CĂN SRT
+Nhận nhiều SRT/TXT, xử lý lần lượt, WAV nằm cạnh file gốc và không ghi đè WAV cũ.
+Khóa SRT giữ mốc, giảm khoảng nghỉ thêm rồi tăng tốc trong giới hạn đã đặt.
+Ngắt nghỉ và hơi thở dùng chung Tạo voice / Hàng đợi. Gói ONNX 1.4.3 dành cho
+Kokoro/LibriTTS/Kitten/Piper; Qwen/Chatterbox tiếp tục dùng gói CUDA124 đã cài.
 
-2. GPU CHO MỌI NGUỒN GIỌNG
-Công cụ & thiết lập 1.4.3 > Thiết bị chạy voice:
-• Auto: ưu tiên GPU khi đã có gói tương ứng và driver hoạt động.
-  Nếu GPU ONNX lỗi, tạo lại câu bằng CPU và giữ CPU cho tác vụ hiện tại.
-• NVIDIA GPU: bắt buộc CUDA; báo lỗi khi không chạy được, không âm thầm nhận CPU.
-• CPU: chạy bằng thư viện CPU có sẵn.
-Thiết lập này áp dụng cho Tạo voice, nghe thử, so sánh và hàng đợi.
-
-Kokoro / LibriTTS / Kitten / Piper:
-Tải đủ V15_ONNX_GPU_1.4.3_01.zip đến 04.zip, đặt cạnh nhau.
-Cập nhật APP lên 1.4.3 trước. Sau đó Cập nhật từ ZIP, chọn phần 01.
-Không cần tự giải nén các phần GPU. Cần khoảng 8 GB trống khi cài gói này.
-Gói ONNX được cài riêng trong engine/gpu, không thay thư viện CPU hoặc Torch.
-Gói đóng kèm CUDA 12.8 và cuDNN 9.8. Khuyến nghị driver NVIDIA 572.61 trở lên.
-Sau khi cài, app chạy offline; không cần tự cài CUDA Toolkit.
-
-Qwen / Chatterbox:
-Tiếp tục dùng gói V15_GPU_CUDA124 gồm 8 phần đã cung cấp ở bản trước.
-Nếu đã cài gói này thì không cần tải hoặc cài lại.
-Gói GPU ONNX không thay thế gói CUDA124 của hai nguồn này.
-
-Kiểm tra GPU / VRAM kiểm tra Torch CUDA và báo tình trạng cài gói ONNX.
-Chọn một giọng ở Tạo voice rồi bấm Thử giọng đang chọn trên GPU để tạo
-một câu thử thực tế bằng CUDA, xem trạng thái thành công hoặc nguyên nhân lỗi.
-RTX 2070 8 GB: chạy lần lượt, mỗi lần một model. Gói dùng CUDA 12 để hỗ trợ Turing.
-Một số toán tử vẫn có thể chạy CPU; chọn GPU không bảo đảm mọi giọng nhanh hơn CPU.
-Bản này chưa được thử trực tiếp trên Windows và GPU vật lý của người dùng.
-
-3. NGẮT NGHỈ THEO DẤU CÂU
-Tạo voice > cuộn bảng thiết lập bên phải > 03 Ngắt nghỉ theo dấu câu.
-• Auto: giữ văn bản nguyên câu, để model tự quyết định nhịp tự nhiên.
-• Tùy chỉnh: đặt thời gian nghỉ, từ 0 đến 1,50 giây:
-  Dấu phẩy: mặc định 0,14 giây.
-  Dấu chấm / chấm phẩy / hai chấm: 0,30 giây.
-  Dấu hỏi / cảm thán: 0,35 giây.
-  Xuống đoạn trong một khối: 0,50 giây.
-Khoảng lặng sẵn ở đầu/cuối đoạn được trừ vào khoảng nghỉ thêm.
-Số thập phân, hàng nghìn và các viết tắt thông dụng không bị tách ở dấu chấm/phẩy.
-Tùy chỉnh tạo từng cụm riêng; nên dùng Auto nếu muốn giữ ngữ điệu liền mạch nhất.
-Tùy chỉnh giữ nhịp câu ngắn ở tốc độ gốc; tùy chọn làm chậm câu ngắn chỉ áp dụng
-trong Auto, để không kéo dài các khoảng nghỉ đã đặt.
-
-Khóa SRT: giữ nguyên mốc gốc. Khi câu không đủ chỗ, rút khoảng nghỉ thêm trước,
-rồi tăng tốc trong giới hạn đã chọn. Nếu vẫn dài, báo câu lỗi và không xuất WAV sai.
-Timeline linh hoạt: khoảng nghỉ cuối câu dùng giá trị lớn hơn giữa khoảng nghỉ
-timeline, dấu câu và hơi thở; không cộng chồng cả ba khoảng nghỉ.
-Thiết lập dấu câu được lưu cùng preset/phiên và dùng chung cho hàng đợi nhiều file.
-
-4. HƠI THỞ VÀ KẾT QUẢ
-04 Hơi thở vẫn có Auto / Tùy chọn / Không dùng; là mục riêng với ngắt nghỉ dấu câu.
-Hơi thở và ngắt nghỉ áp dụng chung cho cả Tạo voice và Hàng đợi nhiều file.
-Chỉ xuất WAV cạnh SRT/TXT gốc. Nếu trùng tên, thêm số, không ghi đè WAV đã có.
-File dán trực tiếp cần chọn nơi lưu WAV. Nhiều file xử lý lần lượt trong hàng đợi.
-Giới hạn mỗi file: 20.000 khối, 6 giờ. 1 khối là một mục SRT có mốc bắt đầu/kết thúc.
-
-5. PHẠM VI BẢN NÀY
-Sửa phần kiểm tra GPU trả chuỗi mã hóa; thêm GPU ONNX và ngắt nghỉ dấu câu.
-Chức năng sao chép giọng được giữ nguyên. Lỗi render giọng sao chép được tạm gác
-theo yêu cầu; bản 1.4.3 không tuyên bố đã sửa hoặc kiểm chứng lỗi đó.
+KIỂM CHỨNG VÀ GIỚI HẠN
+Đã thử model Qwen 0.6B thật trên CPU ở hai chế độ sao chép: có bản chép lời
+và chỉ đặc trưng người nói. Mẫu lời thử được nhận dạng tiếng nói để đối chiếu.
+Đã kiểm tra chuỗi C# > Python > Qwen > WAV, timeline khóa, và các ca lỗi mô phỏng:
+âm thanh sai, treo, dừng tiến trình, CUDA, hủy tác vụ, lỗi ở khối 10 rồi chạy file sau.
+EXE biên dịch theo bộ tham chiếu .NET Framework 4.5 của Microsoft, giữ sửa lỗi updater.
+Chưa thử trực tiếp Windows/RTX 2070, chưa có mẫu ADAM và file Reno của người dùng
+để tái hiện đúng nội dung riêng. App không tích hợp ASR kiểm duyệt mọi câu khi chạy;
+kiểm tra tự động khi render tập trung định dạng, thời lượng và tín hiệu âm thanh.

@@ -1,0 +1,3 @@
+Pre-package release checks passed: ZIP CRC, every manifest hash, bootstrap parity, seven upgrade routes from 1.4.0/1.4.3/1.4.3.1, installed 1.4.3.1 updater, twelve preservation fixtures per route, downgrade rejection, EXE version 1.4.4.0 and no String.Contains(Char) calls.
+The exact final ZIP is checked again after packaging; its SHA-256 result is stored outside this archive to avoid a recursive package hash.
+Physical Windows/GPU not tested.

@@ -52,13 +52,13 @@ def ui():
     with socket.create_connection(('127.0.0.1',port),.2):break
    except OSError:time.sleep(.1)
   else:raise RuntimeError('Xvfb failed '+x.stderr.read().decode())
-  for name in ['UiTests','Ui1431Tests']:
+  for name in ['UiTests','Ui144Tests']:
    data=tempfile.mkdtemp(prefix='v15-ui-state-');run(name,env=dict(ENV,DISPLAY='127.0.0.1:'+str(display),XDG_DATA_HOME=data),timeout=45)
  finally:x.terminate();x.wait(timeout=5)
 def main():
  subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15VoiceStudio.exe')]+REFS+[str(SOURCE/x) for x in APP],env=ENV,check=True)
  subprocess.run([MONO,MCS,'-target:winexe','-platform:x64','-out:'+str(ROOT/'V15Updater.exe')]+REFS+['-r:'+str(REF_DIR/'System.IO.Compression.dll'),'-r:'+str(REF_DIR/'System.IO.Compression.FileSystem.dll'),str(SOURCE/'Updater.cs')],env=ENV,check=True)
- specs={'Tests':['Tests.cs'],'BatchTests':['BatchTests.cs'],'FeatureTests':['FeatureTests.cs'],'Update141Tests':['Update141Tests.cs'],'BreathStreamingTests':['Update141Tests.cs','BreathStreamingTests.cs'],'PunctuationTests':['PunctuationTests.cs'],'NativeGpuTests':['NativeGpuTests.cs'],'UiTests':['UiTests.cs'],'Ui1431Tests':['Ui1431Tests.cs']}
+ specs={'Tests':['Tests.cs'],'BatchTests':['BatchTests.cs'],'FeatureTests':['FeatureTests.cs'],'Update141Tests':['Update141Tests.cs'],'BreathStreamingTests':['Update141Tests.cs','BreathStreamingTests.cs'],'PunctuationTests':['PunctuationTests.cs'],'NativeGpuTests':['NativeGpuTests.cs'],'UiTests':['UiTests.cs'],'Ui144Tests':['Ui144Tests.cs']}
  for name,files in specs.items():compile(name,files,main=name,app=True)
  compile('UpdaterTests',['Updater.cs','UpdaterTests.cs'],main='UpdaterTests')
  compile('OnnxUpdaterTests',['Updater.cs','OnnxUpdaterTests.cs'],main='OnnxUpdaterTests')

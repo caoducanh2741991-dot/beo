@@ -126,7 +126,8 @@ public sealed class Wave {
 }
 public enum EngineKind { Kokoro, LibriTTS, Kitten, Piper, Qwen, Chatterbox }
 public class KokoroEngine : IDisposable {
- internal bool NativeForcedCpu;internal string NativeFallbackReason;public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged;ExternalSpeech external;
+ internal bool NativeForcedCpu;internal string NativeFallbackReason;public string VoiceName,ReferencePath,ReferenceText;public string DeviceMode="auto",DeviceInfo="";public Action<string> DeviceChanged,ActivityChanged;public string RenderContext="";ExternalSpeech external;
+ public void ReportActivity(string text){if(ActivityChanged!=null)ActivityChanged(text);}
  public void ReportDevice(string text){DeviceInfo=text;if(DeviceChanged!=null)DeviceChanged(text);}
  public void Dispose(){if(external!=null){external.Dispose();external=null;}}
  public string Root; public int Speaker=3,Threads=2; public EngineKind Kind=EngineKind.Kokoro;public string ModelFolder="";public bool Libri {get{return Kind==EngineKind.LibriTTS;}set{Kind=value?EngineKind.LibriTTS:EngineKind.Kokoro;}} public volatile bool Cancelled; private Process running;
@@ -210,13 +211,13 @@ public static class Renderer {
   output=Path.GetFullPath(output);string parent=Path.GetDirectoryName(output);
   if(!Directory.Exists(parent))throw new DirectoryNotFoundException("Không tìm thấy thư mục nguồn: "+parent);
   string temporary=Path.Combine(parent,".v15_"+Guid.NewGuid().ToString("N")+".tmp"),work=Path.Combine(Path.GetTempPath(),"V15_work_"+Guid.NewGuid().ToString("N"));
-  bool failed=false;double cursor=0;const int rate=24000;
+  bool failed=false;double cursor=0;const int rate=24000;string previousContext=engine.RenderContext;
   try {
    Directory.CreateDirectory(work);var track=new BreathTrack(o,engine.Root);
    using(var writer=new StreamingWave(temporary,rate)){
     for(int i=0;i<cues.Count;i++){
      if(engine.Cancelled)throw new OperationCanceledException();
-     var c=cues[i];progress(i*90/cues.Count,"Đọc câu "+(i+1)+"/"+cues.Count);
+     var c=cues[i];engine.RenderContext=Path.GetFileName(output)+" · khối "+c.Id+"/"+cues.Count+" ["+Scripts.Stamp(c.Start)+"–"+Scripts.Stamp(c.End)+"]";progress(i*90/cues.Count,"Đọc câu "+(i+1)+"/"+cues.Count);
      var paced=Punctuation.Generate(engine,c.Text,o.BaseSpeed,o,Path.Combine(work,"cue.wav"));Wave wav=paced.Join();c.Natural=wav.Duration;c.Speed=o.BaseSpeed;c.AudioPath=null;
      double boundary=i<cues.Count-1?Punctuation.After(c.Text,o):0;double reserve=o.Locked&&i<cues.Count-1?Math.Min(Math.Max(0,c.Duration-.08),Math.Max(0,boundary-Math.Max(0,cues[i+1].Start-c.End))):0;
      if(o.Locked){
@@ -237,7 +238,7 @@ public static class Renderer {
    }
    if(engine.Cancelled)throw new OperationCanceledException();
    string final=OutputFiles.Publish(temporary,output);progress(100,"Hoàn tất: "+Path.GetFileName(final));return final;
-  }finally{try{if(File.Exists(temporary))File.Delete(temporary);}catch{}try{if(Directory.Exists(work))Directory.Delete(work,true);}catch{}foreach(var c in cues)c.AudioPath=null;}
+  }finally{engine.RenderContext=previousContext;try{if(File.Exists(temporary))File.Delete(temporary);}catch{}try{if(Directory.Exists(work))Directory.Delete(work,true);}catch{}foreach(var c in cues)c.AudioPath=null;}
  }
 }
 }
