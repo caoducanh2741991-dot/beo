@@ -1,4 +1,4 @@
-"""Package the compiled 2.0 binaries and sources; never include model data."""
+"""Package the compiled 2.0.1 binaries and sources; never include model data."""
 from pathlib import Path
 import hashlib
 import shutil
@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
-VERSION = "2.0"
+VERSION = "2.0.1"
 
 def main():
     payload = ROOT / "payload"
@@ -19,10 +19,10 @@ def main():
     for source, destination in (("ai_worker.py", "worker.py"), ("gpu_policy.py", "gpu_policy.py")):
         shutil.copyfile(ROOT / "source" / source, payload / "ai" / destination)
     shutil.copytree(ROOT / "source", payload / "source", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-    shutil.copytree(ROOT / "validation", payload / "source" / "validation-2.0", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
+    shutil.copytree(ROOT / "validation", payload / "source" / "validation-2.0.1", ignore=shutil.ignore_patterns("real-asr", "*.mp3", "*.mp4", "*.wav", "*.png", "*.xml", "*.srt", "qa-clips*", "*aligned-words*"))
     guide = ROOT / ("HUONG_DAN_" + VERSION + ".txt")
     shutil.copyfile(guide, payload / guide.name)
-    manifest = ET.Element("update", product="V15VoiceStudio", version="2.0.0", kind="core", space=str(96 * 1024 * 1024))
+    manifest = ET.Element("update", product="V15VoiceStudio", version="2.0.1", kind="core", space=str(96 * 1024 * 1024))
     for file in sorted(p for p in payload.rglob("*") if p.is_file()):
         ET.SubElement(manifest, "file", path=file.relative_to(payload).as_posix(), size=str(file.stat().st_size), sha256=hashlib.sha256(file.read_bytes()).hexdigest())
     output = ROOT.parent / ("output-" + VERSION)

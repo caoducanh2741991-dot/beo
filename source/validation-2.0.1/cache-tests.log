@@ -9,6 +9,6 @@ test_retry_space_budget_accounts_for_existing_stage (__main__.CacheTests.test_re
 test_windows_extended_path_spelling (__main__.CacheTests.test_windows_extended_path_spelling) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.811s
+Ran 9 tests in 0.868s
 
 OK

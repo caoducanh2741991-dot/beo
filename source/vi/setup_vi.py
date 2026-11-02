@@ -64,6 +64,40 @@ def run(command, env, timeout=10800):
     subprocess.run([str(x) for x in command], env=env, check=True, timeout=timeout, stdout=sys.stderr)
 
 
+def probe_dependencies(python, mode, env):
+    result = subprocess.run([str(python), str(HERE / 'dependency_probe.py'), '--mode', mode],
+                            env=env, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=180)
+    for line in reversed(result.stdout.splitlines()):
+        if line.startswith('V15_DEPS\t') and result.returncode == 0:
+            return json.loads(line.split('\t', 1)[1])
+    raise RuntimeError('Chưa kiểm tra được thư viện tiếng Việt. ' + result.stderr[-2500:])
+
+
+def repair_dependencies(python, mode, env, common, sdk_wheel):
+    status('Đang kiểm tra thư viện đã cài / thư viện còn thiếu')
+    missing = probe_dependencies(python, mode, env)
+    if not missing:
+        return
+    from dependency_probe import CORE, CUDA
+    allowed = {spec for module, spec in CORE + (CUDA if mode == 'gpu' else [])}
+    for item in missing:
+        spec = item.get('spec')
+        if spec not in allowed:
+            raise RuntimeError('Kết quả kiểm tra thư viện không hợp lệ.')
+        status('Đang bổ sung/sửa thư viện ' + spec + ' · dùng lại tải đệm nếu có')
+        if spec == 'vieneu==3.8.3':
+            run(common + ['--force-reinstall', '--no-deps', sdk_wheel], env)
+        else:
+            command = common + ['--force-reinstall', '--no-deps', spec]
+            if spec.startswith(('torch==', 'torchaudio==')):
+                command += ['--index-url', 'https://download.pytorch.org/whl/cu128']
+            run(command, env)
+    remaining = probe_dependencies(python, mode, env)
+    if remaining:
+        detail = '\n'.join(item['spec'] + ': ' + item['error'] for item in remaining)
+        raise RuntimeError('Thư viện vẫn chưa nạp được sau một lần sửa. Giữ dữ liệu để cài tiếp.\n' + detail)
+
+
 def fetch_models(home, mode):
     # Called by the NEW runtime, never importing packages into the English runtime.
     from huggingface_hub import snapshot_download
@@ -111,6 +145,62 @@ def activate(folder, home, mode):
     os.replace(temp, active)
 
 
+def install_pack(folder, mode, ffmpeg):
+    spec = json.loads((HERE / 'sdk_lock.json').read_text())
+    cache = folder / 'downloads'
+    home = staging_home(folder, mode)
+    runtime = home / 'runtime'
+    runtime.mkdir(parents=True, exist_ok=True)
+    (home / '.incomplete').touch()
+    env = dict(os.environ, PYTHONIOENCODING='utf-8', HF_HOME=str(home / 'hf'), HF_HUB_DISABLE_XET='1',
+               HF_HUB_DISABLE_TELEMETRY='1', DO_NOT_TRACK='1', PIP_CACHE_DIR=str(folder / 'pip-cache'))
+    for name in ('PYTHONHOME', 'PYTHONPATH', 'HF_HUB_OFFLINE', 'TRANSFORMERS_OFFLINE'):
+        env.pop(name, None)
+    success = False
+    try:
+        required = space_required(home, mode)
+        if shutil.disk_usage(folder).free < required:
+            raise RuntimeError('Cần thêm khoảng ' + str(round(required / 1024**3, 1)) + ' GB trống để tiếp tục cài gói Việt.')
+        status('Đang tạo Python riêng cho tiếng Việt · không thay bộ tiếng Anh')
+        embed = download(spec['python_url'], cache / 'python-3.12.10-embed-amd64.zip', spec['python_sha256'])
+        extract(embed, runtime)
+        (runtime / 'python312._pth').write_text('python312.zip\n.\nLib/site-packages\nimport site\n')
+        packages = runtime / 'Lib' / 'site-packages'
+        packages.mkdir(parents=True, exist_ok=True)
+        pip_wheel = download(spec['pip_url'], cache / 'pip.whl', spec['pip_sha256'])
+        extract(pip_wheel, packages)
+        python = runtime / 'python.exe'
+        sdk_wheel = download(spec['url'], cache / spec['filename'], spec['sha256'])
+        status('Đang cài thư viện tiếng Việt · lần đầu có thể mất nhiều phút')
+        common = [python, '-m', 'pip', 'install', '--disable-pip-version-check', '--only-binary=:all:']
+        run(common + ['-c', HERE / 'constraints-vi.txt', '-r', HERE / 'requirements-vi.txt'], env)
+        run(common + ['--no-deps', sdk_wheel], env)
+        if mode == 'gpu':
+            status('Đang tải CUDA riêng cho tiếng Việt · gói lớn, giữ cửa sổ mở')
+            run(common + ['torch==2.8.0', 'torchaudio==2.8.0', '--index-url', 'https://download.pytorch.org/whl/cu128'], env)
+            run(common + ['transformers==4.57.6', 'safetensors==0.6.2', 'einops==0.8.1', 'scipy==1.18.1'], env)
+        repair_dependencies(python, mode, env, common, sdk_wheel)
+        run([python, HERE / 'setup_vi.py', '--folder', home, '--mode', mode, '--ffmpeg', ffmpeg, '--fetch-models'], env)
+        status('Nạp trước giọng và bộ sao chép để tải đủ thành phần')
+        worker = [python, HERE / 'vi_worker.py', '--home', home, '--ffmpeg', ffmpeg]
+        run(worker + ['--device', mode, '--warmup'], env)
+        status('Đang kiểm tra đọc và sao chép khi chặn kết nối mạng')
+        run(worker + ['--device', mode, '--selftest'], env)
+        if mode == 'gpu':
+            # Auto must be able to fall back to the same pack's CPU graphs.
+            run(worker + ['--device', 'cpu', '--selftest'], env)
+        run([python, '-m', 'pip', 'freeze'], env)
+        activate(folder, home, mode)
+        (home / '.incomplete').unlink(missing_ok=True)
+        success = True
+        print('V15_SETUP_OK\t' + base64.b64encode(('Gói tiếng Việt đã cài · ' + mode.upper() + ' · thử offline thành công').encode()).decode(), flush=True)
+    finally:
+        if not success:
+            # Reuse the staging runtime/model cache after cancellation/network failure.
+            # No active pointer is published, and the completed pack is never touched.
+            status('Cài chưa hoàn tất; giữ dữ liệu tải đệm để lần sau tiếp tục. Gói đang dùng không thay đổi.')
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--folder', required=True)
@@ -138,58 +228,7 @@ def main():
             msvcrt.locking(lock.fileno(), msvcrt.LK_NBLCK, 1)
         except OSError as exc:
             raise RuntimeError('Đang có một lần cài gói Việt khác. Chờ tác vụ đó hoàn tất.') from exc
-        spec = json.loads((HERE / 'sdk_lock.json').read_text())
-        cache = folder / 'downloads'
-        home = staging_home(folder, args.mode)
-        runtime = home / 'runtime'
-        runtime.mkdir(parents=True, exist_ok=True)
-        (home / '.incomplete').touch()
-        env = dict(os.environ, PYTHONIOENCODING='utf-8', HF_HOME=str(home / 'hf'), HF_HUB_DISABLE_XET='1',
-                   HF_HUB_DISABLE_TELEMETRY='1', DO_NOT_TRACK='1', PIP_CACHE_DIR=str(folder / 'pip-cache'))
-        for name in ('PYTHONHOME', 'PYTHONPATH', 'HF_HUB_OFFLINE', 'TRANSFORMERS_OFFLINE'):
-            env.pop(name, None)
-        success = False
-        try:
-            required = space_required(home, args.mode)
-            if shutil.disk_usage(folder).free < required:
-                raise RuntimeError('Cần thêm khoảng ' + str(round(required / 1024**3, 1)) + ' GB trống để tiếp tục cài gói Việt.')
-            status('Đang tạo Python riêng cho tiếng Việt · không thay bộ tiếng Anh')
-            embed = download(spec['python_url'], cache / 'python-3.12.10-embed-amd64.zip', spec['python_sha256'])
-            extract(embed, runtime)
-            (runtime / 'python312._pth').write_text('python312.zip\n.\nLib/site-packages\nimport site\n')
-            packages = runtime / 'Lib' / 'site-packages'
-            packages.mkdir(parents=True)
-            pip_wheel = download(spec['pip_url'], cache / 'pip.whl', spec['pip_sha256'])
-            extract(pip_wheel, packages)
-            python = runtime / 'python.exe'
-            sdk_wheel = download(spec['url'], cache / spec['filename'], spec['sha256'])
-            status('Đang cài thư viện tiếng Việt · lần đầu có thể mất nhiều phút')
-            common = [python, '-m', 'pip', 'install', '--disable-pip-version-check', '--only-binary=:all:']
-            run(common + ['-c', HERE / 'constraints-vi.txt', '-r', HERE / 'requirements-vi.txt'], env)
-            run(common + ['--no-deps', sdk_wheel], env)
-            if args.mode == 'gpu':
-                status('Đang tải CUDA riêng cho tiếng Việt · gói lớn, giữ cửa sổ mở')
-                run(common + ['torch==2.8.0', 'torchaudio==2.8.0', '--index-url', 'https://download.pytorch.org/whl/cu128'], env)
-                run(common + ['transformers==4.57.6', 'safetensors==0.6.2', 'einops==0.8.1', 'scipy==1.18.1'], env)
-            run([python, HERE / 'setup_vi.py', '--folder', home, '--mode', args.mode, '--ffmpeg', args.ffmpeg, '--fetch-models'], env)
-            status('Nạp trước giọng và bộ sao chép để tải đủ thành phần')
-            worker = [python, HERE / 'vi_worker.py', '--home', home, '--ffmpeg', args.ffmpeg]
-            run(worker + ['--device', args.mode, '--warmup'], env)
-            status('Đang kiểm tra đọc và sao chép khi chặn kết nối mạng')
-            run(worker + ['--device', args.mode, '--selftest'], env)
-            if args.mode == 'gpu':
-                # Auto must be able to fall back to the same pack's CPU graphs.
-                run(worker + ['--device', 'cpu', '--selftest'], env)
-            run([python, '-m', 'pip', 'freeze'], env)
-            activate(folder, home, args.mode)
-            (home / '.incomplete').unlink(missing_ok=True)
-            success = True
-            print('V15_SETUP_OK\t' + base64.b64encode(('Gói tiếng Việt đã cài · ' + args.mode.upper() + ' · thử offline thành công').encode()).decode(), flush=True)
-        finally:
-            if not success:
-                # Reuse the staging runtime/model cache after cancellation/network failure.
-                # No active pointer is published, and the completed pack is never touched.
-                status('Cài chưa hoàn tất; giữ dữ liệu tải đệm để lần sau tiếp tục. Gói đang dùng không thay đổi.')
+        install_pack(folder, args.mode, args.ffmpeg)
 
 
 if __name__ == '__main__':

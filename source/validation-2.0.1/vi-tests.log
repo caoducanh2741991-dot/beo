@@ -8,6 +8,6 @@ test_turing_policy (__main__.VietnameseTests.test_turing_policy) ... ok
 test_unicode (__main__.VietnameseTests.test_unicode) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.108s
+Ran 8 tests in 0.228s
 
 OK

@@ -1,4 +1,0 @@
-Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [00:07<00:07,  7.74s/it]Fetching 2 files: 100%|██████████| 2/2 [00:07<00:00,  3.90s/it]
-PASS live official HF snapshot downloaded into Unicode path with symlink privilege denied; copies and blobs retained.
-PASS offline snapshot read with socket/DNS blocked
-

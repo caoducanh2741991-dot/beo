@@ -1,0 +1,47 @@
+V15 VOICE STUDIO 2.0.1 — SỬA CÀI TIẾP GÓI TIẾNG VIỆT
+
+THAY ĐỔI
+- Sửa WinError 183 khi thư mục runtime\Lib\site-packages đã tồn tại.
+- Cho phép cài tiếp trên thư mục có thư viện và model từ lần trước.
+- Kiểm tra phiên bản và khả năng nạp các thư viện chính trong Python tiếng Việt riêng.
+- Nếu thư viện chính bị thiếu/sai phiên bản/không nạp được, thử cài sửa riêng thư viện đó một lần rồi kiểm tra lại. Không báo hoàn tất nếu vẫn lỗi.
+- Tiếp tục giữ cách lưu model không dùng symlink của bản 2.0, sửa WinError 1314.
+- Chỉ kích hoạt gói sau khi kiểm tra đọc giọng có sẵn và sao chép offline thành công; bản GPU còn kiểm tra CPU dự phòng.
+- Giữ giọng riêng, model/CUDA tiếng Anh, thiết lập và âm thanh cũ. Không thay thuật toán timeline hoặc model đọc/sao chép.
+
+CÁCH CẬP NHẬT
+1. Trong app hiện tại: Công cụ & thiết lập → Cập nhật từ ZIP.
+2. Chọn V15VoiceStudio_2.0.1_Update.zip.
+3. Chờ mở lại, kiểm tra tiêu đề cửa sổ ghi 2.0.1.
+Nếu nút cập nhật không mở: giải nén TOÀN BỘ ZIP vào một thư mục mới, chạy CAP_NHAT.cmd và chọn đúng thư mục V15 đang dùng. Không lấy riêng EXE.
+
+TIẾP TỤC CÀI TIẾNG VIỆT SAU LỖI 183/1314
+1. Không gỡ app, không xóa thư mục vietnamese_pack.
+2. Mở Công cụ & thiết lập 2.0.1 → GÓI TIẾNG VIỆT.
+3. RTX 2070 8 GB: bấm Cài gói Việt · NVIDIA GPU.
+4. Bộ cài chọn thư mục GPU đang cài dở gần nhất, dùng lại dữ liệu tải đệm còn hợp lệ và tải bổ sung nếu thiếu.
+5. Giữ mạng trong lúc cài. Chờ thông báo cài và tự kiểm tra thành công.
+6. Chọn Ngôn ngữ lời đọc → Tiếng Việt ở tab Tạo voice.
+Lần đầu có thể mất thời gian do model/CUDA lớn. Có thể Dừng tác vụ và chạy lại. Nếu dữ liệu hỏng/thiếu, chỉ phần cần thiết phải tải lại. Pip có thể kiểm tra mạng khi xác nhận thư viện.
+Việc sửa 183 không yêu cầu xóa site-packages hoặc cài lại CUDA tiếng Anh.
+
+SỬ DỤNG
+- Nhận SRT/TXT một hoặc nhiều file. Hàng đợi dùng chung giọng, thiết bị, hơi thở và tùy chọn hiện tại.
+- Chỉ xuất WAV mặc định, nằm cạnh file nguồn.
+- Giọng Việt: 10 lựa chọn nam/nữ Bắc/Trung/Nam; phong cách là gợi ý, sao theo lựa chọn ưu tiên của tác giả VieNeu.
+- Sao chép: tab Sao chép giọng → chọn MP3/WAV/MP4 → nguồn VieNeu v3 Turbo · Tiếng Việt → lấy mẫu 6–8 giây (cho phép 3–8 giây) → nghe đoạn mẫu → đặt tên và lưu. Không cần chép lời mẫu cho VieNeu.
+- Giọng Qwen/Chatterbox tiếng Anh cũ vẫn dùng nguồn cũ; không tự chuyển sang giọng Việt.
+- Hơi thở: Auto / Tùy chọn / Không dùng.
+- SRT giữ các chế độ timeline hiện có; TXT theo thời lượng đọc thực tế.
+- MP4/MP3 → SRT và căn từng từ theo WAV hiện vẫn dùng bộ tiếng Anh; chưa có ASR/căn từ tiếng Việt.
+- Tạo giọng chạy offline sau khi cài đủ. Model gốc VieNeu 48 kHz được chuyển sang WAV PCM 16-bit, mono, 24 kHz để dùng chung pipeline app.
+
+DỮ LIỆU VÀ NHẬT KÝ
+Gói Việt: %LOCALAPPDATA%\V15VoiceStudio\vietnamese_pack
+Nhật ký cài: %LOCALAPPDATA%\V15VoiceStudio\vietnamese_pack\logs
+Bộ Việt dùng Python/PyTorch/CUDA riêng. Bước tải model không cần quyền tạo symlink. Sao chép tệp có thể cần thêm dung lượng so với liên kết.
+
+PHẠM VI KIỂM TRA
+Đã kiểm thử luồng file thật: cài mới, thư mục thư viện đã có, dừng/lỗi ở bước model hoặc tự kiểm tra rồi cài tiếp, giữ model/thư viện cũ và không kích hoạt gói khi còn lỗi. Trong bài kiểm tra này pip/model/voice subprocess được thay bằng fixture; không coi là thử CUDA Windows thật.
+Đã kiểm tra bộ tải HF với lỗi symlink 1314 và các kiểm tra ứng dụng/updater phù hợp.
+Môi trường phát triển Linux/Mono, Windows x64 EXE biên dịch với .NET Framework 4.5. Chưa kiểm tra trực tiếp toàn bộ bộ cài Windows/RTX 2070 của người dùng; không cam kết tốc độ hoặc mức giống giọng phần trăm.

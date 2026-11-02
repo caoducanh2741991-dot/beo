@@ -27,4 +27,5 @@ PASS Legacy flexible renderer remains selectable
 PASS TXT retains natural mode rather than inventing source duration
 PASS TXT never uses hard stage renderer
 TOTAL ANCHORED UI 28 passed.
+Could not set X locale modifiers
 Gtk not found (missing LD_LIBRARY_PATH to libgtk-x11-2.0.so.0?), using built-in colorscheme

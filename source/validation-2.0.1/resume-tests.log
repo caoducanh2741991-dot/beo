@@ -1,0 +1,12 @@
+test_dependency_probe_runs_real_child_and_reports_missing_imports (__main__.ResumeTests.test_dependency_probe_runs_real_child_and_reports_missing_imports) ... ok
+test_existing_site_packages_preserves_library_and_model (__main__.ResumeTests.test_existing_site_packages_preserves_library_and_model) ... ok
+test_fresh_install_reaches_all_selftests_then_activates (__main__.ResumeTests.test_fresh_install_reaches_all_selftests_then_activates) ... ok
+test_interrupted_model_download_then_retry_same_directory (__main__.ResumeTests.test_interrupted_model_download_then_retry_same_directory) ... ok
+test_only_failed_library_force_repaired (__main__.ResumeTests.test_only_failed_library_force_repaired) ... ok
+test_selftest_failure_does_not_activate_then_retry_succeeds (__main__.ResumeTests.test_selftest_failure_does_not_activate_then_retry_succeeds) ... ok
+test_still_broken_dependency_does_not_fetch_or_activate (__main__.ResumeTests.test_still_broken_dependency_does_not_fetch_or_activate) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.151s
+
+OK
