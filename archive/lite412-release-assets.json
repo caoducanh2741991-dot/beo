@@ -1,0 +1,92 @@
+[
+  {
+    "name": "BEO-Fresh-Kokoro-4.1.2-Checks.zip",
+    "bytes": 1025212,
+    "sha256": "6ea022a5bfedc291a1a0ddc8263a316637c6247342be35a6e1f627f9a43ec8e0",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO-Fresh-Kokoro-4.1.2-Checks.zip"
+  },
+  {
+    "name": "BEO-Lite-4.1.2-Evidence.zip",
+    "bytes": 732530,
+    "sha256": "0021f65f5198d002458b7893df9a71c9f24646373db2fca28057e7cdb81280b4",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO-Lite-4.1.2-Evidence.zip"
+  },
+  {
+    "name": "BEO-Windows-Audio-4.1.2.zip",
+    "bytes": 176504,
+    "sha256": "142bab110b4531e5ad63e0ff1fb1eeb380f02736a07ed24f615613e542da9342",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO-Windows-Audio-4.1.2.zip"
+  },
+  {
+    "name": "BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Portable.zip",
+    "bytes": 377842330,
+    "sha256": "e6313d5f3897aa16ae3596497d50cf7c2443ed0acca4e3efa65c4c40607f965d",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Portable.zip"
+  },
+  {
+    "name": "BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Setup.exe",
+    "bytes": 354480367,
+    "sha256": "78f66c2d9330c1440033fa77eb5842cd16edc888fd4aa855a3f88b02fc50467d",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Setup.exe"
+  },
+  {
+    "name": "BEO_Voice_Studio_4.1.2_Lite_Core_Update.zip",
+    "bytes": 17984172,
+    "sha256": "492312def9c02fd69a78f736ca0929fd89d38b4d83b925b828277500d7aefd9b",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO_Voice_Studio_4.1.2_Lite_Core_Update.zip"
+  },
+  {
+    "name": "BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip",
+    "bytes": 17770635,
+    "sha256": "fba95a4d7f562f82b3d26f4aabe14fd8972c4da6bc0665bb76a9ee40c5e3f3bb",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip"
+  },
+  {
+    "name": "FRESH_INSTALL_VALIDATION.json",
+    "bytes": 1848,
+    "sha256": "a992f9f70a680e4e17c63e7849fab18da49d5ff9f2e33d92b1dd2ed15eb9743a",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/FRESH_INSTALL_VALIDATION.json"
+  },
+  {
+    "name": "HUONG_DAN_4.1.2.txt",
+    "bytes": 2278,
+    "sha256": "ef003bb0a6c119a3abd928cbfd99b41f03508ee656cee6b7b2204fef8b902c33",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/HUONG_DAN_4.1.2.txt"
+  },
+  {
+    "name": "HUONG_DAN_MAY_MOI_4.1.2.txt",
+    "bytes": 1702,
+    "sha256": "3cd40cda42f824f6660503159749e5d7cd16d89f27829205a9500fc43a1e2a53",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/HUONG_DAN_MAY_MOI_4.1.2.txt"
+  },
+  {
+    "name": "KET_QUA_KIEM_THU_4.1.2.txt",
+    "bytes": 898,
+    "sha256": "056694ed6157fdb5aca5dc7ae703b57154be03025b0969a30ec4f65f2c5e1973",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/KET_QUA_KIEM_THU_4.1.2.txt"
+  },
+  {
+    "name": "KET_QUA_KIEM_THU_4.1.2_FRESH.txt",
+    "bytes": 715,
+    "sha256": "529abbb4c3384b2eb4529489a5eab909b96bcc3e842d8f082a3c9f45c1eb486a",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/KET_QUA_KIEM_THU_4.1.2_FRESH.txt"
+  },
+  {
+    "name": "release-validation412lite.json",
+    "bytes": 370,
+    "sha256": "bb003beae7f3a498e9c5b1ccc221cd9e530e3b2555b2dd7539c717be8c326f55",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/release-validation412lite.json"
+  },
+  {
+    "name": "SHA256SUMS.txt",
+    "bytes": 386,
+    "sha256": "5c02de1a4b4744076082dfd4f0e16146511fdb7a53f743ce55307d1a237cbe4a",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/SHA256SUMS.txt"
+  },
+  {
+    "name": "SHA256SUMS_FRESH.txt",
+    "bytes": 901,
+    "sha256": "510ba785662009abb60cdc62b1e7b1a2baa9f7e5c86be727066873384c5917b4",
+    "url": "https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/SHA256SUMS_FRESH.txt"
+  }
+]

@@ -4,9 +4,9 @@
 
 | Máy đang dùng | Tệp cần tải | Cách dùng |
 |---|---|---|
-| Máy Windows mới | `BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Setup.exe` | Chạy bộ cài, chọn thư mục mới, mở biểu tượng BÉO Voice Studio Lite. |
-| Muốn dùng bản portable | `BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Portable.zip` | Giải nén toàn bộ, chạy `BAT_DAU.cmd`. |
-| Đã có ứng dụng và bộ giọng | `BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip` | Giải nén, đóng app, chạy `BEO_Update.exe`, chọn đúng thư mục đang cài. |
+| Máy Windows mới | [BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Setup.exe](https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Setup.exe) | Chạy bộ cài, chọn thư mục mới, mở biểu tượng BÉO Voice Studio Lite. |
+| Muốn dùng bản portable | [BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Portable.zip](https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Portable.zip) | Giải nén toàn bộ, chạy `BAT_DAU.cmd`. |
+| Đã có ứng dụng và bộ giọng | [BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip](https://github.com/caoducanh2741991-dot/beo/releases/download/v4.1.2/BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip) | Giải nén, đóng app, chạy `BEO_Update.exe`, chọn đúng thư mục đang cài. |
 
 `Code → Download ZIP` tải mã nguồn; hãy dùng các tệp ứng dụng trong Releases.
 
