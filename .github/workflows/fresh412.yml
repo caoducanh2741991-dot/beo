@@ -1,0 +1,43 @@
+name: Build fresh Windows Kokoro 4.1.2 (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-fresh:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Read the exact requested source revision
+        shell: pwsh
+        run: |
+          gh auth setup-git
+          git clone --branch main --single-branch "https://github.com/$env:GITHUB_REPOSITORY.git" .
+          git checkout --detach $env:GITHUB_SHA
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Prepare verified models and app-local dependencies
+        run: python source/fresh_install412.py prepare
+      - name: Compile and run actual Windows voice and UI checks
+        shell: pwsh
+        run: |
+          $csc = "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
+          & $csc /nologo /platform:x64 /target:exe /out:fresh-build/BEO_Voice_Studio_Lite_4.1.2/KIEM_TRA.exe /r:V15VoiceStudio.exe /r:System.Core.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll source/Fresh412Smoke.cs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & ./fresh-build/BEO_Voice_Studio_Lite_4.1.2/KIEM_TRA.exe "$env:GITHUB_WORKSPACE/fresh-build/staging-proof"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Install the official installer compiler
+        shell: pwsh
+        run: choco install nsis --yes --no-progress
+      - name: Package the portable app and Windows installer
+        run: python source/fresh_install412.py finish
+      - name: Verify an actual empty-folder install and safe uninstall
+        run: python source/fresh_install412.py verify-install
+      - name: Upload the verified fresh-install packages
+        uses: actions/upload-artifact@v7
+        with:
+          name: BEO-Fresh-Kokoro-4.1.2
+          path: dist-fresh412/
+          if-no-files-found: error
+          retention-days: 30
