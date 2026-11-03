@@ -80,10 +80,24 @@ def prepare():
  if os.name!='nt':raise RuntimeError('The fresh release must be built and tested on Windows')
  if STAGE.exists():shutil.rmtree(STAGE)
  STAGE.mkdir(parents=True)
- expected={'V15VoiceStudio.exe':'edf76a5dc7fcf080af66c77b84ff82dd5a259d6a10a6dcc2eb89e00ace6ece53','V15Updater.exe':'0fbafe9d31af88b24b949102c14ec3345165d8c04868a83b8903188622d05c35'}
+ expected={'V15VoiceStudio.exe':'edf76a5dc7fcf080af66c77b84ff82dd5a259d6a10a6dcc2eb89e00ace6ece53'}
  for name,digest in expected.items():
   if sha(ROOT/name)!=digest:raise RuntimeError('Unexpected core binary: '+name)
   shutil.copyfile(ROOT/name,STAGE/name)
+ compiler=str(Path(os.environ['WINDIR'])/'Microsoft.NET/Framework64/v4.0.30319/csc.exe')
+ references=['/r:'+x+'.dll' for x in ['System.Core','System.Xml','System.Xml.Linq','System.Drawing','System.Windows.Forms','System.IO.Compression','System.IO.Compression.FileSystem']]
+ icon=ROOT/'source/assets/V15VoiceStudio.ico'
+ subprocess.run([compiler,'/nologo','/target:winexe','/platform:x64','/out:'+str(ROOT/'V15Updater.exe'),'/win32icon:'+str(icon),'/resource:'+str(icon)+',V15VoiceStudio.Icon']+references+[str(ROOT/'source/Updater.cs')],check=True)
+ shutil.copyfile(ROOT/'V15Updater.exe',STAGE/'V15Updater.exe')
+ for name in ['UpdaterTests','FreshUpdaterBaseTests']:
+  binary=ROOT/(name+'.exe')
+  subprocess.run([compiler,'/nologo','/platform:x64','/main:'+name,'/out:'+str(binary)]+references+[str(ROOT/'source/Updater.cs'),str(ROOT/'source'/(name+'.cs'))],check=True)
+  run=subprocess.run([str(binary)],cwd=ROOT,capture_output=True,text=True,timeout=90)
+  (WORK/(name+'.txt')).write_text(run.stdout+run.stderr)
+  print(run.stdout,flush=True)
+  if run.returncode:raise RuntimeError(name+' failed: '+run.stderr)
+ subprocess.run([compiler,'/nologo','/platform:x64','/out:'+str(WORK/'FreshUpdaterRunner.exe'),'/r:'+str(ROOT/'V15Updater.exe'),str(ROOT/'source/FreshUpdaterRunner.cs')],check=True)
+ shutil.copyfile(ROOT/'V15Updater.exe',WORK/'V15Updater.exe')
  shutil.copytree(ROOT/'source',STAGE/'source',ignore=shutil.ignore_patterns('__pycache__','*.pyc','local-ai','validation-*'))
  for name in ['HUONG_DAN_MAY_MOI_4.1.2.txt','HUONG_DAN_4.1.2.txt','KET_QUA_KIEM_THU_4.1.2.txt']:
   shutil.copyfile(ROOT/name,STAGE/name)
@@ -115,6 +129,13 @@ def nsis_escape(s):return str(s).replace('$','$$').replace('"','$\\"')
 
 def finish():
  OUT.mkdir(exist_ok=True)
+ validation=ROOT/'validation';validation.mkdir(exist_ok=True)
+ for p in (WORK).glob('*Tests.txt'):shutil.copyfile(p,validation/p.name)
+ (ROOT/'KET_QUA_KIEM_THU_4.1.2.txt').write_text('BÉO VOICE STUDIO LITE 4.1.2 — FRESH KOKORO\n\nApp EXE giữ nguyên SHA256 edf76a5dc7fcf080af66c77b84ff82dd5a259d6a10a6dcc2eb89e00ace6ece53.\nApp đã đạt 438 C#, 15 Python và 18 kiểm tra cập nhật trong đợt Lite trước (Mono/Linux, speech/GPU fixture).\nĐợt này kiểm tra lại updater trên Windows: 21 hồi quy và 5 kiểm tra bản nền Kokoro/Python.\nBản Fresh tổng hợp Kokoro thật, một/hai giọng, đối chiếu SRT, mở UI Windows và cài/gỡ thư mục trống.\nXem FRESH_INSTALL_VALIDATION.json và log cho kết quả cuối. Chưa thử RTX 2070 hoặc clone model thật.\nUpdater mới SHA256: '+sha(ROOT/'V15Updater.exe')+'\n',encoding='utf-8')
+ subprocess.run([os.sys.executable,str(ROOT/'source/package_release.py')],check=True)
+ shutil.copyfile(ROOT/'KET_QUA_KIEM_THU_4.1.2.txt',STAGE/'KET_QUA_KIEM_THU_4.1.2.txt')
+ core=ROOT.parent/'output-4.1.2/BEO_Voice_Studio_4.1.2_Lite_Core_Update.zip'
+ shutil.copyfile(core,OUT/'BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip')
  rows=[{'path':p.relative_to(STAGE).as_posix(),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(STAGE.rglob('*')) if p.is_file()]
  (STAGE/'fresh-manifest.json').write_text(json.dumps({'version':'4.1.2','files':rows,'sources':ASSETS},indent=2))
  archive=OUT/'BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Portable.zip'
@@ -190,16 +211,24 @@ def verify_install():
   p=target/r['path']
   if not p.exists() or p.stat().st_size!=r['bytes'] or sha(p)!=r['sha256']:raise RuntimeError('Installed file mismatch: '+r['path'])
  subprocess.run([str(target/'KIEM_TRA.exe'),str(WORK/'installed-proof')],check=True,timeout=300,cwd=target)
+ model_before=sha(target/'model/model.onnx')
+ subprocess.run([str(WORK/'FreshUpdaterRunner.exe'),str(OUT/'BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip'),str(target)],cwd=WORK,check=True,timeout=180)
+ if sha(target/'model/model.onnx')!=model_before:raise RuntimeError('Core update changed the installed voice model')
+ if sha(target/'V15Updater.exe')!=sha(ROOT/'V15Updater.exe'):raise RuntimeError('Core update did not install the matching updater')
  preserved=target/'USER_KEEP.txt';preserved.write_text('User file must survive uninstall')
  subprocess.run([str(target/'Uninstall.exe'),'/S','_?='+str(target)],check=True,timeout=60)
  for _ in range(30):
   if not (target/'V15VoiceStudio.exe').exists():break
   time.sleep(1)
  if (target/'V15VoiceStudio.exe').exists() or not preserved.exists():raise RuntimeError('Uninstall ownership check failed')
- result={'version':'4.1.2','edition':'Fresh Kokoro','fresh_install_verified':True,'installed_manifest_files':len(data['files']),'uninstall_preserves_user_files':True,'real_windows_cpu_tts':True,'real_rtx2070_tested':False,'all_optional_engines_bundled':False,'sources':ASSETS,'packages':[{'name':p.name,'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(OUT.glob('*')) if p.suffix in ('.exe','.zip')]}
+ result={'version':'4.1.2','edition':'Fresh Kokoro','fresh_install_verified':True,'installed_manifest_files':len(data['files']),'core_update_on_fresh_install':True,'updater_regression_checks':21,'fresh_updater_base_checks':5,'uninstall_preserves_user_files':True,'real_windows_cpu_tts':True,'real_rtx2070_tested':False,'all_optional_engines_bundled':False,'sources':ASSETS,'binary_sha256':{name:sha(ROOT/name) for name in ['V15VoiceStudio.exe','V15Updater.exe']},'packages':[{'name':p.name,'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(OUT.glob('*')) if p.suffix in ('.exe','.zip')]}
  (OUT/'FRESH_INSTALL_VALIDATION.json').write_text(json.dumps(result,indent=2))
- (OUT/'SHA256SUMS_FRESH.txt').write_text(''.join(sha(p)+'  '+p.name+'\n' for p in sorted(OUT.iterdir()) if p.is_file() and p.name!='SHA256SUMS_FRESH.txt'))
  shutil.copytree(WORK/'staging-proof',OUT/'staging-proof',dirs_exist_ok=True);shutil.copytree(WORK/'installed-proof',OUT/'installed-proof',dirs_exist_ok=True)
+ for p in WORK.glob('*Tests.txt'):shutil.copyfile(p,OUT/p.name)
+ shutil.copyfile(ROOT/'KET_QUA_KIEM_THU_4.1.2.txt',OUT/'KET_QUA_KIEM_THU_4.1.2_FRESH.txt')
+ shutil.copyfile(ROOT/'HUONG_DAN_MAY_MOI_4.1.2.txt',OUT/'HUONG_DAN_MAY_MOI_4.1.2.txt')
+ shutil.copyfile(ROOT/'V15Updater.exe',OUT/'V15Updater.exe')
+ (OUT/'SHA256SUMS_FRESH.txt').write_text(''.join(sha(p)+'  '+p.name+'\n' for p in sorted(OUT.iterdir()) if p.is_file() and p.name!='SHA256SUMS_FRESH.txt'))
  print(json.dumps(result,indent=2),flush=True)
 
 if __name__=='__main__':

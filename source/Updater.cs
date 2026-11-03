@@ -94,7 +94,10 @@ public static class UpdateEngine {
   try{Directory.Delete(backup,true);}catch{}
  }
  public static void Apply(string package,string target,Action<string> notify){
-  target=Path.GetFullPath(target);string app=Path.Combine(target,"V15VoiceStudio.exe");if(!File.Exists(Path.Combine(target,"ai","runtime","python.exe"))||!Directory.Exists(Path.Combine(target,"ai","models")))throw new Exception("Chọn đúng thư mục ứng dụng đã cài đầy đủ, có V15VoiceStudio.exe và thư mục ai.");
+  target=Path.GetFullPath(target);string app=Path.Combine(target,"V15VoiceStudio.exe");
+  bool pythonBase=File.Exists(Path.Combine(target,"ai","runtime","python.exe"))&&Directory.Exists(Path.Combine(target,"ai","models"));
+  bool kokoroBase=new[]{"engine/sherpa-onnx-offline-tts.exe","model/model.onnx","model/voices.bin","model/tokens.txt","model/lexicon-us-en.txt","source/media/ffmpeg.exe"}.All(p=>File.Exists(Safe(target,p)))&&Directory.Exists(Path.Combine(target,"model","espeak-ng-data"));
+  if(!pythonBase&&!kokoroBase)throw new Exception("Chọn thư mục ứng dụng đã có đủ bộ giọng: bản nền Python hoặc bản Kokoro đầy đủ (engine, model, bộ phát âm và FFmpeg).");
   using(var updateLock=new FileStream(Path.Combine(target,".v15-update.lock"),FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.None)){
    try{if(File.Exists(app))using(var check=new FileStream(app,FileMode.Open,FileAccess.ReadWrite,FileShare.None)){} }catch{throw new Exception("Đóng BÉO Voice Studio trước khi cập nhật.");}
    Recover(target);
