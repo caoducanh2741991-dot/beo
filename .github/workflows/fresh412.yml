@@ -23,7 +23,10 @@ jobs:
         shell: pwsh
         run: |
           $csc = "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
-          & $csc /nologo /platform:x64 /target:exe /out:fresh-build/BEO_Voice_Studio_Lite_4.1.2/KIEM_TRA.exe /r:V15VoiceStudio.exe /r:System.Core.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll source/Fresh412Smoke.cs
+          $testSource = Join-Path $env:GITHUB_WORKSPACE 'source\Fresh412Smoke.cs'
+          $testOutput = Join-Path $env:GITHUB_WORKSPACE 'fresh-build\BEO_Voice_Studio_Lite_4.1.2\KIEM_TRA.exe'
+          $app = Join-Path $env:GITHUB_WORKSPACE 'V15VoiceStudio.exe'
+          & $csc /nologo /platform:x64 /target:exe "/out:$testOutput" "/r:$app" /r:System.Core.dll /r:System.Drawing.dll /r:System.Windows.Forms.dll $testSource
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           & ./fresh-build/BEO_Voice_Studio_Lite_4.1.2/KIEM_TRA.exe "$env:GITHUB_WORKSPACE/fresh-build/staging-proof"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
