@@ -1,0 +1,8 @@
+1
+00:00:00,000 --> 00:00:02,153
+[A] Adam reads the first part of this story.
+
+2
+00:00:02,543 --> 00:00:05,074
+[B] Jessica reads the second part of this story.
+

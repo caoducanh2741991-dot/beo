@@ -15,3 +15,13 @@ Yêu cầu mới nhất: bỏ AI tự sửa để nhẹ hơn. Bản Lite chỉ �
 Gói core không cài độc lập trên máy trắng. Thiếu dữ liệu nền 15 phần V15VoiceStudio_1.4_Data.7z.001–.015. Cần phục hồi dữ liệu/runtime TTS hoặc thư mục app đầy đủ để đóng gói full. Bỏ Qwen3-4B khoảng 2,5 GB không thay thế các model tạo giọng. Updater không tự xóa model LLM cũ.
 
 Giữ các bản trước trong Git tags và Releases; không ghi đè gói cũ. Trước khi phát hành tiếp, build và chạy kiểm thử thực tương ứng, lưu giới hạn kiểm thử rõ ràng.
+
+## Bổ sung bản cài mới ngày 03/11/2026
+
+Đã tái tạo gói Fresh Kokoro từ model/bộ chạy chính thức, kèm 20 giọng US (Adam SID 11), bộ phát âm, Windows x64/VC runtime cục bộ và FFmpeg. Không cần dữ liệu nền 15 phần để dùng Kokoro. Đây là bản CPU; không gói Chatterbox/Qwen3-TTS/clone/CUDA và các model tùy chọn khác.
+
+Đã kiểm thử trên Windows Server 2025: 13 kiểm tra giọng thật/UI staging + 13 sau cài, 21 hồi quy updater + 5 kiểm tra nền Kokoro/Python. Đã cài vào thư mục trống, đối chiếu 804 tệp, cập nhật Universal Core trên bản Fresh, giữ model và tệp riêng khi gỡ cài đặt. Đã kiểm tra thêm 5 trường hợp FFmpeg Windows (atempo 0,90x/1,10x, tín hiệu audio, loudnorm). Chưa chạy RTX 2070 hoặc clone thật.
+
+Updater mới cho phép nền Python cũ hoặc nền Kokoro đủ tệp; không tạo python.exe/model giả để qua kiểm tra. App EXE giữ nguyên edf76a5dc7fcf080af66c77b84ff82dd5a259d6a10a6dcc2eb89e00ace6ece53. Updater đã build Windows: a02594c8e91bf58f657a62678f360d05687e90c10813733d829d0e353be1d8d9.
+
+Dùng source/fresh_install412.py và .github/workflows/fresh412.yml để tái tạo. Bằng chứng mới ở source/validation-4.1.2-windows và archive/lite412-fresh-build-provenance.json. Gói Universal Core mới ưu tiên hơn gói Lite Core ban đầu. Xem README để chọn đúng gói.

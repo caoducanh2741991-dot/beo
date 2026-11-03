@@ -1,0 +1,17 @@
+{
+  "checks": 5,
+  "status": "PASS",
+  "actual_windows_ffmpeg": true,
+  "ffmpeg_sha256": "30a44603e56c559f91cadd896d980912695ad1bc9a8f8aecdceab27b7079afdd",
+  "tempo": [
+    {
+      "speed": 0.9,
+      "measured_seconds": 4.440791666666667
+    },
+    {
+      "speed": 1.1,
+      "measured_seconds": 3.6366666666666667
+    }
+  ],
+  "loudnorm_analysis": true
+}

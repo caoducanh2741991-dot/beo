@@ -1,0 +1,1 @@
+PASS 13 checks. Actual Windows CPU/Kokoro/FFmpeg and UI; no physical RTX 2070 or clone model test.

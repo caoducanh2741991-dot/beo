@@ -1,0 +1,48 @@
+{
+  "version": "4.1.2",
+  "edition": "Fresh Kokoro",
+  "fresh_install_verified": true,
+  "installed_manifest_files": 804,
+  "core_update_on_fresh_install": true,
+  "updater_regression_checks": 21,
+  "fresh_updater_base_checks": 5,
+  "uninstall_preserves_user_files": true,
+  "real_windows_cpu_tts": true,
+  "real_rtx2070_tested": false,
+  "all_optional_engines_bundled": false,
+  "sources": [
+    {
+      "name": "kokoro-multi-lang-v1_0.tar.bz2",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/kokoro-multi-lang-v1_0.tar.bz2",
+      "bytes": 349886476,
+      "sha256": "60703707bc05ccd48d60e1eb723f38b07d6e474795a0b6a588d7220400e0f7a4"
+    },
+    {
+      "name": "sherpa-onnx-v1.13.8-win-x64-shared-MT-Release.tar.bz2",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.8/sherpa-onnx-v1.13.8-win-x64-shared-MT-Release.tar.bz2",
+      "bytes": 24805859,
+      "sha256": "6dffdc715a4465b989446a6105265d2cb345e7101591a17d35534b6758f6e8df"
+    }
+  ],
+  "binary_sha256": {
+    "V15VoiceStudio.exe": "edf76a5dc7fcf080af66c77b84ff82dd5a259d6a10a6dcc2eb89e00ace6ece53",
+    "V15Updater.exe": "a02594c8e91bf58f657a62678f360d05687e90c10813733d829d0e353be1d8d9"
+  },
+  "packages": [
+    {
+      "name": "BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Portable.zip",
+      "bytes": 377842330,
+      "sha256": "e6313d5f3897aa16ae3596497d50cf7c2443ed0acca4e3efa65c4c40607f965d"
+    },
+    {
+      "name": "BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Setup.exe",
+      "bytes": 354480367,
+      "sha256": "78f66c2d9330c1440033fa77eb5842cd16edc888fd4aa855a3f88b02fc50467d"
+    },
+    {
+      "name": "BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip",
+      "bytes": 17770635,
+      "sha256": "fba95a4d7f562f82b3d26f4aabe14fd8972c4da6bc0665bb76a9ee40c5e3f3bb"
+    }
+  ]
+}

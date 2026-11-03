@@ -1,0 +1,6 @@
+PASS Empty app folder cannot masquerade as installed TTS
+PASS Complete Kokoro-only app accepts a core update without Python
+PASS Core update keeps the installed speech model
+PASS Incomplete Kokoro model is refused
+PASS Existing full Python speech bases remain compatible
+TOTAL FRESH UPDATER 5 PASS

@@ -1,0 +1,29 @@
+BÉO VOICE STUDIO LITE 4.1.2 — BẢN MÁY MỚI KOKORO
+
+Gói Fresh_Kokoro có sẵn model Kokoro v1.0, 20 giọng tiếng Anh Mỹ,
+bộ chạy Windows x64, bộ phát âm, danh sách giọng và FFmpeg.
+Không cần 15 phần dữ liệu nền cũ để dùng các giọng Kokoro trong gói này.
+Không có AI tự sửa/dịch lời hoặc model sửa lời Qwen3-4B.
+
+CÁCH DÙNG
+1. Windows 10/11 x64: tải Fresh_Kokoro_Setup.exe và cài vào thư mục mới.
+   Hoặc giải nén toàn bộ Fresh_Kokoro_Portable.zip rồi chạy BAT_DAU.cmd.
+2. Chọn nguồn Kokoro; chọn Kokoro · Adam để dùng giọng Adam (SID 11).
+3. Nhập TXT/SRT, chọn timeline và nghe thử, sau đó CHẠY.
+4. Mỗi file xuất đúng một voice-report.txt. Lời không tự được viết lại.
+
+PHẠM VI
+Gói này có sẵn Kokoro chạy CPU, hỗ trợ một/hai giọng Kokoro.
+Giữ mã và các chức năng của ứng dụng. Dữ liệu Chatterbox, Qwen3-TTS/clone,
+LibriTTS, Kitten, Piper và CUDA không được gói sẵn trong bản Kokoro này.
+Máy có bản đầy đủ cũ nên dùng Core Update để giữ mọi engine/model đã cài.
+Không chép đè bản Fresh vào thư mục ứng dụng cũ.
+
+KIỂM THỬ
+Xem FRESH_INSTALL_VALIDATION.json và các log kèm bản phát hành.
+Chỉ ghi đạt sau khi chạy giọng thật, mở UI và cài vào thư mục trống trên Windows.
+Không coi phép thử CPU là kiểm thử RTX 2070 hoặc clone thật.
+
+GIẤY PHÉP
+Giấy phép model nằm ở model/LICENSE. Giấy phép bộ chạy và FFmpeg nằm trong
+engine/ và source/media/. Gói hoạt động offline sau khi tải/cài xong.

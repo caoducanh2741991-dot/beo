@@ -1,0 +1,8 @@
+BÉO VOICE STUDIO LITE 4.1.2 — FRESH KOKORO
+
+App EXE giữ nguyên SHA256 edf76a5dc7fcf080af66c77b84ff82dd5a259d6a10a6dcc2eb89e00ace6ece53.
+App đã đạt 438 C#, 15 Python và 18 kiểm tra cập nhật trong đợt Lite trước (Mono/Linux, speech/GPU fixture).
+Đợt này kiểm tra lại updater trên Windows: 21 hồi quy và 5 kiểm tra bản nền Kokoro/Python.
+Bản Fresh tổng hợp Kokoro thật, một/hai giọng, đối chiếu SRT, mở UI Windows và cài/gỡ thư mục trống.
+Xem FRESH_INSTALL_VALIDATION.json và log cho kết quả cuối. Chưa thử RTX 2070 hoặc clone model thật.
+Updater mới SHA256: a02594c8e91bf58f657a62678f360d05687e90c10813733d829d0e353be1d8d9

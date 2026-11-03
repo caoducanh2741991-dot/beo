@@ -1,0 +1,112 @@
+BÉO VOICE STUDIO LITE 4.1.2
+CHẾ ĐỘ 1 — CHẠY THEO FILE, KHÔNG SỬA LỜI
+Nguồn: D:\a\beo\beo/fresh-build/staging-proof\single.txt
+Kết quả công việc: FINAL_VERIFIED
+WAV: FINAL_VERIFIED — đã tạo và kiểm tra
+Số câu thay đổi lời thực sự áp dụng: 0
+Giữ nguyên lời file đầu vào. Không gọi AI sửa hoặc dịch.
+Mốc cue dưới đây là timeline nguồn. Không suy ra mốc audio từng cue từ số đo toàn chặng.
+
+LỜI GIỮ NGUYÊN THEO FILE
+#1 | 00:00:00,000 --> 00:00:02,042 | The original words stay unchanged.
+#2 | 00:00:02,082 --> 00:00:03,990 | Adam reads this script offline.
+
+THỜI GIAN XỬ LÝ THỰC CỦA LẦN NÀY (không phải tốc độ đọc)
+Đã đo đến lúc tạo báo cáo: 8.581s; chưa gồm ghi/công bố bộ file cuối. Các bước lồng nhau, không cộng để suy ra tổng.
+TTS_SYNTHESIS: 8.385s
+RENDER_PCM: 8.478s
+TTS_REQUEST: 2 lượt
+ONNX_PROCESS_STARTED: 2 lượt
+
+
+SỐ ĐO, THIẾT BỊ, CACHE VÀ CHẨN ĐOÁN TTS
+BÉO VOICE STUDIO · VOICE REPORT · schema 3 · app 4.1.2.0
+Kết quả: FINAL_VERIFIED
+Bắt đầu UTC: 2026-11-03T06:08:51.7565542Z; đã chạy 8.572s
+Mục đích: Tạo WAV
+Nguồn: single.txt
+SHA256 file nguồn: 36ab1b03d472ab2e215dc451d1a9864c5b5dd7dfc0e957efed838e72b21ea2b7
+SHA256 snapshot lời+mốc dùng trong app: 3386ff7ec812aaa7df0028b295a7e12d2198164130b5d1631340dd0f62737c19
+Tổng đơn vị đã lên kế hoạch: 2; có số đo trước căn: 2; chưa đo: 0; chặng có kết quả: 0
+WAV cuối của LẦN NÀY: D:\a\beo\beo\fresh-build\staging-proof\single.wav
+Trạng thái WAV: FINAL_VERIFIED
+Trạng thái dịch: NOT_REQUIRED
+Báo cáo: C:\Users\runneradmin\AppData\Local\V15VoiceStudio\reports\single.voice-report.txt
+
+GIỌNG VÀ THIẾT LẬP
+Chế độ: MỘT GIỌNG
+Ngôn ngữ: English theo nguồn giọng đã chọn
+Tên giọng: Adam; mã: 
+Engine/model: Kokoro /  / speaker 11
+Nguồn giọng: 
+Đặc điểm: 
+Phong cách: 
+Ghi chú của người dùng: 
+Loại giọng: giọng có sẵn
+Không đính kèm file âm thanh tham chiếu trong báo cáo.
+Thiết bị yêu cầu: cpu
+Thiết bị đã báo trong lần chạy: CPU · Kokoro · đã chọn thủ công
+Thiết bị của âm thanh lấy từ cache: không suy đoán từ thiết bị đang chọn.
+Số chênh: dương = dài hơn đích, âm = ngắn hơn đích. Khóa SRT có thể dành chỗ nghỉ và biên 0.025s khi căn; ngắn hơn khung không tự động là lỗi, cần xem trạng thái tác vụ/chặng.
+Timeline: TXT · theo voice
+Tốc độ gốc: 1.000x; giới hạn đặt: 0.900–1.250x; giới hạn áp dụng: 0.900–1.250x; nhẹ ±10%: False
+Ngắt nghỉ: Auto; phẩy=0.140s; chấm=0.300s; hỏi/cảm=0.350s; đoạn=0.500s; gap=0.150s
+Hơi thở: Không dùng; mỗi 3 câu; mức=16.000%; cân âm=False / -18.000 LUFS
+
+CUE NGUỒN · nguyên văn dùng trong app trước khi ghép/căn
+Số cue theo thứ tự trong app; file nguồn có thể đã được đánh lại số khi nhập.
+Timeline nguồn và mốc WAV là hai trường riêng. TXT không có timeline nguồn; không dùng mốc dự kiến như mốc đã đo.
+#1 | TXT · chưa có timeline nguồn | 5 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: The original words stay unchanged.
+Trạng thái: đơn vị 1: Đã xuất trong WAV cuối
+#2 | TXT · chưa có timeline nguồn | 5 đơn vị từ tách theo văn bản | khóa cuối chặng=False
+Giọng câu: A · một giọng
+Lời: Adam reads this script offline.
+Trạng thái: đơn vị 2: Đã xuất trong WAV cuối
+
+ĐƠN VỊ LỜI ĐỌC · số đo âm thanh thực tế
+Đơn vị 1 | cue 1 | chặng 0 | liên kết cue theo nội dung
+Giọng thực tế: A · Adam · mã K:11 · Kokoro /  / speaker 11 · SHA256 mẫu chưa có
+Lời: The original words stay unchanged.
+Trạng thái: Đã xuất trong WAV cuối
+Đánh giá của bộ căn: Timeline theo voice
+Trước căn tại tốc độ gốc: 2.042s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: 2.042s
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 2.042s; tổng sau ghép nghỉ trong đơn vị: 2.042s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap 0.040s (hơi thở 0.000s)
+Nguồn audio: 1 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 0 lượt dùng cache
+Tốc độ lưu: 1.000x; giữ nguyên so với tốc độ gốc
+Mốc WAV đo riêng: 00:00:00,000 → 00:00:02,042
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+Đơn vị 2 | cue 2 | chặng 0 | liên kết cue theo nội dung
+Giọng thực tế: A · Adam · mã K:11 · Kokoro /  / speaker 11 · SHA256 mẫu chưa có
+Lời: Adam reads this script offline.
+Trạng thái: Đã xuất trong WAV cuối
+Đánh giá của bộ căn: Timeline theo voice
+Trước căn tại tốc độ gốc: 1.908s; đầu vào sau chỉnh nghỉ: chưa đo; sau căn đo RIÊNG: 1.908s
+Audio TTS gốc (gồm nghỉ tự nhiên chưa tách riêng): 1.908s; tổng sau ghép nghỉ trong đơn vị: 1.908s
+Nghỉ app trong đơn vị: trước 0.000s → sau chỉnh 0.000s; dự phòng cuối câu 0.000s. Nghỉ tự nhiên của model nằm trong audio, không tách giả số giây.
+Trước đơn vị (trước căn chặng): gap 0.000s (gồm hơi thở 0.000s); sau đơn vị (cue riêng): khoảng trống/gap 0.000s (hơi thở 0.000s)
+Nguồn audio: 1 lượt yêu cầu tổng hợp (có thể gồm thử lại nội bộ), 0 lượt dùng cache
+Tốc độ lưu: 1.000x; giữ nguyên so với tốc độ gốc
+Mốc WAV đo riêng: 00:00:02,082 → 00:00:03,990
+Đích căn thực tế: chưa đo; tốc độ ƯỚC TÍNH trước giới hạn: chưa đo
+Ước tính = tốc độ gốc × thời lượng đầu vào / đích căn; không phải kết quả đã thử hoặc cam kết sẽ vừa khung.
+
+CHẶNG V15.6 · không gán thời lượng chung thành số đo riêng từng cue
+
+LỖI / KẾT THÚC
+
+CHẨN ĐOÁN QUY TRÌNH · mã app khác mã hệ điều hành/tiến trình
+Bước cuối: TRANSLATE · Dịch Việt offline; WAV chưa được công bố
+Mã kết quả app: SUCCESS
+Trạng thái chặng: PASS=0; NEEDS_REVIEW=0; ENGINE_ERROR=0; RENDER_FAILED=0; CANCELLED=0; UNMEASURED=0; IN_PROGRESS=0; TOTAL=0. Đạt chặng chưa có nghĩa đã xuất WAV cuối.
+Không có lỗi tác vụ được ghi nhận.
+BÁO CÁO ĐÃ KẾT THÚC
+
+HƯỚNG DẪN CHO CHAT TẠO PROMPT
+Dùng đúng tên giọng, tốc độ gốc, giới hạn áp dụng và thời lượng đo trong báo cáo này. Đối chiếu nguyên văn, cue và mốc nguồn. Phần chưa đo không được dùng làm số liệu hiệu chuẩn. Đơn vị trong chặng chưa có mốc sau căn riêng không được suy ra bằng chia đều hoặc tỷ lệ.
+Ưu tiên phân tích các đơn vị/chặng không khớp và lịch sử thử tốc độ; tốc độ % được tính so với tốc độ gốc, không mặc định so với 1.00x. Giữ cốt truyện, thứ tự sự kiện và điểm neo. Không tự giảm giọng sâu, thêm lời đệm hay suy ra một định mức số từ áp dụng cho mọi giọng. Bản sửa prompt/SRT cần render lại để xác nhận.
+
