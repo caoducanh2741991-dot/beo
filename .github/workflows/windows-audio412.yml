@@ -3,7 +3,55 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
+  split-verified-packages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Read the successful Windows build outputs
+        run: gh run download 41587951214 --repo "$GITHUB_REPOSITORY" --name BEO-Fresh-Kokoro-4.1.2 --dir export
+      - name: Check package byte identity before redistribution
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          root=Path('export')
+          proof=json.loads((root/'FRESH_INSTALL_VALIDATION.json').read_text())
+          for row in proof['packages']:
+              p=root/row['name']
+              h=hashlib.sha256()
+              with p.open('rb') as f:
+                  for b in iter(lambda:f.read(4*1024*1024),b''):h.update(b)
+              assert p.stat().st_size==row['bytes'] and h.hexdigest()==row['sha256'],p.name
+              print('PASS matching package bytes:',p.name)
+          PY
+      - uses: actions/upload-artifact@v7
+        with:
+          path: export/BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Setup.exe
+          archive: false
+          retention-days: 30
+      - uses: actions/upload-artifact@v7
+        with:
+          path: export/BEO_Voice_Studio_4.1.2_Fresh_Kokoro_Portable.zip
+          archive: false
+          retention-days: 30
+      - uses: actions/upload-artifact@v7
+        with:
+          path: export/BEO_Voice_Studio_4.1.2_Lite_Universal_Core_Update.zip
+          archive: false
+          retention-days: 30
+      - uses: actions/upload-artifact@v7
+        with:
+          name: BEO-Fresh-Kokoro-4.1.2-Checks
+          path: |
+            export/*.txt
+            export/*.json
+            export/staging-proof/
+            export/installed-proof/
+          retention-days: 30
   windows-audio:
     runs-on: windows-latest
     timeout-minutes: 10
