@@ -1,0 +1,27 @@
+name: Verify bundled Windows audio 4.1.2 (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-audio:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Read the exact revision
+        shell: pwsh
+        run: |
+          gh auth setup-git
+          git clone --branch main --single-branch "https://github.com/$env:GITHUB_REPOSITORY.git" .
+          git checkout --detach $env:GITHUB_SHA
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Test actual Windows tempo conversion and loudness analysis
+        run: python source/test_windows_ffmpeg.py
+      - uses: actions/upload-artifact@v7
+        with:
+          name: BEO-Windows-Audio-4.1.2
+          path: windows-audio-proof/
+          if-no-files-found: error
+          retention-days: 30
